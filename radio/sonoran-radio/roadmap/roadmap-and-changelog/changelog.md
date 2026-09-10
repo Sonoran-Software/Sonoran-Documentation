@@ -4,6 +4,26 @@ description: View the changelog for the Sonoran Radio application and in-game re
 
 # 📋 Changelog
 
+### 2.28.0 09/10/2026
+
+{% tabs %}
+{% tab title="New" %}
+Dispatch AI: Radio Channel Controls
+
+* Added voice commands to switch radio channels, manage scanned channels, report current channels, and repeat current call details.
+
+ER:LC Towers
+
+* Added virtual towers for ER:LC desktop signal strength
+{% endtab %}
+
+{% tab title="Fixed" %}
+Mobile Builds: Store Publishing
+
+* Updated Android compatibility for Google Play and enabled replacement of pending TestFlight reviews for production iOS builds.
+{% endtab %}
+
+{% endtabs %}
 ### 2.27.18 08/19/2026
 
 {% tabs %}
