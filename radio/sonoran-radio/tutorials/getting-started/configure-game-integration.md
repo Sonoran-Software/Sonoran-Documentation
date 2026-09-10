@@ -8,6 +8,8 @@ Each Sonoran Radio community server can be configured for **FiveM** or **Emergen
 
 Open your Radio community, then navigate to **Customize** > **Game Integration**.
 
+Community administrators manage the game selection, private-server link, towers, and zones here. Members do not need administrator access to link their own Roblox accounts.
+
 ## FiveM
 
 Select **FiveM** to display the FiveM zone editor. Expand **FiveM Installation** above the map when you need the resource setup and download tools; it stays collapsed when you are editing zones.
@@ -18,11 +20,9 @@ Continue with [Installing the In-Game Resource](installing-the-in-game-resource.
 
 Select **ER:LC** to connect an ER:LC private server and enable location-based radio signal.
 
-<figure><img src="../../.gitbook/assets/erlc-unlinked-server.png" alt="Sonoran Radio Game Integration panel with ER:LC selected, the Roblox link banner, and an unlinked private server"><figcaption><p>Select ER:LC to display Roblox account linking, private-server linking, and the virtual tower editor.</p></figcaption></figure>
-
 ### 1. Link Your Roblox Account
 
-Radio matches your Sonoran account to your player in ER:LC through your linked Roblox account. If your account is not linked, a red banner appears at the top of the Game Integration panel.
+Radio matches your Sonoran account to your player in ER:LC through your linked Roblox account. Once the community has a linked ER:LC server, signed-in users without a linked Roblox account see a **Link Roblox** banner across community tabs and in the standalone radio view. This includes ordinary members, not just administrators.
 
 1. Select **Link Roblox**.
 2. Sign in to Roblox in the new window and authorize the account link.
@@ -33,6 +33,8 @@ Every Radio user who wants ER:LC location-based signal must link the Roblox acco
 {% endhint %}
 
 A Roblox account link already completed through another Sonoran product is reused by Radio.
+
+The banner is hidden when the community has no linked ER:LC server, FiveM is selected, or the current user's Roblox account is already linked. Linking the private server does not link members' personal accounts; each user must complete that step for themselves.
 
 ### 2. Create an ER:LC API Key
 
@@ -52,11 +54,9 @@ Treat the ER:LC API key like a password. Do not post it in Discord, screenshots,
 
 1. Paste the key into **ER:LC API Key**.
 2. Select **Link Server**.
-3. Confirm that the panel displays **Hub synced** and the private server's join code.
+3. Confirm that the API key form disappears and the private server's join code appears beside **ER:LC Private Server**.
 
-<figure><img src="../../.gitbook/assets/erlc-linked-server.png" alt="Linked ER:LC private server displaying the Hub synced status in Sonoran Radio"><figcaption><p>Hub synced confirms that Sonoran Radio is connected to the ER:LC private server.</p></figcaption></figure>
-
-To replace the linked server key, enter a new key and select **Update Link**.
+Once linked, the server section is a compact row containing **ER:LC Private Server**, the join code, and **Unlink**. To replace the key or connect a different private server, unlink the current server first, then use the API key form to link it again.
 
 To disconnect the private server, select **Unlink** and confirm the prompt. Live player positions and ER:LC signal updates stop until another server is linked.
 

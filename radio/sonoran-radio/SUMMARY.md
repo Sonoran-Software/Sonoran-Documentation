@@ -34,7 +34,7 @@
     * [Radio Scanners](tutorials/usage/in-game-radio/radio-scanners.md)
     * [Radio Jammers](tutorials/usage/in-game-radio/radio-jammers.md)
     * [In-Game Repeaters](tutorials/usage/in-game-radio/in-game-repeaters.md)
-    * [ER:LC Signal Towers](tutorials/usage/in-game-radio/erlc-signal-towers.md)
+    * [ER:LC Towers and Emergency Zones](tutorials/usage/in-game-radio/erlc-signal-towers.md)
     * [Geo Channels](tutorials/usage/in-game-radio/geo-channels.md)
     * [Tunnels and Degrade Zones](tutorials/usage/in-game-radio/tunnels-and-degrade-zones.md)
     * [In-Game Speakers](tutorials/usage/in-game-radio/in-game-speakers.md)

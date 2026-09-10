@@ -1,8 +1,8 @@
 ---
-description: Configure virtual ER:LC radio towers and preview live signal coverage.
+description: Configure ER:LC towers, emergency zones, and live location-based signal on one map.
 ---
 
-# ER:LC Signal Towers
+# ER:LC Towers and Emergency Zones
 
 Virtual signal towers let ER:LC communities apply location-based signal quality without installing a game resource. Signal is strongest near a tower and gradually weakens as a player approaches the edge of its range.
 
@@ -11,7 +11,7 @@ Virtual signal towers let ER:LC communities apply location-based signal quality 
 Make sure that:
 
 * The community server is set to **ER:LC** under **Customize** > **Game Integration**.
-* The ER:LC private server displays **Hub synced** if you want to preview live players and apply signal changes.
+* The ER:LC private server is linked and its join code appears beside **ER:LC Private Server** if you want to preview live players and apply signal changes.
 * Each player has linked the Roblox account they use in ER:LC to their Sonoran account for live signal.
 
 If the private server is not connected yet, follow [Configure a Game Integration](../../getting-started/configure-game-integration.md#erlc).
@@ -24,25 +24,29 @@ If the private server is not connected yet, follow [Configure a Game Integration
 
 The map combines virtual towers, live players, signal coverage, and emergency zones. Use the **Towers** and **Emergency Zones** buttons to switch editing tools without switching maps.
 
+The active mode's controls float over the top of the map. **Towers** shows **Place Tower**. **Emergency Zones** shows the **Room** selector and drawing buttons. The toolbar fits its controls and wraps on smaller screens.
+
 ## Place a Tower
 
-1. Select **Place Tower**.
+1. Select **Towers**, then **Place Tower** in the map overlay.
 2. Select the desired tower location on the ER:LC map.
 3. In the edit menu that opens, enter a descriptive **Tower name**.
 4. Set the tower's **Range** in map units.
 
-Changes save automatically. Select any tower marker to reopen its menu, drag the marker to reposition it, or select **Delete Tower** in the menu to remove it.
+Changes save automatically. A single left click on any tower marker opens its edit menu; no right click is needed. Drag the marker to reposition it, or select **Delete Tower** in the menu to remove it. Tower range is measured in map units, and the menu displays the tower's map X/Z coordinates.
 
 <figure><img src="../../../.gitbook/assets/erlc-tower-configuration.png" alt="ER:LC map with three overlapping virtual signal towers, live player markers, and a signal percentage tooltip"><figcaption><p>Overlapping tower ranges use the strongest signal and live player markers display their current percentage.</p></figcaption></figure>
 
 ## Configure Emergency Zones
 
 1. Select **Emergency Zones** above the map.
-2. Select the Radio room whose zones you want to configure.
+2. Use **Room** in the map overlay to select the Radio room whose zones you want to configure.
 3. Select **Draw Polygon** and place at least three points, then select **Finish Zone**; or select **Draw Circle**, then select its center and edge.
 4. In the zone menu, enter a name and select the channels that can transmit from the zone.
 
-Select an existing zone to reopen its menu. Drag the blue handles to reshape it, or select **Delete Zone** to remove it. Zone changes save automatically and remain visible when you return to tower editing.
+Select an existing zone to reopen its menu. Drag the blue handles to reshape a polygon or move a circle's center; drag the yellow circle handle to change its radius. Select **Delete Zone** to remove it. Use **Cancel** to discard a shape you are still drawing.
+
+Zones belong to the selected room. Switching rooms shows that room's zones, while towers apply to the community. Zone changes save automatically and remain visible when you return to tower editing. If saving fails, Radio displays an error and restores the last saved configuration.
 
 ## Understand Signal Coverage
 
@@ -53,7 +57,7 @@ Each tower displays a circular coverage overlay:
 * The edge of the circle and locations outside it have no signal from that tower.
 * Where tower ranges overlap, the strongest available tower signal is used.
 
-Hover over any location on the map to preview its signal percentage. The calculation uses the straight-line distance from that point to each tower and displays the strongest resulting percentage.
+Hover over any location on the map in **Towers** mode to preview its signal percentage. The calculation uses the straight-line distance from that point to each tower and displays the strongest resulting percentage.
 
 {% hint style="info" %}
 Emergency zones remain visible on the ER:LC map so you can plan radio coverage around important areas.
@@ -71,9 +75,13 @@ Each connected user's Radio signal also refreshes every five seconds. Moving clo
 
 Open **Customize** > **Game Integration** and confirm that the community server is set to **ER:LC**. The ER:LC Map Configuration editor is not shown while FiveM is selected.
 
-### The Server Does Not Show Hub Synced
+### The Private Server Is Not Linked
 
-Confirm that the ER:LC private server has the API Pack, then copy a current API key from **Server Info** > **Edit Server Settings** > **ER:LC API** and update the link.
+Confirm that the ER:LC private server has the API Pack, then copy a current API key from **Server Info** > **Edit Server Settings** > **ER:LC API** and select **Link Server**. If replacing an existing connection, select **Unlink** first.
+
+### The Link Roblox Banner Still Appears
+
+Make sure you linked the Roblox account to the same Sonoran account you use for Radio. Return to the Radio window so it can refresh your link status. The banner is shown to each unlinked user individually; another member linking their account does not clear yours.
 
 ### A Player Is Missing From the Map
 
