@@ -1,0 +1,103 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: Sonoran Software Documentation
+  structure:
+    - type: section
+      key: section-6
+      title: Welcome
+      path: welcome
+      icon: hand-wave
+      default: true
+      children:
+        - type: space
+          key: space-7
+          title: Support
+          path: support
+          condition: visitor.claims.unsigned.role === "support"
+          content:
+            directory: null
+        - type: space
+          key: space-6
+          title: Documentation Portal
+          path: documentation-portal
+          default: true
+          content:
+            directory: ./welcome/documentation-portal
+    - type: section
+      key: section-1
+      title: CAD
+      path: cad
+      description: ""
+      children:
+        - type: space
+          key: space-1
+          title: Sonoran CAD
+          path: sonoran-cad
+          default: true
+          content:
+            directory: ./cad/sonoran-cad
+    - type: section
+      key: section-2
+      title: CMS
+      path: cms
+      description: ""
+      children:
+        - type: space
+          key: space-2
+          title: Sonoran CMS
+          path: sonoran-cms
+          default: true
+          content:
+            directory: ./cms/sonoran-cms
+    - type: section
+      key: section-3
+      title: Radio
+      path: radio
+      description: ""
+      children:
+        - type: space
+          key: space-3
+          title: Sonoran Radio
+          path: sonoran-radio
+          default: true
+          content:
+            directory: ./radio/sonoran-radio
+    - type: section
+      key: section-4
+      title: Bot
+      path: bot
+      description: ""
+      children:
+        - type: space
+          key: space-4
+          title: Sonoran Bot
+          path: sonoran-bot
+          default: true
+          content:
+            directory: ./bot/sonoran-bot
+    - type: section
+      key: section-5
+      title: Store
+      path: store
+      description: ""
+      children:
+        - type: space
+          key: space-5
+          title: Sonoran Store
+          path: sonoran-store
+          default: true
+          content:
+            directory: ./store/sonoran-store
+    - type: section
+      key: section-7
+      title: Studio
+      path: studio
+      icon: tower-broadcast
+      children:
+        - type: space
+          key: space-8
+          title: Sonoran Studio
+          path: sonoran-studio
+          default: true
+          content:
+            directory: ./studio/sonoran-studio
