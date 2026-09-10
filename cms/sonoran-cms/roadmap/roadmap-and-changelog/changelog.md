@@ -10,6 +10,16 @@ description: View the latest changes to Sonoran CMS!
 
 ## Changelog
 
+### 1.5.18 09/10/2026
+
+{% tabs %}
+{% tab title="Fixed" %}
+Mobile Builds: Store Publishing
+
+* Updated Android compatibility for Google Play and enabled replacement of pending TestFlight reviews for production iOS builds.
+{% endtab %}
+
+{% endtabs %}
 ### 1.5.16 09/08/2026
 
 {% tabs %}
