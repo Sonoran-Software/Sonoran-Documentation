@@ -1,5 +1,7 @@
 ---
-description: Configure ER:LC towers, emergency zones, and live location-based signal on one map.
+description: >-
+  Configure ER:LC towers, emergency zones, and live location-based signal on one
+  map.
 ---
 
 # ER:LC Towers and Emergency Zones
@@ -13,6 +15,8 @@ Make sure that:
 * The community server is set to **ER:LC** under **Customize** > **Game Integration**.
 * The ER:LC private server is linked and its join code appears beside **ER:LC Private Server** if you want to preview live players and apply signal changes.
 * Each player has linked the Roblox account they use in ER:LC to their Sonoran account for live signal.
+
+<figure><img src="../../../.gitbook/assets/ChatGPT_d0zJJBjO1W.png" alt=""><figcaption></figcaption></figure>
 
 If the private server is not connected yet, follow [Configure a Game Integration](../../getting-started/configure-game-integration.md#erlc).
 
