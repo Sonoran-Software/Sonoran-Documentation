@@ -26,7 +26,7 @@ First, [link your private server and Roblox account](../../game-integrations/rob
 
 Click a tower to edit it. Drag its marker to move it, or select **Delete Tower** to remove it.
 
-Signal stays at 100% until you place the first tower.
+With **zero towers**, Radio keeps signal at **100%** even if the user's Roblox account or player location is unavailable. Placing the first tower enables location-based signal. Removing the last tower restores full signal on the next refresh.
 
 ## Check Signal Coverage
 
@@ -39,6 +39,7 @@ To make signal quality affect transmission audio, your community needs to config
 {% content-ref url="../dispatch-panel/custom-voice-effects.md" %}
 [Custom Voice Effects](../dispatch-panel/custom-voice-effects.md)
 {% endcontent-ref %}
+
 
 ## View Live Players
 
