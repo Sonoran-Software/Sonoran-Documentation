@@ -1,0 +1,349 @@
+---
+description: Replace the community penal code configuration.
+---
+
+# Set Penal Codes
+
+<mark style="color:blue;">`PUT`</mark> `https://api.sonorancad.com/v2/general/penal-codes`
+
+> **Rate limit:** `4 requests per minute` Authenticated v2 endpoints are rate limited per API key rather than per IP address.
+
+Replace the community penal code configuration.
+
+## Request Body
+
+```json
+{
+  "codes": [
+    {
+      "title": "Unsafe Lane Change",
+      "code": "22107",
+      "type": "INFRACTION",
+      "bondType": "NONE",
+      "bondAmount": 0,
+      "jailTime": "0"
+    }
+  ]
+}
+```
+
+## Example Request
+
+{% tabs %}
+{% tab title="Sonoran.lua" %}
+```lua
+-- luarocks install sonoran.lua
+-- For SonoranCADFiveM in-game usage, see the SonoranCADFiveM tab for the export-based client.
+local Sonoran = require("sonoran")
+
+local sonoran = Sonoran.createClient({
+  product = Sonoran.productEnums.CAD,
+  communityId = "YOUR_COMMUNITY_ID",
+  apiKey = "YOUR_API_KEY",
+  defaultServerId = 1
+})
+
+local response = sonoran.cad:setPenalCodesV2({
+  {
+    title = "Unsafe Lane Change",
+    code = "22107",
+    type = "INFRACTION",
+    bondType = "NONE",
+    bondAmount = 0,
+    jailTime = "0"
+  }
+})
+
+-- Inspect response.success, response.data, or response.reason as needed.
+print(response.success)
+```
+{% endtab %}
+
+{% tab title="SonoranCADFiveM" %}
+Use this tab only when calling the v2 API from the server side of an in-game FiveM resource.
+
+* **Sonoran.lua** and **Sonoran.js:** use the `sonorancad` export to get the ready CAD client.
+* **Sonoran.Net:** FiveM exports do not return a .NET client. Read the Sonoran CAD convars and create a fresh client.
+* **Sonoran.py:** FiveM does not run Python resources; use the Python tab for external integrations.
+
+The API key is stored in `sonoran_apiKey` as a protected FiveM convar. FiveM restricts a convar after `add_convar_permission` is configured, so only explicitly permitted resources can read it. Grant another resource access with `add_convar_permission your-resource-name read sonoran_apiKey`. If you change the API key in `config.json`, fully restart the `sonorancad` resource before reading the updated convar value.
+
+**Sonoran.lua**
+
+```lua
+local cad = exports["sonorancad"]:getCadClient()
+local response = cad:setPenalCodesV2({
+  {
+    title = "Unsafe Lane Change",
+    code = "22107",
+    type = "INFRACTION",
+    bondType = "NONE",
+    bondAmount = 0,
+    jailTime = "0"
+  }
+})
+
+print(response.success)
+```
+
+**Sonoran.js**
+
+```javascript
+(async () => {
+  const cad = exports["sonorancad"].getCadClient();
+  const response = await cad.setPenalCodesV2([
+    {
+      title: 'Unsafe Lane Change',
+      code: '22107',
+      type: 'INFRACTION',
+      bondType: 'NONE',
+      bondAmount: 0,
+      jailTime: '0',
+    },
+  ]);
+
+  console.log(response);
+})();
+```
+
+**Sonoran.Net**
+
+```csharp
+// dotnet add package Sonoran.Net
+using CitizenFX.Core;
+using CitizenFX.Core.Native;
+using Sonoran;
+
+var communityId = API.GetConvar("sonoran_communityID", "");
+var apiKey = API.GetConvar("sonoran_apiKey", "");
+var serverIdRaw = API.GetConvar("sonoran_serverId", "1");
+var serverId = int.TryParse(serverIdRaw, out var parsedServerId) ? parsedServerId : 1;
+
+using var sonoran = new SonoranClient(new SonoranClientOptions
+{
+    product = SonoranProduct.CAD,
+    communityId = communityId,
+    apiKey = apiKey,
+    defaultServerId = serverId
+});
+
+var response = await sonoran.Cad.setPenalCodesV2(new[]
+{
+    new PenalCodeV2
+    {
+        Title = "Unsafe Lane Change",
+        Code = "22107",
+        Type = "INFRACTION",
+        BondType = "NONE",
+        BondAmount = 0,
+        JailTime = "0"
+    }
+});
+
+Debug.WriteLine($"Penal codes updated: {response.success}");
+```
+{% endtab %}
+
+{% tab title="Sonoran.js" %}
+```javascript
+// npm install @sonoransoftware/sonoran.js
+// For SonoranCADFiveM in-game usage, see the SonoranCADFiveM tab for the export-based client.
+const Sonoran = require('@sonoransoftware/sonoran.js');
+
+(async () => {
+  const instance = new Sonoran.Instance({
+    communityId: 'YOUR_COMMUNITY_ID',
+    apiKey: 'YOUR_API_KEY',
+    product: Sonoran.productEnums.CAD,
+    serverId: 1,
+  });
+
+  const response = await instance.cad.setPenalCodesV2([
+    {
+      title: 'Unsafe Lane Change',
+      code: '22107',
+      type: 'INFRACTION',
+      bondType: 'NONE',
+      bondAmount: 0,
+      jailTime: '0',
+    },
+  ]);
+  console.log(response);
+})();
+```
+{% endtab %}
+
+{% tab title="Sonoran.py" %}
+```python
+# pip install Sonoran.py
+# Sonoran.py is for external Python integrations; FiveM resources should use the SonoranCADFiveM tab.
+from sonoran import Instance, productEnums
+
+instance = Instance(
+    apiKey="YOUR_API_KEY",
+    communityId="YOUR_COMMUNITY_ID",
+    product=productEnums.CAD,
+    serverId=1,
+)
+
+response = instance.cad.setPenalCodesV2([
+    {
+        "title": "Unsafe Lane Change",
+        "code": "22107",
+        "type": "INFRACTION",
+        "bondType": "NONE",
+        "bondAmount": 0,
+        "jailTime": "0",
+    }
+])
+
+print(response.success)
+print(response.data if response.success else response.reason)
+```
+{% endtab %}
+
+{% tab title="Sonoran.Net" %}
+```csharp
+// dotnet add package Sonoran.Net
+// For SonoranCADFiveM in-game usage, see the SonoranCADFiveM tab; .NET creates a fresh client from convars.
+using Sonoran;
+
+using var sonoran = new SonoranClient(new SonoranClientOptions
+{
+    product = SonoranProduct.CAD,
+    communityId = "YOUR_COMMUNITY_ID",
+    apiKey = "YOUR_API_KEY",
+    defaultServerId = 1
+});
+
+var response = await sonoran.Cad.setPenalCodesV2(new[]
+{
+    new PenalCodeV2
+    {
+        Code = "22107",
+        Type = "INFRACTION",
+        Title = "Unsafe Lane Change",
+        BondType = "NONE",
+        BondAmount = 0,
+        JailTime = "0"
+    }
+});
+
+Console.WriteLine(response.success);
+Console.WriteLine(response.data);
+```
+{% endtab %}
+
+{% tab title="OpenAPI" %}
+Import this YAML into Postman with **Import -> Raw text** to create a single-endpoint request collection for this route.
+
+```yaml
+openapi: "3.0.3"
+info:
+  title: "Sonoran CAD v2 - Set Penal Codes"
+  version: "1.0.0"
+  description: "Replace the community penal code configuration."
+servers:
+  -
+    url: "https://api.sonorancad.com"
+paths:
+  /v2/general/penal-codes:
+    put:
+      summary: "Set Penal Codes"
+      operationId: "setPenalCodes"
+      responses:
+        200:
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                required:
+                  - "updated"
+                properties:
+                  updated:
+                    type: "integer"
+              example:
+                updated: 1
+      security:
+        -
+          bearerAuth:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              required:
+                - "codes"
+              properties:
+                codes:
+                  type: "array"
+                  items:
+                    $ref: "#/components/schemas/PenalCode"
+            example:
+              codes:
+                -
+                  title: "Unsafe Lane Change"
+                  code: "22107"
+                  type: "INFRACTION"
+                  bondType: "NONE"
+                  bondAmount: 0
+                  jailTime: "0"
+components:
+  schemas:
+    PenalCode:
+      type: "object"
+      properties:
+        title:
+          type: "string"
+        code:
+          type: "string"
+        type:
+          type: "string"
+        bondType:
+          type: "string"
+        bondAmount:
+          type: "integer"
+        jailTime:
+          type: "string"
+  securitySchemes:
+    bearerAuth:
+      type: "http"
+      scheme: "bearer"
+      bearerFormat: "JWT"
+```
+{% endtab %}
+
+{% tab title="cURL" %}
+```bash
+curl --request PUT \
+  --url "https://api.sonorancad.com/v2/general/penal-codes" \
+  --header "Authorization: Bearer YOUR_API_KEY" \
+  --header "Accept: application/json" \
+  --header "Content-Type: application/json" \
+  --data '{
+  "codes": [
+    {
+      "title": "Unsafe Lane Change",
+      "code": "22107",
+      "type": "INFRACTION",
+      "bondType": "NONE",
+      "bondAmount": 0,
+      "jailTime": "0"
+    }
+  ]
+}'
+```
+{% endtab %}
+{% endtabs %}
+
+## Response
+
+Successful requests return `application/json`.
+
+```json
+{
+  "updated": 1
+}
+```
