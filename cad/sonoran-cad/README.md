@@ -28,7 +28,7 @@ When paired with [Sonoran Radio](https://docs.sonoransoftware.com/radio), units 
 
 ### 📱 Downloadable Apps
 
-In addition to our web version, you can download Sonoran CAD on the [iOS App Store](https://apps.apple.com/us/app/sonoran-cad/id1496539456), the [Google Play Store](https://play.google.com/store/apps/details?id=sonorancadmdt.app\&hl=en_US), or for [Windows Desktop](https://github.com/Sonoran-Software/SonoranCAD_Windows/releases/latest/download/Sonoran-CAD.exe).\
+In addition to our web version, you can download Sonoran CAD on the [iOS App Store](https://apps.apple.com/us/app/sonoran-cad/id1496539456), the [Google Play Store](https://play.google.com/store/apps/details?id=sonorancadmdt.app\&hl=en_US), or for [Windows Desktop](https://sonoran-software.github.io/Sonoran-Desktop-Apps/downloads/?app=cad&platform=windows).\
 \
 It's never been more easy to access your community's CAD system, regardless of what platform you're on!
 

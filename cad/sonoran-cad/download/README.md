@@ -1,6 +1,6 @@
 ---
 description: >-
-  Sonoran CAD is available on the web, Windows desktop, iOS App Store, and
+  Sonoran CAD is available on the web, Windows desktop, macOS, Linux, iOS App Store, and
   Google Play store! Select your platform below and download the official app
   today!
 ---
@@ -9,7 +9,7 @@ description: >-
 
 <figure><img src="../.gitbook/assets/downloadable-apps.png" alt=""><figcaption></figcaption></figure>
 
-<table data-header-hidden><thead><tr><th width="200">Website</th><th>iOS App Store</th></tr></thead><tbody><tr><td>Website</td><td>iOS App Store</td></tr><tr><td>iOS App Store</td><td><a href="https://apps.apple.com/us/app/sonoran-cad/id1496539456">Download</a></td></tr><tr><td>Google Play Store</td><td><a href="https://play.google.com/store/apps/details?id=sonorancadmdt.app&#x26;hl=en_US">Download</a></td></tr><tr><td>Windows</td><td><a href="https://github.com/Sonoran-Software/SonoranCAD_Windows/releases/latest/download/Sonoran-CAD.exe">Download</a></td></tr><tr><td>macOS</td><td><a href="https://github.com/Sonoran-Software/SonoranCAD_MacOS/releases/latest/download/Sonoran-CAD-universal.dmg">Download</a></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="200">Website</th><th>iOS App Store</th></tr></thead><tbody><tr><td>Website</td><td>iOS App Store</td></tr><tr><td>iOS App Store</td><td><a href="https://apps.apple.com/us/app/sonoran-cad/id1496539456">Download</a></td></tr><tr><td>Google Play Store</td><td><a href="https://play.google.com/store/apps/details?id=sonorancadmdt.app&#x26;hl=en_US">Download</a></td></tr><tr><td>Windows</td><td><a href="https://sonoran-software.github.io/Sonoran-Desktop-Apps/downloads/?app=cad&platform=windows">Download</a></td></tr><tr><td>macOS</td><td><a href="https://sonoran-software.github.io/Sonoran-Desktop-Apps/downloads/?app=cad&platform=macos">Download</a></td></tr><tr><td>Linux (AppImage)</td><td><a href="https://sonoran-software.github.io/Sonoran-Desktop-Apps/downloads/?app=cad&amp;platform=linux">Download</a></td></tr></tbody></table>
 
 ### MacOS & Windows Desktop
 
@@ -18,3 +18,9 @@ Our MacOS and Windows desktop application allows you to access [global hotkeys](
 ### iOS and Android
 
 Only Sonoran CAD has dedicated [iOS](https://apps.apple.com/us/app/sonoran-cad/id1496539456) and [Android](https://play.google.com/store/apps/details?id=sonorancadmdt.app\&hl=en_US) applications to access your community's CAD with a mobile native experience. Download it today for your tablet or mobile device!
+
+### Linux
+
+Download the AppImage, mark it executable in your file manager, and open it to start the app. These desktop downloads follow the latest available release for each platform.
+
+[Verify the Linux download signature](https://sonoran-software.github.io/Sonoran-Desktop-Apps/signing.html).
