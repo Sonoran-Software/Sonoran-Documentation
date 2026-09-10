@@ -4,13 +4,13 @@ description: Select FiveM or ER:LC and connect your game server to Sonoran Radio
 
 # Configure a Game Integration
 
-Each Sonoran Radio community server can be configured for **FiveM** or **Emergency Response: Liberty County (ER:LC)**. Your selection controls the setup tools shown under **Game Integration** and the map used for emergency zones under **Zones**.
+Each Sonoran Radio community server can be configured for **FiveM** or **Emergency Response: Liberty County (ER:LC)**. Your selection controls the installation tools, location features, and zone map shown together under **Game Integration**.
 
 Open your Radio community, then navigate to **Customize** > **Game Integration**.
 
 ## FiveM
 
-Select **FiveM** to display the existing FiveM resource setup and download tools.
+Select **FiveM** to display the FiveM zone editor. Expand **FiveM Installation** above the map when you need the resource setup and download tools; it stays collapsed when you are editing zones.
 
 Continue with [Installing the In-Game Resource](installing-the-in-game-resource.md) to download and configure the resource.
 
@@ -56,13 +56,15 @@ Treat the ER:LC API key like a password. Do not post it in Discord, screenshots,
 
 <figure><img src="../../.gitbook/assets/erlc-linked-server.png" alt="Linked ER:LC private server displaying the Hub synced status in Sonoran Radio"><figcaption><p>Hub synced confirms that Sonoran Radio is connected to the ER:LC private server.</p></figcaption></figure>
 
-The API key is stored securely by Sonoran Radio and is not returned to players or displayed again. To replace it, enter a new key and select **Update Link**.
+To replace the linked server key, enter a new key and select **Update Link**.
 
 To disconnect the private server, select **Unlink** and confirm the prompt. Live player positions and ER:LC signal updates stop until another server is linked.
 
 ### 4. Configure Signal Coverage
 
-The **Virtual Signal Towers** editor appears directly below the ER:LC private-server settings. You can lay out towers before linking the server, but the server must be synced before Radio can display live players or update their signal.
+The unified **ER:LC Map Configuration** editor appears directly below the private-server settings. You can lay out towers before linking the server, but the server must be synced before Radio can display live players or update their signal.
+
+Use **Towers** to configure signal coverage, or switch the same map to **Emergency Zones** to draw and edit room-specific zones. Switching back to FiveM restores the FiveM map and its emergency, geo-channel, and signal degradation zone options.
 
 {% content-ref url="../usage/in-game-radio/erlc-signal-towers.md" %}
 [erlc-signal-towers.md](../usage/in-game-radio/erlc-signal-towers.md)

@@ -20,20 +20,29 @@ If the private server is not connected yet, follow [Configure a Game Integration
 
 1. Navigate to **Customize** > **Game Integration**.
 2. Select **ER:LC**.
-3. Scroll to **Virtual Signal Towers** below the private-server settings.
+3. Scroll to **ER:LC Map Configuration** below the private-server settings.
 
-The separate **Zones** page also uses your game selection automatically. ER:LC servers use the ER:LC map for emergency zones, while FiveM servers use the FiveM map and continue to provide Geo Channels and Degrade Zones.
+The map combines virtual towers, live players, signal coverage, and emergency zones. Use the **Towers** and **Emergency Zones** buttons to switch editing tools without switching maps.
 
 ## Place a Tower
 
 1. Select **Place Tower**.
 2. Select the desired tower location on the ER:LC map.
-3. Enter a descriptive **Tower name**.
+3. In the edit menu that opens, enter a descriptive **Tower name**.
 4. Set the tower's **Range** in map units.
 
-Changes save automatically. Drag a tower marker to reposition it, or use the delete button beside a tower to remove it.
+Changes save automatically. Select any tower marker to reopen its menu, drag the marker to reposition it, or select **Delete Tower** in the menu to remove it.
 
 <figure><img src="../../../.gitbook/assets/erlc-tower-configuration.png" alt="ER:LC map with three overlapping virtual signal towers, live player markers, and a signal percentage tooltip"><figcaption><p>Overlapping tower ranges use the strongest signal and live player markers display their current percentage.</p></figcaption></figure>
+
+## Configure Emergency Zones
+
+1. Select **Emergency Zones** above the map.
+2. Select the Radio room whose zones you want to configure.
+3. Select **Draw Polygon** and place at least three points, then select **Finish Zone**; or select **Draw Circle**, then select its center and edge.
+4. In the zone menu, enter a name and select the channels that can transmit from the zone.
+
+Select an existing zone to reopen its menu. Drag the blue handles to reshape it, or select **Delete Zone** to remove it. Zone changes save automatically and remain visible when you return to tower editing.
 
 ## Understand Signal Coverage
 
@@ -60,7 +69,7 @@ Each connected user's Radio signal also refreshes every five seconds. Moving clo
 
 ### The Tower Editor Is Not Available
 
-Open **Customize** > **Game Integration** and confirm that the community server is set to **ER:LC**. The Virtual Signal Towers editor is not shown while FiveM is selected.
+Open **Customize** > **Game Integration** and confirm that the community server is set to **ER:LC**. The ER:LC Map Configuration editor is not shown while FiveM is selected.
 
 ### The Server Does Not Show Hub Synced
 

@@ -23,7 +23,7 @@ We've partnered with Rocket Node to bring you one-click Sonoran Radio installati
 
 Download a pre-configured version of the in-game resource from the panel. This download will already have your community ID and API key in the `config.lua` file.
 
-Navigate to **Customize** > **Game Integration** > **FiveM** > **Download Resource**.
+Navigate to **Customize** > **Game Integration**, select **FiveM**, expand **FiveM Installation**, and select **Download Resource**.
 
 ### 2. Extract the ZIP File
 
