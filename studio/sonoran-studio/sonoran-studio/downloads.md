@@ -1,5 +1,5 @@
 ---
-description: Download Sonoran Studio for Windows or Mac OSX.
+description: Download Sonoran Studio for Windows, macOS, or Linux.
 icon: download
 ---
 
@@ -9,9 +9,20 @@ icon: download
 
 Download our latest desktop apps for additional integrations like [Smart Lighting](smart-lighting.md) and [Stream Automations](stream-automations.md)!
 
-### [Download the Windows App](https://github.com/Sonoran-Software/Sonoran-Studio-Releases/releases/latest/download/Sonoran-Studio-Windows.exe)
+| Platform | Link |
+| --- | --- |
+| Website | [Visit](https://sonoran.studio) |
+| Windows Desktop | [Download](https://sonoran-software.github.io/Sonoran-Desktop-Apps/downloads/?app=studio&platform=windows) |
+| macOS Desktop | [Download](https://sonoran-software.github.io/Sonoran-Desktop-Apps/downloads/?app=studio&platform=macos) |
+| Linux (AppImage) | [Download](https://sonoran-software.github.io/Sonoran-Desktop-Apps/downloads/?app=studio&platform=linux) |
 
-### [Download the OSX App](https://github.com/Sonoran-Software/Sonoran-Studio-Releases/releases/latest/download/Sonoran-Studio-macOS.dmg)
+These desktop downloads follow the latest available release for each platform.
+
+### Linux
+
+Download the AppImage, mark it executable in your file manager, and open it to start the app.
+
+[Verify the Linux download signature](https://sonoran-software.github.io/Sonoran-Desktop-Apps/signing.html).
 
 ## Game Plugins
 
