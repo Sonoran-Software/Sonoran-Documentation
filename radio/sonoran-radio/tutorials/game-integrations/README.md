@@ -14,6 +14,5 @@ Choose your game for installation and game-specific features.
 
 **[Star Citizen](star-citizen/):** Coming soon.
 
-For other games, use the [desktop app and overlay](../usage/desktop-overlay.md). Game-specific signal features require a supported integration.
 
 Community setup, channels, and dispatch controls are covered in [Getting Started](../getting-started/) and [Using Sonoran Radio](../usage/).

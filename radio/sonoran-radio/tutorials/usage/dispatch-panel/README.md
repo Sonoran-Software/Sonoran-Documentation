@@ -15,5 +15,3 @@ Use these guides for shared Radio settings and dispatch controls:
 * [Multi-Server](multi-server.md)
 * [Custom Domain / Vanity URL](custom-domain-vanity-url.md)
 * [Logging](logging.md)
-
-Game-specific options are identified within each guide. For installation, see [Game Integrations](../../game-integrations/).

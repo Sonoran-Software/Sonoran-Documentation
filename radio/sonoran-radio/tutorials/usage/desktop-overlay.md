@@ -13,7 +13,7 @@ The desktop app provides an overlay for **FiveM, Arma 3, Roblox, and other games
 3. Select **Open Overlay** (the arrow leaving a square) on the dispatch or mobile panel.
 4. Position the radio over your game window.
 
-<figure><img src="../../.gitbook/assets/desktop-overlay/open-overlay.png" alt="Desktop panel toolbar with the Open Overlay button on the right"><figcaption><p>Select the arrow leaving a square in the upper-right toolbar to open the desktop overlay.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/desktop-overlay/open-overlay-annotated.png" alt="Desktop panel toolbar with the Open Overlay button on the right"><figcaption><p>Select the arrow leaving a square in the upper-right toolbar to open the desktop overlay.</p></figcaption></figure>
 
 To return to the main panel, use the radio's power button or **Return to Portal**.
 

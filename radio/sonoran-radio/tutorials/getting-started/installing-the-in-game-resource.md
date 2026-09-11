@@ -4,19 +4,14 @@ description: Learn how to download and install the Sonoran Radio FiveM resource.
 
 # Installing the FiveM In-Game Resource
 
-This guide installs the Sonoran Radio resource for **FiveM**. ER:LC does not require a game resource; follow [Configure a Game Integration](configure-game-integration.md#erlc) instead.
+## One-click Installation with RocketNode
 
-<details>
-<summary>One-click installation with RocketNode</summary>
-
-We've partnered with Rocket Node to bring you one-click Sonoran Radio installation for FiveM — making it easier than ever to host your community and connect with Sonoran Radio.
+RocketNode offers one-click Sonoran Radio installation for your FiveM server.
 
 * [Purchase your FiveM Game Server!](https://sonoran.link/p62G7ncv)
 * Use code `SONORAN` to save big!
 
 {% embed url="https://www.youtube.com/watch?v=1Vw4XwiLKgY" %}
-
-</details>
 
 ## Install the FiveM Resource
 
