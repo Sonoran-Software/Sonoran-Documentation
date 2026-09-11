@@ -92,7 +92,6 @@ site:
       key: section-7
       title: Studio
       path: studio
-      icon: tower-broadcast
       children:
         - type: space
           key: space-8

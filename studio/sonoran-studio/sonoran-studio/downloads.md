@@ -1,6 +1,5 @@
 ---
 description: Download Sonoran Studio for Windows, macOS, or Linux.
-icon: download
 ---
 
 # Downloads

@@ -2,7 +2,6 @@
 description: >-
   Create realtime Sonoran CAD and Radio overlays for OBS, TikTok LIVE Studio,
   and Streamlabs.
-icon: tower-broadcast
 ---
 
 # Sonoran Studio

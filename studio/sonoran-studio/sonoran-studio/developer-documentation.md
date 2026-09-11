@@ -1,6 +1,5 @@
 ---
 description: Control Sonoran Studio smart lighting and Streamer.bot from local tools
-icon: code
 ---
 
 # Developer Documentation

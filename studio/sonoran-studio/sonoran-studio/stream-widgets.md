@@ -2,7 +2,6 @@
 description: >-
   Add a Sonoran Studio browser source to OBS, TikTok LIVE Studio, or Streamlabs
   Desktop.
-icon: display
 ---
 
 # Stream Widgets

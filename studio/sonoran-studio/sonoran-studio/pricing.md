@@ -2,7 +2,6 @@
 description: >-
   Upgrade your Sonoran Studio to inlock additional integrations, customizations,
   and more!
-icon: dollar-sign
 ---
 
 # Pricing

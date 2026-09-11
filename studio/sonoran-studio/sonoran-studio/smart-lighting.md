@@ -2,7 +2,6 @@
 description: >-
   Control RGB lights, smart outlets, and SwitchBot button pressers in each scene
   frame.
-icon: lightbulb
 ---
 
 # Smart Lights, Outlets & Buttons
