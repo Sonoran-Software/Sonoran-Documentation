@@ -18,12 +18,14 @@ Use [Dispatch AI](../dispatch-ai.md) to change radio channels, manage scanned ch
 ## Emergency Call Readouts
 
 1. Connect the intended CAD server in Radio's **Customization** > **Dispatch AI**.
-2. Open **Radio Zones**, create emergency zones, and assign the channels that should receive calls in each zone. Use the room running Dispatch AI.
-3. Generate a 911 call in the linked CAD server with coordinates inside a zone.
+2. Open **Customization** > **Game Integration** > **FiveM**.
+3. Under **FiveM Zones**, select the **Server** running Dispatch AI, then select **Emergency Zones**.
+4. Draw a zone and select it to assign the channels that should receive calls in that area.
+5. Generate a 911 call in the linked CAD server with coordinates inside a zone.
 
 Dispatch AI creates a dispatch call, removes the original 911 call, and reads it over the zone's assigned channels. Calls without coordinates or outside the zones are not read automatically.
 
-<figure><img src="../../../.gitbook/assets/image (307).png" alt="Emergency zone and radio channel configuration"><figcaption><p></p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/game-integration/fivem-emergency-zones.png" alt="Game Integration with FiveM selected and Emergency Zones open"><figcaption><p></p></figcaption></figure>
 
 ## GPS Routing
 

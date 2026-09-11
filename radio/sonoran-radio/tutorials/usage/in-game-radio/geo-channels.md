@@ -18,11 +18,14 @@ For example, entering a downtown area can automatically switch your radio to the
 
 <summary>Geo Zones via Radio Panel</summary>
 
-In the **Geo Zone** tab, use the polygon, rectangle, or circle tool to create a custom zone on the map. Select the zone to customize the name, z coordinates (floor and ceiling height), and the channels to automatically transmit and scan when entered.
+1. Open **Customization** > **Game Integration** > **FiveM**.
+2. Under **FiveM Zones**, choose your **Server** and select **Geo Channels**.
+3. Use the polygon, rectangle, or circle tool to draw a zone.
+4. Select the zone to set its name, Z coordinates (floor and ceiling height), and channels to transmit and scan when entered.
 
 Additionally, you can enter comma separated ACE permissions for the zone. When configured, the zone will only apply to users with those ACE permissions.
 
-<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/game-integration/fivem-geo-channels.png" alt="FiveM Geo Channels in Game Integration"><figcaption></figcaption></figure>
 
 </details>
 

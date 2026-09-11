@@ -34,6 +34,14 @@ Green indicates stronger coverage; yellow and red indicate weaker coverage. Outs
 
 In **Towers** mode, hover over the map to preview the signal percentage at that location.
 
+## Customize Signal Effects
+
+Use **Custom Voice Effects** to control how your radio sounds as tower coverage weakens. Adjust signal-dependent effects and preview them at different signal strengths.
+
+{% content-ref url="../dispatch-panel/custom-voice-effects.md" %}
+[Custom Voice Effects](../dispatch-panel/custom-voice-effects.md)
+{% endcontent-ref %}
+
 ## View Live Players
 
 Players matched to linked Roblox accounts appear as blue markers with their names and signal percentages. Join the linked ER:LC server and allow a few seconds for the map to refresh.

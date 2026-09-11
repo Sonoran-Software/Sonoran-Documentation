@@ -22,9 +22,12 @@ Degradation zones are areas like tunnels, underground areas, or mountain valleys
 
 <summary>Degrade Zones via Panel</summary>
 
-Use the polygon, square, or circle tool to create a new zone. Select the zone to customize the name, Z coordinates (floor and ceiling height), and the degrade strength.
+1. Open **Customization** > **Game Integration** > **FiveM**.
+2. Under **FiveM Zones**, choose your **Server** and select **Degrade Zones**.
+3. Use the polygon, rectangle, or circle tool to draw a zone.
+4. Select the zone to set its name, Z coordinates (floor and ceiling height), and degrade strength.
 
-<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/game-integration/fivem-degrade-zones.png" alt="FiveM Degrade Zones in Game Integration"><figcaption></figcaption></figure>
 
 </details>
 
