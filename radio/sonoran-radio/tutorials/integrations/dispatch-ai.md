@@ -284,9 +284,13 @@ The AI agent will enable or disable your panic status.
 
 <details>
 
-<summary>FIveM: Emergency Call Readout</summary>
+<summary>FiveM and ER:LC: Emergency Call Readout</summary>
 
-In the Radio Zones menu, you can create custom zones and assign radio channels to each. When a 911 call is generated in CAD, the AI automatically creates a new dispatch call, reads the call over the channels configured for that zone, and removes the 911 call.
+Create emergency zones and assign radio channels to each zone for the room running Dispatch AI. For FiveM, use the Radio Zones menu. For ER:LC, select ER:LC under **Customize** > **Game Integration** and use the emergency zone editor on the ER:LC map.
+
+When a 911 call is generated in the linked CAD server with coordinates inside a configured emergency zone, the AI automatically creates a new dispatch call, removes the original 911 call, and reads the dispatch call over the channels configured for that zone. Calls without coordinates or outside the configured zones are not automatically read out.
+
+For ER:LC, connect the private server to Sonoran CAD and enable emergency call synchronization for the desired teams. Link that CAD server to Dispatch AI in Radio. ER:LC emergency calls imported into CAD include the coordinates used to match Radio's emergency zones; linking the ER:LC server to Radio alone does not import emergency calls into CAD.
 
 <figure><img src="../../.gitbook/assets/image (307).png" alt=""><figcaption></figcaption></figure>
 
