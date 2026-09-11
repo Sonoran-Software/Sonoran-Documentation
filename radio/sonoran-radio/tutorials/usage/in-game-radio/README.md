@@ -1,15 +1,13 @@
 ---
-description: Learn more about Sonoran Radio's in-game usage!
+description: Radio features provided by the FiveM resource.
 ---
 
-# In-Game Radio
+# FiveM In-Game Radio
 
-Sonoran Radio provides game-specific integrations for FiveM, ER:LC, and Arma 3. FiveM uses the downloadable in-game resource, ER:LC uses linked Roblox accounts and virtual signal towers, and Arma 3 uses a client/server mod with physical or signal-only repeaters.
+These guides cover the **FiveM in-game resource**.
 
-{% content-ref url="../../integrations/arma-3/" %}
-[arma-3](../../integrations/arma-3/)
-{% endcontent-ref %}
+Start with [installation](../../getting-started/installing-the-in-game-resource.md), then learn [radio controls](using-the-in-game-radio/) and [keybinds](using-the-in-game-radio/fivem-keybinds-and-commands.md).
 
-{% content-ref url="erlc-signal-towers.md" %}
-[erlc-signal-towers.md](erlc-signal-towers.md)
-{% endcontent-ref %}
+Use the pages in this section to configure frames, repeaters, scanners, jammers, speakers, and other FiveM features.
+
+Playing another game? See [Roblox / ER:LC](../../game-integrations/roblox/) or [Arma 3](../../integrations/arma-3/). Both use the [desktop overlay](../desktop-overlay.md).

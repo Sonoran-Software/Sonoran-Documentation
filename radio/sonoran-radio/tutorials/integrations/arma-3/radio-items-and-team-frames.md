@@ -1,19 +1,17 @@
 ---
-description: >-
-  Use Arma 3 inventory radios to select BLUFOR, OPFOR, or custom Sonoran Radio
-  desktop frames.
+description: Use Arma 3 inventory radios to select BLUFOR, OPFOR, or custom Sonoran Radio desktop frames.
 ---
 
 # Radio Items and Team Frames
 
-The Arma mod reports the player's radio `CfgWeapons` class to the local desktop overlay. The overlay switches to the community frame mapped to that class.
+Equip a radio item to use the desktop frame assigned to it by your community.
 
 ## Included radio items
 
-| Display name           | Item class                 | Default frame |
-| ---------------------- | -------------------------- | ------------- |
+| Display name | Item class | Default frame |
+| --- | --- | --- |
 | Sonoran Radio (BLUFOR) | `SonoranRadio_Item_BLUFOR` | ARMA 3 BLUFOR |
-| Sonoran Radio (OPFOR)  | `SonoranRadio_Item_OPFOR`  | ARMA 3 OPFOR  |
+| Sonoran Radio (OPFOR) | `SonoranRadio_Item_OPFOR` | ARMA 3 OPFOR |
 
 <figure><img src="../../../.gitbook/assets/desktop-radio-overlay.jpg" alt="Sonoran Radio desktop radio frame displayed over Arma 3 gameplay"><figcaption><p>The desktop radio overlay remains visible and usable while playing Arma 3.</p></figcaption></figure>
 
@@ -21,7 +19,12 @@ Newly created Radio communities include the two example desktop frames and mappi
 
 ## Give a player a radio
 
-Use Eden unit inventory, Zeus Arsenal, or a mission loadout to give the player one of the items. Search Arsenal for **Sonoran Radio (BLUFOR)** or **Sonoran Radio (OPFOR)**.
+1. Open the player loadout in Eden or Zeus Arsenal.
+2. Search for **Sonoran Radio (BLUFOR)** or **Sonoran Radio (OPFOR)**.
+3. Equip the intended radio item.
+
+<details>
+<summary>Give a radio using mission scripts</summary>
 
 In a unit's Eden initialization field, use Arma's [`linkItem`](https://community.bohemia.net/wiki/linkItem) command:
 
@@ -36,6 +39,8 @@ player linkItem "SonoranRadio_Item_BLUFOR";
 ```
 
 For OPFOR, replace the class name with `SonoranRadio_Item_OPFOR`.
+
+</details>
 
 The item name does not automatically follow the unit's side. Mission makers must give each player or loadout the desired BLUFOR or OPFOR item.
 
@@ -52,19 +57,14 @@ Give a player only one intended radio item at a time. An assigned radio takes pr
 5. Select **Save**.
 6. Close and reopen the desktop overlay on player computers so it downloads the updated frame list.
 
-Class matching is case-insensitive. One item class can map to only one frame, a frame can contain up to 32 mapped classes, and each class name can contain up to 128 characters.
+Class matching is case-insensitive. Assign each item class to one frame.
 
-Uploading new custom frame artwork requires a Pro subscription. Mapping an Arma item controls which configured frame the overlay selects; the Arma mod does not store frame images or Sonoran credentials.
+Uploading new custom frame artwork requires a Pro subscription.
 
-## When frame switching occurs
+Changes to frame mappings appear after the player reopens the overlay. Equipping a mapped radio switches the frame within a few seconds. If an item has no mapping, the current frame stays selected.
 
-The desktop overlay downloads the community's frame configuration when the overlay opens. Changes saved by an administrator therefore appear after the player closes and reopens the overlay.
-
-While the overlay is open, the mod checks the active inventory radio on the normal signal update interval and sends a heartbeat at least every two seconds. The overlay checks the local bridge twice per second, so an equipped-item change normally switches the frame within one to two seconds.
-
-If the detected item has no mapping, the current frame remains selected.
-
-## Custom inventory items
+<details>
+<summary>Custom inventory items</summary>
 
 Any custom item that inherits Arma's `ItemRadio` is detected automatically. Add its `CfgWeapons` class name to the desired frame in the admin panel.
 
@@ -79,3 +79,5 @@ Clear the override and return to automatic detection with:
 ```sqf
 [""] call sonoran_radio_fnc_setActiveRadioItem;
 ```
+
+</details>

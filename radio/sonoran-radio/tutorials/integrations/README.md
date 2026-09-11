@@ -1,9 +1,11 @@
 ---
-description: Learn more about our official integrations with Sonoran Radio!
+description: Connect Sonoran Radio to your other tools.
 ---
 
-# Integrations
+# Other Integrations
 
-{% content-ref url="arma-3/" %}
-[arma-3](arma-3/)
-{% endcontent-ref %}
+* [Stream Deck Plugin](stream-deck-plugin.md)
+* [Dispatch AI](dispatch-ai.md)
+* [Sonoran CMS](sonoran-cms.md)
+
+For game installation and game-specific integrations, see [Game Integrations](../game-integrations/).

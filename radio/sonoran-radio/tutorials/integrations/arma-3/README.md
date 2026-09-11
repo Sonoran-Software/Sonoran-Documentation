@@ -1,14 +1,12 @@
 ---
-description: >-
-  Connect Arma 3 to the Sonoran Radio desktop overlay with physical towers,
-  inventory radios, and optional AI hearing.
+description: Connect Arma 3 to the Sonoran Radio desktop overlay with physical towers, inventory radios, and optional AI hearing.
 ---
 
 # Arma 3 Integration
 
 The Sonoran Radio Arma 3 integration connects an Arma mission to the Sonoran Radio desktop overlay. Signal towers affect radio quality, inventory items can select team-specific radio frames, and an optional setting lets nearby AI detect players while they transmit.
 
-The integration is independent of TFAR and ACRE. It does not install, load, or call either mod. CBA\_A3 is the only Arma runtime dependency.
+CBA_A3 is required. TFAR and ACRE are not required.
 
 {% hint style="info" %}
 Sonoran Radio does not add an in-game radio menu or a `Y` keybind. Players use the **Sonoran Radio desktop app** and its **Open Overlay** button for radio controls.
@@ -16,15 +14,16 @@ Sonoran Radio does not add an in-game radio menu or a `Y` keybind. Players use t
 
 ## Features
 
-* Server-owned signal towers placed in Eden or Zeus
+* Signal towers placed in Eden or Zeus
 * Three stock Arma tower models and invisible signal-only repeaters
 * Configurable range, dish capacity, power, destruction, and terrain attenuation
-* Join-in-progress tower synchronization
 * Automatic signal degradation in the desktop overlay
 * BLUFOR and OPFOR inventory radio items
 * Custom Arma item-to-desktop-frame mappings
-* Optional TFAR-style AI hearing without requiring TFAR
+* Optional AI hearing while transmitting
 * SQF APIs for scripted missions and custom inventory systems
+
+For shared controls and hotkeys, see [Desktop App & Overlay](../../usage/desktop-overlay.md).
 
 ## Guides
 

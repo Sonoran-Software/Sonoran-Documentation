@@ -1,20 +1,20 @@
 ---
-description: >-
-  Diagnose Arma 3 tower signal, desktop-frame switching, bridge, and AI-hearing
-  issues.
+description: Diagnose Arma 3 tower signal, desktop-frame switching, bridge, and AI-hearing issues.
 ---
 
 # Troubleshooting
 
-## Pressing Y does not open a menu
-
+<details>
+<summary>Pressing Y does not open a menu</summary>
 This is expected. Sonoran Radio does not add an Arma radio dialog or `Y` keybind. Open the Sonoran Radio desktop app, connect to a Radio channel, and select **Open Overlay**.
 
-## The overlay receives no tower signal
+</details>
 
+<details>
+<summary>The overlay receives no tower signal</summary>
 Check the following:
 
-1. CBA\_A3 and Sonoran Radio are loaded on both the server and client.
+1. CBA_A3 and Sonoran Radio are loaded on both the server and client.
 2. The Sonoran Radio desktop overlay is open.
 3. A tower module exists and **Powered** is enabled.
 4. **Active dishes** is greater than zero.
@@ -25,15 +25,17 @@ Check the following:
 
 Enable **Signal logging** in the same CBA settings page to write signal changes to the client RPT log. Arma normally stores client RPT files under:
 
-```
+```text
 %LOCALAPPDATA%\Arma 3
 ```
 
-## The local bridge is not running
+</details>
 
+<details>
+<summary>The local bridge is not running</summary>
 Visit:
 
-```
+```text
 http://127.0.0.1:39114/health
 ```
 
@@ -46,8 +48,10 @@ If the page does not load:
 
 The bridge is localhost-only. Firewall port forwarding is not required.
 
-## The wrong radio frame is displayed
+</details>
 
+<details>
+<summary>The wrong radio frame is displayed</summary>
 1. Confirm the exact item class is listed on the intended frame under **Customization** > **Desktop Frames**.
 2. Save the frame configuration.
 3. Close and reopen the desktop overlay to download the changed mappings.
@@ -56,17 +60,21 @@ The bridge is localhost-only. Firewall port forwarding is not required.
 
 Class matching is case-insensitive. If an item has no mapping, the overlay leaves the current frame selected.
 
-## The BLUFOR or OPFOR frame is missing
+</details>
 
+<details>
+<summary>The BLUFOR or OPFOR frame is missing</summary>
 Newly created communities include the example ARMA 3 BLUFOR and ARMA 3 OPFOR frames. For an older community, create or select a desktop frame and add the corresponding class manually:
 
-```
+```text
 SonoranRadio_Item_BLUFOR
 SonoranRadio_Item_OPFOR
 ```
 
-## AI does not react to radio traffic
+</details>
 
+<details>
+<summary>AI does not react to radio traffic</summary>
 1. Enable **AI can hear transmissions** in the mission-wide CBA addon settings.
 2. Confirm the desktop overlay—not Arma proximity voice—is actively transmitting.
 3. Confirm the AI is alive, is not player-controlled, and is inside the configured hearing range.
@@ -75,6 +83,10 @@ SonoranRadio_Item_OPFOR
 
 TFAR is not required and does not control this setting.
 
-## A tower cannot be destroyed
+</details>
 
+<details>
+<summary>A tower cannot be destroyed</summary>
 Invisible towers have no physical object and cannot take damage. For a physical tower, edit its module and make sure **Indestructible** is disabled. If a synchronized editor object has its own mission damage protection, remove that protection as well.
+
+</details>

@@ -1,5 +1,5 @@
 ---
-description: In-game players can call 911 and talk to you through Sonoran Radio!
+description: Place and answer emergency calls through Sonoran Radio.
 ---
 
 # Emergency Calls
@@ -14,7 +14,7 @@ description: In-game players can call 911 and talk to you through Sonoran Radio!
 
 <summary>Via Portal/App</summary>
 
-Users can place emergency calls directly from the web, desktop, or mobile apps.
+Users can place emergency calls directly from the web, desktop, or mobile apps.&#x20;
 
 <div><figure><img src="../../../.gitbook/assets/image (320).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../../.gitbook/assets/image (318).png" alt=""><figcaption></figcaption></figure></div>
 
@@ -26,11 +26,11 @@ Users can be restricted to accessing the emergency call panel and not the radio 
 
 </details>
 
-### Emergency Calling In-Game
+### FiveM Emergency Calling
 
 <details>
 
-<summary>Emergency Calling In-Game</summary>
+<summary>FiveM Emergency Calling</summary>
 
 Players are able to make an emergency call in FiveM with `/radio 911`. This will place them in a call on the Dispatch Panel waiting for a dispatcher.
 
@@ -56,7 +56,7 @@ Mic clicks are disabled in emergency channels
 
 ## Ending the Emergency Call
 
-Dispatchers can end an emergency call with the red "End Call" button, and in-game players can end it by using `/radio 911` again.
+Dispatchers can end an emergency call with the red "End Call" button, and FiveM players can end it by using `/radio 911` again.
 
 <figure><img src="../../../.gitbook/assets/image (214).png" alt=""><figcaption><p>Sonoran Radio - End 911 Call</p></figcaption></figure>
 
@@ -74,14 +74,14 @@ Dispatchers can also manually dial an in-game number to call someone directly.
 
 <figure><img src="../../../.gitbook/assets/image (335).png" alt=""><figcaption></figcaption></figure>
 
-## Customize The Emergency Number & Banner
+## FiveM: Customize the Emergency Number & Banner
 
-By [editing the config file](../../getting-started/installing-the-in-game-resource.md#updates) you can customize the following options:
+By [editing the config file](../../getting-started/installing-the-in-game-resource.md#configuration-values) you can customize the following options:
 
 1. Customize `911` to any other number or word by editing the `emergencyCommand` property.
 2. Hide the user's emergency call banner by setting `showEmergencyCallHelp` to `false`.
 
-## Integrated Phone Scripts
+## FiveM Phone Scripts
 
 Sonoran Radio also integrates with popular FiveM phone scripts like LB Phone!
 
@@ -89,7 +89,7 @@ Sonoran Radio also integrates with popular FiveM phone scripts like LB Phone!
 [fivem-phone-scripts.md](../../integrations/fivem-phone-scripts.md)
 {% endcontent-ref %}
 
-## Developer Documentation
+## FiveM Developer Documentation
 
 Third-party scripts, such as a phone system, can also programmatically start and end emergency calls.
 

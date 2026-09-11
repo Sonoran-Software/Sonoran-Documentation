@@ -2,7 +2,9 @@
 description: Learn more about custom integrations with the in-game resource!
 ---
 
-# Resource API
+# FiveM Resource API
+
+These events are provided by the **FiveM resource** for use in FiveM scripts. For shared HTTP endpoints, see [API Endpoints v2](api-endpoints-v2/).
 
 ## Push-to-talk
 
@@ -144,7 +146,7 @@ exports['sonoranradio']:handleNameChange('my new name')
 
 #### Guest Display Names
 
-To customize guest display names without giving permission to change their own name, you can update the `Config.getGuestDisplayName`
+To customize guest display names without giving permission to change their own name, you can update the `Config.getGuestDisplayName`&#x20;
 
 ```lua
 -- My Custom Guest Display Name Generator

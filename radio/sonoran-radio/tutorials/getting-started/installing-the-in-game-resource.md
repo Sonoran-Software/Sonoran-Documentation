@@ -6,7 +6,8 @@ description: Learn how to download and install the Sonoran Radio FiveM resource.
 
 This guide installs the Sonoran Radio resource for **FiveM**. ER:LC does not require a game resource; follow [Configure a Game Integration](configure-game-integration.md#erlc) instead.
 
-## A. One-Click Installation (RocketNode)
+<details>
+<summary>One-click installation with RocketNode</summary>
 
 We've partnered with Rocket Node to bring you one-click Sonoran Radio installation for FiveM — making it easier than ever to host your community and connect with Sonoran Radio.
 
@@ -15,7 +16,9 @@ We've partnered with Rocket Node to bring you one-click Sonoran Radio installati
 
 {% embed url="https://www.youtube.com/watch?v=1Vw4XwiLKgY" %}
 
-## B. Pre-Configured Resource Installation
+</details>
+
+## Install the FiveM Resource
 
 {% embed url="https://youtu.be/5cPJCugzP4g" %}
 
@@ -23,7 +26,7 @@ We've partnered with Rocket Node to bring you one-click Sonoran Radio installati
 
 Download a pre-configured version of the in-game resource from the panel. This download will already have your community ID and API key in the `config.lua` file.
 
-Navigate to **Customize** > **Game Integration**, select **FiveM**, expand **FiveM Installation**, and select **Download Resource**.
+Navigate to **Customize** > **Game Integration** > **FiveM** > **FiveM Installation**. Expand the installation section and download the resource.
 
 ### 2. Extract the ZIP File
 
@@ -40,11 +43,7 @@ exec @sonoranradio/sonoranradio.cfg
 ```
 
 {% hint style="danger" %}
-It is very important that the `sonoranradio_updatehelper` resource is not started manually. Doing so may cause a server crash if updates are available due to a race condition.
-
-**DO NOT** start the whole \[sonoranradio] folder as that will also start the sonoranradio\_updatehelper which might cause crashing if started manually.
-
-Example of what NOT to do: `ensure [sonoranradio]`
+Do not start `sonoranradio_updatehelper` manually or use `ensure [sonoranradio]`. Use the `exec` line above to avoid server crashes.
 {% endhint %}
 
 {% hint style="danger" %}
@@ -90,17 +89,15 @@ add_ace resource.sonoranradio_updatehelper command allow
 ```
 
 {% hint style="danger" %}
-It is very important that the `sonoranradio_updatehelper` resource is not started manually. Doing so may cause a server crash if updates are available due to a race condition.
-
-**DO NOT** start the whole \[sonoranradio] folder as that will also start the sonoranradio\_updatehelper which might cause crashing if started manually.
-
-Example of what NOT to do: `ensure [sonoranradio]`
+Do not start `sonoranradio_updatehelper` manually or use `ensure [sonoranradio]`. Use the `exec` line above to avoid server crashes.
 {% endhint %}
 
 ***
 {% endif %}
 
-## Configuration Values <a href="#updates" id="updates"></a>
+## Configuration Values
+
+<a id="configuration-options"></a>
 
 <details>
 
@@ -126,7 +123,7 @@ speedUnit = 'mph', -- mph | kmh | none -- The unit of speed provided with the ca
 withPostals = false, -- Whether to include postals with the automatic callouts
 postalResource = 'nearest-postal',
 <strong>}
-</strong></code></pre></td><td>When enabled, user radios will <a href="/broken/pages/8K95enlvAv1TRZPhQrlS">automatically transmit their heading, road, and speeds</a> during a pursuit.</td></tr><tr><td><code>geoChannels</code></td><td><pre class="language-lua"><code class="lang-lua">Config.geoChannels = {
+</strong></code></pre></td><td>When enabled, user radios will <a href="../usage/in-game-radio/pursuit-callouts.md">automatically transmit their heading, road, and speeds</a> during a pursuit.</td></tr><tr><td><code>geoChannels</code></td><td><pre class="language-lua"><code class="lang-lua">Config.geoChannels = {
 enabled = true,
 command = 'sonradgeoswitch', -- command to toggle geo-channel switching | e.g. /sonradgeoswitch
 friendlyCommand = 'geoswitch', -- friendly subcommand of the /radio command to toggle geo-channel switching | e.g. / radio geoswitch
@@ -164,7 +161,7 @@ jammers = {
 
 ***
 
-## ACE Permissions (Command Restrictions) <a href="#updates" id="updates"></a>
+## ACE Permissions (Command Restrictions)
 
 ACE permissions allow communities to restrict access to actions like using the radio, adding and removing towers, repairing towers, and more.
 
