@@ -34,9 +34,7 @@ Green indicates stronger coverage; yellow and red indicate weaker coverage. Outs
 
 In **Towers** mode, hover over the map to preview the signal percentage at that location.
 
-## Customize Signal Effects
-
-Use **Custom Voice Effects** to control how your radio sounds as tower coverage weakens. Adjust signal-dependent effects and preview them at different signal strengths.
+To make signal quality affect transmission audio, your community needs to configure **Custom Voice Effects** and assign the effect profile to its radio channels. Enable effects such as **Clipping**, **Digital**, or **Analog** to make audio cut out, distort, or become static-filled as tower signal weakens. Follow the guide below to customize and apply these effects.
 
 {% content-ref url="../dispatch-panel/custom-voice-effects.md" %}
 [Custom Voice Effects](../dispatch-panel/custom-voice-effects.md)
