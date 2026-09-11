@@ -136,7 +136,7 @@ distance = 30.0, -- Distance in meters from the waypoint to trigger ON_SCENE sta
 statusEnum = 4, -- Status enum for "ON_SCENE" -- See https://docs.sonoransoftware.com/cad/api-integration/api-endpoints/emergency/identifiers/unit-status for more information
 timeout = 300000 -- Time in milliseconds to timeout the auto ON_SCENE status after arriving at the waypoint
 }
-</code></pre></td><td>When the <a href="../integrations/dispatch-ai.md#fivem-gps-route-to-postal">AI dispatcher GPS routes a user</a>, <a href="../integrations/dispatch-ai.md#fivem-automatic-status-on-postal">automatically update their CAD status</a> to en-route. Upon arrival, update their CAD status to on-scene.</td></tr><tr><td><code>radioJammers</code></td><td><pre><code>Config.radioJammers = {
+</code></pre></td><td>When the <a href="../integrations/dispatch-ai/fivem.md#gps-routing">AI dispatcher GPS routes a user</a>, <a href="../integrations/dispatch-ai/fivem.md#gps-routing">automatically update their CAD status</a> to en-route. Upon arrival, update their CAD status to on-scene.</td></tr><tr><td><code>radioJammers</code></td><td><pre><code>Config.radioJammers = {
 enabled = true, -- Enable or disable radio jammers
 menuCommand = 'jammers', -- Subcommand to open the jammers menu | e.g. /sonoranradio jammers
 toggleRange = 3.0, -- Distance in meters required to toggle a jammer on/off

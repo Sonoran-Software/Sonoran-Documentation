@@ -50,3 +50,5 @@ For shared controls and hotkeys, see [Desktop App & Overlay](../../usage/desktop
 {% content-ref url="troubleshooting.md" %}
 [troubleshooting.md](troubleshooting.md)
 {% endcontent-ref %}
+
+Use [Dispatch AI for Arma 3](../dispatch-ai/arma-3.md) to change radio channels, manage scanned channels, set timers, and work with CAD from the desktop overlay.

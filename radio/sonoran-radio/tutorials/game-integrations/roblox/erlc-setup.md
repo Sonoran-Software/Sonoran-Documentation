@@ -56,3 +56,5 @@ Already linked Roblox through another Sonoran product? You can use that existing
 Live player positions and signal updates stop while the server is unlinked.
 
 </details>
+
+For automatic emergency call announcements, complete [Dispatch AI for ER:LC](../../integrations/dispatch-ai/erlc.md).

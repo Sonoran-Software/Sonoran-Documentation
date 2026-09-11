@@ -1,384 +1,200 @@
 ---
-description: >-
-  Speak to our AI dispatcher over the radio to manage CAD status, dispatch
-  calls, run record lookups, and more.
+description: Use voice commands to control your radio, set timers, and work with Sonoran CAD across games.
 ---
 
 # Dispatch AI
 
-<figure><img src="../../.gitbook/assets/DispatchAI.webp" alt=""><figcaption></figcaption></figure>
+Dispatch AI helps you control Sonoran Radio and work with Sonoran CAD by voice. Change channels, manage scanned channels, set timers, review your current CAD call, and more while playing.
 
-{% hint style="danger" %}
-This feature is in a public **BETA** state.
-
-Services may be intermittent and unreliable. Some features may experience issues.
-
-Dispatch AI is not yet approved for full, production use. Utilize dispatch AI at your own risk.
-{% endhint %}
+<figure><img src="../../.gitbook/assets/DispatchAI.webp" alt="Sonoran Radio Dispatch AI"><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
-This feature has limits based on your current subscription tier, but is still fully available on the free version of both Sonoran CAD and Sonoran Radio.
-
-[Learn more about our paid subscription plans.](../../pricing/pricing-faq/standalone-pricing.md)
+Dispatch AI is in public beta. Usage limits depend on your community's [subscription](../../pricing/pricing-faq/standalone-pricing.md#dispatch-ai); a free tier is available.
 {% endhint %}
 
-## Language Support
+<a id="setup-documentation"></a>
 
-Sonoran Radio is fully translated in over a dozen languages, with our [public portal allowing communities to submit translation improvements](https://docs.sonoransoftware.com/other/translation-support). By default, dispatch AI uses the same language selected for the app. Users can select a different option just for the AI. Or, [change their app's language](https://docs.sonoransoftware.com/other/translation-support).
+## Common Setup
 
-<figure><img src="../../.gitbook/assets/image (339).png" alt="" width="375"><figcaption></figcaption></figure>
+Complete this setup once for each Radio server using Dispatch AI. **The current setup requires a linked Sonoran CAD community, including for radio commands.**
 
-## Setup Documentation
+1. In Sonoran CAD, open **Admin** > **Advanced** > **In-Game Integration** > **Web API**. Copy the community ID and API key.
+2. In CAD, open **Admin** > **Customization** > **Servers** and note the server ID. The default is `1`.
+3. In Radio's admin panel, open **Customization** > **Dispatch AI**. Select a Radio server or use **+** to create one.
+4. Under **Link Sonoran CAD**, enter the CAD community ID, API key, and server ID. Fields save automatically when you leave them.
+5. Toggle **Dispatch AI Enabled** on.
+6. Sign in to Radio with your Sonoran account, join that Radio server, and connect to a channel. Use the same account in CAD for actions involving your unit.
 
-### 1. Copy Sonoran CAD API Information
-
-<details>
-
-<summary>Copy Sonoran CAD API Information</summary>
-
-Dispatch AI requires a Sonoran CAD community ID, API key, and server ID.
-
-The community ID and API key are located in the **Admin** panel > **Advanced** > **In-Game Integration** > **API**.
-
-The server ID can be found in the **Admin** panel > **Customization** > **Servers**. The default server ID is `1`.
-
-<div><figure><img src="../../.gitbook/assets/image (323).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (324).png" alt=""><figcaption></figcaption></figure></div>
-
-</details>
-
-### 2. Link CAD In Radio
-
-<details>
-
-<summary>Link CAD In Radio</summary>
-
-In the radio **Customization** panel > **Dispatch AI** > Select a server or create one. Then, enter your Sonoran CAD community ID, API key, and server ID.
-
-Ensure that you toggle Dispatch AI to **enabled**.
-
-<figure><img src="../../.gitbook/assets/image (338).png" alt=""><figcaption></figcaption></figure>
-
-</details>
-
-### 3. Prompt Customization
-
-<details>
-
-<summary>AI Prompt Phrases</summary>
-
-The AI has a set of tools it can use to take action in the CAD and on the radio—such as running lookups, creating calls, or updating statuses.
-
-Radio traffic varies by community. One agency might say, “show me out on traffic with a blue sedan,” while another says, “create a traffic stop call with a blue sedan.”
-
-Prompt phrase customization lets you train the AI to map your agency’s specific radio language to the correct system actions, so it responds appropriately to local lingo.
-
-Keep your phrases short and direct. Adding too many phrases can eventually overload the AI's context window.
-
-<figure><img src="../../.gitbook/assets/image (326).png" alt=""><figcaption></figcaption></figure>
-
-</details>
-
-## Enable/Disable the AI
-
-<details>
-
-<summary>Manually</summary>
-
-The AI can be manually toggled on or off via the CAD link page.
-
-<figure><img src="../../.gitbook/assets/image (297).png" alt="" width="227"><figcaption></figcaption></figure>
-
-</details>
-
-<details>
-
-<summary>Auto Disable w/Human Dispatcher</summary>
-
-The AI can be automatically disabled whenever an active dispatcher is in the CAD.
-
-When this feature is enabled, the AI will check for a dispatcher once per minute.
-
-<figure><img src="../../.gitbook/assets/image (298).png" alt="" width="227"><figcaption></figcaption></figure>
-
-</details>
+<figure><img src="../../.gitbook/assets/dispatch-ai/setup-and-timers.png" alt="Dispatch AI configuration showing enable controls, timer settings, and the Sonoran CAD link"><figcaption><p>Configure Dispatch AI for the selected Radio server.</p></figcaption></figure>
 
 ## Using the AI
 
-### Invoke the AI
+Hold push-to-talk and start your request with **Dispatch**, the default wake word. For example: “Dispatch, switch me to TAC 1.” Wait for the AI's response before making another request.
 
-{% hint style="info" %}
-When first connecting to the radio, if you are the only user in the room, the AI agent may take up to 15 seconds to join.
+When the first user connects, allow a few seconds for the “Dispatch Online” announcement.
 
-When the agent has joined, a brief "Dispatch Online" audio will play.
-{% endhint %}
-
-{% hint style="warning" %}
-FiveM users must be logged into the radio with their Sonoran account (4-digit link code on first use) or have ran `/link` in-game to link their CAD. Otherwise, Dispatch AI will be unable to determine the CAD user to run the AI actions against.
-{% endhint %}
+<a id="via-hotkey"></a>
 
 <details>
+<summary>Wake words and hotkeys</summary>
 
-<summary>Via Wake Work</summary>
+1. Open **Settings** > **AI** to configure your wake word. Use the microphone button to record a custom wake word.
+2. For a manual trigger in the web or desktop app, open **Settings** > **Hotkeys** and set **AI Toggle**.
+3. Hold push-to-talk, activate the AI, and speak your request.
 
-When pressing your push-to-talk key, a local AI listens to your microphone feed for the customizable wake word. By default, this is **Dispatch**.
+Listen for the activation beep. Say the wake word near the start of your transmission.
 
-Users can customize their wake words by pressing the microphone button and speaking their custom wake words.
+<figure><img src="../../.gitbook/assets/image (327).png" alt="Dispatch AI wake word settings"><figcaption></figcaption></figure>
 
-Communities can also [customize the default wake word for all users](../usage/dispatch-panel/default-user-settings.md).
+FiveM players can also use the [in-game AI keybind](dispatch-ai/fivem.md#setup).
 
-<figure><img src="../../.gitbook/assets/image (327).png" alt=""><figcaption></figcaption></figure>
+</details>
 
-#### Prompting the AI
+<a id="ai-commands-and-features"></a>
+<a id="radio-functionality"></a>
 
-In order to reduce false triggers and conserve local resources, the AI will only listen to the first five seconds of your transmission. This amount can be modified in the **Advanced** tab of the **Audio** settings.
+## Radio Commands
 
-Upon detection of the wake word, an audible beep indicates that the AI has been activated. Users may begin speaking before the beep is heard, as long as the tone occurs at some point during the same transmission.
+These commands work across games, including **FiveM, ER:LC, and Arma 3**. Use the channel names configured by your community.
 
-**Example**
+| Action | Example |
+| --- | --- |
+| Change your primary transmit channel | “Dispatch, switch me to TAC 1.” |
+| Move another connected user | “Dispatch, move A-12 to Dispatch.” |
+| Add a scanned channel | “Dispatch, add Fire to my scanned channels.” |
+| Remove a scanned channel | “Dispatch, remove Fire from my scanned channels.” |
+| Hear your current channels | “Dispatch, what channel am I on?” |
 
-If your wake word is **Dispatch**, then your transmissions to the AI would be as follows:
+Channel changes respect community access permissions. Moving another user requires permission to move clients. Include the group name when several channels have the same name, or answer the AI's clarification.
 
-\<wake word>, \<optional: my unit number>, \<action to do>\
-\&#xNAN;_**Dispatch**, A-10, mark me as available._\
-\&#xNAN;_**Dispatch**, A-10, run a lookup on the license plate ABC123_
+## Timers
+
+Ask for a timer by duration and, optionally, a purpose. Dispatch AI tells you when it expires.
+
+| Action | Example |
+| --- | --- |
+| Start a timer | “Dispatch, set a timer for five minutes.” |
+| Start a named timer | “Dispatch, start a two-minute PIT timer.” |
+| Cancel your timer | “Dispatch, cancel my timer.” |
+
+You can have one active timer in the Radio server. Starting another replaces it. Timers must be at least 10 seconds and no longer than the community's configured maximum, up to 30 minutes.
+
+<details>
+<summary>Configure community timer limits</summary>
+
+1. Open **Customization** > **Dispatch AI** and select the Radio server.
+2. Under **Dispatch Timers**, turn **Enable dispatch timers** on or off.
+3. Set **Maximum timer duration (minutes)** from `1` to `30`. Leave the field to save.
+
+The default maximum is 30 minutes. See the [setup screenshot](#common-setup) for these controls.
+
+</details>
+
+## Sonoran CAD Commands
+
+CAD actions use the community and server linked in [Common Setup](#common-setup). Be on duty with the appropriate unit selected in CAD when asking about your status or current call.
+
+<details>
+<summary>Review your current call</summary>
+
+Ask the AI to repeat the details of the CAD dispatch call you are attached to.
+
+“Dispatch, repeat my current call.”
+
+You can also ask about the latest call or give a short correction to a recent request, such as “Dispatch, actually, the plate is ABC124.” Be specific if several calls or units could match.
 
 </details>
 
 <details>
+<summary>Status, lookups, and panic</summary>
 
-<summary>Via Hotkey (Web and Desktop)</summary>
+| Action | Example |
+| --- | --- |
+| Update your status | “Dispatch, A-10, mark me available.” |
+| Update another unit's status | “Dispatch, set B-11 to 10-8.” |
+| Run a plate lookup | “Dispatch, run the plate ABC123.” |
+| Run a name lookup | “Dispatch, check John Doe.” |
+| Toggle panic | “Dispatch, toggle my panic status.” |
 
-Web and desktop users can also set a [customizable hotkey in the settings menu](../usage/dispatch-panel/using-the-dispatch-panel.md#dispatch-hotkeys). Pressing this keybind will enable the AI (same as the wake word) for your transmission.
-
-<figure><img src="../../.gitbook/assets/image (296).png" alt=""><figcaption></figcaption></figure>
-
-</details>
-
-<details>
-
-<summary>FiveM: Via Hotkey</summary>
-
-FiveM users can also set a manual keybind in the settings. Pressing this keybind will enable the AI (same as the wake word) for your transmission.
-
-<figure><img src="../../.gitbook/assets/image (28).png" alt="" width="375"><figcaption></figcaption></figure>
-
-</details>
-
-### User Customization
-
-<details>
-
-<summary>Transcripts and Overrides</summary>
-
-A local speech-to-text AI generates a text transcript of your transmission. Sometimes, the AI can mishear common phrases resulting in poor performance.
-
-Users can view their latest transcripts under **Settings** > **AI** > **Recent Transcripts**.
-
-To improve these common mixups, add a **Phrase Override** manually.
-
-<figure><img src="../../.gitbook/assets/image (328).png" alt=""><figcaption></figcaption></figure>
-
-</details>
-
-## AI Commands & Features
-
-### CAD Functionality
-
-<details>
-
-<summary>CAD Status</summary>
-
-The AI can update the status of you and other units to the stated, customizable status code.
-
-_**Dispatch**, A-10, mark my status as available._\
-\&#xNAN;_**Dispatch**, A-10, set B-11 and I to 10-8._
+Use your community's configured status codes. Lookup results are sent to CAD with a brief radio response.
 
 </details>
 
 <details>
+<summary>Create and manage calls</summary>
 
-<summary>CAD Lookup</summary>
+| Action | Example |
+| --- | --- |
+| Create a call | “Dispatch, show me out on traffic with a blue sedan, plate ABC123.” |
+| Attach to a call | “Dispatch, attach me to the robbery in progress.” |
+| Attach another unit | “Dispatch, attach B-11 to my call.” |
+| Add a note | “Dispatch, add a note to my call: the vehicle is white.” |
+| Detach yourself | “Dispatch, clear my call.” |
+| Close the call | “Dispatch, close my call.” |
 
-The AI agent can perform a name or plate lookup, send the results to your CAD, and notify you of brief details.
-
-_**Dispatch**, A-10, run a lookup on the plate ABC123._\
-\&#xNAN;_**Dispatch**, A-10, do a record check on first name John last name Doe._
-
-</details>
-
-<details>
-
-<summary>CAD Dispatch Calls</summary>
-
-**Create Call**
-
-The AI can create a call and assign your unit. If your unit has a location, it will be automatically applied to the call unless otherwise specified. If a license plate is provided, it will automatically run a plate lookup and send the results to your CAD.
-
-_**Dispatch**, A-10, show me out on traffic with a blue four-door sedan. License plate ABC123._
-
-***
-
-**Attach to Call**
-
-The AI can attach you and other units to an existing call by mentioning the call ID, location, postal, title, etc.
-
-_**Dispatch**, A-10, attach me to the robbery in progress call._\
-\&#xNAN;_**Dispatch**, A-10, attach B-11 to my call._
-
-***
-
-**Call Notes**
-
-The AI can add a note to your active dispatch call for other units to see.
-
-_**Dispatch**, A-10, add a note on the call that I am arriving on-scene now, it's a white vehicle._
-
-***
-
-**Detach from Call**
-
-The AI can lookup your current dispatch call and remove you from it.
-
-_**Dispatch**, A-10, clear my call._
-
-***
-
-**Close Call**
-
-The AI can lookup and close your current dispatch call.\
-\&#xNAN;_**Dispatch**, A-10, close my call._
+New calls use your unit's location when available unless you specify another location. Including a plate in a new call also runs a plate lookup.
 
 </details>
 
 <details>
+<summary>Unit groups</summary>
 
-<summary>CAD Unit Groups</summary>
+“Dispatch, add me and B-11 to group Ladder 12.”
 
-**Group Units**
+“Dispatch, clear my unit group.”
 
-The AI can add your unit (and others) to a new or existing group.
+Use the unit number or name to identify other units.
 
-_**Dispatch**, A-10, add me to group 'Ladder 12'._\
-\&#xNAN;_**Dispatch**, A-10, add myself and B-11 to group 'Ladder 12'._
+</details>
 
-***
+<a id="fivem-gps-route-to-postal"></a>
+<a id="fivem-gps-route-to-unit"></a>
+<a id="fivem-automatic-status-on-postal"></a>
 
-**Clear Unit Group**
+## Game-Specific Features
 
-The AI can remove your unit (and others) from a group.
+The shared commands above apply across games. Choose your game for additional setup and integrations.
 
-_**Dispatch**, A-10, clear my unit group._\
-\&#xNAN;_**Dispatch**, A-10, remove B-11 and I's unit group._
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
+<tr><td><strong>FiveM</strong></td><td>Emergency call readouts, GPS routing, and automatic arrival status.</td><td><a href="../../.gitbook/assets/game-cards/fivem.png">FiveM</a></td><td><a href="dispatch-ai/fivem.md">fivem.md</a></td></tr>
+<tr><td><strong>ER:LC</strong></td><td>Read emergency calls over the channels assigned to each map zone.</td><td><a href="../../.gitbook/assets/game-cards/erlc.png">ER:LC</a></td><td><a href="dispatch-ai/erlc.md">erlc.md</a></td></tr>
+<tr><td><strong>Arma 3</strong></td><td>Use shared radio commands and timers from the desktop overlay.</td><td><a href="../../.gitbook/assets/game-cards/arma3.png">Arma 3</a></td><td><a href="dispatch-ai/arma-3.md">arma-3.md</a></td></tr>
+</tbody></table>
+
+## Customization
+
+<details>
+<summary>Community phrases and human dispatchers</summary>
+
+Open **Customization** > **Dispatch AI** and select the Radio server.
+
+* Expand an action under **Example prompts** to add short examples of your community's radio phrases.
+* Use the human-dispatcher button to choose whether AI stays active or pauses when a dispatcher is active in CAD.
+
+Keep example phrases short and specific.
 
 </details>
 
 <details>
+<summary>Language, transcripts, and phrase corrections</summary>
 
-<summary>CAD Panic</summary>
+Open **Settings** > **AI** to choose the AI language, review **Recent Transcripts**, or add **Phrase Overrides** for commonly misheard words. The AI uses the app's language by default.
 
-_**Dispatch**, A-10, toggle my panic status._
-
-The AI agent will enable or disable your panic status.
-
-</details>
-
-<details>
-
-<summary>FiveM and ER:LC: Emergency Call Readout</summary>
-
-Create emergency zones and assign radio channels to each zone for the room running Dispatch AI. For FiveM, use the Radio Zones menu. For ER:LC, select ER:LC under **Customize** > **Game Integration** and use the emergency zone editor on the ER:LC map.
-
-When a 911 call is generated in the linked CAD server with coordinates inside a configured emergency zone, the AI automatically creates a new dispatch call, removes the original 911 call, and reads the dispatch call over the channels configured for that zone. Calls without coordinates or outside the configured zones are not automatically read out.
-
-For ER:LC, connect the private server to Sonoran CAD and enable emergency call synchronization for the desired teams. Link that CAD server to Dispatch AI in Radio. ER:LC emergency calls imported into CAD include the coordinates used to match Radio's emergency zones; linking the ER:LC server to Radio alone does not import emergency calls into CAD.
-
-<figure><img src="../../.gitbook/assets/image (307).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (328).png" alt="Recent transcripts and phrase override controls"><figcaption></figcaption></figure>
 
 </details>
 
 <details>
+<summary>AI volume and replies</summary>
 
-<summary>FiveM: GPS Route to Postal</summary>
+Adjust **AI Volume** under **Settings** > **Audio**. In the AI settings, choose whether to hear replies to other users or only replies directed to you.
 
-{% hint style="warning" %}
-In order to route your GPS to a postal code, the **Nearest Postal** resource is required.\
-Or, another resource that can handle the command `/postal <id>`.
-{% endhint %}
-
-The AI can draw an in-game GPS route to a postal code on the map.
-
-**Raw Postal:**
-
-_**Dispatch**, A-10, route me to postal 123._\
-\&#xNAN;_**Dispatch**, A-10, directions to postal 123._
-
-***
-
-**Postal on a Dispatch Call**
-
-The AI can find an active dispatch call based on the ID, location, title, etc.\
-\&#xNAN;_**Dispatch**, A-10, route me to call 123._\
-\&#xNAN;_**Dispatch**, A-10, route me to the traffic stop call._
-
-</details>
-
-<details>
-
-<summary>FiveM: GPS Route to Unit</summary>
-
-The AI will route you to the coordinates of another active unit by providing their unit name, number, etc.
-
-_**Dispatch**, A-10, route me unit B-11._\
-\&#xNAN;_**Dispatch**, A-10, directions to unit J. Doe._
-
-</details>
-
-<details>
-
-<summary>FiveM: Auto-Status on GPS Route + Arrival</summary>
-
-{% hint style="warning" %}
-This feature requires the **Nearest Postal** resource version v1.5.4 or newer.
-{% endhint %}
-
-When the AI routes a user to a specific [postal code](dispatch-ai.md#fivem-gps-route-to-postal) or [GPS coordinate (unit location) ](dispatch-ai.md#fivem-gps-route-to-unit)it will automatically set your status as en-route. Upon arrival, the AI will automatically mark your status as on-scene.
-
-The radio resource's [config.lua](../getting-started/installing-the-in-game-resource.md#configuration-options) contains `Config.autoOnSceneStatus` with options to tweak the settings.
-
-</details>
-
-### Radio Functionality
-
-Coming soon!
-
-## Settings
-
-<details>
-
-<summary>AI Volume</summary>
-
-The AI's reply volume can be changed in the settings menu.
-
-<figure><img src="../../.gitbook/assets/image (330).png" alt="" width="350"><figcaption></figcaption></figure>
-
-</details>
-
-<details>
-
-<summary>Hear AI Replies</summary>
-
-By default, users hear AI replies directed to anyone in their primary or scanned channel. The radio setting allows you to switch from hearing AI replies for all users to hearing only replies addressed to you.
-
-<figure><img src="../../.gitbook/assets/image (329).png" alt="" width="352"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (329).png" alt="Settings for hearing Dispatch AI replies"><figcaption></figcaption></figure>
 
 </details>
 
 ## Token Usage
 
-Dispatch AI usage is limited by total AI token usage. Token usage varies depending on request length, task complexity, and the number of actions performed. You can learn more about these limits on our [pricing page](../../pricing/pricing-faq/standalone-pricing.md#dispatch-ai). These limits reset on the first of every month.
+View your community's usage under **Settings** > **AI** > **Token Usage**, or in the admin **Dispatch AI** panel. Limits reset on the first of each month. Once the limit is reached, further AI requests are unavailable until the reset or a subscription upgrade.
 
-#### Viewing Token Usage
-
-Users can view their community's current token usage under **Settings** > **AI** > **Token Usage**. When a community reaches their token usage limit, the AI will be disabled and unable to take additional requests until the limits are reset on the first of the month or the community is upgraded.
-
-<figure><img src="../../.gitbook/assets/image (337).png" alt=""><figcaption></figcaption></figure>
+See [Dispatch AI usage limits](../../pricing/pricing-faq/standalone-pricing.md#dispatch-ai).

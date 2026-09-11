@@ -13,3 +13,5 @@ For **Emergency Response: Liberty County (ER:LC)**, connect your private server 
 3. [Open the desktop overlay](../../usage/desktop-overlay.md#open-the-overlay).
 
 ER:LC does not require an in-game resource. The ER:LC integration applies to ER:LC private servers; other Roblox games can use the shared desktop overlay.
+
+Use [Dispatch AI for ER:LC](../../integrations/dispatch-ai/erlc.md) for voice channel controls, timers, CAD actions, and emergency call readouts.
