@@ -6,6 +6,8 @@ description: >-
 
 # Connected Users List
 
+The Connected Users Overlay is part of the **FiveM `radio_fivem` integration**. It displays connected users, their channels, and who is transmitting while you play.
+
 <figure><img src="../../../.gitbook/assets/image (103).png" alt=""><figcaption><p>Sonoran Radio - Connected Users</p></figcaption></figure>
 
 ## Accessing the Connected Users List

@@ -17,6 +17,18 @@ Equip a radio item to use the desktop frame assigned to it by your community.
 
 Newly created Radio communities include the two example desktop frames and mappings. Existing communities can map these classes to an existing frame or create new frames.
 
+<details>
+<summary>Select a frame manually</summary>
+
+1. Open **Settings** > **Audio** on the desktop overlay.
+2. Open **Radio Frame** and select a community frame.
+
+<figure><img src="../../../.gitbook/assets/desktop-overlay/radio-frame-selector.png" alt="Desktop overlay Audio settings with the Radio Frame dropdown open"><figcaption><p>Choose a frame in the desktop overlay settings.</p></figcaption></figure>
+
+Equipping a mapped Arma radio item selects its assigned frame automatically.
+
+</details>
+
 ## Give a player a radio
 
 1. Open the player loadout in Eden or Zeus Arsenal.

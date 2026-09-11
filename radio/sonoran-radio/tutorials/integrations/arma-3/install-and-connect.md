@@ -22,8 +22,10 @@ description: Install Sonoran Radio for Arma 3 and connect the desktop overlay.
 
 1. Open the Sonoran Radio desktop app.
 2. Join your community and connect to a channel.
-3. Select **Open Overlay**.
+3. Select **Open Overlay** (the arrow leaving a square).
 4. Join the Arma mission with both mods enabled.
+
+<figure><img src="../../../.gitbook/assets/desktop-overlay/open-overlay.png" alt="Desktop panel with the Open Overlay button in the upper-right toolbar"><figcaption><p>Select the arrow leaving a square to open your radio overlay.</p></figcaption></figure>
 
 Use the desktop app's push-to-talk controls. For overlay hotkeys, resizing, and frames, see [Desktop App & Overlay](../../usage/desktop-overlay.md).
 

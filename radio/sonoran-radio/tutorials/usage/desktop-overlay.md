@@ -10,8 +10,10 @@ The desktop app provides an overlay for **FiveM, Arma 3, Roblox, and other games
 
 1. [Download and open the desktop app](../../download-the-app.md).
 2. Join your Radio community and connect to a channel.
-3. Select **Open Overlay** on the dispatch or mobile panel.
+3. Select **Open Overlay** (the arrow leaving a square) on the dispatch or mobile panel.
 4. Position the radio over your game window.
+
+<figure><img src="../../.gitbook/assets/desktop-overlay/open-overlay.png" alt="Desktop panel toolbar with the Open Overlay button on the right"><figcaption><p>Select the arrow leaving a square in the upper-right toolbar to open the desktop overlay.</p></figcaption></figure>
 
 To return to the main panel, use the radio's power button or **Return to Portal**.
 
@@ -26,11 +28,13 @@ The overlay displays signal supplied by supported game integrations. For locatio
 <details>
 <summary>Hotkeys</summary>
 
-1. Open **Settings** on the overlay.
-2. Set a hotkey to hide or show the overlay.
-3. Set a focus hotkey to interact with the radio while playing in fullscreen.
+1. Open **Settings** > **Hotkeys** on the overlay.
+2. Select the button beside **Toggle Desktop Radio** and press your preferred key to hide or show the overlay.
+3. Set **Focus Desktop Radio** the same way to interact with the radio while playing in fullscreen.
 
-Use the desktop app's push-to-talk hotkey to transmit.
+Set **PTT Hotkey** to your preferred push-to-talk key.
+
+<figure><img src="../../.gitbook/assets/desktop-overlay/overlay-hotkeys.png" alt="Hotkeys settings showing PTT Hotkey, Focus Desktop Radio, and Toggle Desktop Radio"><figcaption><p>Example hotkeys; choose keys that do not conflict with your game.</p></figcaption></figure>
 
 </details>
 
@@ -44,7 +48,11 @@ Drag the radio to move it. Hold **Ctrl** while dragging up or down to resize it.
 <details>
 <summary>Change the radio frame</summary>
 
-Open the overlay's **Settings** and select a frame provided by your community.
+1. Open **Settings** > **Audio** on the overlay.
+2. Open **Radio Frame**.
+3. Select a frame provided by your community.
+
+<figure><img src="../../.gitbook/assets/desktop-overlay/radio-frame-selector.png" alt="Audio settings with the Radio Frame dropdown open"><figcaption><p>Select a community frame from the Radio Frame dropdown.</p></figcaption></figure>
 
 Arma 3 can select a frame based on your inventory radio. See [Radio Items and Team Frames](../integrations/arma-3/radio-items-and-team-frames.md).
 
@@ -60,16 +68,5 @@ Uploading custom frame artwork requires **Pro**.
 3. Position its buttons and screen, then save.
 
 <figure><img src="../../.gitbook/assets/image (17).png" alt="Desktop Frames editor"><figcaption></figcaption></figure>
-
-</details>
-
-## Connected Users Overlay
-
-Select **Open User List** from the dispatch or mobile panel to see connected users, their channels, and who is transmitting. You can also assign its hotkey in **Settings**.
-
-<details>
-<summary>Preview the connected users overlay</summary>
-
-<figure><img src="../../.gitbook/assets/image (308).png" alt="Connected users overlay" width="375"><figcaption></figcaption></figure>
 
 </details>
