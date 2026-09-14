@@ -10,6 +10,22 @@ description: View the latest changes to Sonoran CMS!
 
 ## Changelog
 
+### 1.5.19 09/14/2026
+
+{% tabs %}
+{% tab title="New" %}
+ER:LC Commands
+
+* Added new commands for layouts, shutdown, and kill along with minor UI improvements.
+{% endtab %}
+
+{% tab title="Fixed" %}
+Desktop Downloads: Latest Releases
+
+* Updated desktop download links to the latest available Windows, macOS, and Linux releases.
+{% endtab %}
+
+{% endtabs %}
 ### 1.5.18 09/10/2026
 
 {% tabs %}
