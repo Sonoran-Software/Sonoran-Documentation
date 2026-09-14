@@ -10,6 +10,22 @@ description: View the latest changes to Sonoran CAD!
 
 ## Changelog
 
+### 3.43.32 09/14/2026
+
+{% tabs %}
+{% tab title="New" %}
+Customization: CentralCircle Theme
+
+* Added a new CAD theme inspired by CentralSquare Enterprise CAD, with light tables, dark headers, and blue controls.
+{% endtab %}
+
+{% tab title="Fixed" %}
+Desktop Downloads: Latest Releases
+
+* Updated desktop download links to the latest available Windows, macOS, and Linux releases.
+{% endtab %}
+
+{% endtabs %}
 ### 3.43.30 09/10/2026
 
 {% tabs %}
