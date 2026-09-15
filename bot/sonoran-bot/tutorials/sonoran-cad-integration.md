@@ -36,7 +36,7 @@ For example, a patrol role could have **Police page** access and **View**, **Cre
 
 **Any** includes the member's own records. **Supervisor fields** is a separate permission for fields marked supervisor-only.
 
-Copy the **Permission code** at the bottom. This one-line code replaces the old external bitmap generator. It belongs to this CAD community and is configuration for the bot, not a permission key for members to redeem.
+Copy the **Permission code** at the bottom. This one-line code replaces the old external bitmap generator. The bot applies it to its configured CAD community. It is configuration for the bot, not a permission key for members to redeem.
 
 ### 3. Map the Code to a Discord Role
 
