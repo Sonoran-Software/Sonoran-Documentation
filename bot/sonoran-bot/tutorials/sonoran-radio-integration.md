@@ -66,9 +66,9 @@ Once complete, copy the bit map to be entered into Sonoran Bot.
 
 <summary>Configuring Radio Role Mapping</summary>
 
-Run `/rolemap` to configure how Discord roles translate into Sonoran Radio access.
+Run `/rolemap`, select **Discord → Sonoran**, and configure how Discord roles translate into Sonoran Radio access. The separate **Discord → Discord** option only mirrors roles between linked Discord servers.
 
-If your community is in `CAD_RADIO` mode, the bot first asks whether you want to manage CAD mappings or Radio mappings. If your community is in `RADIO` mode, the bot opens the Radio mapping menu directly.
+If your community has both CAD and Radio configured, select **Radio** when prompted. If only Radio is configured, the bot opens the Radio mapping menu directly.
 
 <div><figure><img src="../.gitbook/assets/image (17).png" alt="" width="229"><figcaption><p><code>/rolemap</code> product selector in <code>CAD_RADIO</code> mode</p></figcaption></figure> <figure><img src="../.gitbook/assets/image (18).png" alt="" width="262"><figcaption><p><code>/rolemap</code> Radio main menu showing selector</p></figcaption></figure></div>
 

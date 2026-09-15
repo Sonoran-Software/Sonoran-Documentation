@@ -10,7 +10,7 @@ By default, only server administrators (those with Administrator in the guild) c
 
 | Command         | Product | Function                                                                                                                                                        |
 | --------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/rolemap`      | CAD/CMS | Opens role mapping settings                                                                                                                                     |
+| `/rolemap`      | All     | Opens Discord-to-Discord and Sonoran product role mapping settings                                                                                              |
 | `/settings`     |         | Allows adjustment of various [settings](settings.md) in the bot                                                                                                 |
 | `/linkme`       | CAD     | Links your Discord to your SonoranCAD account                                                                                                                   |
 | `/sync`         | CAD/CMS | Forces a sync with CAD/CMS. If `community` is toggled, it will force a sync for everyone in all linked guilds. If not, it will only sync the server its run in. |

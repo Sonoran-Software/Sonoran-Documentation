@@ -40,10 +40,13 @@ Copy the **Permission code** at the bottom. This one-line code replaces the old 
 
 ### 3. Map the Code to a Discord Role
 
-1. Run `/rolemap` and select **Create Mapping**.
-2. Choose **CAD** under **Type**, then choose the Discord role.
-3. Select **Set Permission**, paste the complete code, and submit.
-4. Select **Create Mapping** to save.
+1. Run `/rolemap` and select **Discord → Sonoran**.
+2. Select **Create Mapping**.
+3. Choose **CAD** under **Type**, then choose the Discord role.
+4. Select **Set Permission**, paste the complete code, and submit.
+5. Select **Create Mapping** to save.
+
+The separate **Discord → Discord** option mirrors roles between linked Discord servers and does not grant CAD permissions.
 
 Repeat for each role. To change a mapping, select **Edit Mapping**, choose the mapping, use **Edit Permission** to paste a new code, then select **Save Mapping**. Use **Delete Mapping** to remove it.
 

@@ -5,6 +5,7 @@
 ## Tutorials
 
 * [Getting Started](tutorials/getting-started.md)
+* [Discord-to-Discord Role Sync](tutorials/discord-role-sync.md)
 * [Sonoran CMS Integration](tutorials/sonoran-cms-integration/README.md)
   * [Account Link](tutorials/sonoran-cms-integration/account-link.md)
   * [Role Mapping](tutorials/sonoran-cms-integration/role-mapping/README.md)
