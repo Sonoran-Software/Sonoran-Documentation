@@ -23,6 +23,7 @@
   * [Customizing Your Layout](tutorials/customization/customizing-your-layout.md)
   * [Community Branding and Settings](tutorials/customization/community-branding-and-info.md)
   * [Creating Custom Record and Report Types](tutorials/customization/creating-custom-record-and-report-types.md)
+  * [Record Automations](tutorials/customization/record-automations.md)
   * [Sharing Custom Records](tutorials/customization/sharing-custom-records.md)
   * [Custom Search Types](tutorials/customization/custom-search-types.md)
   * [Geographical Settings](tutorials/customization/geographical-settings.md)

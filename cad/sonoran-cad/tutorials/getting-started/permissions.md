@@ -1,66 +1,61 @@
 ---
-description: Granting permissions to user accounts is easy! We'll help you get started.
+description: Choose page access and record permissions for each member of your community.
 ---
 
 # Granting Account Permissions
 
-## Permission Granting Options
+Give members access manually, through permission keys, or with role sync from [Sonoran Bot](https://docs.sonoransoftware.com/bot/tutorials/sonoran-cad-integration) or [Sonoran CMS](https://docs.sonoransoftware.com/cms/integration-capabilities/sonoran-cad-sync).
 
-User accounts can be granted automatically with our [Discord bot](../../integration-plugins/discord-bot-integration.md), manually granted by an administrator in your community, or by generating a "[Permission Key](permissions.md#permission-keys)" for users to access independently.
+## Manually Granting Permissions
 
-### [Sonoran CMS - Permission Sync](https://info.sonorancms.com/why-choose-sonoran-cms/why-choose-sonoran-cms)
+1. Open **Administration > Accounts**.
+2. Find the member and select their account. Use the **Pending** filter for members without permissions.
+3. Choose permissions, then select **Save permissions**.
 
-Sonoran CMS is your single point of management for your community's documents, whitelisting, in-game permissions, community website, and more!
+<figure><img src="../../.gitbook/assets/cad-account-permissions-access.png" alt="Account permission editor for Alex Morgan with Police page access enabled"><figcaption><p>Choose the pages and tools a member can use.</p></figcaption></figure>
 
-In addition to whitelisting and in-game permissions, [Sonoran CMS can automatically manage your Sonoran CAD permissions](https://info.sonorancms.com/integration-capabilities/sonoran-cad-sync)!
+The editor has three tabs:
 
-![Sonoran CAD x Sonoran CMS - Permission Sync](../../.gitbook/assets/CMS-CAD-Sync.png)
+* **Access:** Community pages and operational tools.
+* **Records:** Permissions for each of your community's record templates.
+* **Administration:** Account management and other administrative tools.
 
-### Discord Bot Roles
+Click a permission card to enable or disable it. Use **Search permissions** to find a setting or template, and **Enabled only** to review the permissions already selected.
 
-Our [Discord bot](https://info.sonoranbot.com/en/tutorials/getting-started) allows you to automatically sync Discord roles with CAD permissions.
+An account is **Active** when it has at least one permission, and **Pending** when it has none. Bans are managed separately under **Account actions**.
 
-### Manually Granting Permissions
+## Record Permissions
 
-#### 1. Open the Accounts Menu
+Open **Records** and expand a template. Permissions apply to that template, so a member can edit licenses without receiving the same access to arrest reports or other records.
 
-In the admin menu, select the "Accounts" option to view all user accounts in your community.
+<figure><img src="../../.gitbook/assets/cad-account-permissions-records.png" alt="License permissions with View and Edit any enabled"><figcaption><p>Choose the actions allowed for each record template.</p></figcaption></figure>
 
-{% hint style="info" %}
-New and Pending User Accounts
+| Permission | Allows the member to |
+| --- | --- |
+| View | Find and view records of this type. |
+| Create | Create a record of this type. |
+| Edit own | Edit records owned by their account. |
+| Edit any | Edit records owned by any account, including their own. |
+| Delete own | Delete records owned by their account. |
+| Delete any | Delete records owned by any account, including their own. |
+| Supervisor fields | Update fields marked supervisor-only, alongside the required record editing permission. |
 
-New accounts are automatically set to "PENDING"\
-To view pending accounts, you will need to change the accounts drop down in the top left of the window from "Active" to "Pending"
-{% endhint %}
+Page access and record permissions work together. For example, give an officer **Police page** access, **View**, and **Edit any** for licenses. In the [custom record editor](../customization/creating-custom-record-and-report-types.md#editing-other-users-records), enable **Editable by other users** only on fields the officer should change, such as points or status.
 
-![The account grid displays all user accounts in your community](../../.gitbook/assets/CAD_Accounts.png)
+## Permission Keys
 
-#### 2. Select an Account
+### Create a Key
 
-Simply click on an account to manually edit the permissions, ban, or kick a user.\
-After changing a user's permissions, don't forget to press save!
+Open **Administration > Permission Keys**, select **+**, enter a key name, and choose its permissions using the same editor. Save the key and share it with the intended members.
 
-![The account management panel allows you to toggle individual user permissions](../../.gitbook/assets/permissions.PNG)
+### Apply a Key
 
-### Permission Keys
+Members enter the key in the community menu. Keys are case-sensitive, so they must enter the exact capitalization.
 
-Permission keys are a great way to allow users to automatically grant themselves their necessary permissions.
+![Enter a permission key from the community menu](../../.gitbook/assets/CAD_MenuPermKey.png)
 
-#### 1. Create a Permission Key
+The **Bot permissions** button in the Permission Keys panel creates a configuration code for [Sonoran Bot role mapping](https://docs.sonoransoftware.com/bot/tutorials/sonoran-cad-integration). That code is not a key members can redeem.
 
-In the admin menu, select `Accounts > Permission Keys`\
-Here, you can create a new permission key. Simply enter the new key name, toggle the associated permissions, and press save.
+## Role Sync
 
-![Sonoran CAD - Permission Key Editor](../../.gitbook/assets/permkey.PNG)
-
-#### 2. Apply a Permission Key
-
-At the community menu, your users can enter the new permission key. After pressing enter, the associated permissions will automatically be applied to their account.
-
-![Sonoran CAD - Apply Permission Key](../../.gitbook/assets/CAD_MenuPermKey.png)
-
-{% hint style="info" %}
-Invalid Key Error?
-
-Permission keys are _case sensitive_, so ensure your users are entering the key exactly, with the proper capitalization.
-{% endhint %}
+When using Sonoran Bot or CMS to manage access, update permissions in the role or rank mapping. A later sync can overwrite manual changes made directly in CAD.

@@ -1,27 +1,19 @@
 ---
-description: >-
-  Sonoran CAD allows you to share custom record formats between different
-  communities.
+description: Share record templates between communities.
 ---
 
 # Sharing Custom Records
 
-### Download the JSON File
+## Export a Template
 
-In the custom record editor (Admin > Customization > Custom Records) select the blue download button next to the custom record. This will download a .json file with the custom record formatting.<br>
+1. Open **Administration > Customization > Custom Records**.
+2. Select the template in **Record template**.
+3. Open **Template actions (...) > Export template** to download its JSON file.
 
-_Do not edit this JSON formatting unless you are highly familiar with the_ [_proper formatting_](../../api-integration/api-endpoints/general/custom-records/#record-formatting)_. It is highly recommended to edit everything in the UI editor only._
+## Import a Template
 
-![Sonoran CAD - Download Custom Record Format](<../../.gitbook/assets/image (96).png>)
+1. Open **Template actions (...) > Import**.
+2. Open the shared JSON file in a text editor and paste its contents into the prompt.
+3. Review the imported template in the [visual record editor](creating-custom-record-and-report-types.md), make any changes, and select **Save**.
 
-### Import a Shared JSON File
-
-In the custom record editor (Admin > Customization > Custom Records) select the blue download button next to the custom record. This will download a .json file with the custom record formatting.
-
-![Sonoran CAD - Import Custom Record JSON File](<../../.gitbook/assets/image (120).png>)
-
-Paste in the JSON content from the download to populate the record editor with the new record format.
-
-![Sonoran CAD - JSON Import Prompt](<../../.gitbook/assets/image (352).png>)
-
-From here, you can [edit the custom record and save it](creating-custom-record-and-report-types.md) as you normally would.
+Review [account permissions](../getting-started/permissions.md) for the imported template before members use it.
