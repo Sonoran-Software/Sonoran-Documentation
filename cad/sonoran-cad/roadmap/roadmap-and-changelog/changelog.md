@@ -10,6 +10,16 @@ description: View the latest changes to Sonoran CAD!
 
 ## Changelog
 
+### 3.44.0 09/15/2026
+
+{% tabs %}
+{% tab title="New" %}
+Community Workflows: Records and Permissions
+
+* Added per-template permissions, a visual record editor, record automations, and in-app release highlights.
+{% endtab %}
+
+{% endtabs %}
 ### 3.43.32 09/14/2026
 
 {% tabs %}
