@@ -11,16 +11,6 @@ tags:
 
 # Troubleshooting
 
-## The resource will not start
-
-If FXServer reports that `tablet` is missing or unavailable:
-
-1. Install and configure the current [SonoranCADFiveM integration](https://docs.sonoransoftware.com/cad/integration-plugins/in-game-integration/fivem-installation).
-2. Confirm the resource folder is named exactly `sonoran-notepad` and contains `fxmanifest.lua` directly inside it.
-3. Confirm `tablet` starts before `sonoran-notepad`.
-4. Do not start the entire `[sonorancad]` folder; use the integration's documented `sonorancad.cfg` start configuration.
-5. Fully restart the server and review the console from the first startup error.
-
 ## The CAD sync warning stays visible
 
 The warning means Notepad is working locally but cannot confirm a linked, signed-in CAD tablet session.

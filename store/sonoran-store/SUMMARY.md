@@ -57,7 +57,6 @@
   * [Advanced Documentation](mcc/advanced-docs.md)
 * [🗒️ Sonoran Notepad](sonoran-notepad/README.md)
   * [Installation](sonoran-notepad/installation.md)
-  * [Configuration](sonoran-notepad/configuration.md)
   * [Using and Syncing Notes](sonoran-notepad/usage-and-sync.md)
   * [Troubleshooting](sonoran-notepad/troubleshooting.md)
 * [⚡ Power Grid](power-grid/README.md)
