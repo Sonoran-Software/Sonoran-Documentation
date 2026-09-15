@@ -31,6 +31,21 @@ Use a license template with a **Points** field and a **Status** dropdown contain
 
 <figure><img src="../../.gitbook/assets/cad-record-automation-action.png" alt="Automation action setting the license Status to Suspended"><figcaption><p>Choose the field and value to apply when the condition matches.</p></figcaption></figure>
 
+## Let Officers Update License Points
+
+Allow officers to edit the points on another person's license so their changes can trigger the automation:
+
+1. Open **Administration > Customization > Custom Records** and select the license template.
+2. Click **Points** in the preview and enable **Editable by other users** in the field settings. Leave **Read only** off.
+3. Keep **Editable by other users** off for fields officers should not change, such as the license holder's name. Select **Save**.
+4. In [account permissions](../getting-started/permissions.md), give officers **Police page** access and **View** and **Edit any** for that license template. If Points is marked **Supervisor only**, they also need **Supervisor fields** permission.
+
+<figure><img src="../../.gitbook/assets/cad-custom-record-editor.png" alt="License template with Points selected and Editable by other users enabled in the field settings"><figcaption><p>Enable Editable by other users on the Points field, then grant officers Edit any for the license template.</p></figcaption></figure>
+
+Officers can now look up a civilian's license, update **Points**, and save. With the example automation enabled, saving eight or more points sets **Status** to **Suspended**. The Status field only needs **Editable by other users** enabled if officers should also change it manually.
+
+For more field settings, see [Editing Other Users' Records](creating-custom-record-and-report-types.md#editing-other-users-records).
+
 ## How Rules Behave
 
 * Rules run on new records and record updates, including API saves. Existing records are checked when next saved.
