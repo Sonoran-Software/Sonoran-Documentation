@@ -10,6 +10,16 @@ description: View the latest changes to Sonoran CMS!
 
 ## Changelog
 
+### 1.5.20 09/16/2026
+
+{% tabs %}
+{% tab title="New" %}
+Sonoran CAD Granular Permissions
+
+* Updated the CAD permission sync for the new v2 permissions.
+{% endtab %}
+
+{% endtabs %}
 ### 1.5.19 09/14/2026
 
 {% tabs %}
