@@ -1,8 +1,13 @@
 ---
-description: Update account permissions and account status for a community account.
+description: Legacy category permission adapter; use the granular permission endpoints for new integrations.
+hidden: true
 ---
 
 # Modify Account Permissions
+
+{% hint style="warning" %}
+This is the legacy category/boolean permission adapter. It remains supported for existing integrations. For new integrations, use [Get Permission Catalog](get-permission-catalog.md), [Get Account Permissions](get-account-permissions.md), and [Replace Account Permissions](replace-account-permissions.md). No removal date has been announced.
+{% endhint %}
 
 <mark style="color:yellow;">`PATCH`</mark> `https://api.sonorancad.com/v2/general/accounts/permissions`
 

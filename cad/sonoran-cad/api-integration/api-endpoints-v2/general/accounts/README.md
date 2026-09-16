@@ -36,8 +36,16 @@ The v2 general account endpoints handle account lookup, permissions, secrets, ac
 [get-accounts.md](get-accounts.md)
 {% endcontent-ref %}
 
-{% content-ref url="modify-account-permissions.md" %}
-[modify-account-permissions.md](modify-account-permissions.md)
+{% content-ref url="get-permission-catalog.md" %}
+[Get Permission Catalog](get-permission-catalog.md)
+{% endcontent-ref %}
+
+{% content-ref url="get-account-permissions.md" %}
+[Get Account Permissions](get-account-permissions.md)
+{% endcontent-ref %}
+
+{% content-ref url="replace-account-permissions.md" %}
+[Replace Account Permissions](replace-account-permissions.md)
 {% endcontent-ref %}
 
 {% content-ref url="verify-secret.md" %}

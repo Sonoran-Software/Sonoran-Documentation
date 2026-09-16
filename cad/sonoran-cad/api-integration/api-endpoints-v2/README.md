@@ -60,7 +60,7 @@ General endpoints cover account management, custom records, lookup workflows, an
 
 Use this combined OpenAPI document if you want to import the full Sonoran CAD v2 API into Postman in one pass.
 
-This generated collection currently includes `82` documented v2 operations.
+This generated collection currently includes `85` documented v2 operations.
 
 <details>
 
@@ -2188,6 +2188,135 @@ paths:
               communityUserId: player_12345
       tags:
       - General / Accounts
+  /v2/general/permissions/accounts/{accountId}:
+    get:
+      summary: Get Account Permissions
+      operationId: getAccountPermissionsV2
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  permissions:
+                    type: object
+                    properties:
+                      version:
+                        type: integer
+                        enum:
+                        - 2
+                      grants:
+                        type: array
+                        items:
+                          type: string
+                  owner:
+                    type: boolean
+                  migrated:
+                    type: boolean
+                  status:
+                    type: integer
+              example:
+                permissions:
+                  version: 2
+                  grants:
+                  - global.police
+                owner: false
+                migrated: true
+                status: 1
+        '400':
+          description: Invalid request or account cannot be edited
+        '401':
+          description: Missing or invalid API key
+        '429':
+          description: Rate limited; follow Retry-After before retrying
+        '404':
+          description: Account not found in this community
+      parameters:
+      - name: accountId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        example: 00000000-0000-0000-0000-000000000000
+      tags:
+      - General / Accounts
+    put:
+      summary: Replace Account Permissions
+      operationId: replaceAccountPermissionsV2
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accountUuid:
+                    type: string
+                    format: uuid
+                  permissions:
+                    type: object
+                    properties:
+                      version:
+                        type: integer
+                        enum:
+                        - 2
+                      grants:
+                        type: array
+                        items:
+                          type: string
+              example:
+                accountUuid: 00000000-0000-0000-0000-000000000000
+                permissions:
+                  version: 2
+                  grants:
+                  - global.police
+        '400':
+          description: Invalid request or account cannot be edited
+        '401':
+          description: Missing or invalid API key
+        '429':
+          description: Rate limited; follow Retry-After before retrying
+      parameters:
+      - name: accountId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        example: 00000000-0000-0000-0000-000000000000
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - grants
+              properties:
+                version:
+                  type: integer
+                  enum:
+                  - 2
+                  default: 2
+                grants:
+                  type: array
+                  uniqueItems: true
+                  items:
+                    type: string
+            example:
+              version: 2
+              grants:
+              - global.police
+      tags:
+      - General / Accounts
   /v2/general/accounts/account:
     get:
       summary: Get Account
@@ -2296,6 +2425,76 @@ paths:
         required: false
       security:
       - bearerAuth: null
+      tags:
+      - General / Accounts
+  /v2/general/permissions/catalog:
+    get:
+      summary: Get Permission Catalog
+      operationId: getPermissionCatalogV2
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  version:
+                    type: integer
+                    enum:
+                    - 2
+                  communityUuid:
+                    type: string
+                    format: uuid
+                  permissions:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        label:
+                          type: string
+                        templateId:
+                          type: integer
+                          nullable: true
+                        templateName:
+                          type: string
+                          nullable: true
+                        action:
+                          type: string
+                  legacyGrants:
+                    type: object
+                    additionalProperties:
+                      type: array
+                      items:
+                        type: string
+              example:
+                version: 2
+                communityUuid: 00000000-0000-0000-0000-000000000000
+                permissions:
+                - id: global.police
+                  label: police
+                  templateId: null
+                  templateName: null
+                  action: police
+                - id: record.4.read
+                  label: read
+                  templateId: 4
+                  templateName: Example record template
+                  action: read
+                legacyGrants:
+                  POLICE:
+                  - global.police
+                  - record.4.read
+        '400':
+          description: Invalid request or account cannot be edited
+        '401':
+          description: Missing or invalid API key
+        '429':
+          description: Rate limited; follow Retry-After before retrying
       tags:
       - General / Accounts
   /v2/general/accounts/permissions:
