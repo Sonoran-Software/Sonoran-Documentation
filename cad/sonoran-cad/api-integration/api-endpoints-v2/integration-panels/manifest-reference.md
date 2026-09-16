@@ -16,7 +16,7 @@ A panel definition is a JSON object stored at a stable `panelKey`. The definitio
 | `key`           | string    | No       | When present, must equal the route `panelKey`.      |
 | `name`          | string    | Yes      | Panel header name; maximum 80 characters.           |
 | `icon`          | string    | No       | Quasar or Font Awesome icon, such as `fas fa-lock`. |
-| `surfaces`      | string\[] | No       | Any of `dispatch`, `police`, `fire`, or `ems`.      |
+| `surfaces`      | string\[] | No       | Layout availability: any of `dispatch`, `police`, `fire`, or `ems`. An empty array hides the panel from Add Window; explicit live-map blip references on staging still work. This is not an authorization restriction. |
 | `sounds`        | object\[] | No       | Up to 20 sound triggers.                            |
 | `body`          | object\[] | Yes      | Recursive UI nodes; maximum 200 root nodes.         |
 
@@ -26,7 +26,7 @@ A panel definition is a JSON object stored at a stable `panelKey`. The definitio
 | ------------- | ---------------------------------------- |
 | `$state.path` | Current instance state                   |
 | `$item.path`  | Current item inside a `repeat` node      |
-| `$inputs.id`  | Current local control value              |
+| `$inputs.id`  | Current local control value. On staging, this also includes the control's displayed `value` when untouched; explicit empty strings are preserved. |
 | `$value`      | New value emitted by the current control |
 
 Use a binding as the entire property value, such as `"value": "$item.locked"`. For text containing other words, use interpolation such as `"Fuel: {{item.fuel}}%"` or `"Active: {{state.summary.active}}"`.

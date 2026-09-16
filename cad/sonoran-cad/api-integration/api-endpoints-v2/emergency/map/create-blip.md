@@ -41,6 +41,27 @@ description: Create a custom blip.
 
 ## Example Request
 
+### Interactive panel menu entries
+
+{% hint style="warning" %}
+**Staging only:** the `panelKey` and `instanceKey` menu fields require `https://staging-api.dev.sonorancad.com` and the staging CAD UI. The production endpoint shown above remains the existing blip API. See [Development Branch](../../../development-branch.md).
+{% endhint %}
+
+To embed a registered Integration Panel, add a `data` entry with `panelKey` and `instanceKey`:
+
+```json
+{
+  "data": [
+    { "title": "Location", "text": "Vespucci Boulevard" },
+    { "panelKey": "smart-signs", "instanceKey": "sign-12", "title": "Edit street sign" }
+  ]
+}
+```
+
+Include the required coordinates, subtype, icon, color, and tooltip from the request above when creating a blip. `panelKey` is the registered key, not the display name. `instanceKey` defaults to `default`; both keys must match the panel API's 2–80 character lowercase key format. The instance is resolved on this blip's server. If it is missing, the menu shows an unavailable message rather than another instance's data. `title` optionally overrides the panel heading. With `panelKey` present, that entry renders the panel instead of `text`.
+
+Lua, JavaScript, and Python accept these fields inside `data` with the existing `createBlipV2` helper. In Sonoran.Net, set `PanelKey` and `InstanceKey` on `BlipDisplayDataV2`. See the complete [Smart Signs editor](../../integration-panels/examples/smart-signs.md) for definition, state, and Save actions.
+
 {% tabs %}
 {% tab title="Sonoran.lua" %}
 ```lua
@@ -287,6 +308,25 @@ paths:
           application/json:
             schema:
               type: "object"
+              properties:
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      title:
+                        type: string
+                      text:
+                        type: string
+                      panelKey:
+                        type: string
+                        pattern: '^[a-z0-9][a-z0-9._-]{1,79}$'
+                        description: Registered Integration Panel key. Renders the panel instead of text.
+                      instanceKey:
+                        type: string
+                        pattern: '^[a-z0-9][a-z0-9._-]{1,79}$'
+                        default: default
+                        description: Exact instance on this server.
             example:
               coordinates:
                 x: 441.2

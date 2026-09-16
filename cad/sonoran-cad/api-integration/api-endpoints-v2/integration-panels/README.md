@@ -6,6 +6,10 @@ description: >-
 
 # Integration Panels
 
+{% hint style="info" %}
+**New on staging:** embed a panel instance in a custom live-map blip menu. See [Smart Signs: Live Map Editor](examples/smart-signs.md) for the complete schema, three-row Save form, and staging API/UI setup. This new map capability is not yet released on the production CAD API.
+{% endhint %}
+
 Integration Panels put live data and controls from an existing game script or external service directly inside Sonoran CAD. Instead of building and maintaining a custom CAD frontend for every integration, define the panel once with JSON and connect it to your system through the v2 API.
 
 Your integration remains the source of truth. It publishes the latest state to CAD, where authorized users can monitor and interact with it. Their button, toggle, select, and input actions are sent back to your integration to process. State changes made in-game or in CAD stay synchronized for every connected CAD user.
@@ -65,6 +69,7 @@ Sonoran.lua, Sonoran.js, Sonoran.py, and Sonoran.Net expose the same helper name
 * Search, named sort choices, conditions, confirmation prompts, and theme-safe styling
 * Built-in pulse animations and state- or action-triggered sound effects
 * Live API-to-CAD state updates and CAD-to-integration action events
+* Interactive panels embedded in custom live-map blip menus, bound to an exact panel instance. See [Smart Signs](examples/smart-signs.md).
 
 ## Limits
 

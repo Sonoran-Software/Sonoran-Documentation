@@ -19,6 +19,8 @@ The same two-way pattern applies to every example:
 Use the AI plugins and MCP tools at [sonoransoftware.com/developers](https://sonoransoftware.com/developers) to adapt an example to your script, then verify it in the [visual panel builder](https://sonorancad.com/integration-panel-builder).
 {% endhint %}
 
+For an editor attached to a map marker, see [Smart Signs: Live Map Editor](smart-signs.md). It includes a reusable three-row sign editor, per-sign state, a blip reference, and the Save action workflow.
+
 ## Fire Alarm
 
 Connect an in-game fire alarm resource so dispatchers can see every alarm and its current state. An alarm triggered in-game appears and pulses in CAD; a dispatcher can also change its state from the panel, and the resource applies that change in-game.

@@ -12,6 +12,8 @@ The development API, database and website are entirely separate from the current
 
 ### Development API Server
 
+**Available on staging:** [custom Integration Panels in live-map blip menus](api-endpoints-v2/integration-panels/examples/smart-signs.md). The example covers panel definitions, per-sign state, blip references, and Save actions. Use the staging API and CAD URLs below with a staging community's API key.
+
 All API endpoints and requests should be made to the following address:
 
 ```

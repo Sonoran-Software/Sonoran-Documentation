@@ -211,6 +211,7 @@
         * [Door Locks](api-integration/api-endpoints-v2/integration-panels/examples/door-locks.md)
         * [Tow and Impound](api-integration/api-endpoints-v2/integration-panels/examples/tow-impound.md)
         * [Fleet Management](api-integration/api-endpoints-v2/integration-panels/examples/fleet-management.md)
+        * [Smart Signs: Live Map Editor](api-integration/api-endpoints-v2/integration-panels/examples/smart-signs.md)
       * [List Integration Panels](api-integration/api-endpoints-v2/integration-panels/list-panels.md)
       * [Get Integration Panel](api-integration/api-endpoints-v2/integration-panels/get-panel.md)
       * [Set Integration Panel](api-integration/api-endpoints-v2/integration-panels/set-panel.md)
