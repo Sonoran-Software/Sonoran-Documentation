@@ -10,6 +10,64 @@ description: View the latest changes to Sonoran CAD!
 
 ## Changelog
 
+### 3.44.1 09/16/2026
+
+{% tabs %}
+{% tab title="New" %}
+Record Automations: More Field Types
+
+* Added support for checkbox, date, time, and image fields in record automations.
+
+Record Automations: Searchable Dropdowns
+
+* Added type-to-filter search to the template and field dropdowns for faster automation setup.
+
+CMS Integration: Granular CAD Permissions
+
+* Added support in Sonoran CMS for managing granular Sonoran CAD permissions.
+
+Live Map: Custom Blip Integration Panels
+
+* Added interactive integration panels to custom blip menus for viewing and controlling connected systems directly from the live map.
+{% endtab %}
+
+{% tab title="Changed" %}
+Record Permissions: Separate Editing Controls
+
+* Separated full access through Edit any from Edit selected fields on others’ records, which limits editing to fields explicitly enabled in the record template.
+
+Record Automations: Protected Fields
+
+* Updated automations to allow changes to fields marked as supervisor-only or read-only.
+
+Custom Records: File-Based Import
+
+* Replaced the JSON paste prompt with a file picker when importing custom record templates.
+
+Accounts: Community User ID
+
+* Updated the Accounts panel to display the current Community User ID, used by FiveM /link, instead of legacy API IDs.
+{% endtab %}
+
+{% tab title="Fixed" %}
+Record Permissions: Supervisor Field Access
+
+* Fixed supervisor fields remaining locked on other users’ records for users with supervisor permission when those fields were not enabled for limited editing.
+
+Dispatch: Custom Layout Calls
+
+* Fixed an issue that prevented some calls using custom dispatch layouts from appearing in the active calls list.
+
+Record Automations: Missing Fields
+
+* Fixed fields being hidden from automation settings when they retained an old database-sync flag.
+
+Navigation: Clickable Community Name
+
+* Fixed the community name in the top-left header so text branding supports the same back navigation as image branding.
+{% endtab %}
+
+{% endtabs %}
 ### 3.44.0 09/15/2026
 
 {% tabs %}
