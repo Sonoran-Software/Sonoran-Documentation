@@ -36,6 +36,10 @@ For example, a patrol role could have **Police page** access and **View**, **Cre
 
 **Any** includes the member's own records. **Supervisor fields** is a separate permission for fields marked supervisor-only.
 
+For limited edits, such as license points, select **Edit selected fields on others' records** and enable **Allow limited editing** on the desired fields in CAD. Leave **Edit any** off in every mapped role for that template; full editing takes precedence. Add **Edit own** separately if needed. Supervisor-only fields still require **Supervisor fields**.
+
+The new selection requires an updated bot, CAD permission editor, and a backend catalog containing `edit.selected`. Existing codes keep their meaning. Codes containing the new permission are rejected without changing account permissions if the backend does not yet support it.
+
 Copy the **Permission code** at the bottom. This one-line code replaces the old external bitmap generator. The bot applies it to its configured CAD community. It is configuration for the bot, not a permission key for members to redeem.
 
 ### 3. Map the Code to a Discord Role

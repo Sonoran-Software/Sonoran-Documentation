@@ -33,16 +33,16 @@ Use a license template with a **Points** field and a **Status** dropdown contain
 
 ## Let Officers Update License Points
 
-Allow officers to edit the points on another person's license so their changes can trigger the automation:
+Allow officers to edit the points on another person's license so their changes can trigger the automation. These steps require the [selected-field editing model](../getting-started/permissions.md#record-editing-permissions), available when the backend catalog includes `edit.selected`:
 
 1. Open **Administration > Customization > Custom Records** and select the license template.
-2. Click **Points** in the preview and enable **Editable by other users** in the field settings. Leave **Read only** off.
-3. Keep **Editable by other users** off for fields officers should not change, such as the license holder's name. Select **Save**.
-4. In [account permissions](../getting-started/permissions.md), give officers **Police page** access and **View** and **Edit any** for that license template. If Points is marked **Supervisor only**, they also need **Supervisor fields** permission.
+2. Click **Points** in the preview and enable **Allow limited editing** in the field settings. Leave **Read only** off.
+3. Keep **Allow limited editing** off for fields officers should not change, such as the license holder's name. Select **Save**.
+4. In [account permissions](../getting-started/permissions.md), give officers **Police page** access and **View** and **Edit selected fields on others' records** for that license template. Remove **Edit any** from all permission sources for roles that should only edit selected fields. If Points is marked **Supervisor only**, they also need **Supervisor fields** permission.
 
-<figure><img src="../../.gitbook/assets/cad-custom-record-editor.png" alt="License template with Points selected and Editable by other users enabled in the field settings"><figcaption><p>Enable Editable by other users on the Points field, then grant officers Edit any for the license template.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/cad-custom-record-editor.png" alt="License template with Points selected and Editable by other users enabled in the field settings"><figcaption><p>Enable Allow limited editing (previously Editable by other users) on Points, then grant officers Edit selected fields on others' records for the license template.</p></figcaption></figure>
 
-Officers can now look up a civilian's license, update **Points**, and save. With the example automation enabled, saving eight or more points sets **Status** to **Suspended**. The Status field only needs **Editable by other users** enabled if officers should also change it manually.
+Officers can now look up a civilian's license, update **Points**, and save. With the example automation enabled, saving eight or more points sets **Status** to **Suspended**. The Status field only needs **Allow limited editing** enabled if officers should also change it manually.
 
 For more field settings, see [Editing Other Users' Records](creating-custom-record-and-report-types.md#editing-other-users-records).
 

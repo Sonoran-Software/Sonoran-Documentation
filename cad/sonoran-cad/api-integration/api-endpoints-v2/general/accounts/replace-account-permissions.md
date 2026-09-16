@@ -16,6 +16,12 @@ Only pending or active non-owner memberships can be edited. Nonempty grants acti
 
 A granular replacement ends legacy category inheritance for future record templates. Refresh the catalog and explicitly grant access to new templates when needed. Existing legacy integrations remain supported, but new integrations should use this endpoint.
 
+## Selecting limited editing
+
+After the catalog exposes `record.<templateId>.edit.selected`, include that grant to permit only fields marked **Allow limited editing** on another account's records. Include `read` and required page access separately. Retain or add `edit.own` only if own-record editing is also intended. Remove that template's `edit.any` grant when limiting access: full editing takes precedence, regardless of field opt-in. Preserve every unrelated grant when building the replacement list.
+
+`supervise` remains an additional requirement for supervisor-only fields, including opted-in fields. It does not expand a selected-field user's editable field list. Existing records and field flags need no migration. Existing Edit any grants are retained and mean full editing on the updated backend. Do not send this new grant to a server whose catalog does not include it.
+
 ## Request Body
 
 ```json

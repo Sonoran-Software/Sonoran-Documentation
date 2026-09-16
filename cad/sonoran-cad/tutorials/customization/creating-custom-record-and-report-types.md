@@ -40,22 +40,26 @@ Search imports require matching field IDs. See [Linking Vehicle and Character Se
 | --- | --- |
 | Show in lookup | Shows this field's label and value in record search results. Enable it on at least one field. |
 | Required | Requires a value before the record can be submitted. |
-| Supervisor only | Requires **Supervisor fields** permission for this record template to edit the field. |
+| Supervisor only | Requires **Supervisor fields** permission for this record template in addition to an editing permission. Unit identifier status does not grant it. |
 | Read only | Prevents users from changing the field manually. |
-| Editable by other users | Lets someone with **Edit any** for this template change the field on another account's record. |
+| Allow limited editing (previously Editable by other users) | Opts this field into **Edit selected fields on others' records**. Edit own and Edit any do not require field opt-in. |
 | Unique value | Prevents duplicate values within this template, where supported. Found under **Advanced**. |
 
 ### Editing Other Users' Records
 
-To let officers update license points or status:
+{% hint style="info" %}
+This editing model requires a backend whose permission catalog includes `edit.selected` and the updated permission editor. See [record editing permissions](../getting-started/permissions.md#record-editing-permissions) for rollout and existing-community guidance.
+{% endhint %}
+
+To let officers update only license points or status:
 
 1. Select the license template and click **Points** in the preview.
-2. Enable **Editable by other users**. Repeat for **Status** if needed.
+2. Enable **Allow limited editing**. Repeat for **Status** if needed.
 3. Turn it off on fields they should not change, such as the license holder's name.
 4. Save the template.
-5. In [account permissions](../getting-started/permissions.md), grant the officer **Police page** access and **View** and **Edit any** for the license template.
+5. In [account permissions](../getting-started/permissions.md), grant the officer **Police page** access and **View** and **Edit selected fields on others' records** for the license template. Ensure no permission key or role mapping also grants **Edit any**, which allows full editing. Add **Edit own** separately if needed.
 
-The officer can then open the license from a lookup and save changes to the allowed fields. Read-only fields stay protected. Supervisor-only fields also require **Supervisor fields** permission.
+The officer can then open another account's license from a lookup and save changes to the allowed fields. These rules apply regardless of which panel opens the record. Read-only fields stay protected. Supervisor-only fields also require **Supervisor fields** permission.
 
 To change a field automatically based on its value, use [Record Automations](record-automations.md).
 
@@ -137,7 +141,7 @@ Select each destination field and check **Advanced > Field Mapping ID**. If your
 
 **The template has no fields enabled for preview:** Enable **Show in lookup** on at least one useful field, such as name, plate, or license number.
 
-**An officer cannot edit a field:** Check page access, **View**, and **Edit any** for the template, plus **Editable by other users** on the field. Check **Read only** and **Supervisor only** as well.
+**An officer cannot edit a field:** Check page access, **View**, and an editing permission for the template. For limited editing of another account's record, check **Edit selected fields on others' records** and **Allow limited editing** on the field. **Edit any** permits full editing without field opt-in; **Edit own** applies only to the account's records. Check **Read only** and **Supervisor only** as well.
 
 **A template change is blocked by an automation:** Update or disable the [automation](record-automations.md) that uses the affected field, then save the template again.
 

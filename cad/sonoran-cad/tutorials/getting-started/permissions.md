@@ -35,12 +35,51 @@ Open **Records** and expand a template. Permissions apply to that template, so a
 | View | Find and view records of this type. |
 | Create | Create a record of this type. |
 | Edit own | Edit records owned by their account. |
-| Edit any | Edit records owned by any account, including their own. |
+| Edit any | Edit records owned by any account, including their own, without field opt-in. |
+| Edit selected fields on others' records | Edit only opted-in fields on records owned by another account. Does not include Edit own. |
 | Delete own | Delete records owned by their account. |
 | Delete any | Delete records owned by any account, including their own. |
 | Supervisor fields | Update fields marked supervisor-only, alongside the required record editing permission. |
 
-Page access and record permissions work together. For example, give an officer **Police page** access, **View**, and **Edit any** for licenses. In the [custom record editor](../customization/creating-custom-record-and-report-types.md#editing-other-users-records), enable **Editable by other users** only on fields the officer should change, such as points or status.
+## Record editing permissions
+
+{% hint style="info" %}
+Rollout availability: the editing model below requires a CAD backend whose permission catalog includes `edit.selected`, plus the updated permission editor. During rollout, a frontend update alone does not change server-side editing rules. Integrations should check the catalog rather than assume the new permission is available.
+{% endhint %}
+
+Each record template has independent editing permissions:
+
+| Permission | Access |
+| --- | --- |
+| **Edit own** | Edit records created by the account. |
+| **Edit selected fields on others' records** | Edit only fields marked **Allow limited editing** on records created by other accounts. Does not include Edit own. |
+| **Edit any** | Edit anyone's records, including the account's own records, without field opt-in. Includes Edit own. |
+
+**Supervisor fields** is an additional requirement for supervisor-only fields, not a substitute for an editing permission. **Read-only** fields remain locked. View, page access, record creation and deletion are separate permissions.
+
+These rules apply to all record templates, regardless of which panel opens a record. For example:
+
+- Give an officer **Edit own** to write and maintain their own reports, together with the separate Create and View permissions.
+- Give a records supervisor **Edit any** to edit other officers' reports without enabling every field individually.
+- For an officer who should change only license points or a character's address, grant **Edit selected fields on others' records** on that template and enable **Allow limited editing** on those specific fields. Leave Edit any off for that template.
+- An administrator who should edit the whole character record can receive **Edit any** instead.
+
+### Configure limited editing
+
+1. Open Administration > Customization > Custom Records and select the record template.
+2. Select each field officers may update and enable **Allow limited editing**. This field setting was previously labeled **Editable by other users**.
+3. Save the template.
+4. In the account or permission-key editor, grant **Edit selected fields on others' records** for that template, along with the required page and View permissions. Add **Edit own** separately if needed.
+5. Ensure the account does not also receive **Edit any** for that template through another permission key or role mapping. Full editing takes precedence.
+6. Close and reopen an existing record created by a different account to verify the allowed fields. Test supervisor-only and read-only fields separately.
+
+### Existing communities
+
+No database migration, template recreation or report recreation is needed. Existing Edit own and Edit any grants are retained, and existing field selections are preserved. The new selected-fields permission is not automatically assigned. Edit any now means full editing; communities that want limited access should replace Edit any with the selected-fields permission for those roles.
+
+Turning off Read-only does not opt a field into limited editing. Enabling Supervisor fields does not bypass the limited-field selection. On the updated backend, Edit any users do not need field opt-in.
+
+Sonoran Bot codes retain their existing permissions and add support for selected-field editing when both the bot and CAD catalog support it. Existing SDK permission methods accept the new catalog grant without new API methods. A role-sync configuration may overwrite manual account grants; update the source role mapping when applicable.
 
 ## Permission Keys
 

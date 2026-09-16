@@ -10,9 +10,17 @@ Authenticate with your community API key using `Authorization: Bearer YOUR_API_K
 
 Return the community-specific catalog of available, case-sensitive grant IDs and the legacy flag conversion map. Fetch this catalog before assigning permissions and refresh it when record templates change.
 
-Global permissions use `global.<fieldName>`. Record permissions use `record.<templateId>.<action>`, with actions `read`, `create`, `edit.own`, `edit.any`, `delete.own`, `delete.any`, and `supervise`. Template IDs belong to the current community; do not copy them from another community or hardcode the sample ID below.
+Global permissions use `global.<fieldName>`. Record permissions use `record.<templateId>.<action>`, with actions `read`, `create`, `edit.own`, `edit.any`, `delete.own`, `delete.any`, `supervise`, and, on backends supporting limited editing, `edit.selected`. Template IDs belong to the current community; do not copy them from another community or hardcode the sample ID below.
 
 `legacyGrants` maps uppercase legacy flags (such as `POLICE`) to the grant arrays produced by CAD's migration rules. The example response is an excerpt; actual catalogs and mappings contain all applicable entries. Use this map to migrate an existing role configuration, then manage explicit grant lists with [Replace Account Permissions](replace-account-permissions.md).
+
+## Editing grant discovery
+
+Use `record.<templateId>.edit.selected` only when returned by this community's catalog. The grant permits editing opted-in fields (`editableByOthers: true`) on other accounts' records; it does not grant own-record editing. `edit.any` permits full editing, including owned records, without field opt-in on this backend version. `edit.own` permits full editing of owned records. Supervisor-only fields additionally require `supervise`, and read-only fields remain locked for account editing.
+
+There is no permission-document version or endpoint change: `version` remains `2`. Existing grants remain unchanged and the new grant is not automatically assigned. The SDKs use string grant IDs and do not need new methods. Refresh the catalog when permission capabilities or templates change. Community API-key record operations retain their existing service authority; account grant changes do not narrow those credentials.
+
+See [the account permission guide](../../../../tutorials/getting-started/permissions.md#record-editing-permissions) for rollout availability and examples.
 
 ## Example Request
 
