@@ -63,7 +63,6 @@ Use this combined OpenAPI document if you want to import the full Sonoran CAD v2
 This generated collection currently includes `85` documented v2 operations.
 
 <details>
-
 <summary>Copy the full OpenAPI YAML</summary>
 
 ```yaml
@@ -1614,6 +1613,26 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      title:
+                        type: string
+                      text:
+                        type: string
+                      panelKey:
+                        type: string
+                        pattern: ^[a-z0-9][a-z0-9._-]{1,79}$
+                        description: Registered Integration Panel key. Renders the
+                          panel instead of text.
+                      instanceKey:
+                        type: string
+                        pattern: ^[a-z0-9][a-z0-9._-]{1,79}$
+                        default: default
+                        description: Exact instance on this server.
             example:
               coordinates:
                 x: 441.2
@@ -1741,6 +1760,28 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                data:
+                  type: array
+                  description: Replaces all menu entries. An empty array clears the
+                    menu.
+                  items:
+                    type: object
+                    properties:
+                      title:
+                        type: string
+                      text:
+                        type: string
+                      panelKey:
+                        type: string
+                        pattern: ^[a-z0-9][a-z0-9._-]{1,79}$
+                        description: Registered Integration Panel key. Renders the
+                          panel instead of text.
+                      instanceKey:
+                        type: string
+                        pattern: ^[a-z0-9][a-z0-9._-]{1,79}$
+                        default: default
+                        description: Exact instance on this server.
             example:
               tooltip: Updated perimeter
               color: '#00a3ff'
@@ -3793,5 +3834,4 @@ components:
         jailTime:
           type: string
 ```
-
 </details>

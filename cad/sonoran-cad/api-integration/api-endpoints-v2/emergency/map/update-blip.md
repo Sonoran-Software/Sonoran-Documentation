@@ -20,10 +20,6 @@ Update one or more editable fields on a custom blip.
 
 ## Request Body
 
-{% hint style="warning" %}
-**Staging only:** `panelKey` and `instanceKey` menu references require `https://staging-api.dev.sonorancad.com` and the staging CAD UI. These additions are not yet released on the production endpoint shown above. See [Development Branch](../../../development-branch.md).
-{% endhint %}
-
 `data` replaces the complete menu entry list. Each entry can contain `title`/`text` information or an Integration Panel reference using `panelKey` and `instanceKey` (default `default`). Panel keys are exact registered keys, not display names; the instance belongs to the selected server. Both keys use the panel API's 2–80 character lowercase key format. An optional `title` overrides the panel heading. A missing panel or instance displays an unavailable message.
 
 For example, send `{"data":[{"panelKey":"smart-signs","instanceKey":"sign-12"}]}` to attach the sign editor. Send `{"data":[]}` to clear menu content, or resend only the information entries to remove a panel while retaining them. Omitting `data` preserves the current menu. In Sonoran.Net use `BlipDisplayDataV2.PanelKey` and `.InstanceKey`; the other SDKs pass these fields through their existing `updateBlipV2` helper.

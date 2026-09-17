@@ -40,3 +40,9 @@ Reference a list of bot commands:
 {% content-ref url="https://app.gitbook.com/s/gJnyZgUQPWpA5p9njAAR/tutorials/usage/commands" %}
 [Commands](https://app.gitbook.com/s/gJnyZgUQPWpA5p9njAAR/tutorials/usage/commands)
 {% endcontent-ref %}
+
+### Generate a permission code in CAD
+
+In **Administration > Accounts > Permission Keys**, open **Bot permissions**. Select page, administrative, and per-template record permissions in the builder, then copy the generated code for your bot role mapping. This builds a code; it does not directly change account permissions.
+
+Use **Edit selected fields on others' records** with template fields marked **Allow limited editing** for restricted updates. **Edit any** grants full editing access instead. See [Granting Account Permissions](../tutorials/getting-started/permissions.md#record-editing-permissions) before changing an existing role mapping.

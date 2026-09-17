@@ -22,13 +22,15 @@ The editor has three tabs:
 
 Click a permission card to enable or disable it. Use **Search permissions** to find a setting or template, and **Enabled only** to review the permissions already selected.
 
-An account is **Active** when it has at least one permission, and **Pending** when it has none. Bans are managed separately under **Account actions**.
+For an editable pending or active membership, saving a nonempty permission list makes the account **Active** (subject to your member limit). Clearing all permissions returns it to **Pending**. Bans are managed separately under **Account actions**.
+
+The Accounts table now shows **Community User ID**, the current identifier used by FiveM `/link`, in place of legacy API IDs. See [Link User In-Game](../../integration-plugins/in-game-integration/link-user-in-game.md).
 
 ## Record Permissions
 
 Open **Records** and expand a template. Permissions apply to that template, so a member can edit licenses without receiving the same access to arrest reports or other records.
 
-<figure><img src="../../.gitbook/assets/cad-account-permissions-records.png" alt="License permissions with View and Edit any enabled"><figcaption><p>Choose the actions allowed for each record template.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/record-permissions-20260916.png" alt="Incident Report permissions with View, Create, Edit own and selected-field editing enabled"><figcaption><p>Choose the actions allowed for each record template.</p></figcaption></figure>
 
 | Permission | Allows the member to |
 | --- | --- |
@@ -44,7 +46,7 @@ Open **Records** and expand a template. Permissions apply to that template, so a
 ## Record editing permissions
 
 {% hint style="info" %}
-Rollout availability: the editing model below requires a CAD backend whose permission catalog includes `edit.selected`, plus the updated permission editor. During rollout, a frontend update alone does not change server-side editing rules. Integrations should check the catalog rather than assume the new permission is available.
+CAD 3.44.1 separates full editing from selected-field editing. Integrations should use the [permission catalog](../../api-integration/api-endpoints-v2/general/accounts/get-permission-catalog.md) to discover supported grants, including `edit.selected`.
 {% endhint %}
 
 Each record template has independent editing permissions:
@@ -98,3 +100,5 @@ The **Bot permissions** button in the Permission Keys panel creates a configurat
 ## Role Sync
 
 When using Sonoran Bot or CMS to manage access, update permissions in the role or rank mapping. A later sync can overwrite manual changes made directly in CAD.
+
+Sonoran CMS supports granular per-template CAD permissions in its role/rank mappings. Apply the same distinction between **Edit any** and **Edit selected fields on others' records** when configuring sync.

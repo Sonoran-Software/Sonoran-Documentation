@@ -12,6 +12,8 @@ description: View the latest changes to Sonoran CAD!
 
 ### 3.44.1 09/16/2026
 
+Guides: [Record Automations](../../tutorials/customization/record-automations.md), [Custom Records](../../tutorials/customization/creating-custom-record-and-report-types.md), and [Account Permissions](../../tutorials/getting-started/permissions.md).
+
 {% tabs %}
 {% tab title="New" %}
 Record Automations: More Field Types

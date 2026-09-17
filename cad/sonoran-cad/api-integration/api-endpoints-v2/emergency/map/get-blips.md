@@ -4,10 +4,6 @@ description: Retrieve custom blips for a server.
 
 # Get Blips
 
-{% hint style="info" %}
-`panelKey` and `instanceKey` menu references are a **staging feature**. Use `https://staging-api.dev.sonorancad.com` for development; see [Development Branch](../../../development-branch.md).
-{% endhint %}
-
 Custom blip `data` entries may include `panelKey` and `instanceKey` references in addition to ordinary `title`/`text` content. These references are returned unchanged and select an Integration Panel instance on this server when the blip menu opens. An omitted `instanceKey` means `default`. See [Smart Signs: Live Map Editor](../../integration-panels/examples/smart-signs.md).
 
 <mark style="color:green;">`GET`</mark> `https://api.sonorancad.com/v2/emergency/servers/{serverId}/blips`

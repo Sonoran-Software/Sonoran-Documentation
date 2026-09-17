@@ -10,7 +10,7 @@ Build forms for your community's licenses, records, and reports in **Administrat
 
 Use **Record template** to search for an existing template, or select **New** and choose a record type. Enter its **Record Type Name**.
 
-<figure><img src="../../.gitbook/assets/cad-custom-record-editor.png" alt="Visual license template editor with the Points field selected and field settings on the right"><figcaption><p>Select a field in the preview to edit its settings.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/custom-record-editor-20260916.png" alt="Visual incident-report template editor with Priority selected and Allow limited editing enabled"><figcaption><p>Select a field in the preview to edit its settings.</p></figcaption></figure>
 
 ## Arrange the Form
 
@@ -48,7 +48,7 @@ Search imports require matching field IDs. See [Linking Vehicle and Character Se
 ### Editing Other Users' Records
 
 {% hint style="info" %}
-This editing model requires a backend whose permission catalog includes `edit.selected` and the updated permission editor. See [record editing permissions](../getting-started/permissions.md#record-editing-permissions) for rollout and existing-community guidance.
+CAD 3.44.1 separates full editing from selected-field editing. See [record editing permissions](../getting-started/permissions.md#record-editing-permissions) for existing-community guidance.
 {% endhint %}
 
 To let officers update only license points or status:
@@ -61,7 +61,7 @@ To let officers update only license points or status:
 
 The officer can then open another account's license from a lookup and save changes to the allowed fields. These rules apply regardless of which panel opens the record. Read-only fields stay protected. Supervisor-only fields also require **Supervisor fields** permission.
 
-To change a field automatically based on its value, use [Record Automations](record-automations.md).
+To change a field automatically based on its value, use [Record Automations](record-automations.md). Administrator-created automations can update supported read-only and supervisor-only fields; those settings still restrict manual editing. Actual synced values and unique fields remain protected from automation actions.
 
 ### Field Types
 

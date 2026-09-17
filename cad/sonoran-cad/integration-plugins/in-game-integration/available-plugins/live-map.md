@@ -232,3 +232,9 @@ In Chrome, navigate to `chrome://gpu/` and check if `WebGL` is **Disabled**. If 
 * **Chrome** > **Settings** > **System** > **Use Graphics Acceleration When Available**
 * Ensure Graphics Drivers are Up-to-Date
 * Fully restart your web browser
+
+### Custom Blip Integration Panels
+
+Custom blips can display interactive [Integration Panels](../../../api-integration/api-endpoints-v2/integration-panels/README.md) inside their menus in both 2D and 3D map views. Click a configured custom blip to view its controls. The connected integration must publish the panel and its state, process actions, and send back the updated result.
+
+Developers can attach a panel and instance using the blip's `data` entries. The [Smart Signs example](../../../api-integration/api-endpoints-v2/integration-panels/examples/smart-signs.md) shows an individual sign editor, including the API setup and action handling. This is a custom integration example; adding a blip alone does not implement the game-side controls.

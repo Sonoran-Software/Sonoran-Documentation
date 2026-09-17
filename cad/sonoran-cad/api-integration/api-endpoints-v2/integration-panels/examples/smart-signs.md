@@ -4,10 +4,6 @@ description: Open an individual street sign editor from a custom live-map blip.
 
 # Smart Signs: Live Map Editor
 
-{% hint style="warning" %}
-**Staging feature — September 16, 2026.** Blip panel references and complete untouched-input Save values are available on CAD staging. Use `https://staging-api.dev.sonorancad.com` for every API request and `https://staging.dev.sonorancad.com` for the CAD UI, with a staging community's API key. The paths below are relative to that staging API host. These additions are not yet released on the production CAD API. See [Development Branch](../../../development-branch.md) for setup, including FiveM's `development` mode.
-{% endhint %}
-
 Attach an Integration Panel to a custom blip to show interactive controls when a user clicks the blip. The same renderer, state API, action queue, and acknowledgments used by layout panels also work in the map's blip menu, in both 2D and 3D views.
 
 This example defines one reusable editor, publishes one instance per sign, and adds a blip pointing to that exact instance. CAD renders three text inputs and a **Save sign** button. No script or HTML runs inside CAD; your server-side integration handles each action.

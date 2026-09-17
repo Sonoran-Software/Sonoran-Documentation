@@ -43,10 +43,6 @@ description: Create a custom blip.
 
 ### Interactive panel menu entries
 
-{% hint style="warning" %}
-**Staging only:** the `panelKey` and `instanceKey` menu fields require `https://staging-api.dev.sonorancad.com` and the staging CAD UI. The production endpoint shown above remains the existing blip API. See [Development Branch](../../../development-branch.md).
-{% endhint %}
-
 To embed a registered Integration Panel, add a `data` entry with `panelKey` and `instanceKey`:
 
 ```json

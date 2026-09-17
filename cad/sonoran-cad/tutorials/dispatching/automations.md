@@ -4,6 +4,8 @@ description: Automate key parts of your dispatching workflow.
 
 # Automations
 
+To update record fields based on saved values, see [Record Automations](../customization/record-automations.md) in Administration. This page covers dispatch unit statuses and timers.
+
 ## Dispatch Automations Menu
 
 The **Automations** menu is available to dispatchers in the call editor.
