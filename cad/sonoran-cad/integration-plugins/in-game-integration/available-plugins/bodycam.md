@@ -78,7 +78,7 @@ In-game commands can be used to
 * `/bodycam sound` Toggles the [beeps](bodycam.md#beeps) on and off locally
 * `/bodycam anim` Toggles the [bodycam animation](bodycam.md#animation) on and off locally
 * `/bodycam overlay` Toggles the [bodycam overlay](bodycam.md#body-camera-overlay) on and off locally
-* `/bodycam forceoff` Toggles the [force-off state](bodycam.md#force-off)
+* `/bodycam forceoff` Enables the [force-off state](bodycam.md#force-off)
 
 <figure><img src="../../../.gitbook/assets/image (571).png" alt=""><figcaption></figcaption></figure>
 
@@ -114,20 +114,18 @@ The body camera will automatically activate when an officer activates their ligh
 
 You can now force your body camera off using `/bodycam forceoff` until you manually turn it back on via the `/bodycam` command. While in the forced-off state, the body camera will no longer automatically turn on when someone is viewing, or based upon any automatic events.
 
-This command can be restricted via ACE permissions:
+This command requires the `sonorancad.bodycam.forceoff` FiveM ACE permission by default. If you receive a permission error, ask your server administrator to grant access using the steps below. CAD account permissions do not grant this access.
 
-```
--- Ace permission required for /bodycam forceoff (leave blank to disable ace check).
-forceOffAce = "sonorancad.bodycam.forceoff",
-```
-
-Grant the configured node to a role containing users who may force bodycams off. For example:
+Add these lines to your FiveM server's `server.cfg` (or a permissions file executed by it). Replace `YOUR_LICENSE` with the player's license identifier:
 
 ```cfg
 add_ace group.sonoran_cad_bodycam sonorancad.bodycam.forceoff allow
+add_principal identifier.license:YOUR_LICENSE group.sonoran_cad_bodycam
 ```
 
-The `forceOffAce` value is configurable. Set it to `""` to disable this check. The other `/bodycam` subcommands are not ACE-restricted by this submodule.
+The first line grants the permission to the group; the second adds a player to that group. Repeat the second line for each player who needs access. Restart the server after saving, or run both lines in the server console to apply them immediately.
+
+To change the required permission, edit `forceOffAce` in `sonorancad/configuration/bodycam_config.lua`. Set `forceOffAce = ""` to allow everyone to use force off, then restart the `sonorancad` resource. The other `/bodycam` subcommands are not ACE-restricted by this submodule.
 
 The distributed `sonorancad.cfg` also grants these fixed keybind command nodes:
 
