@@ -10,6 +10,20 @@ description: View the latest changes to Sonoran CMS!
 
 ## Changelog
 
+### 1.5.21 09/17/2026
+
+{% tabs %}
+{% tab title="New" %}
+Website Fonts
+
+* Added Google fonts + ability to upload custom fronts in the file drive
+
+Form Revision History
+
+* Added revision history to forms to view updates.
+{% endtab %}
+
+{% endtabs %}
 ### 1.5.20 09/16/2026
 
 {% tabs %}
