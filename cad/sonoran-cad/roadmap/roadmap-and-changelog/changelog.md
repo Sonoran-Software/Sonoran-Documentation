@@ -10,6 +10,16 @@ description: View the latest changes to Sonoran CAD!
 
 ## Changelog
 
+### 3.44.3 09/17/2026
+
+{% tabs %}
+{% tab title="Fixed" %}
+Bodycam: Sound and Source Controls
+
+* Fixed the stop sound to respect mute and volume settings and kept source controls available when another source category has options.
+{% endtab %}
+
+{% endtabs %}
 ### 3.44.1 09/16/2026
 
 Guides: [Record Automations](../../tutorials/customization/record-automations.md), [Custom Records](../../tutorials/customization/creating-custom-record-and-report-types.md), and [Account Permissions](../../tutorials/getting-started/permissions.md).
