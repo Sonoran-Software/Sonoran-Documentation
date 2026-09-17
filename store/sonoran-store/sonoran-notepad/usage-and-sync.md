@@ -39,6 +39,14 @@ The notepad is still available for standalone use in-game, if not using Sonoran 
 
 \<!— Todo IMAGE (hyperlinks, NCIC, and in-CAD view) -->
 
+## Name and plate searches
+
+With CAD sync available, highlight a name or license plate in the note body and right-click the selection. Choose **Search CAD as name** or **Search CAD as plate**. Name searches accept one to three name parts.
+
+The notepad synchronizes the note before requesting the search through the signed-in CAD tablet. The selected text becomes a linked lookup annotation. Hover over linked text to inspect the stored return, or select it to run or refresh the lookup. These annotations are preserved when the notes synchronize with CAD.
+
+Searches require the current tablet relay and a linked, signed-in CAD session. If a search is already pending, wait for it to finish before starting another. Editing the note during a search can cancel that search; select the current text and try again.
+
 ## Local-only mode
 
 If you are not using the [CAD's tablet resource](https://docs.sonoransoftware.com/cad/integration-plugins/in-game-integration/available-plugins/tablet) submodule or are not signed into the tablet, a compact warning appears above the notebook header. Editing, page navigation, and removal continue to work.

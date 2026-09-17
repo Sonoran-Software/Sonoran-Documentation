@@ -25,19 +25,22 @@ The standard SonoranCADFiveM configuration already enables `tablet`. Complete th
 
 1. Sign in to the [Cfx.re Portal](https://portal.cfx.re/) with the account that owns the package.
 2. Download and extract Sonoran Notepad.
-3. Place the complete `sonoran-notepad` folder in the server's resources directory.
+3. Place both complete folders, `sonoran-notepad` and `sonoran-notepad_helper`, in the same server resources directory. The helper handles resource restarts after updates; do not add it to `server.cfg`.
 
 The resource manifest must be directly inside the folder:
 
 ```
 resources/
 └── [sonoran]/
-    └── sonoran-notepad/
+    ├── sonoran-notepad/
+    │   ├── fxmanifest.lua
+    │   ├── config/
+    │   ├── client/
+    │   ├── server/
+    │   └── html/
+    └── sonoran-notepad_helper/
         ├── fxmanifest.lua
-        ├── config/
-        ├── client/
-        ├── server/
-        └── html/
+        └── s.lua
 ```
 
 Do not leave an extra nested folder such as `sonoran-notepad/sonoran-notepad/fxmanifest.lua`, and do not rename the resource.
