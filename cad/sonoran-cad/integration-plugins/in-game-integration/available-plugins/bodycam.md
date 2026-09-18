@@ -46,7 +46,7 @@ The bodycam settings are stored inside of the `/configuration/bodycam_config.lua
 | `overlayLocation`               | <p>The position (corner) of the screen where the body camera image is displayed.<br>Options: <code>top-left</code>, <code>top-right</code>, <code>bottom-left</code>, <code>bottom-right</code><br>Default: <code>top-right</code></p> |
 | `enableBeeps`                   | <p>Enables or disables the body camera beeping when turned on.<br>Default: <code>true</code></p>                                                                                                                                       |
 | `beepType`                      | <p>Type of audio that the beeps use.</p><p><code>native</code> = GTAV Native Sounds</p><p><code>nui</code> = Custom Sound File</p>                                                                                                     |
-| `beepFrequency`                 | <p>Adjusts the frequency at which unit body camera beeps when turned on(in milliseconds).<br>Default: <code>30000</code> (30 seconds)</p>                                                                                              |
+| `beepFrequency`                 | <p>Adjusts the frequency at which unit body camera beeps when turned on(in milliseconds).<br>Default: <code>60000</code> (60 seconds)</p>                                                                                              |
 | `beepRange`                     | The range at which a person can hear the bodycam beeps                                                                                                                                                                                 |
 | `screenshotFrequency`           | <p>Adjusts the frequency at which unit body cameras update (in milliseconds).<br>Default: <code>2000</code> (2 seconds)</p>                                                                                                            |
 | `defaultKeybind`                | The default keybind for toggling the bodycam.                                                                                                                                                                                          |
@@ -75,7 +75,10 @@ On first usage, players will be prompted to grant permission for the bodycam:
 In-game commands can be used to
 
 * `/bodycam` Toggle the bodycam on or off
-* `/bodycam sound` Toggles the [beeps](bodycam.md#beeps) on and off locally
+* `/bodycam sound` Displays your current local sound volume
+* `/bodycam sound 0` Mutes bodycam sounds locally; use a value from `0` to `1`, such as `/bodycam sound 0.2` for 20% volume
+* `/bodycam frequency` Displays your current beep interval in seconds
+* `/bodycam frequency 30` Sets your bodycam beep interval to 30 seconds; accepts whole seconds from `1` to `3600`
 * `/bodycam anim` Toggles the [bodycam animation](bodycam.md#animation) on and off locally
 * `/bodycam overlay` Toggles the [bodycam overlay](bodycam.md#body-camera-overlay) on and off locally
 * `/bodycam forceoff` Enables the [force-off state](bodycam.md#force-off)
@@ -98,10 +101,33 @@ When your bodycam is on and being viewed in the CAD a periodic beep and body ove
 
 ### Beeps
 
-The body camera plays server-sided beeps periodically while activated.
+The FiveM body camera plays periodic beeps while activated. These settings are separate from the desktop/web screen-sharing camera, even when CAD is opened inside an in-game tablet. Changing the CAD **Modify Identifier > Bodycam** sound settings does not change FiveM's bodycam sounds.
 
-* `beepFrequency` determines how often these beeps are played
-* `beepRange` determines how far away these beeps are heard
+#### Per-Player Commands
+
+* `/bodycam sound 0` or `/bodycam sound 0.0` mutes local bodycam sounds, including start/stop and reminder beeps. `/bodycam sound 0.2` restores the default 20% volume.
+* `/bodycam sound` displays your current volume. Values from `0` to `1` are accepted. With `beepType = "native"`, zero mutes the beeps, but nonzero values do not adjust GTA's native sound volume.
+* `/bodycam frequency 30` sets a 30-second interval. `/bodycam frequency 290` sets a 290-second interval. Use whole seconds from `1` to `3600`; `/bodycam frequency` displays the current value.
+
+A frequency change restarts the reminder countdown using the new interval. It applies to your camera's reminders, including the sound requests sent to nearby players; it does not change other players' camera intervals. Local muting does not prevent nearby players from hearing your camera. Your volume and interval overrides reset when you reconnect or the resource restarts. If your server renamed the `bodycam` command, use its configured name instead.
+
+These commands require the updated FiveM resource. Server administrators must install the update and restart the resource before players can use zero-volume muting or the frequency command.
+
+#### Server Configuration
+
+In `sonorancad/configuration/bodycam_config.lua`:
+
+```lua
+enableBeeps = true,
+beepType = "nui",
+beepFrequency = 60000, -- milliseconds: 60 seconds
+```
+
+* `beepFrequency` sets the default interval in **milliseconds**. Use `30000` for 30 seconds or `290000` for 290 seconds. The in-game `frequency` command uses **seconds**.
+* `enableBeeps = false` disables the recurring beep loop, but does not silence start/stop tones or received nearby-camera beeps. A player frequency override does not re-enable a disabled loop.
+* `beepRange` determines how far away nearby players can hear the camera.
+
+Restart the resource after changing its configuration.
 
 ### Automatic Activation
 
