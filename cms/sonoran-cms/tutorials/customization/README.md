@@ -6,3 +6,7 @@ description: >-
 
 # Customization
 
+
+## Fonts
+
+Choose included system and Google fonts, or upload your own through CMS Drive. See [Fonts & Custom Uploads](fonts.md) for supported formats and setup instructions.

@@ -10,10 +10,12 @@ The desktop app provides an overlay for **FiveM, Arma 3, Roblox, and other games
 
 1. [Download and open the desktop app](../../download-the-app.md).
 2. Join your Radio community and connect to a channel.
-3. Select **Open Overlay** (the arrow leaving a square) on the dispatch or mobile panel.
+3. Select the **Overlay** tab at the top, beside **Dispatch**.
 4. Position the radio over your game window.
 
-<figure><img src="../../.gitbook/assets/desktop-overlay/open-overlay-annotated.png" alt="Desktop panel toolbar with the Open Overlay button on the right"><figcaption><p>Select the arrow leaving a square in the upper-right toolbar to open the desktop overlay.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/overlay-top-navigation.png" alt="Sonoran Radio top navigation with the Overlay tab immediately to the right of Dispatch"><figcaption><p>The Overlay tab is beside Dispatch in the top navigation. Use the desktop app to open it; the website displays it disabled.</p></figcaption></figure>
+
+On the website, the tab is disabled; its tooltip explains that the desktop app is required. The mobile app hides the tab.
 
 To return to the main panel, use the radio's power button or **Return to Portal**.
 
@@ -41,7 +43,9 @@ Set **PTT Hotkey** to your preferred push-to-talk key.
 <details>
 <summary>Move or resize the radio</summary>
 
-Drag the radio to move it. Hold **Ctrl** while dragging up or down to resize it.
+Drag the radio body to move it. To resize the whole overlay, drag a corner, or hold **Ctrl** while dragging the body: up enlarges and down shrinks.
+
+A brief resize hint appears when the overlay opens and when you hover or focus a resize corner. There is no permanent resize button, and hovering over the radio screen does not repeatedly show the hint.
 
 </details>
 
@@ -65,8 +69,14 @@ Uploading custom frame artwork requires **Pro**.
 
 1. In your community's admin panel, open **Customization** > **Desktop Frames**.
 2. Upload the frame image.
-3. Position its buttons and screen, then save.
+3. Position its buttons. Drag the screen to move it or drag its corners to resize its bounds, then save. This changes the community frame layout, not just the overlay's on-screen size.
 
 <figure><img src="../../.gitbook/assets/image (17).png" alt="Desktop Frames editor"><figcaption></figcaption></figure>
 
 </details>
+
+## Arma display and focus
+
+Use **Fullscreen Window** in Arma's video settings so the desktop overlay can remain visible. If Arma freezes or pauses when you focus the overlay, enable **No Pause** in the Arma launcher or add `-noPause` to its launch parameters. Return focus to the game to resume game input; these options do not make the game and overlay simultaneously receive the same keyboard input.
+
+See [Arma installation](../integrations/arma-3/install-and-connect.md) for community-wide bridge, signal, and AI-hearing settings. These controls are not in Dispatch's per-user settings.

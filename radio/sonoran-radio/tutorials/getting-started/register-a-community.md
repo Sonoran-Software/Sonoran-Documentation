@@ -8,13 +8,21 @@ description: Create your own FREE community on Sonoran Radio!
 
 ## Creating a Community
 
-1. Navigate to [SonoranRadio.com](https://sonoranradio.com) and login
-2. In your Sonoran Radio Portal, click the green plus button
-3. Click `Begin Your Journey!` to create a new community
-4. Click `Standalone (Alpha)` mode at the top
-5. Enter a good nickname, and click `Register Server`
+1. Sign in at [SonoranRadio.com](https://sonoranradio.com).
+2. From the Portal, choose the option to create a community.
+3. Select your game using the logo cards: **FiveM**, **ER:LC**, **ARMA 3**, **Star Citizen**, or **Other**.
+4. Enter the community nickname and any other requested community details.
+5. Select **Create Community** once and wait for registration to finish.
 
-<figure><img src="../../.gitbook/assets/chrome_syzHJ0YAL4.png" alt=""><figcaption><p>Sonoran Radio - Create a New Community</p></figcaption></figure>
+The game selection is required and saved on the community. Administrators can change it later under **Community Customizations → Game Integrations**, using the same game cards.
+
+### Initial frames and screen themes
+
+New ARMA 3 communities receive the BLUFOR/OPFOR frames and inventory-item mappings with the text-style screen. New Star Citizen communities receive the horizontal Mobi frame with the Mobi screen. Other games use their applicable default setup.
+
+These defaults are chosen during registration. Changing an existing community's game does not replace its customized frames; edit them under **Desktop Frames**.
+
+The older video above may show a previous registration layout; follow these steps for the current form.
 
 ***
 

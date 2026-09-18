@@ -147,6 +147,9 @@ Files allowed for upload include:
 * `.mp3` Audio
 * `.wav` Audio
 * `.rpf` GTA Archive
+* `.ttf`, `.otf`, `.woff`, `.woff2` Custom Font (up to 5 MB each; use Upload File)
+
+For font uploads, conversion, and the sharing settings needed to use a font in CMS editors, see [Fonts & Custom Uploads](customization/fonts.md).
 
 <figure><img src="../.gitbook/assets/image (281).png" alt=""><figcaption></figcaption></figure>
 

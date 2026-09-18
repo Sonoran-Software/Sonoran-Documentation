@@ -28,4 +28,6 @@ To permanently delete a Sonoran Radio community, navigate to `Administration` > 
 
 _Note: Only the community owner can delete the community._
 
+After confirming deletion, a **Deleting community…** loading state appears. Wait for completion rather than repeatedly submitting. Successful deletion returns you to the Portal; communities using a custom domain return to the main Sonoran Radio Portal. If deletion fails, an error is shown instead.
+
 <figure><img src="../../.gitbook/assets/image (225).png" alt="" width="375"><figcaption><p>Sonoran Radio: Delete Community</p></figcaption></figure>

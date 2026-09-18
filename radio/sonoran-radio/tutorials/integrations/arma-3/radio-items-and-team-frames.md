@@ -15,7 +15,7 @@ Equip a radio item to use the desktop frame assigned to it by your community.
 
 <figure><img src="../../../.gitbook/assets/desktop-radio-overlay.jpg" alt="Sonoran Radio desktop radio frame displayed over Arma 3 gameplay"><figcaption><p>The desktop radio overlay remains visible and usable while playing Arma 3.</p></figcaption></figure>
 
-Newly created Radio communities include the two example desktop frames and mappings. Existing communities can map these classes to an existing frame or create new frames.
+New Radio communities registered with **ARMA 3** selected include the two example desktop frames and mappings. Existing communities can map these classes to an existing frame or create new frames.
 
 <details>
 <summary>Select a frame manually</summary>

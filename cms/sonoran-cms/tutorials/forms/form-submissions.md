@@ -59,6 +59,10 @@ Or, admins can view form submissions under **Forms** > **Submissions**
 
 <div><figure><img src="../../.gitbook/assets/Screenshot (402).png" alt=""><figcaption><p>Available Forms: Submissions</p></figcaption></figure> <figure><img src="../../.gitbook/assets/image (264).png" alt=""><figcaption></figcaption></figure></div>
 
+### Revision History
+
+Open a submission and select **View history** to compare saved versions, see who edited the form, and review previous answers. See [Revision History](revision-history.md) for details.
+
 ### Change Form Stage
 
 In the form submission board, drag-and-drop to change a form stage. Or, click to open the submission and change it from the drop-down.

@@ -72,18 +72,21 @@ To restore a destroyed physical tower, replace or recreate the module/object. Mi
 
 Signal weakens with distance. Inactive dishes and obstructing terrain reduce coverage. Unpowered towers, towers with no active dishes, and towers outside your range provide no signal.
 
-<details>
-<summary>Signal CBA settings</summary>
+## Community signal settings
 
-Open **Options** > **Addon Options** and select **Sonoran Radio**. Mission-wide signal settings should be changed by the server or mission administrator.
+An administrator controls **Enable ARMA 3 bridge** and **ARMA 3 signal integration** under **Community Customizations → Game Integrations → ARMA 3**. These apply community-wide and are not player settings.
 
-| Setting | Default | Description |
-| --- | ---: | --- |
-| Update interval | 1 second | Time between local signal calculations. Requires a restart after changing it. |
-| Minimum quality change | 0.02 | Suppresses insignificant quality updates. |
-| Terrain attenuation | On | Reduces signal when terrain blocks the tower. |
-| Blocked terrain multiplier | 0.35 | Signal remaining through blocked terrain. |
-| Sonoran audio bridge | On | Sends signal and inventory-radio state to the local desktop overlay. This is a client setting. |
-| Signal logging | Off | Writes signal changes to the client's Arma RPT log. |
+Mod version 0.3.3 or newer no longer exposes Sonoran CBA settings. Calculation defaults are fixed: a 1-second update interval, a 0.02 minimum quality change, and a 0.35 terrain-blocking multiplier. Turning off community signal integration stops Radio from applying that calculated quality; it does not remove towers.
 
-</details>
+A mission with no registered Sonoran towers starts with zero signal quality. Existing terrain scenery does not automatically create Sonoran coverage. Place a powered Sonoran tower module to begin coverage.
+
+## Admin tower diagnostics
+
+A logged-in or voted server administrator can run:
+
+```text
+#sonoranradio debugmode on
+#sonoranradio debugmode off
+```
+
+This toggles the tower debug display and signal logging. It is a diagnostic tool, not a player override for community settings.
