@@ -338,7 +338,13 @@ Direct links can target any code on this page using fragments such as `#err-121`
 
 When staff select **Request Radio Debug** on your ticket, run `sonoranradio support <ticket ID>` in the **server console** using the supplied ticket number. This requires a resource version that includes the support command. The ticket must have debug uploads enabled by staff.
 
-The upload includes the current server console buffer, structured errors and warnings, recent debug messages, resource version, and configuration. It uses the same full-log attachment and deduplicated inline error/warning summary as CAD support. Credential fields are redacted from configuration, but console logs can contain third-party output; only upload to your own support ticket. Debug mode does not need to be enabled and is left unchanged.
+The diagnostic attachment includes the effective core configuration, separately stored configuration files with credential fields redacted, dependency states and versions, resource uptime, player count, retained error/warning counts, and recent console/debug output. The ticket also displays a compact runtime snapshot before the deduplicated error/warning summary.
+
+Files are labeled as loaded, default-only, missing, invalid JSON, unreadable, or omitted because of size. Disk snapshots may differ from settings already loaded into memory; diagnostics do not execute or rewrite any configuration. Large logs keep the newest console output and explicitly report omitted bytes, entries, or files so the upload can stay below 1 MB. Counts cover the retained buffer rather than all events since startup. Debug mode is left unchanged.
+
+Radio snapshots include `earpieces.json`, `jammers.json`, `scanners.json`, `speakers.json`, `towers.json`, and `mobileRepeaters.json`, with their default-file fallbacks labeled. The runtime section also includes initialized/API-error state, subscription level, active geo/degrade zones, and tower/rack/cell-repeater counts.
+
+Console logs can contain third-party output; only upload to your own support ticket.
 
 #### ERR-124
 
@@ -360,7 +366,7 @@ The upload includes the current server console buffer, structured errors and war
 
 **Internal Key:** `ERR_SUPPORT_TOO_LARGE`
 
-**Meaning:** Support diagnostics exceed the 1 MB upload limit.
+**Meaning:** Support diagnostics still exceed the 1 MB upload limit after automatic size handling. Large console logs are normally clipped automatically.
 
 **First Troubleshooting Step:** Ask support for another way to send the log.
 
