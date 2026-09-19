@@ -6,7 +6,7 @@ description: Learn more about specific in-game error and warning codes.
 
 This page documents the structured error and warning codes emitted by the Sonoran Radio FiveM resource.
 
-Direct links can target any code on this page using fragments such as `#ERR-121`.
+Direct links can target any code on this page using fragments such as `#err-121`. Structured logs also include a short link such as `https://sonoranradio.com/error/ERR-121`.
 
 ## Current Resource Codes
 
@@ -333,6 +333,44 @@ Direct links can target any code on this page using fragments such as `#ERR-121`
 **Meaning:** Nearby radio chatter and scanners were disabled because the community does not have a Pro subscription.
 
 **First Troubleshooting Step:** Upgrade the Radio community to Pro, or set `Config.chatter` to `false`.
+
+## Support Diagnostic Uploads
+
+When staff select **Request Radio Debug** on your ticket, run `sonoranradio support <ticket ID>` in the **server console** using the supplied ticket number. This requires a resource version that includes the support command. The ticket must have debug uploads enabled by staff.
+
+The upload includes the current server console buffer, structured errors and warnings, recent debug messages, resource version, and configuration. It uses the same full-log attachment and deduplicated inline error/warning summary as CAD support. Credential fields are redacted from configuration, but console logs can contain third-party output; only upload to your own support ticket. Debug mode does not need to be enabled and is left unchanged.
+
+#### ERR-124
+
+**Internal Key:** `ERR_SUPPORT_INVALID_ID`
+
+**Meaning:** The support ticket ID is invalid.
+
+**First Troubleshooting Step:** Run the support command with the positive ticket number provided by staff.
+
+#### ERR-125
+
+**Internal Key:** `ERR_SUPPORT_COLLECT_FAILED`
+
+**Meaning:** Support diagnostics could not be collected.
+
+**First Troubleshooting Step:** Check the resource configuration and restart it, then retry the command.
+
+#### ERR-126
+
+**Internal Key:** `ERR_SUPPORT_TOO_LARGE`
+
+**Meaning:** Support diagnostics exceed the 1 MB upload limit.
+
+**First Troubleshooting Step:** Ask support for another way to send the log.
+
+#### ERR-127
+
+**Internal Key:** `ERR_SUPPORT_UPLOAD_FAILED`
+
+**Meaning:** Support diagnostics could not be uploaded.
+
+**First Troubleshooting Step:** Verify the ticket ID, ask staff to enable debug uploads, and check outbound HTTPS connectivity to api.sonoransoftware.com. A timeout or non-success response does not confirm delivery.
 
 ## Legacy Troubleshooting Codes
 

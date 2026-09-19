@@ -511,3 +511,41 @@ Warnings use a `WRN-*` prefix. Errors use an `ERR-*` prefix.
 **What it means:** ClockIn could not remove the configured CMS ranks after a CAD logout event.
 
 **How to fix it:** Verify the configured rank IDs and the account ID being sent to SonoranCMS.
+
+## Support Diagnostic Uploads
+
+When staff select **Request CMS Debug** on your ticket, run `sonorancms support <ticket ID>` in the **server console** using the supplied ticket number. This requires a resource version that includes the support command (CMS 1.6.34 or newer). The ticket must have debug uploads enabled by staff.
+
+The upload includes the current server console buffer, structured errors and warnings, recent debug messages, resource version, and configuration. It uses the same full-log attachment and deduplicated inline error/warning summary as CAD support. Credential fields are redacted from configuration, but console logs can contain third-party output; only upload to your own support ticket. Debug mode does not need to be enabled and is left unchanged.
+
+#### ERR-SUP-101
+
+**Internal Key:** `SUPPORT_INVALID_ID`
+
+**Meaning:** The support ticket ID is invalid.
+
+**First Troubleshooting Step:** Run the support command with the positive ticket number provided by staff.
+
+#### ERR-SUP-102
+
+**Internal Key:** `SUPPORT_COLLECT_FAILED`
+
+**Meaning:** Support diagnostics could not be collected.
+
+**First Troubleshooting Step:** Check the resource configuration and restart it, then retry the command.
+
+#### ERR-SUP-103
+
+**Internal Key:** `SUPPORT_TOO_LARGE`
+
+**Meaning:** Support diagnostics exceed the 1 MB upload limit.
+
+**First Troubleshooting Step:** Ask support for another way to send the log.
+
+#### ERR-SUP-104
+
+**Internal Key:** `SUPPORT_UPLOAD_FAILED`
+
+**Meaning:** Support diagnostics could not be uploaded.
+
+**First Troubleshooting Step:** Verify the ticket ID, ask staff to enable debug uploads, and check outbound HTTPS connectivity to api.sonoransoftware.com. A timeout or non-success response does not confirm delivery.
