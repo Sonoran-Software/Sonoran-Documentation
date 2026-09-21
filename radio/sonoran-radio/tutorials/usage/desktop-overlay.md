@@ -1,10 +1,36 @@
 ---
-description: Use the Sonoran Radio desktop overlay while playing any game.
+description: Create radio overlays for desktop and FiveM, and use the desktop overlay while you play.
 ---
 
-# Desktop App & Overlay
+# Radio Overlay
 
-The desktop app provides an overlay for **FiveM, Arma 3, Roblox, and other games**. Keep radio controls visible while you play.
+Create your community's radio frames in **Customize > Overlay**. The same editor supplies the desktop overlay and FiveM in-game radio.
+
+## Create a custom overlay
+
+Uploading custom frame artwork requires **Pro**.
+
+1. Open your community's **Customize > Game Integration** tab and select your game.
+2. Open **Customize > Overlay** and select **New Frame**.
+3. Enter a label, select **Upload image**, and upload your radio artwork. Select **Create**.
+4. Choose a **Screen Theme** and adjust **Frame Width** as needed.
+5. Drag the screen and buttons into place. Use **Add Button** for any missing controls, then select **Save changes**.
+
+<figure><img src="../../.gitbook/assets/radio-overlay/new-frame.jpg" alt="New Frame dialog with a County Patrol label and Upload image button" width="580"><figcaption><p>Name your frame and upload its artwork.</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/radio-overlay/overlay-editor.jpg" alt="Radio Overlay editor showing a County Patrol frame, filled settings, button controls, and canvas zoom"><figcaption><p>One editor for desktop and FiveM radio frames.</p></figcaption></figure>
+
+Drag a screen corner to resize it, or hold **Ctrl** while dragging a screen or button. Right-click a button to remove it. Each button action can be added once.
+
+Use **+**, **−**, and **Fit** to zoom the preview. Preview zoom does not change the radio's saved size.
+
+**Reset to game defaults** replaces the full frame set in the editor. Confirm the reset, then select **Save changes** to apply it. Select a game in **Game Integration** first if reset is disabled.
+
+For FiveM frame selection and access restrictions, see [FiveM Radio Frames](in-game-radio/customizing-radio-frames.md).
+
+## Use the desktop overlay
+
+The desktop app keeps radio controls visible while playing FiveM, Arma 3, Roblox, and other games.
 
 ## Open the Overlay
 
@@ -56,27 +82,8 @@ A brief resize hint appears when the overlay opens and when you hover or focus a
 2. Open **Radio Frame**.
 3. Select a frame provided by your community.
 
-<figure><img src="../../.gitbook/assets/desktop-overlay/radio-frame-selector.png" alt="Audio settings with the Radio Frame dropdown open"><figcaption><p>Select a community frame from the Radio Frame dropdown.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/radio-overlay/desktop-frame-selector.jpg" alt="Audio settings with the Radio Frame dropdown open"><figcaption><p>Select a community frame from the Radio Frame dropdown.</p></figcaption></figure>
 
 Arma 3 can select a frame based on your inventory radio. See [Radio Items and Team Frames](../integrations/arma-3/radio-items-and-team-frames.md).
 
 </details>
-
-<details>
-<summary>Upload custom desktop frames</summary>
-
-Uploading custom frame artwork requires **Pro**.
-
-1. In your community's admin panel, open **Customization** > **Desktop Frames**.
-2. Upload the frame image.
-3. Position its buttons. Drag the screen to move it or drag its corners to resize its bounds, then save. This changes the community frame layout, not just the overlay's on-screen size.
-
-<figure><img src="../../.gitbook/assets/image (17).png" alt="Desktop Frames editor"><figcaption></figcaption></figure>
-
-</details>
-
-## Arma display and focus
-
-Use **Fullscreen Window** in Arma's video settings so the desktop overlay can remain visible. If Arma freezes or pauses when you focus the overlay, enable **No Pause** in the Arma launcher or add `-noPause` to its launch parameters. Return focus to the game to resume game input; these options do not make the game and overlay simultaneously receive the same keyboard input.
-
-See [Arma installation](../integrations/arma-3/install-and-connect.md) for community-wide bridge, signal, and AI-hearing settings. These controls are not in Dispatch's per-user settings.

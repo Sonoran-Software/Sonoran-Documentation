@@ -63,7 +63,7 @@ Give a player only one intended radio item at a time. An assigned radio takes pr
 ## Map an item to a desktop frame
 
 1. Open the Sonoran Radio admin panel.
-2. Navigate to **Customization** > **Desktop Frames**.
+2. Navigate to **Customize** > **Overlay**.
 3. Select the frame that should represent the team or inventory item.
 4. In **ARMA Item Class Names**, enter the exact `CfgWeapons` class name and press Enter to create a chip.
 5. Select **Save**.

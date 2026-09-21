@@ -20,7 +20,7 @@ The game selection is required and saved on the community. Administrators can ch
 
 New ARMA 3 communities receive the BLUFOR/OPFOR frames and inventory-item mappings with the text-style screen. New Star Citizen communities receive the horizontal Mobi frame with the Mobi screen. Other games use their applicable default setup.
 
-These defaults are chosen during registration. Changing an existing community's game does not replace its customized frames; edit them under **Desktop Frames**.
+These defaults are chosen during registration. Changing an existing community's game does not replace its customized frames; edit them under **Customize > Overlay**.
 
 The older video above may show a previous registration layout; follow these steps for the current form.
 

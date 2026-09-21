@@ -9,7 +9,7 @@ Virtual towers provide location-based radio signal to your **desktop overlay whi
 <figure><img src="../../../.gitbook/assets/erlc-towers/erlc-driving-signal.png" alt="Driving in ERLC with the Sonoran Radio desktop overlay and an arrow pointing to its tower signal bars"><figcaption><p>The overlay's signal bars reflect your coverage from the virtual towers.</p></figcaption></figure>
 
 {% content-ref url="../desktop-overlay.md" %}
-[Desktop App & Overlay](../desktop-overlay.md)
+[Radio Overlay](../desktop-overlay.md)
 {% endcontent-ref %}
 
 First, [link your private server and Roblox account](../../game-integrations/roblox/erlc-setup.md), then open the desktop overlay.

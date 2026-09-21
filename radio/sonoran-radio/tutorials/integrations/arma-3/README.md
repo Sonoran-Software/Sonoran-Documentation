@@ -23,7 +23,7 @@ Sonoran Radio does not add an in-game radio menu or a `Y` keybind. Players use t
 * Optional AI hearing while transmitting
 * SQF APIs for scripted missions and custom inventory systems
 
-For shared controls and hotkeys, see [Desktop App & Overlay](../../usage/desktop-overlay.md).
+For shared controls and hotkeys, see [Radio Overlay](../../usage/desktop-overlay.md).
 
 ## Community-wide controls
 

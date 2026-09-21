@@ -12,5 +12,5 @@ Radio communication for your community. Choose your game for setup and game-spec
 
 * [Getting Started](tutorials/getting-started/) — download the app, create a community, and invite players.
 * [Dispatch & Admin Panel](tutorials/usage/dispatch-panel/) — channels, voice effects, tones, and community settings.
-* [Desktop App & Overlay](tutorials/usage/desktop-overlay.md) — radio controls while playing any game.
+* [Radio Overlay](tutorials/usage/desktop-overlay.md) — radio controls while playing any game.
 * [Troubleshooting](tutorials/usage/troubleshooting/) — help with audio, devices, and the app.

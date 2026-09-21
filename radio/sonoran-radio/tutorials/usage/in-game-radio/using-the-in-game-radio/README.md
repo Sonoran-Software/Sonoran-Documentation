@@ -148,7 +148,7 @@ Channels can also be changed via:
 
 Scanning a radio channel allows users to hear all transmissions, even if they are not actively transmitting on that channel. However, transmissions on the primary channel (the one you are actively talking on) will take priority, muting transmissions from scanned channels whenever someone speaks on the primary channel.
 
-**Selecting Scanned Channels (**[**Modern or Text Display**](../customizing-radio-frames.md#screen-styles)**)**
+**Selecting Scanned Channels (**[**Modern or Text Display**](../../desktop-overlay.md#create-a-custom-overlay)**)**
 
 1. Select the Channel Scan Icon
 2. Select the channel group to view the contained channels
@@ -170,7 +170,7 @@ Users can also [create a scan list](./#scan-lists) to swap between multiple scan
 
 Users can scan one or more channels to listen without transmitting. For monitoring multiple channels, "Scan Lists" let users group channels and easily switch between them.
 
-**Creating a Scan List (**[**Modern or Text Display**](../customizing-radio-frames.md#screen-styles)**)**
+**Creating a Scan List (**[**Modern or Text Display**](../../desktop-overlay.md#create-a-custom-overlay)**)**
 
 1. Toggle scanning on one or more channels.
 2. Select the `+` icon next to `Scan Lists` to create a new scan list with the current selection.
