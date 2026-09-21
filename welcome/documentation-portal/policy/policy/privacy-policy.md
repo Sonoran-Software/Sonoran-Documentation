@@ -8,7 +8,7 @@ description: Sonoran Software Systems' Privacy Policy
 
 <h2 align="center">Privacy Policy</h2>
 
-<p align="center">Last Updated: July 28th, 2026</p>
+<p align="center">Last Updated: September 21st, 2026</p>
 
 > _These Terms govern your use of Sonoran Software Systems LLC products and sites — Sonoran CAD (https://sonorancad.com), Sonoran CMS (https://sonorancms.com), Sonoran Radio (https://sonoranradio.com) — along with any sub‑domains, mobile apps, and related services (collectively, the “Services”)._
 
@@ -105,6 +105,8 @@ We share information only with:
 * Payment processor **Stripe**;
 * Cloud hosting and infrastructure providers;
 * Discord, when you use Sonoran Bot or other Discord-connected features;
+* OpenAI, when you use the Sonoran Software plugin in ChatGPT, as described below;
+* GitBook, which hosts our published documentation and processes documentation searches and page requests;
 * Analytics, measurement, and advertising service providers, including Google Analytics and TikTok;
 * Law enforcement or regulators when legally required.
 
@@ -127,6 +129,20 @@ Guild ticket messages and attachments remain hosted by Discord. Sonoran Bot proc
 Discord message content is not sold and is not used to train machine-learning or artificial-intelligence models. Users may opt out by not opening or continuing a ticket. Community administrators may disable the applicable feature or remove Sonoran Bot. Privacy and deletion requests can be submitted using the contact information below, subject to legal and operational retention requirements.
 
 ### 7. Data Retention
+
+#### Sonoran Software in ChatGPT
+
+Connecting the Sonoran Software plugin uses Sonoran Accounts OAuth to identify your account and authorize the requested tools. Access is limited by your granted scopes and current community permissions. We process tool arguments to perform your requests and return the requested results to OpenAI for use in your ChatGPT conversation. Depending on the tool, results can include community settings, account and membership information, permissions, management logs, units and roleplay records. Confirmed administrative changes are saved in Sonoran CAD and may create audit history.
+
+CAD characters, in-game vehicles and licenses, incident reports and simulated medical records are intended for fictional multiplayer gaming and roleplay. They are not real-world identity, healthcare or emergency-service records. Do not enter real government identifiers, health information, biometrics or payment-card data into these roleplay workflows. Account and membership information is separate and may concern real users. User-created content is not automatically verified as fictional.
+
+The customer plugin does not ask you to provide passwords or integration API keys in chat. Enter or replace integration credentials through the authenticated Sonoran website. Saved integration and database credentials are excluded or redacted from customer tool results. Public documentation queries and page requests are sent to our GitBook-hosted documentation service; do not include private community information or credentials in documentation searches.
+
+The MCP gateway processes tool requests and results to service each request; it does not maintain a separate conversation archive. Its structured usage events contain tool names, outcomes, durations, client categories and daily pseudonymous fingerprints, rather than prompts, tool arguments or credentials. Saved community changes, audit history and account information remain subject to the corresponding retention provisions below. Copies returned to ChatGPT are handled under OpenAI's policies and your ChatGPT data controls. GitBook processes documentation requests under its policies.
+
+You can stop using or disconnect the plugin in ChatGPT. Disconnecting does not undo saved CAD changes, delete community data or delete previous ChatGPT conversations. Use ChatGPT's controls for its conversation history and the Sonoran privacy contacts in Section 8 for requests concerning data held by Sonoran.
+
+#### Retention by data category
 
 * **Community Data:** Permanently deleted within 30 days when a community owner deletes their community.
 * **Voice Transmissions (Sonoran Radio):** Stored only if the owner opts‑in to the voice‑storage feature and automatically deleted **24 hours** after capture.
