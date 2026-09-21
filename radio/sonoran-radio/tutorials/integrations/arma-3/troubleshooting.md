@@ -48,7 +48,7 @@ The bridge is localhost-only. Firewall port forwarding is not required.
 
 ## The wrong radio frame is displayed
 
-1. Confirm the exact item class is listed on the intended frame under **Customization** > **Desktop Frames**.
+1. Confirm the exact item class is listed on the intended frame under **Customize** > **Overlay**.
 2. Save the frame configuration.
 3. Close and reopen the desktop overlay to download the changed mappings.
 4. Give the player only one intended radio item. The assigned radio is preferred; otherwise the first detected inventory radio is used.
