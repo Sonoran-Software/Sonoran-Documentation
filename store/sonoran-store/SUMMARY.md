@@ -97,6 +97,7 @@
   * [FAQ and Troubleshooting](street-signs/faq-and-troubleshooting.md)
   * [Features and Use Cases](street-signs/features-and-use-cases.md)
   * [Visual Showcase](street-signs/visual-showcase.md)
+  * [Release Status](street-signs/release-status-and-faq.md)
 * [🔫 Shot Spotter](shot-spotter/README.md)
   * [Getting Started](shot-spotter/getting-started.md)
   * [Shot Spotter - Advanced Documentation](shot-spotter/advanced-docs.md)

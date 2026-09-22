@@ -15,21 +15,21 @@ Administrators can also open the full sign controller.
 
 ## Commands
 
-| Command                                                                | What it does                                  | Typical access    |
-| ---------------------------------------------------------------------- | --------------------------------------------- | ----------------- |
-| `/signcreate [id] [label optional]`                                    | Creates a sign at your current position       | Create permission |
-| `/signedit [id] [line1\|line2\|label\|theme\|enable\|disable] [value]` | Updates a supported field on an existing sign | Edit permission   |
-| `/signdelete [id]`                                                     | Deletes a sign                                | Delete permission |
-| `/signrefresh`                                                         | Broadcasts a full sign refresh to all clients | Admin             |
-| `/signlist`                                                            | Lists loaded signs in chat                    | Admin             |
-| `/signsettext [id] [text]`                                             | Replaces the first line of text on a sign     | Edit permission   |
-| `/signcontroller`                                                      | Opens the full controller interface           | Admin             |
+| Command | What it does | Typical access |
+| --- | --- | --- |
+| `/signcreate [id] [label optional]` | Creates a sign at your current position | Create permission |
+| `/signedit [id] [line1\|line2\|label\|theme\|enable\|disable] [value]` | Updates a supported field on an existing sign | Edit permission |
+| `/signdelete [id]` | Deletes a sign | Delete permission |
+| `/signrefresh` | Broadcasts a full sign refresh to all clients | Admin |
+| `/signlist` | Lists loaded signs in chat | Admin |
+| `/signsettext [id] [text]` | Replaces the first line of text on a sign | Set permission |
+| `/signcontroller` | Opens the full controller interface | Admin |
 
 ## Creating a Sign
 
 Basic example:
 
-```
+```text
 /signcreate downtown_001 Downtown Closure
 ```
 
@@ -42,43 +42,43 @@ This creates a sign at your current location using the script's default sign set
 3. Make your changes in the editor
 4. Save your changes
 
-If the player does not have permission to edit the sign, the editor will not open.
+If the player does not have permission to set the sign, the editor will not open.
 
 ## Editing a Sign With Commands
 
 ### Update line 1
 
-```
+```text
 /signedit downtown_001 line1 ROAD CLOSED
 ```
 
 ### Update line 2
 
-```
+```text
 /signedit downtown_001 line2 USE ALT ROUTE
 ```
 
 ### Change the label
 
-```
+```text
 /signedit downtown_001 label Downtown Closure Board
 ```
 
 ### Change the theme
 
-```
+```text
 /signedit downtown_001 theme amber
 ```
 
 ### Disable a sign
 
-```
+```text
 /signedit downtown_001 disable
 ```
 
 ### Enable a sign
 
-```
+```text
 /signedit downtown_001 enable
 ```
 
@@ -86,7 +86,7 @@ If the player does not have permission to edit the sign, the editor will not ope
 
 Use `/signsettext` when you only want to replace the primary line quickly:
 
-```
+```text
 /signsettext downtown_001 ROAD WORK AHEAD
 ```
 
@@ -94,19 +94,19 @@ Use `/signsettext` when you only want to replace the primary line quickly:
 
 ### Delete a sign
 
-```
+```text
 /signdelete downtown_001
 ```
 
 ### View all loaded signs
 
-```
+```text
 /signlist
 ```
 
 ### Force a refresh
 
-```
+```text
 /signrefresh
 ```
 
@@ -114,7 +114,7 @@ Use `/signsettext` when you only want to replace the primary line quickly:
 
 The full controller is opened with:
 
-```
+```text
 /signcontroller
 ```
 

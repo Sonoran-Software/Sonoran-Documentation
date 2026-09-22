@@ -47,9 +47,12 @@ Config.EnabledPacks = {
 Pack summary:
 
 * `base`: Core built-in signs
-* `billboard`: Billboard-style displays
-* `street`: Street and warning sign options
-* `vehicles`: Vehicle-mounted board options
+* `billboard`: Future billboard expansion
+* `street`: Future street and warning sign expansion
+* `vehicles`: Future vehicle-mounted board expansion
+
+The current base release includes Highway Sign Only. Enabling a future pack
+toggle does not install models or an expansion resource.
 
 ### `Config.EnableFloatingTextPreview`
 
@@ -115,7 +118,24 @@ Default block:
 Config.CAD = {
     enabled = true,
     syncOnStartup = true,
-    shareIconCatalog = false,
+    actionPollMs = 2000,
+    actionBatchSize = 50,
+    panels = {
+        overviewKey = 'sonoran-dot-signs',
+        overviewName = 'SonoranDOT VMS Control Center',
+        overviewInstanceKey = 'all-signs',
+        overviewSurfaces = { 'dispatch', 'police', 'fire', 'ems' },
+        editorKey = 'sonoran-dot-sign',
+        editorName = 'SonoranDOT VMS Sign Editor'
+    },
+    blips = {
+        enabled = true,
+        subType = 'SONORAN_VMS_SIGN',
+        icon = 'fas fa-sign-hanging',
+        color = '#f5a623',
+        menuTitle = 'Edit VMS sign'
+    },
+    shareIconCatalog = true,
     allowRemoteGridUpdates = true,
     allowRemoteImageUpdates = true
 }
@@ -135,10 +155,16 @@ Default block:
 
 ```lua
 Config.Power = {
-    enabled = false,
-    mode = 'sonoran_powergrid'
+    enabled = true,
+    mode = 'sonoran_powergrid',
+    resource = 'sonoran-powergrid',
+    scriptIdentifier = 'sonoran_streetsigns',
+    linkDistance = 3.0
 }
 ```
+
+Power Grid support is enabled by default. Set `enabled = false` when your server
+does not run `sonoran-powergrid`.
 
 ## Webhook Settings
 
@@ -229,6 +255,7 @@ Used when `Config.PermissionMode = 'ace'`.
 ```lua
 Config.AcePermissions = {
     edit = 'sonoran.signs.edit',
+    set = 'sonoran.signs.set',
     create = 'sonoran.signs.create',
     delete = 'sonoran.signs.delete',
     admin = 'sonoran.signs.admin'

@@ -14,25 +14,52 @@ No. Street Signs stores sign data locally and does not require MySQL or `oxmysql
 
 Street Signs stores sign data in:
 
-```
+```text
 data/signs.json
 ```
 
 ### Why can I walk up to a sign but not edit it?
 
-Being close to a sign is not enough by itself. The server still checks whether your account or job has edit permission for that sign.
+Being close to a sign is not enough by itself. The server still checks whether your account or job has set permission for that sign.
 
 Review [Permissions](permissions.md).
 
 ### Why are some sign types missing?
 
-Some built-in sign packs are disabled by default. Check:
+The current free release includes Highway Sign Only. US/UK styles, billboards,
+street signs, and vehicle boards are future expansion content. Turning on an
+expansion toggle does not install an expansion model or resource.
+
+For an installed expansion, also check:
 
 ```lua
 Config.EnabledPacks
 ```
 
 If a pack is set to `false`, its related sign options will not be available.
+
+### The CAD panels or blip editors are missing
+
+Check:
+
+* `sonorancad` starts before Street Signs
+* `Config.CAD.enabled = true`
+* `add_convar_permission sonoran-streetsigns read sonoran_apiKey` is in `server.cfg`
+* Your CAD build supports Integration Panels and panel-enabled custom blips
+* The user has the separate custom permission for the control center or blip editor
+
+### A CAD edit expires or does not reach the sign
+
+CAD actions are time-limited. Confirm the FiveM server can reach the CAD API and
+look at the Street Signs server console for a bounded CAD error. Also confirm
+the sign was not edited elsewhere first; revision conflicts prevent one editor
+from overwriting newer work.
+
+### A linked sign does not turn off with Power Grid
+
+Confirm `Config.Power.enabled = true`, start `sonoran-powergrid` before Street
+Signs, and link again while standing within `Config.Power.linkDistance` of the
+persisted sign.
 
 ### How do I allow more staff to use Street Signs?
 
@@ -60,7 +87,7 @@ Yes. Configure `Config.Webhooks` and provide the webhook URL you want to use.
 
 Make sure you renamed:
 
-```
+```text
 config.CHANGEME.lua -> config.lua
 ```
 
@@ -76,7 +103,7 @@ Check the following:
 
 Test command:
 
-```
+```text
 /signcreate test_sign Test Sign
 ```
 

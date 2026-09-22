@@ -14,14 +14,14 @@ If you need help locating your purchase files, see [Accessing Tebex Assets](../g
 
 1. Copy both included folders into your server's resources directory:
 
-```
+```text
 sonoran-streetsigns
 sonoran-streetsigns_helper
 ```
 
 2. In the `sonoran-streetsigns` folder, rename:
 
-```
+```text
 config.CHANGEME.lua -> config.lua
 ```
 
@@ -30,6 +30,18 @@ config.CHANGEME.lua -> config.lua
 ```cfg
 ensure sonoran-streetsigns
 ```
+
+If you plan to use Sonoran CAD or Power Grid, start those resources first:
+
+```cfg
+ensure sonorancad
+ensure sonoran-powergrid
+ensure sonoran-streetsigns
+add_convar_permission sonoran-streetsigns read sonoran_apiKey
+```
+
+The Power Grid line is optional. The CAD permission line is required only when
+`Config.CAD.enabled = true`.
 
 4. Restart the resource or your server.
 
@@ -59,31 +71,21 @@ Once the resource is running and permissions are configured:
 
 1. Create a sign with `/signcreate [id] [label optional]`
 2. Walk up to the placed sign
-3. Press `E` to open the editor if you have edit access
+3. Press `E` to open the editor if you have set access
 4. Make your changes and save them
 
 Administrators can also open the full controller with:
 
-```
+```text
 /signcontroller
 ```
 
 ## What Street Signs Includes
 
-Street Signs ships with a built-in base pack and optional expansion-ready packs.
-
-Built-in controller options currently include:
-
-* Highway Sign Only
-* US Highway Sign
-* UK Style
-* Billboard Flat
-* Billboard V Triangle
-* Speed And Warning Signs
-* Trailer Construction Board
-* Arrow Board
-
-Some of these are controlled by `Config.EnabledPacks`. If a pack is disabled, its sign types will not be available until you enable that pack.
+The current free version ships with the Highway Sign Only controller. The core
+is expansion-ready, but the US/UK styles, billboards, street signs, trailer
+board, arrow board, and truck attachment are future packs and are not included
+in the current base release.
 
 ## Notes About Sign Display
 

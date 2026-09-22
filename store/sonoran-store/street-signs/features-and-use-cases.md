@@ -12,27 +12,38 @@ This page previews the planned Street Signs experience and will continue to expa
 
 ## Core Features
 
+{% hint style="info" %}
+The current free version includes the Highway Sign Only controller. The other
+sign and vehicle styles described below are roadmap expansions, not included
+models in the current package.
+{% endhint %}
+
 ### Roadside Messaging
 
 Create signs for closures, lane changes, detours, warnings, route guidance, and general roadside communication.
 
 > Screenshot Placeholder: Message sign with a traffic advisory.
 
-### Directional Signage
+### CAD Management
 
-Add signs that help guide players to districts, landmarks, staging areas, event locations, or department facilities.
+Use the all-signs CAD panel for a searchable overview, or click an individual
+sign's live-map blip to open its dedicated editor. CAD assigns separate custom
+permissions to these two panels.
 
 > Screenshot Placeholder: Directional sign pointing to multiple destinations.
 
-### Warning and Advisory Signs
+### In-Person Editing
 
-Support scenes with speed warnings, hazard messaging, and changing roadway conditions.
+Walk up to a sign and press `E` to open the SonoranDOT VMS Control Center. The
+grid editor supports text tiles today and is ready for icons and expansion
+controllers.
 
 > Screenshot Placeholder: Warning sign placed near an active scene.
 
-### Large Display Boards
+### Planned Expansions
 
-Use larger sign options for event announcements, city notices, or high-visibility map decoration.
+The roadmap includes US and UK highway styles, flat and V-shaped billboards,
+speed and warning signs, trailer boards, arrow boards, and a truck attachment.
 
 > Screenshot Placeholder: Large display or billboard-style sign.
 

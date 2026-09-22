@@ -14,7 +14,10 @@ Street Signs is in active development and this page is an early preview of the e
 
 ## Bring Your Roads To Life
 
-Street Signs is a customizable in-world signage system for FiveM servers. Create everything from highway message boards and warning signs to directional signage and billboard-style displays, all while keeping your world feeling polished, active, and immersive.
+Street Signs is a customizable in-world variable message sign system for FiveM
+servers. The current free version focuses on the highway message board. Its
+shared controller and storage system is ready for future US/UK styles,
+billboards, street signs, and vehicle-mounted expansions.
 
 Whether you are building out public works scenes, roleplay road closures, event directions, or persistent map detail, Street Signs gives your server a clean way to place, edit, and manage custom signs.
 
@@ -22,9 +25,10 @@ Whether you are building out public works scenes, roleplay road closures, event 
 
 ## Features
 
-### Multiple Sign Styles
+### Highway Message Board
 
-Choose from a growing collection of sign types designed for different use cases, including roadway messaging, warning signage, directional signs, and larger display boards.
+Create and update highway warnings, closures, lane instructions, detours, and
+public-safety messages with the included Highway Sign Only controller.
 
 > Screenshot Placeholder: Assorted sign styles side by side.
 
@@ -52,9 +56,11 @@ Support a variety of server setups so staff, departments, or trusted roles can m
 
 > Screenshot Placeholder: Permissions or staff workflow overview.
 
-### Expansion-Ready Design
+### CAD and Expansion-Ready Design
 
-Street Signs is built to support more sign packs and visual options over time, giving servers room to grow their signage system as new content is added.
+Street Signs can publish an all-signs CAD panel and an individual editor in each
+sign's live-map blip menu. It is also built to support more sign packs and visual
+options over time.
 
 > Screenshot Placeholder: Alternate sign pack or billboard-style preview.
 
