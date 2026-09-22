@@ -4,6 +4,33 @@ description: View the changelog for the Sonoran Radio application and in-game re
 
 # 📋 Changelog
 
+### 2.28.2 09/21/2026
+
+{% tabs %}
+{% tab title="New" %}
+Overlay Config Overhaul
+
+* Overhaul of the desktop overlay configurator with options to select the screen theme, resize items easier, etc.
+* Added an option to reset your overlay configuration to default for your game.
+
+Arma 3 Integration
+
+* Added full in-game integration for Arma 3.
+
+Game Selection
+
+* Select your game when registering your community for easier default customization.
+{% endtab %}
+
+{% tab title="Fixed" %}
+Community Deletion
+
+* Fixed an issue after deleting a community causing an error, even though the community was fully deleted.
+{% endtab %}
+{% endtabs %}
+
+
+
 ### 2.28.0 09/10/2026
 
 {% tabs %}
@@ -22,8 +49,8 @@ Mobile Builds: Store Publishing
 
 * Updated Android compatibility for Google Play and enabled replacement of pending TestFlight reviews for production iOS builds.
 {% endtab %}
-
 {% endtabs %}
+
 ### 2.27.18 08/19/2026
 
 {% tabs %}
