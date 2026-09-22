@@ -59,3 +59,11 @@ The v2 general configuration endpoints manage penal codes, servers, postal data,
 {% content-ref url="get-login-page.md" %}
 [get-login-page.md](get-login-page.md)
 {% endcontent-ref %}
+
+{% content-ref url="get-fivem-configuration.md" %}
+[Get FiveM Configuration](get-fivem-configuration.md)
+{% endcontent-ref %}
+
+{% content-ref url="acknowledge-fivem-configuration.md" %}
+[Acknowledge FiveM Configuration](acknowledge-fivem-configuration.md)
+{% endcontent-ref %}

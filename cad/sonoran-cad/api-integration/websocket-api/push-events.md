@@ -20,6 +20,8 @@ If no matching websocket session exists:
 * Sonoran CAD falls back to the existing HTTP push event delivery flow for that server IP/port.
 * This fallback is useful for custom listeners or for servers that are not keeping an API websocket connection open.
 
+The [FiveM configuration event](fivem-configuration.md) is an exception: `EVENT_FIVEM_CONFIGURATION` is websocket-only, with no HTTP fallback or disconnected-event queue. It is sent by **Apply and restart**, not by **Save**.
+
 ## Requirements
 
 * Authenticate over `/apiWsHub`
