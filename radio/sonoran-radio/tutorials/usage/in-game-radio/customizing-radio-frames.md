@@ -12,7 +12,7 @@ When you update to the portal-managed FiveM resource, it imports the existing `s
 
 The resource renames `skins` to `skins_old` **only after** the Radio backend confirms the imported frames. If that archive name already exists, it uses a numbered name such as `skins_old_2`. Keep that folder as a backup until you have checked your frames in game.
 
-If the import fails, the original `skins` folder stays in place and the resource retries. Check the server console for the migration warning and [contact support](https://support.sonoransoftware.com/) if it continues to fail. An unavailable Radio API also leaves the local files in place for a later attempt. The resource keeps its last successfully loaded frame data if a later refresh fails.
+If the import fails, the original `skins` folder stays in place and the resource retries. Check the server console for the migration warning and [contact support](https://support.sonoransoftware.com/) if it continues to fail. An unavailable Radio API also leaves the local files in place for a later attempt. A running resource keeps its last successfully loaded frame data if a later refresh fails. After a server restart during an API outage, portal frames return on the next successful check.
 
 Existing skin folder names in `Config.frames.departments[*].allowedFrames` continue to work as aliases for imported frames. You can use the `frame:<ID>` shown in the editor for new permission entries.
 
