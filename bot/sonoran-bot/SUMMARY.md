@@ -18,6 +18,7 @@
 * [Usage](tutorials/usage/README.md)
   * [Settings](tutorials/usage/settings.md)
   * [Commands](tutorials/usage/commands.md)
+  * [Ticket System](tutorials/usage/tickets.md)
   * [Moderation](tutorials/usage/moderation.md)
 
 ## Other
