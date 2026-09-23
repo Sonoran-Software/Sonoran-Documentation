@@ -50,7 +50,7 @@ Use a binding as the entire property value, such as `"value": "$item.locked"`. F
 | `number`   | `id`, `label`, `value`, `action`                                     | Numeric input                            |
 | `textarea` | `id`, `label`, `value`, `action`                                     | Multiline input                          |
 | `select`   | `id`, `label`, `value`, `options`, `multiple`, `clearable`, `action` | Selection control                        |
-| `iconPicker` | `id`, `label`, `value`, `options`, `readonly`, `action` | Square SVG picker |
+| `iconPicker` | `id`, `label`, `value`, `options`, `searchable`, `readonly`, `action` | Square SVG picker |
 | `toggle`   | `id`, `label`, `value`, `color`, `action`                            | Boolean switch                           |
 | `checkbox` | `id`, `label`, `value`, `color`, `action`                            | Boolean checkbox                         |
 | `button`   | `label`, `icon`, `disabled`, `appearance`, `action`                  | Explicit action                          |
@@ -61,9 +61,13 @@ Select options may be primitive values or `{ "label": "Display", "value": "store
 
 ### SVG icon picker
 
-An `iconPicker` is a 40-pixel square, matching the height of a dense text input. Clicking it opens a scrollable menu. Each option needs a stable string `value`, a `label`, and inline SVG markup in `svg`. The selected `value` is stored locally and available as `$value` in its action; your integration should process the action and publish the updated state.
+An `iconPicker` is a 40-pixel square, matching the height of a dense text input. Clicking it opens a scrollable menu. Each option needs a stable string `value` and inline SVG markup in `svg`. An optional `name` supplies the tooltip and accessible name; without it, the picker uses `value`. Set `searchable` to `true` to show a search field that filters by `name` or `value` without calling the API. Search is off by default. The selected `value` is stored locally and available as `$value` in its action; your integration should process the action and publish the updated state.
 
 ![SVG icon picker in the panel builder with its menu open](<../../../.gitbook/assets/integration-panels/icon-picker.png>)
+
+Typing `fi` narrows the same menu to Fire:
+
+![SVG icon picker filtered by name](<../../../.gitbook/assets/integration-panels/icon-picker-filtered.png>)
 
 ```json
 {
@@ -71,15 +75,16 @@ An `iconPicker` is a 40-pixel square, matching the height of a dense text input.
   "id": "unit-icon",
   "label": "Unit icon",
   "value": "$state.unit.icon",
+  "searchable": true,
   "options": [
     {
       "value": "shield",
-      "label": "Shield",
+      "name": "Shield",
       "svg": "<svg viewBox=\"0 0 24 24\"><path fill=\"#5AAAF8\" d=\"M12 2 3 6v5c0 5.4 3.8 9.7 9 11 5.2-1.3 9-5.6 9-11V6l-9-4Z\"/></svg>"
     },
     {
       "value": "fire",
-      "label": "Fire",
+      "name": "Fire",
       "svg": "<svg viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"#F6815B\"/></svg>"
     }
   ],
