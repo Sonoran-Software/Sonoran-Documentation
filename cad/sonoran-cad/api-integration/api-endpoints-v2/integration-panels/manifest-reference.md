@@ -50,7 +50,7 @@ Use a binding as the entire property value, such as `"value": "$item.locked"`. F
 | `number`   | `id`, `label`, `value`, `action`                                     | Numeric input                            |
 | `textarea` | `id`, `label`, `value`, `action`                                     | Multiline input                          |
 | `select`   | `id`, `label`, `value`, `options`, `multiple`, `clearable`, `action` | Selection control                        |
-| `iconPicker` | `id`, `label`, `value`, `options`, `searchable`, `readonly`, `action` | Square SVG picker |
+| `iconPicker` | `id`, `label`, `value`, `options` or `sections`, `searchable`, `readonly`, `action` | Square SVG picker |
 | `toggle`   | `id`, `label`, `value`, `color`, `action`                            | Boolean switch                           |
 | `checkbox` | `id`, `label`, `value`, `color`, `action`                            | Boolean checkbox                         |
 | `button`   | `label`, `icon`, `disabled`, `appearance`, `action`                  | Explicit action                          |
@@ -61,11 +61,13 @@ Select options may be primitive values or `{ "label": "Display", "value": "store
 
 ### SVG icon picker
 
-An `iconPicker` is a 40-pixel square, matching the height of a dense text input. Clicking it opens a scrollable menu. Each option needs a stable string `value` and inline SVG markup in `svg`. An optional `name` supplies the tooltip and accessible name; without it, the picker uses `value`. Set `searchable` to `true` to show a search field that filters by `name` or `value` without calling the API. Search is off by default. The selected `value` is stored locally and available as `$value` in its action; your integration should process the action and publish the updated state.
+An `iconPicker` is a 40-pixel square, matching the height of a dense text input. Clicking it opens a scrollable menu. Supply a flat `options` array, or group icons with `sections: [{ "name": "Response", "options": [...] }]`. Each section needs a heading in `name`. When `sections` is present, it takes precedence over `options`. Each icon needs a stable string `value` and inline SVG markup in `svg`. An optional icon `name` supplies the tooltip and accessible name; without it, the picker uses `value`.
+
+Set `searchable` to `true` to show a local search field. It matches an icon's `name` or `value`, showing only sections with matching icons. A matching section heading shows all its icons. Search is off by default. The selected `value` is stored locally and available as `$value` in its action; your integration should process the action and publish the updated state.
 
 ![SVG icon picker in the panel builder with its menu open](<../../../.gitbook/assets/integration-panels/icon-picker.png>)
 
-Typing `fi` narrows the same menu to Fire:
+Typing `fi` narrows the menu to Fire in its section:
 
 ![SVG icon picker filtered by name](<../../../.gitbook/assets/integration-panels/icon-picker-filtered.png>)
 
@@ -76,23 +78,38 @@ Typing `fi` narrows the same menu to Fire:
   "label": "Unit icon",
   "value": "$state.unit.icon",
   "searchable": true,
-  "options": [
+  "sections": [
     {
-      "value": "shield",
-      "name": "Shield",
-      "svg": "<svg viewBox=\"0 0 24 24\"><path fill=\"#5AAAF8\" d=\"M12 2 3 6v5c0 5.4 3.8 9.7 9 11 5.2-1.3 9-5.6 9-11V6l-9-4Z\"/></svg>"
+      "name": "Response",
+      "options": [
+        {
+          "value": "shield",
+          "name": "Shield",
+          "svg": "<svg viewBox=\"0 0 24 24\"><path fill=\"#5AAAF8\" d=\"M12 2 3 6v5c0 5.4 3.8 9.7 9 11 5.2-1.3 9-5.6 9-11V6l-9-4Z\"/></svg>"
+        },
+        {
+          "value": "fire",
+          "name": "Fire",
+          "svg": "<svg viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"#F6815B\"/></svg>"
+        }
+      ]
     },
     {
-      "value": "fire",
-      "name": "Fire",
-      "svg": "<svg viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"#F6815B\"/></svg>"
+      "name": "Equipment",
+      "options": [
+        {
+          "value": "radio",
+          "name": "Radio",
+          "svg": "<svg viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"9\" width=\"18\" height=\"12\" fill=\"#B595ED\"/></svg>"
+        }
+      ]
     }
   ],
   "action": { "id": "unit.set-icon", "values": { "icon": "$value" } }
 }
 ```
 
-SVGs are rendered as images. Use basic shapes and explicit colors; scripts, external references, and unsupported SVG elements or attributes are rejected. A picker shows up to 100 valid options.
+SVGs are rendered as images. Use basic shapes and explicit colors; scripts, external references, and unsupported SVG elements or attributes are rejected. A picker shows up to 100 options in total across its sections. Flat `options` use the same icon object format.
 
 ## Conditions
 
