@@ -47,7 +47,7 @@ To return to the main panel, use the radio's power button or **Return to Portal*
 
 ## Game Signal
 
-The overlay displays signal supplied by supported game integrations. For location-based signal, complete the [ER:LC setup](../game-integrations/roblox/erlc-setup.md) or [Arma 3 installation](../integrations/arma-3/install-and-connect.md), then configure that game's towers.
+The overlay displays signal supplied by supported game integrations. For location-based signal, configure [FiveM in-game repeaters](in-game-radio/in-game-repeaters.md), [ER:LC virtual towers](in-game-radio/erlc-signal-towers.md), or [Arma 3 signal towers and repeaters](../integrations/arma-3/signal-towers-and-repeaters.md).
 
 <figure><img src="../../.gitbook/assets/desktop-overlay/radio-signal.png" alt="Sonoran Radio desktop overlay with a selected channel, connected users, and signal bars"><figcaption><p>Signal bars show the coverage supplied by your game integration.</p></figcaption></figure>
 
