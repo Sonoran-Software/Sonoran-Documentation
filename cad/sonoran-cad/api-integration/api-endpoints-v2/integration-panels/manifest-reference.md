@@ -50,6 +50,7 @@ Use a binding as the entire property value, such as `"value": "$item.locked"`. F
 | `number`   | `id`, `label`, `value`, `action`                                     | Numeric input                            |
 | `textarea` | `id`, `label`, `value`, `action`                                     | Multiline input                          |
 | `select`   | `id`, `label`, `value`, `options`, `multiple`, `clearable`, `action` | Selection control                        |
+| `iconPicker` | `id`, `label`, `value`, `options`, `readonly`, `action` | Square SVG picker |
 | `toggle`   | `id`, `label`, `value`, `color`, `action`                            | Boolean switch                           |
 | `checkbox` | `id`, `label`, `value`, `color`, `action`                            | Boolean checkbox                         |
 | `button`   | `label`, `icon`, `disabled`, `appearance`, `action`                  | Explicit action                          |
@@ -57,6 +58,36 @@ Use a binding as the entire property value, such as `"value": "$item.locked"`. F
 Common layout properties are `grow`, `columns` from 1-12, and `gap` using `none`, `xs`, `sm`, `md`, `lg`, or `xl`.
 
 Select options may be primitive values or `{ "label": "Display", "value": "stored-value" }` objects.
+
+### SVG icon picker
+
+An `iconPicker` is a 40-pixel square, matching the height of a dense text input. Clicking it opens a scrollable menu. Each option needs a stable string `value`, a `label`, and inline SVG markup in `svg`. The selected `value` is stored locally and available as `$value` in its action; your integration should process the action and publish the updated state.
+
+![SVG icon picker in the panel builder with its menu open](<../../../.gitbook/assets/integration-panels/icon-picker.png>)
+
+```json
+{
+  "type": "iconPicker",
+  "id": "unit-icon",
+  "label": "Unit icon",
+  "value": "$state.unit.icon",
+  "options": [
+    {
+      "value": "shield",
+      "label": "Shield",
+      "svg": "<svg viewBox=\"0 0 24 24\"><path fill=\"#5AAAF8\" d=\"M12 2 3 6v5c0 5.4 3.8 9.7 9 11 5.2-1.3 9-5.6 9-11V6l-9-4Z\"/></svg>"
+    },
+    {
+      "value": "fire",
+      "label": "Fire",
+      "svg": "<svg viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"#F6815B\"/></svg>"
+    }
+  ],
+  "action": { "id": "unit.set-icon", "values": { "icon": "$value" } }
+}
+```
+
+SVGs are rendered as images. Use basic shapes and explicit colors; scripts, external references, and unsupported SVG elements or attributes are rejected. A picker shows up to 100 valid options.
 
 ## Conditions
 
@@ -95,6 +126,8 @@ Controls use the same action envelope. The CAD creates an event containing the a
 ```
 
 `confirm` is optional. It displays a CAD confirmation dialog before the action is queued.
+
+`input`, `number`, and `textarea` actions are emitted once when the user leaves a changed field. Selects, toggles, checkboxes, and icon pickers emit on selection or click. Successful action acknowledgments are quiet; failures show an error notification.
 
 ## Repeated Collections
 

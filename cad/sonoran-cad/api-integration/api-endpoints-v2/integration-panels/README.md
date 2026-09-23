@@ -64,7 +64,7 @@ Sonoran.lua, Sonoran.js, Sonoran.py, and Sonoran.Net expose the same helper name
 ## Capabilities
 
 * Responsive rows, columns, grids, sections, and repeated state collections
-* Text, icons, badges, alerts, inputs, selects, toggles, checkboxes, and buttons
+* Text, icons, badges, alerts, inputs, selects, SVG icon pickers, toggles, checkboxes, and buttons
 * State, repeated-item, input, and current-control bindings
 * Search, named sort choices, conditions, confirmation prompts, and theme-safe styling
 * Built-in pulse animations and state- or action-triggered sound effects
