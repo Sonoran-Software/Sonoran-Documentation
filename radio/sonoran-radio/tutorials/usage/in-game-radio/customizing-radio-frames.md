@@ -26,11 +26,11 @@ Only frames available to your player appear in the list.
 
 ## Restrict frame access
 
-Frame permissions are still configured in the resource's **config.lua**, under `Config.frames`.
+Create and edit frames in the Radio panel's **Customize > Overlay** editor. To control which FiveM players can select each frame, configure `Config.frames` in your server's Sonoran Radio resource **config.lua**. The in-game radio only lets players choose from the frames available to them; frame setup and permission rules are not configured in that menu.
 
 - `permissionMode = 'none'` lets everyone use all available frames.
 - Use `ace`, `qbcore`, `qbox`, or `esx` to restrict frames by department permissions or job grades.
-- Copy the ID shown below a frame's name in the Overlay editor, such as `frame:2`, into that department's `allowedFrames` list.
+- Copy the ID shown below each frame's name in the Overlay editor into the department's `allowedFrames` list. Use the exact `frame:<ID>` value, such as `frame:2`; the frame's display name is not a permission identifier.
 
 For example, allow players with the `sonoranradio.patrol` ACE to use two community frames:
 
@@ -50,6 +50,6 @@ Config.frames = {
 }
 ```
 
-Replace those IDs with your own. For framework permissions, use `permissions.jobs` and the allowed `grades` from the resource's example configuration. [Sonoran CMS can manage ACE permissions from community roles](https://docs.sonoransoftware.com/cms/integration-capabilities/sonoran-radio-sync).
+Replace those IDs with your own. Grant `sonoranradio.patrol` to the players who should use the patrol frames through your server's ACE configuration. For framework permissions, use `permissions.jobs` and the allowed `grades` from the resource's example configuration. [Sonoran CMS can manage ACE permissions from community roles](https://docs.sonoransoftware.com/cms/integration-capabilities/sonoran-radio-sync).
 
-Existing local skins can remain installed; their folder names still work in `allowedFrames`. To bring an existing portable frame into the editor, upload its image and use **Import from FiveM (skin.json)** when creating the frame.
+For panel-managed frames, use only `frame:<ID>` values in `allowedFrames`. Do not use the frame label or a local skin folder name. To migrate an existing portable frame, upload its image and use **Import from FiveM (skin.json)** when creating it in the Overlay editor, then replace the old `allowedFrames` entry with its new `frame:<ID>`.
