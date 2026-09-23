@@ -37,6 +37,8 @@ In your `server.cfg` file, add the following:
 exec @sonoranradio/sonoranradio.cfg
 ```
 
+If you are updating an existing installation with custom `skins` folders, the portal-managed resource [migrates those radio frames automatically](../usage/in-game-radio/customizing-radio-frames.md#updating-from-local-skins). Keep the archived `skins_old` folder until you have verified the frames in game.
+
 {% hint style="danger" %}
 Do not start `sonoranradio_updatehelper` manually or use `ensure [sonoranradio]`. Use the `exec` line above to avoid server crashes.
 {% endhint %}
