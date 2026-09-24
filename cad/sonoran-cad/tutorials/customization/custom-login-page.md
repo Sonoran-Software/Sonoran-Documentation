@@ -1,14 +1,24 @@
 ---
-description: >-
-  Looking to use your own domain name with Sonoran CAD? We've made it easy for
-  you!
+description: Share a free CAD vanity URL or connect your own custom domain.
 ---
 
-# Custom Domain & Login Page
+# Custom Domain & Vanity URLs
 
-The custom login page allows your community members to register, sign-in, and access your CAD all on your own domain! In addition, user signups and password recovery emails have your [custom branding](custom-emails.md). Logging in also takes you directly to the community, instead of having to select the community at the menu.
+Share your CAD with a free vanity URL based on your community ID, or connect a domain you own. Either link opens your community's login page. When members log in through the link, Sonoran CAD automatically joins them to your community and takes them directly there.
 
 ![Sonoran CAD Custom Login Page Example](<../../.gitbook/assets/image (445).png>)
+
+## Free Vanity URL
+
+Every eligible community can share a URL in this format: `https://your-community-id.sonorancad.com`. For example, the ID `midwestrp` gives you `https://midwestrp.sonorancad.com`.
+
+In Sonoran CAD, open **Administration > Customization > Custom Domain** to copy your community URL. You can also find it beside your community ID in the API key section. Vanity URLs are free and require no DNS changes. Share the link wherever you [invite users](../getting-started/inviting-users-to-your-cad.md); people who sign in or register through it are joined to your community automatically.
+
+Your community ID must be suitable for a hostname: letters, numbers, and hyphens, with a letter or number at each end. Sonoran CAD uses lowercase in the URL, so an ID with uppercase letters still works. IDs containing periods or underscores cannot use vanity URLs, and IDs reserved for Sonoran services are unavailable. If your ID is ineligible, you can still share the ID for manual joining or configure your own domain below.
+
+## Use Your Own Domain
+
+A custom domain displays your CAD login page at a domain or subdomain you own. It also supports [custom branding](custom-emails.md) for signups and password recovery emails.
 
 ## DNS Record Method (Recommended)
 

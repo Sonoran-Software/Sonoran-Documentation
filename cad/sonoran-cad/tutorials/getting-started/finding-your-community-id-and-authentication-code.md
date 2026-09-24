@@ -8,7 +8,7 @@ description: >-
 
 ## Finding your Community ID
 
-Your community ID allows users to [manually join your community](inviting-users-to-your-cad.md).
+Your community ID lets users [join your community manually](inviting-users-to-your-cad.md). If the ID is eligible for a hostname, you can also share the free vanity URL `https://your-community-id.sonorancad.com` so users join automatically when they log in. See [Custom Domain & Vanity URLs](../customization/custom-login-page.md) for details.
 
 The ID can be found in the account menu dropdown once inside of a community.
 
