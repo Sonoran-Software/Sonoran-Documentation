@@ -19,7 +19,7 @@
   * [Community ID and Ownership Code](tutorials/getting-started/finding-your-community-id-and-authentication-code.md)
   * [Troubleshooting](tutorials/getting-started/troubleshooting.md)
 * [Customization](tutorials/customization/README.md)
-  * [Custom Domain & Login Page](tutorials/customization/custom-login-page.md)
+  * [Custom Domain & Vanity URLs](tutorials/customization/custom-login-page.md)
   * [Customizing Your Layout](tutorials/customization/customizing-your-layout.md)
   * [Community Branding and Settings](tutorials/customization/community-branding-and-info.md)
   * [Creating Custom Record and Report Types](tutorials/customization/creating-custom-record-and-report-types.md)

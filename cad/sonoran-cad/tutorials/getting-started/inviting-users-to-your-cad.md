@@ -6,7 +6,15 @@ description: Invite your community members to join your community, and grant the
 
 ## Invitation Options
 
-Sonoran CAD allows your community members to easily join your CAD. Users can manually enter in your community ID, or join automatically from a custom login page on your own domain.
+Share your free vanity URL or your own custom domain to bring members straight to your community. When they log in through either link, Sonoran CAD automatically joins them to your community. Members can also join manually with your community ID.
+
+### Share Your Vanity URL (Free)
+
+Your vanity URL is `https://your-community-id.sonorancad.com`. For example, a community with the ID `midwestrp` can share `https://midwestrp.sonorancad.com`.
+
+Copy your community URL from **Administration > Customization > Custom Domain** and share it with new members. They can sign in or register there, join your community automatically, and go directly to your CAD without selecting it from a community list. There is no DNS setup or additional cost.
+
+Community IDs with periods or underscores cannot be used as vanity hostnames. See [Custom Domain & Vanity URLs](../customization/custom-login-page.md) for URL eligibility and your other sharing options.
 
 ### [Sonoran CMS Auto-Join](https://info.sonorancms.com/why-choose-sonoran-cms/why-choose-sonoran-cms)
 
@@ -14,17 +22,17 @@ Sonoran CAD allows your community members to easily join your CAD. Users can man
 
 <figure><img src="../../.gitbook/assets/BigSquare.png" alt=""><figcaption><p>Sonoran CAD x Sonoran CMS - Account Auto-Join</p></figcaption></figure>
 
-### Custom Login Page
+### Use Your Own Custom Domain
 
-For more information on hosting your own custom login page, see our guide below:
+If you have a domain of your own, you can connect it to your CAD instead. See the custom domain and vanity URL guide:
 
 {% content-ref url="../customization/custom-login-page.md" %}
-[custom-login-page.md](../customization/custom-login-page.md)
+[Custom Domain & Vanity URLs](../customization/custom-login-page.md)
 {% endcontent-ref %}
 
 ### Manually Join with a Community ID
 
-Users can [create an account](registering-your-account.md), and enter in your community ID in the "Join Community" popup.\
+If you cannot share a vanity URL or custom domain, users can [create an account](registering-your-account.md), and enter in your community ID in the "Join Community" popup.\
 Users can search using your community ID and can press the "Join" button to add your community.\
 \
 From there, users can select your community card in the "My Communities" section to log into your CAD.<br>
