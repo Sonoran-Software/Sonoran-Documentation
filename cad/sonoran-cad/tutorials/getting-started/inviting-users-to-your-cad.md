@@ -10,7 +10,7 @@ Share your free vanity URL or your own custom domain to bring members straight t
 
 ### Share Your Vanity URL (Free)
 
-Your vanity URL is `https://your-community-id.sonorancad.com`. For example, a community with the ID `mwrpdev` can share `https://mwrpdev.sonorancad.com`.
+Your vanity URL is `https://your-community-id.sonorancad.com`. For example, a community with the ID `mwrpdev` can share `https://mwrpdev.sonorancad.com`. See [Custom Domain & Vanity URLs](../customization/custom-login-page.md) for a screenshot of where to copy your URL and instructions for connecting your own domain.
 
 Copy your community URL from **Administration > Customization > Custom Domain** and share it with new members. They can sign in or register there, join your community automatically, and go directly to your CAD without selecting it from a community list. There is no DNS setup or additional cost.
 
