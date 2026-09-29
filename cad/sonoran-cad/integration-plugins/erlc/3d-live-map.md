@@ -77,7 +77,11 @@ New map geometry loads automatically when you open the map. An active map also c
 
 Units will appear on the map if they have a [linked Roblox account](getting-started.md#linking-your-roblox-account) and are active on the CAD police, fire, EMS, or dispatch page.
 
-Click on a unit to view their bodycam and access other options for dispatch calls, lookups, tone board, timers, etc.
+Click on a unit to access dispatch calls, lookups, the tone board, timers, and other options.
+
+If the unit is streaming a [bodycam](bodycam.md#via-live-map), its live video appears at the top of the unit menu. Click the video preview to open the dedicated bodycam viewer. This works in 2D, 2.5D, and 3D.
+
+<figure><img src="../../.gitbook/assets/erlc-bodycam-map.png" alt="A police unit selected on the ERLC 3D map with its live bodycam preview open"><figcaption><p>View a unit's live bodycam directly from its map blip.</p></figcaption></figure>
 
 Expand **Blips** in the legend to choose which unit and emergency-call categories appear. Use the text-size controls to adjust blip size.
 

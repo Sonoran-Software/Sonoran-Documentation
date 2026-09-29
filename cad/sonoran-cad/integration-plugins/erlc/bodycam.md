@@ -15,7 +15,7 @@ Bodycam streams in the web and desktop applications are transmitted through **se
 
 Stay connected to in-game units with live bodycam video feeds integrated directly into the CAD.
 
-<figure><img src="../../.gitbook/assets/erlc_cam_promo.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/erlc_cam_promo.png" alt="Sonoran CAD live bodycam on the ERLC 3D map"><figcaption></figcaption></figure>
 
 ## Configuring the Bodycam
 
@@ -35,7 +35,7 @@ Once opened, select **Bodycam Source** > **Roblox** > **Start**
 Once configured and started, if using the desktop application, your bodycam will automatically select the same window and start the next time you use the application.
 
 {% hint style="info" %}
-Do to graphics settings and drivers, some users may experience **white flashing in the Roblox app** when using **window** share mode.
+Due to graphics settings and drivers, some users may experience **white flashing in the Roblox app** when using **window** share mode.
 
 To resolve this, share the entire **screen** instead of just the Roblox application.
 {% endhint %}
@@ -80,9 +80,13 @@ In the active units panel hover over the flashing camera icon to preview a unit'
 
 <summary>Via Live Map</summary>
 
-In the [2D or 3D live map](3d-live-map.md), click on a unit to view the bodycam. Click on the bodycam inside the menu to open the dedicated viewer.
+1. Open the [live map](3d-live-map.md) in **2D**, **2.5D**, or **3D**.
+2. Click a unit blip to open its unit menu. If the unit is streaming a bodycam, a live video preview appears at the top of the menu.
+3. Click the video preview to open the dedicated bodycam viewer.
 
-<figure><img src="../../.gitbook/assets/20260313-2307-53.0015571.gif" alt=""><figcaption></figcaption></figure>
+The unit must [start sharing their bodycam](#2-select-the-roblox-game) before a live preview is available.
+
+<figure><img src="../../.gitbook/assets/erlc-bodycam-map.png" alt="Selected ERLC police unit with live bodycam video in its 3D map unit menu"><figcaption><p>Select a unit blip to preview its live bodycam without leaving the map.</p></figcaption></figure>
 
 </details>
 
