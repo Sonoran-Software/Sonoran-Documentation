@@ -1,13 +1,15 @@
 ---
-description: Automatic CAD calls and NPC records for legacy FivePD servers. Unofficial, unsupported, and not maintained.
+description: Automatic CAD calls and NPC records for FivePD 1.5.x, integrated as far as its available API allows without upstream developer support.
 ---
 
 # FivePD (Legacy, Unsupported)
 
-<figure><img src="../../../.gitbook/assets/sonoran_fivepd_integration_promo.png" alt="Sonoran CAD FivePD integration: automatic callouts and NPC and vehicle records. Legacy and unsupported."><figcaption><p>FivePD integration - illustrative promotional artwork</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/sonoran_fivepd_integration_promo.png" alt="Sonoran CAD FivePD integration: automatic callouts and NPC and vehicle records."><figcaption><p>FivePD integration - illustrative promotional artwork</p></figcaption></figure>
 
 {% hint style="warning" %}
-**Unofficial, unsupported, and not maintained.** This integration is provided as-is for communities already running legacy FivePD. Sonoran Software support does not troubleshoot it, and future compatibility updates are not planned. It has not been verified in a live FivePD session.
+**FivePD 1.5.x has gone years without updates or support from its developers.** We have integrated as much as we can using its available API and source material, without support from the FivePD developers. Further functionality and compatibility fixes are limited by what FivePD exposes.
+
+This CAD integration is **unofficial, unsupported, and not maintained**, and is provided as-is for existing FivePD servers. Sonoran Software support does not troubleshoot it, and future compatibility updates are not planned. It has not been verified in a live FivePD session.
 {% endhint %}
 
 FivePD is listed with the FiveM submodules for discovery, but is installed as a **separate resource and a FivePD plugin DLL**. It is not bundled with Sonoran CAD and does not go in `sonorancad/submodules/`.
