@@ -107,7 +107,7 @@
     * [Emergency Response Simulator (ERS)](integration-plugins/in-game-integration/available-plugins/ers.md)
     * [Framework Support (ESX/QBCore) and Auto Fines](integration-plugins/in-game-integration/available-plugins/framework-support-esx-qbcore-and-auto-fines/README.md)
       * [Depreciated: ESX Support](integration-plugins/in-game-integration/available-plugins/framework-support-esx-qbcore-and-auto-fines/esx-support.md)
-    * [FivePD](integration-plugins/in-game-integration/available-plugins/fivepd.md)
+    * [FivePD (Legacy, Unsupported)](integration-plugins/in-game-integration/available-plugins/fivepd.md)
     * [Force Register (ForceReg)](integration-plugins/in-game-integration/available-plugins/forcereg.md)
     * [Kick](integration-plugins/in-game-integration/available-plugins/kick.md)
     * [LB Phone App](integration-plugins/in-game-integration/available-plugins/lb-phone-app.md)
