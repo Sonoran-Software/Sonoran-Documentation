@@ -10,6 +10,26 @@ description: View the latest changes to Sonoran CAD!
 
 ## Changelog
 
+### 3.44.8 09/29/2026
+
+{% tabs %}
+{% tab title="New" %}
+Live Map: ERLC Map and Postal Search
+
+* Added the new ERLC 3D map, seasonal 2D maps with label controls, indexed postal search, and a more compact legend.
+
+Live Map: ERLC Service Models
+
+* Added hosted police, fire, EMS, and DOT vehicle and character models with team-based selection and movement-based headings.
+{% endtab %}
+
+{% tab title="Fixed" %}
+Live Map: ERLC Vehicle Fallback
+
+* Use the team's vehicle model when occupancy is unknown, and a character only when on-foot status is reported.
+{% endtab %}
+
+{% endtabs %}
 ### 3.44.3 09/17/2026
 
 {% tabs %}
