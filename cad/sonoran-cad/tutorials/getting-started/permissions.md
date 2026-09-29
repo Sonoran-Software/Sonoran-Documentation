@@ -99,6 +99,11 @@ The **Bot permissions** button in the Permission Keys panel creates a configurat
 
 ## Role Sync
 
-When using Sonoran Bot or CMS to manage access, update permissions in the role or rank mapping. A later sync can overwrite manual changes made directly in CAD.
+Choose the setup your community uses:
+
+* **Discord roles → CAD permissions:** Follow the [Sonoran Bot setup guide](https://docs.sonoransoftware.com/bot/tutorials/sonoran-cad-integration).
+* **CMS ranks → CAD permissions:** Follow the [Sonoran CMS setup guide](https://docs.sonoransoftware.com/cms/integration-capabilities/sonoran-cad-sync). Use this path if the bot is configured for CMS.
+
+Update permissions in the role or rank mapping. A later sync can overwrite manual changes and permission-key grants made directly in CAD.
 
 Sonoran CMS supports granular per-template CAD permissions in its role/rank mappings. Apply the same distinction between **Edit any** and **Edit selected fields on others' records** when configuring sync.

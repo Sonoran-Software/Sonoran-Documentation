@@ -1,48 +1,20 @@
 ---
-description: >-
-  Our official Discord bot provides deep integration for your community,
-  including automatically syncing roles on your server with permissions in the
-  CAD!
+description: Automatically grant CAD permissions based on Discord roles.
 ---
 
 # Discord Bot Integration
 
-<figure><img src="../.gitbook/assets/CMSxCAD.webp" alt=""><figcaption></figcaption></figure>
+Sonoran Bot automatically grants CAD permissions based on members' Discord roles.
 
-### Getting Started
+1. [Invite Sonoran Bot and link your CAD community](https://docs.sonoransoftware.com/bot/tutorials/getting-started).
+2. In CAD, open **Administration > Permission Keys > Bot permissions**. Select permissions and copy the **Permission code**.
+3. In Discord, run `/rolemap` and select **Discord → Sonoran > Create Mapping**. Choose **CAD** and the Discord role, paste the code under **Set Permission**, then save with **Create Mapping**.
+4. Members run `/linkme` to link their accounts and `/sync` to apply their permissions.
 
-Get started with SonoranBot today by inviting it to your Discord:
+See the [illustrated setup guide](https://docs.sonoransoftware.com/bot/tutorials/sonoran-cad-integration) for screenshots.
 
-{% content-ref url="https://app.gitbook.com/s/gJnyZgUQPWpA5p9njAAR/tutorials/getting-started" %}
-[Getting Started](https://app.gitbook.com/s/gJnyZgUQPWpA5p9njAAR/tutorials/getting-started)
-{% endcontent-ref %}
+{% hint style="warning" %}
+Sync replaces members' CAD permissions with the combined permissions from their mapped roles. Manual grants and permission-key grants are overwritten.
+{% endhint %}
 
-### CAD Integration
-
-Learn more about SonoranBot's CAD integration features:
-
-{% content-ref url="https://app.gitbook.com/s/gJnyZgUQPWpA5p9njAAR/tutorials/sonoran-cad-integration" %}
-[Sonoran CAD Integration](https://app.gitbook.com/s/gJnyZgUQPWpA5p9njAAR/tutorials/sonoran-cad-integration)
-{% endcontent-ref %}
-
-### Settings
-
-Configure SonoranBot's settings in your server:
-
-{% content-ref url="https://app.gitbook.com/s/gJnyZgUQPWpA5p9njAAR/tutorials/usage/settings" %}
-[Settings](https://app.gitbook.com/s/gJnyZgUQPWpA5p9njAAR/tutorials/usage/settings)
-{% endcontent-ref %}
-
-### Commands
-
-Reference a list of bot commands:
-
-{% content-ref url="https://app.gitbook.com/s/gJnyZgUQPWpA5p9njAAR/tutorials/usage/commands" %}
-[Commands](https://app.gitbook.com/s/gJnyZgUQPWpA5p9njAAR/tutorials/usage/commands)
-{% endcontent-ref %}
-
-### Generate a permission code in CAD
-
-In **Administration > Accounts > Permission Keys**, open **Bot permissions**. Select page, administrative, and per-template record permissions in the builder, then copy the generated code for your bot role mapping. This builds a code; it does not directly change account permissions.
-
-Use **Edit selected fields on others' records** with template fields marked **Allow limited editing** for restricted updates. **Edit any** grants full editing access instead. See [Granting Account Permissions](../tutorials/getting-started/permissions.md#record-editing-permissions) before changing an existing role mapping.
+If your bot uses CMS, configure [CAD permissions through CMS ranks](https://docs.sonoransoftware.com/cms/integration-capabilities/sonoran-cad-sync) instead.
