@@ -18,9 +18,14 @@ Sonoran CAD includes an interactive 2D and 3D live map that displays unit locati
 
 <summary>Configuring the Live Map</summary>
 
-Once your ER:LC community has been linked, navigate to **Admin** > **Advanced** > **In-Game Integration** > **ER:LC** > **Live Map** > **Enable**
+1. Open **Admin** > **Advanced** > **In-Game Integration**.
+2. Confirm the community's **Game** is **ER:LC**, then open the **ER:LC** tab.
+3. If your server is not linked yet, complete the [ER:LC setup](getting-started.md) using your private server's API key.
+4. In the **Live Map** section, set **Status** to **Enabled** and select **Official ER:LC Map** under **Map Style**.
 
-<figure><img src="../../.gitbook/assets/image (530).png" alt="" width="375"><figcaption></figcaption></figure>
+Changes on the ER:LC tab save automatically. You do not need to upload a map image or GLB to use the official ER:LC map.
+
+<figure><img src="../../.gitbook/assets/erlc-docs-admin-live-map.jpg" alt="ERLC admin settings with Live Map enabled and Official ERLC Map selected"><figcaption><p>Enable the official ER:LC live map in the integration settings.</p></figcaption></figure>
 
 </details>
 
@@ -50,11 +55,35 @@ Additionally, you can select the map pin icon on any unit, emergency call, or di
 
 Change the map view from 2D, 2.5D, or 3D via the top right.
 
+#### Searching Postal Codes
+
+Enter a postal code, such as **1007**, in the **Postal** field at the top of the legend. Press **Enter** or select **Search** to center the map on that location. Postal search works in 2D, 2.5D, and 3D.
+
+If a code is not found, the field displays an inline error. Check the code and try again.
+
+<figure><img src="../../.gitbook/assets/erlc-docs-postal-search.jpg" alt="Postal search for 1007 centers the map on a modeled residential neighborhood"><figcaption><p>Search for a postal code from the map legend.</p></figcaption></figure>
+
+In **2D** and **2.5D**, the label button beside the mode controls shows or hides postal codes and street names together.
+
+#### Exploring the 3D Map
+
+Zoom in to inspect buildings and roads, and use the movement and camera controls to change your view. The new ER:LC map is being modeled in stages, so detail varies by area.
+
+<figure><img src="../../.gitbook/assets/erlc-docs-downtown.jpg" alt="Modeled downtown buildings in the ERLC 3D map"><figcaption><p>A closer look at the downtown area.</p></figcaption></figure>
+
+New map geometry loads automatically when you open the map. An active map also checks for updates approximately every five minutes.
+
 #### Unit Blips
 
 Units will appear on the map if they have a [linked Roblox account](getting-started.md#linking-your-roblox-account) and are active on the CAD police, fire, EMS, or dispatch page.
 
 Click on a unit to view their bodycam and access other options for dispatch calls, lookups, tone board, timers, etc.
+
+Expand **Blips** in the legend to choose which unit and emergency-call categories appear. Use the text-size controls to adjust blip size.
+
+Supported teams use police, fire, EMS, or DOT models. When the API does not report vehicle occupancy, the team's vehicle model is used. A character model is used when on-foot status is explicitly reported.
+
+<figure><img src="../../.gitbook/assets/erlc-docs-blips.jpg" alt="Sample police, fire, and EMS vehicles beside a collision call, with blip filters expanded"><figcaption><p>Service vehicles beside a sample dispatch call.</p></figcaption></figure>
 
 #### Emergency Calls
 
@@ -72,14 +101,17 @@ Dispatch calls created from an [in-game emergency call](emergency-calls.md) or a
 
 Sonoran CAD allows any Roblox game to also send and update live map positions.
 
-* [ER:LC](/broken/pages/2PuOqDmlez0HHKFRgnGt)
-  * ER:LC map option available in the admin panel, or - upload a modified map with the same dimensions 3120x3120
+* [ER:LC](getting-started.md)
+  * Select **Official ER:LC Map** for the maintained map and automatic geometry updates.
 * [Maple County | Fall Update](https://www.roblox.com/games/8416011646/Maple-County-FALL-UPDATE)
   * Requires a custom map upload from the game
 
 To upload a custom live map for Roblox
 
-* **Admin** > **Advanced** > **In-Game Integration** > **ER:LC** > **Live Map** > Toggle **Official ER:LC Live Map** to **Custom Roblox Map**
+* Open **Admin** > **Advanced** > **In-Game Integration** > **ER:LC**.
+* Under **Live Map**, select **Custom Roblox Map** and use **Upload** to upload your map image. Custom map images require **Pro**.
+
+<figure><img src="../../.gitbook/assets/erlc-docs-admin-custom-map.jpg" alt="Current custom Roblox map settings with the Upload button"><figcaption><p>Custom map image uploads are separate from the official ER:LC map.</p></figcaption></figure>
 
 </details>
 
@@ -92,9 +124,7 @@ To do the same for your game:
 
 1. Send Unit Location API updates with the `coordinate` `x` and `y` values
 2. Convert (if needed) your `coordinate` `x` and `y` values so that the top left of your map image is `{0,0}`
-3. Export your square map to a single image and upload to the Sonoran CAD community in the admin panel under `In-Game Integration` > `Live Map` > Game as `Roblox` > Type as `Custom` > `Upload` > `Save`
-
-![](<../../.gitbook/assets/image (79).png>)
+3. Export your square map as a PNG and upload it under **Admin** > **Advanced** > **In-Game Integration** > **ER:LC** > **Live Map** > **Custom Roblox Map** > **Upload**. Make sure the image coordinates match the coordinates your integration sends.
 
 For more help, reach out to our [support team](https://support.sonoransoftware.com).
 
