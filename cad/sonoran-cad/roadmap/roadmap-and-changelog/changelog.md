@@ -22,14 +22,8 @@ Live Map: ERLC Service Models
 
 * Added hosted police, fire, EMS, and DOT vehicle and character models with team-based selection and movement-based headings.
 {% endtab %}
-
-{% tab title="Fixed" %}
-Live Map: ERLC Vehicle Fallback
-
-* Use the team's vehicle model when occupancy is unknown, and a character only when on-foot status is reported.
-{% endtab %}
-
 {% endtabs %}
+
 ### 3.44.3 09/17/2026
 
 {% tabs %}
@@ -38,8 +32,8 @@ Bodycam: Sound and Source Controls
 
 * Fixed the stop sound to respect mute and volume settings and kept source controls available when another source category has options.
 {% endtab %}
-
 {% endtabs %}
+
 ### 3.44.1 09/16/2026
 
 Guides: [Record Automations](../../tutorials/customization/record-automations.md), [Custom Records](../../tutorials/customization/creating-custom-record-and-report-types.md), and [Account Permissions](../../tutorials/getting-started/permissions.md).
@@ -98,8 +92,8 @@ Navigation: Clickable Community Name
 
 * Fixed the community name in the top-left header so text branding supports the same back navigation as image branding.
 {% endtab %}
-
 {% endtabs %}
+
 ### 3.44.0 09/15/2026
 
 {% tabs %}
@@ -108,8 +102,8 @@ Community Workflows: Records and Permissions
 
 * Added per-template permissions, a visual record editor, record automations, and in-app release highlights.
 {% endtab %}
-
 {% endtabs %}
+
 ### 3.43.32 09/14/2026
 
 {% tabs %}
@@ -124,8 +118,8 @@ Desktop Downloads: Latest Releases
 
 * Updated desktop download links to the latest available Windows, macOS, and Linux releases.
 {% endtab %}
-
 {% endtabs %}
+
 ### 3.43.30 09/10/2026
 
 {% tabs %}
