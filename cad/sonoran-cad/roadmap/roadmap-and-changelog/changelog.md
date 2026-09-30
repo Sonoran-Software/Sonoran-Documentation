@@ -10,6 +10,16 @@ description: View the latest changes to Sonoran CAD!
 
 ## Changelog
 
+### 3.44.12 09/30/2026
+
+{% tabs %}
+{% tab title="Fixed" %}
+Live Map: 911 Call Removal
+
+* Fixed deleting 911 calls from the 2D and 3D live maps for ERLC and FiveM.
+{% endtab %}
+
+{% endtabs %}
 ### 3.44.11 09/30/2026
 
 {% tabs %}
