@@ -6,7 +6,7 @@ description: >-
 
 # 3D Location Webhooks
 
-![ERLC 3D Location Webhooks](../../.gitbook/assets/erlc_notifications_promo.png)
+![ERLC 3D Location Webhooks](../../.gitbook/assets/erlc_notifications_promo_v2.png)
 
 See the call and its location together in Discord. Notifications include the call details and a watermarked aerial image when a matching location image is available.
 

@@ -1,0 +1,46 @@
+{
+  "sourceCommit": "cc2297ec",
+  "records": [
+    {
+      "theme": "dark",
+      "label": "Sonoran",
+      "callId": 1042,
+      "clipped": false,
+      "themeStyle": "modern",
+      "viewport": [
+        620,
+        280
+      ],
+      "text": "visibility\nchevron_left\nchevron_right\nlink_off\nOn Scene\nTraffic stop\nnotes\nNOTES\nCALL ID\n#1042\nCALL STATUS\nACTIVE\nCODE\n10-38\nADDRESS\nFREEDOM AVENUE • 218\nCALL DESCRIPTION\nWHITE SEDAN STOPPED NEAR THE APARTMENTS. P-21 REQUESTING A COVER UNIT.",
+      "panelOverflow": false
+    },
+    {
+      "theme": "retro",
+      "label": "Spillboy",
+      "callId": 1042,
+      "clipped": false,
+      "themeStyle": "retro",
+      "viewport": [
+        620,
+        280
+      ],
+      "text": "chevron_left\nchevron_right\nlink_off\nOn Scene\nTraffic stop\nNOTES\nCALL ID\n#1042\nCALL STATUS\nACTIVE\nCODE\n10-38\nADDRESS\nFREEDOM AVENUE • 218\nCALL DESCRIPTION\nWHITE SEDAN STOPPED NEAR THE APARTMENTS. P-21 REQUESTING A COVER UNIT.",
+      "panelOverflow": false
+    },
+    {
+      "theme": "metro",
+      "label": "CentralCircle",
+      "callId": 1042,
+      "clipped": false,
+      "themeStyle": "flat",
+      "viewport": [
+        620,
+        280
+      ],
+      "text": "visibility\nchevron_left\nchevron_right\nlink_off\nOn Scene\nTraffic stop\nnotes\nNOTES\nCALL ID\n#1042\nCALL STATUS\nACTIVE\nCODE\n10-38\nADDRESS\nFREEDOM AVENUE • 218\nCALL DESCRIPTION\nWHITE SEDAN STOPPED NEAR THE APARTMENTS. P-21 REQUESTING A COVER UNIT.",
+      "panelOverflow": false
+    }
+  ],
+  "errors": [],
+  "boundaries": "Actual desktopOverlay.vue with local fictional call and unit state. Electron IPC disabled. Opacity 100%. No live game integration."
+}

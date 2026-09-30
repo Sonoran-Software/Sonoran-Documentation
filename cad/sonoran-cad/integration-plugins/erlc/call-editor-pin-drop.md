@@ -40,4 +40,4 @@ The type-to-filter **Address** field is also pre-configured with the full list o
 
 You can also enable [ERLC 3D Location Webhooks](location-notifications.md) to include an aerial location image with emergency and dispatch call webhooks.
 
-<figure><img src="../../.gitbook/assets/erlc_notifications_promo.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/erlc_notifications_promo_v2.png" alt="" width="375"><figcaption></figcaption></figure>

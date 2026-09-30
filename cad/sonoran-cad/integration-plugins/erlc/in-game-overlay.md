@@ -9,7 +9,7 @@ description: >-
 
 ## In-Game Overlay
 
-<figure><img src="../../.gitbook/assets/erlc_overlay_promo.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/erlc_overlay_promo_v2.png" alt=""><figcaption></figcaption></figure>
 
 ## Using the In-Game Overlay
 

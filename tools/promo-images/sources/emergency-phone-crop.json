@@ -1,0 +1,20 @@
+{
+  "source": "emergency-phone-original.png",
+  "source_sha256": "19bfde7044d10969bd556a2109fca873f4d58dba83a19ef3ad45cc3e4899e93c",
+  "crop": [
+    20,
+    21,
+    325,
+    600
+  ],
+  "bezel_bounds": [
+    25,
+    23,
+    317,
+    596
+  ],
+  "bezel_radius": 62,
+  "output": "emergency-phone-cutout.png",
+  "output_sha256": "5ee607784a95c9d820ab1b7b98d66728dbad6f46fcf36454ae47d271b1e07264",
+  "provenance": "User-supplied ERLC screenshot, September 30, 2026. Only source crop and background mask; no regenerated phone or text."
+}
