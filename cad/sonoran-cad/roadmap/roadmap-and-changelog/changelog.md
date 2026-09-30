@@ -10,6 +10,22 @@ description: View the latest changes to Sonoran CAD!
 
 ## Changelog
 
+### 3.44.11 09/30/2026
+
+{% tabs %}
+{% tab title="Changed" %}
+Desktop App: Overlay and Theme Improvements
+
+* Updated overlay themes, icons, tooltips, status menus, view switching, and dragging, ensured overlays close with CAD, and standardized theme card sizes.
+{% endtab %}
+
+{% tab title="Fixed" %}
+Emergency Calls: Duplicate Call Prevention
+
+* Fixed duplicate 911 calls and repeated event handling after reconnecting or restoring self-dispatch.
+{% endtab %}
+
+{% endtabs %}
 ### 3.44.10 09/30/2026
 
 {% tabs %}
