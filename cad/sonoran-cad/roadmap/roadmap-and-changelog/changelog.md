@@ -10,6 +10,16 @@ description: View the latest changes to Sonoran CAD!
 
 ## Changelog
 
+### 3.44.10 09/30/2026
+
+{% tabs %}
+{% tab title="Fixed" %}
+Mobile Layout: Improve Taskbar and Record Spacing
+
+* Fixed mobile taskbar and call-viewer spacing, report width, and touch map controls, and removed the customization new-feature badge.
+{% endtab %}
+
+{% endtabs %}
 ### 3.44.9 09/30/2026
 
 {% tabs %}
