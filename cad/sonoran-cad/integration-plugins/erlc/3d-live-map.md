@@ -18,12 +18,11 @@ Sonoran CAD includes an interactive 2D and 3D live map that displays unit locati
 
 <summary>Configuring the Live Map</summary>
 
-1. Open **Admin** > **Advanced** > **In-Game Integration**.
-2. Confirm the community's **Game** is **ER:LC**, then open the **ER:LC** tab.
-3. If your server is not linked yet, complete the [ER:LC setup](getting-started.md) using your private server's API key.
-4. In the **Live Map** section, set **Status** to **Enabled** and select **Official ER:LC Map** under **Map Style**.
+The live map is automatically enabled for ER:LC communities [once your API key is setup](getting-started.md).
 
-Changes on the ER:LC tab save automatically. You do not need to upload a map image or GLB to use the official ER:LC map.
+The map can be enabled or disabled under **Admin** > **Advanced** > **In-Game Integration** > **Live Map**. Ensure that the map is toggled to **Official ER:LC Map**.
+
+Users will need the **Live Map** [account permission](../../tutorials/getting-started/permissions.md).
 
 <figure><img src="../../.gitbook/assets/erlc-docs-admin-live-map.jpg" alt="ERLC admin settings with Live Map enabled and Official ERLC Map selected"><figcaption><p>Enable the official ER:LC live map in the integration settings.</p></figcaption></figure>
 
@@ -33,7 +32,7 @@ Changes on the ER:LC tab save automatically. You do not need to upload a map ima
 
 In order to appear on the live map, players must have a [linked Roblox account](getting-started.md#linking-your-roblox-account).
 
-In order to access the live map, players must have the **Live Map** permission.
+In order to access the live map, players must have the [**Live Map** account permission](../../tutorials/getting-started/permissions.md).
 
 ## Usage
 
@@ -43,9 +42,7 @@ In order to access the live map, players must have the **Live Map** permission.
 
 <summary>Accessing the Live Map</summary>
 
-The live map can be found in the task bar by searching, or going to **Unit Management** > **Live Map**
-
-Additionally, you can select the map pin icon on any unit, emergency call, or dispatch call that has a location from in-game to open the map and zoom to their location.
+The live map can be opened by the **Live Map** button in the taskbar. Or add the **Live Map** panel to your custom layout by selecting the **New** button at the bottom of any layout column.
 
 </details>
 

@@ -37,9 +37,9 @@ Select **Edit Server Settings** > Navigate To **ER:LC API** > Select **Edit** to
 
 In the CAD, navigate to **Admin** > **Advanced** > **In-Game Integration** > **ER:LC**
 
-Paste your **ER:LC API Key** into your configured server.
+Select **Start Setup** and paste your **ER:LC API Key** into your configured server.
 
-<figure><img src="../../.gitbook/assets/image (531).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (630).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 

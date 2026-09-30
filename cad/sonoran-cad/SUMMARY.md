@@ -138,6 +138,7 @@
   * [Getting Started](integration-plugins/erlc/getting-started.md)
   * [3D Live Map](integration-plugins/erlc/3d-live-map.md)
   * [Bodycam](integration-plugins/erlc/bodycam.md)
+  * [Call Editor Pin Drop](integration-plugins/erlc/call-editor-pin-drop.md)
   * [In-Game Overlay](integration-plugins/erlc/in-game-overlay.md)
   * [Character Creation](integration-plugins/erlc/character-creation.md)
   * [Vehicle Registrations](integration-plugins/erlc/vehicle-registrations.md)
@@ -145,7 +146,6 @@
   * [3D Location Webhooks](integration-plugins/erlc/location-notifications.md)
   * [Traffic Stops](integration-plugins/erlc/traffic-stops.md)
   * [Plate Reader](integration-plugins/erlc/plate-reader.md)
-  * [Call Editor Pin Drop](integration-plugins/erlc/call-editor-pin-drop.md)
 
 ***
 

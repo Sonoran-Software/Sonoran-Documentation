@@ -1,8 +1,10 @@
 ---
-description: Send ERLC emergency and dispatch calls to Discord with an aerial location image.
+description: >-
+  Send ERLC emergency and dispatch calls to Discord with an aerial location
+  image.
 ---
 
-# ERLC 3D Location Webhooks
+# 3D Location Webhooks
 
 ![ERLC 3D Location Webhooks](../../.gitbook/assets/erlc_notifications_promo.png)
 
@@ -14,16 +16,20 @@ Before you start, [connect Sonoran Bot to your CAD community](https://docs.sonor
 
 Make sure your CAD community is in **ER:LC** mode under **Administration → Advanced → In-Game Integration**.
 
+<figure><img src="../../.gitbook/assets/image (625).png" alt="" width="375"><figcaption></figcaption></figure>
+
 ### 2. Choose your notifications
 
 Open **Administration → Advanced → Discord Integration**. Enable the events you want:
 
-- **Emergency Call · Created** — new 911 calls.
-- **Dispatch · Created** — new dispatch calls.
-- **Dispatch · Modified** — updated dispatch calls.
+* **Emergency Call · Created** — new 911 calls.
+* **Dispatch · Created** — new dispatch calls.
+* **Dispatch · Modified** — updated dispatch calls.
 
 ### 3. Pick a channel
 
-Choose your Discord **Server** and **Channel** for each enabled event. Changes save automatically. Role pings are optional.
+Choose your Discord **Server** and **Channel** for each enabled event. Changes save automatically.
 
-Dispatch calls need a postal or supported location coordinates to include an image. In-game 911 calls use their reported location.
+For the 3D aerial images, [dispatch calls must have a postal code set](call-editor-pin-drop.md). In-game 911 calls already include the required location information.
+
+<figure><img src="../../.gitbook/assets/image (626).png" alt="" width="375"><figcaption></figcaption></figure>
