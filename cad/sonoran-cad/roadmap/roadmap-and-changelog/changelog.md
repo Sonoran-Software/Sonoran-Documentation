@@ -10,16 +10,6 @@ description: View the latest changes to Sonoran CAD!
 
 ## Changelog
 
-### 3.44.12 09/30/2026
-
-{% tabs %}
-{% tab title="Fixed" %}
-Live Map: 911 Call Removal
-
-* Fixed deleting 911 calls from the 2D and 3D live maps for ERLC and FiveM.
-{% endtab %}
-
-{% endtabs %}
 ### 3.44.11 09/30/2026
 
 {% tabs %}
@@ -33,9 +23,13 @@ Desktop App: Overlay and Theme Improvements
 Emergency Calls: Duplicate Call Prevention
 
 * Fixed duplicate 911 calls and repeated event handling after reconnecting or restoring self-dispatch.
-{% endtab %}
 
+Live Map: 911 Call Removal
+
+* Fixed deleting 911 calls from the 2D and 3D live maps for ERLC and FiveM.
+{% endtab %}
 {% endtabs %}
+
 ### 3.44.10 09/30/2026
 
 {% tabs %}
@@ -44,8 +38,8 @@ Mobile Layout: Improve Taskbar and Record Spacing
 
 * Fixed mobile taskbar and call-viewer spacing, report width, and touch map controls, and removed the customization new-feature badge.
 {% endtab %}
-
 {% endtabs %}
+
 ### 3.44.9 09/30/2026
 
 {% tabs %}
@@ -54,8 +48,8 @@ ERLC and Discord: Call Location Tools
 
 * Added map pin selection, official ERLC streets, and Discord event channel settings with call location images.
 {% endtab %}
-
 {% endtabs %}
+
 ### 3.44.8 09/29/2026
 
 {% tabs %}
