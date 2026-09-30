@@ -2,9 +2,9 @@
 description: Send ERLC emergency and dispatch calls to Discord with an aerial location image.
 ---
 
-# ERLC Location Notifications
+# ERLC 3D Location Webhooks
 
-![ERLC Location Notifications](../../.gitbook/assets/erlc_notifications_promo.png)
+![ERLC 3D Location Webhooks](../../.gitbook/assets/erlc_notifications_promo.png)
 
 See the call and its location together in Discord. Notifications include the call details and a watermarked aerial image when a matching location image is available.
 

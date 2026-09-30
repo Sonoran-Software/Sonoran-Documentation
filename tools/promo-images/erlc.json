@@ -1,0 +1,32 @@
+{
+  "map": {
+    "title": "3D LIVE MAP",
+    "accent": "3D",
+    "subtitle": "Custom 3D map of the entire city with 3D vehicle models.",
+    "source": "sources/map-scene.png",
+    "crop": null
+  },
+  "bodycam": {
+    "title": "LIVE BODYCAM",
+    "accent": "BODYCAM",
+    "subtitle": "Live bodycam streams for dispatchers and units.",
+    "source": "../../cad/sonoran-cad/.gitbook/assets/erlc-bodycam-map.png",
+    "crop": [0, 0, 1580, 686]
+  },
+  "notifications": {
+    "title": "3D LOCATION WEBHOOKS",
+    "discord_logo": true,
+    "accent": "3D",
+    "subtitle": "Discord call webhooks with an in-game image of the location.",
+    "source": "sources/notification-content.png",
+    "crop": null
+  },
+  "pin": {
+    "title": "CALL EDITOR PIN DROP",
+    "accent": "PIN DROP",
+    "subtitle": "Select a map location to fill the call's street and postal code.",
+    "source": "sources/pin-map.jpg",
+    "crop": [200, 780, 1420, 1360],
+    "pin": [630, 1137]
+  }
+}

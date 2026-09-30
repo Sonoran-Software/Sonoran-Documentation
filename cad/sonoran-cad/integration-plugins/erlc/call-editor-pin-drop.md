@@ -38,4 +38,4 @@ For custom address lists, see [Addresses and Street Names](../../tutorials/custo
 
 ## Send the location to Discord
 
-You can also enable [ERLC Location Notifications](location-notifications.md) to include an aerial location image with emergency and dispatch call webhooks.
+You can also enable [ERLC 3D Location Webhooks](location-notifications.md) to include an aerial location image with emergency and dispatch call webhooks.
