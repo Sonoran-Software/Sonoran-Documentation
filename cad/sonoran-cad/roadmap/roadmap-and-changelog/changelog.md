@@ -10,6 +10,16 @@ description: View the latest changes to Sonoran CAD!
 
 ## Changelog
 
+### 3.44.9 09/30/2026
+
+{% tabs %}
+{% tab title="New" %}
+ERLC and Discord: Call Location Tools
+
+* Added map pin selection, official ERLC streets, and Discord event channel settings with call location images.
+{% endtab %}
+
+{% endtabs %}
 ### 3.44.8 09/29/2026
 
 {% tabs %}
