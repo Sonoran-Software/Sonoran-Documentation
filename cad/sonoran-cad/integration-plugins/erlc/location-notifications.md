@@ -33,3 +33,7 @@ Choose your Discord **Server** and **Channel** for each enabled event. Changes s
 For the 3D aerial images, [dispatch calls must have a postal code set](call-editor-pin-drop.md). In-game 911 calls already include the required location information.
 
 <figure><img src="../../.gitbook/assets/image (626).png" alt="" width="375"><figcaption></figcaption></figure>
+
+## Webhook Examples
+
+<div><figure><img src="../../.gitbook/assets/image (638).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (639).png" alt=""><figcaption></figcaption></figure></div>
