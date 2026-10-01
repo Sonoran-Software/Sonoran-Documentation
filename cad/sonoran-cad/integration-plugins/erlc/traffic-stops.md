@@ -6,7 +6,7 @@ description: Create automatic traffic stop calls with an in-game command or hotk
 
 ## Traffic Stop Integration
 
-<figure><img src="../../.gitbook/assets/erlc_ts_promo.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/erlc_ts_promo_v2.png" alt=""><figcaption></figcaption></figure>
 
 When the the traffic stop command is used a dispatch call will be created in the CAD.
 

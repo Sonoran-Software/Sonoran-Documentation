@@ -8,7 +8,7 @@ description: Perform a plate lookup with the press of a hotkey!
 
 The ER:LC plate reader offers a desktop hotkey to search for the nearest player inside of a vehicle. Once found, a plate search lookup will be automatically opened in your CAD screen.
 
-<figure><img src="../../.gitbook/assets/erlc_plate_promo.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/erlc_plate_promo_v2.png" alt=""><figcaption></figcaption></figure>
 
 ## Configuration
 

@@ -8,7 +8,7 @@ description: Automatically register vehicles using an in-game command!
 
 Automatically register vehicles using an in-game command!
 
-<figure><img src="../../.gitbook/assets/erlc_reg_promo.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/erlc_reg_promo_v2.png" alt=""><figcaption></figcaption></figure>
 
 ## Civilian Panel Access
 

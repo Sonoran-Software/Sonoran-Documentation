@@ -8,7 +8,7 @@ description: >-
 
 ## ER:LC Character Creation
 
-<figure><img src="../../.gitbook/assets/erlc_civ_promo.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/erlc_civ_promo_v2.png" alt=""><figcaption></figcaption></figure>
 
 Use customizable in-game commands allowing users to register their character in the CAD, no account or CAD access required!
 
