@@ -10,6 +10,22 @@ description: View the latest changes to Sonoran CAD!
 
 ## Changelog
 
+### 3.44.14 10/02/2026
+
+{% tabs %}
+{% tab title="New" %}
+ERLC: ALPR Cameras
+
+* Added configurable ALPR cameras with 28 default locations, vehicle description variables, and automatic 911 calls for active BOLO plates.
+{% endtab %}
+
+{% tab title="Changed" %}
+ERLC: Live Map Markers
+
+* Smoothed live unit movement and shortened call labels for clearer map displays.
+{% endtab %}
+
+{% endtabs %}
 ### 3.44.11 09/30/2026
 
 {% tabs %}
