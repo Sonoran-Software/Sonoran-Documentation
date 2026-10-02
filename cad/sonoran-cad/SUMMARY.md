@@ -146,6 +146,7 @@
   * [3D Location Webhooks](integration-plugins/erlc/location-notifications.md)
   * [Traffic Stops](integration-plugins/erlc/traffic-stops.md)
   * [Plate Reader](integration-plugins/erlc/plate-reader.md)
+  * [ALPR Cameras](integration-plugins/erlc/alpr-cameras.md)
 
 ***
 
