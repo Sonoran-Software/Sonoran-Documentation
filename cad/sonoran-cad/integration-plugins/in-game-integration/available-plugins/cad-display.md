@@ -16,7 +16,9 @@ description: >-
 This submodule is already **enabled by default** when installing the [Sonoran CAD FiveM resource](../fivem-installation/).
 {% endhint %}
 
-Update both the `sonorancad` and `tablet` resources together. The tablet resource must be running to use a laptop screen.
+{% hint style="info" %}
+The [tablet resource](tablet.md) must be running to use vehicle and station laptop screens.
+{% endhint %}
 
 ### 2. Adjust the Configuration
 
@@ -192,7 +194,7 @@ Pressing **Enter** only applies a temporary test on your client. The alignment i
 
 ### Troubleshooting Laptop Interaction
 
-* **G does not open the laptop:** close the handheld tablet and other menus, move closer, and check the on-screen notification. Server owners should confirm both `sonorancad` and `tablet` are updated and running.
+* **G does not open the laptop:** close the handheld tablet and other menus, move closer, and check the on-screen notification. Server owners should confirm both `sonorancad` and `tablet` are running.
 * **Missing screen profile or an incorrectly aligned screen:** use the screen alignment steps above. Built-in screens need their own profile even if their texture already shows CAD.
 * **Laptop interaction is disabled:** the server owner can enable `interaction.enabled`. Players can use `/tablet open` in the meantime.
 * **Placement will not start:** stop the vehicle and close any other camera or placement mode before trying again.

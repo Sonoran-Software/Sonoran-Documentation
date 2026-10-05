@@ -16,7 +16,9 @@ description: >-
 This resource is already **enabled by default** inside of the `sonorancad.cfg` when installing the [Sonoran CAD FiveM resource](../fivem-installation/).
 {% endhint %}
 
-Server owners using [CAD Display](cad-display.md) should update `tablet` and `sonorancad` together so vehicle and station laptops can open the interactive CAD view.
+{% hint style="info" %}
+The tablet resource must be running to use vehicle and station laptop screens with [CAD Display](cad-display.md).
+{% endhint %}
 
 ### 2. Ensure Players are Linked
 
