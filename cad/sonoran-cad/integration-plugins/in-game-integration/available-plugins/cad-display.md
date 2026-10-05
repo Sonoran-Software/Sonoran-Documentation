@@ -156,6 +156,8 @@ builtinScreens = {
 3. Once you have control, the camera moves toward the screen. Click, scroll, and type in CAD as you would in the tablet. Your CAD login and current page stay loaded when switching between the tablet and laptop.
 4. Click **Exit computer** below the screen to return to the game. If **Escape** does not close the view while you are typing inside CAD, use **Exit computer**.
 
+<figure><img src="../../../.gitbook/assets/cad-display-laptop-usage.png" alt="Sonoran CAD open on a vehicle laptop with the Exit computer button below the screen"><figcaption><p>Use CAD directly on the laptop screen and select Exit computer when finished.</p></figcaption></figure>
+
 You do not need to open the tablet first. `/tablet open` remains available for handheld use.
 
 Nearby players see a periodically refreshed image of the controlling player's CAD on the display. Their view can lag behind your clicks and typing. They must take control to interact with CAD themselves. The [CAD Tablet](tablet.md) also shows your CAD screen on the handheld prop for nearby players.
