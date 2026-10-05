@@ -30,22 +30,7 @@ Use of this submodule requires the Sonoran version of [Wraith ARS 2X](https://gi
 The bodycam settings are stored inside of the `/configuration/wraithv2_config.lua` file.
 
 {% hint style="info" %}
-WraithV2 now uses the shared FiveM notification system configured in `/configuration/config.json` with `notificationSystem`.
-
-Supported values:
-
-* `auto`
-* `ox_lib`
-* `lation_ui`
-* `pnotify`
-* `chat`
-
-`auto` resolves in this order:
-
-1. `ox_lib`
-2. `lation_ui`
-3. `pnotify`
-4. `chat`
+Notifications are handled by the Sonoran CAD core. See [Core Configuration](../fivem-installation/#4.-configure-the-resource) for settings and supported values.
 {% endhint %}
 
 <details>

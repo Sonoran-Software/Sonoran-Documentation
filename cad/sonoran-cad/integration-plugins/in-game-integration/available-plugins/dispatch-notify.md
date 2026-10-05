@@ -48,24 +48,7 @@ Ensure the players have already [linked their CAD](../link-user-in-game.md) for 
 Review the `dispatchnotify_config.lua` file to configure the submodule to behave how you like. The file is well documented. Please review **all** the settings!
 
 {% hint style="info" %}
-Dispatch Notify no longer has its own per-submodule notification selector.
-
-All user-facing FiveM notifications are now configured in `/configuration/config.json` with `notificationSystem`.
-
-Supported values:
-
-* `auto`
-* `ox_lib`
-* `lation_ui`
-* `pnotify`
-* `chat`
-
-`auto` resolves in this order:
-
-1. `ox_lib`
-2. `lation_ui`
-3. `pnotify`
-4. `chat`
+Notifications are handled by the Sonoran CAD core. See [Core Configuration](../fivem-installation/#4.-configure-the-resource) for settings and supported values.
 {% endhint %}
 
 <details>
@@ -156,8 +139,7 @@ Dispatchers (or self-dispatch) can set the primary unit to any unit currently at
 
 * No notifications for 911 calls
   * Units must be logged into the CAD (by default) or meeting the requirements depending on how the submodule is configured.
-  * Verify `/configuration/config.json` has the correct `notificationSystem` value.
-  * If `notificationSystem` is `auto`, Sonoran CAD will use `ox_lib`, then `lation_ui`, then `pnotify`, then `chat`.
+  * Check your notification settings in [Core Configuration](../fivem-installation/#4.-configure-the-resource).
 * Units do not automatically attach to calls
   * Ensure the players have already [linked their CAD](../link-user-in-game.md) for this integration to work.
 * Caller is not notified when units attach to the call

@@ -23,22 +23,7 @@ Update both the `sonorancad` and `tablet` resources together. The tablet resourc
 The CAD display settings are stored inside of the `/configuration/caddisplay_config.lua` file.
 
 {% hint style="info" %}
-User-facing notifications for **all** FiveM submodules are now configured centrally in `/configuration/config.json` using `notificationSystem`.
-
-Supported values:
-
-* `auto`
-* `ox_lib`
-* `lation_ui`
-* `pnotify`
-* `chat`
-
-When set to `auto`, Sonoran CAD will choose the first available system in this order:
-
-1. `ox_lib`
-2. `lation_ui`
-3. `pnotify`
-4. `chat`
+Notifications are handled by the Sonoran CAD core. See [Core Configuration](../fivem-installation/#4.-configure-the-resource) for settings and supported values.
 {% endhint %}
 
 Start with the configuration included with your installed resource. The main settings for server owners are:
