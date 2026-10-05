@@ -156,7 +156,7 @@ In the framework configuration file, simply set `enablePushEventForwarding` to `
 
 <summary>Steam API Key</summary>
 
-If your framework has the `primaryIdentifier` set to `steam` in the [configuration ](./#3.-configure-and-rename)(used for your API ID type), you'll need to ensure a Steam API key is set in your `server.cfg` file.
+If your framework has the `primaryIdentifier` set to `steam` in the [configuration](#4.-configure-the-resource) (used for your API ID type), you'll need to ensure a Steam API key is set in your `server.cfg` file.
 
 You can register a new Steam API Key at [http://steamcommunity.com/dev/apikey](http://steamcommunity.com/dev/apikey)
 
@@ -186,7 +186,10 @@ The Sonoran CAD integration framework comes with several commands. These command
 | `sonorancad update`    | Run core/framework updater               |
 | `sonorancad debugmode` | Toggle debug mode on/off                 |
 | `sonorancad info`      | Dump version info and configuration data |
-| `sonorancad support`   | Dump information for support staff       |
+| `sonorancad support <ID>` | Send diagnostic information using the ID provided by Sonoran support |
+| `sonorancad ers`       | Show ERS connection status, callout-list status, and the latest failure |
+
+For ERS issues, start with the [ERS troubleshooting guide](../available-plugins/ers.md#troubleshooting). Support reports include ERS status and failure details automatically.
 
 ## Troubleshooting
 

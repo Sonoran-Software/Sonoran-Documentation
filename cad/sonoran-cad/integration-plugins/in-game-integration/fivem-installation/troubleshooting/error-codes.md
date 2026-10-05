@@ -552,7 +552,7 @@ Warnings use a `WRN-*` prefix. Errors use an `ERR-*` prefix. Some warning-level 
 
 **What it means:** Bodycam disable was blocked because the bodycam is currently being watched.
 
-**How to fix it:** Stop the remote watch session first, or use an authorized force-off flow if policy allows it.
+**How to fix it:** Wait until everyone stops watching, then try again. If you have force-off permission, the notification shows the command to use (`/bodycam forceoff` by default). If no force-off command is offered, contact your server administrator. See [Turning Off a Camera Being Viewed](../../available-plugins/bodycam.md#turning-off-a-camera-being-viewed).
 
 #### ERR-BC-118
 
@@ -936,6 +936,8 @@ See [Civilian Registration (CivReg)](../../available-plugins/civilian-registrati
 
 ### ERS Integration Errors
 
+Run `sonorancad ers` in the **server console** to check the ERS connection, callout list, and latest failure. See the [ERS troubleshooting guide](../../available-plugins/ers.md#troubleshooting) for common setup checks.
+
 #### ERR-ERS-101
 
 **Key:** `ERS_MAPPING_FAILED`
@@ -974,7 +976,63 @@ See [Civilian Registration (CivReg)](../../available-plugins/civilian-registrati
 
 **What it means:** The Night ERS resource required by the integration is not started.
 
-**How to fix it:** Start the ERS resource before enabling the ERS integration submodule.
+**How to fix it:** Start `night_ers`. The integration reconnects when ERS starts or restarts. Use `sonorancad ers` in the server console to check its status.
+
+#### ERR-ERS-106
+
+**Key:** `ERS_VERSION_TOO_OLD`
+
+**What it means:** Night ERS is older than the required version `1.8.16`, or its version could not be confirmed. An older version blocks the integration; an unverified version allows it to run with a warning.
+
+**How to fix it:** Update Night ERS to `1.8.16` or newer and restart it. If you already have a supported version, check the detected version and status with `sonorancad ers` and contact support if the warning continues.
+
+#### ERR-ERS-107
+
+**Key:** `ERS_CONFIG_INVALID`
+
+**What it means:** An ERS setting or CAD record setup is missing or invalid. Some record setup problems affect lookups while calls can still work.
+
+**How to fix it:** Run `sonorancad ers` and correct the settings named under `configIssues`. ERS options are in `ersintegration_config.lua`; the CAD `serverId` is in `config.json`. Confirm that the supplied record templates are imported into CAD, then restart `sonorancad` after changing the configuration.
+
+#### ERR-ERS-108
+
+**Key:** `ERS_CATALOG_FAILED`
+
+**What it means:** The integration could not load ERS's callout list or send it to CAD.
+
+**How to fix it:** Confirm ERS has callouts enabled and loaded. Run `sonorancad ers` to see whether loading the list or sending it to CAD failed. For a CAD connection failure, check the connection and configured server ID. The integration retries automatically.
+
+#### ERR-ERS-109
+
+**Key:** `ERS_CALLOUT_CREATE_FAILED`
+
+**What it means:** ERS could not confirm creation of a callout requested from CAD.
+
+**How to fix it:** Check that the selected callout is available in ERS and that the chosen location is valid. Check the latest failure with `sonorancad ers`; if it continues, send support the callout name, location, and error code.
+
+#### ERR-ERS-110
+
+**Key:** `ERS_CAD_REQUEST_FAILED`
+
+**What it means:** A 911 or dispatch call from ERS could not be created in CAD.
+
+**How to fix it:** Check the CAD connection and configured server ID. Run `sonorancad ers` for the failed step and reason, then correct the reported issue before testing another callout.
+
+#### ERR-ERS-111
+
+**Key:** `ERS_RECORD_ID_INVALID`
+
+**What it means:** CAD reported that a person or vehicle record was created but did not return its record number.
+
+**How to fix it:** Check whether the record already appears in CAD before repeating the lookup. The integration pauses repeat creation for five minutes to help prevent duplicates. If the error continues, send support the error code and the latest failure shown by `sonorancad ers`.
+
+#### ERR-ERS-112
+
+**Key:** `ERS_OFFER_FAILED`
+
+**What it means:** A player assigned to an ERS-generated CAD call could not receive the matching callout in game.
+
+**How to fix it:** Confirm the player is online, linked to CAD, has an active CAD unit, and is on an ERS shift with a service selected. Check `sonorancad ers`. If the server sent the callout but the player did not receive it, support may request `sonorancad getclientlog <playerId>` from the server console.
 
 ### Framework Errors
 

@@ -16,6 +16,8 @@ description: >-
 This resource is already **enabled by default** inside of the `sonorancad.cfg` when installing the [Sonoran CAD FiveM resource](../fivem-installation/).
 {% endhint %}
 
+Server owners using [CAD Display](cad-display.md) should update `tablet` and `sonorancad` together so vehicle and station laptops can open the interactive CAD view.
+
 ### 2. Ensure Players are Linked
 
 Ensure the player has already [linked their CAD](../link-user-in-game.md) for this integration to work.
@@ -47,7 +49,7 @@ Fill in with your actual URL above with the comid you want.
 
 ## Keybinds
 
-Users can customize a keybinds for the tablet and mini-cad.
+Users can customize keybinds for the tablet and Mini-CAD.
 
 Navigate to **Settings** > **Keybinds** > **FiveM** and look for the keybinds under the resource `tablet`.
 
@@ -55,11 +57,11 @@ Navigate to **Settings** > **Keybinds** > **FiveM** and look for the keybinds un
 
 ## Commands
 
-In-game commands can be used to
+The commands below use the default `/tablet` command. Running `/tablet` by itself shows command help; use `/tablet open` to open the handheld tablet.
 
 * `/tablet open` Opens the in-game tablet
 * `/tablet size [width] [height]` Resize the tablet to best fit your screen. This size persists on reload of the client.
-* `/tablet checklink` Refreshes your account link
+* `/tablet checklink` Checks again whether your CAD account is linked to the server's community.
 * `/tablet refresh` Force-refresh the page when it's not loading properly.
 * `/tablet mini open` Opens the mini-CAD
 * `/tablet mini help` Displays a list of commands for the mini-CAD
@@ -96,11 +98,26 @@ You can close or move the Mini-CAD by opening the tablet, and interacting with t
 
 When in-game, the tablet can be used to view your unit's Sonoran CAD police, fire, ems, or dispatch panel.
 
-The tablet will show your real CAD screen to everyone else nearby when using the [CAD Display submodule](cad-display.md).
+With the [CAD Display submodule](cad-display.md) enabled, nearby players can see a periodically refreshed image of your CAD on the handheld tablet prop. Their view may lag behind what you are doing.
+
+### Using a Vehicle or Station Laptop
+
+With [CAD Display](cad-display.md) enabled, you can use CAD directly on a configured vehicle or station laptop:
+
+1. Close the handheld tablet, then press **G** while seated near the vehicle display or standing near the station laptop.
+2. If another player controls the laptop, wait for them to accept your request. Once you have control, the camera moves toward the laptop screen.
+3. Click, scroll, and type normally in CAD. Your login and current page carry over between the handheld tablet and laptop.
+4. Click **Exit computer** beneath the screen when you are finished. Use this button if **Escape** does not respond while a CAD text field has focus.
+
+You do not need to open the handheld tablet before using a laptop. Your saved tablet size and position are kept when you leave the laptop view. Only the controlling player can interact; nearby players see a periodically refreshed image of that player's screen.
+
+See [CAD Display](cad-display.md) for laptop placement, control requests, permissions, and screen alignment.
 
 ## Auto User Link
 
 When a user signs into the CAD using the in-game tablet, their account will be [automatically linked](../link-user-in-game.md).
+
+If your account is not recognized, run `/link` in game and follow the linking instructions, then run `/tablet checklink`. The tablet no longer shows the old red registration bar or **Retry** button; use these commands to check your link.
 
 ## Known Issues
 

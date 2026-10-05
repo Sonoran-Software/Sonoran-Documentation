@@ -16,7 +16,7 @@ Bodycam cloud footage storage is limited based on your subscription plan.
 
 ## What is the live Body Camera?
 
-Sonoran CAD is the only external CAD system offering livestream video from in-game users accessible through the [live map](bodycam.md#live-map), [active units preview](bodycam.md#preview), or a [dedicated window](bodycam.md#window).
+Sonoran CAD is the only external CAD system offering livestream video from in-game users accessible through the [live map](bodycam.md#live-map), [active units preview](bodycam.md#active-units), or a [dedicated window](bodycam.md#window).
 
 ## Activation Guide
 
@@ -81,7 +81,7 @@ In-game commands can be used to
 * `/bodycam frequency 30` Sets your bodycam beep interval to 30 seconds; accepts whole seconds from `1` to `3600`
 * `/bodycam anim` Toggles the [bodycam animation](bodycam.md#animation) on and off locally
 * `/bodycam overlay` Toggles the [bodycam overlay](bodycam.md#body-camera-overlay) on and off locally
-* `/bodycam forceoff` Enables the [force-off state](bodycam.md#force-off)
+* `/bodycam forceoff` Enables the [force-off state](bodycam.md#force-off), if your server has granted you permission
 
 <figure><img src="../../../.gitbook/assets/image (571).png" alt=""><figcaption></figcaption></figure>
 
@@ -98,6 +98,14 @@ Navigate to **Settings** > **Keybinds** > **FiveM** and look for the keybind **T
 When your bodycam is on and being viewed in the CAD a periodic beep and body overlay will appear on your screen.
 
 <figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+
+### Turning Off a Camera Being Viewed
+
+The normal `/bodycam` toggle cannot turn your camera off while someone is viewing it in CAD. Have all viewers close the camera window and stop viewing its live map or active-unit preview, then try again. If a viewer disconnects unexpectedly, allow a short delay for the connection to clear.
+
+If your server has granted you [force-off access](bodycam.md#force-off), you can use `/bodycam forceoff` to stop it while viewers are connected. The in-game message only suggests that command when you have access; otherwise, wait until all viewers stop watching.
+
+Closing or losing one viewer does not end the camera feed for other viewers or interrupt an ongoing recording.
 
 ### Beeps
 

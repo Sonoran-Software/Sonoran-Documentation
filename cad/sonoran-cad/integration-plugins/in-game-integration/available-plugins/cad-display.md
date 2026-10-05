@@ -1,7 +1,7 @@
 ---
 description: >-
-  This submodule enables your passengers to view your CAD screen in real time
-  via an in-vehicle laptop, handheld, tablet, or laptops placed around the map.
+  Use your CAD on a vehicle or station laptop and let nearby players see your
+  screen on in-game displays.
 ---
 
 # CAD Display
@@ -15,6 +15,8 @@ description: >-
 {% hint style="info" %}
 This submodule is already **enabled by default** when installing the [Sonoran CAD FiveM resource](../fivem-installation/).
 {% endhint %}
+
+Update both the `sonorancad` and `tablet` resources together. The tablet resource must be running to use a laptop screen.
 
 ### 2. Adjust the Configuration
 
@@ -39,132 +41,28 @@ When set to `auto`, Sonoran CAD will choose the first available system in this o
 4. `chat`
 {% endhint %}
 
-<details>
+Start with the configuration included with your installed resource. The main settings for server owners are:
 
-<summary>Default <code>caddisplay_config.lua</code></summary>
+| Setting | When to change it |
+| --- | --- |
+| `permissionMode` | Choose ACE permissions, framework jobs, or your own permission integration. |
+| `allowlistedCars` | Add the spawn codes of vehicles that should support CAD displays. |
+| `general.useAllowlistAsBlacklist` | Set to `true` to block the listed vehicles instead of allowing only those vehicles. |
+| `worldDisplays.enabled` | Enable or disable station displays around the map. |
+| `builtinScreens` | Configure a laptop screen already included in a custom vehicle. See the setup below. |
+| `interaction.enabled` | Set to `false` to disable the focused laptop view. Players can still use `/tablet open`. |
 
-```lua
---[[
-    Sonoran Plugins
-
-    CAD Display Submodule Configuration
-]]
-
-local config = {
-    enabled = true,
-    pluginName = "caddisplay",
-    pluginAuthor = "Sonoran Software Systems",
-    configVersion = "1.1",
-
-    lang = {
-        addNewDisplayHelp = "Open the menu to begin placing a CAD display",
-        vehNotCompatible = "This vehicle is not compatible with the CAD display placement system!",
-        vehAlreadyDisplay = "This vehicle already has a CAD display placement!",
-        menuHeader = "Sonoran CAD Display",
-        creditsPanel = "Made by",
-        spawningSubMenu = "CAD Display Spawning",
-        attachingSubMenu = "Attaching",
-        deletionSubMenu = "Remove placement?",
-        attachMenuButton = "Attach CAD Display",
-        deleteMenuButton = "Delete CAD Display Placement",
-        spawnMenuButton = "Spawn CAD Display",
-        deletionConfirmationButton = "Yes, remove from all of these vehicles",
-        deletionCancelButton = "Cancel",
-        deletionCancelled = "CAD display deletion cancelled",
-        noDisplayFound = "No CAD display found in this vehicle!",
-        modelComboBox = "Model:",
-        vehAlreadyDisplayNoti = "~r~This vehicle already has a CAD display placement",
-        notInVeh = "~r~You must be in a vehicle!",
-        vehicleBone = "CAD Display - Vehicle Bone",
-        object = "Object:",
-        vehicleBoneComboBox = "Vehicle Bone",
-        objectName = "Sonoran CAD Display",
-        attachButton = "Attach",
-        detachButton = "Detach",
-        confirmPlacementButton = "Apply to all of this vehicle model",
-        cannotGoFaster = "~r~You cannot go any faster!",
-        cannotGoSlower = "~r~You cannot go any slower!"
-    },
-
-    commands = {
-        cadDisplayMenu = "caddisplay",
-        restricted = true -- should the CAD display menu be restricted?
-    },
-
-    permissionMode = "ace", -- Available Options: ace, framework, custom
-
-    -- Ace Permissions Section --
-    acePerms = {
-        aceObjectUseMenu = "sonoran.caddisplay", -- Ace to open/attach CAD displays
-        aceObjectAdminUseMenu = "sonoran.caddisplay.admin", -- Ace to save/delete placements for vehicle models
-        aceWorldDisplayAdmin = "sonoran.caddisplay.world" -- Ace to save/delete station display placements
-    },
-
-    -- Framework Related Settings --
-    framework = {
-        frameworkType = "qb-core", -- Options: esx or qb-core
-        civilianJobNames = {"unemployed"}, -- Jobs allowed to open the menu
-        adminJobNames = {"admin"}, -- Jobs allowed to save/delete placements
-        useCivilianJobListAsBlacklist = false -- Treat the civilian job list as a blacklist rather than whitelist
-    },
-
-    -- Configuration For Custom Permissions Handling --
-    custom = {
-        checkPermsServerSide = true, -- If true the permission event will be sent out to the server side resource
-        permissionCheck = function(_, type) -- Always called server side.
-            if type == 0 then -- Check permission to use the menu
-                return true or false -- Return true if permitted, false otherwise
-            end
-        end
-    },
-
-    general = {
-        useAllowlistAsBlacklist = false -- If true, allowlistedCars is treated as a blacklist
-    },
-
-    -- Vehicles with built-in laptop screens you want to skin with the CAD DUI
-    -- Each entry needs:
-    --   vehicle         - spawn code (model name) for the vehicle
-    --   screenTexture   - texture name on the built-in laptop model to replace with the DUI
-    --   textureWidth    - optional width of the built-in texture in pixels (used to scale the DUI), default 512
-    --   textureHeight   - optional height of the built-in texture in pixels (used to scale the DUI), default 256
-    builtinScreens = {
-        -- Example:
-        -- {vehicle = "POLICE", screenTexture = "laptop_screen", textureWidth = 512, textureHeight = 256}
-    },
-
-    allowlistedCars = {
-        "POLICE",
-        "POLICE2",
-        "POLICE3",
-        "POLICE4",
-        "FBI",
-        "FBI2",
-        "SHERIFF",
-        "SHERIFF2"
-    },
-
-    -- Interaction settings
-    interactKey = "G", -- Default key mapping for interaction (RegisterKeyMapping)
-    interactControl = 47, -- Fallback control code (INPUT_DETONATE) - avoid horn (E)
-    interactRange = 1.5, -- Distance in meters to allow interacting with the laptop
-    requestAcceptKey = "Y", -- Key to accept a control request
-    requestDenyKey = "L" -- Key to deny a control request
-}
-
-if config.enabled then Config.RegisterPluginConfig(config.pluginName, config) end
-
-```
-
-</details>
+The standard laptop includes a screen alignment profile, including when upgrading an older configuration. Custom screens may need [screen alignment](#screen-alignment-for-server-owners) before players can interact with them.
 
 ### ACE Permissions
 
 When `commands.restricted` is `true` (the default) and `permissionMode` is `"ace"` (the default), the server checks these configurable nodes:
 
 * `sonoran.caddisplay` allows a player to open the menu and use or attach a CAD display.
-* `sonoran.caddisplay.admin` allows saving and deleting vehicle-model placements.
+* `sonoran.caddisplay.admin` allows menu access and saving or deleting vehicle-model placements.
 * `sonoran.caddisplay.world` allows saving and deleting station-display placements. If this value is blank, the current resource falls back to `aceObjectAdminUseMenu`.
+
+Station administrators also need menu access. With the default configuration, vehicle administration permission alone does not grant station administration.
 
 For example, grant access to the appropriate role instead of `builtin.everyone`:
 
@@ -174,19 +72,18 @@ add_ace group.sonoran_cad_display_admin sonoran.caddisplay.admin allow
 add_ace group.sonoran_cad_display_admin sonoran.caddisplay.world allow
 ```
 
-The distributed `sonorancad.cfg` also grants `command.SonoranCAD::caddisplay::Interact`, `command.SonoranCAD::caddisplay::AcceptRequest`, and `command.SonoranCAD::caddisplay::DenyRequest` to `builtin.everyone`. These fixed client keybind commands are registered unrestricted and do not replace the server-side display checks above.
+If you use framework permissions instead, use `framework.adminJobNames` to choose which jobs can manage vehicle and station placements.
 
 ### Commands
 
-In-game commands can be used to
-
-* `/caddisplay` Opens the CAD Display configuration menu
+* `/caddisplay` opens the vehicle display menu when seated in a supported vehicle, or the station display menu when on foot.
+* `/caddisplay calibrate` opens screen alignment for display administrators. This is only needed for custom or misaligned screens.
 
 <figure><img src="../../../.gitbook/assets/image (577).png" alt=""><figcaption></figcaption></figure>
 
 ### Keybind
 
-Users can customize a keybind to interact with a nearby CAD display.
+The default keys are **G** to use a nearby display or request control, **Y** to accept a control request, and **L** to deny one.
 
 Navigate to **Settings** > **Keybinds** > **FiveM** and look for the keybinds under the resource `sonorancad`.
 
@@ -196,17 +93,33 @@ Navigate to **Settings** > **Keybinds** > **FiveM** and look for the keybinds un
 
 #### a. Prop Spawning
 
-You can spawn a CAD Display laptop prop using the in-vehicle menu, which is accessed via the `/caddisplay` command. By default, this command requires the `sonoran.caddisplay` ACE permission.
+1. Stop the vehicle and stay seated. Run `/caddisplay`, choose **Spawn CAD Display**, and select the laptop.
+2. Drag the colored arrows to move the laptop, or the colored squares to move it along two directions at once. Select **Rotate** to use the rotation rings. **Snap** helps make small, even adjustments.
+3. Choose **Apply to this vehicle** to use the placement on your current vehicle. Administrators can choose **Save for this vehicle model** to reuse it for future vehicles with the same spawn code.
 
-Following the menu instructions, you can customize the laptop’s placement within your vehicle. Once you are satisfied with the placement, you may close the menu and the display will remain in your vehicle for the duration of its spawn.
+To reposition an existing laptop, open **Attach CAD Display** and choose **Position this vehicle's display with mouse**. **Cancel** discards your preview; closing without applying does not save a new placement. Keep the vehicle stopped throughout editing.
 
-If you have the `sonoran.caddisplay.admin` ACE permission, you also have the option to save the placement for all vehicles using that spawn code. This ensures the placement is automatically applied to all future spawns of that vehicle.
+The editor opens a cabin view aimed at the laptop. These controls help check its position:
 
-<div><figure><img src="../../../.gitbook/assets/image (506).png" alt="SonoranCAD - CAD Display - Menu"><figcaption><p>Sonoran CAD - CAD Display - Main Menu</p></figcaption></figure> <figure><img src="../../../.gitbook/assets/image (572).png" alt=""><figcaption><p>Sonoran CAD CAD Display - Spawning Menu</p></figcaption></figure> <figure><img src="../../../.gitbook/assets/image (573).png" alt=""><figcaption><p>Sonoran CAD - CAD Display - Attaching Menu</p></figcaption></figure> <figure><img src="../../../.gitbook/assets/image (574).png" alt=""><figcaption><p>Sonoran CAD - CAD Display - Delete Menu</p></figcaption></figure></div>
+| Control | What it does |
+| --- | --- |
+| Hold the right mouse button and drag | Look around from the cabin viewpoint. |
+| **Orbit laptop** | Switch right-drag to circling around the laptop. Toggle it off to look around again. |
+| Mouse wheel | Zoom the editor view. |
+| Hold the middle mouse button and drag | Lean the view a short distance. |
+| **Look at display** | Turn toward the laptop from your current viewpoint. |
+| **Cabin view** | Restore the starting view and zoom. |
+| **Reset** | Restore the laptop's starting placement in the editor. |
+
+These view controls do not change your normal gameplay camera settings. Built-in vehicle screens cannot be moved with the prop editor; use [screen alignment](#screen-alignment-for-server-owners) to fit the CAD to them.
+
+<figure><img src="../../../.gitbook/assets/image (506).png" alt="SonoranCAD - CAD Display - Menu"><figcaption><p>Sonoran CAD - CAD Display - Main Menu</p></figcaption></figure>
 
 #### b. Using Built-in Laptops
 
 You can also use your vehicle’s built-in laptop as the CAD Display, without spawning a separate laptop prop.
+
+Built-in screens need both the texture setup below and a [screen alignment profile](#screen-alignment-for-server-owners) for interaction. The texture name alone does not tell CAD Display where the screen is inside your vehicle.
 
 <details>
 
@@ -247,20 +160,54 @@ builtinScreens = {
 
 #### c. Using the Screen
 
-While inside a supported vehicle, either with a placed laptop prop or a configured built-in screen, look at the laptop and press the default keybind **G** to take control of the display.
+1. Close the handheld tablet if it is open. Sit in a vehicle with a configured display, or stand close to a station laptop.
+2. Press **G**. If another player controls the display, they must approve your request first.
+3. Once you have control, the camera moves toward the screen. Click, scroll, and type in CAD as you would in the tablet. Your CAD login and current page stay loaded when switching between the tablet and laptop.
+4. Click **Exit computer** below the screen to return to the game. If **Escape** does not close the view while you are typing inside CAD, use **Exit computer**.
 
-This submodule also allows the [CAD Tablet](tablet.md) to mirror your screen in real time. Once the tablet is active and your CAD is open, you and others around you will see your CAD screen mirrored onto the tablet prop in your hand.
+You do not need to open the tablet first. `/tablet open` remains available for handheld use.
+
+Nearby players see a periodically refreshed image of the controlling player's CAD on the display. Their view can lag behind your clicks and typing. They must take control to interact with CAD themselves. The [CAD Tablet](tablet.md) also shows your CAD screen on the handheld prop for nearby players.
 
 #### d. Passing Laptop Control
 
-To transfer control of an in-vehicle laptop, have your passenger look at the laptop and press the default keybind **G**. This will send a control request to the current user.
+To transfer control of a laptop, have the other player press **G** while seated near the vehicle display or standing near the station display. This sends a control request to the current user.
 
 Only one player may control the laptop at a time.
 
-You can then press **Y** to accept the request or **L** to deny it. If accepted, the laptop will begin mirroring the passenger’s [CAD Tablet](tablet.md).
+The current user can press **Y** to accept the request or **L** to deny it. If you are typing in CAD, click **Exit computer** first so the key is not entered into a CAD field. If accepted, the requesting player takes control using their own CAD session.
 
 ### Station CAD Display Props
 
-Additionally, you can spawn laptops in police stations or other areas around the map as **Station CAD Displays**. These CAD displays will stay at the location permanent.
+Station CAD Displays are saved laptops that stay in police stations or other locations around the map.
+
+1. With station administration permission, run `/caddisplay` while on foot to open **Station CAD Displays**. You do not need to be in a vehicle.
+2. Choose **Place Station Display**, or select an existing display and choose **Edit Selected Display**.
+3. Use the same colored arrows and rotation rings as vehicle placement. Right-drag to orbit the laptop, middle-drag to pan, and use the mouse wheel to move closer or farther away. **Frame object** brings the laptop into view; **Original view** restores the starting camera.
+4. Click **Save station display** to keep your placement, or **Cancel** to discard your changes.
+
+To remove a saved laptop, select it in the station menu and choose **Delete Selected Display**. If the menu reports missing permission, ask your server administrator to check your menu and station permissions. If station displays are disabled, enable `worldDisplays.enabled` first.
 
 <div><figure><img src="../../../.gitbook/assets/image (602).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../../.gitbook/assets/image (603).png" alt=""><figcaption></figcaption></figure></div>
+
+### Screen Alignment for Server Owners
+
+Use this when CAD does not fit the laptop screen, or a custom screen reports a missing interaction profile. The standard laptop already includes a starting profile.
+
+1. Close the tablet and other menus. Stand within 3 meters of the station display, or sit in the stopped vehicle containing the screen.
+2. Run `/caddisplay calibrate`. You need menu access and administration permission for the vehicle or station display you are adjusting.
+3. Place the four numbered markers on the visible screen corners, viewed from the front: **top-left, top-right, bottom-right, bottom-left**. Aim and click to place a marker; press **Tab** to select the next one.
+4. Use the **arrow keys** and **Page Up/Page Down** to fine-tune the markers, including their depth. Hold **Shift** for smaller movements or **Ctrl** to move all four together. If clicking does not land on the screen, use these keys instead.
+5. Press **Enter** to apply the alignment locally, then **G** to test it. **R** resets the corners, **F** flattens the fourth corner if needed, and **Backspace** cancels.
+6. To keep the alignment for everyone, copy the block printed in the **F8 console** into your active `caddisplay_config.lua`. For a separate laptop prop, place it inside `interaction.models`. For a built-in screen, place it inside that vehicle's `builtinScreens` entry. Replace any existing profile for the same model, then restart `sonorancad`.
+
+{% hint style="info" %}
+Pressing **Enter** only applies a temporary test on your client. The alignment is lost after a resource restart unless you copy it into the configuration. Calibration does not save or move the laptop's placement.
+{% endhint %}
+
+### Troubleshooting Laptop Interaction
+
+* **G does not open the laptop:** close the handheld tablet and other menus, move closer, and check the on-screen notification. Server owners should confirm both `sonorancad` and `tablet` are updated and running.
+* **Missing screen profile or an incorrectly aligned screen:** use the screen alignment steps above. Built-in screens need their own profile even if their texture already shows CAD.
+* **Laptop interaction is disabled:** the server owner can enable `interaction.enabled`. Players can use `/tablet open` in the meantime.
+* **Placement will not start:** stop the vehicle and close any other camera or placement mode before trying again.
