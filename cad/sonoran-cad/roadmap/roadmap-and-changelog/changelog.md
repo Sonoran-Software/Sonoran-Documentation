@@ -10,6 +10,66 @@ description: View the latest changes to Sonoran CAD!
 
 ## Changelog
 
+### Unreleased
+
+{% tabs %}
+{% tab title="New" %}
+5M: Interactive CAD Laptops
+
+* Click, scroll, and type in CAD from vehicle and station laptops while keeping your current CAD session. [View the CAD Display guide](../../integration-plugins/in-game-integration/available-plugins/cad-display.md).
+* **Required update:** Update both `sonorancad` and `tablet` together to use the new interactive laptop view.
+
+5M: CAD Screen Alignment
+
+* Added `/caddisplay calibrate` to align CAD with custom laptop props and built-in vehicle screens.
+* Custom screens need an alignment profile to use the interactive view. Follow the [screen alignment steps](../../integration-plugins/in-game-integration/available-plugins/cad-display.md#screen-alignment-for-server-owners), copy the generated settings into `caddisplay_config.lua`, and restart `sonorancad`. The standard laptop includes a default profile, and existing saved display placements can be kept.
+
+5M: ERS Troubleshooting
+
+* Added the server console command `sonorancad ers` to show connection status, callout-list status, and the latest failure. This information is also included automatically when sending support logs. [View the ERS guide](../../integration-plugins/in-game-integration/available-plugins/ers.md#troubleshooting).
+{% endtab %}
+
+{% tab title="Changed" %}
+5M: CAD Display Placement
+
+* Replaced keyboard placement controls with mouse movement and rotation handles, snapping, and camera controls, including cabin and orbit views for vehicles.
+* Stop the vehicle before editing. Choose **Apply to this vehicle** or, for administrators, **Save for this vehicle model**. Running `/caddisplay` on foot now opens station display management directly.
+
+5M: Tablet Account Linking
+
+* Removed the red registration bar and **Retry** button. If your account is not recognized, use `/link`, then `/tablet checklink`. [View the Tablet guide](../../integration-plugins/in-game-integration/available-plugins/tablet.md#auto-user-link).
+
+5M: ERS Compatibility
+
+* **Required update:** Communities running Night ERS below `1.8.16` must update Night ERS to `1.8.16` or newer and restart `night_ers`. The existing minimum version is now enforced, so older versions prevent the integration from starting.
+
+5M: ERS Postals
+
+* ERS calls use your configured Sonoran CAD postal data, including custom postal files, before falling back to ERS-provided postals.
+{% endtab %}
+
+{% tab title="Fixed" %}
+5M: Civilian Registration Photos
+
+* Fixed portraits showing outdated or unfinished character appearances. Automatic photos wait for the character's appearance to finish loading, and interrupted captures no longer replace the saved photo with an incorrect image.
+* Photos exclude masks, hats, glasses, and ear and neck accessories without removing them from the player. [View the Civilian Registration guide](../../integration-plugins/in-game-integration/available-plugins/civilian-registration.md#portrait-uploads).
+
+5M: ERS Calls and Records
+
+* Fixed duplicate calls and records during repeated requests, and ensured additional players accepting the same callout are attached to its CAD call.
+* Improved recovery after ERS restarts and added automatic retries when the callout list fails to load or synchronize.
+
+5M: Bodycam Viewer Connections
+
+* Fixed cameras remaining marked as watched after viewers disconnect. Disconnected viewer connections are cleared without interrupting other viewers or an ongoing recording.
+* Bodycam notifications show the force-off command only to players with permission to use it. [View the Body Camera guide](../../integration-plugins/in-game-integration/available-plugins/bodycam.md#turning-off-a-camera-being-viewed).
+
+5M: Display and Tablet Reliability
+
+* Fixed interaction prompts disappearing after a display had been used, repeated control notifications, and duplicate handheld tablet props when reopening the tablet.
+{% endtab %}
+{% endtabs %}
+
 ### 3.44.14 10/02/2026
 
 {% tabs %}
