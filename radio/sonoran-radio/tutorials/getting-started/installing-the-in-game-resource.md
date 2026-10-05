@@ -92,8 +92,6 @@ Do not start `sonoranradio_updatehelper` manually or use `ensure [sonoranradio]`
 
 ## Configuration Values
 
-<a id="configuration-options"></a>
-
 <details>
 
 <summary>Configuration Options</summary>
@@ -150,7 +148,7 @@ jammers = {
 -- See file for full example
 }
 }
-</code></pre></td><td>Configuration for in-game signal jammers.</td></tr></tbody></table>
+</code></pre></td><td>Configuration for in-game signal jammers.</td></tr><tr><td><code>forceGuestLogin</code></td><td><code>Config.forceGuestLogin = false -- Automatically log authorized radio users in as guests using ACE permissions</code></td><td>Automatically log authorized radio users in as guests using ACE permissions</td></tr></tbody></table>
 
 </details>
 

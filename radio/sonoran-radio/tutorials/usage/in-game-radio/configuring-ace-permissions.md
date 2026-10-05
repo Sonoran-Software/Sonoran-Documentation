@@ -102,6 +102,12 @@ To enable this feature, set your [`config.lua`'s `Config.acePermSync` value](../
 
 ACE permission sync also allows new users to bypass the Sonoran account login and [sign in as a guest](using-the-in-game-radio/#login-as-guest).
 
+{% hint style="info" %}
+**Forced Guest Login**
+
+You can force authorized users with ACE permissions to automatically get logged in as a guest if `Config.forceGuestLogin = true`.
+{% endhint %}
+
 #### Restrict Guest Logins
 
 The [config.lua's `acePermsForRadioGuests` property](../../getting-started/installing-the-in-game-resource.md#updates) is `false` by default.
