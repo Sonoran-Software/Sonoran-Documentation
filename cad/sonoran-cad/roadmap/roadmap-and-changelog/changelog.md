@@ -10,7 +10,7 @@ description: View the latest changes to Sonoran CAD!
 
 ## Changelog
 
-### Unreleased
+### FiveM - v4.0.120
 
 {% tabs %}
 {% tab title="New" %}
@@ -84,8 +84,8 @@ ERLC: Live Map Markers
 
 * Smoothed live unit movement and shortened call labels for clearer map displays.
 {% endtab %}
-
 {% endtabs %}
+
 ### 3.44.11 09/30/2026
 
 {% tabs %}
