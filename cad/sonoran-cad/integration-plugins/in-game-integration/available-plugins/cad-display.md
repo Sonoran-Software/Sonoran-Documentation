@@ -84,6 +84,10 @@ Navigate to **Settings** > **Keybinds** > **FiveM** and look for the keybinds un
 2. Drag the colored arrows to move the laptop, or the colored squares to move it along two directions at once. Select **Rotate** to use the rotation rings. **Snap** helps make small, even adjustments.
 3. Choose **Apply to this vehicle** to use the placement on your current vehicle. Administrators can choose **Save for this vehicle model** to reuse it for future vehicles with the same spawn code.
 
+<figure><img src="../../../.gitbook/assets/cad-display-placement-move.png" alt="Vehicle CAD laptop placement editor in Move mode with colored arrows and squares"><figcaption><p>Move the laptop using the colored arrows and squares.</p></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/cad-display-placement-rotate.png" alt="Vehicle CAD laptop placement editor in Rotate mode with colored rotation rings"><figcaption><p>Select Rotate and drag the colored rings to adjust the laptop's angle.</p></figcaption></figure>
+
 To reposition an existing laptop, open **Attach CAD Display** and choose **Position this vehicle's display with mouse**. **Cancel** discards your preview; closing without applying does not save a new placement. Keep the vehicle stopped throughout editing.
 
 The editor opens a cabin view aimed at the laptop. These controls help check its position:
