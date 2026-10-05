@@ -896,17 +896,17 @@ See [Civilian Registration (CivReg)](../../available-plugins/civilian-registrati
 
 **Key:** `CIVREG_SELFIE_URL_MISSING`
 
-**What it means:** An older URL-based version of CivReg could not determine a public image URL for a portrait. Current versions submit base64 image data and do not emit this code.
+**What it means:** CivReg could not determine a public image address for a portrait. This code is inactive in the current resource.
 
-**How to fix it:** Update CivReg to use base64 portrait submissions. Preserve the existing image files and public route for records that already reference them. See [Updating from URL-Based Portraits](../../available-plugins/civilian-registration.md#updating-from-url-based-portraits).
+**How to fix it:** If this code appears, contact [Sonoran support](https://support.sonoransoftware.com) with the error code and your installed resource version. See [Portrait Uploads](../../available-plugins/civilian-registration.md#portrait-uploads) for portrait setup.
 
 #### ERR-CR-104
 
 **Key:** `CIVREG_SELFIE_SAVE_FAILED`
 
-**What it means:** An older URL-based version of CivReg could not validate or save a portrait to `sonorancad/filestore/civreg`. Current versions submit base64 image data and report invalid portraits with `ERR-CR-102`.
+**What it means:** CivReg could not validate or save a portrait image. This code is inactive in the current resource.
 
-**How to fix it:** Update CivReg. For a current portrait validation error, retake the image and check `maxSelfieBytes`. For an older installation that still saves files, also check [read and write permissions](read-and-write-permissions.md) and available storage.
+**How to fix it:** If this code appears, contact [Sonoran support](https://support.sonoransoftware.com) with the error code and your installed resource version. For portrait validation errors, see [ERR-CR-102](#err-cr-102).
 
 #### ERR-CR-105
 

@@ -119,7 +119,7 @@ See [CAD Display](cad-display.md) for laptop placement, control requests, permis
 
 When a user signs into the CAD using the in-game tablet, their account will be [automatically linked](../link-user-in-game.md).
 
-If your account is not recognized, run `/link` in game and follow the linking instructions, then run `/tablet checklink`. The tablet no longer shows the old red registration bar or **Retry** button; use these commands to check your link.
+If your account is not recognized, run `/link` in game and follow the linking instructions, then run `/tablet checklink`.
 
 ## Known Issues
 

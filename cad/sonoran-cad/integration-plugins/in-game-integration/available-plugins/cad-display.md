@@ -39,7 +39,7 @@ Start with the configuration included with your installed resource. The main set
 | `builtinScreens` | Configure a laptop screen already included in a custom vehicle. See the setup below. |
 | `interaction.enabled` | Set to `false` to disable the focused laptop view. Players can still use `/tablet open`. |
 
-The standard laptop includes a screen alignment profile, including when upgrading an older configuration. Custom screens may need [screen alignment](#screen-alignment-for-server-owners) before players can interact with them.
+The standard laptop includes a screen alignment profile. Custom screens may need [screen alignment](#screen-alignment-for-server-owners) before players can interact with them.
 
 ### ACE Permissions
 

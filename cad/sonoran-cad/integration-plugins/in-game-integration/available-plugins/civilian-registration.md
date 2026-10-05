@@ -46,7 +46,7 @@ The standard database targets are:
 | ESX       | `users`         | `identifier`        | `sonoran_mugshot` |
 
 {% hint style="warning" %}
-In database mode, CivReg does not create a second character through the CAD API. If the database migration cannot run, portrait updates stop and the server reports `ERR-CR-106`.
+In database mode, CivReg does not create a second character through the CAD API. If CivReg cannot prepare portrait storage in your database, portrait updates stop and the server reports `ERR-CR-106`.
 {% endhint %}
 
 If your framework uses a customized table or character ID column, update `databaseSync.qbCore` or `databaseSync.esx` in `civreg_config.lua`. Keep the portrait column named `sonoran_mugshot`, then use that column in the CAD field mapping.
@@ -154,11 +154,7 @@ You do not need to run `/civreg` in this mode; it displays a reminder that regis
 
 ### Portrait Uploads
 
-New portraits are saved directly with the character data. You do not need to set up a public image address or host the photos separately. The default maximum photo size is **1 MiB**; if a photo is rejected, retake it and review the displayed error with your server administrator.
-
-### Updating from URL-Based Portraits
-
-Existing CAD records may still use an older image URL. Keep the original files in `filestore/civreg` and their public address available while those records use them. Updating the resource does not replace those saved links automatically.
+Portraits are saved directly with the character data. You do not need to set up a public image address or host the photos separately. The default maximum photo size is **1 MiB**; if a photo is rejected, retake it and review the displayed error with your server administrator.
 
 ## Configuration Reference
 
@@ -207,6 +203,5 @@ Edit `sonorancad/configuration/civreg_config.lua` and restart the resource after
 | A field cannot be edited                                 | Check read-only settings and whether the field is an automatically managed field such as a random value or ID.                                                                                                            |
 | Selfie capture fails                                     | Wait for the intended character and appearance to finish loading, then click the image field again without changing clothing or switching characters. If it persists, confirm the Sonoran CAD resource is up to date. For support, ask an administrator to enable Sonoran CAD debug logging, repeat the issue, and collect the player's F8 output and server console output. |
 | A portrait is rejected as invalid or too large           | Retake it and review the displayed error. Check `maxSelfieBytes` for the decoded size limit.                                                                                                                              |
-| A portrait is missing from an older URL-based CAD record | Open its saved URL externally. Check the original public route and that the file still exists in `filestore/civreg`. See [Updating from URL-Based Portraits](civilian-registration.md#updating-from-url-based-portraits). |
 
 </details>
