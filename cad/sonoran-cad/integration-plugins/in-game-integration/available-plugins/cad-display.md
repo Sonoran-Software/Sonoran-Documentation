@@ -6,7 +6,7 @@ description: >-
 
 # CAD Display
 
-{% embed url="https://youtu.be/mtiW0hFNNAU" %}
+{% embed url="https://youtu.be/IZo_XOUIEMs" %}
 
 ## Activation Guide
 
