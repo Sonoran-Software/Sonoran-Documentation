@@ -35,10 +35,10 @@ If you use a framework permission mode or optional integration, start that resou
 
 1. Join with an account that has Street Signs access.
 2. Run `/sign` and select **Nearby signs** or **All signs**.
-3. Select a sign and use **Open visual editor**, or walk to its control panel at the base and press `E`.
+3. Walk within three meters of the sign's control panel at the base. Select **Open visual editor** from the menu, or press `E` at the panel.
 4. Edit the message and select **Save sign**. Check the sign in-game.
 
-Default signs are added once. You can edit, move, or remove them through `/sign`; restarts and updates do not restore defaults you deleted.
+Default signs are added once. You can edit, move, or remove them through `/sign`; restarts and updates do not restore defaults you deleted or overwrite your saved placements with newer default positions.
 
 > Screenshot placeholder: Player at the sign's lower control panel with the `E` edit prompt visible.
 
@@ -54,6 +54,8 @@ add_unsafe_child_process_permission sonoran-streetsigns
 
 The updater keeps your configuration and saved sign data. A needed restart waits until the server is empty.
 
-For a manual update, back up `config.lua` and `data/signs.json`, stop the resource, replace the package files, and keep your configuration and saved data before starting it again.
+For a manual update, back up `config.lua` and `data/signs.json`, stop the resource, replace the package files, and keep your configuration and saved data before starting it again. Replace both resource folders when the package includes helper changes.
+
+If you are upgrading from an older configuration, compare it with the new `config.CHANGEME.lua`. Keep your access rules and integration settings in the current template. Old rendering, controller, and layout configuration options are no longer customer settings; use the sign editor for individual displays.
 
 Review [Configuration](configuration-reference.md) for the remaining customer settings and [Using Signs](commands-and-usage.md) for placement and editing.

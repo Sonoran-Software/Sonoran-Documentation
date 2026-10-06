@@ -12,8 +12,8 @@ ACE is the default mode. Grant only the actions each group needs:
 
 | Permission | Access |
 | --- | --- |
-| `sonoran.signs.set` | Edit sign messages and use the visual editor |
-| `sonoran.signs.edit` | Change sign settings and placement |
+| `sonoran.signs.set` | Use the visual editor, including text, icons, layout, schedules, and display settings |
+| `sonoran.signs.edit` | Use menu text/settings tools and reposition existing signs |
 | `sonoran.signs.create` | Place new signs |
 | `sonoran.signs.delete` | Remove signs |
 | `sonoran.signs.admin` | All actions, including the full controller and refresh tools |
@@ -24,13 +24,15 @@ For administrators, add this to `server.cfg` using your server's existing staff 
 add_ace group.admin sonoran.signs.admin allow
 ```
 
-For a group that should only update messages:
+For a group that should use the visual editor without placing or deleting signs:
 
 ```cfg
 add_ace group.dot sonoran.signs.set allow
 ```
 
 These examples grant access to groups; players must already belong to the chosen group.
+
+`set` is broader than text-only access: it includes the visual editor's settings. Grant both `set` and `edit` when a group also needs the separate menu settings and repositioning tools. Administrator access does not bypass the distance requirement for in-game saves.
 
 ## QBCore or ESX
 

@@ -17,6 +17,8 @@ Create road closures, traffic warnings, detours, and event directions with edita
 * **Highway message signs** — Combine text and road icons with a live editor preview.
 * **Ready-to-use placements** — Includes 76 editable signs across highways, town roads, and port access routes.
 * **In-game management** — Use `/sign` to place, move, edit, or remove signs. Walk up to a sign's control panel to edit its message.
+* **Daily schedules** — Display a saved message during a chosen period using the in-game clock.
+* **Display controls** — Choose a color and brightness, switch the screen off, or dim it automatically at night.
 * **Saved signs** — Placements and messages remain after resource and server restarts.
 * **Sonoran CAD control** — Manage signs from an all-signs panel or an individual sign's Live Map marker.
 * **Optional integrations** — Connect signs to Sonoran Power Grid and log changes or blocked text to Discord.

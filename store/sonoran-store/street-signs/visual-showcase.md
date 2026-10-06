@@ -8,6 +8,8 @@ description: Preview the Street Signs editor and planned in-game screenshots.
 
 <figure><img src="../.gitbook/assets/street-signs-editor.jpg" alt="Street Signs editor displaying text and road icons"><figcaption><p>The actual editor captured in a browser with sample sign data.</p></figcaption></figure>
 
+<figure><img src="../.gitbook/assets/street-signs-schedules.jpg" alt="Street Signs daily schedule controls with a sample morning reminder"><figcaption><p>The actual Schedules screen captured in the same browser preview.</p></figcaption></figure>
+
 ## In-game views
 
 > Screenshot placeholder: Highway sign facing approaching traffic with a roadwork or closure message.

@@ -25,7 +25,13 @@ In CAD, assign the appropriate roles access to these two separate panels:
 
 Give users one or both permissions according to their role. In-game ACE or job access does not automatically grant CAD panel access.
 
-Changes synchronize between CAD and FiveM. CAD edits save immediately. CAD can update existing text and icon slots; use the in-game editor to rearrange the layout.
+Changes synchronize between CAD and FiveM. CAD edits save immediately and can be made remotely.
+
+* Search for a sign in the control center, or open **Edit VMS sign** from its Live Map marker.
+* Update existing text and icon slots, choose a quick message, or adjust the theme, brightness, screen state, and Auto-Dim.
+* The individual sign panel also lists existing schedules. Its schedule toggle controls whether the screen is on during that period. **Copy to base message** copies the schedule's text into the normal message; it does not remove the scheduled period.
+
+CAD's message preview shows text. Check the physical display in-game when confirming an arranged layout or a scheduled message. Use the in-game editor to rearrange blocks and create schedules, and `/sign` to place, move, or delete signs.
 
 > Screenshot placeholder: Sonoran CAD showing the all-signs control center and an individual sign's Live Map editor.
 
@@ -37,7 +43,7 @@ Power Grid integration is on by default. If you use it:
 2. Keep `Config.Power.enabled = true`.
 3. Use the Power Grid link tool within three meters of the sign's base to link it.
 
-A power outage turns the linked sign's screen off while leaving the physical sign in place. Restoring power allows its display to return.
+A power outage turns the linked sign's screen off while leaving the physical sign in place. Restoring power allows its display to return, provided the screen is enabled and the current schedule allows it.
 
 If your server does not use Power Grid, set `Config.Power.enabled = false`.
 

@@ -27,6 +27,8 @@ Review the example jobs before enabling a framework permission mode. Matching jo
 
 Use the in-game menu or editor to change individual signs' color, brightness, messages, and placement.
 
+When updating an older installation, use the current `config.CHANGEME.lua` as the reference and keep only the supported customer settings above. Preserve `data/signs.json` so your saved signs remain in place. See [Updating](getting-started.md#updating).
+
 * [Installation and updating](getting-started.md)
 * [Permissions](permissions.md)
 * [Integrations and Webhooks](integrations-and-webhooks.md)

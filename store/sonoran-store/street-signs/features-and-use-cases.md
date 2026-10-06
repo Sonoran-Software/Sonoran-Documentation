@@ -11,6 +11,7 @@ Use it for:
 * Road closures, accident scenes, and detours
 * Construction and lane-change warnings
 * Public safety reminders
+* Daily advisories scheduled around the in-game clock
 * Event directions and traffic advisories
 
 See the [Street Signs overview](README.md#features) for the current features, or [Using Signs](commands-and-usage.md) to create your first setup.
