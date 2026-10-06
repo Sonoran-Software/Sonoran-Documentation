@@ -14,8 +14,6 @@ Run `/sign`. Check [Permissions](permissions.md) for your selected mode and conf
 
 For walk-up editing, stand near the control panel at the base of the sign and press `E`. Viewing a sign does not give editing access. The full controller requires administrator access.
 
-Older guides may show `/signcreate` or other separate sign commands. The current version uses `/sign`, then **Place a new sign**, **Nearby signs**, or **All signs**.
-
 ## The screen is blank or the editor does not load
 
 Check that the sign's screen is enabled. If it is linked to Power Grid, check its power supply. An active schedule with its state disabled also blanks the screen during that period. Brightness is limited to 5–100%; use the screen switch to turn the display off.

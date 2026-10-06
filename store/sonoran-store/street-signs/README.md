@@ -1,14 +1,12 @@
 ---
-description: Place and edit highway message signs in FiveM, with optional Sonoran CAD control.
+description: >-
+  Place and edit highway message signs in FiveM, with optional Sonoran CAD
+  control.
 ---
 
 # 🛣️ Street Signs
 
 Create road closures, traffic warnings, detours, and event directions with editable highway message signs. Update text and icons in-game, or manage signs from Sonoran CAD with the optional integration.
-
-{% hint style="warning" %}
-**Coming Soon** — Street Signs is currently in release-candidate development. These guides cover the current Highway Sign package.
-{% endhint %}
 
 > Screenshot placeholder: In-game highway sign displaying a road closure, with the roadway and sign support visible.
 
