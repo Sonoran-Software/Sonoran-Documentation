@@ -41,6 +41,4 @@ Members receive the combined permissions from their mapped roles. Sync replaces 
 If this community uses Sonoran CMS, configure [CAD permissions in CMS](https://docs.sonoransoftware.com/cms/integration-capabilities/sonoran-cad-sync). The CAD role mapping editor is disabled for CMS-managed communities.
 {% endhint %}
 
-{% content-ref url="https://docs.sonoransoftware.com/cad/integration-plugins/discord-bot-integration/role-sync" %}
-[CAD Role sync guide](https://docs.sonoransoftware.com/cad/integration-plugins/discord-bot-integration/role-sync)
-{% endcontent-ref %}
+See the [CAD Role sync guide](https://docs.sonoransoftware.com/cad/integration-plugins/discord-bot-integration/role-sync) for the full walkthrough.
