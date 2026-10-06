@@ -27,11 +27,11 @@ should keep both controller permissions (`sonoran-dot-signs` and
 Changes synchronize between CAD and FiveM. CAD edits save immediately and can be made remotely.
 
 * Search for a sign in the overview, or click its Live Map marker to open that sign directly.
-* Edit the text fields arranged like the sign. The Live Map editor places searchable road-icon pickers beside the text; the overview displays the same icons beside its text fields.
+* Edit the text fields arranged like the sign, with searchable road-icon pickers beside the text in both views.
 * Choose a quick message or adjust theme, brightness, screen state, and Auto-Dim.
 * The individual editor also lists existing schedules. Its schedule toggle controls whether the screen is on during that period. **Copy to base message** copies the schedule's text into the normal message; it does not remove the scheduled period.
 
-CAD's preview shows saved base text and road icons in their sign rows. It does
+CAD's editable rows show saved base text and road icons without a separate preview. CAD does
 not simulate LED dots, uploaded images, or the active in-game schedule. Check
 the physical display when confirming a scheduled message. Use the in-game
 editor to rearrange blocks and create schedules, and `/sign` to place, move,
@@ -52,7 +52,7 @@ individual sign instances per panel and server, including retained removed
 signs. See the official [panel limits](https://github.com/Sonoran-Software/SonoranCAD-Documentation/blob/master/api-integration/api-endpoints-v2/integration-panels/README.md)
 and [marker limits](https://github.com/Sonoran-Software/SonoranCAD-Documentation/blob/master/api-integration/api-endpoints-v2/emergency/map/create-blip.md).
 
-> Screenshot placeholder: Sonoran CAD showing inline text fields and icon pickers, icons in the preview, and a Live Map marker opening its individual sign editor.
+> Screenshot placeholder: Sonoran CAD showing aligned text fields and searchable inline icon pickers, with a Live Map marker opening its individual sign editor.
 
 ## Sonoran Power Grid
 
