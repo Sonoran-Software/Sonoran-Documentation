@@ -1,12 +1,12 @@
 ---
-description: Place, edit, move, and remove Street Signs through the in-game menu.
+description: Place, edit, move, and remove Sonoran Street Signs through the in-game menu.
 ---
 
 # Using Signs
 
 ## Open the sign menu
 
-Run `/sign` to open Street Signs. Select **Nearby signs** or **All signs**, then choose the sign you want to manage. Your permissions determine which actions appear. Nearby signs also have map markers to help you find them.
+Run `/sign` to open Sonoran Street Signs. Select **Nearby signs** or **All signs**, then choose the sign you want to manage. Your permissions determine which actions appear. Nearby signs also have map markers to help you find them.
 
 Administrators can select **Full sign controller** to browse all signs in one editor. In-game saves still require you to be within three meters of the selected sign's control panel, including in the full controller. Use [Sonoran CAD](integrations-and-webhooks.md#sonoran-cad) for remote message updates.
 
@@ -39,7 +39,7 @@ Use short messages with letters, numbers, and supported punctuation. If a charac
 
 Save before closing with `Escape` or switching signs. Changes in the editor do not save automatically.
 
-<figure><img src="../.gitbook/assets/street-signs-editor.jpg" alt="Street Signs visual editor with text and icon blocks and a Save sign button"><figcaption><p>Browser preview of the editor using sample sign data.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/street-signs-editor.jpg" alt="Sonoran Street Signs visual editor with text and icon blocks and a Save sign button"><figcaption><p>Browser preview of the editor using sample sign data.</p></figcaption></figure>
 
 ## Quick messages
 
@@ -72,7 +72,7 @@ Avoid overlapping periods: the first matching entry takes priority. **Disable** 
 
 In the current editor, **Edit message** loads a schedule's text into the normal draft; it does not replace the saved schedule. Existing entries have no time-change or removal control, so check the message and times before creating one.
 
-<figure><img src="../.gitbook/assets/street-signs-schedules.jpg" alt="Street Signs Schedules view showing daily start and end times, Create From Draft, and a sample morning message"><figcaption><p>Daily schedule controls in the browser preview.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/street-signs-schedules.jpg" alt="Sonoran Street Signs Schedules view showing daily start and end times, Create From Draft, and a sample morning message"><figcaption><p>Daily schedule controls in the browser preview.</p></figcaption></figure>
 
 ## Remove a sign
 

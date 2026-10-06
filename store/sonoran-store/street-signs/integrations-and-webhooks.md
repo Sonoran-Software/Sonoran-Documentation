@@ -1,5 +1,5 @@
 ---
-description: Connect Street Signs to Sonoran CAD, Sonoran Power Grid, and Discord.
+description: Connect Sonoran Street Signs to Sonoran CAD, Sonoran Power Grid, and Discord.
 ---
 
 # Integrations and Webhooks
@@ -18,22 +18,35 @@ add_convar_permission sonoran-streetsigns read sonoran_apiKey
 ensure sonoran-streetsigns
 ```
 
-In CAD, assign the appropriate roles access to these two separate panels:
+In CAD, give the appropriate roles access to the **Sonoran Street Signs**
+controller. It manages all signs and also opens from their Live Map markers.
+Search for the sign you want to edit. In-game ACE or job access does not
+automatically grant CAD panel access.
 
-* **SonoranDOT VMS Control Center** — Find and manage all signs.
-* **SonoranDOT VMS Sign Editor** — Edit an individual sign from its Live Map marker.
-
-Give users one or both permissions according to their role. In-game ACE or job access does not automatically grant CAD panel access.
+If updating an existing installation, assign the overview controller permission
+(`sonoran-dot-signs`). The previous individual editor permission is no longer used
+by the map markers.
 
 Changes synchronize between CAD and FiveM. CAD edits save immediately and can be made remotely.
 
-* Search for a sign in the control center, or open **Edit VMS sign** from its Live Map marker.
+* Search for a sign in the control center, or open **Sonoran Street Signs** from its Live Map marker.
 * Update existing text and icon slots, choose a quick message, or adjust the theme, brightness, screen state, and Auto-Dim.
-* The individual sign panel also lists existing schedules. Its schedule toggle controls whether the screen is on during that period. **Copy to base message** copies the schedule's text into the normal message; it does not remove the scheduled period.
+* Each sign card also lists existing schedules. Its schedule toggle controls whether the screen is on during that period. **Copy to base message** copies the schedule's text into the normal message; it does not remove the scheduled period.
 
 CAD's message preview shows text. Check the physical display in-game when confirming an arranged layout or a scheduled message. Use the in-game editor to rearrange blocks and create schedules, and `/sign` to place, move, or delete signs.
 
-> Screenshot placeholder: Sonoran CAD showing the all-signs control center and an individual sign's Live Map editor.
+CAD receives all signs together at startup and after saved changes. Map markers
+load gradually to avoid rate limits; 76 new markers take about four minutes.
+You can use the controller while markers are loading. A failed upload leaves the
+in-game save intact and retries pending changes.
+
+CAD's documented limits are **300 state uploads/minute** and **30 marker creates
+or updates/minute per endpoint**, shared by integrations using the same API key.
+Street Signs spaces state uploads at least one second apart and marker writes at
+least three seconds apart. See the official [panel limits](https://github.com/Sonoran-Software/SonoranCAD-Documentation/blob/master/api-integration/api-endpoints-v2/integration-panels/README.md)
+and [marker limits](https://github.com/Sonoran-Software/SonoranCAD-Documentation/blob/master/api-integration/api-endpoints-v2/emergency/map/create-blip.md).
+
+> Screenshot placeholder: Sonoran CAD showing the Sonoran Street Signs controller, inline text and icon slots, and a Live Map marker opening the shared controller.
 
 ## Sonoran Power Grid
 
@@ -58,4 +71,4 @@ Set `Config.Webhooks.enabled = true`, then paste Discord webhook URLs into the c
 
 Leave a channel's URL empty to disable that channel. Add Discord role IDs to `Config.Webhooks.bannedWordAlerts.mentionRoleIds` if moderation alerts should mention a role.
 
-Keep webhook URLs private and restart Street Signs after updating the configuration.
+Keep webhook URLs private and restart Sonoran Street Signs after updating the configuration.

@@ -1,10 +1,10 @@
 ---
-description: Review the customer settings in the Street Signs configuration.
+description: Review the customer settings in the Sonoran Street Signs configuration.
 ---
 
 # Configuration
 
-Edit `sonoran-streetsigns/config.lua`, save it, and restart Street Signs after changes. The supplied configuration contains the settings most servers need.
+Edit `sonoran-streetsigns/config.lua`, save it, and restart Sonoran Street Signs after changes. The supplied configuration contains the settings most servers need.
 
 | Setting | Default | Purpose |
 | --- | --- | --- |

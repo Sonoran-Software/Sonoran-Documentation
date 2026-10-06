@@ -1,10 +1,10 @@
 ---
-description: Choose who can edit messages and manage Street Signs.
+description: Choose who can edit messages and manage Sonoran Street Signs.
 ---
 
 # Permissions
 
-Choose `ace`, `standalone`, `qb`, or `esx` in `Config.PermissionMode`. Restart Street Signs after changing the configuration.
+Choose `ace`, `standalone`, `qb`, or `esx` in `Config.PermissionMode`. Restart Sonoran Street Signs after changing the configuration.
 
 ## ACE permissions
 
@@ -41,7 +41,7 @@ Set `Config.PermissionMode = 'qb'` or `'esx'`, then review `Config.QBJobs` or `C
 * A number allows that job grade and higher: `police = 3`.
 * A list allows only those exact grades: `dot = { 0, 2 }`.
 
-Matching jobs receive full sign-management access, including administrator tools. Start the framework before Street Signs.
+Matching jobs receive full sign-management access, including administrator tools. Start the framework before Sonoran Street Signs.
 
 ## Standalone
 
@@ -57,4 +57,4 @@ Allowed players receive full management access. A sign's original creator can al
 
 ## Sonoran CAD
 
-CAD access is assigned separately from in-game permissions. Give the appropriate CAD roles access to **SonoranDOT VMS Control Center** and/or **SonoranDOT VMS Sign Editor**. See [Integrations and Webhooks](integrations-and-webhooks.md).
+CAD access is assigned separately from in-game permissions. Give the appropriate CAD roles access to the **Sonoran Street Signs** controller. See [Integrations and Webhooks](integrations-and-webhooks.md).

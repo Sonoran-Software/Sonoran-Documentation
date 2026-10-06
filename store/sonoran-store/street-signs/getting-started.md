@@ -1,5 +1,5 @@
 ---
-description: Install Street Signs, configure access, and check your first sign.
+description: Install Sonoran Street Signs, configure access, and check your first sign.
 ---
 
 # Installation
@@ -10,9 +10,9 @@ You need:
 
 * A current FiveM server with OneSync enabled
 * Access to the server's resources folder and `server.cfg`
-* The Cfx.re account that owns the Street Signs package
+* The Cfx.re account that owns the Sonoran Street Signs package
 
-Sonoran CAD, Power Grid, QBCore, and ESX are optional. Street Signs does not require a database.
+Sonoran CAD, Power Grid, QBCore, and ESX are optional. Sonoran Street Signs does not require a database.
 
 ## Download and install
 
@@ -29,11 +29,11 @@ ensure sonoran-streetsigns
 
 Keep the folder names unchanged. Each folder must contain its own `fxmanifest.lua` directly inside it. The helper handles update restarts; it does not need an `ensure` line.
 
-If you use a framework permission mode or optional integration, start that resource before Street Signs. Follow [Integrations and Webhooks](integrations-and-webhooks.md) for CAD and Power Grid setup.
+If you use a framework permission mode or optional integration, start that resource before Sonoran Street Signs. Follow [Integrations and Webhooks](integrations-and-webhooks.md) for CAD and Power Grid setup.
 
 ## First use
 
-1. Join with an account that has Street Signs access.
+1. Join with an account that has Sonoran Street Signs access.
 2. Run `/sign` and select **Nearby signs** or **All signs**.
 3. Walk within three meters of the sign's control panel at the base. Select **Open visual editor** from the menu, or press `E` at the panel.
 4. Edit the message and select **Save sign**. Check the sign in-game.

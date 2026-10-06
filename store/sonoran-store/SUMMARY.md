@@ -88,7 +88,7 @@
   * [DUI Message Protocol](sonoran-station-displays/dui-message-protocol.md)
   * [Changelog](sonoran-station-displays/changelog.md)
 * [📻 Radio Display](https://docs.sonoransoftware.com/radio/tutorials/integrations/vehicle-radio-display)
-* [🛣️ Street Signs](street-signs/README.md)
+* [🛣️ Sonoran Street Signs](street-signs/README.md)
   * [Installation](street-signs/getting-started.md)
   * [Configuration](street-signs/configuration-reference.md)
   * [Permissions](street-signs/permissions.md)
