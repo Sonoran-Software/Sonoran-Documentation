@@ -78,14 +78,14 @@ Once linked, the Sonoran account can be used for ER:LC integrations across Sonor
 
 <summary>Linking Roblox to Sonoran</summary>
 
-If a user in an ER:LC linked community does not have their Roblox account linked, a red banner will display at the top of the screen. Press the **Link** button to redirect to Roblox and link your account.
+If a user in an ER:LC linked community does not have their Roblox account linked, the **Roblox Account Link Required** banner will display at the top of the screen. Press the red **Link** button to redirect to Roblox and link your account.
 
-<figure><img src="../../.gitbook/assets/image (537).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (537).png" alt="Roblox Account Link Required banner with Refresh and Link buttons"><figcaption></figcaption></figure>
 
 Pressing **Link** will open up a window to login and link with Roblox:
 
 <figure><img src="../../.gitbook/assets/image (538).png" alt=""><figcaption></figcaption></figure>
 
-Once linked, refresh and you're finished!
+Once linked, return to the CAD and press **Refresh**. The banner disappears when your linked account is detected.
 
 </details>
