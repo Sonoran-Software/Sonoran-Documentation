@@ -10,6 +10,36 @@ description: View the latest changes to Sonoran CAD!
 
 ## Changelog
 
+### 3.44.15 10/06/2026
+
+{% tabs %}
+{% tab title="New" %}
+Account: Discord Linking Banner
+
+* Added a configurable Discord account linking banner for communities using Discord role mappings.
+{% endtab %}
+
+{% tab title="Changed" %}
+Account: Roblox Link Banner
+
+* Updated the Roblox account linking banner with a compact layout, clearer text, and a prominent Link button.
+{% endtab %}
+
+{% tab title="Fixed" %}
+Customization: Community Info Saving
+
+* Fixed community banner and information changes failing to persist when closing the editor before an upload or save finishes.
+
+Customization: Banner Image Picker
+
+* Fixed the community banner image appearing blank and preventing image selection.
+
+Live Map: ERLC 2D Responsiveness
+
+* Fixed desktop lag, cleaned up disabled blips, and restored 2D map menu actions.
+{% endtab %}
+
+{% endtabs %}
 ### FiveM - v4.0.120
 
 {% tabs %}
