@@ -1,85 +1,32 @@
 ---
-description: >-
-  Bring your roads, highways, and roleplay scenes to life with fully
-  customizable in-world street signs.
+description: Place and edit highway message signs in FiveM, with optional Sonoran CAD control.
 ---
 
 # 🛣️ Street Signs
 
-{% hint style="warning" %}
-**Coming Soon**
+Create road closures, traffic warnings, detours, and event directions with editable highway message signs. Update text and icons in-game, or manage signs from Sonoran CAD with the optional integration.
 
-Street Signs is in active development and this page is an early preview of the experience, features, and visual direction.
+{% hint style="warning" %}
+**Coming Soon** — Street Signs is currently in release-candidate development. These guides cover the current Highway Sign package.
 {% endhint %}
 
-## Bring Your Roads To Life
-
-Street Signs is a customizable in-world variable message sign system for FiveM
-servers. The current free version focuses on the highway message board. Its
-shared controller and storage system is ready for future US/UK styles,
-billboards, street signs, and vehicle-mounted expansions.
-
-Whether you are building out public works scenes, roleplay road closures, event directions, or persistent map detail, Street Signs gives your server a clean way to place, edit, and manage custom signs.
-
-> Screenshot Placeholder: Hero image showing several Street Signs placed in-world on a roadway.
+> Screenshot placeholder: In-game highway sign displaying a road closure, with the roadway and sign support visible.
 
 ## Features
 
-### Highway Message Board
+* **Highway message signs** — Combine text and road icons with a live editor preview.
+* **Ready-to-use placements** — Includes 76 editable signs across highways, town roads, and port access routes.
+* **In-game management** — Use `/sign` to place, move, edit, or remove signs. Walk up to a sign's control panel to edit its message.
+* **Saved signs** — Placements and messages remain after resource and server restarts.
+* **Sonoran CAD control** — Manage signs from an all-signs panel or an individual sign's Live Map marker.
+* **Optional integrations** — Connect signs to Sonoran Power Grid and log changes or blocked text to Discord.
 
-Create and update highway warnings, closures, lane instructions, detours, and
-public-safety messages with the included Highway Sign Only controller.
+<figure><img src="../.gitbook/assets/street-signs-editor.jpg" alt="Street Signs editor showing a Buckle Up message, road icons, layout controls, and Save sign"><figcaption><p>The actual editor shown in a browser preview with sample sign data.</p></figcaption></figure>
 
-> Screenshot Placeholder: Assorted sign styles side by side.
-
-### Easy In-World Editing
-
-Open a streamlined editor experience to update sign content without rebuilding the scene from scratch. Make changes quickly and keep roleplay moving.
-
-> Screenshot Placeholder: Editor interface with a sign preview.
-
-### Persistent Placements
-
-Signs stay where you put them, making it easy to build lasting road systems, recurring event setups, and long-term environmental detail across your server.
-
-> Screenshot Placeholder: Persistent city setup or before-and-after example.
-
-### Built For Active Roleplay
-
-Use Street Signs for traffic control, construction zones, public event routing, emergency detours, seasonal map changes, and more.
-
-> Screenshot Placeholder: Road closure, detour, and event signage examples.
-
-### Flexible Permissions
-
-Support a variety of server setups so staff, departments, or trusted roles can manage signs in a way that fits your community.
-
-> Screenshot Placeholder: Permissions or staff workflow overview.
-
-### CAD and Expansion-Ready Design
-
-Street Signs can publish an all-signs CAD panel and an individual editor in each
-sign's live-map blip menu. It is also built to support more sign packs and visual
-options over time.
-
-> Screenshot Placeholder: Alternate sign pack or billboard-style preview.
-
-## Documentation
-
-{% content-ref url="features-and-use-cases.md" %}
-[features-and-use-cases.md](features-and-use-cases.md)
-{% endcontent-ref %}
+The current package includes the **Highway Sign Only** style. Additional sign styles, billboards, and vehicle-mounted signs are planned expansions.
 
 {% content-ref url="getting-started.md" %}
 [getting-started.md](getting-started.md)
-{% endcontent-ref %}
-
-{% content-ref url="configuration-reference.md" %}
-[configuration-reference.md](configuration-reference.md)
-{% endcontent-ref %}
-
-{% content-ref url="permissions.md" %}
-[permissions.md](permissions.md)
 {% endcontent-ref %}
 
 {% content-ref url="commands-and-usage.md" %}
@@ -89,40 +36,3 @@ options over time.
 {% content-ref url="integrations-and-webhooks.md" %}
 [integrations-and-webhooks.md](integrations-and-webhooks.md)
 {% endcontent-ref %}
-
-{% content-ref url="faq-and-troubleshooting.md" %}
-[faq-and-troubleshooting.md](faq-and-troubleshooting.md)
-{% endcontent-ref %}
-
-## Additional Pages
-
-{% content-ref url="features-and-use-cases.md" %}
-[features-and-use-cases.md](features-and-use-cases.md)
-{% endcontent-ref %}
-
-{% content-ref url="visual-showcase.md" %}
-[visual-showcase.md](visual-showcase.md)
-{% endcontent-ref %}
-
-## Great For
-
-* Highway patrol scenes
-* Department of transportation roleplay
-* Road closures and detours
-* Community events and race routes
-* Construction areas
-* Custom city detail and immersion
-
-## Planned Visual Showcase
-
-This page will be expanded with:
-
-* In-game screenshots
-* Editor previews
-* Sign pack examples
-* Setup and getting started documentation
-* Additional feature spotlights
-
-## More Information Soon
-
-Additional documentation, screenshots, and release details will be added here as Street Signs moves closer to launch.

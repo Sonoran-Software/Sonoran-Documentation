@@ -1,114 +1,59 @@
 ---
-description: Install and start using Street Signs on your FiveM server.
+description: Install Street Signs, configure access, and check your first sign.
 ---
 
-# Getting Started
+# Installation
 
-## Acquire the Script
+## Before you begin
 
-After purchasing Street Signs through the Sonoran Store, download the package from the Keymaster account that owns the asset. Extract the package before moving the files to your server.
+You need:
 
-If you need help locating your purchase files, see [Accessing Tebex Assets](../general/tebex-assets.md).
+* A current FiveM server with OneSync enabled
+* Access to the server's resources folder and `server.cfg`
+* The Cfx.re account that owns the Street Signs package
 
-## Install the Script
+Sonoran CAD, Power Grid, QBCore, and ESX are optional. Street Signs does not require a database.
 
-1. Copy both included folders into your server's resources directory:
+## Download and install
 
-```text
-sonoran-streetsigns
-sonoran-streetsigns_helper
-```
-
-2. In the `sonoran-streetsigns` folder, rename:
-
-```text
-config.CHANGEME.lua -> config.lua
-```
-
-3. Add the resource to your `server.cfg`:
+1. Download and extract the package from the [Cfx.re Portal](https://portal.cfx.re/). See [Accessing Tebex Assets](../general/tebex-assets.md) for help.
+2. Place both complete folders, `sonoran-streetsigns` and `sonoran-streetsigns_helper`, beside each other in your server's resources directory.
+3. Inside `sonoran-streetsigns`, rename `config.CHANGEME.lua` to `config.lua`.
+4. Review [Permissions](permissions.md) and give the appropriate staff or jobs access.
+5. If you do not use Sonoran Power Grid, set `Config.Power.enabled = false` in `config.lua`. CAD integration is off by default.
+6. Add the following to `server.cfg`, then restart the server:
 
 ```cfg
 ensure sonoran-streetsigns
 ```
 
-If you plan to use Sonoran CAD or Power Grid, start those resources first:
+Keep the folder names unchanged. Each folder must contain its own `fxmanifest.lua` directly inside it. The helper handles update restarts; it does not need an `ensure` line.
+
+If you use a framework permission mode or optional integration, start that resource before Street Signs. Follow [Integrations and Webhooks](integrations-and-webhooks.md) for CAD and Power Grid setup.
+
+## First use
+
+1. Join with an account that has Street Signs access.
+2. Run `/sign` and select **Nearby signs** or **All signs**.
+3. Select a sign and use **Open visual editor**, or walk to its control panel at the base and press `E`.
+4. Edit the message and select **Save sign**. Check the sign in-game.
+
+Default signs are added once. You can edit, move, or remove them through `/sign`; restarts and updates do not restore defaults you deleted.
+
+> Screenshot placeholder: Player at the sign's lower control panel with the `E` edit prompt visible.
+
+## Updating
+
+Automatic updates are off by default. To enable them, set `Config.Updater.EnableAutoUpdate = true` and add:
 
 ```cfg
-ensure sonorancad
-ensure sonoran-powergrid
-ensure sonoran-streetsigns
-add_convar_permission sonoran-streetsigns read sonoran_apiKey
+add_ace resource.sonoran-streetsigns command allow
+add_ace resource.sonoran-streetsigns_helper command allow
+add_unsafe_child_process_permission sonoran-streetsigns
 ```
 
-The Power Grid line is optional. The CAD permission line is required only when
-`Config.CAD.enabled = true`.
+The updater keeps your configuration and saved sign data. A needed restart waits until the server is empty.
 
-4. Restart the resource or your server.
+For a manual update, back up `config.lua` and `data/signs.json`, stop the resource, replace the package files, and keep your configuration and saved data before starting it again.
 
-## Auto Config Behavior
-
-If `config.lua` is missing, Street Signs will try to create it automatically from `config.CHANGEME.lua`.
-
-Even with that fallback available, the recommended setup is still to rename the file yourself and review the configuration before going live.
-
-## Basic First-Time Setup
-
-Before using Street Signs in-game, review these areas in `config.lua`:
-
-* `Config.PermissionMode`
-* `Config.EnabledPacks`
-* `Config.DefaultTheme`
-* `Config.CAD`
-* `Config.Power`
-* `Config.Webhooks`
-* `Config.Updater`
-
-The full setting reference is available on [Configuration Reference](configuration-reference.md).
-
-## First In-Game Use
-
-Once the resource is running and permissions are configured:
-
-1. Create a sign with `/signcreate [id] [label optional]`
-2. Walk up to the placed sign
-3. Press `E` to open the editor if you have set access
-4. Make your changes and save them
-
-Administrators can also open the full controller with:
-
-```text
-/signcontroller
-```
-
-## What Street Signs Includes
-
-The current free version ships with the Highway Sign Only controller. The core
-is expansion-ready, but the US/UK styles, billboards, street signs, trailer
-board, arrow board, and truck attachment are future packs and are not included
-in the current base release.
-
-## Notes About Sign Display
-
-Street Signs can render signs using its built-in display pipeline and can also fall back to floating preview text when needed.
-
-For most customers, the main takeaway is simple:
-
-* Signs are persistent
-* Signs sync to connected players
-* Nearby signs can be edited in-game if the player has permission
-
-## Recommended Next Steps
-
-After installation, continue with:
-
-{% content-ref url="configuration-reference.md" %}
-[configuration-reference.md](configuration-reference.md)
-{% endcontent-ref %}
-
-{% content-ref url="permissions.md" %}
-[permissions.md](permissions.md)
-{% endcontent-ref %}
-
-{% content-ref url="commands-and-usage.md" %}
-[commands-and-usage.md](commands-and-usage.md)
-{% endcontent-ref %}
+Review [Configuration](configuration-reference.md) for the remaining customer settings and [Using Signs](commands-and-usage.md) for placement and editing.

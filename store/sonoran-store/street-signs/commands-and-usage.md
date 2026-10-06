@@ -1,151 +1,56 @@
 ---
-description: Command reference and common in-game workflows for Street Signs.
+description: Place, edit, move, and remove Street Signs through the in-game menu.
 ---
 
-# Commands and Usage
+# Using Signs
 
-## Main Workflows
+## Open the sign menu
 
-Street Signs can be used in two main ways:
+Run `/sign` to open Street Signs. Select **Nearby signs** or **All signs**, then choose the sign you want to manage. Your permissions determine which actions appear.
 
-* Create and manage signs with chat commands
-* Walk up to a nearby sign and press `E` to edit it in-game
+Administrators can select **Full sign controller** to manage messages across all signs.
 
-Administrators can also open the full sign controller.
+> Screenshot placeholder: The `/sign` menu showing Place a new sign, Nearby signs, and All signs.
 
-## Commands
+## Place a sign
 
-| Command | What it does | Typical access |
-| --- | --- | --- |
-| `/signcreate [id] [label optional]` | Creates a sign at your current position | Create permission |
-| `/signedit [id] [line1\|line2\|label\|theme\|enable\|disable] [value]` | Updates a supported field on an existing sign | Edit permission |
-| `/signdelete [id]` | Deletes a sign | Delete permission |
-| `/signrefresh` | Broadcasts a full sign refresh to all clients | Admin |
-| `/signlist` | Lists loaded signs in chat | Admin |
-| `/signsettext [id] [text]` | Replaces the first line of text on a sign | Set permission |
-| `/signcontroller` | Opens the full controller interface | Admin |
+1. Select **Place a new sign**.
+2. Enter a unique **Sign ID** and a **Display label** so you can find it later.
+3. Select **Start placement**.
+4. Use the on-screen controls to move and rotate the preview. **Snap to ground** helps position the support.
+5. Select **Save placement**, or **Cancel placement** to discard it.
 
-## Creating a Sign
+Check that the sign faces approaching traffic and that its support is clear of the road. To move an existing sign, select it from the menu and choose **Reposition sign**.
 
-Basic example:
+> Screenshot placeholder: Placement preview beside a roadway, with movement controls and Save placement visible.
 
-```text
-/signcreate downtown_001 Downtown Closure
-```
+## Edit the message
 
-This creates a sign at your current location using the script's default sign setup.
+Walk to the control panel at the base of a sign and press `E`, or select **Open visual editor** from its menu. Nearby editing requires you to remain close to the control panel.
 
-## Editing a Sign In-Game
+* Select a text block to change its message.
+* Use **Stack Lines** for a simple text layout or **Add Icon** to add a road symbol.
+* Drag blocks and their resize handles to adjust the layout. **Delete Item** removes the selected block.
+* Check the preview, then select **Save sign** and wait for the save confirmation.
 
-1. Walk close to the sign
-2. Press `E`
-3. Make your changes in the editor
-4. Save your changes
+Use short messages with letters, numbers, and supported punctuation. If a character cannot be displayed or text is blocked by the word filter, correct it before saving.
 
-If the player does not have permission to set the sign, the editor will not open.
+<figure><img src="../.gitbook/assets/street-signs-editor.jpg" alt="Street Signs visual editor with text and icon blocks and a Save sign button"><figcaption><p>Browser preview of the editor using sample sign data.</p></figcaption></figure>
 
-## Editing a Sign With Commands
+## Quick messages
 
-### Update line 1
+Select **Quick messages**, choose **Safety**, **Traffic**, or **Closure**, and select a message. Check the resulting preview and select **Save sign** to apply it.
 
-```text
-/signedit downtown_001 line1 ROAD CLOSED
-```
+<figure><img src="../.gitbook/assets/street-signs-quick-messages.jpg" alt="Quick messages window with the Safety category and preset roadside messages"><figcaption><p>Quick messages in the browser preview.</p></figcaption></figure>
 
-### Update line 2
+## Sign settings
 
-```text
-/signedit downtown_001 line2 USE ALT ROUTE
-```
+Select the gear button in the editor to adjust brightness, color theme, screen state, and **Auto-Dim**. Close the settings window and select **Save sign** to apply your changes.
 
-### Change the label
+Turning the screen off keeps the physical sign in place. The `/sign` menu also provides **Edit text lines** and **Sign settings** for quick changes.
 
-```text
-/signedit downtown_001 label Downtown Closure Board
-```
+<figure><img src="../.gitbook/assets/street-signs-settings.jpg" alt="Sign settings showing brightness, theme, enabled state, and Auto-Dim controls"><figcaption><p>Sign settings in the browser preview.</p></figcaption></figure>
 
-### Change the theme
+## Remove a sign
 
-```text
-/signedit downtown_001 theme amber
-```
-
-### Disable a sign
-
-```text
-/signedit downtown_001 disable
-```
-
-### Enable a sign
-
-```text
-/signedit downtown_001 enable
-```
-
-## Quick Text Update
-
-Use `/signsettext` when you only want to replace the primary line quickly:
-
-```text
-/signsettext downtown_001 ROAD WORK AHEAD
-```
-
-## Managing Signs
-
-### Delete a sign
-
-```text
-/signdelete downtown_001
-```
-
-### View all loaded signs
-
-```text
-/signlist
-```
-
-### Force a refresh
-
-```text
-/signrefresh
-```
-
-## Full Controller
-
-The full controller is opened with:
-
-```text
-/signcontroller
-```
-
-This is intended for administrative or broader management use and is not the same as simply walking up to a single nearby sign.
-
-## Sign Placement Notes
-
-When you create a sign with `/signcreate`, the sign is placed at your current position and heading.
-
-For best results:
-
-* Stand exactly where you want the sign created
-* Face the direction you want it oriented
-* Use a clear and unique sign ID
-
-## Suggested ID Format
-
-Using a consistent naming style makes long-term management easier.
-
-Examples:
-
-* `downtown_001`
-* `i1_detour_west`
-* `airport_event_gate_a`
-* `paleto_warning_01`
-
-## Common Use Cases
-
-* Temporary road closures
-* Construction zones
-* Directional event signage
-* Traffic advisories
-* Highway warning messages
-* Persistent world detail
+Select the sign in `/sign`, choose **Delete sign**, then **Confirm deletion**. To keep the sign, select **Keep sign** instead. A deleted sign must be placed again if you want to restore it.
