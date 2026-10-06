@@ -254,4 +254,4 @@ Once linked, the `communityUserId` parameter can be used with any applicable v2 
 
 To detect that link completion immediately, listen for the [Community Link Verified](../../../push-events/community-link-verified.md) push event or poll [Check Community Link](check-community-link.md) when needed.
 
-<div><figure><img src="../../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure></div>
+<div><figure><img src="../../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure></div>

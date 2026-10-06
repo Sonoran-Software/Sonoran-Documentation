@@ -67,9 +67,9 @@ Users can also enable or disable sound effects. When enabled, a long tone will p
 
 <summary>Via Active Units</summary>
 
-In the active units panel hover over the flashing camera icon to preview a unit's bodycam. Or, click on the icon to open the dedicated viewer.
+In the active units panel hover over the flashing camera icon to preview a unit's bodycam.
 
-<div><figure><img src="../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/20260313-2241-07.5088568.gif" alt=""><figcaption></figcaption></figure></div>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -119,7 +119,9 @@ Sonoran body cameras support recording for later playback and download.
 
 #### Via Hotkey
 
-Desktop users can toggle recording using a customizable hotkey in the **Settings** menu.
+Desktop users can toggle recording using a customizable hotkey under **Customization** > **Hotkeys** > **Bodycam Record Toggle**.
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 #### Manual Start/Stop
 

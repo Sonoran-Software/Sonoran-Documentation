@@ -12,7 +12,7 @@ description: This guide covers creating a new dispatch call in Sonoran CAD.
 
 If your community has configured [custom dispatch layouts](../customization/custom-dispatch-call-formats.md), you can change between them in the top right icon.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 

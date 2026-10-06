@@ -18,4 +18,4 @@ Once configured, dispatchers can switch between layouts directly in the call edi
 
 Formatting for Call ID numbers can also be customized under [Geographical Customization](geographical-settings.md).
 
-<div><figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure></div>
+<div><figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure></div>

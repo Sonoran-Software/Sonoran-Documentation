@@ -38,13 +38,9 @@ In order to access the live map, players must have the [**Live Map** account per
 
 ### Accessing the Live Map
 
-<details>
-
-<summary>Accessing the Live Map</summary>
-
 The live map can be opened by the **Live Map** button in the taskbar. Or add the **Live Map** panel to your custom layout by selecting the **New** button at the bottom of any layout column.
 
-</details>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Using the Live Map
 

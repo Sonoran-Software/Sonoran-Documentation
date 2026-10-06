@@ -35,11 +35,12 @@ Select **Edit Server Settings** > Navigate To **ER:LC API** > Select **Edit** to
 
 <summary>Linking ER:LC to Sonoran CAD</summary>
 
-In the CAD, navigate to **Admin** > **Advanced** > **In-Game Integration** > **ER:LC**
+1. In the CAD, navigate to **Admin** > **Advanced** > **In-Game Integration**.
+2. At the top right, make sure **Game: ER:LC** is selected.
+3. Select the **ER:LC** tab and **Start Setup**.
+4. Select **Start Setup** and paste your **ER:LC API Key** in.
 
-Select **Start Setup** and paste your **ER:LC API Key** into your configured server.
-
-<figure><img src="../../.gitbook/assets/image (630).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -55,8 +56,11 @@ ER:LC sends Sonoran CAD events for custom commands like traffic stops and vehicl
 2. Select **Edit Server Settings**
 3. Under **ER:LC API** > **Event Log Webhook** > **Edit**
    1. Paste: `https://events.sonoransoftware.com/erlc`
+4. In the in-game chat, enter `;test` to verify.
 
 <div><figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure></div>
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 **Webhook Errors**
 

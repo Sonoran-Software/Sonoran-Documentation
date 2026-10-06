@@ -71,7 +71,7 @@ The following example:
 * Plays `Example Message` as text-to-speech at station `Roxwood`
 * Plays `EMS Priority 1` from the station alert resource tones at station `Roxwood`
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 🚨 Station Alert Panel
 
@@ -79,7 +79,7 @@ Dispatchers can also add the dedicated `Station Alert` panel in their custom lay
 
 Here, you can type-to-filter and select multiple stations at once.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 📞 Dispatch Call Editor
 
