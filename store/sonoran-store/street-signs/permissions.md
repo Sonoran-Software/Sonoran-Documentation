@@ -57,4 +57,4 @@ Allowed players receive full management access. A sign's original creator can al
 
 ## Sonoran CAD
 
-CAD access is assigned separately from in-game permissions. Give the appropriate CAD roles access to the **Sonoran Street Signs** controller. See [Integrations and Webhooks](integrations-and-webhooks.md).
+CAD access is assigned separately from in-game permissions. Give the appropriate CAD roles access to both **Sonoran Street Signs** controllers: the overview and individual Live Map editor. See [Integrations and Webhooks](integrations-and-webhooks.md).

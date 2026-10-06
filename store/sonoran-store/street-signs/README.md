@@ -18,7 +18,7 @@ Create road closures, traffic warnings, detours, and event directions with edita
 * **Daily schedules** — Display a saved message during a chosen period using the in-game clock.
 * **Display controls** — Choose a color and brightness, switch the screen off, or dim it automatically at night.
 * **Saved signs** — Placements and messages remain after resource and server restarts.
-* **Sonoran CAD control** — Manage signs from the shared controller, including access from Live Map markers.
+* **Sonoran CAD control** — Manage all signs from the overview, or open a specific sign from its Live Map marker.
 * **Optional integrations** — Connect signs to Sonoran Power Grid and log changes or blocked text to Discord.
 
 <figure><img src="../.gitbook/assets/street-signs-editor.jpg" alt="Sonoran Street Signs editor showing a Buckle Up message, road icons, layout controls, and Save sign"><figcaption><p>The actual editor shown in a browser preview with sample sign data.</p></figcaption></figure>
