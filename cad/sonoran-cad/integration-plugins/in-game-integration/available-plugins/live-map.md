@@ -30,7 +30,7 @@ For Roblox users, ensure your [Roblox account is linked to your Sonoran account]
 
 ### 3. User Access Permission
 
-Users will need to be granted access to view the live map. This can be done via [Discord role sync](../../discord-bot-integration.md), [permission key](../../../tutorials/getting-started/permissions.md#permission-keys), or by [manually granting permissions](../../../tutorials/getting-started/permissions.md#manually-granting-permissions) in the admin menu.
+Users will need to be granted access to view the live map. This can be done via [Discord role sync](../../discord/role-sync.md), [permission key](../../../tutorials/getting-started/permissions.md#permission-keys), or by [manually granting permissions](../../../tutorials/getting-started/permissions.md#manually-granting-permissions) in the admin menu.
 
 ### **4. Enjoy!**
 

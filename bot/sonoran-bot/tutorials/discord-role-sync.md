@@ -13,7 +13,7 @@ The `/rolemap` command contains two separate role sync options:
 | Sync path | Use it for |
 | --- | --- |
 | **Discord → Discord** | Mirroring roles from one Discord server to another Discord server. |
-| **Discord → Sonoran Products** | Mapping Discord roles to Sonoran CAD, CMS, or Radio permissions. |
+| **Discord → Sonoran Products** | Mapping Discord roles to CMS or Radio permissions. |
 
 {% hint style="info" %}
 Changes made under **Discord → Discord** do not change your Sonoran CAD, CMS, or Radio permission mappings.
@@ -22,6 +22,8 @@ Changes made under **Discord → Discord** do not change your Sonoran CAD, CMS, 
 {% hint style="info" %}
 **Screenshot placeholder:** `/rolemap` home menu showing the separate **Discord → Discord** and **Discord → Sonoran** buttons.
 {% endhint %}
+
+For CAD permissions, use the [Role sync panel in CAD](https://docs.sonoransoftware.com/cad/integration-plugins/discord/role-sync).
 
 ## Before You Begin
 

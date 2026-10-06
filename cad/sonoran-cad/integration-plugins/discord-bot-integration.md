@@ -1,20 +1,40 @@
 ---
-description: Automatically grant CAD permissions based on Discord roles.
+description: Connect Discord to manage CAD permissions and receive notifications.
 ---
 
-# Discord Bot Integration
+# Discord
 
-Sonoran Bot automatically grants CAD permissions based on members' Discord roles.
+Connect your Discord server once, then set up role sync or notifications in CAD.
 
-1. [Invite Sonoran Bot and link your CAD community](https://docs.sonoransoftware.com/bot/tutorials/getting-started).
-2. In CAD, open **Administration > Permission Keys > Bot permissions**. Select permissions and copy the **Permission code**.
-3. In Discord, run `/rolemap` and select **Discord → Sonoran > Create Mapping**. Choose **CAD** and the Discord role, paste the code under **Set Permission**, then save with **Create Mapping**.
-4. Members run `/linkme` to link their accounts and `/sync` to apply their permissions.
+## 1. Connect your server
 
-See the [illustrated setup guide](https://docs.sonoransoftware.com/bot/tutorials/sonoran-cad-integration) for screenshots.
+You need **Manage Server** in Discord to invite and set up the bot.
 
-{% hint style="warning" %}
-Sync replaces members' CAD permissions with the combined permissions from their mapped roles. Manual grants and permission-key grants are overwritten.
-{% endhint %}
+1. Open **Administration > Advanced > Discord Integration > Invite bot**.
+2. Select **Invite Sonoran Bot** and choose your Discord server.
+3. In Discord, run `/settings`. Choose a logging channel, select **Discord Only**, and enter the **Community ID** and **API Key** shown in CAD. Leave Radio blank if you do not use it.
+4. Return to CAD and select **Refresh Discord connection**. Your server appears under **Connected Discord servers**.
 
-If your bot uses CMS, configure [CAD permissions through CMS ranks](https://docs.sonoransoftware.com/cms/integration-capabilities/sonoran-cad-sync) instead.
+<figure><img src="../.gitbook/assets/cad-discord-connect.png" alt="CAD Invite bot tab with a connected San Andreas Roleplay server and three setup steps"><figcaption><p>Connect your server from the Invite bot tab.</p></figcaption></figure>
+
+**Already using the bot?** Run `/settings > API Settings > Change CAD Setup` to link this CAD community, then refresh in CAD.
+
+**Using CMS?** Follow the **CMS Use** setup instructions in CAD, then manage [CAD permissions in CMS](https://docs.sonoransoftware.com/cms/integration-capabilities/sonoran-cad-sync).
+
+Webhooks and Role sync unlock when a connected server appears. Use **Invite bot** to add another server or the **×** beside a server to disconnect it.
+
+## 2. Choose what to set up
+
+{% content-ref url="discord/role-sync.md" %}
+[Role sync](discord/role-sync.md)
+{% endcontent-ref %}
+
+{% content-ref url="discord-webhooks.md" %}
+[Webhooks](discord-webhooks.md)
+{% endcontent-ref %}
+
+{% content-ref url="discord-rich-presence.md" %}
+[Discord Rich Presence](discord-rich-presence.md)
+{% endcontent-ref %}
+
+For other bot features, see the [Sonoran Bot guides](https://docs.sonoransoftware.com/bot/tutorials/getting-started).

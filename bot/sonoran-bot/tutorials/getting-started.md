@@ -9,8 +9,10 @@ description: >-
 Sonoran Bot supports role sync with [Sonoran CAD](sonoran-cad-integration.md) and [Sonoran Radio](sonoran-radio-integration.md). Or, Sonoran Bot can sync roles with [Sonoran CMS](sonoran-cms-integration/) ranks. CMS ranks manage CAD, Radio, Drive, website, whitelisting, and more.
 
 {% hint style="warning" %}
-All commands require at least the `Manage Server` permission on the Discord server you are running the commands in. You will also need a number of other permissions upon inviting the bot.
+You need **Manage Server** to invite and configure the bot.
 {% endhint %}
+
+For CAD, follow the [CAD Discord setup guide](https://docs.sonoransoftware.com/cad/integration-plugins/discord-bot-integration). Role permissions are configured in the CAD UI.
 
 ### 1. Invite the Bot to Your Server
 

@@ -1,37 +1,46 @@
 ---
-description: Automatically grant CAD permissions based on Discord roles.
+description: Configure Discord role permissions directly in the CAD admin panel.
 ---
 
 # Sonoran CAD Integration
 
-[Invite Sonoran Bot and link your CAD community](getting-started.md) before setting up role sync.
+Choose a Discord role and the CAD permissions it gives members, all inside CAD.
 
-If your bot uses CMS, configure [CAD permissions through CMS ranks](https://docs.sonoransoftware.com/cms/integration-capabilities/sonoran-cad-sync) instead.
+## 1. Connect Discord
 
-## 1. Select Permissions
+1. In CAD, open **Administration > Advanced > Discord Integration > Invite bot**.
+2. Select **Invite Sonoran Bot** and choose your server.
+3. In Discord, run `/settings`. Choose a logging channel, select **Discord Only**, and enter the **Community ID** and **API Key** shown in CAD.
+4. Return to CAD and select **Refresh Discord connection**.
 
-In CAD, open **Administration > Permission Keys > Bot permissions**.
+If the bot is already set up, use `/settings > API Settings > Change CAD Setup` to connect your CAD community.
 
-<figure><img src="../.gitbook/assets/cad-bot-permission-keys.png" alt="CAD Permission Keys panel with the Bot permissions button"><figcaption></figcaption></figure>
+## 2. Choose role permissions in CAD
 
-Select the page, record, and administrative permissions the Discord role should grant, then copy the **Permission code** at the bottom.
+1. Open the **Role sync** tab and select **Add role**.
+2. Search for a Discord role. Check its color and server name before selecting it.
+3. Choose permissions under **Access**, **Records**, and **Administration**.
+4. Wait for **Saved automatically**, then select **Done**.
 
-<figure><img src="../.gitbook/assets/cad-bot-permission-records.png" alt="Bot permission builder with record permissions selected and the Permission code below"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/cad-discord-role-sync.png" alt="CAD Role sync tab showing Police Officer and Dispatcher role mappings"><figcaption><p>Manage role permissions directly in CAD.</p></figcaption></figure>
 
-## 2. Map to a Discord Role
+<figure><img src="../.gitbook/assets/cad-discord-role-permissions.png" alt="Police Officer role mapping with CAD permissions selected and Saved automatically confirmation"><figcaption><p>Choose what members with this role can do.</p></figcaption></figure>
 
-1. Run `/rolemap` and select **Discord → Sonoran**.
-2. Select **Create Mapping**.
-3. Choose **CAD** under **Type**, then choose the Discord role.
-4. Select **Set Permission**, paste the code, and submit.
-5. Select **Create Mapping** to save.
+Select **Edit permissions** beside an existing role to change it. Changes save automatically.
 
-## 3. Sync Members
+## 3. Sync members
 
-Members link their accounts with `/linkme`, then run `/sync` to apply their permissions. Administrators can run `/sync community: yes` to sync everyone.
+1. Members join your CAD community.
+2. Members run `/sync` in Discord. The bot guides them through account linking if needed.
 
-Future Discord role changes update CAD permissions automatically.
+Mapping changes automatically resync all linked members **5 minutes after your last edit**. Finishing the sync may take a little longer.
 
-{% hint style="warning" %}
-Sync replaces members' CAD permissions with the combined permissions from their mapped roles. Manual grants and permission-key grants are overwritten.
+Members receive the combined permissions from their mapped roles. Sync replaces manually assigned and permission-key permissions.
+
+{% hint style="info" %}
+If this community uses Sonoran CMS, configure [CAD permissions in CMS](https://docs.sonoransoftware.com/cms/integration-capabilities/sonoran-cad-sync). The CAD role mapping editor is disabled for CMS-managed communities.
 {% endhint %}
+
+{% content-ref url="https://docs.sonoransoftware.com/cad/integration-plugins/discord/role-sync" %}
+[CAD Role sync guide](https://docs.sonoransoftware.com/cad/integration-plugins/discord/role-sync)
+{% endcontent-ref %}
