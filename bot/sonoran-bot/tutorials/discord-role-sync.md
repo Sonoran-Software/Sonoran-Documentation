@@ -23,7 +23,7 @@ Changes made under **Discord → Discord** do not change your Sonoran CAD, CMS, 
 **Screenshot placeholder:** `/rolemap` home menu showing the separate **Discord → Discord** and **Discord → Sonoran** buttons.
 {% endhint %}
 
-For CAD permissions, use the [Role sync panel in CAD](https://docs.sonoransoftware.com/cad/integration-plugins/discord/role-sync).
+For CAD permissions, use the [Role sync panel in CAD](https://docs.sonoransoftware.com/cad/integration-plugins/discord-bot-integration/role-sync).
 
 ## Before You Begin
 

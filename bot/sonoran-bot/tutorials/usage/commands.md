@@ -4,7 +4,7 @@ description: Learn more about SonoranBot's Discord commands.
 
 # Commands
 
-Configure [CAD role sync in the CAD admin panel](https://docs.sonoransoftware.com/cad/integration-plugins/discord/role-sync).
+Configure [CAD role sync in the CAD admin panel](https://docs.sonoransoftware.com/cad/integration-plugins/discord-bot-integration/role-sync).
 
 ## Commands Reference
 

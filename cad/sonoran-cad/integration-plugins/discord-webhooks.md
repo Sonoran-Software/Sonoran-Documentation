@@ -8,7 +8,7 @@ Send CAD alerts to Discord, including panic alerts, call updates, record changes
 
 ## Set up notifications
 
-1. [Connect your Discord server](discord-bot-integration.md#1-connect-your-server).
+1. [Connect your Discord server](discord-bot-integration.md).
 2. Open **Administration > Advanced > Discord Integration > Webhooks**.
 3. Expand an event group and turn on the events you want.
 4. Choose the **Server** and **Channel** for each event.

@@ -8,7 +8,7 @@ Give members CAD permissions through their Discord roles.
 
 ## 1. Connect Discord
 
-Follow [Connect your server](../discord-bot-integration.md#1-connect-your-server), then open **Administration > Advanced > Discord Integration > Role sync**. You can also select **Set up role sync** in **Administration > Accounts**.
+Follow [Connect your server](../discord-bot-integration.md), then open **Administration > Advanced > Discord Integration > Role sync**. You can also select **Set up role sync** in **Administration > Accounts**.
 
 <figure><img src="../../.gitbook/assets/cad-discord-role-sync.png" alt="CAD Role sync tab showing Police Officer and Dispatcher mappings with edit and remove buttons"><figcaption><p>Each role shows its Discord server and assigned permissions.</p></figcaption></figure>
 
