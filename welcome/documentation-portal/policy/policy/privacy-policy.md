@@ -8,7 +8,7 @@ description: Sonoran Software Systems' Privacy Policy
 
 <h2 align="center">Privacy Policy</h2>
 
-<p align="center">Last Updated: September 21st, 2026</p>
+<p align="center">Last Updated: October 6th, 2026</p>
 
 > _These Terms govern your use of Sonoran Software Systems LLC products and sites — Sonoran CAD (https://sonorancad.com), Sonoran CMS (https://sonorancms.com), Sonoran Radio (https://sonoranradio.com) — along with any sub‑domains, mobile apps, and related services (collectively, the “Services”)._
 
@@ -117,6 +117,8 @@ We **do not sell** personal information. We may disclose limited Usage Data and 
 We use cookies, pixels, and similar browser or server-side technologies across the Services for authentication, preferences, analytics, campaign measurement, attribution, and advertising performance. These technologies may be provided by **Google Analytics** and **TikTok** and may collect or receive device and browser information, IP address, page and referring URLs, cookie or pseudonymous identifiers, and interactions such as page views, logins, checkout activity, and purchases. Where matching information is used, identifiers such as an email address or account ID may be normalized and cryptographically hashed before transmission.
 
 The mobile apps for **Sonoran CAD**, **Sonoran CMS**, and **Sonoran Radio** may use Google Analytics for limited product analytics. It may collect app interactions, device information, a pseudonymous identifier, and an approximate region. It is not used for advertising, retargeting, or tracking across other companies' apps or websites. Where required, analytics remains disabled until the user allows it. Users can change the Usage Analytics setting in the app at any time. [Learn how Google processes this data.](https://policies.google.com/technologies/partner-sites)
+
+On the Sonoran CAD website, Google Analytics may use Google Ads click identifiers and conversion events to measure advertising effectiveness for US web visitors. Google ad personalization and Google Signals are disabled for this implementation. Visitors can turn off Google measurement for their browser through [Google privacy choices](https://sonorancad.com/privacy-choices/), without creating or signing into an account. The website also treats Global Privacy Control as an opt-out of Google measurement. These controls apply to Google measurement on that website and browser; native app preferences and other providers' controls are separate. Essential account and security storage remains available. Outside the US, this implementation denies Google's analytics and advertising storage by default and may send consent-mode cookieless pings.
 
 You can limit cookies through your browser or available consent controls. Where required by law, we will request consent before enabling non-essential tracking technologies.
 
