@@ -60,7 +60,7 @@ Before using the resource you will need to create a pager network under **Admin*
 
 Your configuration will automatically save after closing the popup modal.
 
-<div><figure><img src="../../../.gitbook/assets/Screenshot 2026-05-13 at 8.31.12 PM.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure></div>
+<div><figure><img src="../../../.gitbook/assets/Screenshot 2026-05-13 at 8.31.12 PM.png" alt=""><figcaption></figcaption></figure> <figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure></div>
 
 [Learn more about creating a pager network here.](https://docs.inferno-collection.com/resources/pager-reborn/developers/start-here/)
 
@@ -95,7 +95,7 @@ Add the **Inferno Pager** panel in your custom layout.
 
 * Enter the text to send to units in-game.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### In-Game
 

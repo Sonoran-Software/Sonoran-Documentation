@@ -15,9 +15,15 @@ description: >-
 
 ### Configuring the Hotkey
 
-The in-game overlay is toggled via custom hotkey. Hotkeys can be configured in the **Customization** menu. Once in the settings window select **Hotkeys** > **Desktop Overlay** to configure a key. Pressing this hotkey will show/hide the overlay.
+The in-game overlay is toggled via custom hotkey. Hotkeys can be configured under **Customization** > **Hotkeys** > **Desktop Overlay**. Pressing this hotkey will show/hide the overlay.
 
-<figure><img src="../../.gitbook/assets/image (606).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (606).png" alt="" width="375"><figcaption></figcaption></figure>
+
+### Overlay Tab
+
+In the desktop app the taskbar also displays a **Overlay** tab that can be clicked to activate the overlay.
+
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 ### Overlay Buttons
 

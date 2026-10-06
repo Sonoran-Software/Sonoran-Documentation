@@ -18,7 +18,9 @@ In order to use hotkeys, download the Windows or OSX desktop application.
 
 ### 2. Configure your Hotkey
 
-In the taskbar search or open **System** > **Settings** > **Hotkeys** > **ER:LC** > and set the **Plate Reader** hotkey.
+Customize the plate reader hotkey under **Customization** > **Hotkeys** > **Plate Reader**
+
+<figure><img src="../../.gitbook/assets/image (12).png" alt="" width="375"><figcaption></figcaption></figure>
 
 #### 3. Utilize the Hotkey
 

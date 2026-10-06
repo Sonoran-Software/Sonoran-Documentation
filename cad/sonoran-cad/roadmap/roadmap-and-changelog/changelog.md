@@ -38,8 +38,8 @@ Live Map: ERLC 2D Responsiveness
 
 * Fixed desktop lag, cleaned up disabled blips, and restored 2D map menu actions.
 {% endtab %}
-
 {% endtabs %}
+
 ### FiveM - v4.0.120
 
 {% tabs %}
@@ -115,6 +115,36 @@ ERLC: Live Map Markers
 * Smoothed live unit movement and shortened call labels for clearer map displays.
 {% endtab %}
 {% endtabs %}
+
+### 3.44.11 09/30/2026
+
+{% tabs %}
+{% tab title="New" %}
+Discord Role Sync Panel
+
+* Added Discord role sync directly in the CAD admin panel for easier setup and configuration
+
+Discord Link Banner
+
+* Added a toggle option to display a "Link Discord Account" banner to users who don't have their Discord linked for systems like role mapping, enabled by default.
+
+Roblox Link Banner UI
+
+* Updated the Roblox account link banner for communities with ER:LC integration enabled.
+{% endtab %}
+
+{% tab title="Fixed" %}
+Live Map: Optimizations
+
+* Improved and optimized the 2D live map, causing some users to experience lag with high blip count numbers.
+
+Customization: Logo and Description
+
+* Fixed an issue causing some communities to not have their community logo updated from the customization menu.
+{% endtab %}
+{% endtabs %}
+
+
 
 ### 3.44.11 09/30/2026
 
