@@ -8,7 +8,7 @@ description: >-
 
 Create road closures, traffic warnings, detours, and event directions with editable highway message signs. Update text and icons in-game, or manage signs from Sonoran CAD with the optional integration.
 
-> Screenshot placeholder: In-game highway sign displaying a road closure, with the roadway and sign support visible.
+<figure><img src="../.gitbook/assets/street-signs-release-overview.webp" alt="Street Signs promo showing a highway sign displaying Leave Space for Trucks and Drive Safe"><figcaption><p>Editable highway messages for your community.</p></figcaption></figure>
 
 ## Features
 
@@ -21,7 +21,21 @@ Create road closures, traffic warnings, detours, and event directions with edita
 * **Sonoran CAD control** — Manage all signs from the overview, or open a specific sign from its Live Map marker.
 * **Optional integrations** — Connect signs to Sonoran Power Grid and log changes or blocked text to Discord.
 
-<figure><img src="../.gitbook/assets/street-signs-editor.jpg" alt="Sonoran Street Signs editor showing a Buckle Up message, road icons, layout controls, and Save sign"><figcaption><p>The actual editor shown in a browser preview with sample sign data.</p></figcaption></figure>
+## Gallery
+
+{% tabs %}
+{% tab title="Editor" %}
+<figure><img src="../.gitbook/assets/street-signs-release-editor.webp" alt="Street Signs editor promo showing text blocks, truck icons, layout controls, and a live sign preview"><figcaption><p>Edit text, road icons and layouts in-game.</p></figcaption></figure>
+{% endtab %}
+
+{% tab title="Sonoran CAD" %}
+<figure><img src="../.gitbook/assets/street-signs-release-cad.webp" alt="Street Signs CAD promo showing Live Map markers, an individual sign editor, and the all-signs overview"><figcaption><p>Manage signs remotely with the optional Sonoran CAD integration.</p></figcaption></figure>
+{% endtab %}
+
+{% tab title="Map coverage" %}
+<figure><img src="../.gitbook/assets/street-signs-release-map-coverage.webp" alt="Street Signs map promo showing sign markers across Los Santos and Blaine County"><figcaption><p>About 70 pre-configured signs across the map.</p></figcaption></figure>
+{% endtab %}
+{% endtabs %}
 
 The current package includes the **Highway Sign Only** style. Additional sign styles, billboards, and vehicle-mounted signs are planned expansions.
 
