@@ -34,6 +34,8 @@ Use **+**, **−**, and **Fit** to zoom the preview. Preview zoom does not chang
 
 For FiveM frame selection and access restrictions, see [FiveM Radio Frames](in-game-radio/customizing-radio-frames.md).
 
+To configure automatic layout changes and previous/next-frame shortcuts, see [Changing Radio Frames](changing-radio-frames/), with separate setup for [FiveM](changing-radio-frames/fivem.md) and [ER:LC](changing-radio-frames/erlc.md).
+
 ## Use the desktop overlay
 
 The desktop app keeps radio controls visible while playing FiveM, Arma 3, Roblox, and other games.
@@ -68,6 +70,8 @@ The overlay displays signal supplied by supported game integrations. For locatio
 
 Set **PTT Hotkey** to your preferred push-to-talk key.
 
+Under **Change Radio Frame**, assign the previous-frame and next-frame shortcuts to cycle through your community's frames. See [Change frames with desktop hotkeys](changing-radio-frames/#change-frames-with-desktop-hotkeys).
+
 <figure><img src="../../.gitbook/assets/desktop-overlay/overlay-hotkeys.png" alt="Hotkeys settings showing PTT Hotkey, Focus Desktop Radio, and Toggle Desktop Radio"><figcaption><p>Example hotkeys; choose keys that do not conflict with your game.</p></figcaption></figure>
 
 </details>
@@ -91,5 +95,7 @@ A brief resize hint appears when the overlay opens and when you hover or focus a
 <figure><img src="../../.gitbook/assets/radio-overlay/desktop-frame-selector.jpg" alt="Audio settings with the Radio Frame dropdown open"><figcaption><p>Select a community frame from the Radio Frame dropdown.</p></figcaption></figure>
 
 Arma 3 can select a frame based on your inventory radio. See [Radio Items and Team Frames](../integrations/arma-3/radio-items-and-team-frames.md).
+
+ER:LC can use its visible ELS controller to switch the selected frame between On-foot and Vehicle layouts. See [ER:LC Frame Changes](changing-radio-frames/erlc.md) for detection setup and macOS screen permissions.
 
 </details>

@@ -23,6 +23,7 @@
   * [Roster Automations](tutorials/rosters/roster-automations.md)
 * [Community Website](tutorials/community-website/README.md)
   * [Website Builder](tutorials/community-website/website-builder.md)
+  * [Site AI](tutorials/community-website/site-ai.md)
   * [Toolbar Customization](tutorials/community-website/toolbar-customization.md)
   * [Forums](tutorials/community-website/forum-system.md)
   * [Image Gallery](tutorials/community-website/gallery-system.md)

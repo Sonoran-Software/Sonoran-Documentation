@@ -12,6 +12,12 @@ To access the website builder, navigate to **Administration Panel** > **Website 
 
 Select an existing or **Add New Page** to open the website editor.
 
+Use **Site AI** in the right sidebar to create a page from a description, generate images, or refine an existing design through conversation. Review the draft, select **Apply to preview**, then **Save** to keep the changes.
+
+{% content-ref url="site-ai.md" %}
+[site-ai.md](site-ai.md)
+{% endcontent-ref %}
+
 <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Sections and Containers

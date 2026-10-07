@@ -27,6 +27,8 @@ The **On-foot**, **Vehicle**, and **Aircraft** layout controls appear when the c
 
 FiveM uses the **first** vehicle layout whose class list matches the vehicle. Put a layout that matches all classes after more specific layouts. Aircraft-only layouts appear under **Aircraft**; layouts with any non-aircraft class appear under **Vehicle**. The order is shared between those tabs.
 
+The radio automatically applies that layout when you enter a matching vehicle and returns to On-foot when you exit. If no vehicle layout matches, it uses On-foot. See [FiveM Frame Changes](../changing-radio-frames/fivem.md) for examples and troubleshooting.
+
 <figure><img src="../../../.gitbook/assets/radio-overlay/fivem-vehicle-classes.png" alt="FiveM Overlay editor with Vehicle selected, a vehicle layout, and Emergency class 18 selected"><figcaption><p>Choose a FiveM vehicle layout and the classes that use it.</p></figcaption></figure>
 
 ## Change your frame in game
