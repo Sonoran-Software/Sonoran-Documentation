@@ -6,14 +6,20 @@ description: Create radio overlays for desktop and FiveM, and use the desktop ov
 
 Create your community's radio frames in **Customize > Overlay**. The same editor supplies the desktop overlay and FiveM in-game radio.
 
+## Create with Overlay AI
+
+Use the **AI** tab to create a custom screen and radio frame from a description or reference photos, then refine the design with follow-up messages. You can select **New Frame > Blank canvas** without uploading artwork first. Overlay AI and the Custom screen editor require **Pro**.
+
+See [Overlay AI](overlay-ai.md) for reference photos, chat examples, manual editing, and the monthly AI allowance.
+
 ## Create a custom overlay
 
 Uploading custom frame artwork requires **Pro**.
 
 1. Open your community's **Customize > Game Integration** tab and select your game.
 2. Open **Customize > Overlay** and select **New Frame**.
-3. Enter a label, select **Upload image**, and upload your radio artwork. Select **Create**.
-4. Choose a **Screen Theme** and adjust **Frame Width** as needed.
+3. Enter a label, choose **Upload image**, and upload your radio artwork. Select **Create**. To begin without artwork, choose **Blank canvas** instead.
+4. Open **Manual**, choose a **Screen Theme**, and adjust **Frame Width** as needed. The **Custom** theme adds editable screen colors, typography, icons, and decorative labels.
 5. Drag the screen and buttons into place. Use **Add Button** for any missing controls, then select **Save changes**.
 
 <figure><img src="../../.gitbook/assets/radio-overlay/new-frame.jpg" alt="New Frame dialog with a County Patrol label and Upload image button" width="580"><figcaption><p>Name your frame and upload its artwork.</p></figcaption></figure>

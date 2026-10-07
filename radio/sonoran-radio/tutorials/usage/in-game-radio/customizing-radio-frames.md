@@ -10,6 +10,8 @@ Create and edit your FiveM radio frames in **Customize > Overlay** in the Radio 
 
 Select **FiveM** in **Customize > Game Integration**, then follow [Create a custom overlay](../desktop-overlay.md#create-a-custom-overlay). Upload your artwork, position the screen and buttons, and select **Save changes**. Uploading custom artwork requires **Pro**.
 
+With Pro, [Overlay AI](../overlay-ai.md) can generate your radio frame artwork and editable screen from text or reference photos. Start with a blank frame or refine an existing one, then select **Save changes**.
+
 <figure><img src="../../../.gitbook/assets/radio-overlay/overlay-editor.jpg" alt="Shared Radio Overlay editor with a County Patrol frame"><figcaption><p>Edit FiveM frames from the Radio panel.</p></figcaption></figure>
 
 Use an updated FiveM resource. With your server's push URL configured, saving sends the updated frames to connected players. The resource also checks for changes on startup and every five minutes.

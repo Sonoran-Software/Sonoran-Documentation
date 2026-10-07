@@ -43,17 +43,31 @@ Multi-server lets each server run independently while sharing the same channel s
 | Plus         | 1 Server          |
 | Pro          | Unlimited Servers |
 
-### [Desktop Overlay](standalone-pricing.md#desktop-overlay)
+### [Desktop Overlay](../../tutorials/usage/desktop-overlay.md)
 
-Customize your desktop overlay with unique radio frames for your community!
+Customize your desktop overlay with unique radio frames for your community! Pro adds custom frame artwork and the **Custom** screen editor for colors, typography, icons, and layout.
 
 <figure><img src="../../.gitbook/assets/overlay_promo (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
-| Subscription | Limit                    |
-| ------------ | ------------------------ |
-| Free         | Default three frames     |
-| Plus         | Default three frames     |
-| Pro          | Full frame customization |
+| Subscription | Limit                               |
+| ------------ | ----------------------------------- |
+| Free         | Default three frames                |
+| Plus         | Default three frames                |
+| Pro          | Full frame and screen customization |
+
+### [Overlay AI](../../tutorials/usage/overlay-ai.md)
+
+Create custom radio frame artwork and editable screens from descriptions or reference photos, then refine colors, icons, labels, and layouts with chat.
+
+<figure><img src="../../.gitbook/assets/radio-overlay/overlay-ai-promo.webp" alt="Sonoran Radio Overlay AI creating a custom radio frame and screen from a reference photo" width="580"><figcaption></figcaption></figure>
+
+| Subscription | Limit                         |
+| ------------ | ----------------------------- |
+| Free         | 🚫                            |
+| Plus         | 🚫                            |
+| Pro          | Monthly AI allowance included |
+
+The editor displays the remaining allowance and reset date. Usage varies by request, with new frame artwork using more than a simple screen edit. The allowance resets on the first of each month in UTC. See [Overlay AI usage](../../tutorials/usage/overlay-ai.md#monthly-ai-allowance).
 
 ### [Hear Nearby Radio Chatter](../../tutorials/usage/in-game-radio/hear-nearby-radio-chatter.md) and [Scanners](../../tutorials/usage/in-game-radio/radio-scanners.md)
 
