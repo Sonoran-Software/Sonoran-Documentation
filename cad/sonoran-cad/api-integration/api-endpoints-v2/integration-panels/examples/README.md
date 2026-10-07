@@ -13,7 +13,7 @@ The same two-way pattern applies to every example:
 1. Your resource publishes its current state to CAD.
 2. Connected CAD users see the update immediately.
 3. A CAD interaction creates an action for your resource.
-4. Your resource polls and applies the action, acknowledges it, then publishes the updated state.
+4. Your resource receives the action by push, applies it, acknowledges it, then publishes the updated state. Slow polling is a backup for missed events; see [Action Push Events](../#action-push-events).
 
 {% hint style="info" %}
 Use the AI plugins and MCP tools at [sonoransoftware.com/developers](https://sonoransoftware.com/developers) to adapt an example to your script, then verify it in the [visual panel builder](https://sonorancad.com/integration-panel-builder).

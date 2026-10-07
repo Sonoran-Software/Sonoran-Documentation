@@ -15,9 +15,11 @@ This example connects an existing door lock resource to CAD. Dispatchers can sea
 1. Install or update the panel definition when the resource is configured.
 2. On resource start, read every configured door and publish the complete panel state.
 3. When a player or another script changes a door in-game, publish the new state to CAD.
-4. Poll for `door.set-locked` and `doors.lock-all` actions. Apply them through the door resource, acknowledge them, then republish the authoritative lock state.
+4. Receive pushes for `door.set-locked` and `doors.lock-all` actions. Apply them through the door resource, acknowledge them, then republish the authoritative lock state.
 
 ## Game-Side Outline
+
+Push is the primary delivery path. The scheduling and `processPanelActionOnce` functions below are pseudocode supplied by your integration; they are not SDK helpers. `processPanelActionOnce` records the completed result, acknowledges it, retries failed acknowledgements without repeating the effect, and returns true only after acknowledgement succeeds. Use one serial queue for both paths and keep the backup polling cursor separate from pushed actions. See [Action Push Events](../#action-push-events) for routing, deduplication, acknowledgement, and recovery rules.
 
 The following is server-side pseudocode. Adapt the events and function names to your door lock resource and preferred [API library](../#sdk-helpers).
 
@@ -32,10 +34,10 @@ onDoorStateChanged(function()
   publishPanelState(readAllDoors())
 end)
 
-everySecond(function()
-  local response = pollPanelActions({ after = cursor })
-
-  for _, event in ipairs(response.events) do
+-- Shared serialized processing; the helper deduplicates in-flight/completed IDs,
+-- retries acknowledgements without repeating effects, and rejects expired actions.
+local function processAction(event)
+  return processPanelActionOnce(event, function()
     local success
 
     if event.actionId == "door.set-locked" then
@@ -44,11 +46,24 @@ everySecond(function()
       success = doorResource.lockAllOnlineDoors()
     end
 
-    acknowledgePanelAction(event.id, success)
-    publishPanelState(readAllDoors())
-  end
+    if success then publishPanelState(readAllDoors()) end
+    return success
+  end)
+end
 
-  cursor = response.nextCursor -- Persist after every returned action is acknowledged.
+AddEventHandler("SonoranCAD::pushevents:OtherEvent", function(eventType, event)
+  if eventType == "EVENT_PANEL_EXAMPLE.DOOR-LOCKS" then
+    processAction(event)
+  end
+end)
+
+-- Backup only. Share three requests/minute across all panels and servers.
+every20Seconds(function()
+  local response = pollPanelActions({ after = cursor })
+  for _, event in ipairs(response.events) do
+    if not processAction(event) then return end
+  end
+  cursor = response.nextCursor -- Only after every polled action is acknowledged.
 end)
 ```
 

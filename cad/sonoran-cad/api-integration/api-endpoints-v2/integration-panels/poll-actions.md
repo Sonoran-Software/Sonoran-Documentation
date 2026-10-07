@@ -1,16 +1,18 @@
 ---
-description: Poll CAD user actions for a custom Integration Panel.
+description: Recover missed Integration Panel action push events with slow backup polling.
 ---
 
 # Poll Integration Panel Actions
 
 <mark style="color:green;">`GET`</mark> `https://api.sonorancad.com/v2/integration-panels/servers/{serverId}/panels/{panelKey}/actions`
 
-> **Rate limit:** `240 requests per minute` per API key.
+> **Rate limit:** `3 requests per minute` per API key, shared across all panels and servers.
 
-Poll unexpired CAD user actions for a panel. Actions remain available until acknowledged or until their 60-second lifetime expires.
+Use [action push events](./#action-push-events) for primary delivery. This endpoint is a backup for startup, reconnects, or missed pushes. For one panel, poll about every 20 seconds; multiple panel/server queues must share the total three-request-per-minute budget. Startup and reconnect requests count toward that budget. Respect `Retry-After` after a `429`.
 
-Process events in cursor order. Acknowledge each event after the third-party action finishes, then persist `nextCursor` for the next poll. If processing fails before acknowledgement, poll again with the prior cursor.
+Poll unexpired CAD user actions for a panel. Actions remain available until acknowledged or until their 60-second lifetime expires, including actions already sent by push. Push and polling return the same `id`, `cursor`, routing fields, values, and timestamps. Deduplicate by `id` through a shared serial processing queue, including in-flight actions, and retry acknowledgements without reapplying completed effects.
+
+Process polled events in cursor order. Acknowledge each event after the third-party action finishes, then persist `nextCursor` only after every returned event is acknowledged. Keep this cursor separate from push delivery: advancing it from a later pushed action can skip an earlier missed action. If processing or acknowledgement fails, keep the prior polling cursor. Do not apply expired events. Polling cannot recover actions after their 60-second lifetime.
 
 ## Path Parameters
 

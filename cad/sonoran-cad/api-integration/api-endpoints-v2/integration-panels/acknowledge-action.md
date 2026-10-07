@@ -16,7 +16,7 @@ Acknowledge an action after the third-party system finishes processing it. The r
 | ---------- | ------- | ------------------------------------------------ |
 | `serverId` | integer | Configured CAD server ID allowed by the API key. |
 | `panelKey` | string  | Stable panel key.                                |
-| `eventId`  | UUID    | Action event ID returned by the poll endpoint.   |
+| `eventId`  | UUID    | Action `id` received by push or backup polling. |
 
 ## Request Body
 

@@ -15,9 +15,11 @@ This example connects an existing in-game fire alarm resource to CAD. Dispatcher
 1. Install or update the panel definition when the resource is configured.
 2. On resource start, read every alarm controller and publish the complete panel state.
 3. When an alarm changes in-game, publish the new state. Connected CAD clients update immediately.
-4. Poll for `alarm.set-active` actions. Apply each action through the alarm resource, acknowledge it, then publish the authoritative state again.
+4. Receive pushes for `alarm.set-active` actions. Apply each action through the alarm resource, acknowledge it, then publish the authoritative state again.
 
 ## Game-Side Outline
+
+Push is the primary delivery path. The scheduling and `processPanelActionOnce` functions below are pseudocode supplied by your integration; they are not SDK helpers. `processPanelActionOnce` records the completed result, acknowledges it, retries failed acknowledgements without repeating the effect, and returns true only after acknowledgement succeeds. Use one serial queue for both paths and keep the backup polling cursor separate from pushed actions. See [Action Push Events](../#action-push-events) for routing, deduplication, acknowledgement, and recovery rules.
 
 The following is server-side pseudocode. Adapt the events and function names to your alarm resource and preferred [API library](../#sdk-helpers).
 
@@ -33,21 +35,33 @@ onAlarmStateChanged(function()
   publishPanelState(readAllAlarmControllers())
 end)
 
--- Poll on the server. Never expose the CAD API key to a client script.
-everySecond(function()
-  local response = pollPanelActions({ after = cursor })
-
-  for _, event in ipairs(response.events) do
+-- Shared serialized processing; the helper deduplicates in-flight/completed IDs,
+-- retries acknowledgements without repeating effects, and rejects expired actions.
+local function processAction(event)
+  return processPanelActionOnce(event, function()
     local success = fireAlarmResource.setActive(
       event.values.alarmId,
       event.values.active
     )
 
-    acknowledgePanelAction(event.id, success)
-    publishPanelState(readAllAlarmControllers())
-  end
+    if success then publishPanelState(readAllAlarmControllers()) end
+    return success
+  end)
+end
 
-  cursor = response.nextCursor -- Persist after every returned action is acknowledged.
+AddEventHandler("SonoranCAD::pushevents:OtherEvent", function(eventType, event)
+  if eventType == "EVENT_PANEL_EXAMPLE.FIRE-ALARMS" then
+    processAction(event)
+  end
+end)
+
+-- Backup only. Share three requests/minute across all panels and servers.
+every20Seconds(function()
+  local response = pollPanelActions({ after = cursor })
+  for _, event in ipairs(response.events) do
+    if not processAction(event) then return end
+  end
+  cursor = response.nextCursor -- Only after every polled action is acknowledged.
 end)
 ```
 

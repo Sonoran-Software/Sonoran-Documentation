@@ -91,7 +91,7 @@ To change the reference, [Update Blip](../../emergency/map/update-blip.md) with 
 
 ## 4. Apply Save actions in your integration
 
-Poll [Actions](../poll-actions.md) for `smart-signs` on server 1. A Save action includes:
+Receive `EVENT_PANEL_SMART-SIGNS` through the existing FiveM [action push hook](../#action-push-events). Its `data` contains the Save action below. Use [Actions](../poll-actions.md) only for slow backup polling, budgeting three requests per minute per API key across all panels and servers:
 
 ```json
 {
@@ -114,7 +114,7 @@ The event also contains its event ID, cursor, actor, creation time, and expiry. 
 3. [Acknowledge](../acknowledge-action.md) the event as successful or failed, with a useful message.
 4. On success, publish the complete resulting state for `sign-12` and your overview panel.
 
-The menu's request-sent message confirms queue submission, not in-game completion. CAD displays the integration's acknowledgment through its existing action notification. Acknowledging does not publish state automatically. The integration must poll/process actions within their 60-second lifetime.
+The menu's request-sent message confirms queue submission, not in-game completion. CAD displays the integration's acknowledgment through its existing action notification. Acknowledging does not publish state automatically. Process pushes immediately and recover missed actions within their 60-second lifetime. Use the same processing queue for push and polling, deduplicate by `id`, and do not advance the backup polling cursor from a push.
 
 ## Capacity
 
