@@ -1,168 +1,66 @@
 ---
-description: Common questions and troubleshooting steps for Street Signs.
+description: Resolve common installation, access, display, and integration issues.
 ---
 
-# FAQ and Troubleshooting
+# Troubleshooting
 
-## Frequently Asked Questions
+## The resource will not start
 
-### Do I need a database?
+Confirm OneSync is enabled, both package folders are installed, and `fxmanifest.lua` is directly inside each folder. Keep the original resource names and use the server account entitled to the asset.
 
-No. Street Signs stores sign data locally and does not require MySQL or `oxmysql`.
+## I cannot open the menu or edit a sign
 
-### Where is sign data stored?
+Run `/sign`. Check [Permissions](permissions.md) for your selected mode and confirm your staff group, player identifier, or job grade has access.
 
-Street Signs stores sign data in:
+For walk-up editing, stand near the control panel at the base of the sign and press `E`. Viewing a sign does not give editing access. The full controller requires administrator access.
 
-```text
-data/signs.json
-```
+## The screen is blank or the editor does not load
 
-### Why can I walk up to a sign but not edit it?
+Check that the sign's screen is enabled. If it is linked to Power Grid, check its power supply. An active schedule with its state disabled also blanks the screen during that period. Brightness is limited to 5–100%; use the screen switch to turn the display off.
 
-Being close to a sign is not enough by itself. The server still checks whether your account or job has set permission for that sign.
+Move closer to the sign and confirm Sonoran Street Signs is running. For a blank editor, check that the player can reach `https://signs.panel.sonoran.store/`, then reopen it.
 
-Review [Permissions](permissions.md).
+## A message will not save
 
-### Why are some sign types missing?
+Stay within three meters of the selected sign's control panel, including when using the administrator's full controller, and wait for any previous save to finish. Correct unsupported characters or blocked text shown by the editor.
 
-The current free release includes Highway Sign Only. US/UK styles, billboards,
-street signs, and vehicle boards are future expansion content. Turning on an
-expansion toggle does not install an expansion model or resource.
+If someone else changed the same sign, reopen it and apply your changes to the latest version. For save errors, check the server console and confirm the resource can write to its `data` folder.
 
-For an installed expansion, also check:
+## A schedule or message does not look right
 
-```lua
-Config.EnabledPacks
-```
+Schedules follow the in-game clock. Check the start and end times, including overnight periods, and avoid overlapping entries because the first matching period wins. Save after creating or toggling a schedule.
 
-If a pack is set to `false`, its related sign options will not be available.
+The normal editor preview shows your draft, which may differ from the scheduled message currently on the roadside sign. Editing the normal message does not replace a captured schedule. See [Daily schedules](commands-and-usage.md#daily-schedules) for the current controls and limits.
 
-### The CAD panels or blip editors are missing
+If **Edit text lines** did not change an arranged text block, open the visual editor and edit that block directly.
 
-Check:
+## CAD panels or sign updates are missing
 
-* `sonorancad` starts before Street Signs
+Confirm:
+
 * `Config.CAD.enabled = true`
-* `add_convar_permission sonoran-streetsigns read sonoran_apiKey` is in `server.cfg`
-* Your CAD build supports Integration Panels and panel-enabled custom blips
-* The user has the separate custom permission for the control center or blip editor
+* `sonorancad` starts before Sonoran Street Signs
+* The protected-key permission line from [CAD setup](integrations-and-webhooks.md) is present
+* Your CAD version supports the panels and your role has the relevant panel permission
 
-### A CAD edit expires or does not reach the sign
+Check the Sonoran Street Signs server console for CAD connection errors. A CAD synchronization error can occur even when the in-game change has saved; check the sign before retrying.
 
-CAD actions are time-limited. Confirm the FiveM server can reach the CAD API and
-look at the Street Signs server console for a bounded CAD error. Also confirm
-the sign was not edited elsewhere first; revision conflicts prevent one editor
-from overwriting newer work.
+## Power Grid or Discord is not responding
 
-### A linked sign does not turn off with Power Grid
+For Power Grid, confirm the integration is enabled, the resource starts first, and the sign was linked near its base.
 
-Confirm `Config.Power.enabled = true`, start `sonoran-powergrid` before Street
-Signs, and link again while standing within `Config.Power.linkDistance` of the
-persisted sign.
+For Discord, confirm webhooks are enabled and the URL is entered in the correct notification channel. Check the server console for delivery errors.
 
-### How do I allow more staff to use Street Signs?
+## Changes disappeared after a restart or update
 
-That depends on your chosen permission mode:
+Placements and messages are saved in `sonoran-streetsigns/data/signs.json`. Keep that file when updating manually and restore your backup if it was replaced. Sonoran Street Signs does not require MySQL.
 
-* ACE: add the correct ACE objects to the desired group
-* Standalone: add player identifiers to `Config.StandaloneAllowed`
-* QBCore or ESX: add the correct jobs and grades in the config
+Default placements are installed once; later package updates do not move existing saved signs or recreate deleted defaults. If the console reports invalid saved data, keep a backup of the affected file and contact support before replacing it.
 
-### Can I use Street Signs without Sonoran CAD?
+## Automatic updates are not working
 
-Yes. If you do not need CAD features, disable them in:
+Confirm automatic updates are enabled, the helper folder is installed, and the update permission lines from [Updating](getting-started.md#updating) are present. A pending restart waits until the server is empty.
 
-```lua
-Config.CAD.enabled = false
-```
+## Still need help?
 
-### Can I log sign changes to Discord?
-
-Yes. Configure `Config.Webhooks` and provide the webhook URL you want to use.
-
-## Troubleshooting
-
-### The resource starts but my config is not being used
-
-Make sure you renamed:
-
-```text
-config.CHANGEME.lua -> config.lua
-```
-
-Then restart the resource.
-
-### I cannot create signs
-
-Check the following:
-
-* `Config.PermissionMode`
-* Your ACE permissions, identifiers, or framework job setup
-* Whether you are using the correct command
-
-Test command:
-
-```text
-/signcreate test_sign Test Sign
-```
-
-### I cannot open the full controller
-
-`/signcontroller` is intended for admin-level access. Confirm that your account has the appropriate admin permission in the mode you selected.
-
-### Signs do not appear for players
-
-Check:
-
-* The resource is started correctly
-* The sign is enabled
-* Players are close enough to the sign for it to render
-* The sign pack used by that sign is enabled
-
-### Sign text was blocked unexpectedly
-
-Street Signs uses banned-word substring matching. Review:
-
-```lua
-Config.BannedWords
-```
-
-Short or broad entries may block more content than expected.
-
-### My webhook messages are not posting
-
-Check:
-
-* `Config.Webhooks.enabled = true`
-* The correct webhook URL is set
-* The correct subsection URL is set for the webhook you want to use
-* The server can reach Discord
-
-### Auto update is not working
-
-Check:
-
-* `Config.Updater.EnableAutoUpdate = true`
-* The `sonoran-streetsigns_helper` resource is installed
-* These ACE permissions are present:
-
-```cfg
-add_ace resource.sonoran-streetsigns command allow
-add_ace resource.sonoran-streetsigns_helper command allow
-```
-
-### I changed config values and nothing happened
-
-After editing `config.lua`, restart the resource or restart the server so the updated settings are loaded.
-
-## Still Need Help?
-
-If the issue continues after reviewing your config, permissions, and startup order, collect:
-
-* Your current `Config.PermissionMode`
-* The affected command or workflow
-* Any server console errors
-* Whether the problem affects all signs or only some signs
-
-That will make support and troubleshooting much faster.
+Contact [Sonoran Software support](https://support.sonoransoftware.com/) with your Sonoran Street Signs version, the affected action, and relevant server or client errors. Remove webhook URLs, API keys, and private player information before sharing logs.

@@ -10,6 +10,196 @@ description: View the latest changes to Sonoran CAD!
 
 ## Changelog
 
+### 3.44.15 10/06/2026
+
+{% tabs %}
+{% tab title="New" %}
+Account: Discord Linking Banner
+
+* Added a configurable Discord account linking banner for communities using Discord role mappings.
+{% endtab %}
+
+{% tab title="Changed" %}
+Account: Roblox Link Banner
+
+* Updated the Roblox account linking banner with a compact layout, clearer text, and a prominent Link button.
+{% endtab %}
+
+{% tab title="Fixed" %}
+Customization: Community Info Saving
+
+* Fixed community banner and information changes failing to persist when closing the editor before an upload or save finishes.
+
+Customization: Banner Image Picker
+
+* Fixed the community banner image appearing blank and preventing image selection.
+
+Live Map: ERLC 2D Responsiveness
+
+* Fixed desktop lag, cleaned up disabled blips, and restored 2D map menu actions.
+{% endtab %}
+{% endtabs %}
+
+### FiveM - v4.0.120
+
+{% tabs %}
+{% tab title="New" %}
+FiveM: Interactive CAD Laptops
+
+* Click, scroll, and type in CAD from vehicle and station laptops while keeping your current CAD session. [View the CAD Display guide](../../integration-plugins/in-game-integration/available-plugins/cad-display.md).
+* The bundled tablet updates with Sonoran CAD through the normal updater. With automatic updates enabled, the release installs automatically; run `sonorancad update` in the server console to check for it manually.
+
+FiveM: CAD Screen Alignment
+
+* Added `/caddisplay calibrate` to align CAD with custom laptop props and built-in vehicle screens.
+* Custom screens need an alignment profile to use the interactive view. Follow the [screen alignment steps](../../integration-plugins/in-game-integration/available-plugins/cad-display.md#screen-alignment-for-server-owners), copy the generated settings into `caddisplay_config.lua`, and restart `sonorancad`. The standard laptop includes a default profile, and existing saved display placements can be kept.
+
+FiveM: ERS Troubleshooting
+
+* Added the server console command `sonorancad ers` to show connection status, callout-list status, and the latest failure. This information is also included automatically when sending support logs. [View the ERS guide](../../integration-plugins/in-game-integration/available-plugins/ers.md#troubleshooting).
+{% endtab %}
+
+{% tab title="Changed" %}
+FiveM: CAD Display Placement
+
+* Replaced keyboard placement controls with mouse movement and rotation handles, snapping, and camera controls, including cabin and orbit views for vehicles.
+* Stop the vehicle before editing. Choose **Apply to this vehicle** or, for administrators, **Save for this vehicle model**. Running `/caddisplay` on foot now opens station display management directly.
+
+FiveM: Tablet Account Linking
+
+* Removed the red registration bar and **Retry** button. If your account is not recognized, use `/link`, then `/tablet checklink`. [View the Tablet guide](../../integration-plugins/in-game-integration/available-plugins/tablet.md#auto-user-link).
+
+FiveM: ERS Compatibility
+
+* **Required update:** Communities running Night ERS below `1.8.16` must update Night ERS to `1.8.16` or newer and restart `night_ers`. The existing minimum version is now enforced, so older versions prevent the integration from starting.
+
+FiveM: ERS Postals
+
+* ERS calls use your configured Sonoran CAD postal data, including custom postal files, before falling back to ERS-provided postals.
+{% endtab %}
+
+{% tab title="Fixed" %}
+FiveM: Civilian Registration Photos
+
+* Fixed portraits showing outdated or unfinished character appearances. Automatic photos wait for the character's appearance to finish loading, and interrupted captures no longer replace the saved photo with an incorrect image.
+* Photos exclude masks, hats, glasses, and ear and neck accessories without removing them from the player. [View the Civilian Registration guide](../../integration-plugins/in-game-integration/available-plugins/civilian-registration.md#portrait-uploads).
+
+FiveM: ERS Calls and Records
+
+* Fixed duplicate calls and records during repeated requests, and ensured additional players accepting the same callout are attached to its CAD call.
+* Improved recovery after ERS restarts and added automatic retries when the callout list fails to load or synchronize.
+
+FiveM: Bodycam Viewer Connections
+
+* Fixed cameras remaining marked as watched after viewers disconnect. Disconnected viewer connections are cleared without interrupting other viewers or an ongoing recording.
+* Bodycam notifications show the force-off command only to players with permission to use it. [View the Body Camera guide](../../integration-plugins/in-game-integration/available-plugins/bodycam.md#turning-off-a-camera-being-viewed).
+
+FiveM: Display and Tablet Reliability
+
+* Fixed interaction prompts disappearing after a display had been used, repeated control notifications, and duplicate handheld tablet props when reopening the tablet.
+{% endtab %}
+{% endtabs %}
+
+### 3.44.14 10/02/2026
+
+{% tabs %}
+{% tab title="New" %}
+ERLC: ALPR Cameras
+
+* Added configurable ALPR cameras with 28 default locations, vehicle description variables, and automatic 911 calls for active BOLO plates.
+{% endtab %}
+
+{% tab title="Changed" %}
+ERLC: Live Map Markers
+
+* Smoothed live unit movement and shortened call labels for clearer map displays.
+{% endtab %}
+{% endtabs %}
+
+### 3.44.11 09/30/2026
+
+{% tabs %}
+{% tab title="New" %}
+Discord Role Sync Panel
+
+* Added Discord role sync directly in the CAD admin panel for easier setup and configuration
+
+Discord Link Banner
+
+* Added a toggle option to display a "Link Discord Account" banner to users who don't have their Discord linked for systems like role mapping, enabled by default.
+
+Roblox Link Banner UI
+
+* Updated the Roblox account link banner for communities with ER:LC integration enabled.
+{% endtab %}
+
+{% tab title="Fixed" %}
+Live Map: Optimizations
+
+* Improved and optimized the 2D live map, causing some users to experience lag with high blip count numbers.
+
+Customization: Logo and Description
+
+* Fixed an issue causing some communities to not have their community logo updated from the customization menu.
+{% endtab %}
+{% endtabs %}
+
+
+
+### 3.44.11 09/30/2026
+
+{% tabs %}
+{% tab title="Changed" %}
+Desktop App: Overlay and Theme Improvements
+
+* Updated overlay themes, icons, tooltips, status menus, view switching, and dragging, ensured overlays close with CAD, and standardized theme card sizes.
+{% endtab %}
+
+{% tab title="Fixed" %}
+Emergency Calls: Duplicate Call Prevention
+
+* Fixed duplicate 911 calls and repeated event handling after reconnecting or restoring self-dispatch.
+
+Live Map: 911 Call Removal
+
+* Fixed deleting 911 calls from the 2D and 3D live maps for ERLC and FiveM.
+{% endtab %}
+{% endtabs %}
+
+### 3.44.10 09/30/2026
+
+{% tabs %}
+{% tab title="Fixed" %}
+Mobile Layout: Improve Taskbar and Record Spacing
+
+* Fixed mobile taskbar and call-viewer spacing, report width, and touch map controls, and removed the customization new-feature badge.
+{% endtab %}
+{% endtabs %}
+
+### 3.44.9 09/30/2026
+
+{% tabs %}
+{% tab title="New" %}
+ERLC and Discord: Call Location Tools
+
+* Added map pin selection, official ERLC streets, and Discord event channel settings with call location images.
+{% endtab %}
+{% endtabs %}
+
+### 3.44.8 09/29/2026
+
+{% tabs %}
+{% tab title="New" %}
+Live Map: ERLC Map and Postal Search
+
+* Added the new ERLC 3D map, seasonal 2D maps with label controls, indexed postal search, and a more compact legend.
+
+Live Map: ERLC Service Models
+
+* Added hosted police, fire, EMS, and DOT vehicle and character models with team-based selection and movement-based headings.
+{% endtab %}
+{% endtabs %}
+
 ### 3.44.3 09/17/2026
 
 {% tabs %}
@@ -18,8 +208,8 @@ Bodycam: Sound and Source Controls
 
 * Fixed the stop sound to respect mute and volume settings and kept source controls available when another source category has options.
 {% endtab %}
-
 {% endtabs %}
+
 ### 3.44.1 09/16/2026
 
 Guides: [Record Automations](../../tutorials/customization/record-automations.md), [Custom Records](../../tutorials/customization/creating-custom-record-and-report-types.md), and [Account Permissions](../../tutorials/getting-started/permissions.md).
@@ -78,8 +268,8 @@ Navigation: Clickable Community Name
 
 * Fixed the community name in the top-left header so text branding supports the same back navigation as image branding.
 {% endtab %}
-
 {% endtabs %}
+
 ### 3.44.0 09/15/2026
 
 {% tabs %}
@@ -88,8 +278,8 @@ Community Workflows: Records and Permissions
 
 * Added per-template permissions, a visual record editor, record automations, and in-app release highlights.
 {% endtab %}
-
 {% endtabs %}
+
 ### 3.43.32 09/14/2026
 
 {% tabs %}
@@ -104,8 +294,8 @@ Desktop Downloads: Latest Releases
 
 * Updated desktop download links to the latest available Windows, macOS, and Linux releases.
 {% endtab %}
-
 {% endtabs %}
+
 ### 3.43.30 09/10/2026
 
 {% tabs %}

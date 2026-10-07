@@ -8,6 +8,18 @@ description: >-
 
 <details>
 
+<summary>FiveM radio frames (local skins to Radio panel)</summary>
+
+If auto-updates are enabled, no manual download is needed. On its first start, the updated FiveM resource imports your existing `skins` artwork and layouts into **Customize > Overlay** in the Radio panel. No manual upload or layout changes are needed. It archives `skins` as `skins_old` only after confirming the import; keep that folder until you have checked your frames in game. If migration fails, local skins remain available and the resource retries. Check the server console and [contact support](https://support.sonoransoftware.com/) if the warning persists.
+
+**Permissions:** Existing folder names in `Config.frames.departments[*].allowedFrames` keep working, so no changes are required during the update. For new permissions, copy each frame's `frame:<ID>` from the [FiveM Radio Frames guide](../../tutorials/usage/in-game-radio/customizing-radio-frames.md#restrict-frame-access).
+
+Free communities can continue using imported frames, but editing them or uploading new artwork in the panel requires Pro. Imported HUD and scanner layouts still work in game; contact support if they need editing.
+
+</details>
+
+<details>
+
 <summary>2.27.22 (Configurable PTT Animation)</summary>
 
 Version 2.27.22 adds a new configuration option to customize the push-to-talk animation.

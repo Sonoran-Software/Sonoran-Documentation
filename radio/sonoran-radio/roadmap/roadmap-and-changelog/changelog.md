@@ -4,6 +4,26 @@ description: View the changelog for the Sonoran Radio application and in-game re
 
 # 📋 Changelog
 
+### 2.28.5 09/24/2026
+
+{% tabs %}
+{% tab title="Fixed" %}
+Dispatch AI: Free Community Voice Requests
+
+* Fixed voice requests failing when transmission recordings are enabled on a free community.
+{% endtab %}
+
+{% endtabs %}
+### 2.28.4 09/23/2026
+
+{% tabs %}
+{% tab title="Changed" %}
+FiveM Radio Frames: Portal Customization
+
+* Existing local skins migrate automatically, and frame layouts and vehicle class rules are now managed in Customize > Overlay.
+{% endtab %}
+
+{% endtabs %}
 ### 2.28.2 09/21/2026
 
 {% tabs %}

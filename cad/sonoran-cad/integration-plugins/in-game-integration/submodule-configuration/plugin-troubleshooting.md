@@ -11,6 +11,8 @@ Sonoran CAD's core includes powerful built-in commands. **These commands are ent
 **Ex:** A [support member](https://support.sonoransoftware.com) may ask you to send detailed logging information to them. They will give you the specific ID number to enter. (ex: 123)\
 Entering `sonorancad support 123` in your server console will send your plugin configuration directly to our support application.
 
+For ERS issues, run `sonorancad ers` in the **server console** first. It shows the ERS connection, callout-list status, and the most recent failure. Use the [ERS troubleshooting guide](../available-plugins/ers.md#troubleshooting) to check the reported problem. Support uploads include these ERS details automatically.
+
 | Command                       | Description                                                                                                                                                                                                                                                                                        |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | sonorancad debugmode          | Enables detailed debug logging                                                                                                                                                                                                                                                                     |

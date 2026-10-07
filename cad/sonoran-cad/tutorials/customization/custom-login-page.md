@@ -1,14 +1,24 @@
 ---
-description: >-
-  Looking to use your own domain name with Sonoran CAD? We've made it easy for
-  you!
+description: Share a free CAD vanity URL or connect your own custom domain.
 ---
 
-# Custom Domain & Login Page
+# Custom Domain & Vanity URLs
 
-The custom login page allows your community members to register, sign-in, and access your CAD all on your own domain! In addition, user signups and password recovery emails have your [custom branding](custom-emails.md). Logging in also takes you directly to the community, instead of having to select the community at the menu.
+Share your CAD with a free vanity URL based on your community ID, or connect a domain you own. Either link opens your community's login page. When members log in through the link, Sonoran CAD automatically joins them to your community and takes them directly there.
 
-![Sonoran CAD Custom Login Page Example](<../../.gitbook/assets/image (445).png>)
+![Example community login page at mwrpdev.sonorancad.com](../../.gitbook/assets/cad-mwrpdev-vanity-login.png)
+
+## Free Vanity URL
+
+Your free vanity URL uses your community ID: `https://your-community-id.sonorancad.com`. For example, the ID `mwrpdev` gives you `https://mwrpdev.sonorancad.com`.
+
+In Sonoran CAD, open **Administration > Customization > Custom Domain** to copy your community URL. You can also find it beside your community ID in the API key section. Vanity URLs are free and require no DNS changes. Share the link wherever you [invite users](../getting-started/inviting-users-to-your-cad.md); people who sign in or register through it are joined to your community automatically.
+
+<figure><img src="../../.gitbook/assets/cad-custom-domain-panel.png" alt="Custom Domain settings under Administration and Customization in Sonoran CAD"><figcaption>Copy your free community URL from Custom Domain.</figcaption></figure>
+
+## Use Your Own Domain
+
+A custom domain displays your CAD login page at a domain or subdomain you own. It also supports [custom branding](custom-emails.md) for signups and password recovery emails.
 
 ## DNS Record Method (Recommended)
 
@@ -18,9 +28,7 @@ The custom login page allows your community members to register, sign-in, and ac
 
 ### 1. Enter your Desired Domain
 
-Your Sonoran CAD login page can be configured to display on your root custom domain or on a subdomain, such as **example.com** or **cad.example.com**.
-
-<figure><img src="../../.gitbook/assets/image (495).png" alt="" width="375"><figcaption></figcaption></figure>
+In **Custom Domain**, enter a domain or subdomain you own, such as **example.com** or **cad.example.com**.
 
 ### 2. Add DNS Records
 
@@ -47,8 +55,6 @@ The example below shows the `TXT` record verifying the community ID, and two CNA
 ### 3. View your Custom Login Page
 
 Users can now visit this custom domain to view the CAD with a custom login page, including receiving your [branded emails](custom-emails.md) for signups and password recovery messages.
-
-<figure><img src="../../.gitbook/assets/image (498).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## iFrame Method
 

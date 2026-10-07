@@ -1,0 +1,70 @@
+{
+  "map": {
+    "title": "3D LIVE MAP",
+    "accent": "3D",
+    "subtitle": "Custom 3D map of the entire city with 3D vehicle models.",
+    "source": "sources/map-scene.png",
+    "crop": null
+  },
+  "bodycam": {
+    "title": "LIVE BODYCAM",
+    "accent": "BODYCAM",
+    "subtitle": "Live bodycam streams for dispatchers and units.",
+    "source": "../../cad/sonoran-cad/.gitbook/assets/erlc-bodycam-map.png",
+    "crop": [0, 0, 1580, 686]
+  },
+  "notifications": {
+    "title": "3D LOCATION WEBHOOKS",
+    "discord_logo": true,
+    "accent": "3D",
+    "subtitle": "Discord call webhooks with an in-game image of the location.",
+    "source": "sources/notification-content.png",
+    "crop": null,
+    "content_box": [88, 248, 860, 648],
+    "examples": [
+      {
+        "source": "../../cad/sonoran-cad/.gitbook/assets/image (638).png",
+        "label": "Dispatch update",
+        "box": [978, 248, 420, 648]
+      },
+      {
+        "source": "../../cad/sonoran-cad/.gitbook/assets/image (639).png",
+        "label": "Emergency call",
+        "box": [1416, 248, 420, 648]
+      }
+    ]
+  },
+  "overlay": {
+    "title": "IN-GAME OVERLAY",
+    "title_align": "center",
+    "accent": "OVERLAY",
+    "subtitle": "Manage calls, notes, and unit status in your chosen CAD theme.",
+    "source": "sources/overlay-user-gameplay.png",
+    "crop": [80, 2, 1658, 670],
+    "examples": [
+      { "source": "sources/overlay-dark.png", "label": "Sonoran", "box": [1336, 230, 470, 212], "label_offset": 18, "label_size": 22, "label_background": true },
+      { "source": "sources/overlay-retro.png", "label": "Spillboy", "box": [1336, 478, 470, 212], "label_offset": 18, "label_size": 22, "label_background": true },
+      { "source": "sources/overlay-metro.png", "label": "CentralCircle", "box": [1336, 726, 470, 212], "label_offset": 18, "label_size": 22, "label_background": true }
+    ]
+  },
+  "emergency": {
+    "title": "EMERGENCY CALLS",
+    "accent": "EMERGENCY",
+    "subtitle": "In-game 911 calls and events appear in CAD with location and details.",
+    "source": "sources/emergency-firetruck-user-gameplay.png",
+    "crop": [450, 40, 1360, 933],
+    "content_box": [422, 240, 628, 674],
+    "examples": [
+      { "source": "sources/emergency-cad-user-map.png", "label": "911 location in CAD", "box": [1074, 286, 752, 570], "label_size": 27 },
+      { "source": "sources/emergency-phone-cutout.png", "label": "", "box": [94, 234, 316, 680] }
+    ]
+  },
+  "pin": {
+    "title": "CALL EDITOR PIN DROP",
+    "accent": "PIN DROP",
+    "subtitle": "Select a map location to fill the call's street and postal code.",
+    "source": "sources/pin-map.jpg",
+    "crop": [200, 780, 1420, 1360],
+    "pin": [630, 1137]
+  }
+}

@@ -15,9 +15,11 @@ This example connects an existing tow or impound resource to CAD. Requests creat
 1. Install or update the panel definition when the resource is configured.
 2. On resource start, publish every pending and assigned request plus the current summary.
 3. Publish again when an in-game request is created, assigned, cancelled, or completed.
-4. Poll for `tow.accept` and `tow.complete` actions. Apply them through the tow resource, acknowledge them, then publish the updated request list.
+4. Receive pushes for `tow.accept` and `tow.complete` actions. Apply them through the tow resource, acknowledge them, then publish the updated request list.
 
 ## Game-Side Outline
+
+Push is the primary delivery path. The scheduling and `processPanelActionOnce` functions below are pseudocode supplied by your integration; they are not SDK helpers. `processPanelActionOnce` records the completed result, acknowledges it, retries failed acknowledgements without repeating the effect, and returns true only after acknowledgement succeeds. Use one serial queue for both paths and keep the backup polling cursor separate from pushed actions. See [Action Push Events](../#action-push-events) for routing, deduplication, acknowledgement, and recovery rules.
 
 The following is server-side pseudocode. Adapt the events and function names to your tow resource and preferred [API library](../#sdk-helpers).
 
@@ -32,10 +34,10 @@ onTowRequestChanged(function()
   publishPanelState(readCurrentTowRequests())
 end)
 
-everySecond(function()
-  local response = pollPanelActions({ after = cursor })
-
-  for _, event in ipairs(response.events) do
+-- Shared serialized processing; the helper deduplicates in-flight/completed IDs,
+-- retries acknowledgements without repeating effects, and rejects expired actions.
+local function processAction(event)
+  return processPanelActionOnce(event, function()
     local success
 
     if event.actionId == "tow.accept" then
@@ -44,11 +46,24 @@ everySecond(function()
       success = towResource.completeRequest(event.values.requestId)
     end
 
-    acknowledgePanelAction(event.id, success)
-    publishPanelState(readCurrentTowRequests())
-  end
+    if success then publishPanelState(readCurrentTowRequests()) end
+    return success
+  end)
+end
 
-  cursor = response.nextCursor -- Persist after every returned action is acknowledged.
+AddEventHandler("SonoranCAD::pushevents:OtherEvent", function(eventType, event)
+  if eventType == "EVENT_PANEL_EXAMPLE.TOW-REQUESTS" then
+    processAction(event)
+  end
+end)
+
+-- Backup only. Share three requests/minute across all panels and servers.
+every20Seconds(function()
+  local response = pollPanelActions({ after = cursor })
+  for _, event in ipairs(response.events) do
+    if not processAction(event) then return end
+  end
+  cursor = response.nextCursor -- Only after every polled action is acknowledged.
 end)
 ```
 

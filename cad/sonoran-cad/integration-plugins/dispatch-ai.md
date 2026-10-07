@@ -15,6 +15,6 @@ When paired with [Sonoran Radio](https://docs.sonoransoftware.com/radio), units 
 
 **Learn more about Dispatch AI:**
 
-{% content-ref url="https://app.gitbook.com/s/fCk5zoeun5gx3ujYW6eg/tutorials/integrations/dispatch-ai" %}
-[Dispatch AI](https://app.gitbook.com/s/fCk5zoeun5gx3ujYW6eg/tutorials/integrations/dispatch-ai)
+{% content-ref url="https://app.gitbook.com/s/fCk5zoeun5gx3ujYW6eg/tutorials/usage/dispatch-ai" %}
+[Dispatch AI](https://app.gitbook.com/s/fCk5zoeun5gx3ujYW6eg/tutorials/usage/dispatch-ai)
 {% endcontent-ref %}

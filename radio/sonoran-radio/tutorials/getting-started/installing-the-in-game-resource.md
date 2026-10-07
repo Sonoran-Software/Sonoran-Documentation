@@ -92,13 +92,11 @@ Do not start `sonoranradio_updatehelper` manually or use `ensure [sonoranradio]`
 
 ## Configuration Values
 
-<a id="configuration-options"></a>
-
 <details>
 
 <summary>Configuration Options</summary>
 
-<table><thead><tr><th>Parameter</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>comId</code></td><td>EMPTY</td><td>The Sonoran Radio Community ID</td></tr><tr><td><code>apiKey</code></td><td>EMPTY</td><td>The Sonoran Radio Community API Key</td></tr><tr><td><code>debug</code></td><td><code>false</code></td><td>Display tower ranges on the map and other console prints.<br>This can be toggled live with the <a href="../usage/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands.md#debug-mode">debug mode command</a>.</td></tr><tr><td><code>allowUpdateWithPlayers</code></td><td><code>true</code></td><td>Allow the auto-updater to run while players are still in the server.</td></tr><tr><td><code>enableCanary</code></td><td><code>false</code></td><td>Allow the auto-updater to pull development branches for early testing.</td></tr><tr><td><code>allowAutoUpdate</code></td><td><code>true</code></td><td>Allow the auto-updater to run.</td></tr><tr><td><code>chatter</code></td><td><code>true</code></td><td>Pro only. Allow nearby radio chatter and scanners.</td></tr><tr><td><code>talkSync</code></td><td><code>true</code></td><td>Talk in-game whenever you talk on the radio<br><br>If using <a href="../integrations/big-daddy-radio-animations.md">BD Animations</a>, you will also need to disable their <code>TalkSync</code> feature in the <code>settings.ini</code> file.</td></tr><tr><td><code>emergencyCallCommand</code></td><td><code>911</code></td><td>Command suffix to start or stop an emergency call (i.e. '911' == /radio 911)</td></tr><tr><td><code>luxartResourceName</code></td><td><code>lvc</code></td><td>Resource name for Luxart Vehicle Control, <a href="../usage/in-game-radio/using-the-in-game-radio/#automatic-volume-increase-w-sirens">used for the siren volume integration</a>.</td></tr><tr><td><code>keybinds</code></td><td><pre class="language-lua"><code class="lang-lua">Config.keybinds = {
+<table><thead><tr><th>Parameter</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code>comId</code></td><td>EMPTY</td><td>The Sonoran Radio Community ID</td></tr><tr><td><code>apiKey</code></td><td>EMPTY</td><td>The Sonoran Radio Community API Key</td></tr><tr><td><code>debug</code></td><td><code>false</code></td><td>Display tower ranges on the map and other console prints.<br>This can be toggled live with the <a href="../usage/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands.md#debug-mode">debug mode command</a>.</td></tr><tr><td><code>allowUpdateWithPlayers</code></td><td><code>false</code></td><td>Allow the auto-updater to restart the resource while players are still in the server.</td></tr><tr><td><code>enableCanary</code></td><td><code>false</code></td><td>Allow the auto-updater to pull development branches for early testing.</td></tr><tr><td><code>allowAutoUpdate</code></td><td><code>true</code></td><td>Allow the auto-updater to run.</td></tr><tr><td><code>chatter</code></td><td><code>true</code></td><td>Pro only. Allow nearby radio chatter and scanners.</td></tr><tr><td><code>talkSync</code></td><td><code>true</code></td><td>Talk in-game whenever you talk on the radio<br><br>If using <a href="../integrations/big-daddy-radio-animations.md">BD Animations</a>, you will also need to disable their <code>TalkSync</code> feature in the <code>settings.ini</code> file.</td></tr><tr><td><code>emergencyCallCommand</code></td><td><code>911</code></td><td>Command suffix to start or stop an emergency call (i.e. '911' == /radio 911)</td></tr><tr><td><code>luxartResourceName</code></td><td><code>lvc</code></td><td>Resource name for Luxart Vehicle Control, <a href="../usage/in-game-radio/using-the-in-game-radio/#automatic-volume-increase-w-sirens">used for the siren volume integration</a>.</td></tr><tr><td><code>keybinds</code></td><td><pre class="language-lua"><code class="lang-lua">Config.keybinds = {
 	['toggle'] = '',
 	['ptt'] = 'BACKSLASH',
 ['power'] = '',['panic'] = '',['nextChannel'] = '',['prevChannel'] = '',['talkAnim'] = '',['nextGroup'] = '',['prevGroup'] = '',['volUp'] = '',['volDown'] = '',['toggleAutoCallouts'] = '',['toggleGeoSwitch'] = '',['toggleAi'] = '',
@@ -150,7 +148,7 @@ jammers = {
 -- See file for full example
 }
 }
-</code></pre></td><td>Configuration for in-game signal jammers.</td></tr></tbody></table>
+</code></pre></td><td>Configuration for in-game signal jammers.</td></tr><tr><td><code>forceGuestLogin</code></td><td><code>Config.forceGuestLogin = false -- Automatically log authorized radio users in as guests using ACE permissions</code></td><td>Automatically log authorized radio users in as guests using ACE permissions</td></tr></tbody></table>
 
 </details>
 
@@ -168,7 +166,7 @@ ACE permissions allow communities to restrict access to actions like using the r
 
 ## Updates <a href="#updates" id="updates"></a>
 
-The Sonoran Radio in-game resource will automatically update with the latest features, fixes, and changes upon server restart!
+With `allowAutoUpdate = true`, the resource checks for updates when it starts and roughly every hour afterward. It downloads an available update and restarts the resource when the server is empty, unless `allowUpdateWithPlayers` is enabled.
 
 ***
 

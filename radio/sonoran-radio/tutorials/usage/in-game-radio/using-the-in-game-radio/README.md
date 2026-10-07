@@ -61,6 +61,8 @@ If your community has ACE permissions configured, no account creation or link is
 
 Select **Login as guest** to bypass the account link and start using your radio. This guest option will only display if `acePermsForGuests` is set to `true`.
 
+If `Config.forceGuestLogin = true` it will bypass this screen and automatically login radio users in as guest using ACE permissions.
+
 #### Permission Configuration
 
 Learn how to [configure ACE permissions for the radio](../configuring-ace-permissions.md#ace-permission-sync).

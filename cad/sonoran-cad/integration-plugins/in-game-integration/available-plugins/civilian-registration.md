@@ -30,7 +30,7 @@ Open `sonorancad/configuration/civreg_config.lua`. Keep `enabled = true` and `te
 
 If both **Database Sync** and its **Character** mapping are enabled in CAD, CivReg uses database mode automatically.
 
-Run the [database sync AI configuration tool](../../database-sync-and-merge/#automatic-ai-setup) _**after**_ starting the civilian registration submodule. This will automatically map any `image` field in your character record to the newly generated `sonoran_mugshot` database column.
+Run the [database sync AI configuration tool](../../database-sync-and-merge/#3.-automatic-ai-setup) _**after**_ starting the civilian registration submodule. This will automatically map any `image` field in your character record to the newly generated `sonoran_mugshot` database column.
 
 <details>
 
@@ -46,7 +46,7 @@ The standard database targets are:
 | ESX       | `users`         | `identifier`        | `sonoran_mugshot` |
 
 {% hint style="warning" %}
-In database mode, CivReg does not create a second character through the CAD API. If the database migration cannot run, portrait updates stop and the server reports `ERR-CR-106`.
+In database mode, CivReg does not create a second character through the CAD API. If CivReg cannot prepare portrait storage in your database, portrait updates stop and the server reports `ERR-CR-106`.
 {% endhint %}
 
 If your framework uses a customized table or character ID column, update `databaseSync.qbCore` or `databaseSync.esx` in `civreg_config.lua`. Keep the portrait column named `sonoran_mugshot`, then use that column in the CAD field mapping.
@@ -57,7 +57,7 @@ If your framework uses a customized table or character ID column, update `databa
 
 In CAD, open **Admin > Customization > Custom Records** and review the civilian character template. See [Creating Custom Record and Report Types](../../../tutorials/customization/creating-custom-record-and-report-types.md) for editing fields and sections. Add an editable **Image** field if players should attach a selfie, and make that field required if a portrait is mandatory.
 
-In your database sync mapping configuration, the image field must be mapped to the `sonoran_mugshot` column that the CivReg plugin will automatically add to your players table. The [database sync AI configuration tool](../../database-sync-and-merge/#automatic-ai-setup) will set this up for you automatically.
+In your database sync mapping configuration, the image field must be mapped to the `sonoran_mugshot` column that the CivReg plugin will automatically add to your players table. The [database sync AI configuration tool](../../database-sync-and-merge/#3.-automatic-ai-setup) will set this up for you automatically.
 
 In standalone mode, templates are cached for **60 seconds** by default. After saving a template change, allow the cache to expire, then close and reopen `/civreg` to load the updated form. An already-open form does not refresh automatically.
 
@@ -83,15 +83,19 @@ For identity autofill, follow [Framework Autofill](civilian-registration.md#fram
 
 <summary>Take a Character Selfie</summary>
 
-In standalone mode, click any **image** field to take a selfie.&#x20;
+In standalone mode, finish loading your character and any appearance changes, then click an **image** field to take a fresh selfie. Avoid changing characters or clothing while the photo is being taken. If the capture fails, wait until your appearance has finished loading and click the image field again.
+
+The portrait shows your character without masks, hats, glasses, ear accessories, or neck accessories. Those items stay on your in-game character; you do not need to remove or re-equip them for the photo.
 
 <figure><img src="../../../.gitbook/assets/civreg-selfie-control.jpg" alt="Character Photo section with the Click to take a selfie control above Cancel and Register Character"><figcaption><p>Scroll to an image field and select Click to take a selfie to capture your current in-game character.</p></figcaption></figure>
 
 </details>
 
+### Framework Autofill
+
 <details>
 
-<summary>Framework Autofill</summary>
+<summary>Configure Framework Autofill</summary>
 
 Autofill is optional. Players can complete the registration form without a framework. To prefill supported identity values:
 
@@ -138,11 +142,19 @@ Only values supplied by the framework and mapped to an existing template field a
 
 If your community has database sync enabled for civilian records, the CivReg submodule will automatically switch into database sync mode on startup.
 
-To update a character's portrait photo in DB sync mode, simply load the character in QBCore/ESX/etc.
+1. Select the character you want to play in **QBCore or ESX** and finish spawning into the server.
+2. Allow the character's face, clothing, and accessories to finish loading. CivReg waits for **10 seconds with no appearance changes** before taking a fresh portrait. Clothing changes during this wait restart it, so the photo may take longer than 10 seconds after joining.
+3. The portrait is saved to that framework character's database record for CAD to display through your existing DB Sync image mapping.
 
-CivReg also automatically updates character mugshots when a character is selected in the civilian page. (`EVENT_CHAR_SELECTED`)
+The portrait excludes masks, hats, glasses, ear accessories, and neck accessories while leaving those items on your in-game character. If you switch characters or change your appearance during capture, the new photo is discarded and the previously saved portrait is kept.
+
+You do not need to run `/civreg` in this mode; it displays a reminder that registration and portraits are automatic. Selecting a character on the **CAD civilian page** does not take a new portrait. To retry an automatic capture, reselect the character in your server's character menu and let it fully load again.
 
 </details>
+
+### Portrait Uploads
+
+Portraits are saved directly with the character data. You do not need to set up a public image address or host the photos separately. The default maximum photo size is **1 MiB**; if a photo is rejected, retake it and review the displayed error with your server administrator.
 
 ## Configuration Reference
 
@@ -178,18 +190,18 @@ Edit `sonorancad/configuration/civreg_config.lua` and restart the resource after
 | Problem                                                  | What to check                                                                                                                                                                                                             |
 | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | The command is unavailable                               | Confirm `civreg` is installed, the active configuration is named `civreg_config.lua`, `enabled` is `true`, and you are using the configured `commandName`. Restart the resource after configuration changes.              |
-| `/civreg` does not open the form                         | When CAD character database sync is enabled, this is expected. The command captures the active framework character and shows a success notification after updating its portrait.                                          |
+| `/civreg` does not open the form                         | When CAD character database sync is enabled, this is expected. The command explains that registration and portraits are automatic. Select your character in QBCore or ESX to start an automatic portrait capture.          |
 | Database mode reports `ERR-CR-106`                       | Start QBCore or ESX and `oxmysql` or `mysql-async` before `sonorancad`. Confirm the configured character table and ID column exist, and allow the database user to alter and update that table.                           |
-| The portrait column exists but CAD shows no image        | In the CAD character DB Sync mapping, map `sonoran_mugshot` to an **Image** field. Confirm the character ID mapping matches `citizenid` or `identifier`, then select the character again.                                 |
-| Selecting a CAD character does not refresh its portrait  | Confirm the player is online and linked to that CAD account, the selected record is a DB Sync character, and CAD push events can reach the server.                                                                        |
+| The portrait column exists but CAD shows no image        | In the CAD character DB Sync mapping, map `sonoran_mugshot` to an **Image** field. Confirm the character ID mapping matches `citizenid` or `identifier`, then reselect the character in-game and let it fully load.          |
+| Selecting a CAD character does not refresh its portrait  | This is expected in DB Sync mode. Portrait capture starts when you select and spawn as your QBCore or ESX character in-game. Selecting a record in CAD does not take a photo.                                              |
+| The portrait is delayed or still shows an older appearance | Allow 10 seconds after the character's appearance stops changing. CivReg waits up to one minute for a character to be ready; if it cannot capture a valid new photo, the previous portrait remains. Reselect the character in-game to retry. If this keeps happening, ask your server administrator to check that the clothing or appearance resource finishes loading correctly. |
 | The player is asked to link CAD                          | Complete [Link User In-Game](../link-user-in-game.md) with the intended CAD account, then retry.                                                                                                                          |
 | Repeated commands do nothing                             | Requests have a three-second cooldown. In API mode, a form already open will not reopen; close the current form and wait before retrying.                                                                                 |
 | Template changes are missing                             | Save the template in CAD, wait for `templateCacheSeconds` to pass, then reopen the form.                                                                                                                                  |
 | Autofill is missing or incorrect                         | Check that Framework Support is enabled, the framework character is loaded, and each destination Field Mapping ID exists. Review date formats, sex choices, and height units.                                             |
 | A field or section is missing                            | Review its dependency rules and whether the field is supervisor-only.                                                                                                                                                     |
 | A field cannot be edited                                 | Check read-only settings and whether the field is an automatically managed field such as a random value or ID.                                                                                                            |
-| Selfie capture fails                                     | Retry with the intended character fully loaded. If it persists, check client errors and that the Sonoran CAD UI files are up to date.                                                                                     |
+| Selfie capture fails                                     | Wait for the intended character and appearance to finish loading, then click the image field again without changing clothing or switching characters. If it persists, confirm the Sonoran CAD resource is up to date. For support, ask an administrator to enable Sonoran CAD debug logging, repeat the issue, and collect the player's F8 output and server console output. |
 | A portrait is rejected as invalid or too large           | Retake it and review the displayed error. Check `maxSelfieBytes` for the decoded size limit.                                                                                                                              |
-| A portrait is missing from an older URL-based CAD record | Open its saved URL externally. Check the original public route and that the file still exists in `filestore/civreg`. See [Updating from URL-Based Portraits](civilian-registration.md#updating-from-url-based-portraits). |
 
 </details>

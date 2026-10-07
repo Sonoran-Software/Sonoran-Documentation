@@ -25,7 +25,7 @@ The [postals submodule](postals.md) is optional and also enabled by default. Kee
 The CAD display settings are stored inside of the `/configuration/callcommands_config.lua` file.
 
 {% hint style="info" %}
-Call Commands no longer has a per-submodule notification selector. Caller notifications now use the shared FiveM notification system configured in `/configuration/config.json` with `notificationSystem`.
+Notifications are handled by the Sonoran CAD core. See [Core Configuration](../fivem-installation/#4.-configure-the-resource) for settings and supported values.
 {% endhint %}
 
 ### 3. Ensure Players are Linked

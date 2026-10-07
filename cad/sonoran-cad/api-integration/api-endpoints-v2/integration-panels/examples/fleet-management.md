@@ -15,9 +15,11 @@ This example connects an existing garage or fleet resource to CAD. Police, fire,
 1. Install or update the panel definition when the resource is configured.
 2. On resource start, read the fleet database or garage resource and publish the complete state.
 3. Publish again when a vehicle is spawned, stored, damaged, refueled, repaired, or moved between service states.
-4. Poll for `fleet.repair` actions. Apply them through the fleet resource, acknowledge them, then republish the authoritative vehicle condition.
+4. Receive pushes for `fleet.repair` actions. Apply them through the fleet resource, acknowledge them, then republish the authoritative vehicle condition.
 
 ## Game-Side Outline
+
+Push is the primary delivery path. The scheduling and `processPanelActionOnce` functions below are pseudocode supplied by your integration; they are not SDK helpers. `processPanelActionOnce` records the completed result, acknowledges it, retries failed acknowledgements without repeating the effect, and returns true only after acknowledgement succeeds. Use one serial queue for both paths and keep the backup polling cursor separate from pushed actions. See [Action Push Events](../#action-push-events) for routing, deduplication, acknowledgement, and recovery rules.
 
 The following is server-side pseudocode. Adapt the events and function names to your fleet resource and preferred [API library](../#sdk-helpers).
 
@@ -32,17 +34,30 @@ onFleetVehicleChanged(function()
   publishPanelState(readFleetVehiclesByType())
 end)
 
-everySecond(function()
-  local response = pollPanelActions({ after = cursor })
-
-  for _, event in ipairs(response.events) do
+-- Shared serialized processing; the helper deduplicates in-flight/completed IDs,
+-- retries acknowledgements without repeating effects, and rejects expired actions.
+local function processAction(event)
+  return processPanelActionOnce(event, function()
     local success = fleetResource.repairVehicle(event.values.vehicleId)
 
-    acknowledgePanelAction(event.id, success)
-    publishPanelState(readFleetVehiclesByType())
-  end
+    if success then publishPanelState(readFleetVehiclesByType()) end
+    return success
+  end)
+end
 
-  cursor = response.nextCursor -- Persist after every returned action is acknowledged.
+AddEventHandler("SonoranCAD::pushevents:OtherEvent", function(eventType, event)
+  if eventType == "EVENT_PANEL_EXAMPLE.FLEET-MANAGEMENT" then
+    processAction(event)
+  end
+end)
+
+-- Backup only. Share three requests/minute across all panels and servers.
+every20Seconds(function()
+  local response = pollPanelActions({ after = cursor })
+  for _, event in ipairs(response.events) do
+    if not processAction(event) then return end
+  end
+  cursor = response.nextCursor -- Only after every polled action is acknowledged.
 end)
 ```
 

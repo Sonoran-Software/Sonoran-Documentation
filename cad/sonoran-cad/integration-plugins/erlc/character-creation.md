@@ -8,7 +8,7 @@ description: >-
 
 ## ER:LC Character Creation
 
-<figure><img src="../../.gitbook/assets/erlc_civ_promo.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/erlc_civ_promo_v2.png" alt=""><figcaption></figcaption></figure>
 
 Use customizable in-game commands allowing users to register their character in the CAD, no account or CAD access required!
 
@@ -51,3 +51,9 @@ Once the character has been created in the CAD, users will be notified by an opt
 Once a character has been created, users can [register their vehicle with a single command](vehicle-registrations.md).
 
 [In-game commands not working? Make sure you have connected the webhook.](getting-started.md#id-3.-link-er-lc-event-webhooks-to-sonoran-cad)
+
+## Customize the In-Game Commands
+
+In-Game commands can be customized under **Admin** > **In-Game Integration** > **ER:LC** > **Server** > **Civilian Registration**
+
+<figure><img src="../../.gitbook/assets/image (7).png" alt="" width="375"><figcaption></figcaption></figure>

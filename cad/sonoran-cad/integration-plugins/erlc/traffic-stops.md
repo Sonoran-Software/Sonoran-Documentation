@@ -6,7 +6,7 @@ description: Create automatic traffic stop calls with an in-game command or hotk
 
 ## Traffic Stop Integration
 
-<figure><img src="../../.gitbook/assets/erlc_ts_promo.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/erlc_ts_promo_v2.png" alt=""><figcaption></figcaption></figure>
 
 When the the traffic stop command is used a dispatch call will be created in the CAD.
 
@@ -21,9 +21,13 @@ This call will:
 
 ## Traffic Stop Command Configuration
 
+Configure the traffic stop behavior under **Admin** > **In-Game Integration** > **ER:LC** > **Server** > **Traffic Stops**.
+
+<figure><img src="../../.gitbook/assets/image (11).png" alt="" width="375"><figcaption></figcaption></figure>
+
 ### Command
 
-Customize the command from `;ts` to something custom.
+Customize the command from `;ts` to anything else.
 
 ### Dispatch Description
 
@@ -45,14 +49,16 @@ In order to use hotkeys, download the Windows or OSX desktop application.
 
 ### 2. Configure your Hotkey
 
-In the taskbar search or open **System** > **Settings** > **Hotkeys** > **ER:LC** > and set the **Traffic Stop** hotkey.
+Configure a traffic stop hotkey under **Customization** > **Hotkeys** > **Traffic Stop**
+
+<figure><img src="../../.gitbook/assets/image (10).png" alt="" width="375"><figcaption></figcaption></figure>
 
 #### 3. Utilize the Hotkey
 
 Once in-game, press your desktop hotkey to generate a traffic stop.
 
-* The vehicle must be nearby with a player in it
-* The player must have a [linked Roblox account](getting-started.md#linking-your-roblox-account) and a
+* The vehicle must be nearby with a player in it.
+* You must have a [linked Roblox account](getting-started.md#linking-your-roblox-account).
 
 ## Using the In-Game Commands
 
@@ -61,6 +67,8 @@ The CAD will automatically find the closest vehicle to the unit. The call will a
 Ex: `;ts`
 
 [In-game commands not working? Make sure you have connected the webhook.](getting-started.md#id-3.-link-er-lc-event-webhooks-to-sonoran-cad)
+
+### Customizing the In-Game Command
 
 ## Result
 

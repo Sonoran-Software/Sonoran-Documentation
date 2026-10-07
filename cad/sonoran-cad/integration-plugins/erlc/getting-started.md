@@ -35,11 +35,12 @@ Select **Edit Server Settings** > Navigate To **ER:LC API** > Select **Edit** to
 
 <summary>Linking ER:LC to Sonoran CAD</summary>
 
-In the CAD, navigate to **Admin** > **Advanced** > **In-Game Integration** > **ER:LC**
+1. In the CAD, navigate to **Admin** > **Advanced** > **In-Game Integration**.
+2. At the top right, make sure **Game: ER:LC** is selected.
+3. Select the **ER:LC** tab and **Start Setup**.
+4. Select **Start Setup** and paste your **ER:LC API Key** in.
 
-Paste your **ER:LC API Key** into your configured server.
-
-<figure><img src="../../.gitbook/assets/image (531).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -55,8 +56,11 @@ ER:LC sends Sonoran CAD events for custom commands like traffic stops and vehicl
 2. Select **Edit Server Settings**
 3. Under **ER:LC API** > **Event Log Webhook** > **Edit**
    1. Paste: `https://events.sonoransoftware.com/erlc`
+4. In the in-game chat, enter `;test` to verify.
 
 <div><figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure></div>
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 **Webhook Errors**
 
@@ -78,14 +82,14 @@ Once linked, the Sonoran account can be used for ER:LC integrations across Sonor
 
 <summary>Linking Roblox to Sonoran</summary>
 
-If a user in an ER:LC linked community does not have their Roblox account linked, a red banner will display at the top of the screen. Press the **Link** button to redirect to Roblox and link your account.
+If a user in an ER:LC linked community does not have their Roblox account linked, the **Roblox Account Link Required** banner will display at the top of the screen. Press the red **Link** button to redirect to Roblox and link your account.
 
-<figure><img src="../../.gitbook/assets/image (537).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (537).png" alt="Roblox Account Link Required banner with Refresh and Link buttons"><figcaption></figcaption></figure>
 
 Pressing **Link** will open up a window to login and link with Roblox:
 
 <figure><img src="../../.gitbook/assets/image (538).png" alt=""><figcaption></figcaption></figure>
 
-Once linked, refresh and you're finished!
+Once linked, return to the CAD and press **Refresh**. The banner disappears when your linked account is detected.
 
 </details>

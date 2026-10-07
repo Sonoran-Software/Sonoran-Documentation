@@ -40,12 +40,38 @@ Start with a complete example, then replace its definition, state, and actions w
 
 1. **Define:** Create or replace a reusable panel definition for the community. The definition controls layout, components, bindings, search, sorting, styling, sounds, and available actions.
 2. **Publish:** Send the complete current state whenever the game script or external system changes. Connected CAD clients update live.
-3. **Act:** A CAD user changes a control or presses a button. CAD adds that action and its values to the panel's action queue.
-4. **Process:** Your server-side integration polls the queue, applies the change to its system, acknowledges the result, and publishes the resulting state.
+3. **Act:** A CAD user changes a control or presses a button. CAD queues the action, then immediately pushes it to the configured game server.
+4. **Process:** Your server-side integration receives the push, applies the change, acknowledges the result, and publishes the resulting state. Slow polling recovers missed pushes.
 
 Keep API calls and credentials on the server. A FiveM client script should send changes to its server-side resource, which then communicates with the CAD API.
 
 Use a stable `panelKey` for the integration and an `instanceKey` for each independent dataset, location, or controller. For example, a door integration could use `doors` as the panel key and `mission-row` as the instance key.
+
+## Action Push Events
+
+Use push events as the primary delivery mechanism. CAD sends each queued action over the existing authenticated API WebSocket, with the existing configured HTTP listener as a legacy fallback. The event type is `EVENT_PANEL_` followed by the **uppercase panel key**, not its display name. Punctuation is preserved: `smart-signs` uses `EVENT_PANEL_SMART-SIGNS`; `example.fire-alarms` uses `EVENT_PANEL_EXAMPLE.FIRE-ALARMS`.
+
+The push envelope uses the standard `key`, `type`, and `data` fields. `data` is the same action object returned by [backup polling](poll-actions.md): `id`, `cursor`, `panelKey`, `serverId`, `instanceKey`, `actionId`, `actorUuid`, `actorName`, `values`, `createdAt`, and `expiresAt`. Only the configured server for the action receives the push.
+
+The current SonoranCADFiveM resource already supports these custom events. In your server-side integration, receive the action through its existing event hook:
+
+```lua
+AddEventHandler("SonoranCAD::pushevents:OtherEvent", function(eventType, action)
+  if eventType == "EVENT_PANEL_SMART-SIGNS" then
+    enqueuePanelAction(action) -- Your resource's shared push/poll processing queue.
+  end
+end)
+```
+
+Alternatively, register a custom handler with `TriggerEvent("SonoranCAD::RegisterPushEvent", "EVENT_PANEL_SMART-SIGNS", handler)`. That handler receives the complete envelope; the action is `body.data`. Register again if `sonorancad` restarts. Use one receiving method to avoid processing the same push through both hooks.
+
+Push delivery does not acknowledge or remove an action. After processing, call [Acknowledge Action](acknowledge-action.md) with the action's `id`, then publish the authoritative state after a successful edit. Feed pushes and polled events into the same serial processing queue. Deduplicate by `id`, including actions already in flight; retain completed results until expiry so an acknowledgement can be retried without repeating the game-side effect. Check `expiresAt` before applying an action, and validate `actionId`, `instanceKey`, and values against your resource's rules.
+
+Use [Poll Actions](poll-actions.md) only for recovery, budgeting **three requests per minute per API key across all panels and servers**. For one panel, poll about every 20 seconds. Multiple panels must share that total budget. A startup or reconnect poll also consumes it. Respect `Retry-After` on `429`, and stagger recovery calls rather than starting simultaneous loops.
+
+Keep the polling cursor separate from push delivery. A later pushed action must not advance the polling cursor past an earlier missed action. Advance the recovery cursor only after every action returned by a poll has been processed and acknowledged. Events remain recoverable for their existing 60-second lifetime; polling is not an unlimited offline backlog. With multiple panel queues, schedule within that lifetime where possible; push remains the primary path.
+
+For controls that replace state, such as sign text, track the last successfully applied `cursor` for each instance. If recovery returns an older action after a newer edit was applied, acknowledge it as superseded instead of overwriting the newer state. Use this rule only where your integration's action semantics permit it.
 
 ## SDK Helpers
 
@@ -58,7 +84,7 @@ Sonoran.lua, Sonoran.js, Sonoran.py, and Sonoran.Net expose the same helper name
 | Create or replace a definition | `setIntegrationPanelV2`               |
 | Delete a panel                 | `deleteIntegrationPanelV2`            |
 | Replace live state             | `setIntegrationPanelStateV2`          |
-| Poll CAD actions               | `getIntegrationPanelActionsV2`        |
+| Recover missed CAD actions     | `getIntegrationPanelActionsV2`        |
 | Acknowledge an action          | `acknowledgeIntegrationPanelActionV2` |
 
 ## Capabilities
@@ -92,7 +118,7 @@ Rate limits are fixed one-minute windows per API key. A `429` response includes 
 | List or get definitions                |                 120 |
 | Create, replace, or delete definitions |                  30 |
 | Replace state                          |                 300 |
-| Poll actions                           |                 240 |
+| Backup poll actions                    |                   3 |
 | Acknowledge actions                    |                 240 |
 
 ## Common Errors

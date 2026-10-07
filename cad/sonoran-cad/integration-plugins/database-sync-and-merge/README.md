@@ -45,7 +45,7 @@ Login to your RocketNode game panel and navigate to your FiveM Server.
 
 On the left sidebar select **Databases** > **...** menu > **Details**
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 **3. Copy Connection Credentials**
 
@@ -60,7 +60,7 @@ Enter the following items from the RocketNode database details panel into Sonora
 * **Database**
   * Outside of the database details window the database name can be clicked to be copied and pasted into the Sonoran CAD **Database** field (image 2).
 
-<div><figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure></div>
+<div><figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure></div>
 {% endtab %}
 
 {% tab title="Zap Hosting" %}

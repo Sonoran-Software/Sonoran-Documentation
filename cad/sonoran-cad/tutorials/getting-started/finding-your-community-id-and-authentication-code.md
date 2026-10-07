@@ -8,7 +8,7 @@ description: >-
 
 ## Finding your Community ID
 
-Your community ID allows users to [manually join your community](inviting-users-to-your-cad.md).
+Your community ID lets users [join your community manually](inviting-users-to-your-cad.md). You can also copy your free community URL from **Administration > Customization > Custom Domain** and share it so users join automatically when they log in. See [Custom Domain & Vanity URLs](../customization/custom-login-page.md) for details.
 
 The ID can be found in the account menu dropdown once inside of a community.
 

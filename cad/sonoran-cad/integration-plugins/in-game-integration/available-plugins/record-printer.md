@@ -25,7 +25,7 @@ This submodule is already **enabled by default** when installing the [Sonoran CA
 The CAD display settings are stored inside of the `/configuration/recordPrinter_config.lua` file.
 
 {% hint style="info" %}
-Record Printer user-facing notifications also use the shared FiveM notification system configured in `/configuration/config.json` with `notificationSystem`.
+Notifications are handled by the Sonoran CAD core. See [Core Configuration](../fivem-installation/#4.-configure-the-resource) for settings and supported values.
 {% endhint %}
 
 ### 3. Ensure Players are Linked

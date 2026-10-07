@@ -15,7 +15,7 @@ Bodycam streams in the web and desktop applications are transmitted through **se
 
 Stay connected to in-game units with live bodycam video feeds integrated directly into the CAD.
 
-<figure><img src="../../.gitbook/assets/erlc_cam_promo.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/erlc_cam_promo.png" alt="Sonoran CAD live bodycam on the ERLC 3D map"><figcaption></figcaption></figure>
 
 ## Configuring the Bodycam
 
@@ -25,22 +25,21 @@ While the bodycam system works inside of a web browser, you can also download th
 
 ### 2. Select the Roblox Game
 
-Once inside of the police, fire, EMS, or dispatch panel users can open the bodycam configuration via
+Once inside of the police, fire, EMS, or dispatch panel users can open the bodycam by clicking on their unit number in the taskbar.
 
-* Clicking the **Bodycam** icon in the bottom right of the taskbar
-* Clicking the unit header to open the unit editor
+<div><figure><img src="../../.gitbook/assets/image (631).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (632).png" alt=""><figcaption></figcaption></figure></div>
+
+
 
 Once opened, select **Bodycam Source** > **Roblox** > **Start**
 
 Once configured and started, if using the desktop application, your bodycam will automatically select the same window and start the next time you use the application.
 
 {% hint style="info" %}
-Do to graphics settings and drivers, some users may experience **white flashing in the Roblox app** when using **window** share mode.
+Due to graphics settings and drivers, some users may experience **white flashing in the Roblox app** when using **window** share mode.
 
 To resolve this, share the entire **screen** instead of just the Roblox application.
 {% endhint %}
-
-<figure><img src="../../.gitbook/assets/image (39).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ### 3. Bodycam Options
 
@@ -52,13 +51,13 @@ By default, this is set to **30 seconds**.
 
 Additionally, you can configure the total recording length with a maximum of 120 seconds (two minutes).
 
-<figure><img src="../../.gitbook/assets/image (550).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (633).png" alt=""><figcaption></figcaption></figure>
 
 #### Sound Effects
 
 Users can also enable or disable sound effects. When enabled, a long tone will play when the bodycam is turned on or off. Additionally, a short tone will repeat periodically to remind the user that their camera is on.
 
-<figure><img src="../../.gitbook/assets/image (549).png" alt="" width="279"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (634).png" alt=""><figcaption></figcaption></figure>
 
 ## Using the Bodycam
 
@@ -68,9 +67,9 @@ Users can also enable or disable sound effects. When enabled, a long tone will p
 
 <summary>Via Active Units</summary>
 
-In the active units panel hover over the flashing camera icon to preview a unit's bodycam. Or, click on the icon to open the dedicated viewer.
+In the active units panel hover over the flashing camera icon to preview a unit's bodycam.
 
-<div><figure><img src="../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/20260313-2241-07.5088568.gif" alt=""><figcaption></figcaption></figure></div>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -80,9 +79,13 @@ In the active units panel hover over the flashing camera icon to preview a unit'
 
 <summary>Via Live Map</summary>
 
-In the [2D or 3D live map](3d-live-map.md), click on a unit to view the bodycam. Click on the bodycam inside the menu to open the dedicated viewer.
+1. Open the [live map](3d-live-map.md) in **2D**, **2.5D**, or **3D**.
+2. Click a unit blip to open its unit menu. If the unit is streaming a bodycam, a live video preview appears at the top of the menu.
+3. Click the video preview to open the dedicated bodycam viewer.
 
-<figure><img src="../../.gitbook/assets/20260313-2307-53.0015571.gif" alt=""><figcaption></figcaption></figure>
+The unit must [start sharing their bodycam](bodycam.md#2-select-the-roblox-game) before a live preview is available.
+
+<figure><img src="../../.gitbook/assets/erlc-bodycam-map.png" alt="Selected ERLC police unit with live bodycam video in its 3D map unit menu"><figcaption><p>Select a unit blip to preview its live bodycam without leaving the map.</p></figcaption></figure>
 
 </details>
 
@@ -92,9 +95,9 @@ In the [2D or 3D live map](3d-live-map.md), click on a unit to view the bodycam.
 
 <summary>Via Manual Bodycam Window</summary>
 
-Additionally, search or select the **Bodycam** window in the taskbar. Once opened, use the unit select dropdown to change the viewer to different bodycam streams.
+Add the **Bodycam** panel to your custom layout to view active streams.
 
-<figure><img src="../../.gitbook/assets/image (38).png" alt="" width="192"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (635).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -106,7 +109,7 @@ Additionally, search or select the **Bodycam** window in the taskbar. Once opene
 
 When viewing a bodycam, you can optionally toggle the text overlay and video effects on or off.
 
-<figure><img src="../../.gitbook/assets/Recording 2026-03-17 131952.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (636).png" alt=""><figcaption></figcaption></figure>
 
 </details>
 
@@ -116,7 +119,9 @@ Sonoran body cameras support recording for later playback and download.
 
 #### Via Hotkey
 
-Desktop users can toggle recording using a customizable hotkey in the **Settings** menu.
+Desktop users can toggle recording using a customizable hotkey under **Customization** > **Hotkeys** > **Bodycam Record Toggle**.
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 #### Manual Start/Stop
 
@@ -130,10 +135,6 @@ The bodycam will automatically start recording when:
 
 ### Recording Limits
 
-{% hint style="info" %}
-Bodycam recordings are currently in early-access. These limits are subject to change at any time.
-{% endhint %}
-
 Recordings are retained for 24 hours before being automatically deleted. Daily recording limits (applied to the entire community) vary by subscription tier:
 
 * Free: 10 minutes/day community-wide
@@ -142,6 +143,6 @@ Recordings are retained for 24 hours before being automatically deleted. Daily r
 
 ### Viewing Recordings
 
-Dispatchers can search and view recorded bodycams by opening the **Body Cam Recordings** window in the taskbar.
+Dispatchers can search and view recorded bodycams by selecting **Body Cam Recordings** in the taskbar, or by adding the panel to their custom layout.
 
-<figure><img src="../../.gitbook/assets/20.03.2026_18.56.22_REC.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (637).png" alt=""><figcaption></figcaption></figure>

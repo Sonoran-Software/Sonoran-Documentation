@@ -1,25 +1,16 @@
 ---
-description: >-
-  Configure Street Signs integrations including CAD, power support, and Discord
-  webhooks.
+description: Connect Sonoran Street Signs to Sonoran CAD, Sonoran Power Grid, and Discord.
 ---
 
 # Integrations and Webhooks
 
+These integrations are optional. You can place and edit signs in-game without them.
+
 ## Sonoran CAD
 
-Street Signs can create an all-signs control center in CAD and add an editor to
-each sign's live-map blip menu. Changes made in-game update CAD, and changes made
-in CAD update the sign in-game.
+Use a current [SonoranCADFiveM integration](https://docs.sonoransoftware.com/cad/integration-plugins/in-game-integration/fivem-installation) and a CAD version that supports Integration Panels and custom Live Map markers.
 
-### Requirements
-
-* A Sonoran CAD build that supports custom Integration Panels and panel-enabled
-  custom blips
-* The current `sonorancad` FiveM resource
-* Street Signs permission to read the protected CAD key
-
-Add this after the `sonorancad` configuration in `server.cfg`:
+Set `Config.CAD.enabled = true` in `config.lua`. Add the following after your Sonoran CAD configuration in `server.cfg`:
 
 ```cfg
 ensure sonorancad
@@ -27,160 +18,63 @@ add_convar_permission sonoran-streetsigns read sonoran_apiKey
 ensure sonoran-streetsigns
 ```
 
-Then enable CAD in `config.lua`:
+In CAD, give the appropriate roles access to both **Sonoran Street Signs**
+controllers: the overview and the individual Live Map editor. In-game ACE or job
+access does not automatically grant CAD panel access. Existing installations
+should keep both controller permissions (`sonoran-dot-signs` and
+`sonoran-dot-sign`); their technical keys are retained for compatibility.
 
-```lua
-Config.CAD.enabled = true
-```
+Changes synchronize between CAD and FiveM. CAD edits save immediately and can be made remotely.
 
-### Two Separate CAD Permissions
+* Search for a sign in the overview, or click its Live Map marker to open that sign directly.
+* Edit the text fields arranged like the sign, with searchable road-icon pickers beside the text in both views.
+* Choose a quick message or adjust theme, brightness, screen state, and Auto-Dim.
+* The individual editor also lists existing schedules. Its schedule toggle controls whether the screen is on during that period. **Copy to base message** copies the schedule's text into the normal message; it does not remove the scheduled period.
 
-Street Signs registers two custom panels:
+CAD's editable rows show saved base text and road icons without a separate preview. CAD does
+not simulate LED dots, uploaded images, or the active in-game schedule. Check
+the physical display when confirming a scheduled message. Use the in-game
+editor to rearrange blocks and create schedules, and `/sign` to place, move,
+or delete signs.
 
-* **SonoranDOT VMS Control Center** shows all signs in one searchable window.
-* **SonoranDOT VMS Sign Editor** appears inside an individual sign's live-map
-  blip menu.
+CAD receives the overview together at startup. Individual editors and map
+markers then load gradually to avoid rate limits; 76 new markers take about
+four minutes. Each marker opens an initialized editor. Saved changes update
+the overview and only the affected individual editor. You can use the overview
+while loading continues. A failed upload leaves the in-game save intact and
+retries pending changes.
 
-CAD exposes these as separate custom panel permissions. Assign both to users who
-should manage signs everywhere, or assign only the control center or blip editor
-when a role needs narrower access.
+CAD's documented limits are **300 state uploads/minute** and **30 marker creates
+or updates/minute per endpoint**, shared by integrations using the same API key.
+Street Signs spaces state uploads at least one second apart across both
+controllers and marker writes at least three seconds apart. CAD permits 100
+individual sign instances per panel and server, including retained removed
+signs. See the official [panel limits](https://github.com/Sonoran-Software/SonoranCAD-Documentation/blob/master/api-integration/api-endpoints-v2/integration-panels/README.md)
+and [marker limits](https://github.com/Sonoran-Software/SonoranCAD-Documentation/blob/master/api-integration/api-endpoints-v2/emergency/map/create-blip.md).
 
-The panel keys are configurable, but do not change them after users have been
-assigned permissions unless you intend to create new CAD permission entries.
-
-### What Synchronizes
-
-On startup, Street Signs publishes:
-
-* Every sign's ID, label, location, text, theme, enabled state, and power state
-* The complete grid layout
-* Selected icon IDs and the configured in-game icon list
-* HTTPS image URLs used by compatible future billboard controllers
-* One custom map blip per sign
-
-The game server remains responsible for saving sign data. CAD actions still go
-through revision checks, banned-word filtering, and the remote grid/image
-settings before they are accepted.
-
-{% hint style="info" %}
-CAD currently allows up to 100 instances for one panel on one server. A single
-Street Signs editor panel therefore supports up to 100 independently addressed
-signs.
-{% endhint %}
-
-### CAD Settings
-
-```lua
-Config.CAD = {
-    enabled = true,
-    syncOnStartup = true,
-    actionPollMs = 2000,
-    actionBatchSize = 50,
-    panels = {
-        overviewKey = 'sonoran-dot-signs',
-        overviewName = 'SonoranDOT VMS Control Center',
-        overviewInstanceKey = 'all-signs',
-        overviewSurfaces = { 'dispatch', 'police', 'fire', 'ems' },
-        editorKey = 'sonoran-dot-sign',
-        editorName = 'SonoranDOT VMS Sign Editor'
-    },
-    blips = {
-        enabled = true,
-        subType = 'SONORAN_VMS_SIGN',
-        icon = 'fas fa-sign-hanging',
-        color = '#f5a623',
-        menuTitle = 'Edit VMS sign'
-    },
-    shareIconCatalog = true,
-    allowRemoteGridUpdates = true,
-    allowRemoteImageUpdates = true
-}
-```
-
-Set `allowRemoteGridUpdates` or `allowRemoteImageUpdates` to `false` if those
-changes should be accepted only from the in-game controller.
+> Screenshot placeholder: Sonoran CAD showing aligned text fields and searchable inline icon pickers, with a Live Map marker opening its individual sign editor.
 
 ## Sonoran Power Grid
 
-Street Signs can register each sign as a Power Grid device. When its linked
-power system is disabled, the display turns off for all players and CAD shows
-the sign as having no power. Repairing the system restores the display. The
-physical sign prop remains in place.
+Power Grid integration is on by default. If you use it:
 
-The integration is enabled by default:
+1. Start `sonoran-powergrid` before `sonoran-streetsigns`.
+2. Keep `Config.Power.enabled = true`.
+3. Use the Power Grid link tool within three meters of the sign's base to link it.
 
-```lua
-Config.Power = {
-    enabled = true,
-    mode = 'sonoran_powergrid',
-    resource = 'sonoran-powergrid',
-    scriptIdentifier = 'sonoran_streetsigns',
-    linkDistance = 3.0
-}
-```
+A power outage turns the linked sign's screen off while leaving the physical sign in place. Restoring power allows its display to return, provided the screen is enabled and the current schedule allows it.
 
-Start `sonoran-powergrid` before Street Signs. To link a sign, use the Power Grid
-link tool near the base of the persisted sign. Street Signs chooses the nearest
-sign within `linkDistance`.
+If your server does not use Power Grid, set `Config.Power.enabled = false`.
 
-If your server does not run Power Grid, set `enabled = false`.
+> Screenshot placeholder: The same linked sign with power available and during a Power Grid outage.
 
-## Discord Webhooks
+## Discord notifications
 
-Street Signs can post webhook messages for:
+Set `Config.Webhooks.enabled = true`, then paste Discord webhook URLs into the channels you want to use:
 
-* Sign create, update, and delete actions
-* The actor responsible for a change, including CAD actions
-* Blocked banned-word attempts
+* `Config.Webhooks.signChanges.url` — Sign creation, changes, and deletion.
+* `Config.Webhooks.bannedWordAlerts.url` — Attempts to save blocked text.
 
-Enable the system with:
+Leave a channel's URL empty to disable that channel. Add Discord role IDs to `Config.Webhooks.bannedWordAlerts.mentionRoleIds` if moderation alerts should mention a role.
 
-```lua
-Config.Webhooks.enabled = true
-```
-
-### Sign Change Webhooks
-
-```lua
-Config.Webhooks.signChanges = {
-    url = '',
-    username = 'Street Signs',
-    avatarUrl = '',
-    color = 3447003
-}
-```
-
-### Banned Word Alerts
-
-```lua
-Config.Webhooks.bannedWordAlerts = {
-    url = '',
-    username = 'Street Signs Moderation',
-    avatarUrl = '',
-    color = 15158332,
-    mentionRoleIds = {
-        -- '123456789012345678'
-    }
-}
-```
-
-Keep webhook URLs in the server configuration. Do not place them in the hosted
-controller or send them through iframe messages.
-
-## Auto Update
-
-Street Signs includes updater support through `sonoran-streetsigns` and
-`sonoran-streetsigns_helper`.
-
-```lua
-Config.Updater = {
-    EnableAutoUpdate = false
-}
-```
-
-If enabled, grant both resources command access:
-
-```cfg
-add_ace resource.sonoran-streetsigns command allow
-add_ace resource.sonoran-streetsigns_helper command allow
-```
+Keep webhook URLs private and restart Sonoran Street Signs after updating the configuration.

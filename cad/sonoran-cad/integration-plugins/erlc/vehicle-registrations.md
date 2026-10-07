@@ -8,7 +8,7 @@ description: Automatically register vehicles using an in-game command!
 
 Automatically register vehicles using an in-game command!
 
-<figure><img src="../../.gitbook/assets/erlc_reg_promo.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/erlc_reg_promo_v2.png" alt=""><figcaption></figcaption></figure>
 
 ## Civilian Panel Access
 
@@ -66,7 +66,7 @@ Vehicles purchased in public ER:LC servers persist their license plate across pu
 
 ## CAD Permission Requirements
 
-In order to use this command in-game, players must have a [linked Roblox account](getting-started.md#linking-your-roblox-account) with the **DMV Record Add** and **DMV Record Edit** permissions to add or update vehicle registrations.
+Users in-game must first register a character in the CAD. This can be done with or without a CAD account all from [an in-game command or in the CAD](character-creation.md).
 
 ## Using the In-Game Commands
 
@@ -79,6 +79,12 @@ Once the registration has been created in the CAD, users will be notified by an 
 <div><figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure></div>
 
 [In-game commands not working? Make sure you have connected the webhook.](getting-started.md#id-3.-link-er-lc-event-webhooks-to-sonoran-cad)
+
+## Customize the In-Game Commands
+
+In-Game commands can be customized under **Admin** > **In-Game Integration** > **ER:LC** > **Server** > **Vehicle Registration**
+
+<figure><img src="../../.gitbook/assets/image (8).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## Troubleshooting
 

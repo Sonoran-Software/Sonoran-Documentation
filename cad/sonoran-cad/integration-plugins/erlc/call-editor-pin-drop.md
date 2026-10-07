@@ -1,35 +1,43 @@
 ---
 description: >-
-  Drop a pin on the live map to automatically enter the postal code, address,
-  and building number to the dispatch call.
+  Select a location on the ERLC map to fill a dispatch call's street address and
+  postal code.
 ---
 
 # Call Editor Pin Drop
 
-## Call Editor Pin Drop
+![ERLC Call Editor Pin Drop](../../.gitbook/assets/erlc_pin_picker_promo.png)
 
-{% hint style="danger" %}
-**This feature is still undergoing final testing before release.**
+Drop a pin instead of typing an address. Select a location on the 2D ERLC map and Sonoran CAD fills the nearest street name and postal code in your dispatch call.
 
-**Coming soon!**
-{% endhint %}
+### 1. Check ERLC mode
 
-Select the pin icon in the dispatch call editor to open the live map. Select any location on the map to auto-fill the postal code, street address, and building number.
+Make sure your CAD community is in **ER:LC** mode under **Administration → Advanced → In-Game Integration**.
 
-<figure><img src="../../.gitbook/assets/erlc_pin_promo.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (625).png" alt="" width="375"><figcaption></figcaption></figure>
 
-## Using the Pin Drop
+### 2. Open the map
 
-In the dispatch call editor, select the **Pin** icon inside of the **Address** box. This will automatically open the live map window and place it into pin drop mode. Click anywhere on the map and your call editor will be automatically updated with:
+Create or edit a dispatch call. Select the **pin icon** inside the **Address** field to open the 2D map picker.
 
-* Nearest Postal Code
-* Optional: Nearest Building Number
-* Street Address
+<figure><img src="../../.gitbook/assets/image (627).png" alt="" width="375"><figcaption></figcaption></figure>
 
-## Manual Address Entry
+### 3. Select the location
 
-Additionally, communities can import a custom list of addresses. ER:LC communities can [copy and import this custom CSV file](https://docs.google.com/spreadsheets/u/1/d/1jDUxfCffxyGHoXQ-rpzrWRNFEhDmMs3-TA9U-mdNBjg/copy) to populate the address field dropdown.
+Drag to pan and scroll to zoom. Open **Legend** to access the map controls, including the **map labels** button to show or hide street and postal labels.
 
-{% content-ref url="../../tutorials/customization/addresses-and-street-names.md" %}
-[addresses-and-street-names.md](../../tutorials/customization/addresses-and-street-names.md)
-{% endcontent-ref %}
+<img src="../../.gitbook/assets/erlc_pin_picker_map.jpg" alt="The ERLC 2D map picker with street names and postal labels" width="375">
+
+Click the call's location. The map closes and fills the **Address** and **Postal** fields.
+
+## Use the ERLC street list
+
+The type-to-filter **Address** field is also pre-configured with the full list of ER:LC's street and trail names. These [custom street names](../../tutorials/customization/addresses-and-street-names.md) can be re-applied under **Administration → Advanced → In-Game Integration → ER:LC**. In **Addresses**, select **Use ER:LC street list**.
+
+<div><figure><img src="../../.gitbook/assets/image (628).png" alt=""><figcaption></figcaption></figure> <figure><img src="../../.gitbook/assets/image (629).png" alt=""><figcaption></figcaption></figure></div>
+
+## Send the location to Discord
+
+You can also enable [ERLC 3D Location Webhooks](location-notifications.md) to include an aerial location image with emergency and dispatch call webhooks.
+
+<figure><img src="../../.gitbook/assets/erlc_notifications_promo_v2.png" alt="" width="375"><figcaption></figcaption></figure>

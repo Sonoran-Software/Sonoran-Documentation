@@ -10,7 +10,7 @@ description: >-
 
 Submit emergency calls from in-game and see them appear instantly on the 3D live map and dispatch panel.
 
-<figure><img src="../../.gitbook/assets/erlc_emergency_promo (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/erlc_emergency_promo_v2.png" alt=""><figcaption></figcaption></figure>
 
 ## In-Game Emergency Phone Call
 
