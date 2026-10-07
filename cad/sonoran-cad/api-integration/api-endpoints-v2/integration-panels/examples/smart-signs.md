@@ -58,7 +58,7 @@ Use [Set State](../set-state.md), `PUT /v2/integration-panels/servers/1/panels/s
 }
 ```
 
-State is a full replacement. Send all three rows each time the sign changes, including changes made in-game. Connected editors receive the published values live. New state revisions replace local unsaved edits, so publish when authoritative sign data changes rather than continuously resending unchanged state.
+State is a full replacement. Send all three rows each time the sign changes, including changes made in-game. Connected editors receive the published values live. The updated CAD renderer clears accepted edits and edits whose authoritative default changed, while retaining drafts for controls whose defaults remain unchanged. Publish when authoritative sign data changes rather than continuously resending unchanged state.
 
 ## 3. Attach the editor to a blip
 
@@ -115,6 +115,45 @@ The event also contains its event ID, cursor, actor, creation time, and expiry. 
 4. On success, publish the complete resulting state for `sign-12` and your overview panel.
 
 The menu's request-sent message confirms queue submission, not in-game completion. CAD displays the integration's acknowledgment through its existing action notification. Acknowledging does not publish state automatically. Process pushes immediately and recover missed actions within their 60-second lifetime. Use the same processing queue for push and polling, deduplicate by `id`, and do not advance the backup polling cursor from a push.
+
+## Save one sign in a repeated overview
+
+For an overview that renders many signs inside a `repeat`, avoid `"values": "$inputs"`: that contains every sign's form and can exceed the 32 KiB action limit. Use the item bindings in the [Manifest Reference](../manifest-reference.md#saving-one-repeated-item). These bindings are currently available on staging; deploy/reload the supporting CAD frontend before updating the manifest.
+
+For example, publish state as `{ "signs": [{ "id": "sign-12", "line1": "ROAD WORK", "line2": "LEFT LANE CLOSED", "line3": "MERGE RIGHT" }] }` and use this overview body:
+
+```json
+[
+  {
+    "type": "repeat",
+    "source": "$state.signs",
+    "children": [
+      {
+        "type": "section",
+        "title": "$item.id",
+        "children": [
+          { "type": "input", "id": "line1", "label": "Row 1", "value": "$item.line1" },
+          { "type": "input", "id": "line2", "label": "Row 2", "value": "$item.line2" },
+          { "type": "input", "id": "line3", "label": "Row 3", "value": "$item.line3" },
+          {
+            "type": "button", "label": "Save sign", "icon": "save",
+            "action": {
+              "id": "sign.save",
+              "values": { "signId": "$item.id", "changes": "$itemChanges" }
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
+```
+
+Editing only Row 2 produces `values: { "signId": "sign-12", "changes": { "line2": "RIGHT LANE CLOSED" } }`. Clearing Row 2 produces `"line2": ""`. Missing rows mean unchanged; do not replace them with empty strings. Validate the sign and field IDs, merge the allowed changes into the current game-side sign, acknowledge the action, and publish the complete resulting state. An empty changes object is a successful no-op.
+
+If your existing handler requires all three rows, use `"values": { "signId": "$item.id", "fields": "$itemInputs" }` and read `action.values.fields`. This includes the selected sign's defaults and edits without including other signs. The per-sign live-map editor above already sends only its three explicitly selected inputs and needs no manifest change.
+
+Keep [push delivery](../#action-push-events) primary and polling as slow recovery. Partial action values do not change the Set State endpoint: publish a complete overview state and the affected individual editor state after a successful save. A revision for one saved sign preserves other unsaved drafts when their published control defaults are unchanged.
 
 ## Capacity
 

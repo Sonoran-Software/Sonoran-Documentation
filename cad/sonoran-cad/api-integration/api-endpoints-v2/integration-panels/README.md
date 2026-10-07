@@ -92,6 +92,7 @@ Sonoran.lua, Sonoran.js, Sonoran.py, and Sonoran.Net expose the same helper name
 * Responsive rows, columns, grids, sections, and repeated state collections
 * Text, icons, badges, alerts, inputs, selects, SVG icon pickers, toggles, checkboxes, and buttons
 * State, repeated-item, input, and current-control bindings
+* Item-scoped full-form and partial-change action values. See [Saving one repeated item](manifest-reference.md#saving-one-repeated-item).
 * Search, named sort choices, conditions, confirmation prompts, and theme-safe styling
 * Built-in pulse animations and state- or action-triggered sound effects
 * Live API-to-CAD state updates and CAD-to-integration action events

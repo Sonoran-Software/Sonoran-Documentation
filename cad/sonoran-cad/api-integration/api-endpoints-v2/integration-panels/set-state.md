@@ -10,6 +10,8 @@ description: Replace one panel instance's live state and update connected CAD cl
 
 Replace the complete state object for one panel instance. The update is immediately pushed to connected CAD clients on the selected server.
 
+An action may send only one item's changes using [`$itemChanges`](manifest-reference.md#saving-one-repeated-item), but this endpoint still requires the complete resulting state. Apply and validate the partial edit in your integration before publishing. The updated CAD renderer clears accepted or superseded local edits on a new revision and retains drafts where the control's published default is unchanged.
+
 The panel must already exist. A panel may store up to 100 instances per server.
 
 ## Path Parameters

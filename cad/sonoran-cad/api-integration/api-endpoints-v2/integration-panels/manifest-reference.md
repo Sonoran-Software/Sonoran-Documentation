@@ -27,9 +27,33 @@ A panel definition is a JSON object stored at a stable `panelKey`. The definitio
 | `$state.path` | Current instance state                   |
 | `$item.path`  | Current item inside a `repeat` node      |
 | `$inputs.id`  | Current local control value, or the control's displayed `value` when untouched. Explicit empty strings are preserved. |
+| `$itemInputs` | Object of all control values in the current repeated item, including untouched defaults. Keys are unprefixed control IDs. |
+| `$itemInputs.id` | One control value in the current repeated item. |
+| `$itemChanges` | Object containing only current-item controls whose values differ from their published defaults. Keys are unprefixed control IDs. |
 | `$value`      | New value emitted by the current control |
 
 Use a binding as the entire property value, such as `"value": "$item.locked"`. For text containing other words, use interpolation such as `"Fuel: {{item.fuel}}%"` or `"Active: {{state.summary.active}}"`.
+
+### Saving one repeated item
+
+`$inputs` includes controls from the entire panel instance. Repeated controls use keys such as `sign-12:line1`. Avoid sending the entire `$inputs` object when an action edits just one item. Inside a `repeat`, use `$itemInputs` for a complete item form or `$itemChanges` for a partial edit:
+
+```json
+{
+  "type": "button",
+  "label": "Save sign",
+  "action": {
+    "id": "sign.save",
+    "values": { "signId": "$item.id", "changes": "$itemChanges" }
+  }
+}
+```
+
+Give every control a stable, unique `id` within its repeated item and every item a stable, unique `id` within the panel instance. These bindings collect controls under the nearest `repeat`, including controls inside layout containers; they exclude nested repeats, other items, and local search/sort settings. Without a repeated-item context, both objects are empty. Without an item ID, controls use their original source-array index; stable IDs are recommended when the collection can change.
+
+`$itemInputs` includes untouched defaults. `$itemChanges` compares current values with the controls' default `value` bindings, usually sourced from the latest published `$item` state. Reverting a field to its default removes it from the changes object. Deliberate `""`, `false`, `0`, and `null` values are preserved. No differences produces `{}`; the button still emits an action. Your integration should treat missing fields as unchanged and an empty changes object as a successful no-op. Validate and apply only allowed field IDs, then acknowledge and publish the complete authoritative state. CAD does not apply the partial edit to state automatically.
+
+The `changes` name is your integration's payload convention, not a reserved API property. Use `"fields": "$itemInputs"` instead if your handler expects all fields for one item. Existing explicit bindings such as `"line1": "$inputs.line1"` remain supported for non-repeated forms. Deploy a CAD frontend with these item bindings before changing your manifest; they are currently available on staging.
 
 ## Node Types
 
@@ -148,6 +172,8 @@ Controls use the same action envelope. The CAD creates an event containing the a
 ```
 
 `confirm` is optional. It displays a CAD confirmation dialog before the action is queued.
+
+Resolved action `values` must fit within 32 KiB of UTF-8 JSON. This is an application and database budget for each queued command, independent of the larger panel-state limit. An oversized action is rejected before queueing or push delivery. Keep actions limited to the affected item's fields or changes; state updates remain full replacements of up to 512 KiB.
 
 `input`, `number`, and `textarea` actions are emitted once when the user leaves a changed field. Selects, toggles, checkboxes, and icon pickers emit on selection or click. Successful action acknowledgments are quiet; failures show an error notification.
 
