@@ -4,6 +4,29 @@ description: View the changelog for the Sonoran Radio application and in-game re
 
 # 📋 Changelog
 
+### 2.28.7 10/08/2026
+
+{% tabs %}
+{% tab title="New" %}
+ER:LC Automatic Frame Change:
+
+* Being on-foot or in a vehicle will now change your radio frame to what's configured in your Overlay editor
+
+Frame Scroll Hotkeys:
+
+* Hotkeys added to swap between frames with ease
+
+Overlay AI:
+
+* Generate custom screens and frames with our Overlay AI
+* Use reference photos to create realistic frames and screens based on your favorite radio models
+
+FiveM Guest Only:
+
+* Toggle your FiveM server to use a guest only mode based on ACE permissions
+{% endtab %}
+
+{% endtabs %}
 ### 2.28.5 09/24/2026
 
 {% tabs %}
