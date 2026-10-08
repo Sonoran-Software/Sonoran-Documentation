@@ -10,6 +10,28 @@ description: View the latest changes to Sonoran CMS!
 
 ## Changelog
 
+### 1.5.22 10/08/2026
+
+{% tabs %}
+{% tab title="New" %}
+Discovery Vote Header Icon
+
+* Added (by default) Discovery Vote Header Icon that will show next to the clock in icon to prompt users to actively vote for their community to show higher in Community Discovery
+{% endtab %}
+
+{% tab title="Changed" %}
+Discovery Game Selection
+
+* Expanded the other option with a type in field, this will go into consideration for adding it to the Game Category Selection pool. Community page SEO will now display the game appropriately
+
+Site AI
+
+* Improved overall knowledge of pages and forms
+* Ability to generate images for components and background
+* Improved follow-up questions
+{% endtab %}
+
+{% endtabs %}
 ### 1.5.21 09/17/2026
 
 {% tabs %}
