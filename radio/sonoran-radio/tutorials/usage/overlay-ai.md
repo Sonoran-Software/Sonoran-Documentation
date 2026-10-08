@@ -1,10 +1,10 @@
 ---
-description: Create custom radio frames and editable screens from photos, then refine them with chat.
+description: Attach reference images and a prompt to create custom radio frame artwork and screen UI, then refine the design with chat.
 ---
 
 # Overlay AI
 
-Build a radio overlay from a description or reference photos in **Customize > Overlay**. Overlay AI can generate the outer radio frame, position its screen and controls, and create an editable screen design for the desktop overlay and FiveM radio.
+Attach reference images and describe the radio frame and screen UI you want in **Customize > Overlay**. Overlay AI generates both the **outer radio frame artwork** and the **editable screen**, including its colors, icons, labels, and control layout. Recreate a radio from photos or describe your own design for the desktop overlay and FiveM radio.
 
 <figure><img src="../../.gitbook/assets/radio-overlay/overlay-ai-promo.webp" alt="Sonoran Radio Overlay AI showing reference-photo chat beside a custom radio frame and screen"><figcaption><p>Create with photos. Refine with chat.</p></figcaption></figure>
 
@@ -14,7 +14,7 @@ Overlay AI and the **Custom** screen editor require a **Pro** community subscrip
 
 1. Open your community's **Customize > Overlay** page.
 2. Select an existing frame, or select **New Frame**, enter a name, choose **Blank canvas**, and select **Create**.
-3. Use the **AI** tab, which opens by default. Describe the radio you want, select a suggested prompt, or use **Add photos** to attach references.
+3. Use the **AI** tab, which opens by default. Select **Add photos** to attach reference images, then describe the frame and screen you want in the message box. You can also start with a prompt alone or select a suggested prompt.
 4. Select **Send**. The generated design appears on the canvas.
 5. Review the result and send follow-up instructions. Switch to **Manual** for direct adjustments.
 6. Select **Save changes** to apply the design to your community.
@@ -28,6 +28,16 @@ Attach up to **four PNG, JPEG, or WebP images**, each **2 MB or smaller**. Selec
 Clear, front-facing photos help the AI match the radio body and display. Include a close view of the display when its colors, icons, or labels are important.
 
 Photos remain attached and are sent with each message until you remove them.
+
+### Example: turn a radio photo into a frame and screen
+
+Attach photos of the radio you want to recreate, then send a prompt such as:
+
+> Create a replica frame and screen based on these Motorola Ion photos. Match the radio body, display colors, and icons.
+
+The example below shows an attached reference photo and prompt in the AI chat, with the generated frame and screen on the canvas. You can request a different body shape or screen style in the same way.
+
+<figure><img src="../../.gitbook/assets/radio-overlay/overlay-ai-reference-chat.webp" alt="Overlay AI editor showing an attached Motorola Ion reference photo and a prompt beside the generated radio frame and editable screen"><figcaption><p>Attach images and a prompt to generate the radio body and screen UI together.</p></figcaption></figure>
 
 ## Refine with chat
 
@@ -53,6 +63,8 @@ Open **Manual** to choose a **Screen Theme**. The **Custom** theme exposes these
 * **Share design** — export and import the custom design as JSON.
 
 Click an item on the canvas to select it, drag it to move it, or drag its corner to resize it. Use **Editing controls** to hide selection borders and resize handles while reviewing the design. **+**, **−**, and **Fit** change the preview zoom without changing the saved radio size.
+
+<figure><img src="../../.gitbook/assets/radio-overlay/overlay-ai-manual-editor.webp" alt="Manual tab showing colors and type, items, and icon image controls beside the radio frame and screen created with Overlay AI"><figcaption><p>The generated screen stays editable: adjust its colors, icons, text, and layout in Manual.</p></figcaption></figure>
 
 See [Radio Overlay](desktop-overlay.md#create-a-custom-overlay) for frame controls and [FiveM Radio Frames](in-game-radio/customizing-radio-frames.md) for in-game selection and access restrictions.
 
