@@ -28,7 +28,7 @@ When paired with [Sonoran Radio](https://docs.sonoransoftware.com/radio), units 
 
 ### 📱 Downloadable Apps
 
-In addition to our web version, you can download Sonoran CAD on the [iOS App Store](https://apps.apple.com/us/app/sonoran-cad/id1496539456), the [Google Play Store](https://play.google.com/store/apps/details?id=sonorancadmdt.app\&hl=en_US), or for [Windows Desktop](https://sonoran-software.github.io/Sonoran-Desktop-Apps/downloads/?app=cad&platform=windows).\
+In addition to our web version, you can download Sonoran CAD on the [iOS App Store](https://apps.apple.com/us/app/sonoran-cad/id1496539456), the [Google Play Store](https://play.google.com/store/apps/details?id=sonorancadmdt.app\&hl=en_US), or for [Windows Desktop](https://sonoran-software.github.io/Sonoran-Desktop-Apps/downloads/?app=cad\&platform=windows).\
 \
 It's never been more easy to access your community's CAD system, regardless of what platform you're on!
 
@@ -76,15 +76,11 @@ Sonoran CAD's custom [3D live map](integration-plugins/in-game-integration/avail
 
 <figure><img src=".gitbook/assets/map_promo.png" alt=""><figcaption></figcaption></figure>
 
-### [🛑](https://emojipedia.org/stop-sign/) FiveM Smart Signs Integration
+### [🛑](https://emojipedia.org/stop-sign/) [FiveM Street Signs Integration](integration-plugins/in-game-integration/available-plugins/smart-signs.md)
 
-We've partnered up with London Studios to integrate their Smart Signs script directly with Sonoran CAD! You can customize in-game roadway signs right from Sonoran CAD!
+We've released a free street signs integration for everyone! You can customize in-game roadway signs right from Sonoran CAD!
 
-[Learn more about this free script included with Sonoran CAD Pro!](integration-plugins/in-game-integration/available-plugins/smart-signs.md)
-
-[View our showcase video on Smart Signs!](https://www.youtube.com/watch?v=ihfVSiB8oB8)
-
-<figure><img src=".gitbook/assets/smart signs.png" alt=""><figcaption><p>Sonoran CAD x London Studios</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (640).png" alt=""><figcaption><p>Sonoran CAD x London Studios</p></figcaption></figure>
 
 ### 🚔 [FiveM ERS Integration](integration-plugins/in-game-integration/available-plugins/ers.md)
 
