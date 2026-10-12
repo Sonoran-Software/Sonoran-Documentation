@@ -14,6 +14,12 @@ Run `/sign`. Check [Permissions](permissions.md) for your selected mode and conf
 
 For walk-up editing, stand near the control panel at the base of the sign and press `E`. Viewing a sign does not give editing access. The full controller requires administrator access.
 
+## Street Sign map blips are missing
+
+Blips are hidden by default. Enter `/signblips` in chat to show them, then enter it again to hide them. After reconnecting or a resource restart, your visibility choice resets to the server's default.
+
+If the command reports that blips are disabled on the server, ask the server owner to review `Config.GameBlips.enabled` in [Configuration](configuration-reference.md#map-blips). The chat suggestion is also hidden when blips are disabled for everyone.
+
 ## The screen is blank or the editor does not load
 
 Check that the sign's screen is enabled. If it is linked to Power Grid, check its power supply. An active schedule with its state disabled also blanks the screen during that period. Brightness is limited to 5–100%; use the screen switch to turn the display off.

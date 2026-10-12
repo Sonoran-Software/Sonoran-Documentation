@@ -13,6 +13,8 @@ Edit `sonoran-streetsigns/config.lua`, save it, and restart Sonoran Street Signs
 | `Config.QBJobs` / `Config.ESXJobs` | Example jobs and grades | Jobs allowed to manage signs in the selected framework. |
 | `Config.StandaloneAllowed` | Empty | Allowed player identifiers in standalone mode. |
 | `Config.Updater.EnableAutoUpdate` | `false` | Enable automatic resource updates. |
+| `Config.GameBlips.enabled` | `true` | Allow players to show or hide in-game map blips with `/signblips`. Set to `false` to disable blips for everyone. |
+| `Config.GameBlips.defaultVisible` | `false` | Start players with map blips hidden. Set to `true` to show them by default when blips are allowed. |
 | `Config.CAD.enabled` | `false` | Enable Sonoran CAD panels and Live Map sign controls. |
 | `Config.Power.enabled` | `true` | Enable Sonoran Power Grid integration. Disable if unused. |
 | `Config.Webhooks.enabled` | `false` | Enable Discord notifications. |
@@ -26,6 +28,23 @@ Edit `sonoran-streetsigns/config.lua`, save it, and restart Sonoran Street Signs
 Review the example jobs before enabling a framework permission mode. Matching jobs receive full sign-management access.
 
 Use the in-game menu or editor to change individual signs' color, brightness, messages, and placement.
+
+## Map blips
+
+Players can use `/signblips` to show or hide Street Sign map blips for themselves. The default configuration allows the command but starts with blips hidden:
+
+```lua
+Config.GameBlips = {
+    enabled = true,
+    defaultVisible = false
+}
+```
+
+Set `enabled = false` to disable blips and the toggle for everyone. Set `defaultVisible = true` to show blips when players join; they can still hide them with `/signblips`. Save `config.lua` and restart Sonoran Street Signs after changing these settings.
+
+Older configs that omit `defaultVisible` also start with blips hidden. Add this block to an older config if you want to change the defaults. These settings affect only the in-game map, not Sonoran CAD Live Map markers.
+
+## Updating an older configuration
 
 When updating an older installation, use the current `config.CHANGEME.lua` as the reference and keep only the supported customer settings above. Preserve `data/signs.json` so your saved signs remain in place. See [Updating](getting-started.md#updating).
 
