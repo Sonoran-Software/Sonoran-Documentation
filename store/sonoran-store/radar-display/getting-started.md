@@ -117,13 +117,13 @@ Select **Move** and left-drag a colored arrow to move the radar along one axis. 
 * **Local axes** follows the radar's orientation. Select it to switch to **World axes**, which follows the world's directions.
 * **Snap** switches between free movement and 1 cm movement increments. It also enables 5-degree rotation increments.
 
-> Screenshot placeholder: Radar Display in **Move** mode inside a stopped vehicle, showing the radar, colored movement arrows and squares, and the placement controls.
+<figure><img src="../.gitbook/assets/radar-display-placement-move.png" alt="Radar Display in Move mode inside a stopped vehicle, with colored movement arrows and squares around the radar"><figcaption><p>Drag the arrows or squares to move the radar.</p></figcaption></figure>
 
 ### Rotate the radar
 
 Select **Rotate** and left-drag a colored ring to turn the radar around that axis. Use **Local axes** or **World axes** to choose the rotation directions, and enable **Snap** for 5-degree increments.
 
-> Screenshot placeholder: Radar Display in **Rotate** mode inside a stopped vehicle, showing the rotation rings around the radar and **Rotate** selected in the placement controls.
+<figure><img src="../.gitbook/assets/radar-display-placement-rotate.png" alt="Radar Display in Rotate mode inside a stopped vehicle, with colored rotation rings around the radar"><figcaption><p>Drag a ring to rotate the radar.</p></figcaption></figure>
 
 ### Adjust your view
 
