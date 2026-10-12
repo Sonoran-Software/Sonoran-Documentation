@@ -149,31 +149,59 @@ Config.allowlistedCars = {
 
 ## Spawning the Radio Display
 
-Use the `/radiodisplay` command while in a vehicle to spawn a new display.
+1. Sit in a stopped vehicle and run `/radiodisplay` (or your configured menu command).
+2. Select **Spawn In-Car Radio**, then **Sonoran In-Car Radio** to open placement for a new radio. To reposition an existing radio, select **Attach In-Car Radio**, then **Position this vehicle's radio**.
 
-* Use the keys displayed at the bottom of your screen to move and rotate the display into position.
-* Select `Attach` to attach the display to your vehicle.
-  * See the [config.lua](vehicle-radio-display.md#configuration) `Config.acePerms.aceObjectUseMenu` for permission restrictions.
-* Select `Apply to all of this vehicle model` to have the radio display automatically added whenever the vehicle type is spawned.
-  * See the [config.lua](vehicle-radio-display.md#configuration) `Config.acePerms.aceObjectAdminUseMenu` for permission restrictions.
+### Move
 
-<figure><img src="../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
+Select **Move** and left-drag a red, green, or blue arrow to move the radio along that axis. Drag a colored square to move along two axes at once.
+
+> **Screenshot placeholder — Move gizmo:** In-game vehicle view with the radio, red/green/blue movement arrows, plane squares, and the placement toolbar visible with **Move** selected.
+
+### Rotate
+
+Select **Rotate** and left-drag a colored ring to turn the radio around that axis. The outer ring rotates it relative to your current view.
+
+> **Screenshot placeholder — Rotation rings:** In-game vehicle view with the radio, colored rotation rings, outer ring, and the placement toolbar visible with **Rotate** selected.
+
+Switch between **Local axes** and **World axes** to align movement and rotation with the radio or the world. Enable **Snap** for 1 cm movement and 5° rotation steps.
+
+### Adjust your view
+
+| Control | Action |
+| --- | --- |
+| Right-drag | Look around the cabin. Enable **Orbit radio** to circle the radio instead. |
+| Middle-drag | Lean the camera slightly. |
+| Mouse wheel | Zoom in or out. |
+| **Look at display** | Aim the camera at the radio. |
+| **Cabin view** | Restore the starting camera view. |
+
+### Apply or save
+
+* **Apply to this vehicle** applies the placement to the current radio without saving it for other vehicles.
+* **Save for this vehicle model** saves the placement and uses it for vehicles of the same model. This requires administrator access when menu restrictions are enabled.
+* **Reset** restores the radio's position and rotation from when you opened the editor.
+* **Cancel** leaves an existing radio unchanged, or removes a new radio created for this placement session.
+
+When restrictions are enabled in [configuration](vehicle-radio-display.md#configuration), menu access uses the configured permissions. With ACE permissions, `Config.acePerms.aceObjectUseMenu` grants menu access and `Config.acePerms.aceObjectAdminUseMenu` grants administrator access, including model saves.
+
+Keep the vehicle stopped while placing the radio. Moving the vehicle or leaving it cancels placement. Close the tablet or other windows before opening the editor.
 
 ### `radios.json` Property Explanation <a href="#radars.json-property-explanation" id="radars.json-property-explanation"></a>
 
 | Property Name | Example  | Notes                                                               |
 | ------------- | -------- | ------------------------------------------------------------------- |
-| `ID`          | `2`      | `ID` must be unique. No other radar can share this ID               |
-| `Position`    |          | This is a table that contains the x, y, and z coords of the radar   |
-| `Rotation`    |          | This is a table that contains the x, y, and z rotation of the radar |
+| `ID`          | `2`      | A unique ID for this saved radio placement.                         |
+| `Position`    |          | The radio's saved x, y, and z offsets.                               |
+| `Rotation`    |          | The radio's saved pitch, roll, and yaw.                              |
 | `Vehicle`     | `POLICE` | This is the vehicles spawn code                                     |
-| `Bone`        | `-1`     | This is the index of the bone you would like to attach the radar to |
+| `Bone`        | `-1`     | The vehicle attachment point used by the radio.                     |
 
 ### Commands
 
 | Command Name    | Command Description                                                 | Required Permissions |
 | --------------- | ------------------------------------------------------------------- | -------------------- |
-| `/radiodisplay` | This command will initiate the radar spawning and attaching process | As configured        |
+| `/radiodisplay` | Open the radio menu to spawn or reposition a display.                | As configured        |
 
 ### Default Vehicles
 
