@@ -156,13 +156,13 @@ Config.allowlistedCars = {
 
 Select **Move** and left-drag a red, green, or blue arrow to move the radio along that axis. Drag a colored square to move along two axes at once.
 
-> **Screenshot placeholder — Move gizmo:** In-game vehicle view with the radio, red/green/blue movement arrows, plane squares, and the placement toolbar visible with **Move** selected.
+<figure><img src="../../.gitbook/assets/radio-display-move.png" alt="Radio placement in a vehicle with Move selected, red, green, and blue movement arrows, plane squares, and apply, save, and cancel buttons"><figcaption><p>Drag an arrow to move along one axis, or a square to move along two.</p></figcaption></figure>
 
 ### Rotate
 
 Select **Rotate** and left-drag a colored ring to turn the radio around that axis. The outer ring rotates it relative to your current view.
 
-> **Screenshot placeholder — Rotation rings:** In-game vehicle view with the radio, colored rotation rings, outer ring, and the placement toolbar visible with **Rotate** selected.
+<figure><img src="../../.gitbook/assets/radio-display-rotate.png" alt="Radio placement in a vehicle with Rotate selected, red, green, and blue rotation rings, the outer view ring, and apply, save, and cancel buttons"><figcaption><p>Drag a colored ring to rotate the radio, or use the outer ring to rotate relative to your view.</p></figcaption></figure>
 
 Switch between **Local axes** and **World axes** to align movement and rotation with the radio or the world. Enable **Snap** for 1 cm movement and 5° rotation steps.
 
