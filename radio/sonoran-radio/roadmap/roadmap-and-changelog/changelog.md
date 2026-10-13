@@ -4,6 +4,22 @@ description: View the changelog for the Sonoran Radio application and in-game re
 
 # 📋 Changelog
 
+### 2.28.10 10/13/2026
+
+{% tabs %}
+{% tab title="Changed" %}
+Store Listing Screenshots
+
+* Updated iPhone, iPad, and Google Play screenshots to show radio channels, voice effects, game integrations, and scan lists.
+{% endtab %}
+
+{% tab title="Fixed" %}
+Mobile: Camera Uploads and Purchase Promotions
+
+* Fixed camera photo uploads on iOS and removed custom domain configuration and purchase promotions from mobile apps.
+{% endtab %}
+
+{% endtabs %}
 ### 2.28.7 10/08/2026
 
 {% tabs %}
