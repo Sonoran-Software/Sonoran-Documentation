@@ -10,16 +10,6 @@ description: View the latest changes to Sonoran CMS!
 
 ## Changelog
 
-### 1.5.24 10/14/2026
-
-{% tabs %}
-{% tab title="New" %}
-ERLC Webhooks
-
-* Receive webhooks for New Records, Commands & Configuration Changes
-{% endtab %}
-
-{% endtabs %}
 ### 1.5.23 10/14/2026
 
 {% tabs %}
@@ -28,6 +18,10 @@ Multi-Discord Sync
 
 * Sync Discord roles from one guild to another based on CMS rank updates and role changes
 * Configurable through Discord bot and CMS UI
+
+ERLC Webhooks
+
+* Receive webhooks for New Records, Commands & Configuration Changes
 {% endtab %}
 
 {% tab title="Changed" %}
@@ -35,8 +29,8 @@ Improved Radio Integration UI
 
 * Cleaner UI matching CAD Integration
 {% endtab %}
-
 {% endtabs %}
+
 ### 1.5.22 10/08/2026
 
 {% tabs %}
@@ -57,8 +51,8 @@ Site AI
 * Ability to generate images for components and background
 * Improved follow-up questions
 {% endtab %}
-
 {% endtabs %}
+
 ### 1.5.21 09/17/2026
 
 {% tabs %}
@@ -71,8 +65,8 @@ Form Revision History
 
 * Added revision history to forms to view updates.
 {% endtab %}
-
 {% endtabs %}
+
 ### 1.5.20 09/16/2026
 
 {% tabs %}
@@ -81,8 +75,8 @@ Sonoran CAD Granular Permissions
 
 * Updated the CAD permission sync for the new v2 permissions.
 {% endtab %}
-
 {% endtabs %}
+
 ### 1.5.19 09/14/2026
 
 {% tabs %}
@@ -97,8 +91,8 @@ Desktop Downloads: Latest Releases
 
 * Updated desktop download links to the latest available Windows, macOS, and Linux releases.
 {% endtab %}
-
 {% endtabs %}
+
 ### 1.5.18 09/10/2026
 
 {% tabs %}
@@ -107,8 +101,8 @@ Mobile Builds: Store Publishing
 
 * Updated Android compatibility for Google Play and enabled replacement of pending TestFlight reviews for production iOS builds.
 {% endtab %}
-
 {% endtabs %}
+
 ### 1.5.16 09/08/2026
 
 {% tabs %}
