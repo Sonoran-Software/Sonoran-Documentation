@@ -23,17 +23,17 @@ If this community uses Sonoran CMS, configure [Radio permissions in CMS](https:/
 1. Select **Add role**.
 2. If more than one Discord server is connected, choose the correct server.
 3. Type a role name and select it. The dot beside its name shows its Discord role color.
-4. Choose what members can do under **Permissions**.
+4. Choose what members can do under **Permissions**. Scroll to see all permissions.
 5. Under **Private channels**, choose the channels members can use.
 6. Wait for **Changes saved automatically**, then select **Done**.
 
-<figure><img src="../../../.gitbook/assets/radio-discord-role-picker.jpg" alt="Searchable Discord role menu showing colored dots beside role names"><figcaption><p>Type to find a Discord role.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/radio-discord-role-picker.jpg" alt="Searchable Discord role menu showing colored dots beside role names" width="563"><figcaption><p>Type to find a Discord role.</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/radio-discord-role-permissions.jpg" alt="Radio role editor with permission toggles and automatic saving"><figcaption><p>Choose what members with this role can do.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/radio-discord-role-permissions.jpg" alt="Radio role editor showing access and member permission toggles" width="563"><figcaption><p>Choose what members with this role can do.</p></figcaption></figure>
 
 **Radio access** is included with every mapping. A matching role can approve a pending member even when no extra permissions are selected.
 
-<figure><img src="../../../.gitbook/assets/radio-discord-role-channels.jpg" alt="Radio private channel settings with Police channel access selected"><figcaption><p>Give this role access to specific private channels.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/radio-discord-role-channels.jpg" alt="Radio private channel settings with Police channel access selected" width="563"><figcaption><p>Give this role access to specific private channels.</p></figcaption></figure>
 
 ## 3. Sync members
 
