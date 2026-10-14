@@ -12,7 +12,7 @@ Follow [Connect your server](../discord-bot-integration.md), then open **Customi
 
 <figure><img src="../../../.gitbook/assets/radio-discord-members-banner.jpg" alt="Radio Members banner with a Set up role sync button"><figcaption><p>Open role sync from the Members panel.</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/radio-discord-role-sync.jpg" alt="Radio Role sync panel showing Police and Dispatch mappings with edit and delete buttons"><figcaption><p>Each role shows its Discord server and assigned permissions.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/radio-discord-role-sync.jpg" alt="Radio Role sync panel showing Police and Dispatch mappings for Sonoran Valey Roleplay with edit and delete buttons"><figcaption><p>Each role shows its Discord server and assigned permissions.</p></figcaption></figure>
 
 {% hint style="info" %}
 If this community uses Sonoran CMS, configure [Radio permissions in CMS](https://docs.sonoransoftware.com/cms/integration-capabilities/sonoran-radio-sync). Radio role mapping is disabled for communities managed by CMS.
