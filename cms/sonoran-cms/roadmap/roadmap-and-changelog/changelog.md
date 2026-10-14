@@ -10,6 +10,23 @@ description: View the latest changes to Sonoran CMS!
 
 ## Changelog
 
+### 1.5.23 10/14/2026
+
+{% tabs %}
+{% tab title="New" %}
+Multi-Discord Sync
+
+* Sync Discord roles from one guild to another based on CMS rank updates and role changes
+* Configurable through Discord bot and CMS UI
+{% endtab %}
+
+{% tab title="Changed" %}
+Improved Radio Integration UI
+
+* Cleaner UI matching CAD Integration
+{% endtab %}
+
+{% endtabs %}
 ### 1.5.22 10/08/2026
 
 {% tabs %}
