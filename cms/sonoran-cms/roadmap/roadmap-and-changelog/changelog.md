@@ -10,6 +10,16 @@ description: View the latest changes to Sonoran CMS!
 
 ## Changelog
 
+### 1.5.24 10/14/2026
+
+{% tabs %}
+{% tab title="New" %}
+ERLC Webhooks
+
+* Receive webhooks for New Records, Commands & Configuration Changes
+{% endtab %}
+
+{% endtabs %}
 ### 1.5.23 10/14/2026
 
 {% tabs %}
