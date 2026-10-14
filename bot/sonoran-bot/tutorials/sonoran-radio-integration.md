@@ -1,121 +1,49 @@
 ---
-description: Sync Sonoran Radio permissions with Discord roles for easy management!
+description: Configure Discord role permissions directly in the Radio panel.
 ---
 
 # Sonoran Radio Integration
 
-## Sonoran Radio Integration
+Choose a Discord role and the Radio permissions it gives members, all inside Radio.
 
-Sonoran Bot makes managing your Sonoran Radio permissions a breeze! Map specific permissions to Discord roles. Users with those Discord roles will be granted the assigned permissions.
+## 1. Connect Discord
 
-{% hint style="warning" %}
-Sonoran Radio role mapping is not available when Sonoran Bot is in CMS mode. Sonoran CMS manages your [CAD](https://docs.sonoransoftware.com/cms/integration-capabilities/sonoran-cad-sync) and [Radio](https://docs.sonoransoftware.com/cms/integration-capabilities/sonoran-radio-sync) permissions inside the app with CMS user ranks.
-{% endhint %}
+1. [Invite Sonoran Bot](https://sonoranbot.com/invite) and choose your Discord server.
+2. In Radio, open **Administration** and copy your **Community ID** and **Community API Key**.
+3. In Discord, run `/settings`. Choose a logging channel, select **Discord Only**, and enter your Radio community ID and API key.
+4. Return to Radio, open **Customize > Discord**, and select **Refresh Discord roles**.
 
-## Setup
+If the bot is already set up, use **Change Radio Setup** in the API settings under `/settings` to connect your Radio community.
 
-### 1. Invite the Bot and Link Your Radio
+## 2. Choose role permissions in Radio
 
-<details>
+1. In **Customize > Discord**, select **Add role**. You can also get there with **Set up role sync** in **Members**.
+2. Choose your Discord server if more than one is connected.
+3. Type to search for a role. Check its Discord color before selecting it.
+4. Choose **Permissions** and **Private channels**.
+5. Wait for **Changes saved automatically**, then select **Done**.
 
-<summary>Inviting and Linking Your Radio</summary>
+Select **Edit permissions** beside an existing role to change it. Changes save automatically.
 
-If you have not already, be sure to [invite the Discord bot and link your Radio community ID and API key.](getting-started.md)
+See the [illustrated Radio role sync guide](https://docs.sonoransoftware.com/radio/tutorials/integrations/discord/role-sync) for screenshots and permission details.
 
-If you already have Sonoran Bot configured for another product, you can add the Radio community ID and API key in the `/settings` menu under **API Menu** > **Change Radio Setup**.
+## 3. Sync members
 
-<figure><img src="../.gitbook/assets/image (20).png" alt="" width="237"><figcaption><p><code>/settings</code> -> <code>API Menu</code> -> <code>Change Radio Setup</code></p></figcaption></figure>
+1. Members join your Radio community.
+2. Members run `/sync` in Discord. The bot guides them through account linking if needed.
 
-After the Radio credentials are saved, the bot enables one of these sync modes automatically:
+Mapping edits automatically resync all linked members **5 minutes after the last edit**. Finishing the sync may take a little longer.
 
-* `RADIO` if only Radio is configured
-* `CAD_RADIO` if both CAD and Radio are configured
-* `CMS_BIDIR` if CMS is configured
-
-{% hint style="info" %}
-CMS takes priority over CAD and Radio sync. If CMS credentials are present, live role sync runs through the CMS path until CMS is removed from the community setup.
-{% endhint %}
-
-{% hint style="warning" %}
-Radio credentials are saved without setup-time validation. The first real validation usually happens when you open the Radio role mapping menu or run `/sync`.
-{% endhint %}
-
-</details>
-
-### 2. Create a Radio Bit Map
-
-<details>
-
-<summary>Generating Radio Bit Maps</summary>
-
-<figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
-
-In Sonoran Radio, navigate to **Members** > **Permission Generator**
-
-Toggle the desired permissions to generate a bit map below. Toggling private channels will add the channel IDs as a comma separated list at the end.
-
-Once complete, copy the bit map to be entered into Sonoran Bot.
-
-<div><figure><img src="../.gitbook/assets/image (22).png" alt="" width="224"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/image (23).png" alt="" width="178"><figcaption></figcaption></figure></div>
-
-</details>
-
-### 3. Configure Role Mapping
-
-<details>
-
-<summary>Configuring Radio Role Mapping</summary>
-
-Run `/rolemap`, select **Discord → Sonoran**, and configure how Discord roles translate into Sonoran Radio access. The separate **Discord → Discord** option only mirrors roles between linked Discord servers.
-
-If your community has both CAD and Radio configured, select **Radio** when prompted. If only Radio is configured, the bot opens the Radio mapping menu directly.
-
-<div><figure><img src="../.gitbook/assets/image (17).png" alt="" width="229"><figcaption><p><code>/rolemap</code> product selector in <code>CAD_RADIO</code> mode</p></figcaption></figure> <figure><img src="../.gitbook/assets/image (18).png" alt="" width="262"><figcaption><p><code>/rolemap</code> Radio main menu showing selector</p></figcaption></figure></div>
-
-Select the Discord role you wish to map to specific Radio permissions. Enter the radio permission bit map from the previous step.
-
-<div><figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption><p>Selected Radio role view in <code>/rolemap</code></p></figcaption></figure> <figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure></div>
-
-To delete an existing role mapping, edit it and enter `0` as the value.
-
-</details>
-
-### 4. Syncing Users
-
-<details>
-
-<summary>Syncing User Permissions</summary>
-
-In order for the bot to sync users in your radio community, their Sonoran account must be linked to Discord. Users can run `/linkme` to link their Discord to their Sonoran Software account.
+Once a member is linked, adding or removing their Discord roles automatically updates Radio permissions without another `/sync`. Members receive the combined permissions and private channel access from their mapped roles across connected Discord servers. Sync replaces manually assigned Radio permissions and private channel grants; the community owner keeps full access.
 
 {% hint style="info" %}
-User permissions are synced across all linked Discord guilds. If you have multiple Discord servers linked to the same Sonoran community, the bot gathers all of them and checks the member's roles across every linked server that the bot is in.
+If your community uses Sonoran CMS, configure [Radio permissions in CMS](https://docs.sonoransoftware.com/cms/integration-capabilities/sonoran-radio-sync). Radio role mapping is disabled for communities managed by CMS.
 {% endhint %}
 
-**Automatic Sync**
+## Troubleshooting
 
-Sonoran Bot will automatically sync and update Radio permissions on:
-
-* Discord role changes
-* Members exiting the Discord guild
-* Members being banned from the Discord guild
-
-**Manual Sync**
-
-Users can run `/sync` to force a manual permission sync.
-
-Administrators can force a community-wide sync by running `/sync community: yes`
-
-</details>
-
-### Troubleshooting
-
-If Radio sync does not work, check these first:
-
-1. Confirm the user's Sonoran account is linked to Discord (`/linkme`).
-2. Confirm the correct Sonoran Radio community ID and API key are saved.
-3. Confirm the Discord role is actually mapped in `/rolemap`.
-4. Confirm the permission integer was generated correctly.
-5. Run `/sync` manually to test the user.
-
-If `/rolemap` or `/sync` fails immediately after setup, the most likely causes are invalid Radio credentials or a missing linked Sonoran account.
+1. Confirm Sonoran Bot is connected to the correct Radio community.
+2. Select **Refresh Discord roles** in Radio if a server or role is missing.
+3. Check that the member has a mapped Discord role and has joined your Radio community.
+4. Run `/sync` in Discord to check the member's permissions. The bot explains any account linking needed.
+5. After editing a mapping, wait 5 minutes without another edit, then allow a little longer for the sync to finish.

@@ -39,6 +39,8 @@
 * [Other Integrations](tutorials/integrations/README.md)
   * [Stream Deck Plugin](tutorials/integrations/stream-deck-plugin.md)
   * [Sonoran CAD Integration](tutorials/integrations/sonoran-cad-integration.md)
+  * [Discord](tutorials/integrations/discord-bot-integration.md)
+    * [Role sync](tutorials/integrations/discord/role-sync.md)
   * [Sonoran CMS](tutorials/integrations/sonoran-cms.md)
 
 ## Game Integrations

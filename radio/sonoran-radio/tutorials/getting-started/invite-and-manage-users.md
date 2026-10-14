@@ -24,10 +24,10 @@ If you are building your own integration, Sonoran Radio also exposes API endpoin
 
 ## Discord Role Sync
 
-Sync radio permissions with Discord roles.
+Choose Discord role permissions in **Customize > Discord**, or select **Set up role sync** in **Members**.
 
-{% content-ref url="https://app.gitbook.com/s/gJnyZgUQPWpA5p9njAAR/tutorials/sonoran-radio-integration" %}
-[Sonoran Radio Integration](https://app.gitbook.com/s/gJnyZgUQPWpA5p9njAAR/tutorials/sonoran-radio-integration)
+{% content-ref url="../integrations/discord-bot-integration.md" %}
+[Discord](../integrations/discord-bot-integration.md)
 {% endcontent-ref %}
 
 ***
