@@ -4,6 +4,29 @@ description: View the changelog for the Sonoran Radio application and in-game re
 
 # 📋 Changelog
 
+### 2.28.11 10/14/2026
+
+{% tabs %}
+{% tab title="New" %}
+Panic CAD Sync
+
+* Triggering radio panic will sync to your linked CAD community
+
+Discord Role Mapping
+
+* Discord <-> Radio permission syncing
+* Configurable through Radio UI and Discord bot settings
+{% endtab %}
+
+{% tab title="Changed" %}
+Custom Screen Editor
+
+* Configurable text alignment
+* Configurable button text color
+* Decorative images
+{% endtab %}
+
+{% endtabs %}
 ### 2.28.10 10/13/2026
 
 {% tabs %}
