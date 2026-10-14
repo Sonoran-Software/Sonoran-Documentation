@@ -44,7 +44,7 @@ Channel endpoints cover channel discovery and tone playback operations.
 
 ### Community Server
 
-Community server endpoints cover server IP registration, subscription lookup, in-game speaker locations, and backend-authoritative room zones.
+Community server endpoints cover authenticated community identity, server IP registration, subscription lookup, in-game speaker locations, and backend-authoritative room zones.
 
 {% content-ref url="community-server/" %}
 [community-server](community-server/)

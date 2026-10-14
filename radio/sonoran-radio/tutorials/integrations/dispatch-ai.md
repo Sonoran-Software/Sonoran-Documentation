@@ -25,6 +25,8 @@ Complete this setup once for each Radio server using Dispatch AI. **The current 
 5. Toggle **Dispatch AI Enabled** on.
 6. Sign in to Radio with your Sonoran account, join that Radio server, and connect to a channel. Use the same account in CAD for actions involving your unit.
 
+This CAD API link is also required for [desktop overlay panic synchronization](sonoran-cad-integration.md#desktop-overlay-panic). Configure it for the Radio server used by your overlay. Panic synchronization works even when **Dispatch AI Enabled** is off.
+
 <figure><img src="../../.gitbook/assets/dispatch-ai/setup-and-timers.png" alt="Dispatch AI configuration showing enable controls, timer settings, and the Sonoran CAD link"><figcaption><p>Configure Dispatch AI for the selected Radio server.</p></figcaption></figure>
 
 ## Using the AI

@@ -38,6 +38,7 @@
     * [System Microphone Volume Changing](tutorials/usage/troubleshooting/system-microphone-volume-changing.md)
 * [Other Integrations](tutorials/integrations/README.md)
   * [Stream Deck Plugin](tutorials/integrations/stream-deck-plugin.md)
+  * [Sonoran CAD Integration](tutorials/integrations/sonoran-cad-integration.md)
   * [Sonoran CMS](tutorials/integrations/sonoran-cms.md)
 
 ## Game Integrations
@@ -64,7 +65,6 @@
     * [IP Whitelisting](tutorials/usage/in-game-radio/ip-whitelisting.md)
     * [Background Audio Injection](tutorials/usage/in-game-radio/background-audio-injection.md)
     * [Tablet](tutorials/usage/in-game-radio/tablet.md)
-  * [Sonoran CAD Integration](tutorials/integrations/sonoran-cad-integration.md)
   * [Vehicle Radio Display](tutorials/integrations/vehicle-radio-display.md)
   * [Big Daddy Radio Animations](tutorials/integrations/big-daddy-radio-animations.md)
   * [FiveM Inventories](tutorials/integrations/fivem-inventories.md)

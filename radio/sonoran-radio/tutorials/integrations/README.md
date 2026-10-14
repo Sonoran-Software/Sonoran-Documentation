@@ -5,6 +5,7 @@ description: Connect Sonoran Radio to your other tools.
 # Other Integrations
 
 * [Stream Deck Plugin](stream-deck-plugin.md)
+* [Sonoran CAD](sonoran-cad-integration.md)
 * [Sonoran CMS](sonoran-cms.md)
 
 

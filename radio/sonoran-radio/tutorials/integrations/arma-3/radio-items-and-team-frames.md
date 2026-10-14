@@ -17,6 +17,12 @@ Equip a radio item to use the desktop frame assigned to it by your community.
 
 New Radio communities registered with **ARMA 3** selected include the two example desktop frames and mappings. Existing communities can map these classes to an existing frame or create new frames.
 
+On both default ARMA frames, the lower-left button beneath the screen returns to the Radio portal. The upper-left and upper-right buttons change channels, and the center button reconnects the radio. Older default frames with unchanged button layouts receive the portal button when the overlay is reopened.
+
+For a custom frame, add **Back to Portal** in **Customize > Overlay > Manual > Add Button**, position it over the intended button, and select **Save changes**.
+
+The overlay's **Panic** control can also update your CAD unit. Configure the CAD API link in **Customize > Dispatch AI** and follow [Sonoran CAD Integration](../sonoran-cad-integration.md#desktop-overlay-panic).
+
 <details>
 <summary>Select a frame manually</summary>
 

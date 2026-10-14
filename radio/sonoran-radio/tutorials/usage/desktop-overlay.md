@@ -51,7 +51,15 @@ The desktop app keeps radio controls visible while playing FiveM, Arma 3, Roblox
 
 On the website, the tab is disabled; its tooltip explains that the desktop app is required. The mobile app hides the tab.
 
-To return to the main panel, use the radio's power button or **Return to Portal**.
+To return to the main panel, use the radio's power button or **Back to Portal**.
+
+The default ARMA 3 BLUFOR and OPFOR frames use the lower-left button beneath the screen for **Back to Portal**. For a custom frame, open **Customize > Overlay > Manual > Add Button** and add **Back to Portal** for ARMA 3 or **Hide** for other games. Position it over a button, then select **Save changes**.
+
+## Panic and Sonoran CAD
+
+Use the frame's **Panic** button or a custom screen's Panic element to activate or clear your radio panic. To also update your CAD unit, link the CAD community ID, API key, and server ID for your Radio server under **Customize > Dispatch AI > Link Sonoran CAD**. Use the same Sonoran account in Radio and CAD, with your CAD unit on duty.
+
+See [Sonoran CAD Integration](../integrations/sonoran-cad-integration.md#desktop-overlay-panic) for setup and troubleshooting. The CAD API link is required for synchronization; the **Dispatch AI Enabled** toggle can remain off.
 
 ## Game Signal
 

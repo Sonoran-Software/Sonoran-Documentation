@@ -6,6 +6,8 @@ description: Configure FiveM radio frames, vehicle-specific layouts, and frame a
 
 FiveM radio frames are managed in the Radio panel under **Customize > Overlay**. The same editor supplies the desktop overlay.
 
+Add a **Panic** control to layouts that need one. See [Sonoran CAD Integration](../../integrations/sonoran-cad-integration.md) for the FiveM CAD plugin and desktop overlay panic setup. Desktop overlay synchronization requires the CAD API link under **Customize > Dispatch AI**.
+
 ## Create or edit a frame
 
 Select **FiveM** in **Customize > Game Integration**, then follow [Create a custom overlay](../desktop-overlay.md#create-a-custom-overlay). Upload your artwork, position the screen and buttons, and select **Save changes**. Uploading new custom artwork requires **Pro**.
