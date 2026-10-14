@@ -6,11 +6,19 @@ description: Place, edit, move, and remove Sonoran Street Signs through the in-g
 
 ## Open the sign menu
 
-Run `/sign` to open Sonoran Street Signs. Select **Nearby signs** or **All signs**, then choose the sign you want to manage. Your permissions determine which actions appear. Nearby signs also have map markers to help you find them.
+Run `/sign` to open Sonoran Street Signs. Select **Nearby signs** or **All signs**, then choose the sign you want to manage. Your permissions determine which actions appear.
 
 Administrators can select **Full sign controller** to browse all signs in one editor. In-game saves still require you to be within three meters of the selected sign's control panel, including in the full controller. Use [Sonoran CAD](integrations-and-webhooks.md#sonoran-cad) for remote message updates.
 
 > Screenshot placeholder: The `/sign` menu showing Place a new sign, Nearby signs, and All signs.
+
+## Show or hide map blips
+
+Street Sign map blips start hidden by default. To show them, open chat and enter `/signblips`. Run the same command again to hide them. A chat suggestion helps you find the command, and a confirmation tells you whether the blips are shown or hidden.
+
+This changes only your own in-game map. Your choice stays in effect through sign edits and refreshes, then resets to the server's default when you reconnect or the resource restarts. It does not change Sonoran CAD Live Map markers.
+
+If the server disables blips for everyone, `/signblips` reports that they are disabled and its chat suggestion is hidden. Server owners can change the [map blip settings](configuration-reference.md#map-blips).
 
 ## Place or move a sign
 

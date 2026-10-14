@@ -31,7 +31,7 @@ You can also download the latest release of the resource [here](https://github.c
 1.  Inside the script package you just extracted will be two folders. Copy both to a folder in your server's resources folder called `[sonoranscripts]` note the `[]` in the name, without them it will not work.
 
     <figure><img src="../.gitbook/assets/directory_example (1).png" alt=""><figcaption><p>Sonoran Software - Radar Display - Folders</p></figcaption></figure>
-2. In the `sonoran-radar/config` folder there will be a file called `config.CHANGEME.lua` you should rename that to be `config.lua` and configure the settings inside as you would like them to be configured based on the configuration documentation below. In that same folder will also be a file called `radars.CHANGEME.json` which you should rename to `radars.json` and use to manually place cameras based on the existing template, note you can also use the menu placement system in game.
+2. In the `sonoran-radar/config` folder, rename `config.CHANGEME.lua` to `config.lua` and configure the settings below. Rename `radars.CHANGEME.json` to `radars.json` in the same folder. Use the [in-game placement editor](#place-and-edit-a-radar) to move, rotate, and save radars, or edit the saved placements manually.
 3. Finally, in your `server.cfg` add the following:
 
 ```
@@ -97,12 +97,57 @@ Config = {
 
 ## Radar Location Config
 
-You have two options for placing new radars:
+### Place and edit a radar
 
-1. You can use the command `/addnewradar` while in a LEO vehicle to initiate spawning a new radar and generate the relevant config data
-   * After running this command you will be prompted by a menu that will take you through the spawning process.
-   * You may need to modify some of the rotation values manually to get that perfect placement you are looking for.
-2. You can manually copy and paste an existing config and then modify the values to meet your needs for the new camera
+{% hint style="info" %}
+The mouse placement editor described below is currently available in the release-candidate build.
+{% endhint %}
+
+1. Sit in a compatible emergency vehicle and stop the vehicle.
+2. Run `/addnewradar`, or your server's configured placement command.
+3. Select **Place radar**, choose a **Radar model** and **Vehicle bone**, then select **Place radar** to open the editor. If the vehicle already has a radar, select **Edit radar placement** instead.
+4. Use **Move** and **Rotate** to adjust the radar, then choose an apply or save option below.
+
+Keep the vehicle stopped and remain inside it while editing. Moving or leaving the vehicle cancels placement.
+
+### Move the radar
+
+Select **Move** and left-drag a colored arrow to move the radar along one axis. Drag a colored square to move it along two axes at once.
+
+* **Local axes** follows the radar's orientation. Select it to switch to **World axes**, which follows the world's directions.
+* **Snap** switches between free movement and 1 cm movement increments. It also enables 5-degree rotation increments.
+
+<figure><img src="../.gitbook/assets/radar-display-placement-move.png" alt="Radar Display in Move mode inside a stopped vehicle, with colored movement arrows and squares around the radar"><figcaption><p>Drag the arrows or squares to move the radar.</p></figcaption></figure>
+
+### Rotate the radar
+
+Select **Rotate** and left-drag a colored ring to turn the radar around that axis. Use **Local axes** or **World axes** to choose the rotation directions, and enable **Snap** for 5-degree increments.
+
+<figure><img src="../.gitbook/assets/radar-display-placement-rotate.png" alt="Radar Display in Rotate mode inside a stopped vehicle, with colored rotation rings around the radar"><figcaption><p>Drag a ring to rotate the radar.</p></figcaption></figure>
+
+### Adjust your view
+
+* Right-drag to look around. Enable **Orbit radar** to circle the radar with right-drag instead.
+* Middle-drag to lean the camera, and scroll the mouse wheel to zoom.
+* **Look at radar** points the camera toward the radar.
+* **Cabin view** restores the starting camera view.
+* **Reset** restores the radar's position and rotation from when the editor opened.
+
+### Apply, save, or cancel
+
+| Action | Result |
+| --- | --- |
+| **Apply to this vehicle** | Applies the placement to the current vehicle without saving it for other vehicles or future spawns. |
+| **Save for this vehicle model** | Saves the placement in `radars.json` for all vehicles of that model, including after a resource restart. Wait for the save confirmation. |
+| **Cancel** | Keeps an existing radar's placement unchanged, or removes a new, unsaved radar. |
+
+Existing saved placements work with the new editor without conversion.
+
+To remove a saved placement, reopen `/addnewradar`, select **Delete saved radar**, then confirm with **Delete radar for this vehicle model**. This removes the saved placement for that model, rather than only the current vehicle. For a radar applied only to the current vehicle, use **Remove radar from this vehicle**.
+
+### Edit saved placements manually
+
+You can also copy an existing entry in `sonoran-radar/config/radars.json` and adjust its vehicle, attachment, position, and rotation values using the properties below. Give each entry a unique `ID`.
 
 ### `radars.json` Property Explanation
 
@@ -119,7 +164,7 @@ You have two options for placing new radars:
 
 | Command Name   | Command Description                                                 | Required Permission    |
 | -------------- | ------------------------------------------------------------------- | ---------------------- |
-| `/addnewradar` | This command will initiate the radar spawning and attaching process | Admin or as configured |
+| `/addnewradar` | Opens the menu to place, edit, or remove a radar | Everyone when `commands.restricted` is `false`; otherwise requires the ACE permission set in `commands.allowedToPlace` (default: `radar.admin`) |
 
 ## Default Vehicles
 

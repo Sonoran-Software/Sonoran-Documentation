@@ -119,7 +119,7 @@
     * [Pager Reborn](integration-plugins/in-game-integration/available-plugins/pager-reborn.md)
     * [Postals](integration-plugins/in-game-integration/available-plugins/postals.md)
     * [Record Printer](integration-plugins/in-game-integration/available-plugins/record-printer.md)
-    * [Smart Signs](integration-plugins/in-game-integration/available-plugins/smart-signs.md)
+    * [Street Signs](integration-plugins/in-game-integration/available-plugins/smart-signs.md)
     * [Sonoran Radio (sonrad)](integration-plugins/in-game-integration/available-plugins/sonoran-radio-sonrad.md)
     * [Station Alert](integration-plugins/in-game-integration/available-plugins/station-alert.md)
     * [Tablet & Mini-CAD](integration-plugins/in-game-integration/available-plugins/tablet.md)

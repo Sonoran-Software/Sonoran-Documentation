@@ -15,6 +15,7 @@ Sonoran Software - Radar Detector Promotional Video
 ### Features
 
 * Ability to operate standalone
+* Mouse placement editor with Move arrows, Rotate rings, and optional snapping
 
 <figure><img src="../.gitbook/assets/in_game_prop.png" alt=""><figcaption><p>Sonoran Software - Radar Detector Promotional Image</p></figcaption></figure>
 

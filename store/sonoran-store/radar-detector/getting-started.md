@@ -212,21 +212,56 @@ Config.blacklistedCars = {
 
 ## Usage
 
-{% embed url="https://www.youtube.com/watch?v=eXGCLnaU-yg" %}
+### Place a detector
 
-1. **Choose an eligible car**: Select a car that is compatible with the radar detector/jammer script.
-2. **Use the command `/detectormenu`**: Open the chatbox or console and type `/detectormenu` to bring up the radar detector menu.
-3. **Open the spawning menu**: In the radar detector menu, navigate to the "Spawning Menu" option and select it to open the spawning menu.
-4. **Spawn the prop**: Within the spawning menu, choose the desired prop and spawn it into the game world.
+1. Sit in a compatible vehicle and bring it to a complete stop. Close any tablet or other open interface.
+2. Run `/detectormenu` to open the detector menu. Your server may use a different command if configured.
+3. Select **Spawn Radar Detector**, then select **Spawn Radar Detector** in the submenu to open the mouse placement editor.
+4. Use **Move** and **Rotate** to position the detector inside the vehicle.
+5. Select **Apply to this vehicle** to install the detector at the chosen position.
 
-{% hint style="warning" %}
-**Note:** If in framework mode you must have the `sonoran_radar_detector` object in your inventory to spawn
+{% hint style="info" %}
+In framework mode, you need a Radar Detector/Jammer item in your inventory. The item is used when the installation is accepted. Selecting **Cancel** before applying leaves the item in your inventory.
 {% endhint %}
 
-5. **Navigate to the attaching menu**: Use the "Backspace" or the designated key to go back in the menu and access the "Attaching Menu".
-6. **Attach the prop**: Select the "Attach" option in the attaching menu and use the on-screen controls to move the prop to the desired location on the vehicle.
-7. **Confirm placement**: Once the prop is positioned correctly, press the "Confirm Placement" button to finalize the attachment.
-8. **Access the radar detector remote menu**: Use the "Backspace" key or the designated key to go back in the menu and select the "Radar Detector Remote Menu".
-9. **Toggle the jammer and detector**: Within the radar detector remote menu, adjust the settings to toggle the jammer and detector functionality according to your preferences.
-10. **Turn on the power**: Enable the power switch in the radar detector remote menu to activate the radar detector/jammer system.
-11. **Enjoy the protection from police radars**: With the radar detector/jammer active, you will now be protected from police radars while driving your vehicle.
+### Move
+
+Select **Move**, then left-click and drag a colored arrow to move along one axis. Drag a colored square to move along two axes at once.
+
+> Screenshot placeholder — Move controls: In-game cabin view with the detector selected, **Move** active, colored arrows and squares visible, and the toolbar and **Apply to this vehicle** button in frame.
+
+### Rotate
+
+Select **Rotate**, then left-click and drag a colored ring to turn the detector around that axis. The outer gray ring rotates it around your viewing direction.
+
+> Screenshot placeholder — Rotate rings: In-game cabin view with the detector selected, **Rotate** active, colored rotation rings and the outer gray ring visible, and the toolbar and **Apply to this vehicle** button in frame.
+
+### Placement controls
+
+| Control | What it does |
+| --- | --- |
+| **Local axes / World axes** | Switch between axes aligned with the detector and axes aligned with the game world. |
+| **Snap: off** | Enable movement in 1 cm steps and rotation in 5° steps. Select it again to turn snapping off. |
+| Right mouse drag | Look around from the cabin camera. Enable **Orbit detector** to rotate the camera around the detector instead. |
+| Middle mouse drag | Lean the camera slightly to adjust your view. |
+| Mouse wheel | Zoom the view in or out. |
+| **Look at detector** | Aim the camera at the detector from your current viewpoint. |
+| **Cabin view** | Restore the starting camera view. |
+| **Reset** | Restore the detector's position and rotation from when you opened the editor. |
+| **Cancel** | Close the editor and discard the placement changes. |
+
+Keep the vehicle stationary while placing the detector. Placement cancels if the vehicle moves or you leave it.
+
+### Reposition a detector
+
+Run `/detectormenu` in the stopped vehicle, select **Attach Radar Detector**, then **Position radar detector with mouse**. Use the same Move and Rotate controls, then select **Apply to this vehicle** to keep the new placement. **Cancel** keeps the previous placement.
+
+### Use the detector and jammer
+
+After applying the placement, reopen `/detectormenu` and select **Radar Remote Menu**. Use **Toggle Radar Detector Power** to turn it on, then use **Toggle Detection Mode** and **Toggle Jamming Mode** as needed.
+
+### Placement troubleshooting
+
+* If the editor will not open, stop the vehicle, close other interfaces, and check that the vehicle is compatible and you have menu access. In framework mode, also check that you have the detector item.
+* If you lose sight of the detector, select **Look at detector** or **Cabin view**.
+* If repositioning reports that you do not control the detector, retry once you have control of it.

@@ -15,6 +15,7 @@ Sonoran Software - Radar Display Promotional Video
 ### Features
 
 * Ability to operate standalone
+* Mouse placement editor with movement arrows, rotation rings, and snapping (release candidate). [Move, rotate, and save a radar](getting-started.md#place-and-edit-a-radar).
 
 <figure><img src="../.gitbook/assets/in_game_prop_radar.png" alt=""><figcaption><p>Sonoran Software - Radar Display Promotional Image</p></figcaption></figure>
 
