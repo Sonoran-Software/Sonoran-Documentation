@@ -14,6 +14,8 @@ You need **Manage Server** to invite and configure the bot.
 
 For CAD, follow the [CAD Discord setup guide](https://docs.sonoransoftware.com/cad/integration-plugins/discord-bot-integration). Role permissions are configured in the CAD UI.
 
+For Radio, follow the [Radio Discord setup guide](https://docs.sonoransoftware.com/radio/tutorials/integrations/discord-bot-integration). Role permissions and private channels are configured in the Radio UI.
+
 ### 1. Invite the Bot to Your Server
 
 <details>
