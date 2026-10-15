@@ -72,7 +72,7 @@ Sonoran CAD's [bodycam system](integration-plugins/in-game-integration/available
 
 ### 📍 3D Live Map
 
-Sonoran CAD's custom [3D live map](integration-plugins/in-game-integration/available-plugins/live-map.md) allows you to edit and view live unit information, emergency call blips, smart road signs, and more!
+Sonoran CAD's custom [3D live map](integration-plugins/in-game-integration/available-plugins/live-map.md) allows you to edit and view live unit information, emergency call blips, Sonoran Street Signs, and more!
 
 <figure><img src=".gitbook/assets/map_promo.png" alt=""><figcaption></figcaption></figure>
 
@@ -80,7 +80,7 @@ Sonoran CAD's custom [3D live map](integration-plugins/in-game-integration/avail
 
 We've released a free street signs integration for everyone! You can customize in-game roadway signs right from Sonoran CAD!
 
-<figure><img src=".gitbook/assets/image (640).png" alt=""><figcaption><p>Sonoran CAD x London Studios</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (640).png" alt=""><figcaption><p>Sonoran Street Signs</p></figcaption></figure>
 
 ### 🚔 [FiveM ERS Integration](integration-plugins/in-game-integration/available-plugins/ers.md)
 

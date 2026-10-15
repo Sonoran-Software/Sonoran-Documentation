@@ -115,7 +115,6 @@ The `active` boolean is optional and will update the user's account status to `A
 | DMVRECEDIT              | Permission to edit DMV records                        |
 | DMVRECREMOVE            | Permission to remove DMV records                      |
 | DMVSUPER                | Permission to modify DMV record supervisor fields     |
-| MODIFYSTREETSIGNS       | Permission to modify street signs                     |
 | LAWRECADD               | Permission to add law records                         |
 | LAWRECEDIT              | Permission to edit law records                        |
 | LAWRECREMOVE            | Permission to remove law records                      |

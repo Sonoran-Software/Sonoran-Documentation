@@ -8,14 +8,6 @@ Use these endpoints to update emergency-specific configuration for a server.
 
 ## Endpoints
 
-{% content-ref url="update-street-signs.md" %}
-[update-street-signs.md](update-street-signs.md)
-{% endcontent-ref %}
-
-{% content-ref url="set-street-sign-config.md" %}
-[set-street-sign-config.md](set-street-sign-config.md)
-{% endcontent-ref %}
-
 {% content-ref url="set-callouts.md" %}
 [set-callouts.md](set-callouts.md)
 {% endcontent-ref %}

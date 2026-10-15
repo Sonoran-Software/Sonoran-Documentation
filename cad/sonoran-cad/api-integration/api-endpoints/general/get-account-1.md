@@ -68,7 +68,6 @@ This endpoint allows you to page through all community accounts via API.
         "dmvRecEdit": true,
         "dmvRecRemove": true,
         "dmvSuper": true,
-        "modifyStreetSigns": true,
         "lawRecAdd": true,
         "lawRecEdit": true,
         "lawRecRemove": true,

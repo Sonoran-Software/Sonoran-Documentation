@@ -44,10 +44,6 @@ The v2 general configuration endpoints manage penal codes, servers, postal data,
 [set-servers.md](set-servers.md)
 {% endcontent-ref %}
 
-{% content-ref url="auth-street-signs.md" %}
-[auth-street-signs.md](auth-street-signs.md)
-{% endcontent-ref %}
-
 {% content-ref url="set-postal-config.md" %}
 [set-postal-config.md](set-postal-config.md)
 {% endcontent-ref %}

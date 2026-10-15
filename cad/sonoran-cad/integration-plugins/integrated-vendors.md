@@ -10,8 +10,6 @@ description: >-
 
 ### London Studios
 
-* [Smart Signs](https://info.sonorancad.com/integration-plugins/integration-plugins/available-plugins/smart-signs)
-  * Integration: Update smart sign displays in-game from SonoranCAD!
 * [Smart Fires](https://store.londonstudios.net/category/fire-resources)
   * Integration: Automatic 911 Calls sent directly to SonoranCAD!
 

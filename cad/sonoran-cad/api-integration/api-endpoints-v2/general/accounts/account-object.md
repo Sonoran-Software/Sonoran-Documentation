@@ -89,7 +89,6 @@ The Account Object is returned by the following endpoints:
 | `medRecEdit`              | boolean |
 | `medRecRemove`            | boolean |
 | `medSuper`                | boolean |
-| `modifyStreetSigns`       | boolean |
 | `police`                  | boolean |
 | `polEditOtherUnit`        | boolean |
 | `polEditUnit`             | boolean |

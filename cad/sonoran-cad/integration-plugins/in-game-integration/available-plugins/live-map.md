@@ -120,11 +120,9 @@ Clicking on the emergency blip allows you to import the call to your editor or r
 
 ![Live Map - Emergency Call Blip](<../../../.gitbook/assets/image (175).png>)
 
-### Smart Sign Blips
+### Sonoran Street Signs
 
-[Smart signs](smart-signs.md) will also appear as blips on the map. You can click on these to edit the signs in-game.
-
-![Live Map - Smart Signs](<../../../.gitbook/assets/image (323).png>)
+[Sonoran Street Signs](smart-signs.md) adds custom Live Map markers that open each sign's Integration Panel editor. Give CAD roles access to the overview and individual sign controllers. See the [Street Signs integration guide](https://docs.sonoransoftware.com/store/street-signs/integrations-and-webhooks) for setup and permissions.
 
 ## FiveM Custom Map
 

@@ -98,7 +98,6 @@
 * [🔫 Shot Spotter](shot-spotter/README.md)
   * [Getting Started](shot-spotter/getting-started.md)
   * [Shot Spotter - Advanced Documentation](shot-spotter/advanced-docs.md)
-* [🛣️ Smart Signs](https://info.sonorancad.com/integration-plugins/integration-plugins/available-plugins/smart-signs)
 * [📹 Speed Cameras / ALPR](speed-camera/README.md)
   * [Getting Started](speed-camera/getting-started.md)
   * [Advanced Documentation](speed-camera/advanced-docs.md)

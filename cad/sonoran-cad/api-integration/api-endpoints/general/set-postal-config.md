@@ -15,7 +15,7 @@ For more information, see our [pricing ](../../../pricing/faq/)page.
 
 <mark style="color:green;">`POST`</mark> `https://api.sonorancad.com/general/set_postals`
 
-This endpoint authenticates the use of our integrated street signs plugin.
+This endpoint sets your community's postal configuration for Live Map search.
 
 #### Request Body
 
@@ -23,7 +23,7 @@ This endpoint authenticates the use of our integrated street signs plugin.
 | ---- | ------ | ------------------------ |
 | id   | string | Your community's ID      |
 | key  | string | Your community's API Key |
-| type | string | AUTH\_STREETSIGNS        |
+| type | string | SET\_POSTALS        |
 | data | object | Request object           |
 
 {% tabs %}

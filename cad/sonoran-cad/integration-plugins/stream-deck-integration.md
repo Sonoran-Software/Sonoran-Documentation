@@ -66,7 +66,6 @@ When pressed, these actions will open the corresponding window in the CAD.
 * [**Tone Board**](../tutorials/customization/tone-board.md) (Available to dispatchers or when Self Dispatch Mode is enabled)
 * [**Rapid IQ**](../tutorials/dispatching/rapid-iq.md) (Opens in the active visible Call Viewer)
 * [**Command Line**](../tutorials/dispatching/command-line-interface-cli.md)
-* [**Street Signs**](in-game-integration/available-plugins/smart-signs.md)
 * **Call Viewer**
 * [**Lookup**](../tutorials/records-management/searching-for-records.md)
 * [**Records**](../tutorials/records-management/)

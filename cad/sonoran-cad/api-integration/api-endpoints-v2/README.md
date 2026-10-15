@@ -63,7 +63,7 @@ General endpoints cover account management, custom records, lookup workflows, an
 
 Use this combined OpenAPI document if you want to import the full Sonoran CAD v2 API into Postman in one pass.
 
-This generated collection currently includes `87` documented v2 operations.
+This generated collection currently includes `84` documented v2 operations.
 
 <details>
 <summary>Copy the full OpenAPI YAML</summary>
@@ -1214,90 +1214,6 @@ paths:
               unitColors:
               - '#2563eb'
               - '#ef4444'
-      tags:
-      - Emergency / Configuration
-  /v2/emergency/servers/{serverId}/street-sign-config:
-    put:
-      summary: Set Street Sign Config
-      operationId: setStreetSignConfig
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                serverId: 1
-                signs: 1
-      parameters:
-      - description: Configured Sonoran CAD server ID.
-        name: serverId
-        in: path
-        schema:
-          type: integer
-        example: 1
-        required: true
-      security:
-      - bearerAuth: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-            example:
-              signs:
-                id: 7
-                coordinates:
-                  x: 420.1
-                  y: -980.4
-                  z: 30.8
-                  w: 0.0
-                label: Mission Row
-                text1: Mission Row
-                text2: Integrity Way
-                text3: ''
-      tags:
-      - Emergency / Configuration
-  /v2/emergency/servers/{serverId}/street-signs:
-    patch:
-      summary: Update Street Signs
-      operationId: updateStreetSigns
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                ids:
-                - 7
-                - 8
-      parameters:
-      - description: Configured Sonoran CAD server ID.
-        name: serverId
-        in: path
-        schema:
-          type: integer
-        example: 1
-        required: true
-      security:
-      - bearerAuth: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-            example:
-              ids:
-              - 1
-              - 2
-              text1: Mission Row
-              text2: Alta St
-              text3: Integrity Way
       tags:
       - Emergency / Configuration
   /v2/emergency/accounts/{accountUuid}/identifiers:
@@ -2736,32 +2652,6 @@ paths:
                 status: 409
                 title: Revision changed
                 detail: Configuration changed after startup.
-      tags:
-      - General / Configuration
-  /v2/general/servers/{serverId}/street-sign-auth:
-    post:
-      summary: Auth Street Signs
-      operationId: authStreetSigns
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                authorized: true
-                serverId: 1
-      parameters:
-      - description: Configured Sonoran CAD server ID.
-        name: serverId
-        in: path
-        schema:
-          type: integer
-        example: 1
-        required: true
-      security:
-      - bearerAuth: []
       tags:
       - General / Configuration
   /v2/general/database-sync:
