@@ -1,11 +1,11 @@
 ---
-description: Terms for Sonoran CAD Pro Lifetime purchases, version 2026-10-15.
+description: Terms for Sonoran CAD Pro Lifetime purchases, version 2026-10-15.1.
 ---
 
 # Sonoran CAD Pro Lifetime Agreement
 
 {% hint style="info" %}
-**Version 2026-10-15.** This agreement applies to CAD Pro Lifetime purchases made under this version. It does not change existing monthly or quarterly subscriptions. The agreement and total price must be presented and accepted before payment.
+**Version 2026-10-15.1.** This agreement applies to CAD Pro Lifetime purchases made under this version. It does not change existing monthly or quarterly subscriptions. The agreement and total price must be presented and accepted before payment.
 {% endhint %}
 
 This agreement describes a Sonoran CAD Pro Lifetime purchase from Sonoran Software Systems LLC ("Sonoran," "we," or "us") by the original purchaser ("you"). It supplements our [Terms of Service](terms-of-service.md). Its specific Lifetime terms control any conflicting general terms concerning the covered purchase, billing, duration, community assignment, refunds, or termination. All other applicable terms continue to apply, subject to mandatory consumer rights.
@@ -14,9 +14,11 @@ This agreement describes a Sonoran CAD Pro Lifetime purchase from Sonoran Softwa
 
 The single payment shown at checkout purchases a CAD Pro Lifetime entitlement on your Sonoran account. It has no recurring subscription charge. Taxes and any optional, separately purchased products or services are identified at checkout.
 
-Lifetime provides the same advertised CAD Pro features, included benefits and add-ons, support, and usage limits as recurring CAD Pro. Pro features and usage limits may change over time on the same basis for Lifetime and recurring Pro; Lifetime has no separate usage quotas. Material changes remain subject to applicable notice requirements and consumer remedies. Renaming Pro, releasing a new CAD version, or migrating the same hosted CAD service will not by itself remove your covered Pro entitlement.
+Lifetime includes the CAD Pro features, included benefits and add-ons, support, and Pro usage limits advertised at purchase, subject to ordinary product updates and the future-feature exception below. We may reasonably update features and limits for security, compatibility, legal compliance, or reliable service operation, while preserving substantially equivalent core CAD Pro functionality. Material changes remain subject to applicable notice requirements and consumer remedies. Renaming Pro, releasing a new CAD version, or migrating the same hosted CAD service will not by itself remove your covered Pro entitlement.
 
-Separately priced products, add-ons outside regular Pro, and future tiers are included only if expressly identified as part of your purchase. Benefits and add-ons included in regular Pro remain included. Keep your purchase confirmation, which records the offer you accepted.
+Future features with substantial recurring AI processing, third-party usage or licensing, or comparable external-service costs may be excluded from Lifetime, offered as optional paid add-ons, or subject to Lifetime-specific usage limits or credits, even if included in recurring Pro. We will clearly disclose those limits or charges before you use or purchase the feature. This exception applies to newly introduced cost-bearing functionality; it does not permit removing the core CAD Pro functionality advertised at purchase or requiring a recurring payment for that covered core entitlement.
+
+Separately priced products, add-ons outside the covered Pro entitlement, and future tiers are included only if expressly identified as part of your purchase. Optional purchases require your agreement to their price and terms. Support channels, staffing, hours, and response times may change; Lifetime does not guarantee a particular support schedule or service level. Keep your purchase confirmation, which records the offer you accepted.
 
 ### 2. Personal to the original purchaser
 
@@ -50,9 +52,9 @@ Lifetime purchases are final, with **no voluntary refunds for a change of mind**
 
 You must follow this agreement, the applicable Terms of Service, and reasonable service-use policies consistent with these Lifetime terms. Deliberate abuse includes resale or rental of coverage, sharing the purchasing account, falsely representing community ownership, bypassing the one-community or original-purchaser restrictions, and reassigning coverage to evade Pro usage limits. Normal reassignment between communities you own is permitted.
 
-We may suspend access while reasonably investigating fraud or material abuse, and may revoke the license for a material breach. Where reasonable, we will explain the issue and give you notice and an opportunity to respond or cure before permanent revocation. Immediate suspension may be necessary to address fraud, unlawful activity, a security threat, or a material risk of harm. Unpaid or disputed purchase funds may result in suspension until payment is resolved. A full refund or a payment reversal that is not resolved ends the license and its community coverage, subject to applicable law. A partial refund alone does not automatically cancel the license. If a payment dispute is closed and the purchase funds are retained by Sonoran, a license suspended only for that dispute will be restored; you may need to reassign it to an eligible community.
+We may suspend access where we reasonably suspect fraud or material abuse, or need to address unlawful activity, a security threat, or a material risk of harm. We may revoke the license where we reasonably determine that you have materially breached this agreement or the applicable Terms of Service. We may act immediately, without advance notice, an explanation, or an opportunity to cure, except as required by applicable law. You may request a review through Sonoran Support at https://support.sonoransoftware.com/. A review request does not pause enforcement or guarantee restoration. Unpaid or disputed purchase funds may result in suspension until payment is resolved. A full refund or a payment reversal that is not resolved ends the license and its community coverage, subject to applicable law. A partial refund alone does not automatically cancel the license. If a payment dispute is closed and the purchase funds are retained by Sonoran, a license suspended only for that dispute will be restored; you may need to reassign it to an eligible community.
 
-We will not revoke the entitlement solely because you have held it for a long time, used legitimate reassignment, or because the covered Pro price increases. Any refund or other remedy on termination remains subject to applicable law.
+We will not revoke the entitlement solely because you have held it for a long time, used legitimate reassignment, or because the covered Pro price increases. Suspension or revocation for fraud, abuse, or a material breach does not entitle you to a voluntary refund, credit, or compensation for the Lifetime license. Refunds and other remedies required by applicable law remain available.
 
 ### 7. Service changes or closure
 

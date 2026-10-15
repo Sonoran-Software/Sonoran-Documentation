@@ -36,7 +36,7 @@ You can cancel, upgrade, or downgrade your subscription at any time using the pa
 
 ### Are subscriptions a one-time payment, or monthly?
 
-Sonoran CAD offers monthly and quarterly subscriptions, plus a $499 USD one-time CAD Pro Lifetime license. Lifetime covers the same CAD Pro features and Pro usage limits for the operational lifetime of the hosted Sonoran CAD service. We offer multiple subscription levels at different price ranges. You can [compare our plans ](https://sonorancad.com/pricing)to see what works best for your community.
+Sonoran CAD offers monthly and quarterly subscriptions, plus a $499 USD one-time CAD Pro Lifetime license. Lifetime covers CAD Pro for the operational lifetime of the hosted Sonoran CAD service. Future features with substantial AI or third-party costs may have separate limits or optional charges, as described in the Lifetime agreement. We offer multiple subscription levels at different price ranges. You can [compare our plans ](https://sonorancad.com/pricing)to see what works best for your community.
 
 By choosing a **quarterly subscription**, you are given a **25% discount**. Simply select the **3-month billing** option at checkout and the discount will automatically be applied!
 
