@@ -4,6 +4,16 @@ description: Learn more about managing a new or existing Sonoran CAD subscriptio
 
 # Create and Manage a Subscription
 
+## CAD Pro Lifetime
+
+In [CAD Billing](https://sonorancad.com/billing), choose **Lifetime**, select an eligible community you own, review and accept the Lifetime agreement, then continue to secure checkout. The price is $499 USD once, plus any applicable taxes shown at checkout.
+
+Your Lifetime license appears separately from recurring subscriptions. Use **Change community** to move it to another community you own, or **Unassign community** to remove its Pro coverage. There is no cooldown. Communities you do not own and communities with another active plan are disabled. Your purchasing account keeps the license when it is unassigned.
+
+Unassign the license in CAD Billing before transferring community ownership. Purchasing Lifetime does not automatically cancel other subscriptions. Use **Download purchase agreement** on your Lifetime license to retain the accepted terms.
+
+See the [CAD Pro Lifetime Agreement](https://docs.sonoransoftware.com/policy/policy/cad-pro-lifetime-agreement) for the full duration, assignment, and refund terms. The instructions below describe recurring subscriptions.
+
 ## Create a New Subscription
 
 ### 1. Access the Payment Center

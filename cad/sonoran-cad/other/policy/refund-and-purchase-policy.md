@@ -4,6 +4,10 @@ description: Learn more about Sonoran CAD's refund and purchase policy.
 
 # Refund and Purchase Policy
 
+{% hint style="info" %}
+See the [CAD Pro Lifetime Agreement](https://docs.sonoransoftware.com/policy/policy/cad-pro-lifetime-agreement). CAD Pro Lifetime purchases are excluded from the voluntary 48-hour money-back guarantee. They are final with no voluntary change-of-mind refunds. Refunds, cancellation rights, and other remedies required by applicable law remain available. Other products and subscriptions retain their existing refund policy.
+{% endhint %}
+
 {% hint style="success" %}
 We highly recommend all communities register and try out Sonoran CAD for **free**, before opting to purchase an upgraded subscription.\
 \

@@ -403,6 +403,7 @@
 * [Policy](other/policy/README.md)
   * [Rocket CAD Closure](other/policy/rocket-cad-closure.md)
   * [Terms of Service](other/policy/terms-of-service.md)
+  * [CAD Pro Lifetime Agreement](https://docs.sonoransoftware.com/policy/policy/cad-pro-lifetime-agreement)
   * [Privacy Policy](other/policy/privacy-policy.md)
   * [Refund and Purchase Policy](other/policy/refund-and-purchase-policy.md)
   * [Discord Bot](other/policy/discord-bot.md)

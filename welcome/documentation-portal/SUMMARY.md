@@ -19,6 +19,7 @@
 * [Policy](policy/policy/README.md)
   * [Refund and Purchase Policy](policy/policy/refund-and-purchase-policy.md)
   * [Terms of Service](policy/policy/terms-of-service.md)
+  * [CAD Pro Lifetime Agreement](policy/policy/cad-pro-lifetime-agreement.md)
   * [Privacy Policy](policy/policy/privacy-policy.md)
   * [Sonoran One + Rocket Node Hosting Promotion](policy/policy/sonoran-one-+-rocket-node-hosting-promotion.md)
 

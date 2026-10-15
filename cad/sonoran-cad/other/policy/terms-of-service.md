@@ -4,6 +4,10 @@ description: Learn more about Sonoran CAD's terms of service.
 
 # Terms of Service
 
+{% hint style="info" %}
+See the [CAD Pro Lifetime Agreement](https://docs.sonoransoftware.com/policy/policy/cad-pro-lifetime-agreement). Its specific purchase, billing, duration, assignment, refund, and termination terms control any conflicting general terms for Lifetime purchases only. Other purchases and subscriptions are unchanged.
+{% endhint %}
+
 #### TERMS OF USE
 
 Last updated May 18, 2020

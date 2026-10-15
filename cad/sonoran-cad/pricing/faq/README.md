@@ -36,7 +36,7 @@ You can cancel, upgrade, or downgrade your subscription at any time using the pa
 
 ### Are subscriptions a one-time payment, or monthly?
 
-With Sonoran CAD, you have the option to choose either a monthly or quarterly subscription. We offer multiple different subscription levels at different price ranges. You can [compare our plans ](https://sonorancad.com/pricing)to see what works best for your community.
+Sonoran CAD offers monthly and quarterly subscriptions, plus a $499 USD one-time CAD Pro Lifetime license. Lifetime covers the same CAD Pro features and Pro usage limits for the operational lifetime of the hosted Sonoran CAD service. We offer multiple subscription levels at different price ranges. You can [compare our plans ](https://sonorancad.com/pricing)to see what works best for your community.
 
 By choosing a **quarterly subscription**, you are given a **25% discount**. Simply select the **3-month billing** option at checkout and the discount will automatically be applied!
 
@@ -46,15 +46,21 @@ Monthly subscriptions are renewed one month after the start date, and quarterly 
 
 ### Can I purchase a lifetime or yearly subscription?
 
-Due to ongoing server hosting, development, maintenance, and customer support costs, we are unable to offer a lifetime subscription. All subscriptions are charged on a monthly or quarterly recurring basis. We do not offer yearly subscriptions, although we do offer **quarterly subscriptions at a 25% discount** as stated before.
+CAD Pro Lifetime is a **$499 USD one-time purchase**, plus any applicable taxes shown at checkout. It is non-transferable and belongs to the original purchasing account. Apply it to **one community you currently own** and move it to another community you own at any time, with no cooldown and no game restriction. Communities you do not own, or that already have another active plan, cannot be selected.
+
+Before transferring community ownership, unassign the Lifetime license in CAD Billing. The community loses that license's Pro coverage; the license stays on the purchaser's account. Buying Lifetime does not automatically cancel any other subscription.
+
+Lifetime purchases are non-refundable except as required by law; the voluntary 48-hour guarantee does not apply. Read the [CAD Pro Lifetime Agreement](https://docs.sonoransoftware.com/policy/policy/cad-pro-lifetime-agreement) before purchasing.
+
+Yearly subscriptions are not offered. Monthly and quarterly subscriptions remain available.
 
 ### What payment methods are accepted?
 
 We accept all major credit or debit cards through the in-app payment center. All payment processing is handled via Stripe.
 
-### What happens if my subscription expires? Will I lose my data?
+### What happens if my subscription expires, or I unassign Lifetime? Will I lose my data?
 
-If your subscription expires, your CAD will automatically be downgraded to the free version. Your data will not be lost, but you will lose access to the additional customization or integration features that were included with your paid plan.
+If your subscription expires or you remove a Lifetime license without other valid paid coverage, your CAD will automatically be downgraded to the free version. Your data will not be lost, but you will lose access to the additional customization or integration features that were included with your paid plan.
 
 _Communities with no active logins for 30 days will be automatically removed._
 

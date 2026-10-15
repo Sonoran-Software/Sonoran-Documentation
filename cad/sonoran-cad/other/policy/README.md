@@ -6,6 +6,10 @@ description: >-
 
 # Policy
 
+{% hint style="info" %}
+See the [CAD Pro Lifetime Agreement](https://docs.sonoransoftware.com/policy/policy/cad-pro-lifetime-agreement). The CAD Pro Lifetime purchase terms apply only to Lifetime purchases. Existing monthly and quarterly subscriptions are unchanged.
+{% endhint %}
+
 ### Terms of Service
 
 By using Sonoran CAD, you agree to our terms of service:

@@ -4,6 +4,10 @@ description: Sonoran Software Systems' Terms of Service
 
 # Terms of Service
 
+{% hint style="info" %}
+See the [CAD Pro Lifetime Agreement](cad-pro-lifetime-agreement.md). Its specific purchase, billing, duration, assignment, refund, and termination terms control any conflicting general terms for Lifetime purchases only. Other purchases and subscriptions are unchanged.
+{% endhint %}
+
 <figure><img src="../../.gitbook/assets/logo_blue_white (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 <h2 align="center">Terms of Service</h2>

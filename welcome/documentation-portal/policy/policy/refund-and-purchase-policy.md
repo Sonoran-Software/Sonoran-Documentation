@@ -4,6 +4,10 @@ description: Sonoran Software Systems' Purchase and Refund Policy
 
 # Refund and Purchase Policy
 
+{% hint style="info" %}
+See the [CAD Pro Lifetime Agreement](cad-pro-lifetime-agreement.md). CAD Pro Lifetime purchases are excluded from the voluntary 48-hour money-back guarantee. They are final with no voluntary change-of-mind refunds. Refunds, cancellation rights, and other remedies required by applicable law remain available. Other products and subscriptions retain their existing refund policy.
+{% endhint %}
+
 <figure><img src="../../.gitbook/assets/logo_blue_white (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 <h2 align="center">Purchase and Refund Policy</h2>
@@ -13,6 +17,10 @@ description: Sonoran Software Systems' Purchase and Refund Policy
 ### 48 Hour Money Back Guarantee
 
 All Sonoran Software Systems, LLC products and Sonoran Software Partners, LLC products are backed by a 48 hour money-back guarantee. This includes both subscriptions and one-time-payments to Sonoran CAD, Sonoran CMS, Sonoran Radio, items in the Sonoran Store, and items in the FiveBundle.com store with any exceptions listed below.
+
+#### CAD Pro Lifetime
+
+CAD Pro Lifetime is excluded from the voluntary guarantee above. See the [CAD Pro Lifetime Agreement](cad-pro-lifetime-agreement.md) for its specific terms. Mandatory consumer rights are unaffected.
 
 #### iOS App Store and Google Play Store
 
