@@ -10,6 +10,56 @@ description: View the latest changes to Sonoran CAD!
 
 ## Changelog
 
+### 3.44.17 10/15/2026
+
+{% tabs %}
+{% tab title="New" %}
+Billing: CAD Pro Lifetime
+
+* One payment. No recurring subscription. Use your license on one CAD community you own at a time, move it to another whenever you like, and use any supported game with no game lock-in.
+
+NCIC: Copy Record IDs
+
+* Added clickable record IDs in NCIC results so you can copy an ID without opening the full record.
+{% endtab %}
+
+{% tab title="Changed" %}
+Billing: Simplify Lifetime Checkout
+
+* Removed repeated purchase details and clarified why communities with existing plans cannot be selected.
+
+Pricing: Compact Plan Comparison
+
+* Condensed the Sonoran One banner and trust details, and aligned plan headings and prices.
+
+Integrations: Retire London Studios Smart Signs
+
+* Removed the legacy London Studios Smart Signs integration in favor of Sonoran Street Signs custom integration panels.
+
+FiveM Setup: Remove Unused Outbound IP Setting
+
+* Removed the unused outbound IP address setting from game server configuration.
+
+CAD Pro Lifetime: Clarify License Terms
+
+* Clarified future AI and third-party feature limits, abuse enforcement, and optional support review.
+{% endtab %}
+
+{% tab title="Fixed" %}
+Live Map: Tooltip Theme
+
+* Fixed white-on-white unit and blip tooltips when using a light theme.
+
+NCIC: Horizontal Scrolling
+
+* Fixed wide NCIC results hiding the horizontal scrollbar below the visible rows in Records and Lookup panels.
+
+Billing: Lifetime Plan Logo
+
+* Fixed CAD Pro Lifetime plans showing a checkmark instead of the CAD logo.
+{% endtab %}
+
+{% endtabs %}
 ### 3.44.15 10/06/2026
 
 {% tabs %}
