@@ -7,6 +7,22 @@ description: >-
 
 # Getting Started
 
+## Video Tutorials
+
+Follow these tutorials in order, or watch the [Sonoran CAD ERLC Tutorials playlist](https://www.youtube.com/playlist?list=PLMVNElMT07L4).
+
+### 1. ER:LC Integration Setup
+
+Create your ER:LC API key, connect your server to Sonoran CAD, configure the Event Log Webhook, and test the connection.
+
+{% embed url="https://www.youtube.com/watch?v=Fl_A6Aop9_Q" %}
+
+### 2. Accounts and Permissions
+
+Invite members to your community, review pending accounts, and manage individual permissions. This tutorial also introduces Discord role mapping for automatic permission sync.
+
+{% embed url="https://www.youtube.com/watch?v=PwsWTvn0IOs" %}
+
 ## Linking your ER:LC Server
 
 ### 1. Create an ER:LC API Key
