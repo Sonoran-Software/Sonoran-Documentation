@@ -1,0 +1,303 @@
+---
+title: Drive & Documents
+description: Just like Google Drive or Microsoft Office, create and store documents
+  in your community's drive!
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/01/012a4cbde031605edd652a9c447d43769d0f8ab714e3a38c52e4a011dc56f77e.png" alt="" />
+
+
+
+With your drive, you're able to create files and folders for your community. These files are completely customizable, and have a similar style editor to the Microsoft Office suite
+
+## Community Drive {#community-drive}
+
+Sonoran CMS offers a powerful file drive system allowing for live document editing, uploads and downloads, easy permission management with CMS ranks, and more! You can even [login with Google to migrate your existing Google Drive](/cms/tutorials/your-drive-and-documents#migrate-files-from-google-drive) files!
+
+You can navigate to your drive using the **Drive** button in the admin panel. Or, link the **Drive** to a [custom navigation bar item](/cms/tutorials/community-website/website-builder#toolbar) for the `/drive` URL path.
+
+### Folders {#folders}
+
+
+
+<Accordion title="Drive Folders">
+
+
+
+Folders help you organize your community's drive! To create folders, just use the green plus button, then drag-and-drop files into the folders. You can also drag-and-drop files on the breadcrumbs on the top
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/f6/f694223a96e0fe7128c36351aba46005d6d6078c84ba383d43087c6e0710e563.png" alt="" />
+
+*Sonoran CMS - Drive File Path*
+
+
+
+To move a file without drag-and-drop, you can right click the document then **Move to Folder** and select the folder in the popup.
+
+Right-click to access [share settings](/cms/tutorials/your-drive-and-documents#share-settings) with them to determine who can view/edit via the direct link.
+
+
+
+</Accordion>
+
+
+
+### View Mode {#view-mode}
+
+
+
+<Accordion title="List vs Table View">
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/6e/6e28f793c557439b9d01c6d3fe7404cf0dbde65e969cf0c6c19f66139f8f297e.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/fd/fdc0186de658803cbbbd3916bdf4bfa2e6a15e6a7327683ba05358b481006207.png" alt="" />
+
+
+
+Swap the view mode between grid and list using the orange toggle at the top right.
+
+
+
+</Accordion>
+
+
+
+### Share and Public View Settings {#share-and-public-view-settings}
+
+
+
+<Accordion title="Share Settings">
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/47/47ca4b94a23824c2c6e1d6c84251d813e146f60e2274bd8d01e0f5984997a938.png" alt="" width="279" />
+
+
+
+Access the **Share Settings** via the document editor **Share** button or via right-click on any drive file.
+
+**Ranks with All Drive Access**
+
+This shows all ranks that have the "Modify Documents (Drive)" permission, this will automatically grant them permission to modify this drive item.
+
+**Ranks with Access Permissions**
+
+This shows all ranks that have been added to have direct view or edit access regardless of what the General Access share type is set to. If a user has a rank listed here the drive item will show in their Drive as well. You can select what ranks you wish to give access permissions and whether they're given permission to view or edit.
+
+**General Access**
+
+This allows for various share settings to be applied to the drive item from a single selection. There's various options that will grant members access automatically, the options are the following:
+
+_Restricted_
+
+This will only utilize the Ranks with All Drive Access and Ranks with Access Permissions to determine if they have access to the document.
+
+_Anyone with this link_
+
+This will allow ANYONE with the share link provided with the button to either view and/or edit the file, depending on what it set. You can click the icon on the left to either hide or show the drive item in your community member's Drive, if you have it hidden they'll still have access to either view or edit depending on what's set directly through the share link. Someone who is not apart of your community's CMS or even signed into Sonoran CMS will be able to view and/or edit through the share link provided.
+
+_Active members with this link_
+
+This will allow all users with the community status of "ACTIVE" not "PENDING" to either view or edit the drive item, depending on what's set. You can click the icon on the left to either hide or show the drive item in their Drive, if you have it hidden they still have access to either view or edit depending on what's set directly through the share link.
+
+_Active & pending members with this link_
+
+This will allow all users within the community to either view or edit the drive item, depending on what's set. You can click the icon on the left to either hide or show the drive item in their Drive, if you have it hidden they still have access to either view or edit depending on what's set directly through the share link.
+
+_Inherit Parent Folder General Access_
+
+This will inherit the parent folder's general access settings, this will simply inherit whatever option from above the folder is set to.
+
+<Info>
+
+**Inherit Parent Folder General Access** General Access Share Type cannot be set for any Drive item that is in the root (Home).
+</Info>
+
+
+
+</Accordion>
+
+
+
+### Document Edit History {#document-edit-history}
+
+
+
+<Accordion title="Document Revision History">
+
+
+
+When viewing any document in the CMS Drive, select the **Revision History** button to view recent edits.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e9/e946c54ffe65e8932b0e44dd1c6950b172fd755467455379953bb975f22f3d45.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/94/94aefb6580d612d8d082d183e344548d64ffac212e46ee656c20713f4ebc2652.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+### Sensitive Documents {#sensitive-documents}
+
+
+
+<Accordion title="Marking Documents as Sensitive">
+
+
+
+You can also change the sensitivity of the document. With sensitive mode enabled, viewers will not be able to download, print, or copy the document. A watermark will also be added.
+
+Marking documents as sensitive requires the **Protect Documents** permission.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/8a/8a62ba226e19baa51ba13dd57d2e105803d78bfc2fdbd164980ccbac366a822b.png" alt="" />
+
+*Editing Document marked as Restricted*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/c5/c51963129b6b9cb5b58a14b84e288c11cae149b66eb23ec586ce511b654425e5.png" alt="" />
+
+*Viewing Document with Watermark*
+
+
+
+
+
+</Accordion>
+
+
+
+### Trash {#trash}
+
+
+
+<Accordion title="Recently Deleted Drive Files">
+
+
+
+Recently deleted files are shown in the **Trash** tab. Users can restore deleted files from the trash or permanently delete them with the **Delete From Trash** permission.
+
+Files in the trash are automatically deleted after seven days.
+
+
+
+</Accordion>
+
+
+
+### Uploading Files {#uploading-files}
+
+
+
+<Accordion title="Uploading Single Files and ZIPs">
+
+
+
+Right-click anywhere in the drive or press **New** > **Upload File** or **Upload ZIP**. Uploading a ZIP file will automatically extract it to the CMS drive.
+
+Files allowed for upload include:
+
+* `.docx` Document
+* `.xlsx` Spreadsheet
+* `.pptx` Presentation
+* `.pdf` PDF
+* `.mp3` Audio
+* `.wav` Audio
+* `.rpf` GTA Archive
+* `.ttf`, `.otf`, `.woff`, `.woff2` Custom Font (up to 5 MB each; use Upload File)
+
+For font uploads, conversion, and the sharing settings needed to use a font in CMS editors, see [Fonts & Custom Uploads](/cms/tutorials/customization/fonts).
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/8e/8ed36fcb31aa244cad61d27619725fe58372330fc7a83639dd899344b98ec0f5.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+### Migrate Files from Google Drive {#migrate-files-from-google-drive}
+
+<Warning>
+
+Due to security restrictions from Google, imports from Google Drive must be completed on the main sonorancms.com URL or app. Communities on a [custom domain](/cms/tutorials/customization/custom-domain#custom-domain) must use the main website or app to complete this process.
+</Warning>
+
+
+
+<Accordion title="Migrate Files from Google Drive">
+
+
+
+Login with Google to quickly migrate files to the CMS drive for easy permission management!
+
+Select **New** > **Import** > **Import from Google Drive**
+
+Follow the prompts to login, select the specific folders/files, and import them.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/31/315ffb4ce70c71a7d2c959b4e961d36a1067912b777ca3791cbddd4907265c52.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/24/24ba5d3f43cffe60a2642833249403861efb6c2a456a853598286703255307c2.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+## Drive Downloads {#drive-downloads}
+
+
+
+<Accordion title="Drive File Downloads">
+
+
+
+There are several file types that the Sonoran CMS Drive accepts but only handles them as _downloadable_ content that isn't for viewable use. The following file types are currently supported for _downloadable content_:
+
+* `.rpf` GTA Archive
+* `.wav`, `.mp3` Audio
+* `.zip` ZIP
+* `.pdf` PDF
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/dd/ddba8f3a606a7b161bf2e6cd2162c3d560a3d732f8abbf6676fdda9c42260c9c.png" alt="" />
+
+*Sonoran CMS - Download from Drive*
+
+
+
+
+
+</Accordion>

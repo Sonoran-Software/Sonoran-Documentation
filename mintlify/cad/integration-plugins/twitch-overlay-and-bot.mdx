@@ -1,0 +1,395 @@
+---
+title: Twitch Bodycam, Bot, & Lighting Integration
+description: Display your identifier information, attached call information, and more
+  on your gaming stream!
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/65/65756203725f72496f646f3a79b2ec32e4350b3177ed66ba9dd000fe6d09fa0e.png" alt="" />
+
+
+
+![Sonoran CAD - Smart Lighting](https://docs-assets.sonoransoftware.com/sha256/60/609b8f892e22d239a0dbe903effb0473ddda4cbcfb77e79cfa725f003df0e31c.png)
+
+## What is Sonoran CAD's Livestream Overlay? {#what-is-sonoran-cads-livestream-overlay}
+
+Sonoran CAD has a built-in livestream overlay, allowing you to display your live unit information, call information, and more!
+
+Our Twitch bot can also be configured to send out chat messages when data is modified.
+
+## Bodycam Overlay {#bodycam-overlay}
+
+![](https://docs-assets.sonoransoftware.com/sha256/8a/8a23a0f94346234776007ba31dce29a6834e9d0f61afebfc8933850b639880c5.png)
+
+<Warning>
+
+The free version of the overlay does not include the customizable bodycam asset.\
+However, you can still create [custom overlay text](/cad/integration-plugins/twitch-overlay-and-bot#custom-overlay-text) with the free version!
+
+Learn more about the [full version of Sonoran CAD's stream overlay](/cad/integration-plugins/twitch-overlay-and-bot#purchasing-the-overlay)!
+
+The bodycam creates local text files and hosts a local webserver.\
+**This requires the** [**desktop** ](/cad/download)**application to run.**
+</Warning>
+
+The stream overlay also includes a customizable version of the popular [XION Chase Cam asset](https://github.com/zhivotnoya/XION-ChaseCam).
+
+This allows you to customize a bodycam overlay on your stream, with your real-time unit and call information.
+
+### 1. Set a File Directory {#id-1.-set-a-file-directory}
+
+**First, ensure you are using the** [**desktop** ](/cad/download)**version of Sonoran CAD.** The application has to generate physical files, and host a local webserver to work. This can not be done in a browser.
+
+In the stream overlay, open the txt file directory viewer and select a folder for the text files and bodycam webpage to be generated:
+
+![Stream Overlay - Text file Location](https://docs-assets.sonoransoftware.com/sha256/c4/c4103086d896f4646c30dc098e4f5919bc420b0a05aea85aee23d8305683c871.gif)
+
+### 2. Configuring the Bodycam Contents {#id-2.-configuring-the-bodycam-contents}
+
+In the livestream overlay config section, expand the `Bodycam` section.
+
+Here, you can enable and customize the data placement and keys just as before with the [customizable text files](/cad/integration-plugins/twitch-overlay-and-bot#3-toggle-and-configure-keys).
+
+* Expand the `Unit Updates` or `Call Updates` Section
+* Toggle `ON` the txt file
+* `COPY` the field key
+* `PASTE` the field key into the bodycam section
+* `SAVE` the configuration once complete
+
+You can also optionally specify a different port for the bodycam webpage to run on (`9990` is the default).
+
+![](https://docs-assets.sonoransoftware.com/sha256/08/081400bd41c6f3a4e3df95627355b474c87dab61b32d63056f7acf6e31ac525b.png)
+
+### 3. Add the Bodycam to OBS {#id-3.-add-the-bodycam-to-obs}
+
+In OBS, add a new "Browser" source and paste the URL listed in the bodycam section.\
+By default, this will be `http://localhost:9990`
+
+![OBS - New Browser Source](https://docs-assets.sonoransoftware.com/sha256/05/050b508657af97007a63763c979520094e99a23d37d4bc21ca9e0e2946ef33aa.png)
+
+Paste the URL into the browser source and hit OK.
+
+![](https://docs-assets.sonoransoftware.com/sha256/6c/6cb6afb9201613de250f0807c2e0a2684ee1025c1b711ed8279a18799192af2a.png)
+
+### 4. Customize the Size and Placement {#id-4.-customize-the-size-and-placement}
+
+You can now customize the size and placement of this browser window in OBS as you normally would.
+
+## Smart Lighting {#smart-lighting}
+
+<Warning>
+
+Due to the nature of most smart bulb manufacturers, our smart lighting integration is at the mercy of their API support.\
+\
+We can not guarantee that these manufacturers won't change or remove backdoor support to these bulbs in the future.
+</Warning>
+
+#### [Video Promo and Tutorial](https://www.youtube.com/watch?v=gs6RdZt3mUo)
+
+![Sonoran CAD - Smart Lighting](https://docs-assets.sonoransoftware.com/sha256/60/609b8f892e22d239a0dbe903effb0473ddda4cbcfb77e79cfa725f003df0e31c.png)
+
+Sonoran CAD allows you to configure in-game events to smart lighting in your own home!
+
+When you toggle your police lights in-game, your room can flash with custom lighting patterns to further immerse and simulate real world lighting.
+
+<Warning>
+
+The smart lighting integration is **not included with the free version** of the Stream Overlay.\
+\
+[Learn more about the full version of Sonoran CAD's stream overlay.](/cad/integration-plugins/twitch-overlay-and-bot#purchasing-the-overlay)\
+\
+The smart lighting integration creates local text files and hosts a local webserver.\
+**This requires the** [**desktop** ](/cad/download)**application to run.**
+</Warning>
+
+
+
+<iframe src="https://www.youtube-nocookie.com/embed/gs6RdZt3mUo" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+Sonoran CAD - Smart Lighting Video
+
+
+### Supported Smart Bulbs {#supported-smart-bulbs}
+
+At this time, Sonoran CAD currently supports the following smart bulb types:
+
+#### [Wyze Color](https://wyze.com/wyze-bulb-color.html) (Recommended)
+
+Many of our development team members personally use and recommend these bulbs. Due to the design, these tend to provide the fastest response type with more complex lighting patterns. A 4 pack typically costs \~$40 ($10/bulb).
+
+#### [Philips Hue](https://www.philips-hue.com/en-us/products/smart-light-bulbs)
+
+Philips Hue is significantly more expensive, but is typically the most widely known option. This option will also require the purchase of a Hue bridge/hub. Due to the design, these tend to have a \~10ms+ delay when setting the color of multiple bulbs at a time.
+
+**Therefore, we recommend keeping the `delay` between frames above 500ms when using Philips Hue bulbs.**
+
+#### [Govee](https://us.govee.com/products/wi-fi-led-bulb)
+
+Govee light bulbs are supported via Bluetooth and WiFi.
+
+Bluetooth bulbs are supported, but can have additional time when starting the initial connection. Bluetooth connections can also experience intermittent connection problems. Govee's WiFi bulbs are currently ran through the official API, resulting in rate limitations of 60 calls per minute.
+
+**Therefore, we recommend keeping the `delay` between lighting frames above 1,000ms when using Govee wifi bulbs.**
+
+### 1. Searching for Bulbs {#id-1.-searching-for-bulbs}
+
+The smart lighting section has multiple `Scenes`
+
+* `Restore`: Set when you are no longer flashing emergency lights, turn signals, etc.
+* `Emergency Lights`: While you are in an emergency vehicle with the lights on
+* `Panic`: While your panic status is toggled
+* `Available`: When your unit status is set to available
+* `Unavailable`: When your unit status is set to unavailable
+* `Busy`: When your unit status is set to busy
+* `Enroute`: When your unit status is set to enroute
+* `On Scene`: When your unit status is set to on scene
+* `Left Turn Signal`: While your left hand turn signal is on
+* `Right Turn Signal`: While your right hand turn signal is on
+* `Hazard Lights`: While your hazard lights are on
+
+Expand the `Scene` > `Add Bulb` > `Search for Bulbs` > Select `Wyze` or `Philips Hue`
+
+![Sonoran CAD - Scan for Smart Bulbs](https://docs-assets.sonoransoftware.com/sha256/99/992f4b57299439da79e87ae0919532450a1d1883c4e52ed3f5009b1f9920b134.png)
+
+#### Credentials: Wyze {#credentials-wyze}
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/71/718fbb1de828ad0c1f1157348f14e4a697981986ea437fc8cfb64e276269b4e6.png" alt="" />
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/f9/f97f1f284093266141f69e42f22ef932c65c29d5f574bb68b471de3dada489e2.png" alt="" />
+
+
+
+* Username: Email address used to login to your Wyze account
+* `Password`: Password used to login to your Wyze account
+* `Key ID`: The "Key ID" in the [Wyze API key generator](https://developer-api-console.wyze.com/#/apikey/view)
+* `API Key`: The "API Key" in the [Wyze API key generator](https://developer-api-console.wyze.com/#/apikey/view)
+
+#### Credentials: Philips Hue {#credentials-philips-hue}
+
+Your Philips Hue bridge should be automatically discovered by pressing the `Scan` button in Sonoran CAD.
+
+If you are seeing the following error:\
+`Error: Unable to find a Hue bridge on the local network.`
+
+You may need to manually enter the bridge's IP address. This is most easily found using the Philips Hue mobile app.
+
+1. Select Settings
+2. Network Settings
+3. Toggle `DHCP` Off
+4. Copy the `IP address` to Sonoran CAD
+5. Toggle `DHCP` On
+6. Scan for the bridge in Sonoran CAD
+
+![Philips Hue - Copy Bridge IP](https://docs-assets.sonoransoftware.com/sha256/92/9238277442c408f874d3e526e7917d8942eb9731cee54e0ac6b4f20c78544115.png)
+
+![Sonoran CAD - Manual Hue Bridge IP](https://docs-assets.sonoransoftware.com/sha256/10/10031c34c12cb66aebc5f9ba6fc169d659656882c72dc34fd7f14b241d6e960f.png)
+
+#### Credentials: Govee WiFi {#credentials-govee-wifi}
+
+Govee WiFi bulbs are handled via Govee's official API. Note that this does include a rate limit of 60 calls/minute.
+
+**1. Request an API Key**
+
+Using the Govee mobile app navigate to `Account` > `Settings` > `About Us` > `Apply for API Key`
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/95/95cdbf123127b6680f1ef9ecd1d91fe4aad3e15b60622b2611a036750066acc2.png" alt="" />
+
+**2. Retrieve your API Key and Search**
+
+Within a few minutes, Govee should email your account API credentials to use. Paste these into Sonoran CAD and search for your Govee WiFi lights.
+
+#### Credentials: Govee Bluetooth {#credentials-govee-bluetooth}
+
+Govee Bulb models only supporting bluetooth can be controlled by Sonoran CAD, as long as your PC supports bluetooth connections. Windows limits this to no more than 5 active bluetooth connections at one time.
+
+**1. Scan for Bluetooth devices**
+
+Sonoran CAD will scan for all locally active Bluetooth devices. Govee bulbs will typically be found with a name format: `WORD_MODELNUMBER_XXXX`.
+
+If your bulb is not discoverable, turn the bulb's power off entirely for \~5 seconds then turn it back on. This should place your bulb into discovery mode.
+
+![](https://docs-assets.sonoransoftware.com/sha256/7f/7fc932d743ed0f6f65e7f0f928514b80d0896adb2d0fcbf7c39bc119aa20cae4.png)
+
+**2. Add the Bulb**
+
+Click on the Bluetooth bulb to add it to your scene, and continue on to building your lighting sequences.
+
+Bluetooth bulbs will have their status listed on the left side. When you click the `Test` button, it may **take up to 60 seconds** for the connection to complete.
+
+![](https://docs-assets.sonoransoftware.com/sha256/6d/6d412b6d78e682ac9d1a7ebf39c24e3afbf207f0115a551fc83a03e13e86bc92.png)
+
+### 2. Creating Sequences {#id-2.-creating-sequences}
+
+You can add the desired bulb to your `Scene`. Each `scene` is made up of multiple `frames`.
+
+The example below shows a very simple sequence of two lights switching back and forth between red and blue, with a `delay` of `500ms` between each frame. You can duplicate and create advanced chase sequences, flashes, etc. with several bulbs at a time.
+
+We recommend keeping the delays no shorter than:\
+`250ms` for Wyze Color Bulbs\
+`500ms` for Philips Hue Bulbs
+
+![](https://docs-assets.sonoransoftware.com/sha256/35/3556f4770d1dd480098aa6c9fb03af4e0a836bd84e22cbdfc42471b304fe9c83.png)
+
+### 3. Testing and Using In-Game {#id-3.-testing-and-using-in-game}
+
+You can press the `Test Scene` button to test the scene with your smart bulbs. Press the `Test Scene` button in the `Restore` scene section to go back to your normal lighting.
+
+#### Local Webserver: In-Game Use {#local-webserver-in-game-use}
+
+For in-game use, your lights, turn signals, and hazards will automatically run as long as your community has the Sonoran CAD integration framework installed. This utilizes a [local webserver](/cad/api-integration/api-endpoints-v2/local-endpoints/smart-lighting) running from your desktop app.
+
+1. If you have modified your Bodycam port from the default `9990`, you will need to update this port in-game as well. Use the `/setlightport <some port here>` command in-game to change your port from `9990` to something else.
+2. Additionally, ensure you have set your file directory in the credentials section of the stream overlay.
+
+## Configuring the Twitch Bot {#configuring-the-twitch-bot}
+
+Sonoran CAD's stream overlay also comes with a configurable Twitch bot. This bot will send out chat updates when unit or call data is updated.
+
+<Warning>
+
+The Twitch bot is **not included with the free version** of the Stream Overlay.\
+\
+[Learn more about the full version of Sonoran CAD's stream overlay.](/cad/integration-plugins/twitch-overlay-and-bot#purchasing-the-overlay)
+</Warning>
+
+### 1. Create a Twitch OAuth Token {#id-1.-create-a-twitch-oauth-token}
+
+Create a new Twitch OAuth token by going to [https://twitchapps.com/tmi/](https://twitchapps.com/tmi/)
+
+### 2. Configure your Twitch Bot Token and Username {#id-2.-configure-your-twitch-bot-token-and-username}
+
+Using the overlay in OBS, select the `Twitch Bot` button in the taskbar.\
+Paste in your Twitch channel name and OAuth key.
+
+![Overlay - Twitch Bot Credentials](https://docs-assets.sonoransoftware.com/sha256/73/73bd22653ed0fb020871d901e9a2c484302f5791f463e76a7ca386af8a948e64.png)
+
+Once set, you can press `Test` to display a test message in your Twitch chat.
+
+### 3. Configure the Bot's Event Data {#id-3.-configure-the-bots-event-data}
+
+Every piece of unit and call data can be toggled on or off individually.
+
+**It is highly recommended to only toggle on data updates that will not be frequently spammed.** Toggling too many data fields and updating data too quickly may result in **Twitch rate limiting your bot.**
+
+![Overlay - Twitch Data Fields](https://docs-assets.sonoransoftware.com/sha256/02/025ab9640f1d6548ff1bad501d7ccf908f08d55d234e601ddd156d4c5cd4833a.png)
+
+### 4. Save and Run {#id-4.-save-and-run}
+
+Once you have configured your Twitch Bot's credentials and data fields, press `Save`.
+
+Now, whenever one of those data fields is updated, your Twitch bot will send a chat message.
+
+![Sonoran CAD - Stream Overlay](https://docs-assets.sonoransoftware.com/sha256/c8/c85a9a0b739bad403bba9b14a79c805ed2baaa1c29c23a2c071ebf9dacc7e8d5.gif)
+
+### Debugging the Twitch Bot {#debugging-the-twitch-bot}
+
+If you're having issues seeing the Twitch bot messages, view the `Twitch Logs` panel in the stream overlay.
+
+This will contain valuable information on the twitch bot's connection, rate limiting, and other errors.
+
+![Overlay - Twitch Logs](https://docs-assets.sonoransoftware.com/sha256/04/045bf115121a8d0bf641baa31ae66acb15f9f9bf9d90223cd52b4f0cb0028dd8.png)
+
+If you have too many data fields toggled, and are sending Twitch updates too quickly you may experience rate limiting.
+
+## Custom Overlay Text {#custom-overlay-text}
+
+The overlay is immensely customizable, allowing you to customize every piece of data displayed.
+
+### 1. Accessing the Overlay Window {#id-1.-accessing-the-overlay-window}
+
+The overlay configuration modal can be opened by navigating to `Start Menu` > `System` > `Stream Overlay`. Or, by searching in the start menu.
+
+### 2. Configuring Text File Location {#id-2.-configuring-text-file-location}
+
+While the Twitch bot can run in a browser instance of Sonoran CAD, the [desktop application](/cad/download) **is required**, to generate unit/call data txt files.
+
+In the stream overlay, open the txt file directory viewer and select a folder for the text files to be generated:
+
+![Stream Overlay - Text file Location](https://docs-assets.sonoransoftware.com/sha256/c4/c4103086d896f4646c30dc098e4f5919bc420b0a05aea85aee23d8305683c871.gif)
+
+### 3. Toggle and Configure Keys {#id-3.-toggle-and-configure-keys}
+
+<Warning>
+
+The **free version** of the overlay is limited to three (3) data keys.\
+Learn more about the [full version of Sonoran CAD's stream overlay](/cad/integration-plugins/twitch-overlay-and-bot#purchasing-the-overlay)!
+</Warning>
+
+In the `Configuration` tab, toggle on the desired data fields for your unit and dispatch call information.
+
+For every field toggled, a text file will be generated to be viewed in OBS.\
+However, we **recommend creating custom text files** to combine multiple data fields in a single text file.
+
+![Stream Overlay - Custom Text Files](https://docs-assets.sonoransoftware.com/sha256/81/81d3d6a872df1a2b6579866d311cbb37a93fa2cbe0707ad3e144dfaac5ce661e.png)
+
+#### Data Field Keys: {#data-field-keys}
+
+These can be easily copied from the UI, by pressing the `Copy` button next to the toggled field and pasting into the custom file's key textbox.
+
+| Key                 | Description               |
+| ------------------- | ------------------------- |
+| \{unit\_status\}      | Unit Status               |
+| \{unit\_location\}    | Unit Location             |
+| \{unit\_aop\}         | Unit AOP                  |
+| \{unit\_number\}      | Unit Number               |
+| \{unit\_name\}        | Unit Name                 |
+| \{unit\_agency\}      | Unit Agency               |
+| \{unit\_department\}  | Unit Department           |
+| \{unit\_subdivision\} | Unit Subdivision          |
+| \{unit\_rank\}        | Unit Rank                 |
+| \{unit\_group\}       | Unit Group                |
+| \{unit\_panic\}       | Unit Panic Status         |
+| \{call\_id\}          | Dispatch Call ID          |
+| \{call\_origin\}      | Dispatch Call Origin      |
+| \{call\_status\}      | Dispatch Call Status      |
+| \{call\_priority\}    | Dispatch Call Priority    |
+| \{call\_block\}       | Dispatch Call Block       |
+| \{call\_address\}     | Dispatch Call Address     |
+| \{call\_postal\}      | Dispatch Call Postal      |
+| \{call\_title\}       | Dispatch Call Title       |
+| \{call\_code\}        | Dispatch Call 10-Code     |
+| \{call\_description\} | Dispatch Call Description |
+
+### 4. Save your Configuration {#id-4.-save-your-configuration}
+
+Don't forget to save your configuration!
+
+### 5. Configure Data in OBS {#id-5.-configure-data-in-obs}
+
+In OBS, add a new text source:
+
+![OBS - New Text Source](https://docs-assets.sonoransoftware.com/sha256/4e/4e0b5281e77379c38cfeec24abbdefc59b6f9f59234ca9bc2873108241078f06.png)
+
+In the text source properties, select `Read from File` and select one of your generated data key files from the [location specified earlier](/cad/integration-plugins/twitch-overlay-and-bot#2-configuring-text-file-location).
+
+![Stream Overlay - Text Files](https://docs-assets.sonoransoftware.com/sha256/fa/fa97a4812bec45f3140a4b62167db60420d0a6a2bf5809e6fadd054e09b0395b.png)
+
+![Stream Overlay - Text file Viewer](https://docs-assets.sonoransoftware.com/sha256/20/209f3c6d827ddef5511a1b4ecb43f1de131f5084f85cb3446f3f6946d1660864.png)
+
+You can now place the text field anywhere in your OBS stream layout.
+
+You can also customize the fonts, change the background and more!
+
+## Purchasing the Overlay {#purchasing-the-overlay}
+
+The free version of the livestream overlay allows anyone to test out the basic functionality. The free version does not allow use of the [Twitch bot](/cad/integration-plugins/twitch-overlay-and-bot#configuring-the-twitch-bot), [bodycam](/cad/integration-plugins/twitch-overlay-and-bot#bodycam-overlay), or [smart lighting integration](/cad/integration-plugins/twitch-overlay-and-bot#smart-lighting) and is locked to a maximum of three custom "data keys".
+
+The full, individual license for Sonoran CAD's livestreaming tools is available for $7.99/mo.
+
+Or, **include the livestreaming tools for your&#x20;**_**entire**_**&#x20;community** with [Sonoran One](https://sonoran.one).
+
+Users can purchase a license to the full version in their billing center:
+
+
+
+<Card title="[create-and-manage-a-subscription.md](../pricing/faq/create-and-manage-a-subscription.md)" href="/cad/pricing/faq/create-and-manage-a-subscription" />
+
+
+
+###

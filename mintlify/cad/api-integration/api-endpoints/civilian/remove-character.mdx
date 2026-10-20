@@ -1,0 +1,73 @@
+---
+title: Remove Character
+description: This endpoint allows you to remove a character associated with a CAD
+  account.
+---
+
+<Warning>
+
+This API endpoint requires the **plus** version of Sonoran CAD or higher. For more information, see our [pricing ](/cad/pricing/faq)page.
+</Warning>
+
+<Warning>
+
+Characters can NOT be removed from communities using [Database Sync](/cad/integration-plugins/database-sync-and-merge), as all characters are pulled from your server's in-game database.
+</Warning>
+
+## Remove Character {#remove-character}
+
+`POST` `https://api.sonorancad.com/civilian/remove_character`
+
+This endpoint allows you to remove a character associated with a CAD account.
+
+#### Request Body {#request-body}
+
+| Name | Type   | Description                |
+| ---- | ------ | -------------------------- |
+| id   | string | Your community's ID        |
+| key  | string | Your community's API Key   |
+| type | string | REMOVE\_CHARACTER          |
+| data | array  | Array of character objects |
+
+<Tabs>
+<Tab title="200 A successful call will be met with the following response:">
+
+```
+CHARACTER {ID} REMOVED FOR {USERNAME}
+```
+
+</Tab>
+
+<Tab title="400 The following 400 errors may be sent in response:">
+
+```http
+INVALID REQUEST TYPE
+INVALID COMMUNITY ID
+API IS NOT ENABLED FOR THIS COMMUNITY
+INVALID API KEY
+```
+
+</Tab>
+
+<Tab title="404 ">
+
+```
+API ID NOT LINKED TO AN ACCOUNT IN THIS COMMUNITY
+```
+
+</Tab>
+
+</Tabs>
+
+```javascript
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "REMOVE_CHARACTER",
+    "data": [
+        {
+            "id": -1, // Unique character ID - Use GET_CHARACTERS to retrieve
+        },
+    ]
+}
+```

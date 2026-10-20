@@ -1,0 +1,141 @@
+---
+title: Community Branding and Settings
+description: Customize your community's settings, branding, information, and more!
+---
+
+<iframe src="https://www.youtube-nocookie.com/embed/Un9AIFXzZqQ" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+
+## Branding Removal {#branding-removal}
+
+Looking to remove Sonoran CMS branding on your website?
+
+
+
+<Card title="[branding-removal.md](../../pricing/pricing-faq/branding-removal.md)" href="/cms/pricing/pricing-faq/branding-removal" />
+
+
+
+## Community Information {#community-information}
+
+The admin customization info section allows you to customize your community's image, name, and more! These settings can be found by navigating to `Administrative Panel` > `Customization`
+
+![Sonoran CMS - Community Customization](https://docs-assets.sonoransoftware.com/sha256/32/32757126c9d5377b948ca229410dccd712864aba6e8c31da981791a626875c61.png)
+
+| Community Logo        | A link to your community's logo.This will be displayed on your community card, community dashboard, and more!                                                          |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Community Name        | This is your community's name.This will be displayed on your community card and community dashboard.                                                                   |
+| Community Subtitle    | This is the text displayed below your community name on your community card.                                                                                                         |
+| Name Customizations   | This allows customization of how community names are formatted. Many RP communities use a specific naming style.<br />Example: <strong>Format:</strong> <code>\{uniqueId\}</code> |
+| Allowed Login Methods | This controls which login methods are available for signing into the CMS community. For example, if you only want users to log in with Discord, you can disable all other options.   |
+| On Join Actions       | This configures automatic actions that occur when new members join your community.                                                                                                   |
+
+<Info>
+
+**Admin Icon** will display a cog icon next to a user's Notification Center icon in the top right of the toolbar.
+</Info>
+
+## Community ID and Vanity URL {#community-id-and-vanity-url}
+
+<Warning>
+
+Custom community IDs require the **Standard** version of Sonoran CMS or higher.\
+For more information, see our [pricing](https://sonorancms.com/#/pricing) or view how to check your community [limits](/cms/tutorials/administrative/view-your-limits).
+</Warning>
+
+### **Looking to change your community ID?** {#looking-to-change-your-community-id}
+
+Navigate to **Administrative Panel** > **Limits**\
+Click the **Change Community ID** button and enter your new community ID.
+
+Community IDs also customize your [vanity URL](/cms/tutorials/customization/custom-domain#vanity-urls).\
+`ID.sonorancms.com`
+
+![Sonoran CMS Community Limits - Changing Community ID](https://docs-assets.sonoransoftware.com/sha256/c9/c93a1394c846e5017acd8487a23ecaca160f6e9d669720bd23dcf12ee6dadb89.png)
+
+## Allowed Login Methods {#allowed-login-methods}
+
+Some communities may only want specific login methods to be available to their users. Each method can be enabled or disabled in the customization menu.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/89/891faafac736af7e136c4cde553614c3ef747d2c77704ef358572062c2a30ac5.png" alt="" />
+
+
+
+## Naming Format {#naming-format}
+
+In the `Name Customizations` area, you can also set the automatic naming format for your community. The naming format determines how a user's name is displayed in the community (e.g. on their profile, form submissions, etc.).
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/dd/ddf8de4627aa7bbd723eb838373c7032fa9a5e82fcaaf5b1dc708e4c4dcfc7ae.png" alt="" width="355" />
+
+*Sonoran CMS - Naming Format Example*
+
+
+
+In the above image, you can see that the name is displayed on the profile as `John Doe | 1A`. In this case, the user's Community Name is set as `John Doe`, and this user has an Identifier of `1A`. To display those together like this, you would set the naming format to `{comName} | {identifier}`.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/4a/4a1d2d2edf66d9f876a72b761973a293e83dd24324984b3d607cf98c676b4db5.png" alt="" />
+
+*Sonoran CMS - Naming Format*
+
+
+
+
+
+| User Information | Naming Format Variable |  |  |
+| --- | --- | --- | --- |
+| Community Name | \{comName\} |  |  |
+| Identifier | \{identifier\} |  |  |
+| Unique ID | \{uniqueId\} |  |  |
+
+
+
+### Discord Name Sync {#discord-name-sync}
+
+With the Sonoran Bot integration, you can enforce your CMS name format in your Discord Guild(s)!
+
+
+
+<Card title="Open guide" href="/bot/tutorials/usage/settings#namesync-settings" />
+
+
+
+## Timeclock Shift Types {#timeclock-shift-types}
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/6d/6dc7331e3595c7830213803d7a9c232472678ef8852cdafbaa725e26f9f48ffd.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/b3/b33b9449ad5a07af72d5e43b07304de8f28b5d60046ff8f2e663f4a6c4a14254.png" alt="" />
+
+
+
+Looking to separate shift types for players with multiple community positions? Add custom shift types in the customization menu. Players can select an optional shift type in the CMS timeclock menu, via the [Discord bot](/cms/integration-capabilities/discord-bot-integration)'s `/clockin` command, or from an [in-game ER:LC command](/cms/integration-capabilities/er-lc-game-panel/usage/player-records#via-in-game-command).
+
+When configuring rosters, you can select a specific shift type to be displayed in the timeclock hours column.
+
+## Member On Join Actions {#member-on-join-actions}
+
+Sonoran CMS lets you define what happens when users join your community — from assigning specific ranks automatically to sending a welcome message via Discord DM. You have complete control over the actions that occur when new members join.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/11/11b623e4b15a3fa19091a3b9ef478f085bbd4868fd0dc9306e046e36eefaa248.png" alt="" />
+
+*Sonoran CMS - Member On Join Settings - Button Location*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/03/036832a9251a1c408671388f1d326804e65b59ea7fa0aa92d95f3aa54bf3cd6b.png" alt="" />
+
+*Sonoran CMS - Member On Join Settings*

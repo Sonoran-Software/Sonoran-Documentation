@@ -1,0 +1,88 @@
+---
+title: Discord Webhooks
+description: Receive instant notifications in your Discord channel when new forms
+  are submitted, community customization changes, and much more!
+---
+
+<iframe src="https://www.youtube-nocookie.com/embed/EsoYW-tROMs" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+
+<Info>
+
+**Notice:** Managing Discord Webhooks now requires Sonoran Bot as of [v0.5.56](/cms/roadmap/roadmap-and-changelog/changelog#v0.5.56-beta-pending-release)!
+</Info>
+
+### 1. Invite & Configure Sonoran Bot {#id-1.-invite-and-configure-sonoran-bot}
+
+In the Sonoran CMS Administrator Panel, under Advanced select `Integrations` > `Discord`\
+In order to configure your Sonoran CMS Webhooks you must invite and configure Sonoran Bot. Follow each step in the setup process stepper directly in the Sonoran CMS UI.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/a6/a633ce5258963d20bd8e7e76d91d68bebc104d34fc73dff180d298b972111f38.png" alt="" />
+
+*Sonoran CMS - Discord Webhook Setup - Sonoran Bot Setup*
+
+
+
+### 2. Configure the Sonoran CMS Webhook {#id-2.-configure-the-sonoran-cms-webhook}
+
+Select the channel you want your webhook logs to send to for each log type\
+When you are done editing, click anywhere outside and it will automatically save any changes.
+
+![Sonoran CMS - Discord Webhook Setup](https://docs-assets.sonoransoftware.com/sha256/ab/ab3253cae7e68d87782f4e0498dd7448b42a0c03862193ce018a2170230fd258.png)
+
+### 3. Role Mention {#id-3.-role-mention}
+
+In the middle drop down menu you can select any roles you would like to be mentioned in the webhook. You can select as many roles as you wish and this will mention these roles at the beginning of the message.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/6d/6d5b0be0d73e6f7db89ae6f493decae755c218897bf47515502a0015b9a5fa85.png" alt="" />
+
+*Sonoran CMS - Discord Webhook Mentions Menu*
+
+
+
+Alternatively, if you would like to integrate the mention into the content message, you can also manually mention roles.
+
+<Info>
+
+Copying IDs in Discord requires Developer mode to be enabled.
+
+\
+Go to `User Settings` > `Advanced` > `enable Developer Mode`
+</Info>
+
+To tag and mention a role in the webhook edit the `Webhook Content` box and format the mention as `<@&ID>` with `ID` being the Discord Role ID.
+
+You can copy a Discord Role ID in your Discord server's `Settings` > `Roles` > Right-Click on the role > `Copy ID`
+
+You can also right-click on any user's role in their profile popup and copy the Role ID from there.
+
+Example: `<@&1234567890>`
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/c1/c1d21a9cda7efbfa6ea1382bf25628005e5eba2bdb0126d1c5e20992f8b64590.png" alt="" />
+
+*Discord Role ID Copy*
+
+
+
+### 4. User Mention {#id-4.-user-mention}
+
+<Info>
+
+Copying IDs in Discord requires Developer mode to be enabled.
+
+\
+Go to `User Settings` > `Advanced` > `enable Developer Mode`
+</Info>
+
+To tag and mention a user in the webhook edit the `Webhook Content` box and format the mention as `<@ID>` with `ID` being the Discord User ID.
+
+You can copy a Discord User ID in your Discord. Right-Click on the user > `Copy ID`
+
+Example: `<@1234567890>`

@@ -1,0 +1,82 @@
+---
+title: Set Pager Config
+description: This endpoint sets your community's Inferno Pager configuration for a
+  specific server.
+---
+
+<Warning>
+
+This API endpoint requires the **plus** version of Sonoran CAD or higher.\
+For more information, see our [pricing ](/cad/pricing/faq)page.
+</Warning>
+
+## Set Pager Config {#set-pager-config}
+
+`POST` `https://api.sonorancad.com/emergency/SET_PAGER_CONFIG`
+
+This endpoint sets the Inferno Pager configuration for a specific server in your community. If `nodes` is omitted, the existing node tree for that server is preserved.
+
+#### Request Body {#request-body}
+
+| Name                                   | Type   | Description              |
+| -------------------------------------- | ------ | ------------------------ |
+| id\*   | string | Your community's ID      |
+| key\*  | string | Your community's API Key |
+| type\* | string | SET\_PAGER\_CONFIG       |
+| data\* | array  | Array of request objects |
+
+<Tabs>
+<Tab title="200 A successful call will be met with the following response:">
+
+```
+Updated pager config!
+```
+
+</Tab>
+
+<Tab title="400 The following 400 errors may be sent in response:">
+
+```http
+INVALID REQUEST TYPE
+INVALID COMMUNITY ID
+API IS NOT ENABLED FOR THIS COMMUNITY
+INVALID API KEY
+```
+
+</Tab>
+
+</Tabs>
+
+```javascript
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "SET_PAGER_CONFIG",
+    "data": [
+        {
+            "serverId": 1,
+            "natureWords": {
+                "Emergency": "Emergency",
+                "NonEmergency": "Non-Emergency",
+                "Administrative": "Administrative"
+            },
+            "maxAddresses": 5,
+            "maxBodyLength": 250,
+            "nodes": [
+                {
+                    "id": "root-1",
+                    "name": "Fire",
+                    "description": "Fire services",
+                    "permission": "fire",
+                    "address": "FIRE-01",
+                    "shortCode": "F1",
+                    "kind": "group",
+                    "children": []
+                }
+            ]
+        }
+    ]
+}
+```
+
+The `nodes` property is optional. If omitted, Sonoran CAD keeps the existing node tree for that `serverId` and only updates the minimal config fields.

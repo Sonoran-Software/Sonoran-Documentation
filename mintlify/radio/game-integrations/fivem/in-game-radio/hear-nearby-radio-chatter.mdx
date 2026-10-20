@@ -1,0 +1,184 @@
+---
+title: Hear Nearby Radio Chatter
+description: Pulled over in a traffic stop? You'll hear the real radio chatter when
+  an officer has an active radio nearby!
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/15/151b96da3c9dbd5e0def58a604a1812f1293f7869c6c7bd5a50517ce82fbf640.png" alt="" />
+
+*Sonoran Radio - Hear Nearby Chatter*
+
+
+
+Pulled over in a traffic stop? You'll hear the real radio chatter when an officer has an active radio nearby!
+
+<Warning>
+
+Due to bandwidth usage, this feature is automatically enabled with the Pro version only!
+
+[Learn more about our paid subscription plans.](/radio/pricing/pricing-faq/standalone-pricing)
+</Warning>
+
+## Video Example {#video-example}
+
+
+
+<iframe src="https://www.youtube-nocookie.com/embed/R9-xBm0sGBA" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+
+## Audio Examples {#audio-examples}
+
+### Nearby Radio {#nearby-radio}
+
+If someone nearby has a radio, you'll hear the radio traffic they’re listening to coming from their device. The closer they are the louder the radio traffic will be. However, if they're [using an earpiece](/radio/game-integrations/fivem/in-game-radio/hear-nearby-radio-chatter#in-game-earpiece), the audio won’t be audible to others.
+
+### Radio in Vehicle {#radio-in-vehicle}
+
+When someone with a [nearby radio](/radio/game-integrations/fivem/in-game-radio/hear-nearby-radio-chatter#nearby-radio) enters a vehicle, the radio audio will become muffled. However, if a door is open, or a window is down or broken, the audio will become clearer and louder again.
+
+### Nearby Emergency Phone Call {#nearby-emergency-phone-call}
+
+When someone is [making an emergency call to a dispatcher](/radio/tutorials/usage/dispatch-panel/emergency-calls), nearby users will faintly hear the dispatcher's voice coming from the caller's phone.
+
+### Nearby Radio Scanner {#nearby-radio-scanner}
+
+When someone is carrying (or has placed down) [a radio scanner](/radio/game-integrations/fivem/in-game-radio/radio-scanners), nearby users will hear the channel that the scanner is set to.
+
+## Usage {#usage}
+
+### Default Chatter Volume {#default-chatter-volume}
+
+The volume of nearby radio chatter matches the volume setting of the emitting radio. Users with an active radio can [adjust its volume using a hotkey or the settings menu](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio#adjust-volume).
+
+### Adjust Volume {#adjust-volume}
+
+Players can adjust the nearby radio volume in-game using the `/radiovolume` command.
+
+Ex: `/radiovolume 75` sets the nearby radio to 75% volume.
+
+
+
+<Accordion title="Technical Information">
+
+
+
+When a player is within 15 game units of an active radio, they will hear the live chatter from the nearest radio. If multiple radios within range are tuned to different channels, the player will hear all those channels blended, but the sound will primarily emit from the closest radio source.
+
+_This feature is experimental and subject to both change and improvements._
+
+
+
+</Accordion>
+
+
+
+## In-Game Earpiece {#in-game-earpiece}
+
+Some communities may offer custom EUP (clothing and accessories) that players can use to personalize their characters. For radio users, an option to wear an earpiece (headphones) could be useful, allowing them to listen to radio chatter privately without others nearby overhearing.
+
+Whenever a user inserts or removes a configured in-game earpiece, a notification will be displayed confirming that others around you can or can not hear your radio.
+
+Communities can easily select which clothing items will be treated as a radio earpiece.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/02/02dabb38342127f6e5e643dec1e4ad75f769529fc7c81559e721efc77cf14aae.png" alt="" width="147" />
+
+*Sonoran Radio: In-Game Radio Earpiece*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/67/67040dadd9ecefd5f10f242b9e314d1728314567d000de80fd5296ac6bf03fe1.png" alt="" />
+
+*Sonoran Radio: Configure Earpieces*
+
+
+
+### 1. Open the Earpiece Menu {#id-1.-open-the-earpiece-menu}
+
+Open the earpiece configuration menu via `/radiomenu` > `Configure Earpiece Chatter`
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/7b/7bb2d2194f5a942b6a8d0358dba949dcfbea3f039a64a55031f719bb9dd25b3b.png" alt="" width="223" />
+
+*Sonoran Radio Menu*
+
+
+
+### 2. Toggle Earpiece Items {#id-2.-toggle-earpiece-items}
+
+To add a chatter exclusion click "Add Earpiece Item" and select the component you'd like to add. Additionally, select any specific textures that will be considered an earpiece.
+
+Once selected, anyone wearing this earpiece will not emit radio chatter to nearby users.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/67/67040dadd9ecefd5f10f242b9e314d1728314567d000de80fd5296ac6bf03fe1.png" alt="" width="222" />
+
+*Add or Remove Earpiece*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/24/24edbf373d344f532fb35ff0ec44471c1fbd90297b2989253c37126ad6955560.png" alt="" width="375" />
+
+*Earpiece Item Selection*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/16/1657bc5bd84c5b9d3e195ff0740a6f5ff72026196e8fc5e2a205271ff4e70a07.png" alt="" width="375" />
+
+*Earpiece Texture Selection*
+
+
+
+### 3. Removing Earpieces {#id-3.-removing-earpieces}
+
+To remove an earpiece option, navigate to the `Remove Earpiece Item` Menu option > Select the specific earpiece item > and `Confirm Removal`
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/05/05adbebb8dfeae78bb234b18c64926b75918b866ff0319986d43481528c0fe6e.png" alt="" />
+
+
+
+### Manual Earpiece IDs (Advanced) {#manual-earpiece-ids-advanced}
+
+
+
+<Accordion title="Manually Configure Earpiece IDs">
+
+
+
+The `earpieces.json` file defines earpiece items (custom EUP prop IDs) that block radio chatter from being heard nearby.
+
+Component IDs
+
+Look [here](https://docs.fivem.net/natives/?_0x829F2E2) for the component IDs for props (hats, glasses, earpieces, etc.). To find component IDs for drawables (shirts, pants, backpacks, etc.), look [here ](https://docs.fivem.net/natives/?_0x262B14F48D29DE80)and add 14 to the number.
+
+For example, to exclude a clothing item under ACCESSORIES, it might look like this:
+
+```lua
+{
+  componentId = 22, -- accessories (8) + offset (14) is 22
+  drawableId = 78,  -- Number in vMenu
+  texture = 0,      -- Number in vMenu (or 0 for all textures)
+}
+```
+
+
+
+</Accordion>
+
+
+
+## Radio Scanners {#radio-scanners}
+
+Learn more about in-game radio scanners:
+
+
+
+<Card title="[radio-scanners.md](radio-scanners.md)" href="/radio/game-integrations/fivem/in-game-radio/radio-scanners" />

@@ -1,0 +1,58 @@
+---
+title: API Restrictions
+description: Sonoran CAD's API endpoints are restricted in accordance with the community's
+  paid subscription level.
+---
+
+| Endpoint                                                                                    | Minimum Subscription |
+| ------------------------------------------------------------------------------------------- | -------------------- |
+| emergency/[unit\_location](/cad/api-integration/api-endpoints/emergency/identifiers/update-unit-location)                   | Standard             |
+| emergency/[unit\_panic](/cad/api-integration/api-endpoints/emergency/identifiers/unit-panic)                                | Standard             |
+| emergency/[unit\_status](/cad/api-integration/api-endpoints/emergency/identifiers/unit-status)                              | Standard             |
+| emergency/[kick\_unit](/cad/api-integration/api-endpoints/emergency/identifiers/kick-unit)                                  | Standard             |
+| emergency/[call\_911](/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/911-call)                   | Standard             |
+| emergency/[remove\_911](/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/remove-911)               | Standard             |
+| emergency/[get\_account\_identifiers](/cad/api-integration/api-endpoints/emergency/identifiers/get-identifiers)             | Standard             |
+| emergency/[new\_dispatch](/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/new-dispatch)           | Plus                 |
+| emergency/[attach\_unit](/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/attach-units)            | Plus                 |
+| emergency/[detach\_unit](/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/detach-unit)             | Plus                 |
+| emergency/[add\_call\_note](/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/add-call-note)        | Plus                 |
+| emergency/[close\_call](/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/close-call)               | Plus                 |
+| emergency/[get\_active\_units](/cad/api-integration/api-endpoints/emergency/identifiers/get-active-units)                   | Plus                 |
+| emergency/[get\_calls](/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/get-calls)                 | Plus                 |
+| emergency/[set\_call\_postal](/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/update-call-postal) | Plus                 |
+| emergency/[set\_stations](/cad/api-integration/api-endpoints/emergency/station-alert/set-stations)                          | Plus                 |
+| emergency/[get\_pager\_config](/cad/api-integration/api-endpoints/emergency/inferno-pagers/get-pager-config)                | Plus                 |
+| emergency/[set\_pager\_config](/cad/api-integration/api-endpoints/emergency/inferno-pagers/set-pager-config)                | Plus                 |
+| emergency/[get\_blips](/cad/api-integration/api-endpoints/emergency/custom-blips/get-map-blips)                             | Pro                  |
+| emergency/[add\_blip](/cad/api-integration/api-endpoints/emergency/custom-blips/add-blip)                                   | Pro                  |
+| emergency/[modify\_blip](/cad/api-integration/api-endpoints/emergency/custom-blips/modify-blip)                             | Pro                  |
+| emergency/[remove\_blip](/cad/api-integration/api-endpoints/emergency/custom-blips/remove-blip)                             | Pro                  |
+| emergency/[set\_available\_callouts](/cad/api-integration/api-endpoints/emergency/ers/set-street-sign-config)               | Pro                  |
+| emergency/[modify\_identifier](/cad/api-integration/api-endpoints/emergency/identifiers/modify-identifier)                  | Pro                  |
+| emergency/[idents\_to\_group](/cad/api-integration/api-endpoints/emergency/identifiers/set-ident-group)                     | Pro                  |
+| civilian/[get\_characters](/cad/api-integration/api-endpoints/civilian/get-characters)                                      | Standard             |
+| civilian/[new\_character](/cad/api-integration/api-endpoints/civilian/new-character)                                        | Standard             |
+| civilian/[edit\_character](/cad/api-integration/api-endpoints/civilian/edit-character)                                      | Standard             |
+| civilian/[remove\_character](/cad/api-integration/api-endpoints/civilian/remove-character)                                  | Standard             |
+| general/[check\_apiid](/cad/api-integration/api-endpoints/general/check-api-id)                                             | Standard             |
+| general/[apply\_permission\_key](/cad/api-integration/api-endpoints/general/apply-permission-key)                           | Plus                 |
+| general/[ban\_user](/cad/api-integration/api-endpoints/general/ban-user)                                                    | Plus                 |
+| general/[set\_penal\_codes](/cad/api-integration/api-endpoints/general/set-penal-codes)                                     | Standard             |
+| general/[set\_api\_id](/cad/api-integration/api-endpoints/general/set-api-ids)                                              | Standard             |
+| general/[get\_templates](/cad/api-integration/api-endpoints/general/custom-records/get-record-template)                     | Standard             |
+| general/[new\_record](/cad/api-integration/api-endpoints/general/custom-records/new-record)                                 | Plus                 |
+| general/[edit\_record](/cad/api-integration/api-endpoints/general/custom-records/edit-record)                               | Plus                 |
+| general/[remove\_record](/cad/api-integration/api-endpoints/general/custom-records/remove-record)                           | Plus                 |
+| general/[lookup](/cad/api-integration/api-endpoints/general/lookup-name-or-plate)                                           | Plus                 |
+| general/[lookup\_int](/cad/api-integration/api-endpoints/general/lookup-by-integer)                                         | Plus                 |
+| general/[lookup\_custom](/cad/api-integration/api-endpoints/general/lookup-by-custom)                                       | Plus                 |
+| general/[get\_account](/cad/api-integration/api-endpoints/general/get-account)                                              | Plus                 |
+| general/[get\_accounts](/cad/api-integration/api-endpoints/general/get-account-1)                                           | Plus                 |
+| general/[set\_account\_permissions](/cad/api-integration/api-endpoints/general/modify-account-permissions)                  | Plus                 |
+| general/heartbeat                                                                           | Standard             |
+| general/[get\_version](/cad/api-integration/api-endpoints/general/get-version)                                              | Free                 |
+| general/[get\_servers](/cad/api-integration/api-endpoints/general/get-servers)                                              | Standard             |
+| general/[set\_servers](/cad/api-integration/api-endpoints/general/set-servers)                                              | Plus                 |
+| general/[set\_postals](/cad/api-integration/api-endpoints/general/set-postal-config)                                        | Pro                  |
+| general/[send\_photo](/cad/api-integration/api-endpoints/general/send-photo)                                                | Pro                  |

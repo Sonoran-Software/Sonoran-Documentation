@@ -1,0 +1,99 @@
+---
+title: Disciplinary Panel
+description: Configure automated actions when community members receive disciplinary
+  points.
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/23/235a5a889017374d42156c47e783fe06bc96c68f7f382308a9efd8ad712719fc.png" alt="" />
+
+
+
+## What is the Disciplinary Panel? {#what-is-the-disciplinary-panel}
+
+The Sonoran CMS disciplinary panel makes handling misbehaving members easy!
+
+This panel allows you manage disciplinary "points" to a user when they break the rules, misbehave, etc. Additionally, you can configure automated actions like sending the user an email, Discord message, modifying their ranks, banning them from the community, etc.
+
+## Configuring the Disciplinary Points {#configuring-the-disciplinary-points}
+
+### Configure Point Expiration {#configure-point-expiration}
+
+Many communities may wish to have points expire after a certain length of time.
+
+In the configuration tab, you can enable or disable point expiration and set the length of time.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/41/410809c09e36b0865d92887abdaba818716bb0db6e186a7da280af4698500101.png" alt="" />
+
+*Sonoran CMS Disciplinary Point Expiration*
+
+
+
+### Configure Automated Actions {#configure-automated-actions}
+
+You can also configure automated actions that apply to users once they meet specific point levels.
+
+In this example, once a user receives 1 or more points they will receive a Discord DM message.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/5a/5a46b4f4ae731271afda7a98b3e46243260aab3a287e4011878865c4394788fe.png" alt="" />
+
+*Sonoran CMS Disciplinary Point Actions*
+
+
+
+## Using the Disciplinary Panel {#using-the-disciplinary-panel}
+
+### View Active Points {#view-active-points}
+
+Disciplinary points will be displayed on a member's avatar for anyone that has access to the disciplinary panel.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/f8/f8ae3e5093a302ec1acc79c7247bbfa6e7252dcee899d914659cecc0501c9692.png" alt="" />
+
+*Sonoran CMS Avatar Disciplinary Points*
+
+
+
+Use the search bar to filter to a specific community member.
+
+Select the user to view all active points or remove them.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/9a/9a2bb454b90f3b136c0bbaf2a8506594d71ba744358e2c1aadafda2e2ad317e7.png" alt="" />
+
+*Sonoran CMS View/Remove Disciplinary Points*
+
+
+
+### Manually Add Points {#manually-add-points}
+
+To add points to a member press the green + icon.
+
+Use the popup dialog to select the account, amount of points, and a description.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/2b/2bcb033e0a40515a172c260d32097108d92a680bbe5ad94876319af243853db3.png" alt="" />
+
+*Sonoran CMS Add Disciplinary Points*
+
+
+
+### Add Points via Form Stage {#add-points-via-form-stage}
+
+Communities can also [create custom form stage actions](/cms/tutorials/forms/creating-custom-forms#form-stage-actions) that add disciplinary points.
+
+You can specify a `Member Selector` field on the form for someone to report a community member.
+
+Additionally, a `Number` field on the form can also be utilized to add a custom amount of points to a user.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/2b/2b434e106d216eaedf120f0f2d3e522a290d92aeb1db2a65b21aaa88361a3793.png" alt="" />
+
+*Sonoran CMS - Form Stage Action: Add Disciplinary Points*

@@ -1,0 +1,100 @@
+---
+title: Sonoran Radio Sync
+description: Easily manage Sonoran Radio permissions from Sonoran CMS ranks! Learn
+  more below.
+---
+
+Sonoran CMS allows you to easily manage your community's Sonoran Radio permissions based on their Sonoran CMS rank automatically!
+
+<Warning>
+
+This sync requires Sonoran Radio Standalone.
+
+If you are using the Sonoran Radio TeamSpeak, view our [TeamSpeak integration](/cms/integration-capabilities/teamspeak-3-role-sync).
+</Warning>
+
+### 1. Add New Radio Integration {#id-1.-add-new-radio-integration}
+
+Click the _Sonoran Radio_ icon or click the plus button to sync another Radio to you community
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/0b/0b6df029372e62f4fc0f2113d3ee77743c83dfe67e081b0dd92c720adacee6cd.png" alt="" />
+
+*Sonoran CMS - Radio Integration Setup List Area*
+
+
+
+### 1. Enter Credentials {#id-1.-enter-credentials}
+
+Enter your Sonoran Radio community's ID & API Key.
+
+Your Community ID and API Key are located in Sonoran Radio's `Administration` panel.\
+Enter these into your Sonoran CMS as shown below.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e2/e2a5ec6dbc4ece1ec381660ec04c93cdde010be606d97a0818bb437595331b56.png" alt="" />
+
+*Sonoran Radio - Administration Panel*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/23/23acb536c23ede350f438305d1f5c54f7a1180271a7e42714931e56d9bd79394.png" alt="" />
+
+*Sonoran CMS - Sonoran Radio Integration Credential Inputs*
+
+
+
+### 2. Configure Sync Settings {#id-2.-configure-sync-settings}
+
+Check the sync options that best fit your community's needs, explanation of each sync feature can be found [below](/cms/integration-capabilities/sonoran-cad-sync#feature-overview).
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/2d/2d22645da4a550b264ede16915d87ac7aee5669ec2052ee7ab441a0186dcf095.png" alt="" />
+
+
+
+### 3. Map CAD Permissions to Ranks {#id-3.-map-cad-permissions-to-ranks}
+
+Select a CMS rank and toggle the desired Radio permissions below.
+
+When you're done setting up Radio sync and configuring permission mappings, simply close out of the window by clicking the red X button and it will automatically save your credentials, settings, and trigger a mass sync of all permissions.
+
+<Warning>
+
+Permission syncs from Sonoran CMS will set the user's permissions explicitly to what is mapped in the CMS and will wipe any non-enabled permissions.
+</Warning>
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e9/e92bbf304ca89bddc4130b644be0e04c9f284cf43c20b9116f51f834a7034e21.png" alt="" />
+
+*Sonoran CMS - Sonoran CAD Integration Permission Mapping*
+
+
+
+## Feature Overview {#feature-overview}
+
+### Multi-Setup Sync {#multi-setup-sync}
+
+Sync multiple Sonoran Radio communities with your single Sonoran CMS community. This will sync all of the below features with each community you have setup.
+
+### Kick Sync {#kick-sync}
+
+This will trigger an action to kick the same user from your Sonoran Radio community if they're kicked from your Sonoran CMS community.
+
+### Ranks that Auto Join Radio {#ranks-that-auto-join-radio}
+
+This allows specific ranked members who join your community to be automatically added to your Sonoran Radio community under the same account.
+
+### Name Sync {#name-sync}
+
+This will automatically set a user's radio display name to match their CMS display name. This is updated on:
+
+* CMS community name change
+* User account update/save
+* Radio integration configuration change

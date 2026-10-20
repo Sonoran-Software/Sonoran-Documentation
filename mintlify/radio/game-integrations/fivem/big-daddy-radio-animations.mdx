@@ -1,0 +1,85 @@
+---
+title: Big Daddy Radio Animations
+description: Sonoran Radio is partnered with Big Daddy Scripts to offer a FREE copy
+  of their radio animations script!
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/37/37ca282783d0c3f9528b6b1a3784ec3d0e38a7e5d03218aa5fa44a9deec1bca8.png" alt="" />
+
+*Sonoran Radio x Big Daddy Scripts*
+
+
+
+## What is this offer? {#what-is-this-offer}
+
+<Warning>
+
+This script requires the **pro** version of Sonoran Radio **standalone**.
+
+[Click to learn more about Sonoran Radio standalone!](/radio)
+</Warning>
+
+Big Daddy's radio animation script enhances your Sonoran Radio experience by adding new in-game animations. As one of the most popular scripts of its kind, it offers versatile options based on where your radio is positioned—whether on your chest, shoulders, or handheld. This provides a more immersive and personalized interaction.
+
+## Download and Installation {#download-and-installation}
+
+### 1. Download the Script and Product Key {#id-1.-download-the-script-and-product-key}
+
+Create an account and [download the latest script resource](https://sonoran.link/bigdaddy) from Big Daddy Scripts.
+
+In the account portal, select your recent order and copy the product key.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/56/56c17cd61788b95271ee16cdc3c93f97cd4aac382920267b8414bb96815ee168.png" alt="" />
+
+*Big Daddy - Account Panel*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d3/d398829302ab9b0a47062d8126885e5e8a1aee73fb1e535c58b273bfe676a2ae.png" alt="" />
+
+*Big Daddy - License Key*
+
+
+
+### 2. Install The Script {#id-2.-install-the-script}
+
+#### A. Extract {#a.-extract}
+
+Extract the script to your server's `resources` folder.
+
+#### B. License Key {#b.-license-key}
+
+In the `settings.ini` file, paste your license key.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/27/2727d783ffe3f0d98b611747949a238135f8ba3b0070f21ccd7df44b163098bf.png" alt="" width="375" />
+
+*Big Daddy - Product Key*
+
+
+
+#### C. Ensure the Resource {#c.-ensure-the-resource}
+
+In your `server.cfg` file, add the following line **after** your Sonoran Radio resource lines:
+
+<pre><code>{"# Start the sonoranradio resource\nensure sonoranradio\n\n# Permissions for auto-updater (REQUIRED)\nadd_ace resource.sonoranradio command allow\nadd_ace resource.sonoranradio_updatehelper command allow\n\n# ----------------NEW----------------\n# Big Daddy Radio Animation Script\nensure BigDaddy-RadioAnimation\n"}</code></pre>
+
+_Sonoran Radio will automatically detect the script named `BigDaddy-RadioAnimation`, and disable the default Sonoran Radio animation (`disableAnimation` from the `config.lua`)_
+
+### 3. Enjoy! {#id-3.-enjoy}
+
+Once in-game, you can use the `/radioanim` command to open up the customization menu.
+
+This script will automatically detect when you are talking on your Sonoran Radio.
+
+<Info>
+
+This script also makes **users talk on their in-game microphone when they talk on the radio**.
+
+To disable this, ensure the `Config.talkSync` is disabled in the Sonoran Radio `config.lua` and the `TalkSync` is set to `false` in Big Daddy's Animation `settings.ini` file.
+</Info>
+
+[See the documentation for more information about configuration options and commands.](https://wiki.bigdaddyscripts.com/documentation/sonoran-radio-animation/)

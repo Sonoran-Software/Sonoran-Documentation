@@ -1,0 +1,91 @@
+---
+title: New Character
+description: This endpoint allows you to add a new character to an existing user account.
+---
+
+<Warning>
+
+This API endpoint requires the **plus** version of Sonoran CAD or higher. For more information, see our [pricing ](/cad/pricing/faq)page.
+</Warning>
+
+<Warning>
+
+New characters can NOT be added to communities using [Database Sync](/broken/pages/-M4q1ttRJj-kIHpuRH3y), as all characters are pulled from your server's in-game database.
+</Warning>
+
+## New Character {#new-character}
+
+`POST` `https://api.sonorancad.com/civilian/new_character`
+
+This endpoint allows you to add a new character to an existing user account.
+
+#### Request Body {#request-body}
+
+| Name | Type   | Description                |
+| ---- | ------ | -------------------------- |
+| id   | string | Your community's ID        |
+| key  | string | Your community's API Key   |
+| type | string | NEW\_CHARACTER             |
+| data | array  | Array of character objects |
+
+<Tabs>
+<Tab title="200 A successful call will be met with the following response:">
+
+```
+NEW CHARACTER ADDED TO {{ USERNAME }}
+```
+
+</Tab>
+
+<Tab title="400 The following 400 errors may be sent in response:">
+
+```http
+INVALID REQUEST TYPE
+INVALID COMMUNITY ID
+API IS NOT ENABLED FOR THIS COMMUNITY
+INVALID API KEY
+```
+
+</Tab>
+
+<Tab title="404 ">
+
+```
+API ID NOT LINKED TO AN ACCOUNT IN THIS COMMUNITY
+```
+
+</Tab>
+
+</Tabs>
+
+```javascript
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "NEW_CHARACTER",
+    "data": [
+        {
+            "user": "STEAM:1234",  // API ID or user UUID/GUID that 'owns' this record
+            "useDictionary": true, // OPTION 1: Key/Value from template
+            "recordTypeId": 7,     // OPTION 1: Custom template ID number
+            "replaceValues": {
+                // Field UID and Value
+                "first": "Brian",
+                "last": "Sosnowski"
+            },
+            "record": null,        // OPTION 2: Full raw JSON structure
+            "deleteAfterMinutes": 30 // OPTIONAL: Delete record after X minutes (temporary record)
+        }
+    ]
+}
+```
+
+### Formatting Data for Custom Records {#formatting-data-for-custom-records}
+
+Custom records can be easily modified with a set of key/value pairs, or full raw JSON.
+
+Learn more about these formatting options below:
+
+
+
+<Card title="[api-options-for-adding-and-modifying-records.md](../general/custom-records/api-options-for-adding-and-modifying-records.md)" href="/cad/api-integration/api-endpoints/general/custom-records/api-options-for-adding-and-modifying-records" />

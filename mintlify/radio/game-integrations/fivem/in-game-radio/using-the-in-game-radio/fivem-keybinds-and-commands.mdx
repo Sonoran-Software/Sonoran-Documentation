@@ -1,0 +1,137 @@
+---
+title: FiveM Keybinds & Commands
+description: Learn more about customizing your in-game FiveM keybinds.
+---
+
+## FiveM Keybinds {#fivem-keybinds}
+
+Sonoran Radio allows you to customize keybinds for in-game actions on the radio.
+
+To customize these, navigate to your GTA `Settings` -> `Key Bindings` -> `FiveM` -> `(sonoranradio)`
+
+Communities can also customize the default keybinds for new users in the [configuration's](/radio/game-integrations/fivem/installing-the-in-game-resource#updates) `keybind` property with the [available options](https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/).
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/9d/9d875cf5c8e43ab17500ab445005fd3bf4eb34a19d8ebdb49fad9d015070bf87.png" alt="" />
+
+*FiveM Keybinds: Sonoran Radio*
+
+
+
+### Radio Power {#radio-power}
+
+This keybind will turn your radio on/off.
+
+### Prev/Next Channel (In Group) {#prev-next-channel-in-group}
+
+These keybinds will move you to the previous or next channel within the current channel group.
+
+### Prev/Next Group {#prev-next-group}
+
+These keybinds will move you to the previous or next channel group.
+
+### Radio PTT {#radio-ptt}
+
+This keybind will transmit your voice on the radio while being held down.
+
+### Panic {#panic}
+
+This keybind will toggle your panic status in the radio, and in [Sonoran CAD](/radio/tutorials/integrations/sonoran-cad-integration#cad-panic).
+
+#### Auto PTT on Panic {#auto-ptt-on-panic}
+
+Sonoran Radio has a [configurable option](/radio/game-integrations/fivem/installing-the-in-game-resource#updates) to automatically press a users PTT button for a configurable amount of time when the user [presses their radio panic button](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio#panic):
+
+```lua
+Config.autoPttOnPanic = {
+	enabled = true, -- Enable automatic PTT when panic button is pressed
+	duration = 15 -- Duration in seconds to hold PTT when panic button is pressed
+}
+```
+
+### Volume Up/Down {#volume-up-down}
+
+This keybind will quickly adjust your volume up/down, [based on the percentage set in your settings menu](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio#radio-volume).
+
+### Toggle Radio Users {#toggle-radio-users}
+
+This keybind will display the [current radio connected user list](/radio/game-integrations/fivem/in-game-radio/connected-users-list).
+
+### Toggle Radio Talk Animation {#toggle-radio-talk-animation}
+
+This keybind will toggle on/off the talking animation.
+
+***
+
+## Stream Deck Integration {#stream-deck-integration}
+
+Stream Deck plugins like [FXCommands](https://marketplace.elgato.com/product/fxcommands-fivem-a6cdf538-76ac-4fc7-b8b8-130ea2b8bcbb) can be used to trigger any of the [FiveM client commands](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands#fivem-client-commands) below.
+
+***
+
+## FiveM Client Commands {#fivem-client-commands}
+
+### Copying Channel and Scan List IDs {#copying-channel-and-scan-list-ids}
+
+FiveM commands require channel and scan list IDs. These IDs can be made visible by toggling the `#` icon in the channel or scan list menus.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/35/35e667a478ab30c424c8d19473ef0347de689e48910390d4da8abc6ca8938380.png" alt="" width="180" />
+
+*Modern UI: Channel and Scan IDs*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/11/1118c06aaa77363a6209d32fb06e7caddda85c28285ef050eb97dfbc65e18d3b.png" alt="" width="198" />
+
+*Modern UI: Channel IDs*
+
+
+
+### Toggle Channel Transmit {#toggle-channel-transmit}
+
+To toggle [transmitting on a specific channel](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio#connecting-and-switching-channels) use the command
+
+`/radio channel ID`
+
+### Toggle Scan List {#toggle-scan-list}
+
+To toggle on/off a specific [scan list](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio#custom-scan-lists) use the command
+
+`/radio scanlist ID`
+
+### Toggle Channel Scan {#toggle-channel-scan}
+
+To toggle on/off [scanning a specific channel](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio#channel-scanning-listening) use the command
+
+`/radio scan ID`
+
+### Mobile Repeater Menu {#mobile-repeater-menu}
+
+To activate or deactivate a configured [vehicle or trailer repeater](/radio/game-integrations/fivem/in-game-radio/in-game-repeaters#mobile-vehicle-repeaters), use the command
+
+`/radio repeater`
+
+This opens an activation-only menu for all players. Configuring which vehicle models have repeaters remains restricted to administrators through `/radiomenu`.
+
+***
+
+## FiveM Server Commands {#fivem-server-commands}
+
+Commands for the server console.
+
+### Debug Mode Toggle {#debug-mode-toggle}
+
+Toggle the [`config.debug` mode](/radio/game-integrations/fivem/installing-the-in-game-resource#updates) with the command
+
+`sonoranradio debugmode`
+
+Note: This mode does not persist through server restarts.
+
+### Update Resource Command {#update-resource-command}
+
+Run the automatic update with the command
+
+`sonoranradio update`

@@ -1,0 +1,27 @@
+---
+title: Roster Automations
+description: Create powerful automations with your custom community rosters!
+---
+
+## Roster Trigger Actions {#roster-trigger-actions}
+
+Communities can use the [**Actions**](/cms/tutorials/administrative/actions) panel to send webhooks, in-game messages, and other automated tasks. These actions can run on a schedule or be triggered when roster cells change.
+
+**Example:**\
+A community roster includes a **Status** column that automatically switches members between **Active** and **Inactive** based on their recent in-game activity. When a member’s playtime drops below the required threshold and their status updates to _Inactive_, a Discord webhook should be sent automatically.
+
+_**Note:** Activity time columns update automatically when new logs (join/leave game) are created. If a member hasn’t logged in recently, no logs exist to trigger a recalculation, so a 12-hour scheduled task re-processes them._
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/a6/a64b0f869328b27a17236040b33e4c72a437758414048add0626f74952dc5e15.png" alt="" />
+
+
+
+## Edit Roster on Form Stage {#edit-roster-on-form-stage}
+
+[Custom form stages](/cms/tutorials/forms/creating-custom-forms#form-stages) can also update rosters. For example, when a leave-of-absence (LOA) submission moves to the **Accepted** stage, the submitter’s **Status** field can automatically be set to **LOA**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/1f/1ffd76c3b36c2fe31c0135998e034693d9af7884cd9048e5b7858fa2eea6f567.png" alt="" width="375" />

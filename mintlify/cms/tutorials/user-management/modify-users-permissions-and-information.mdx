@@ -1,0 +1,140 @@
+---
+title: Setting User Ranks
+description: Now you're ready to modify your users that have joined your community.
+  Follow the guide below!
+---
+
+<iframe src="https://app.guidde.com/share/playbooks/9t7tJGYCTmTCa9V68Hzf7f?origin=G25dDmjNZ2b8ccFUz9X7G7W8T1k1" title="Interactive tutorial" className="w-full aspect-video rounded-xl" allowFullScreen />
+
+
+
+<Warning>
+
+Make sure that you've viewed the [**Creating Ranks**](/cms/tutorials/user-management/creating-departments) guide and have created at least one group prior to modifying user permissions.
+</Warning>
+
+## Navigate to the Accounts Panel {#navigate-to-the-accounts-panel}
+
+To access the "Accounts Panel", head to `Administrative Panel` > `User Accounts`
+
+Within this "Accounts Panel" is where you'll be able to see every user that has joined your community. From here you can click and edit their information and permissions.
+
+![Sonoran CMS - Administrative Accounts Panel - Utilize this panel to edit and view all users information.](https://docs-assets.sonoransoftware.com/sha256/48/48d49e3e5c16102213212b8e72ff14bd1e17ba280625137e400534f2289c91eb.png)
+
+## Editing Account Information {#editing-account-information}
+
+To edit a user’s account, left-click their row in the **User Accounts** table. This opens a dialog where you can update details such as Rank and Identifiers. Assigning ranks grants the user the permissions associated with those roles.
+
+When adding identifiers, type the value and press **Enter** to apply it.
+
+A user’s permissions are active only when their **System Status** is set to **ACTIVE**. If a user is archived, all permissions are revoked and their access to the community CMS is restricted.
+
+![Administrative Accounts Panel - Account Information Dialog](https://docs-assets.sonoransoftware.com/sha256/1c/1c351ad19a3334ab111ec3942f20db38d04421aac479ddec0b32c60f84d8ff2e.png)
+
+### Assign Rank to Multiple Accounts {#assign-rank-to-multiple-accounts}
+
+In the `User Accounts` viewer, you can now tick the checkboxes to select multiple accounts at once. This will allow you to perform actions on multiple accounts at once.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/5b/5b3e104b329f996fd23e0f4275fa06f295fe0efb8ffae3a8b7ffcd7621b83461.png" alt="" />
+
+*Sonoran CMS - Multiple Account Selection*
+
+
+
+Once you have selected the desired accounts, click on the Icon button above to open a dropdown of every action you can perform. For rank management, you have the following options:
+
+* **Set Ranks** will automatically replace all assigned ranks with whatever rank you specify
+* **Add/Remove Ranks** Allows you to add or remove any ranks to selected accounts
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/bc/bca67e337656e05fc62e7e6b827b9e7d9761bd8d184d6f8ee5a6e96c2b0bc486.png" alt="" />
+
+*Sonoran CMS - Multiple Account Actions*
+
+
+
+You can also perform administrative actions (currently Kick, Ban, and Archive) on multiple users at once through this dropdown.
+
+### Alternate User Accounts Table Actions {#alternate-user-accounts-table-actions}
+
+Instead of left-clicking a user's row you can right-click which will prompt you with two actions:
+
+* **Edit Account Information** which will pop up with the above dialog
+* **View Member Profile** will redirect you to the user's community profile which will provide more information.
+
+![Sonoran CMS - Administrative Accounts Panel - Account Information Right Click Prompt](https://docs-assets.sonoransoftware.com/sha256/61/61fa5d49fe2ca93c25132819e7a6036c9aa890fbb999771b2b9ebb87fc224b73.png)
+
+![Sonoran CMS - User's Community Profile - Redirected from the "View Member Profile" prompt from above](https://docs-assets.sonoransoftware.com/sha256/cd/cd66614f549570a1941ce1abb65ac545df7e96440f705b1f05a061bf4bd6f09a.png)
+
+If you have permission to edit the individuals information in the Account Viewer you can edit the member's name in their Community Profile by clicking their name or the blue pencil shown to the right of it. The pencil will only show if you have permission.
+
+### Granting Expiring Ranks {#granting-expiring-ranks}
+
+You can configure any rank to expire either after a set duration or at a specific date and time. To begin, assign the user the rank you want to schedule for expiration.
+
+After selecting the rank, click the yellow **Set to Expire** button. A dialog will appear where you can choose between a time-based expiration (e.g., after a certain number of days) or an exact expiration date and time.
+
+Once you’ve configured the settings, click the green **Set Expiration** button to apply the expiration schedule.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/50/50660cd18f45df7c4b96f0d463af6815eb203f9989c8fa5ef831eeb0c0921f89.png" alt="" />
+
+*Sonoran CMS - Rank Expiration Settings*
+
+
+
+<Info>
+
+Checks for rank expirations are done upon each fetch of the account and not **currently** periodically checked.
+</Info>
+
+## Filtering Users by Rank {#filtering-users-by-rank}
+
+In the `User Accounts` page, you can filter users by rank so that only users who hold the rank(s) you've selected will be shown.
+
+To filter by rank, open the dropdown menu to the right of where it says `User Accounts:`. In there you can department sub-menus and click on ranks to filter them. You can select multiple ranks to filter if you would like.
+
+To clear filters, you can click the X in the menu box.
+
+Below that you can alternatively choose to display Pending, Banned, or Archived members.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/9c/9cf1a193fa0d7e835e25ad486f27082cb84f860589e736885fa1975c119ed530.png" alt="" />
+
+*Sonoran CMS - Filter Users by Rank*
+
+
+
+## Grant Rank on Join {#grant-rank-on-join}
+
+<Info>
+
+These settings can be found in `Admin Panel` > `Customization` > `On Join Actions`
+</Info>
+
+You can automatically grant a default rank for all users who join your community. This could be used if you want to have a specific rank for inquiring members that only gives them access to certain forms.
+
+In this case you would click the green plus button, add a `Modify Ranks` block, then select the rank you wish to grant.
+
+Granting a rank will automatically change a new user's status from **Pending** to **Active**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/92/9217b2ea97360dd7663fcf3e012bd053609962bd14cd050265a9b8b1a5117ec1.png" alt="" />
+
+*Sonoran CMS - Customization - On Join Rank*
+
+
+
+Alternatively, if you do **not** set a rank on join, new users' statuses will remain as **Pending**, prompting them to fill out a membership application.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ab/abdd34903a99001ad2d8e08bb84f6ba5c1f66e35e473ed47c330e8d6e860cd8c.png" alt="" />
+
+*Sonoran CMS - Pending User Form Prompt*

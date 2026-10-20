@@ -1,0 +1,67 @@
+---
+title: Add Member Record
+description: This endpoint allows you to add a disciplinary record to a member
+---
+
+## Add Member Record {#add-member-record}
+
+`POST` `https://api.sonorancms.com/disciplinary/add_member_record`
+
+Add a Sonoran CMS community member disciplinary record by member search fields.
+
+#### Request Body {#request-body}
+
+| Name                                   | Type   | Description         |
+| -------------------------------------- | ------ | ------------------- |
+| id\*   | string | Community ID        |
+| key\*  | string | API Key             |
+| type\* | string | ADD\_MEMBER\_RECORD |
+| data\* | object | Object              |
+
+<Tabs>
+<Tab title="200: OK ">
+
+```json
+{
+      "id": "123",
+      "status": true,
+      "accId": "123",
+      "source": "api",
+      "sourceId": "api-request",
+      "points": 10,
+      "reason": "Some reason",
+      "metadata": {},
+      "history": [],
+}
+```
+
+</Tab>
+
+<Tab title="400: Bad Request The following 400 errors may be sent in response:">
+
+```javascript
+INVALID API KEY
+INVALID COMMUNITY ID
+MEMBER NOT FOUND
+```
+
+</Tab>
+
+</Tabs>
+
+```json
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "ADD_MEMBER_RECORD",
+    "data": {
+        "apiId": "SOME_API_ID", // Optional - must have one
+        "username": "SOMEUSERNAME", // Optional - must have one
+        "accId": "SOMEACCID", // Optional - must have one
+        "discord": "111122223333444455", // Optional - must have one
+        "uniqueId": 1234 // Optional - must have one
+        "points": 10, // How many points this disciplinary record incurs
+        "reason": "Some reason", // Reason for the disciplinary record
+    }
+}
+```

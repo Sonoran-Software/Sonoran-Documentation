@@ -1,0 +1,85 @@
+---
+title: Discord Rich Presence
+description: Our desktop app allows you to advertise your community right in Discord!
+---
+
+<Warning>
+
+**ATTENTION**: This feature is currently no longer within Sonoran CMS and will be reintroduced in a future update.
+</Warning>
+
+<Info>
+
+Rich presence is included with all versions of Sonoran CMS, but customization requires the **Standard** plan or higher, and the **Pro** plan for complete customization with the icon.\
+For more information, see our [pricing](/cms/pricing/pricing-faq) or view how to check your community [limits](/cms/tutorials/administrative/view-your-limits).
+</Info>
+
+## What is Discord Rich Presence? {#what-is-discord-rich-presence}
+
+When running our [desktop application](/cms/download), Discord can automatically detect and display information about your community.
+
+![Sonoran CMS - Discord Rich Presence](https://docs-assets.sonoransoftware.com/sha256/2a/2ace73cff982345358cfec71a9c1ceee9408f8a14d96970e17793b889643a02a.png)
+
+## Customizing your Rich Presence {#customizing-your-rich-presence}
+
+![Sonoran CMS - Discord Rich Presence Customization](https://docs-assets.sonoransoftware.com/sha256/b2/b2e54d75a156d3cd3da560b53e0ca0154ba5f3983e83fc31576dd7b892b8443f.png)
+
+### Customizing Buttons {#customizing-buttons}
+
+Discord presence currently allows for two customizable buttons.
+
+Navigate to Administrator Panel > Customization > Community Customization > Discord Rich Presence Customization
+
+#### For communities on the **Standard** plan or higher: {#for-communities-on-the-standard-plan-or-higher}
+
+\- Button #2 may be customized to any [Sonoran CAD](https://github.com/Sonoran-Software/SonoranCMS-Documentation/blob/master/integration-capabilities/broken-reference/README.md) or [Sonoran CMS](/cms/why-choose-sonoran-cms/why-choose-sonoran-cms) invitation link.\
+\- Ex: `https://sonorancad.com/#/?comid=mycommunityid` or `https://sonorancms.com/#/?comid=mycommunityid`
+
+#### For communities on the Pro plan: {#for-communities-on-the-pro-plan}
+
+\- Both buttons may be customized to any URL desired.\
+\- The Icon and title can also be customized with a Discord developer application.
+
+### Customizing the Icon {#customizing-the-icon}
+
+Communities on the **Pro** version may customize the rich presence icon:
+
+#### 1. Create a new Discord Application {#id-1.-create-a-new-discord-application}
+
+On [https://discord.com/developers/applications](https://discord.com/developers/applications) create a new application
+
+![Discord Developer - New Application](https://docs-assets.sonoransoftware.com/sha256/26/26b667205df33634d7a2ac9fb93ba25e7f1188f2b4ba60a8896b18518909f8ad.png)
+
+#### 2. Copy your Client ID {#id-2.-copy-your-client-id}
+
+Under OAuth2, copy your `Client ID`
+
+![Discord Developer - Application Client ID](https://docs-assets.sonoransoftware.com/sha256/3f/3ffd20ee73ea6b40581ca351182b88d5a6c08523e3688fffcd2bf3d3a1c6682f.png)
+
+#### 3. Add an Icon {#id-3.-add-an-icon}
+
+Next, upload an icon for your new application. Be sure to copy down the name of the icon for later.
+
+![Discord Developer - Application Icon](https://docs-assets.sonoransoftware.com/sha256/26/26c82bfafb80fa2ce860d1dad6298322fd08143f0288052cfa6a5c9cfe55f293.png)
+
+#### 4. Configure in Sonoran CMS {#id-4.-configure-in-sonoran-cms}
+
+Back in the admin customization menu, we can paste the Discord application's Client ID and Icon name.
+
+![Sonoran CMS - Custom Discord Presence Config](https://docs-assets.sonoransoftware.com/sha256/7f/7f336dd09b4e1826e4bd5424b2620cc299f0eb2d9db388410c4d96d70cad9fba.png)
+
+Once saved, your Discord presence for all community members will reflect your custom icon, title, and buttons.
+
+![Sonoran CAD - Custom Discord Presence View](https://docs-assets.sonoransoftware.com/sha256/94/94647dcd952886e80cc961ba4af076686ca77ebf94abad4f88c615d7cfaaa174.png)
+
+## Toggle On/Off Rich Presence <span id="toggle-on-off-rich-presence" /> {#toggle-on-off-rich-presence}
+
+### Community Toggle <span id="community-toggle" /> {#community-toggle}
+
+To hide the invite button for your community's Discord Rich Presence, simply leave the button text and URL blank.
+
+### User Toggle <span id="user-toggle" /> {#user-toggle}
+
+In the profile dropdown, users can toggle this display on or off for their individual desktop client.
+
+![Sonoran CMS Profile Dropdown - Disable Discord's Rich Presence](https://docs-assets.sonoransoftware.com/sha256/34/34948b28a3d6f0b664cad11f1f88961473a95b73a82b43973d1ccccbb9d6a2a0.png)

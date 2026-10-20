@@ -1,0 +1,62 @@
+---
+title: Update Member Record Reason
+description: This endpoint allows you to update a disciplinary record's reason
+---
+
+## Update Member Record Reason {#update-member-record-reason}
+
+`POST` `https://api.sonorancms.com/disciplinary/update_member_record_reason`
+
+Update a Sonoran CMS community member disciplinary record's reason.
+
+#### Request Body {#request-body}
+
+| Name                                   | Type   | Description                    |
+| -------------------------------------- | ------ | ------------------------------ |
+| id\*   | string | Community ID                   |
+| key\*  | string | API Key                        |
+| type\* | string | UPDATE\_MEMBER\_RECORD\_REASON |
+| data\* | object | Object                         |
+
+<Tabs>
+<Tab title="200: OK ">
+
+```json
+{
+      "id": "123",
+      "status": true,
+      "accId": "123",
+      "source": "api",
+      "sourceId": "api-request",
+      "points": 10,
+      "reason": "Some different reason",
+      "metadata": {},
+      "history": [],
+}
+```
+
+</Tab>
+
+<Tab title="400: Bad Request The following 400 errors may be sent in response:">
+
+```javascript
+INVALID API KEY
+INVALID COMMUNITY ID
+MEMBER NOT FOUND
+```
+
+</Tab>
+
+</Tabs>
+
+```json
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "UPDATE_MEMBER_RECORD_POINTS",
+    "data": {
+        "recordId": "123",
+        "reason": "Some different reason", // Reason for the disciplinary record
+    }
+}
+```

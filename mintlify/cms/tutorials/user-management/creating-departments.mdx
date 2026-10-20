@@ -1,0 +1,236 @@
+---
+title: Creating Ranks
+description: Now that you've created your community and started to invite users you'll
+  want to start creating groups. Learn more below
+---
+
+<iframe src="https://app.guidde.com/share/playbooks/a7SxReQKBLpNWVAx1G9LZv?origin=G25dDmjNZ2b8ccFUz9X7G7W8T1k1" title="Interactive tutorial" className="w-full aspect-video rounded-xl" allowFullScreen />
+
+
+
+## Accessing the Rank Manager {#accessing-the-rank-manager}
+
+To access the "Rank Manager", head to `Administrative Panel` > `Ranks`
+
+Within the Rank panel you'll be able to create groups and ranks for your members, this will be the central panel for deciding permissions based on "ranks", when new, removed, or modified Custom Forms, Calendar Categories, and Rosters will be reflected with available permissions under each rank.
+
+![Sonoran CMS Group Manager Panel - Add/Remove/Edit Groups & Ranks](https://docs-assets.sonoransoftware.com/sha256/5e/5ea990943e7244960e0622204d56f650fb7f31be8058af6ddc367881dbdce603.png)
+
+## Creating a Group {#creating-a-group}
+
+Click the "Add a New Group" button, which can be found at the end of your existing groups (or the beginning if you're on mobile). Once clicked, a dialog popup should appear
+
+The dialog contains one crucial field for your group:
+
+1. Group Name (Example: Police Department)
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/01/016b3662194b9bfc34ebc0f3d3a7697edcf1573764aa16a0f8e9b1cfdab98215.png" alt="" />
+
+*Sonoran CMS - Group Editor - Creating a Group*
+
+
+
+You do not need to customize anything to create your group, so saving now is fine. When you're ready to save, click anywhere outside the group box. Or, you can set permissions associated with the group.
+
+### Group Permissions {#group-permissions}
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/4d/4d9f07466f53e3fc7cdf7f3f95f9f263c518f09aeb1e1c6bb510bb6e9da0ca45.png" alt="" />
+
+*Sonoran CMS - Group Editor - Setting Group Permissions*
+
+
+
+This is where you'll need to assign permissions that you want all ranks within the group to inherit. These are the same set of permissions that ranks are able to get assigned but will be applied to all ranks upon permission evaluation.
+
+You can toggle all permissions in a category with the Toggle button above the permissions.
+
+## Creating a Rank {#creating-a-rank}
+
+In the group header, click the green plus button to begin creating a new rank
+
+This will bring up a new dialog where you'll need to input a name and setup permissions for your new rank.
+
+Permissions on a rank dictate what a person with that rank can do. There are many different types of permission scopes:
+
+### Assigning Rank Permissions {#assigning-rank-permissions}
+
+Rank permissions can be assigned using the same method as group permissions. There are many different categories of permissions you can assign, for example:
+
+* **"System"** permissions are for general administration (e.g. kick, ban, clock in & out).
+* **"Navigation"** permissions are for viewing navigation buttons.
+* **"Forms"** permissions are for the custom forms.
+* **"Rosters"** permissions are based on the custom records made in `Administrative Panel` > `Rosters`.
+* **"Calendars"** permissions are based on the calendar categories.
+* **"Profile Fields"** permissions are based on the Profile Fields created in the `Administrative Panel` > `Profile Fields`.
+* **"Servers"** permissions are based on the API Integration servers made in `Administrative Panel` > `Integrations`.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/fa/fa26bacc07e2cdea2216de51b057199cadc33be360c6ed030d79e33d0cf33f5c.png" alt="" />
+
+*Sonoran CMS - Rank Editor - Rank Permissions*
+
+
+
+When you are done customizing your rank permissions, click anywhere outside to close the dialog and automatically save it. Your new rank will show up under the group you created it in.
+
+You search for specific permissions. This will bring display a number of how many settings match your search in each category, and will show only the ranks in a given category that match the search.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/96/96a858b0054b073b885aaa91112fe8af9a53c8acf90fba419cb284d15e0f3bfc.png" alt="" />
+
+*Sonoran CMS - Rank Editor - Search Rank Permissions*
+
+
+
+If you ever want to modify permissions, click the person icon to the right of the name to open the dialog again.
+
+### Customize Rank Cosmetic Styling {#customize-rank-cosmetic-styling}
+
+Ranks are able to be customized to the styling that best fits your community. You are able to customize the color and icon associated with each rank. You can specify common color names or custom hex colors. To access this setting, click on the icon to the left of the rank name.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/f5/f5e8da08a9baf01ca2f07242d70d1e97cbdafb8ebaf6b4947c698f8cf3f89cd5.png" alt="" />
+
+*Sonoran CMS - Rank Editor - Rank Cosmetic Customization*
+
+
+
+### Customize Rank Power {#customize-rank-power}
+
+To the top right of the rank name you will see a number, by default it is 0. Click on this to access the rank power tab. Rank Power determines who has higher authority in the community.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/1a/1accf5cbe01e1e066d5bb00a275914eea2446a25850f3cc387308b86e8b96dba.png" alt="" />
+
+*Sonoran CMS - Rank Editor - Rank Power*
+
+
+
+<Info>
+
+Rank **Power** will be compared to other users as a global user power, this will be utilized to determine if you can modify other individuals. If your power is higher than another individual then you can modify them, if it's less then you cannot.
+</Info>
+
+## Importing Ranks from Discord Roles {#importing-ranks-from-discord-roles}
+
+Instead of manually creating rank for everything, you can also directly import the roles from any linked Discord server directly to your CMS Community.
+
+To do this, in any group, click the Discord icon in the group header.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/78/78994a028ec7bd0d75e7f2149c3e1e08b808e00ac4d273f8e6860d56c52409be.png" alt="" />
+
+*Sonoran CMS - Rank Editor - Import Discord Roles*
+
+
+
+### 1. Select Guild {#id-1.-select-guild}
+
+
+
+<Accordion title="Select Discord Guild to Import Roles">
+
+
+
+Next, click **Select Guild** and select the linked guild you would like to import roles from. If you have not yet linked a Discord guild to CMS, you must do so through our [Sonoran Discord Bot](/bot/tutorials/getting-started).
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/0d/0d84ce02fd1899ace9f80d736475ffdc1c67d7fad5459006234bdf57b667b4d8.png" alt="" />
+
+*Sonoran CMS - Rank Editor - Select Guild*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/bf/bf6106499f694ab9a8f2ccf0d0170e77c0d0e06c39ca945bbfcea6b17b00f1d6.png" alt="" />
+
+*Sonoran CMS - Rank Editor - Click Guild*
+
+
+
+
+
+</Accordion>
+
+
+
+### 2. Select Discord Roles for Import {#id-2.-select-discord-roles-for-import}
+
+
+
+<Accordion title="Select Discord Roles">
+
+
+
+When you select a guild to import roles from, it will populate the window with all existing roles within that Discord. You can select which roles you would like to import, or click the top checkbox to select all.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/07/079807dcb48c6f5c0fadbbf7161a3684ff05eb9e946b7a314e0dcf7e5eb12d1c.png" alt="" />
+
+*Sonoran CMS - Rank Editor - Select Discord Roles*
+
+
+
+
+
+</Accordion>
+
+
+
+### 3. Discord Map and Import {#id-3.-discord-map-and-import}
+
+
+
+<Accordion title="Discord Map and Import">
+
+
+
+You can optionally toggle on the feature to **Also create one-to-one Discord role mapping(s)** at the bottom of the import window.
+
+If toggled on, this will [automatically map your selected Discord roles to CMS ranks](/bot/tutorials/sonoran-cms-integration/role-mapping), enabling role sync.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/43/43426db49962d64d822c768dfeafea4043aae77dde77b8b849dc98837e6551fa.png" alt="" />
+
+
+
+Finally, click **Import Roles to Ranks** at the bottom of the window, and new ranks matching the name and color of the roles will be created:
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/4c/4ce726b7a347289a077692be0f16385b707a684d58536d5f0d7fc20596a8d852.png" alt="" />
+
+*Sonoran CMS - Rank Editor - Imported Discord Roles*
+
+
+
+Please note that you will still have to configure permissions for these newly created ranks. By default they will assume the permissions of their department, but any further changes must be done manually.
+
+
+
+</Accordion>
+
+
+
+## Copy Rank IDs {#copy-rank-ids}
+
+Some integrations may require you to input Sonoran CMS rank IDs.
+
+Select the `...` menu and the `Copy Rank ID` button to copy the rank ID to your clipboard.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/8f/8f901d5bbac9cc952db1a8dede9debb96abd86704892f87bf5fef507b742714f.png" alt="" />

@@ -1,0 +1,38 @@
+---
+title: ALPR Cameras
+description: Automatically create a 911 call when an ALPR camera detects an active
+  BOLO plate.
+---
+
+When a vehicle with an active BOLO plate passes through a configured camera's range, Sonoran CAD creates a 911 call with its location and vehicle details.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d1/d15aa9e7327c3240200fcac468d384f0b1015b0a2a697e95d76dd497ca73889f.png" alt="ER:LC ALPR camera detection with an automatic 911 call and location on the CAD map" />
+
+
+
+## Setup {#setup}
+
+1. [Connect your ER:LC server](/cad/integration-plugins/erlc/getting-started).
+2. In **Admin > Integrations**, open **ALPR Cameras**, select your server, and enable ALPR.
+3. Select **Apply default cameras**, or **Place camera** to add your own. Drag cameras to move them and adjust their detection radius.
+4. Create an active BOLO record with the vehicle's license plate.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/78/78b3464588f7af490883ecae3babf5cafbc383087e2524bc11f20b2db847f6cc.jpg" alt="ALPR Cameras admin panel with camera locations on the ERLC map" />
+
+*Camera locations*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/7a/7a818085863bf522c775f909b43bbf25faa427d61e7fe03f1648119fecd4a9aa.jpg" alt="Selected ALPR camera with camera name and detection radius settings" />
+
+*Select a camera to edit its name and detection radius.*
+
+
+
+Camera settings save automatically. You can customize the 911 description, call expiry, and repeat detection cooldown.

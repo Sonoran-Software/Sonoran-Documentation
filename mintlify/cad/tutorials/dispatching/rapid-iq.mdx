@@ -1,0 +1,340 @@
+---
+title: Rapid IQ
+description: Rapid IQ guides emergency call-takers through dynamic, protocol-driven
+  medical intake flows, enabling faster triage, consistent decision-making, and accurate
+  dispatching.
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/1c/1c58189b4ef6195858e72fa56ddd9002430f8dd68cf6cfa0c13a7164e8c739bb.png" alt="" />
+
+
+
+## What is Rapid IQ? {#what-is-rapid-iq}
+
+**Rapid IQ** (Rapid Intake Questionnaire) is an emergency call intake system that helps dispatchers ask the right questions during medical calls designed after [standardized MPDS systems](https://en.wikipedia.org/wiki/Medical_Priority_Dispatch_System). It guides dispatchers step-by-step through a structured flow based on the caller’s answers, making sure important details aren’t missed.
+
+Rapid IQ combines these responses into the dispatch call description, giving the best possible information to responding units.
+
+## Using Rapid IQ {#using-rapid-iq}
+
+### Opening Rapid IQ {#opening-rapid-iq}
+
+
+
+<Accordion title="Via Call Editor">
+
+
+
+Select the **Rapid IQ** button at the top of the call editor to open the window.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/30/3078a6d381dac954108b1d0e1579352005a3b0684b657472b6cbbac8461d1768.png" alt="" width="375" />
+
+
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Via Taskbar">
+
+
+
+In the taskbar, use the search box or navigate to **Dispatch** > **Rapid IQ** to open the window.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/99/99f2f93ce3e65dbeac7dc1471f648ad85eef02570edf6c31e49bbb8804691ca6.png" alt="" width="331" />
+
+
+
+
+
+</Accordion>
+
+
+
+### Navigating Flows {#navigating-flows}
+
+
+
+<Accordion title="Inputs">
+
+
+
+Rapid IQ is designed for quick, seamless information inputs.
+
+**Text Inputs**
+
+* Inputs are automatically focused
+* Pressing **Enter** navigates to the next question
+* Custom addresses are type-to-filter
+  * If results are filtered to a single result, pressing **Enter** automatically selects it and navigates to the next question. Pressing **Enter** with more than one result left will select the top option.
+
+**Checkbox Inputs**
+
+* Type-to-filter search at the top is automatically focused
+  * If results are filtered to a single result, pressing **Enter** automatically selects it and navigates to the next question. Pressing **Enter** with more than one result left will select the top option.
+* Selecting a checkbox navigates to the next question
+
+**Navigation**
+
+* Use the **Left** and **Right** arrow keys to navigate forward and backwards manually
+
+**Masks**
+
+* Flow inputs that use a mask (strict formatting for numbers, text, symbols, etc.) will automatically navigate to the next question once all text has been entered
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="End Toggle Options">
+
+
+
+Once all information has been entered, Rapid IQ offers different data display options.
+
+**Import to Call Editor**
+
+When toggled, all information will be automatically imported into the dispatch call editor and the window will be automatically closed (unless **Display Card** is enabled).
+
+This feature is automatically toggled on when opening Rapid IQ from the call editor.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/31/310e713c5a5c438d885e13fc27b155681b823e2f774c085261cd9965a6f9fbde.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/09/09d26c7419aa999c9a471668f27faa047b7513a30f64537602d48f5764ece671.png" alt="" />
+
+
+
+**Display Card**
+
+When toggled, all information will be displayed in a card of questions and answers. Users can also press the **Copy** button (top right) to copy and paste all questions and answers elsewhere.
+
+This feature is automatically toggled on when opening Rapid IQ from the taskbar.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/99/995a59b4250b3329150b8b31425da1318fdf330cf8189ca260b39d520c345603.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/8d/8dfcb2315c525109a9f6bea720c19de79e1de757b23b05a0021558013dec496e.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+## Customizing Flows {#customizing-flows}
+
+The default Rapid IQ flow is complex and configured by real-world dispatchers and medical personnel. **With heavy knowledge**, the system can be customized for different localities and situations. [You can read more about standard MPDS systems here](https://en.wikipedia.org/wiki/Medical_Priority_Dispatch_System).
+
+#### Accessing the Editor {#accessing-the-editor}
+
+The Rapid IQ configuration is accessible under **Admin** > **Customization** > **Customization** > **Rapid IQ**
+
+#### Default Path {#default-path}
+
+The **Default Path** section configures the initial questions asked in-order. These questions can be selected and reordered via drag-and-drop.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e9/e9aa600c0e38a7426f14190b7b0e765031f34c3121f310d8e9a7072884e73f6c.png" alt="" width="375" />
+
+
+
+#### Questions {#questions}
+
+Configure custom **Questions** to be asked in order to gain more information about the medical issue.
+
+Questions have specific input types like **Text**, **Number**, [**Address**](/cad/tutorials/customization/addresses-and-street-names), or **Choices**.
+
+**Text** and **Number** inputs can also have a **Mask** input. A **Mask** enforces a specific input format. Once a user has entered all numbers/letters into the input, it will automatically advance to the next question.
+
+Ex: `(###) ### - ####` forces a phone number format.
+
+
+
+<Accordion title="Mask Options">
+
+
+
+| Token | Description  |
+| ----- | ------------ |
+| #     | Numeric      |
+| S     | Letter A-Z   |
+| X     | Alphanumeric |
+
+
+
+</Accordion>
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/df/df506c1c6113c142bcfac730e7da43c0c20032026036797f197f25c09e7fffb2.png" alt="" width="375" />
+
+
+
+#### Codes {#codes}
+
+Once all questions have been answered, Rapid IQ will display a code. The code is a short way to classify and triage the severity of the incident and to determine how best to respond.
+
+#### What a code means {#what-a-code-means}
+
+
+
+<Accordion title="What a code means">
+
+
+
+A Rapid IQ code is a triage label in this format:
+
+```
+[Protocol Number][Priority Letter][Branch Number]
+```
+
+Example: `31C3`
+
+* `31` = Unconscious / Fainting
+* `C` = priority tier
+* `3` = specific branch inside that protocol
+
+
+
+</Accordion>
+
+
+
+#### Protocol numbers {#protocol-numbers}
+
+
+
+<Accordion title="Protocol Numbers">
+
+
+
+1. Abdominal Pain
+2. Allergies / Envenomations
+3. Animal Bites / Attacks
+4. Assault / Sexual Assault
+5. Back Pain
+6. Breathing Problems
+7. Burns / Explosion
+8. Carbon Monoxide / Inhalation / HazMat
+9. Cardiac / Respiratory Arrest / Death
+10. Chest Pain
+11. Choking
+12. Convulsions / Seizures
+13. Diabetic Problems
+14. Drowning / Diving / SCUBA
+15. Electrocution / Lightning
+16. Eye Problems / Injuries
+17. Falls
+18. Headache
+19. Heart Problems / AICD
+20. Heat / Cold Exposure
+21. Hemorrhage / Lacerations
+22. Inaccessible Incident / Entrapment
+23. Overdose / Poisoning
+24. Pregnancy / Childbirth / Miscarriage
+25. Psychiatric / Abnormal Behavior / Suicide Attempt
+26. Sick Person
+27. Penetrating Trauma
+28. Stroke / TIA
+29. Traffic / Transportation Incidents
+30. Traumatic Injuries
+31. Unconscious / Fainting
+32. Unknown Problems (Person Down)
+
+
+
+</Accordion>
+
+
+
+#### Priority Letters {#priority-letters}
+
+
+
+<Accordion title="Priority Letters">
+
+
+
+* E = highest severity / most urgent
+* D = very high severity
+* C = high severity
+* B = moderate severity
+* A = lower severity
+* Ω = public assist / lowest-acuity pathway
+* 000 = no final code (an error code)
+
+
+
+</Accordion>
+
+
+
+#### How the system picks a code {#how-the-system-picks-a-code}
+
+
+
+<Accordion title="Flow Code Selection">
+
+
+
+1. Ask default intake questions.
+2. Check flow rules in order (top to bottom).
+3. If a rule needs an unanswered question, ask that question next.
+4. When a full rule matches, return that rule’s code.
+5. Some rules use @ to auto-set/re-route (example: nature@chestpain).
+
+
+
+</Accordion>
+
+
+
+#### Flows {#flows}
+
+Flows combine everything above. Flows string a list of questions together and determine which questions should be asked next, based on response. Once a flow is completed, a code will be generated.
+
+#### Flow rule format {#flow-rule-format}
+
+`{question} -> condition is “answered” {question=value} -> equals {question>=number} -> numeric compare {question<=number} -> numeric compare {question@value} -> auto-set answer {cond1}.{cond2}.{cond3}->CODE`
+
+Example:
+
+`{nature=abdominalPain}.{fainting=true}.{age>=50}->1C1`
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d3/d393139717f5bdac26ebaf50ae31965f0a1ca06a55d5729153130c828373e1e9.png" alt="" width="375" />
+
+
+
+### Import and Export {#import-and-export}
+
+Rapid IQ configurations can be imported and exported to save and share with other communities. Simply select the **Import** or **Export** button at the top to handle JSON files.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ef/ef60eece74f1788aecb08058ca7c269baef2774612f24a1ce84a8ae80a3a58a8.png" alt="" width="375" />

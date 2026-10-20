@@ -1,0 +1,179 @@
+---
+title: URL Shortener
+description: Generate custom short URLs with your CMS vanity or custom domain!
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/cd/cd5b9cdaad3b32e77b5fcd74c54d97cace78aa8b3bbea2367afce36bbd7b73e2.png" alt="" />
+
+*Sonoran CMS - URL Shortener*
+
+
+
+<Warning>
+
+**The URL Shortener is only enabled with a Pro Subscription!**
+
+Learn more about our [paid plans](/cms/pricing/pricing-faq/create-and-manage-a-subscription).
+</Warning>
+
+## What are Short URLs? {#what-are-short-urls}
+
+Create friendly, short URLs for anything in your community!
+
+The URL shortener takes any link and converts it to a short and readable format!\
+Ex: `https://discord.com/invite/123456` -> `mycommunity.com/discord`
+
+## Creating a Short URL {#creating-a-short-url}
+
+### New Short URL {#new-short-url}
+
+To forward `https://discord.com/invite/123456` to our [custom domain](/cms/tutorials/customization/custom-domain#custom-domain)'s `mycommunity.com/discord`
+
+1. Enter the existing URL `https://discord.com/invite/123456`
+2. Enter the new short URL path `discord`
+3. (Optional) add a description `Discord invite link`
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/15/1583d2e29cba286e29d7babf9b02c9d1f6e3bbc56907b8a69f8ce67a4fd81740.png" alt="" />
+
+
+
+After adding the new short URL, it will be viewable, searchable, and copyable in the table below.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/72/72b8da6d5a71f08961baa11be3e4056cde92403a0ee8bea9ef15bfdf2c437bc8.png" alt="" />
+
+
+
+### Domain Formats {#domain-formats}
+
+The CMS supports three types of short URL formats:
+
+* [Custom Domain](/cms/tutorials/customization/custom-domain#custom-domain): `customdomain.com/shorturl`
+* [Custom Subdomain](/cms/tutorials/administrative/url-shortener#custom-subdomains): `example.customdomain.com/shorturl`
+* [Vanity Domain](/cms/tutorials/customization/custom-domain#vanity-urls): `communityid.sonorancms.com/shorturl`
+* Long Domain: `sonorancms.com/com/communityuuid/shorturl`
+
+The custom path will work on all three of these options. The toggle simply allows you to select which format you are copying.
+
+## Custom Subdomains {#custom-subdomains}
+
+Subdomains are extensions of your custom domain and are used to organize or separate different sections of a website (e.g., info.customdomain.com).
+
+### Adding A Subdomain {#adding-a-subdomain}
+
+
+
+<Accordion title="1. Click to Add a New Subdomain">
+
+
+
+Click the `+` icon next to the short URL type selector.
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/b1/b1899e75bae4acb04a26f4fa376a287f94c30c69a1200ae0627487ac1c93158b.png" alt="URL Shortener: Add Subdomain" />
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="2. Enter the Desired Subdomain">
+
+
+
+Enter your desired subdomain for your community's [configured custom domain](/cms/tutorials/customization/custom-domain#custom-domain).
+
+Here, the subdomain is `links` and the custom domain is `sonoranrp.com`
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/25/25c9454e083f93bb6b67e3fed5e1e1c75ed1dfc34d4bae8639b8148fabdf8c59.png" alt="URL Shortener: Subdomain Url" />
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="3. Copy and Add DNS Records">
+
+
+
+Copy the information from the panel to create a `CNAME` and `TXT` DNS record.
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/f4/f4f393f49e0530d0aa82169e081c15590945bdfb2ea1660c41351e5cd5dd4f21.png" alt="" />
+
+The examples below show DNS management via Cloudflare.\
+If you are unsure how to add a DNS record, contact your domain provider.
+
+\
+If you are using Cloudflare, **DISABLE the proxy mode** and set it to `DNS Only`
+
+![Cloudflare: Subdomain CNAME Record](https://docs-assets.sonoransoftware.com/sha256/f9/f9a13c0eb99beb5e6b9b78bbd67995465f15708abae34bac2975f3966651a2e5.png) ![Cloudflare: Subdomain TXT Record](https://docs-assets.sonoransoftware.com/sha256/fb/fb0c9abb671d194dded39ccddb7df851348f69e71beb8825ba101d58aa8f4681.png)
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="4. Save and Use Subdomain">
+
+
+
+After saving your new `CNAME` and `TXT` record, click `Add Link Subdomain` to verify the DNS records.
+
+Note: _Depending on your DNS provider, there may be a cache delay before the DNS records are detected._
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/a6/a62a22cf710eca8a9b68bf0b9ca5911485daeaf9d096060817341837785dca06.png" alt="" />
+
+You can now select the custom domain in the `URL Type` drop-down to be used when creating a new short URL.
+
+
+
+</Accordion>
+
+
+
+## Reserved Paths {#reserved-paths}
+
+Sonoran CMS has several internal URL paths that can not be overridden by a custom short URL.
+
+Sonoran CMS will also not allow you to override an existing [website slug](/cms/tutorials/community-website/website-builder) with a custom short URL.
+
+```
+admin
+index
+login
+logout
+signup
+gallery
+menu
+event
+account
+oauth/discord
+oauth/sonoran
+oauth/apple
+drive/file
+game/menu
+game/qbcore
+profile
+roster
+forums
+forums/topics
+calendar
+forms
+```
+
+These paths are restricted only in their absolute form. Appending additional paths to these are allowed. For example:
+
+A short URL can **NOT** be: `example.com/forms`
+
+However, a short URL **CAN** be: `example.com/forms/civ`

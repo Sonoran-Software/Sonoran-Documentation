@@ -1,0 +1,53 @@
+---
+title: Job Sync
+description: A in-game way to utilize Sonoran CMS's roster & rank system to sync your
+  in-game jobs and ranks.
+---
+
+This resource is a in-game way of automatically syncing jobs and ranks to match roster information in the Sonoran CMS system/community.
+
+<Warning>
+
+At this time, the Job Sync module only works with [QBCore and Qbox servers](/cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel).
+</Warning>
+
+## Installation / Configuration {#installation-configuration}
+
+<Info>
+
+With core version `v1.4.2` the Job Sync resource was converted to a core module and no longer requires manual installation just configuration.
+</Info>
+
+### 1. Configure Job Sync Module {#id-1.-configure-job-sync-module}
+
+Locate the whitelist module within your `[sonorancms]/sonorancms/server/modules` and open the `jobsync_config.json` file
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/36/365a7c1cc6825abd377ebac2e35e14fc9ca7119a76555ea3a078130d5e61f2b3.png" alt="" />
+
+*Sonoran CMS - In-Game Integration - JobSync Config*
+
+
+
+### 2. Set Rank Mappings for Job Sync {#id-2.-set-rank-mappings-for-job-sync}
+
+| Config Option | Description                                                            |
+| ------------- | ---------------------------------------------------------------------- |
+| rank\_mapping | \["9dd1fea1-2360-4be2-923b-71b0c87944d0"] = \{job = 'police', rank = 2\} |
+
+Here you must follow the format shown above to specify rank mappings, the first value ("ranks") is the Rank UUID, followed by what job and rank you would like to set it to. To find the UUID for a given Rank, follow the instructions below.
+
+## Getting Rank UUIDs {#getting-rank-uuids}
+
+### 1. Open Department Configuration Page {#id-1.-open-department-configuration-page}
+
+![Sonoran CMS - Departments & Ranks](https://docs-assets.sonoransoftware.com/sha256/5f/5fe58bf7c693369d7fefa11596b75052e34521b90b3d5f778708176b3776bfed.png)
+
+### 2. Open "Rank Settings" Menu {#id-2.-open-rank-settings-menu}
+
+![Sonoran CMS - Open Rank Settings Menu](https://docs-assets.sonoransoftware.com/sha256/cb/cbeeaf8e04590b1d31b95c7b75c713d4b068dd1a369b0c6b25c9b225ed6d0ea8.png)
+
+### 3. Select "Copy Rank ID" {#id-3.-select-copy-rank-id}
+
+![Sonoran CMS - Copy Rank ID](https://docs-assets.sonoransoftware.com/sha256/a2/a201a6e35686eaf6aad0f3a8a88553a209c5f23124cd75a70d61100db4e03da6.png)

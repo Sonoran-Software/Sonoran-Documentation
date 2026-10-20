@@ -1,0 +1,76 @@
+---
+title: Set Stations
+description: This endpoint sets your community's available fire stations.
+---
+
+<Warning>
+
+This API endpoint requires the **plus** version of Sonoran CAD or higher.\
+For more information, see our [pricing ](/cad/pricing/faq)page.
+</Warning>
+
+## Set Stations {#set-stations}
+
+`POST` `https://api.sonorancad.com/emergency/SET_STATIONS`
+
+#### Request Body {#request-body}
+
+| Name | Type   | Description              |
+| ---- | ------ | ------------------------ |
+| id   | string | Your community's ID      |
+| key  | string | Your community's API Key |
+| type | string | SET\_STATIONS            |
+| data | array  | Array of request objects |
+
+<Tabs>
+<Tab title="200 A successful call will be met with the following response:">
+
+```
+Updated station config!
+```
+
+</Tab>
+
+<Tab title="400 The following 400 errors may be sent in response:">
+
+```http
+INVALID REQUEST TYPE
+INVALID COMMUNITY ID
+API IS NOT ENABLED FOR THIS COMMUNITY
+INVALID API KEY
+```
+
+</Tab>
+
+</Tabs>
+
+```javascript
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "SET_STATIONS",
+    "data": {
+        "serverId": 1,
+        "config": {
+            "locations": [
+                {
+                    "name": "Fire Station One",
+                    "coordinates": {
+                        "x": 1234,
+                        "y": 5678
+                    },
+                    "icon": "fa-solid fa-face-smile", // Or a direct HTTPS URL to an image
+                    "doors": [
+                        "Bay One",
+                        "Engine Two"
+                    ],
+                }
+            ],
+            "tones": [
+                "Tone Name One",
+                "Tone Name Two"
+            ]
+        }
+    }
+}
+```

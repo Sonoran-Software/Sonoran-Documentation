@@ -1,0 +1,117 @@
+---
+title: Account Flags
+description: Advanced alternate account detection keeps your community safe from bad
+  actors and previously banned users.
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/73/73d7657d3ab8ca3079f23d4f5c6847682a3a80ddb5b7de79f18150df8b2448e5.png" alt="" />
+
+*Sonoran CMS - Alt Detection*
+
+
+
+<Warning>
+
+**Alternate Account Detection & Account Flags are only enabled with a Pro Subscription!**
+
+Learn more about our [paid plans](/cms/pricing/pricing-faq/create-and-manage-a-subscription).
+</Warning>
+
+## What is Alternate Account Detection? {#what-is-alternate-account-detection}
+
+When bad actors are banned from your community, it's important to ensure they don't come back under a different account name, alias, etc.
+
+Sonoran CMS offers advanced tools to detect ban evasion, easily detecting duplicate accounts on member applications, forums posts, user profiles, game session joins, etc.
+
+## Account Flags {#account-flags}
+
+### What is an Account Flag? {#what-is-an-account-flag}
+
+Account flags are raised when a user has a "clash" with another account in your CMS.
+
+Ex: "Bob123" logs in with the same IP address as "Alice456" -> this results in a `Duplicate IP` flag
+
+### What Flag Types are there? {#what-flag-types-are-there}
+
+* Duplicate IP Address
+* Duplicate Browser IDs
+* Duplicate PC Hardware IDs
+* Duplicate Mobile Device IDs
+* Duplicate Linked Discord IDs
+* Duplicate CFX License (in-game)
+* Duplicate Steam ID (in-game)
+* Duplicate Xbox Live ID (in-game)
+* VPN Usage Detection
+
+## Flag Management {#flag-management}
+
+### How Do I View Flags? {#how-do-i-view-flags}
+
+#### Via Security Center {#via-security-center}
+
+In the `Administrator Panel` the `Security Center` tab highlights all active flags that need to be reviewed.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ad/ad496358543d0a934c97abc03f0fc88525d3fd31c8942997058cee0dc10d4311.png" alt="" />
+
+*Sonoran CMS - Security Center*
+
+
+
+#### Via Account Avatar {#via-account-avatar}
+
+Anywhere an account avatar is visible it will also show a user's account flags.
+
+* Forms and Applications
+* Forums Posts
+* User Accounts Panel
+* User Profile and Bio
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/fc/fc35620f938e0062c7076858781cedd5e5b29ba89f07adf6d547e2e25984b798.png" alt="" />
+
+*Sonoran CMS - Account Avatar*
+
+
+
+Select the highlighted flag on a user's account avatar to automatically redirect to the security center with their specific flags raised.
+
+### Viewing and Dismissing Flags {#viewing-and-dismissing-flags}
+
+Select a flag in the account flags center to view more details. This will show what type of flag it is and what accounts it has been raised on.
+
+#### Investigating a Flag {#investigating-a-flag}
+
+Investigate the flag type and the users involved. If one of the users was a previously banned user, and the other is a new member - it's possible it's the same person trying to evade a community ban.
+
+This example shows user `8` (SonoranBrian) linked a Discord account that a banned user `14` (Bob123) previously used.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/88/884b29ac5dcaa3ffb301aee1f5c38a299258448c49fd8099e6459b7756cb45bc.png" alt="" />
+
+*Sonoran CMS - Security Center*
+
+
+
+#### Flag Icons {#flag-icons}
+
+When viewing a flag, the user accounts mentioned may also display one of the following icons:
+
+* 🚫 - This user is banned in your community
+* 🕒 - This user is pending in your community (no ranks yet, new applicant)
+* ❓ - This user has not yet joined your community but may be an alternate account of someone who is already in your community
+
+#### Dismissing a Flag {#dismissing-a-flag}
+
+Sometimes two different users may be harmlessly sharing the same physical device, IP address, etc.
+
+Ex: Two users sharing the same Wi-Fi network, but both are in your community.
+
+After investigating why these two users have a shared identifier, and that it's harmless, you can "dismiss" the flag. Once dismissed, the flag with the involved accounts will no longer appear unless an additional account matches up in the future.
+
+## Flag Permissions {#flag-permissions}
+
+In order to view and manage these account flags, users will need the `Security Center Manage Flags` permissions under the `System` tab in the [rank manager](/cms/tutorials/user-management/creating-departments).

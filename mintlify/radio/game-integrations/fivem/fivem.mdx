@@ -1,0 +1,64 @@
+---
+title: Dispatch AI for FiveM
+description: Set up Dispatch AI for FiveM emergency calls, GPS routing, and automatic
+  arrival status.
+---
+
+Use [Dispatch AI](/radio/tutorials/usage/dispatch-ai) to change radio channels, manage scanned channels, set timers, and work with CAD. FiveM also supports emergency call readouts and in-game GPS routing.
+
+## Setup {#setup}
+
+1. Complete the [common Dispatch AI setup](/radio/tutorials/usage/dispatch-ai#common-setup).
+2. Install the [FiveM Radio resource](/radio/game-integrations/fivem/installing-the-in-game-resource).
+3. Sign in to the in-game radio with your Sonoran account. For CAD actions, use that account in CAD or complete the in-game `/link` flow.
+4. Use the wake word while transmitting, or configure the FiveM AI keybind in the radio settings.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/f7/f7040278dfe07b747c9393b8f28280faf801a93bafc802d5673e16da21d963ce.png" alt="FiveM Dispatch AI keybind settings" />
+
+
+
+## Emergency Call Readouts {#emergency-call-readouts}
+
+1. Connect the intended CAD server in Radio's **Customization** > **Dispatch AI**.
+2. Open **Customization** > **Game Integration** > **FiveM**.
+3. Under **FiveM Zones**, select the **Server** running Dispatch AI, then select **Emergency Zones**.
+4. Draw a zone and select it to assign the channels that should receive calls in that area.
+5. Generate a 911 call in the linked CAD server with coordinates inside a zone.
+
+Dispatch AI creates a dispatch call, removes the original 911 call, and reads it over the zone's assigned channels. Calls without coordinates or outside the zones are not read automatically.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d2/d2013772e76491e5503b42c025ce53510f6e065e09bf20611627bf11482baffe.jpg" alt="Game Integration with FiveM selected and Emergency Zones open" />
+
+
+
+## GPS Routing {#gps-routing}
+
+| Destination | Example |
+| --- | --- |
+| Postal code | “Dispatch, route me to postal 123.” |
+| Dispatch call | “Dispatch, route me to the robbery call.” |
+| Another unit | “Dispatch, route me to unit B-11.” |
+
+Postal routing requires **Nearest Postal** or another resource supporting `/postal <id>`. Routing to a unit uses that unit's available CAD coordinates.
+
+
+
+<Accordion title="Automatic en-route and on-scene status">
+
+
+
+With **Nearest Postal v1.5.4 or newer**, AI GPS routing can set your CAD status to en-route and then on-scene when you arrive.
+
+Configure `Config.autoOnSceneStatus` in the [Radio resource configuration](/radio/game-integrations/fivem/installing-the-in-game-resource#configuration-options).
+
+
+
+</Accordion>
+
+
+
+For channel changes, timers, and current-call readbacks, see the [shared commands](/radio/tutorials/usage/dispatch-ai#radio-commands).

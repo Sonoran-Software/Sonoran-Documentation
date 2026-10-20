@@ -1,0 +1,56 @@
+---
+title: Get Accounts
+description: This endpoint allows you to get community accounts paginated by sysStatus,
+  comStatus, banned and archived.
+---
+
+## Get Accounts {#get-accounts}
+
+`POST` `https://api.sonorancms.com/general/get_accounts`
+
+Get Sonoran CMS community accounts paginated by sysStatus, comStatus, banned and archived.
+
+#### Request Body {#request-body}
+
+| Name                                   | Type   | Description              |
+| -------------------------------------- | ------ | ------------------------ |
+| id\*   | string | Community ID             |
+| key\*  | string | API Key                  |
+| type\* | string | GET\_ACCOUNTS            |
+| data\* | array  | Array of request objects |
+
+<Tabs>
+<Tab title="200: OK ">
+
+<pre><code className="language-json">{"{\n    \"total\": 10, // Total accounts found within parameters\n    \"skip\": 0, // Accounts skipped in query\n    \"take\": 25, // Min. 25, max amount of accounts that will be returned\n    \"accounts\": [\n        {\n            \"accId\": \"00000000-0000-0000-0000-000000000000\",\n            \"accName\": \"TestAccount\",\n            \"activeApiIds\": [\"000000000000000\"],\n            \"discordId\": \"000000000000000\",\n            \"sysStatus\": true,\n            \"comStatus\": true,\n            \"archived\": false,\n            \"banned\": false,\n        },\n        ...\n    ]\n}\n"}</code></pre>
+
+</Tab>
+
+<Tab title="400: Bad Request The following 400 errors may be sent in response:">
+
+```javascript
+INVALID API KEY
+INVALID COMMUNITY ID
+```
+
+</Tab>
+
+</Tabs>
+
+```
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "GET_ACCOUNTS",
+    "data": [
+        {
+            skip: number, // optional - total accounts skipped in query
+            take: number, // optional - total accounts grabbed in query (min. 25 - max 100)
+            sysStatus: boolean, // Within community acc parameter
+            comStatus: boolean, // Active / pending community acc parameter
+            banned: boolean, // Banned community acc parameter
+            archived: boolean, // Archived community acc paramter
+        }
+    ]
+}
+```

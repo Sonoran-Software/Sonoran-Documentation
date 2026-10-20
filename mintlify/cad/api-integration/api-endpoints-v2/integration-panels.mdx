@@ -1,0 +1,190 @@
+---
+title: Integration Panels
+description: Build live, interactive CAD panels for third-party systems and in-game
+  scripts.
+---
+
+<Info>
+
+Embed a panel instance in a custom live-map blip menu in CAD 3.44.1. See [Smart Signs: Live Map Editor](/cad/api-integration/api-endpoints-v2/integration-panels/examples/smart-signs) for the complete schema, three-row Save form, and API setup.
+</Info>
+
+Integration Panels put live data and controls from an existing game script or external service directly inside Sonoran CAD. Instead of building and maintaining a custom CAD frontend for every integration, define the panel once with JSON and connect it to your system through the v2 API.
+
+Your integration remains the source of truth. It publishes the latest state to CAD, where authorized users can monitor and interact with it. Their button, toggle, select, and input actions are sent back to your integration to process. State changes made in-game or in CAD stay synchronized for every connected CAD user.
+
+Use an Integration Panel when dispatchers or responders need to see or control part of another system without leaving CAD—for example, active fire alarms, facility door locks, tow requests, or fleet condition.
+
+<Info>
+
+Start with the [visual panel builder](https://sonorancad.com/integration-panel-builder). For the fastest implementation, use the Claude and Codex plugins or MCP tools at [sonoransoftware.com/developers](https://sonoransoftware.com/developers) to generate and refine your manifest and integration code.
+</Info>
+
+## Examples {#examples}
+
+Start with a complete example, then replace its definition, state, and actions with data from your resource.
+
+| [Fire Alarm](/cad/api-integration/api-endpoints-v2/integration-panels/examples/fire-alarm)                                                               | [Door Locks](/cad/api-integration/api-endpoints-v2/integration-panels/examples/door-locks)                                                               |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| [![Fire Alarm integration panel](https://docs-assets.sonoransoftware.com/sha256/93/93ddfae88237f33df789cdabb8bb48c83f589a2678f895611b319245f230bb24.png)](examples/fire-alarm.md) | [![Door Locks integration panel](https://docs-assets.sonoransoftware.com/sha256/e0/e0ef2e7381a1b26d357b3f1ef2a7cd36388bc80bf7d3c823ba9165b3c4b16b48.png)](examples/door-locks.md) |
+| Sync active alarms, play an alert sound, and control alarm state.                                  | Monitor police and jail doors, then lock or unlock them from CAD.                                  |
+
+| [Tow and Impound](/cad/api-integration/api-endpoints-v2/integration-panels/examples/tow-impound)                                                                | [Fleet Management](/cad/api-integration/api-endpoints-v2/integration-panels/examples/fleet-management)                                                                     |
+| --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| [![Tow and Impound integration panel](https://docs-assets.sonoransoftware.com/sha256/88/88385540c0c7c328a76f320050780c8e9b0c34e4cf929dc9b2cefe935b31e1c2.png)](examples/tow-impound.md) | [![Fleet Management integration panel](https://docs-assets.sonoransoftware.com/sha256/2b/2b4ed394fb74e7e60f3b8225fdeed1a630ab7582290a7d03ecf63d7b8bbdf1c6.png)](examples/fleet-management.md) |
+| Show incoming tow requests and move each request through its workflow.                                    | Group fleet vehicles, monitor their condition, and request repairs.                                                  |
+
+[View all examples](/cad/api-integration/api-endpoints-v2/integration-panels/examples)
+
+## How It Works {#how-it-works}
+
+1. **Define:** Create or replace a reusable panel definition for the community. The definition controls layout, components, bindings, search, sorting, styling, sounds, and available actions.
+2. **Publish:** Send the complete current state whenever the game script or external system changes. Connected CAD clients update live.
+3. **Act:** A CAD user changes a control or presses a button. CAD queues the action, then immediately pushes it to the configured game server.
+4. **Process:** Your server-side integration receives the push, applies the change, acknowledges the result, and publishes the resulting state. Slow polling recovers missed pushes.
+
+Keep API calls and credentials on the server. A FiveM client script should send changes to its server-side resource, which then communicates with the CAD API.
+
+Use a stable `panelKey` for the integration and an `instanceKey` for each independent dataset, location, or controller. For example, a door integration could use `doors` as the panel key and `mission-row` as the instance key.
+
+## Action Push Events {#action-push-events}
+
+Use push events as the primary delivery mechanism. CAD sends each queued action over the existing authenticated API WebSocket, with the existing configured HTTP listener as a legacy fallback. The event type is `EVENT_PANEL_` followed by the **uppercase panel key**, not its display name. Punctuation is preserved: `smart-signs` uses `EVENT_PANEL_SMART-SIGNS`; `example.fire-alarms` uses `EVENT_PANEL_EXAMPLE.FIRE-ALARMS`.
+
+The push envelope uses the standard `key`, `type`, and `data` fields. `data` is the same action object returned by [backup polling](/cad/api-integration/api-endpoints-v2/integration-panels/poll-actions): `id`, `cursor`, `panelKey`, `serverId`, `instanceKey`, `actionId`, `actorUuid`, `actorName`, `values`, `createdAt`, and `expiresAt`. Only the configured server for the action receives the push.
+
+The current SonoranCADFiveM resource already supports these custom events. In your server-side integration, receive the action through its existing event hook:
+
+```lua
+AddEventHandler("SonoranCAD::pushevents:OtherEvent", function(eventType, action)
+  if eventType == "EVENT_PANEL_SMART-SIGNS" then
+    enqueuePanelAction(action) -- Your resource's shared push/poll processing queue.
+  end
+end)
+```
+
+Alternatively, register a custom handler with `TriggerEvent("SonoranCAD::RegisterPushEvent", "EVENT_PANEL_SMART-SIGNS", handler)`. That handler receives the complete envelope; the action is `body.data`. Register again if `sonorancad` restarts. Use one receiving method to avoid processing the same push through both hooks.
+
+Push delivery does not acknowledge or remove an action. After processing, call [Acknowledge Action](/cad/api-integration/api-endpoints-v2/integration-panels/acknowledge-action) with the action's `id`, then publish the authoritative state after a successful edit. Feed pushes and polled events into the same serial processing queue. Deduplicate by `id`, including actions already in flight; retain completed results until expiry so an acknowledgement can be retried without repeating the game-side effect. Check `expiresAt` before applying an action, and validate `actionId`, `instanceKey`, and values against your resource's rules.
+
+Use [Poll Actions](/cad/api-integration/api-endpoints-v2/integration-panels/poll-actions) only for recovery, budgeting **three requests per minute per API key across all panels and servers**. For one panel, poll about every 20 seconds. Multiple panels must share that total budget. A startup or reconnect poll also consumes it. Respect `Retry-After` on `429`, and stagger recovery calls rather than starting simultaneous loops.
+
+Keep the polling cursor separate from push delivery. A later pushed action must not advance the polling cursor past an earlier missed action. Advance the recovery cursor only after every action returned by a poll has been processed and acknowledged. Events remain recoverable for their existing 60-second lifetime; polling is not an unlimited offline backlog. With multiple panel queues, schedule within that lifetime where possible; push remains the primary path.
+
+For controls that replace state, such as sign text, track the last successfully applied `cursor` for each instance. If recovery returns an older action after a newer edit was applied, acknowledge it as superseded instead of overwriting the newer state. Use this rule only where your integration's action semantics permit it.
+
+## SDK Helpers {#sdk-helpers}
+
+Sonoran.lua, Sonoran.js, Sonoran.py, and Sonoran.Net expose the same helper names. Lua calls them with `:`; the other libraries use `.`.
+
+| Task                           | Helper                                |
+| ------------------------------ | ------------------------------------- |
+| List panels                    | `getIntegrationPanelsV2`              |
+| Get one panel                  | `getIntegrationPanelV2`               |
+| Create or replace a definition | `setIntegrationPanelV2`               |
+| Delete a panel                 | `deleteIntegrationPanelV2`            |
+| Replace live state             | `setIntegrationPanelStateV2`          |
+| Recover missed CAD actions     | `getIntegrationPanelActionsV2`        |
+| Acknowledge an action          | `acknowledgeIntegrationPanelActionV2` |
+
+## Capabilities {#capabilities}
+
+* Responsive rows, columns, grids, sections, and repeated state collections
+* Text, icons, badges, alerts, inputs, selects, SVG icon pickers, toggles, checkboxes, and buttons
+* State, repeated-item, input, and current-control bindings
+* Item-scoped full-form and partial-change action values. See [Saving one repeated item](/cad/api-integration/api-endpoints-v2/integration-panels/manifest-reference#saving-one-repeated-item).
+* Search, named sort choices, conditions, confirmation prompts, and theme-safe styling
+* Built-in pulse animations and state- or action-triggered sound effects
+* Live API-to-CAD state updates and CAD-to-integration action events
+* Interactive panels embedded in custom live-map blip menus, bound to an exact panel instance. See [Smart Signs](/cad/api-integration/api-endpoints-v2/integration-panels/examples/smart-signs).
+
+## Limits {#limits}
+
+| Resource                       | Limit                                                          |
+| ------------------------------ | -------------------------------------------------------------- |
+| Active panels per community    | 50                                                             |
+| Instances per panel and server | 100                                                            |
+| Definition                     | 128 KiB; 200 root body nodes                                   |
+| State per instance             | 512 KiB                                                        |
+| Action result                  | 32 KiB                                                         |
+| Sounds per definition          | 20                                                             |
+| Panel name                     | 80 characters                                                  |
+| Panel and instance keys        | 2-80 lowercase letters, numbers, dots, underscores, or hyphens |
+| Pending action lifetime        | 60 seconds                                                     |
+
+Rate limits are fixed one-minute windows per API key. A `429` response includes `Retry-After`.
+
+| Operation group                        | Requests per minute |
+| -------------------------------------- | ------------------: |
+| List or get definitions                |                 120 |
+| Create, replace, or delete definitions |                  30 |
+| Replace state                          |                 300 |
+| Backup poll actions                    |                   3 |
+| Acknowledge actions                    |                 240 |
+
+## Common Errors {#common-errors}
+
+| Status | Cause                                                                  |
+| -----: | ---------------------------------------------------------------------- |
+|  `400` | Invalid key, definition, query, or action result                       |
+|  `401` | Missing or invalid bearer API key                                      |
+|  `404` | Server, panel, or action was not found                                 |
+|  `409` | Panel or instance limit reached, or state sent before its panel exists |
+|  `413` | Definition, state, or action result exceeds its size cap               |
+|  `429` | Per-API-key rate limit exceeded                                        |
+
+## Reference {#reference}
+
+
+
+<Card title="[manifest-reference.md](manifest-reference.md)" href="/cad/api-integration/api-endpoints-v2/integration-panels/manifest-reference" />
+
+
+
+
+
+<Card title="[examples](examples/)" href="/cad/api-integration/api-endpoints-v2/integration-panels/examples" />
+
+
+
+## Endpoints {#endpoints}
+
+
+
+<Card title="[list-panels.md](list-panels.md)" href="/cad/api-integration/api-endpoints-v2/integration-panels/list-panels" />
+
+
+
+
+
+<Card title="[get-panel.md](get-panel.md)" href="/cad/api-integration/api-endpoints-v2/integration-panels/get-panel" />
+
+
+
+
+
+<Card title="[set-panel.md](set-panel.md)" href="/cad/api-integration/api-endpoints-v2/integration-panels/set-panel" />
+
+
+
+
+
+<Card title="[delete-panel.md](delete-panel.md)" href="/cad/api-integration/api-endpoints-v2/integration-panels/delete-panel" />
+
+
+
+
+
+<Card title="[set-state.md](set-state.md)" href="/cad/api-integration/api-endpoints-v2/integration-panels/set-state" />
+
+
+
+
+
+<Card title="[poll-actions.md](poll-actions.md)" href="/cad/api-integration/api-endpoints-v2/integration-panels/poll-actions" />
+
+
+
+
+
+<Card title="[acknowledge-action.md](acknowledge-action.md)" href="/cad/api-integration/api-endpoints-v2/integration-panels/acknowledge-action" />

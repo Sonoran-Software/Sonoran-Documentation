@@ -1,0 +1,206 @@
+---
+title: Configure Channels
+description: Learn more about creating and managing radio channels!
+---
+
+<iframe src="https://www.youtube-nocookie.com/embed/Mm-sdHeZoHk" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+
+## Creating Channel Groups {#creating-channel-groups}
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/80/802bf40ec7c8a3f4760569ea06faafc04bf97b32db7a275d140f4c5d5c63b7c9.png" alt="" />
+
+
+
+Channel groups allow communities to organize channels in separated categories.
+
+Channel groups are configured in the `Customization` > `Channels & Groups` tab.
+
+### Add a Group {#add-a-group}
+
+To add a new channel group, select the green `+` icon to the right of the group bar.
+
+Enter in a new group name, and select `Ok`.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/8c/8cee74a3ba940278d87d4180ef99689ee7be883ae132bb4994869aba2a56a35c.png" alt="" />
+
+*Sonoran Radio - Add Channel Group*
+
+
+
+### Edit or Delete a Group {#edit-or-delete-a-group}
+
+Select the gear icon on the group to rename it.
+
+Select the trash icon on the group to remove it.
+
+Re-order the channel groups via drag-and-drop.
+
+### Shared Channels {#shared-channels}
+
+Shared channels let you create a single channel that exists across multiple groups.
+
+#### Setup {#setup}
+
+In this example, there are three radio groups — `City`, `Highway`, and `County`. Each group has its own `Interops` channel, but these channels are linked together so that any transmission on one `Interops` channel is heard across all three groups.
+
+This setup allows seamless communication between departments while maintaining their individual group structures.
+
+1. **Determine the "Primary" Channel**
+
+* One channel must be chosen as the "Primary" channel that the other channels link to. In this example, we will select the `City` group's `Interops`.
+
+2. **Link the First Channel to Primary**
+
+* In the `Highway` group, edit the `Highway Interops` channel. Toggle the channel mode to `Shared` and select the `City Interops` channel (our "primary" channel).
+
+3. **Link the Second Channel to Primary**
+
+* In the `County` group, edit the `County Interops` channel. Toggle the channel mode to `Shared` and select the `City Interops` channel (our "primary" channel).
+
+Now, any user in the City, Highway, or County Interops channel will appear in all three and any transmissions in one will be heard in all three.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/58/587379ecb533ab526471a3b23c221cf8a4a99e355a4829b2b48539e3e698cc34.png" alt="" width="278" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/64/64d814ffb35b59a763b33666f165936f363aadc7cacb04bef9ff63efd31848c2.png" alt="" width="281" />
+
+
+
+## Channels {#channels}
+
+Channels are inside of groups and are what users connect to in order to communicate.
+
+You can create a channel in the `Customization` > `Channels & Groups` tab, or right inside of the `Dispatch` panel.
+
+* Select the gear icon on the channel to rename it.
+* Select the plus icon in the server settings or dispatch panel to add a new channel.
+* Select the gear icon > trash icon to delete the channel.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/1f/1f126eb83cf829ca0a5a32548a7d5c033f9ef7fb8f96da4609af1f62dce4da3c.png" alt="" />
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/9d/9d0852e1dbf69260d97c432457de746da131bd3b9d358173b137b4d44a1d65a5.png" alt="" />
+
+*Sonoran Radio - Dispatch Panel Configure Channels*
+
+
+
+When creating a channel, you only need to provide a name.
+
+## Channel Options {#channel-options}
+
+
+
+<Accordion title="Preview the AI Text-To-Speech">
+
+
+
+In the admin `Customize` tab, hovering over green the channel audio icon will play the text-to-speech audio stating the channel name.
+
+A red icon indicates that the AI text-to-speech failed to generate. Simply re-save the channel to regenerate the audio file.
+
+Users can enable or disable the channel text-to-speech playing when switching channels in their settings menu.
+
+![](https://docs-assets.sonoransoftware.com/sha256/cd/cd1dc88586b589aea9be954d346ea36580eb892543360430eddb8df888f94c1b.png) ![](https://docs-assets.sonoransoftware.com/sha256/84/84395bfd55538ae31842e1a7d4be7a5180fc7ed8fc107a1c5b3a6094e3a90287.png)
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Customize the AI Pronunciation">
+
+
+
+By toggling on the `Advanced` mode, you can manually adjust how the AI pronounces the channel name, which can be helpful for abbreviations and other non-common words.'
+
+![](https://docs-assets.sonoransoftware.com/sha256/cd/cd31e18e1d854629c6c524ab10b6618a1ed0a91b0d27a7163fc0546c86c14c95.png)
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Setting the Voice Effect">
+
+
+
+Use the `Voice Effect` dropdown to set the [custom voice effect style](/radio/tutorials/usage/dispatch-panel/custom-voice-effects) for the channel.
+
+![](https://docs-assets.sonoransoftware.com/sha256/5d/5de72f01c03c9b62a103e09c0d4358805d36bcaa737b515814a96b88a3d6e139.png)
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Toggle Talkover Protection">
+
+
+
+Toggle the `Talkover` prevention button to allow or prevent multiple users from talking at once.
+
+With talkover prevented, the [talkover error sound](/radio/tutorials/usage/dispatch-panel/custom-sfx) will play and prevent the user from activating their mic.
+
+![](https://docs-assets.sonoransoftware.com/sha256/9a/9a3ba65f4a587ffec2804e0758c68d5685e756d0a23223fb09bcc6562795dc89.png)
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Restrict Channel Visibility">
+
+
+
+Switch the channel's visibility to `Public` (everyone can see and connect) or `Private` to restrict which users can connect and transmit.
+
+Private channels will appear in the [community member permissions tab](/radio/tutorials/getting-started/invite-and-manage-users), or be [automatically managed with Sonoran CMS](/radio/tutorials/integrations/sonoran-cms).
+
+![](https://docs-assets.sonoransoftware.com/sha256/e3/e3c9bca68ae2f7dfe125ca5d954f22cf35e0f9c7eeb867756c7d29affdaa6d41.png)
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Customize Channel Frequency">
+
+
+
+With `Advanced` mode toggled, you can also customize the recieve and transmit frequency numbers for more realism.
+
+![](https://docs-assets.sonoransoftware.com/sha256/80/800e57a0ae70215c56df657f0de05f866487c78c3555501092aa24c5d6440f90.png)
+
+
+
+</Accordion>

@@ -1,0 +1,309 @@
+---
+title: Live Map
+description: Sonoran CAD's 2D and 3D interactive live map allows you to update and
+  view live unit locations, emergency calls, in-game road signs, and more!
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/45/45bc98df63132809e670bc82cc840ddc7c19f08b9afe299f357a95137d38af3c.png" alt="" />
+
+*Sonoran CAD - Live Map*
+
+
+
+<Info>
+
+This submodule is built into the Sonoran CAD FiveM resource and requires no additional configuration.
+</Info>
+
+### 1. 2D Map Selection {#id-1.-2d-map-selection}
+
+In the admin panel, navigate to **Advanced** > **In-Game Integration** > **Live Map**
+
+Here, you can enable and select a default map option for GTA, Roblox, or others. Additionally, pro communities can [upload a custom map](/cad/integration-plugins/in-game-integration/available-plugins/live-map#using-a-custom-map-fivem).
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/93/93321c2aa020126a81db0d50ef0bfc0f7fb5b384a75828c2a67512d187500462.png" alt="" />
+
+*Sonoran CAD - Live Map Type Selection*
+
+
+
+### 2. Link In-Game {#id-2.-link-in-game}
+
+Don't forget to have each community member link their in-game user to the CAD.
+
+[For FiveM users, run `/link` in-game.](/cad/integration-plugins/in-game-integration/link-user-in-game)
+
+For Roblox users, ensure your [Roblox account is linked to your Sonoran account](/cad/integration-plugins/erlc/getting-started#linking-your-roblox-account).
+
+### 3. User Access Permission {#id-3.-user-access-permission}
+
+Users will need to be granted access to view the live map. This can be done via [Discord role sync](/cad/integration-plugins/discord-bot-integration/role-sync), [permission key](/cad/tutorials/getting-started/permissions#permission-keys), or by [manually granting permissions](/cad/tutorials/getting-started/permissions#manually-granting-permissions) in the admin menu.
+
+### **4. Enjoy!** {#id-4.-enjoy}
+
+In the Police, Fire, EMS, or Dispatch window you can now click the "Live Map" button to view your new live map! Selecting a blip will show it's updated position and unit information.
+
+This is found in the task bar's start menu under **Unit Management** > **Live Map**\
+You can also [pin the live map button to your taskbar](/cad/tutorials/customization/customizing-your-layout#7-tab-system) for easy access.
+
+<Info>
+
+The live map will only show units that are in your server and also actively logged into the police, fire, or EMS panel in the CAD. Be sure to have your [API ID](/cad/api-integration/getting-started/setting-your-api-id) set.
+</Info>
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/b0/b0be37d108f7da1e1ca84a90c0fce953e97466d2811678d67a5f31d1a1a20c49.png" alt="" width="191" />
+
+
+
+## **Using the Live Map** {#using-the-live-map}
+
+### **Map Controls** {#map-controls}
+
+#### **Postal and Location Search** {#postal-and-location-search}
+
+<Warning>
+
+The postal search functionality requires the **Pro** version of Sonoran CAD.
+
+For more information, view our [pricing](/cad/pricing/faq) page.
+</Warning>
+
+With the [postals](/cad/integration-plugins/in-game-integration/available-plugins/postals) submodule configured, you can manually enter and search for a postal code on the live map.
+
+Units, emergency calls, and dispatch calls with locations will also display a red pin icon. Clicking the icon will open the map and zoom to the location.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/4f/4f4c3b199277fa3a86b4bd7d6cc0a3663fe25a283ff5f3f623d215ebdcd10812.gif" alt="" />
+
+
+
+#### Blip Customization {#blip-customization}
+
+You can toggle specific blips visibility and outline colors for police, fire, EMS, and dispatch.
+
+![Live Map - Blip Customization](https://docs-assets.sonoransoftware.com/sha256/c2/c2ec15cb456bf2319f87da7983e2cd73b75cb1883c722cd220a0fd1c26098871.png)
+
+### **Unit Blips** {#unit-blips}
+
+Unit blips display the live location of all police, fire, EMS, and dispatch units in-game. You can hover over a unit for brief details, or click on one for more options.
+
+You can also easily filter the map to specific units by selecting them in the active units panel.
+
+![Live Map - Unit Filter](https://docs-assets.sonoransoftware.com/sha256/00/008b7945f6e45d84e1b05b527477d83bbea703401d7721a135b41b0e5f5a853c.gif)
+
+#### Menu Options {#menu-options}
+
+Clicking on a unit blip allows you to add the unit to a call, add the unit to a group, send the unit lookup results, edit the unit's information, toggle their panic state, and more.
+
+![Live Map - Unit Blip Options](https://docs-assets.sonoransoftware.com/sha256/36/364e97ad74101129c254a5762d1d82255da4fc830472e7aa048e07d9b0236246.png)
+
+#### Drag-and-Drop {#drag-and-drop}
+
+<Tabs>
+<Tab title="Roblox 2D">
+
+Unit Blips Support:
+
+* Drag to the call editor
+* Drag to an active call
+* Drag to a unit group
+* Drag to the unit group header to create a new group
+* Drag to the lookup window or minimized tab
+* Drag to the timer window or minimized tab
+* Drag to the tone board window or minimized tab
+
+</Tab>
+
+<Tab title="FiveM 2D">
+
+* Drag-and-drop an ERS Callout
+* Drag-and-drop a dispatch call to a location
+* Drag-and-drop a dispatch call to the editor
+
+</Tab>
+
+<Tab title="FiveM 3D">
+
+* Drag-and-drop an ERS Callout
+* Drag-and-drop a dispatch call
+
+</Tab>
+
+</Tabs>
+
+### Emergency Call Blips {#emergency-call-blips}
+
+Emergency calls placed in-game will also appear on the live map. You can hover over the blip for the call details.
+
+#### Menu Options {#menu-options-1}
+
+Clicking on the emergency blip allows you to import the call to your editor or remove the emergency call.
+
+![Live Map - Emergency Call Blip](https://docs-assets.sonoransoftware.com/sha256/35/3549b4ef4dc10151b0d228490f9e70e59ae4e3af27a5c3b4b1c29234e17f18ac.png)
+
+### Sonoran Street Signs {#sonoran-street-signs}
+
+[Sonoran Street Signs](/cad/integration-plugins/in-game-integration/available-plugins/smart-signs) adds custom Live Map markers that open each sign's Integration Panel editor. Give CAD roles access to the overview and individual sign controllers. See the [Street Signs integration guide](/store/street-signs/integrations-and-webhooks) for setup and permissions.
+
+## FiveM Custom Map {#fivem-custom-map}
+
+<Warning>
+
+This feature requires the **pro** version of Sonoran CAD.\
+For more information, view our [pricing](/cad/pricing) page.
+</Warning>
+
+Sonoran CAD allows communities to upload custom map images to the integrated, hosted live map. If your community does not use one of the map types provided, you can upload the images manually.
+
+
+
+<Accordion title="Extract Images">
+
+
+
+Extract the images from the YTD files with a program like OpenIV.\
+**You will need six files named exactly as follows:**\
+`minimap_sea_0_0.png`\
+`minimap_sea_0_1.png`\
+`minimap_sea_1_0.png`\
+`minimap_sea_1_1.png`\
+`minimap_sea_2_0.png`\
+`minimap_sea_2_1.png`
+
+![OpenIV - Extract Images](https://docs-assets.sonoransoftware.com/sha256/75/75dae421d5f019bb2ae1fe0c018e754cc773b7c9898165374d08d4821af6ffd6.png)
+
+![OpenIV - Save Images](https://docs-assets.sonoransoftware.com/sha256/a0/a0286b801e260d9a94b2934c4658916aeaa6472dce288573468e17ac1c2c812a.png)
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Upload Images">
+
+
+
+Navigate to Admin > Advanced > In-Game Integration > Live Map and Push Events\
+Select "Upload Custom" and upload all six correctly named files.
+
+![Live Map - Custom Map Uploader](https://docs-assets.sonoransoftware.com/sha256/73/73c447e325d19df97fa4ce0b927fcf2144e2a8d679875b12d9b712cd88994d3f.png)
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="File Size">
+
+
+
+Custom map images are limited to 30MB each. **However, if you are uploading more than 100MB of images total, you will need to upload in separate batches.**
+
+
+
+</Accordion>
+
+
+
+### Roxwood Expansion {#roxwood-expansion}
+
+
+
+<Accordion title="Roxwood Expansion">
+
+
+
+If your community is utilizing the Roxwood map expansion, there will be additional tiles to upload.
+
+* `minimap_sea_-1_-1.png`
+* `minimap_sea_-1_0.png`
+* `minimap_sea_-1_1.png` (Optional, blank tile to the right)
+
+Additionally, two existing map tiles will need to be updated, as they contain parts of both the main island and the Roxwood expansion.
+
+* `minimap_sea_0_-1.png`
+* `minimap_sea_0_0.png`
+* `minimap_sea_0_1.png`
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ed/ed40d954544453fd5e69ba6eaec8d1cd6a62cd2a7440c2a764c001be3355edf4.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+### Cayo Perico Expansion {#cayo-perico-expansion}
+
+
+
+<Accordion title="Cayo Perico Expansion">
+
+
+
+If your community is utilizing the Cayo Perico map expansion, there will be extra tiles to upload. Ensure these are named as:
+
+* `minimap_sea_2_1.png`
+  * Bottom right of the main island + top right of Cayo Perico
+* `minimap_sea_2_2.png`
+* `minimap_sea_3_1.png`
+* `minimap_sea_3_2.png`
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/14/14597b230775a55b9bbf4fa485a9d8c4378667cc7a7fbc27dfafa67a60d95aac.png" alt="" width="375" />
+
+
+
+
+
+</Accordion>
+
+
+
+## Roblox Custom Maps {#roblox-custom-maps}
+
+
+
+<Card title="[3d-live-map.md](../../erlc/3d-live-map.md)" href="/cad/integration-plugins/erlc/3d-live-map" />
+
+
+
+## Troubleshooting {#troubleshooting}
+
+### 3D Live Map not Loading {#id-3d-live-map-not-loading}
+
+The 3D live map uses WebGL, an open source something.
+
+In Chrome, navigate to `chrome://gpu/` and check if `WebGL` is **Disabled**. If so, try the following steps:
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/b2/b2eeac1e5dbfe3394f1f184682de27a2ade9ca9f5fcfe6c9cae5d34469b0d07f.png" alt="" width="316" />
+
+
+
+* **Chrome** > **Settings** > **System** > **Use Graphics Acceleration When Available**
+* Ensure Graphics Drivers are Up-to-Date
+* Fully restart your web browser
+
+### Custom Blip Integration Panels {#custom-blip-integration-panels}
+
+Custom blips can display interactive [Integration Panels](/cad/api-integration/api-endpoints-v2/integration-panels) inside their menus in both 2D and 3D map views. Click a configured custom blip to view its controls. The connected integration must publish the panel and its state, process actions, and send back the updated result.
+
+Developers can attach a panel and instance using the blip's `data` entries. The [Smart Signs example](/cad/api-integration/api-endpoints-v2/integration-panels/examples/smart-signs) shows an individual sign editor, including the API setup and action handling. This is a custom integration example; adding a blip alone does not implement the game-side controls.

@@ -1,0 +1,29 @@
+---
+title: Dispatch Note
+description: This push event sends data when a note is added to an existing dispatch
+  call.
+---
+
+### EVENT\_DISPATCH\_NOTE POST {#event_dispatch_note-post}
+
+<Warning>
+
+This push event is not sent triggered via the API.\
+API triggers should be listened to locally on the game server.
+</Warning>
+
+```javascript
+{
+    "key": "YOUR_API_KEY", // Authenticate legitimate event traffic
+    "type": "EVENT_DISPATCH_NOTE",
+    "data": {
+        "callId": -1,
+        "note": {
+            "time": "12:00:00",
+            "label": "A-10",
+            "type": "text",
+            "content": "Some message here!"
+        }
+    }
+}
+```

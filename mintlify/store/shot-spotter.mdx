@@ -1,0 +1,184 @@
+---
+title: Shot Spotter
+description: Quickly be alerted when gunshots are detected around San Andreas
+---
+
+![Sonoran Software - Shot Spotter Promotional Image](https://docs-assets.sonoransoftware.com/sha256/5e/5ec289c6545b4cdcfb15c5c01f65e3b00a40d953ec0cbd8e3e4b3cd7d6f1939d.png)
+
+
+
+<iframe src="https://www.youtube-nocookie.com/embed/ng12Pimxev0" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+Sonoran Software - Shot Spotter Promotional Video
+
+
+## Shot Spotter {#shot-spotter}
+
+### Features {#features}
+
+* Ability to operate standalone
+* Support for AcePerms, ESX, QBCore, and custom permissions systems
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ff/ffe1be994ab23b9218edd23d146801ec31a2397cbc403f7ab20acc25aa1dd22e.png" alt="" />
+
+*Sonoran Software - Shot Spotter Promotional Image*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/82/82563438cdb979ccf64c1dada783c7d8e70fb56a4b70f9e169e2e6b47aa52b9b.png" alt="" />
+
+*Sonoran Software - Shot Spotter Promotional Image*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/c3/c383047f71afda20efea6136912eb6a23ed78b74975717674deb316fa38e9ef3.png" alt="" />
+
+*Sonoran Software - Shot Spotter Promotional Image*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/c2/c2b2f1f5e7aefeec48aa94bbc72831e1aa642b2527542d07393489623fc6ce04.png" alt="" />
+
+*Sonoran Software - Shot Spotter Promotional Image*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/78/78d505ae1f950db341f3137a17fa8b855ec4d831ec8e92d76c28b69c983fba3c.png" alt="" />
+
+*Sonoran Software - Shot Spotter Promotional Image*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ed/ede1808107898ada230235bfe661c1ee329136192f88b7d6ba92ab526a7e396e.png" alt="" />
+
+*Sonoran Software - Shot Spotter Promotional Image*
+
+
+
+### Commands {#commands}
+
+| Command Name              | Command Description                                                                                                 | Required Permission  |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------- | -------------------- |
+| `/shotspot`               | This command will toggle the user's shot spotter status, either enabling or disabling shot spotter alerts and blips | LEO or as configured |
+| `/showspotterid`          | Show the ID above the shot spotters                                                                                 | Admin                |
+| `/showspotterpos`         | Show the position of the shot spotters                                                                              | Admin                |
+| `/changepositiondata`     | Change the position data of the shot spotter                                                                        | Admin                |
+| `/reloadspotters`         | Reload all spotters and positions                                                                                   | Admin                |
+| `/spawnnewspotter`        | Activate the placement gun [SEE HERE](/store/general/gun-placement)                                                  | Admin                |
+| `/cancelspotterplacement` | Cancels the placement gun                                                                                           | Admin                |
+| `togglespotter`           | Toggle the spotter with the specified ID                                                                            | Admin                |
+
+### Changelog {#changelog}
+
+#### v1.3.1 {#v1.3.1}
+
+**Bug Fix**
+
+* `Fixed "TRIGGER_CLIENT_INTERNAL" bug on player joining`
+
+#### v1.3.0 {#v1.3.0}
+
+**Feature**
+
+* `Add postals to shot spotter 911 calls`
+
+#### v1.2.9 {#v1.2.9}
+
+**Improvements**
+
+* `Handle pole breaking and disabling of spotters`
+
+#### v1.2.8 {#v1.2.8}
+
+**Hotpatch**
+
+* `Add restart handling to prevent crashing`
+
+#### v1.2.6 {#v1.2.6}
+
+**Bug Fixes**
+
+* `Fixed bug creating multiple 911 calls for single shooting event`
+* `Fixed blips not going away when toggling off shot spotting`
+* `Fixed core shot spotter not sending alerts to ALL on duty officers`
+* `Fixed core shot spotter sending alerts to shooting source`
+
+**Refactor**
+
+* `Added discord.lua config file for security`
+* `Removed Discord configuration from config.lua for security`
+* `Update FxManifest.lua to only pass discord.lua to server side`
+* `Revamped config.lua file (See key changes below)`
+* `Move Utilities to shared scripts`
+* `Optimize CAD API calls`
+* `Remove reduntant/ unused loops and threads`
+
+**`config.lua` Changes**
+
+* `Moved network_latency, notifications, commands, check_dispatch to standalone sections`
+* `Changed notifications.type to be string | Available types: native, pNotify, okokNotify`
+* `Remove all Discord options`
+* `Bump version to 1.3`
+
+#### v1.2.5 {#v1.2.5}
+
+**Hotpatch**
+
+* `Fixed a startup failure when the Sonoran CAD integration option was disabled`
+
+#### v1.2.4 {#v1.2.4}
+
+**Hotpatch**
+
+* `Fixed QB Core & ESX permissions on "spawnnewspotter" command`
+* `Change deafult values for webhooks to false`
+
+#### v1.2.2 {#v1.2.2}
+
+**Hotpatch**
+
+* `Fixed notifications not working on spotter alerts`
+
+#### v1.2.1 {#v1.2.1}
+
+**Hotpatch**
+
+* `Fixed Livemap Icons`
+
+#### v1.2.0 {#v1.2.0}
+
+**Bugfixes, Improvements & Features**
+
+* `Disabling of Shot Spotters`
+* `"Network Time" / "Latency"`
+* `QB/ ESX Admin Permissions`
+* `Standalone Option`
+* `Livemap Radius`
+* `Powergrid Integration`
+* `Dispatcher Check`
+* `Separate Webhook Options`
+* `OkOk Notify/pNotify Integration`
+* `Numerous Bug Fixes`
+
+#### v1.1.0 {#v1.1.0}
+
+**Bugfixes and Improvements**
+
+* `Fixes CAD livemap bugs, typos & more misc. bugs`
+
+#### v1.0.0 {#v1.0.0}
+
+* `Inital Release`

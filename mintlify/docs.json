@@ -1,0 +1,2150 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Sonoran Software Documentation",
+  "colors": {
+    "primary": "#1D7DCF",
+    "light": "#3297ED",
+    "dark": "#1465AA"
+  },
+  "navigation": {
+    "products": [
+      {
+        "product": "Overview",
+        "icon": "house",
+        "groups": [
+          {
+            "group": "Start here",
+            "pages": [
+              "index"
+            ]
+          },
+          {
+            "group": "🎁 Promotions",
+            "pages": [
+              "promotions/fivem-hosting",
+              "promotions/five-bundle",
+              "promotions/expert-installation",
+              "promotions/discord-rewards",
+              "promotions/hire-a-developer",
+              "first-responder-discount"
+            ]
+          },
+          {
+            "group": "📑 Policy",
+            "pages": [
+              {
+                "group": "Policy",
+                "pages": [
+                  "policy/policy/refund-and-purchase-policy",
+                  "policy/policy/terms-of-service",
+                  "policy/policy/privacy-policy",
+                  "policy/policy/sonoran-one-+-rocket-node-hosting-promotion"
+                ],
+                "root": "policy/policy"
+              }
+            ]
+          },
+          {
+            "group": "Other",
+            "pages": [
+              "other/translation-support",
+              {
+                "group": "Support API",
+                "pages": [
+                  "other/support-api/upload-debug"
+                ],
+                "root": "other/support-api"
+              },
+              {
+                "group": "Miscellaneous",
+                "pages": [
+                  {
+                    "group": "Troubleshooting",
+                    "pages": [
+                      "other/miscellaneous/troubleshooting/desktop-application-fails-to-update"
+                    ],
+                    "root": "other/miscellaneous/troubleshooting"
+                  },
+                  "other/miscellaneous/delete-your-account"
+                ],
+                "root": "other/miscellaneous"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "product": "CAD",
+        "icon": "car-side",
+        "groups": [
+          {
+            "group": "Start here",
+            "pages": [
+              "cad",
+              {
+                "group": "📱Download The App",
+                "pages": [
+                  "cad/download/steam-browser-workaround",
+                  "cad/download/web-browser-clear-cache",
+                  "cad/download/desktop-app-clear-cache",
+                  "cad/download/fivem-clear-cache",
+                  "cad/download/steam-browser-clear-cache"
+                ],
+                "root": "cad/download"
+              }
+            ]
+          },
+          {
+            "group": "Tutorials",
+            "pages": [
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "cad/tutorials/getting-started/registering-your-account",
+                  "cad/tutorials/getting-started/registering-your-community",
+                  "cad/tutorials/getting-started/inviting-users-to-your-cad",
+                  "cad/tutorials/getting-started/permissions",
+                  "cad/tutorials/getting-started/view-your-limits",
+                  "cad/tutorials/getting-started/finding-your-community-id-and-authentication-code",
+                  "cad/tutorials/getting-started/troubleshooting"
+                ],
+                "root": "cad/tutorials/getting-started"
+              },
+              {
+                "group": "Customization",
+                "pages": [
+                  "cad/tutorials/customization/custom-login-page",
+                  "cad/tutorials/customization/customizing-your-layout",
+                  "cad/tutorials/customization/community-branding-and-info",
+                  "cad/tutorials/customization/creating-custom-record-and-report-types",
+                  "cad/tutorials/customization/record-automations",
+                  "cad/tutorials/customization/sharing-custom-records",
+                  "cad/tutorials/customization/custom-search-types",
+                  "cad/tutorials/customization/geographical-settings",
+                  "cad/tutorials/customization/penal-codes",
+                  "cad/tutorials/customization/10-codes",
+                  "cad/tutorials/customization/addresses-and-street-names",
+                  "cad/tutorials/customization/unit-status-codes",
+                  "cad/tutorials/customization/tone-board",
+                  "cad/tutorials/customization/custom-audio-notifications",
+                  "cad/tutorials/customization/custom-emails",
+                  "cad/tutorials/customization/quick-links",
+                  "cad/tutorials/customization/custom-page-colors",
+                  "cad/tutorials/customization/user-account-restrictions",
+                  "cad/tutorials/customization/configuring-multiple-servers",
+                  "cad/tutorials/customization/advanced-query-strings",
+                  "cad/tutorials/customization/custom-dispatch-call-formats"
+                ],
+                "root": "cad/tutorials/customization"
+              },
+              {
+                "group": "Dispatching",
+                "pages": [
+                  "cad/tutorials/dispatching/creating-a-call",
+                  "cad/tutorials/dispatching/rapid-iq",
+                  "cad/tutorials/dispatching/unit-management",
+                  "cad/tutorials/dispatching/self-dispatch",
+                  "cad/tutorials/dispatching/timers",
+                  "cad/tutorials/dispatching/command-line-interface-cli",
+                  "cad/tutorials/dispatching/automations",
+                  "cad/tutorials/dispatching/chat",
+                  "cad/tutorials/dispatching/shortcuts"
+                ],
+                "root": "cad/tutorials/dispatching"
+              },
+              {
+                "group": "Records Management",
+                "pages": [
+                  "cad/tutorials/records-management/searching-for-records",
+                  "cad/tutorials/records-management/adding-a-criminal-record",
+                  "cad/tutorials/records-management/pdf-records",
+                  "cad/tutorials/records-management/scene-diagram-builder"
+                ],
+                "root": "cad/tutorials/records-management"
+              },
+              {
+                "group": "Administration",
+                "pages": [
+                  "cad/tutorials/administration/system-logs",
+                  "cad/tutorials/administration/remove-user-account",
+                  "cad/tutorials/administration/deleting-or-transferring-your-cad"
+                ],
+                "root": "cad/tutorials/administration"
+              },
+              {
+                "group": "Other Features",
+                "pages": [
+                  "cad/tutorials/other-features/configurable-hotkeys",
+                  "cad/tutorials/other-features/voice-commands",
+                  "cad/tutorials/other-features/volume-and-language"
+                ],
+                "root": "cad/tutorials/other-features"
+              }
+            ]
+          },
+          {
+            "group": "Integration Capabilities <a href=\"#integration-plugins\" id=\"integration-plugins\"></a>",
+            "pages": [
+              "cad/integration-plugins/dispatch-ai",
+              {
+                "group": "🗃️ Paid Integration Resources",
+                "pages": [
+                  "cad/integration-plugins/paid-integration-resources/mobile-command-center",
+                  "cad/integration-plugins/paid-integration-resources/atm-robbery",
+                  "cad/integration-plugins/paid-integration-resources/in-vehicle-radar",
+                  "cad/integration-plugins/paid-integration-resources/evidence-camera",
+                  "cad/integration-plugins/paid-integration-resources/power-grid",
+                  "cad/integration-plugins/paid-integration-resources/speed-cameras",
+                  "cad/integration-plugins/paid-integration-resources/shot-spotter"
+                ],
+                "root": "cad/integration-plugins/paid-integration-resources"
+              },
+              "cad/integration-plugins/integrated-vendors",
+              "cad/integration-plugins/twitch-overlay-and-bot",
+              {
+                "group": "Database Sync and Merge",
+                "pages": [
+                  "cad/integration-plugins/database-sync-and-merge/troubleshooting"
+                ],
+                "root": "cad/integration-plugins/database-sync-and-merge"
+              },
+              {
+                "group": "Discord",
+                "pages": [
+                  "cad/integration-plugins/discord-bot-integration/role-sync",
+                  "cad/integration-plugins/discord-bot-integration/discord-webhooks",
+                  "cad/integration-plugins/discord-bot-integration/discord-rich-presence"
+                ],
+                "root": "cad/integration-plugins/discord-bot-integration"
+              },
+              "cad/integration-plugins/stream-deck-integration",
+              {
+                "group": "🎮 FiveM",
+                "pages": [
+                  {
+                    "group": "FiveM Installation",
+                    "pages": [
+                      "cad/integration-plugins/in-game-integration/fivem-installation/fivem-resource-migration-v4",
+                      {
+                        "group": "Troubleshooting",
+                        "pages": [
+                          "cad/integration-plugins/in-game-integration/fivem-installation/troubleshooting/error-codes",
+                          "cad/integration-plugins/in-game-integration/fivem-installation/troubleshooting/read-and-write-permissions"
+                        ],
+                        "root": "cad/integration-plugins/in-game-integration/fivem-installation/troubleshooting"
+                      }
+                    ],
+                    "root": "cad/integration-plugins/in-game-integration/fivem-installation"
+                  },
+                  "cad/integration-plugins/in-game-integration/link-user-in-game",
+                  {
+                    "group": "Submodule Configuration",
+                    "pages": [
+                      "cad/integration-plugins/in-game-integration/submodule-configuration/plugin-troubleshooting",
+                      "cad/integration-plugins/in-game-integration/submodule-configuration/submodule-configuration-updates"
+                    ],
+                    "root": "cad/integration-plugins/in-game-integration/submodule-configuration"
+                  },
+                  {
+                    "group": "FiveM Submodules",
+                    "pages": [
+                      "cad/integration-plugins/in-game-integration/available-plugins/bodycam",
+                      "cad/integration-plugins/in-game-integration/available-plugins/cad-display",
+                      "cad/integration-plugins/in-game-integration/available-plugins/call-commands",
+                      "cad/integration-plugins/in-game-integration/available-plugins/call-templates",
+                      "cad/integration-plugins/in-game-integration/available-plugins/civilian-integration",
+                      "cad/integration-plugins/in-game-integration/available-plugins/civilian-registration",
+                      "cad/integration-plugins/in-game-integration/available-plugins/dispatch-notify",
+                      "cad/integration-plugins/in-game-integration/available-plugins/ers",
+                      "cad/integration-plugins/in-game-integration/available-plugins/framework-support-esx-qbcore-and-auto-fines",
+                      "cad/integration-plugins/in-game-integration/available-plugins/fivepd",
+                      "cad/integration-plugins/in-game-integration/available-plugins/forcereg",
+                      "cad/integration-plugins/in-game-integration/available-plugins/kick",
+                      "cad/integration-plugins/in-game-integration/available-plugins/lb-phone-app",
+                      "cad/integration-plugins/in-game-integration/available-plugins/local-callers",
+                      "cad/integration-plugins/in-game-integration/available-plugins/locations",
+                      "cad/integration-plugins/in-game-integration/available-plugins/live-map",
+                      "cad/integration-plugins/in-game-integration/available-plugins/pager-reborn",
+                      "cad/integration-plugins/in-game-integration/available-plugins/postals",
+                      "cad/integration-plugins/in-game-integration/available-plugins/record-printer",
+                      "cad/integration-plugins/in-game-integration/available-plugins/smart-signs",
+                      "cad/integration-plugins/in-game-integration/available-plugins/sonoran-radio-sonrad",
+                      "cad/integration-plugins/in-game-integration/available-plugins/station-alert",
+                      "cad/integration-plugins/in-game-integration/available-plugins/tablet",
+                      "cad/integration-plugins/in-game-integration/available-plugins/unit-status",
+                      "cad/integration-plugins/in-game-integration/available-plugins/vehreg",
+                      "cad/integration-plugins/in-game-integration/available-plugins/wraithv2"
+                    ],
+                    "root": "cad/integration-plugins/in-game-integration/available-plugins"
+                  },
+                  {
+                    "group": "FiveM Development Documentation",
+                    "pages": [
+                      "cad/integration-plugins/in-game-integration/framework-development-documentation/client-functions",
+                      "cad/integration-plugins/in-game-integration/framework-development-documentation/client-events",
+                      "cad/integration-plugins/in-game-integration/framework-development-documentation/shared-functions",
+                      "cad/integration-plugins/in-game-integration/framework-development-documentation/server-functions",
+                      "cad/integration-plugins/in-game-integration/framework-development-documentation/server-events",
+                      "cad/integration-plugins/in-game-integration/framework-development-documentation/http-request-handling"
+                    ],
+                    "root": "cad/integration-plugins/in-game-integration/framework-development-documentation"
+                  }
+                ],
+                "root": "cad/integration-plugins/in-game-integration"
+              },
+              {
+                "group": "🎮 ER:LC",
+                "pages": [
+                  "cad/integration-plugins/erlc/getting-started",
+                  "cad/integration-plugins/erlc/3d-live-map",
+                  "cad/integration-plugins/erlc/bodycam",
+                  "cad/integration-plugins/erlc/call-editor-pin-drop",
+                  "cad/integration-plugins/erlc/in-game-overlay",
+                  "cad/integration-plugins/erlc/character-creation",
+                  "cad/integration-plugins/erlc/vehicle-registrations",
+                  "cad/integration-plugins/erlc/emergency-calls",
+                  "cad/integration-plugins/erlc/location-notifications",
+                  "cad/integration-plugins/erlc/traffic-stops",
+                  "cad/integration-plugins/erlc/plate-reader",
+                  "cad/integration-plugins/erlc/alpr-cameras"
+                ],
+                "root": "cad/integration-plugins/erlc"
+              },
+              {
+                "group": "📖 API Integration",
+                "pages": [
+                  {
+                    "group": "Getting Started",
+                    "pages": [
+                      "cad/api-integration/getting-started/retrieving-your-credentials",
+                      "cad/api-integration/getting-started/setting-your-api-id"
+                    ],
+                    "root": "cad/api-integration/getting-started"
+                  },
+                  {
+                    "group": "v2 API Endpoints",
+                    "pages": [
+                      "cad/api-integration/api-endpoints-v2/libraries",
+                      "cad/api-integration/api-endpoints-v2/authentication",
+                      {
+                        "group": "Emergency",
+                        "pages": [
+                          {
+                            "group": "Units",
+                            "pages": [
+                              "cad/api-integration/api-endpoints-v2/emergency/units/get-active-units",
+                              "cad/api-integration/api-endpoints-v2/emergency/units/get-account-units",
+                              "cad/api-integration/api-endpoints-v2/emergency/units/update-unit-locations",
+                              "cad/api-integration/api-endpoints-v2/emergency/units/set-unit-panic",
+                              "cad/api-integration/api-endpoints-v2/emergency/units/set-unit-status",
+                              "cad/api-integration/api-endpoints-v2/emergency/units/kick-unit"
+                            ],
+                            "root": "cad/api-integration/api-endpoints-v2/emergency/units"
+                          },
+                          {
+                            "group": "Identifiers",
+                            "pages": [
+                              "cad/api-integration/api-endpoints-v2/emergency/identifiers/get-identifiers",
+                              "cad/api-integration/api-endpoints-v2/emergency/identifiers/set-selected-identifier",
+                              "cad/api-integration/api-endpoints-v2/emergency/identifiers/create-identifier",
+                              "cad/api-integration/api-endpoints-v2/emergency/identifiers/update-identifier",
+                              "cad/api-integration/api-endpoints-v2/emergency/identifiers/delete-identifier",
+                              "cad/api-integration/api-endpoints-v2/emergency/identifiers/set-identifier-group"
+                            ],
+                            "root": "cad/api-integration/api-endpoints-v2/emergency/identifiers"
+                          },
+                          {
+                            "group": "Calls",
+                            "pages": [
+                              "cad/api-integration/api-endpoints-v2/emergency/calls/get-calls",
+                              "cad/api-integration/api-endpoints-v2/emergency/calls/get-current-call",
+                              "cad/api-integration/api-endpoints-v2/emergency/calls/create-911-call",
+                              "cad/api-integration/api-endpoints-v2/emergency/calls/remove-911-call",
+                              "cad/api-integration/api-endpoints-v2/emergency/calls/create-dispatch-call",
+                              "cad/api-integration/api-endpoints-v2/emergency/calls/get-dispatch-templates",
+                              "cad/api-integration/api-endpoints-v2/emergency/calls/create-custom-dispatch-call",
+                              "cad/api-integration/api-endpoints-v2/emergency/calls/update-dispatch-call",
+                              "cad/api-integration/api-endpoints-v2/emergency/calls/attach-units",
+                              "cad/api-integration/api-endpoints-v2/emergency/calls/detach-units",
+                              "cad/api-integration/api-endpoints-v2/emergency/calls/update-call-postal",
+                              "cad/api-integration/api-endpoints-v2/emergency/calls/update-call-primary",
+                              "cad/api-integration/api-endpoints-v2/emergency/calls/add-call-note",
+                              "cad/api-integration/api-endpoints-v2/emergency/calls/close-dispatch-calls"
+                            ],
+                            "root": "cad/api-integration/api-endpoints-v2/emergency/calls"
+                          },
+                          {
+                            "group": "Map",
+                            "pages": [
+                              "cad/api-integration/api-endpoints-v2/emergency/map/get-blips",
+                              "cad/api-integration/api-endpoints-v2/emergency/map/create-blip",
+                              "cad/api-integration/api-endpoints-v2/emergency/map/update-blip",
+                              "cad/api-integration/api-endpoints-v2/emergency/map/delete-blips"
+                            ],
+                            "root": "cad/api-integration/api-endpoints-v2/emergency/map"
+                          },
+                          {
+                            "group": "Configuration",
+                            "pages": [
+                              "cad/api-integration/api-endpoints-v2/emergency/configuration/set-callouts",
+                              "cad/api-integration/api-endpoints-v2/emergency/configuration/get-pager-config",
+                              "cad/api-integration/api-endpoints-v2/emergency/configuration/set-pager-config",
+                              "cad/api-integration/api-endpoints-v2/emergency/configuration/set-stations"
+                            ],
+                            "root": "cad/api-integration/api-endpoints-v2/emergency/configuration"
+                          }
+                        ],
+                        "root": "cad/api-integration/api-endpoints-v2/emergency"
+                      },
+                      {
+                        "group": "Civilian",
+                        "pages": [
+                          "cad/api-integration/api-endpoints-v2/civilian/get-characters",
+                          "cad/api-integration/api-endpoints-v2/civilian/delete-character",
+                          "cad/api-integration/api-endpoints-v2/civilian/set-selected-character",
+                          "cad/api-integration/api-endpoints-v2/civilian/get-character-links",
+                          "cad/api-integration/api-endpoints-v2/civilian/add-character-link",
+                          "cad/api-integration/api-endpoints-v2/civilian/remove-character-link"
+                        ],
+                        "root": "cad/api-integration/api-endpoints-v2/civilian"
+                      },
+                      {
+                        "group": "Integration Panels",
+                        "pages": [
+                          "cad/api-integration/api-endpoints-v2/integration-panels/manifest-reference",
+                          {
+                            "group": "Examples",
+                            "pages": [
+                              "cad/api-integration/api-endpoints-v2/integration-panels/examples/fire-alarm",
+                              "cad/api-integration/api-endpoints-v2/integration-panels/examples/door-locks",
+                              "cad/api-integration/api-endpoints-v2/integration-panels/examples/tow-impound",
+                              "cad/api-integration/api-endpoints-v2/integration-panels/examples/fleet-management",
+                              "cad/api-integration/api-endpoints-v2/integration-panels/examples/smart-signs"
+                            ],
+                            "root": "cad/api-integration/api-endpoints-v2/integration-panels/examples"
+                          },
+                          "cad/api-integration/api-endpoints-v2/integration-panels/list-panels",
+                          "cad/api-integration/api-endpoints-v2/integration-panels/get-panel",
+                          "cad/api-integration/api-endpoints-v2/integration-panels/set-panel",
+                          "cad/api-integration/api-endpoints-v2/integration-panels/delete-panel",
+                          "cad/api-integration/api-endpoints-v2/integration-panels/set-state",
+                          "cad/api-integration/api-endpoints-v2/integration-panels/poll-actions",
+                          "cad/api-integration/api-endpoints-v2/integration-panels/acknowledge-action"
+                        ],
+                        "root": "cad/api-integration/api-endpoints-v2/integration-panels"
+                      },
+                      {
+                        "group": "General",
+                        "pages": [
+                          {
+                            "group": "Accounts",
+                            "pages": [
+                              "cad/api-integration/api-endpoints-v2/general/accounts/apply-permission-key",
+                              "cad/api-integration/api-endpoints-v2/general/accounts/ban-user",
+                              "cad/api-integration/api-endpoints-v2/general/accounts/create-community-link",
+                              "cad/api-integration/api-endpoints-v2/general/accounts/check-community-link",
+                              "cad/api-integration/api-endpoints-v2/general/accounts/set-community-link",
+                              "cad/api-integration/api-endpoints-v2/general/accounts/account-object",
+                              "cad/api-integration/api-endpoints-v2/general/accounts/get-account",
+                              "cad/api-integration/api-endpoints-v2/general/accounts/get-accounts",
+                              "cad/api-integration/api-endpoints-v2/general/accounts/get-permission-catalog",
+                              "cad/api-integration/api-endpoints-v2/general/accounts/get-account-permissions",
+                              "cad/api-integration/api-endpoints-v2/general/accounts/replace-account-permissions",
+                              "cad/api-integration/api-endpoints-v2/general/accounts/verify-secret",
+                              "cad/api-integration/api-endpoints-v2/general/accounts/send-photo"
+                            ],
+                            "root": "cad/api-integration/api-endpoints-v2/general/accounts"
+                          },
+                          {
+                            "group": "Records",
+                            "pages": [
+                              "cad/api-integration/api-endpoints-v2/general/records/get-templates",
+                              "cad/api-integration/api-endpoints-v2/general/records/get-template",
+                              "cad/api-integration/api-endpoints-v2/general/records/create-record",
+                              "cad/api-integration/api-endpoints-v2/general/records/update-record",
+                              "cad/api-integration/api-endpoints-v2/general/records/delete-record",
+                              "cad/api-integration/api-endpoints-v2/general/records/send-draft"
+                            ],
+                            "root": "cad/api-integration/api-endpoints-v2/general/records"
+                          },
+                          {
+                            "group": "Lookups",
+                            "pages": [
+                              "cad/api-integration/api-endpoints-v2/general/lookups/lookup-name-or-plate",
+                              "cad/api-integration/api-endpoints-v2/general/lookups/lookup-by-value",
+                              "cad/api-integration/api-endpoints-v2/general/lookups/lookup-by-custom"
+                            ],
+                            "root": "cad/api-integration/api-endpoints-v2/general/lookups"
+                          },
+                          {
+                            "group": "Configuration",
+                            "pages": [
+                              "cad/api-integration/api-endpoints-v2/general/configuration/get-fivem-configuration",
+                              "cad/api-integration/api-endpoints-v2/general/configuration/acknowledge-fivem-configuration",
+                              "cad/api-integration/api-endpoints-v2/general/configuration/get-database-sync-configuration",
+                              "cad/api-integration/api-endpoints-v2/general/configuration/get-penal-codes",
+                              "cad/api-integration/api-endpoints-v2/general/configuration/set-penal-codes",
+                              "cad/api-integration/api-endpoints-v2/general/configuration/heartbeat",
+                              "cad/api-integration/api-endpoints-v2/general/configuration/get-version",
+                              "cad/api-integration/api-endpoints-v2/general/configuration/get-turn-credentials",
+                              "cad/api-integration/api-endpoints-v2/general/configuration/upload-bodycam-recording",
+                              "cad/api-integration/api-endpoints-v2/general/configuration/get-servers",
+                              "cad/api-integration/api-endpoints-v2/general/configuration/set-servers",
+                              "cad/api-integration/api-endpoints-v2/general/configuration/set-postal-config",
+                              "cad/api-integration/api-endpoints-v2/general/configuration/get-info",
+                              "cad/api-integration/api-endpoints-v2/general/configuration/get-login-page"
+                            ],
+                            "root": "cad/api-integration/api-endpoints-v2/general/configuration"
+                          }
+                        ],
+                        "root": "cad/api-integration/api-endpoints-v2/general"
+                      },
+                      {
+                        "group": "Local Endpoints",
+                        "pages": [
+                          "cad/api-integration/api-endpoints-v2/local-endpoints/smart-lighting"
+                        ],
+                        "root": "cad/api-integration/api-endpoints-v2/local-endpoints"
+                      },
+                      {
+                        "group": "Iframe API",
+                        "pages": [
+                          "cad/api-integration/api-endpoints-v2/iframe-endpoints/notepad-sync",
+                          "cad/api-integration/api-endpoints-v2/iframe-endpoints/screenshot-capture"
+                        ],
+                        "root": "cad/api-integration/api-endpoints-v2/iframe-endpoints"
+                      },
+                      {
+                        "group": "Internal",
+                        "pages": [
+                          "cad/api-integration/api-endpoints-v2/internal/fivem-download"
+                        ],
+                        "root": "cad/api-integration/api-endpoints-v2/internal"
+                      }
+                    ],
+                    "root": "cad/api-integration/api-endpoints-v2"
+                  },
+                  {
+                    "group": "Push Events",
+                    "pages": [
+                      "cad/api-integration/push-events/community-link-verified",
+                      {
+                        "group": "Record Events",
+                        "pages": [
+                          "cad/api-integration/push-events/record-events/record-added",
+                          "cad/api-integration/push-events/record-events/record-edited",
+                          "cad/api-integration/push-events/record-events/record-removed"
+                        ],
+                        "root": "cad/api-integration/push-events/record-events"
+                      },
+                      {
+                        "group": "Unit Events",
+                        "pages": [
+                          "cad/api-integration/push-events/unit-events/unit-panic",
+                          "cad/api-integration/push-events/unit-events/unit-login",
+                          "cad/api-integration/push-events/unit-events/unit-logoff",
+                          "cad/api-integration/push-events/unit-events/unit-status-update",
+                          "cad/api-integration/push-events/unit-events/unit-group-name-change",
+                          "cad/api-integration/push-events/unit-events/unit-group-add",
+                          "cad/api-integration/push-events/unit-events/unit-group-remove"
+                        ],
+                        "root": "cad/api-integration/push-events/unit-events"
+                      },
+                      {
+                        "group": "Dispatch Events",
+                        "pages": [
+                          "cad/api-integration/push-events/dispatch-events/dispatch-event",
+                          "cad/api-integration/push-events/dispatch-events/modified-dispatch",
+                          "cad/api-integration/push-events/dispatch-events/closed-dispatch",
+                          "cad/api-integration/push-events/dispatch-events/dispatch-note",
+                          "cad/api-integration/push-events/dispatch-events/attach-unit",
+                          "cad/api-integration/push-events/dispatch-events/detach-unit",
+                          "cad/api-integration/push-events/dispatch-events/toggle-bodycam"
+                        ],
+                        "root": "cad/api-integration/push-events/dispatch-events"
+                      },
+                      "cad/api-integration/push-events/event-911",
+                      "cad/api-integration/push-events/remove-911",
+                      "cad/api-integration/push-events/tone-played",
+                      {
+                        "group": "Civilian",
+                        "pages": [
+                          "cad/api-integration/push-events/civilian/character-selected"
+                        ],
+                        "root": "cad/api-integration/push-events/civilian"
+                      },
+                      {
+                        "group": "ERS",
+                        "pages": [
+                          "cad/api-integration/push-events/ers/new-callout"
+                        ],
+                        "root": "cad/api-integration/push-events/ers"
+                      },
+                      {
+                        "group": "Inferno Pager",
+                        "pages": [
+                          "cad/api-integration/push-events/inferno-pager/event-pager-reborn"
+                        ],
+                        "root": "cad/api-integration/push-events/inferno-pager"
+                      },
+                      {
+                        "group": "Station Alert",
+                        "pages": [
+                          "cad/api-integration/push-events/station-alert/new-station-alert"
+                        ],
+                        "root": "cad/api-integration/push-events/station-alert"
+                      }
+                    ],
+                    "root": "cad/api-integration/push-events"
+                  },
+                  {
+                    "group": "Websocket API",
+                    "pages": [
+                      "cad/api-integration/websocket-api/authentication",
+                      "cad/api-integration/websocket-api/unit-locations",
+                      "cad/api-integration/websocket-api/push-events",
+                      "cad/api-integration/websocket-api/fivem-configuration"
+                    ],
+                    "root": "cad/api-integration/websocket-api"
+                  },
+                  "cad/api-integration/development-branch",
+                  {
+                    "group": "API Endpoints",
+                    "pages": [
+                      "cad/api-integration/api-endpoints/api-restrictions",
+                      {
+                        "group": "Emergency",
+                        "pages": [
+                          {
+                            "group": "Identifiers",
+                            "pages": [
+                              "cad/api-integration/api-endpoints/emergency/identifiers/get-identifiers",
+                              "cad/api-integration/api-endpoints/emergency/identifiers/modify-identifier",
+                              "cad/api-integration/api-endpoints/emergency/identifiers/set-identifier",
+                              "cad/api-integration/api-endpoints/emergency/identifiers/unit-panic",
+                              "cad/api-integration/api-endpoints/emergency/identifiers/kick-unit",
+                              "cad/api-integration/api-endpoints/emergency/identifiers/unit-status",
+                              "cad/api-integration/api-endpoints/emergency/identifiers/get-active-units",
+                              "cad/api-integration/api-endpoints/emergency/identifiers/update-unit-location",
+                              "cad/api-integration/api-endpoints/emergency/identifiers/set-ident-group"
+                            ],
+                            "root": "cad/api-integration/api-endpoints/emergency/identifiers"
+                          },
+                          {
+                            "group": "Dispatch and Emergency Calls",
+                            "pages": [
+                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/get-calls",
+                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/new-dispatch",
+                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/edit-dispatch",
+                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/attach-units",
+                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/detach-unit",
+                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/update-call-postal",
+                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/add-call-note",
+                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/update-call-primary",
+                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/close-call",
+                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/911-call",
+                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/remove-911"
+                            ],
+                            "root": "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls"
+                          },
+                          {
+                            "group": "Custom Blips",
+                            "pages": [
+                              "cad/api-integration/api-endpoints/emergency/custom-blips/get-map-blips",
+                              "cad/api-integration/api-endpoints/emergency/custom-blips/add-blip",
+                              "cad/api-integration/api-endpoints/emergency/custom-blips/modify-blip",
+                              "cad/api-integration/api-endpoints/emergency/custom-blips/remove-blip"
+                            ],
+                            "root": "cad/api-integration/api-endpoints/emergency/custom-blips"
+                          },
+                          {
+                            "group": "ERS",
+                            "pages": [
+                              "cad/api-integration/api-endpoints/emergency/ers/set-street-sign-config"
+                            ],
+                            "root": "cad/api-integration/api-endpoints/emergency/ers"
+                          },
+                          {
+                            "group": "Station Alert",
+                            "pages": [
+                              "cad/api-integration/api-endpoints/emergency/station-alert/set-stations"
+                            ],
+                            "root": "cad/api-integration/api-endpoints/emergency/station-alert"
+                          },
+                          {
+                            "group": "Inferno Pagers",
+                            "pages": [
+                              "cad/api-integration/api-endpoints/emergency/inferno-pagers/get-pager-config",
+                              "cad/api-integration/api-endpoints/emergency/inferno-pagers/set-pager-config"
+                            ],
+                            "root": "cad/api-integration/api-endpoints/emergency/inferno-pagers"
+                          }
+                        ],
+                        "root": "cad/api-integration/api-endpoints/emergency"
+                      },
+                      {
+                        "group": "Civilian",
+                        "pages": [
+                          "cad/api-integration/api-endpoints/civilian/set-character",
+                          "cad/api-integration/api-endpoints/civilian/get-characters",
+                          "cad/api-integration/api-endpoints/civilian/new-character",
+                          "cad/api-integration/api-endpoints/civilian/edit-character",
+                          "cad/api-integration/api-endpoints/civilian/remove-character",
+                          "cad/api-integration/api-endpoints/civilian/db-sync-get-character-links",
+                          "cad/api-integration/api-endpoints/civilian/db-sync-link-character"
+                        ],
+                        "root": "cad/api-integration/api-endpoints/civilian"
+                      },
+                      {
+                        "group": "General",
+                        "pages": [
+                          "cad/api-integration/api-endpoints/general/get-servers",
+                          "cad/api-integration/api-endpoints/general/set-servers",
+                          "cad/api-integration/api-endpoints/general/get-version",
+                          "cad/api-integration/api-endpoints/general/set-penal-codes",
+                          "cad/api-integration/api-endpoints/general/set-api-ids",
+                          {
+                            "group": "Custom Records",
+                            "pages": [
+                              "cad/api-integration/api-endpoints/general/custom-records/api-options-for-adding-and-modifying-records",
+                              "cad/api-integration/api-endpoints/general/custom-records/get-record-template",
+                              "cad/api-integration/api-endpoints/general/custom-records/new-record",
+                              "cad/api-integration/api-endpoints/general/custom-records/edit-record",
+                              "cad/api-integration/api-endpoints/general/custom-records/remove-record"
+                            ],
+                            "root": "cad/api-integration/api-endpoints/general/custom-records"
+                          },
+                          "cad/api-integration/api-endpoints/general/lookup-by-integer",
+                          "cad/api-integration/api-endpoints/general/lookup-name-or-plate",
+                          "cad/api-integration/api-endpoints/general/lookup-by-custom",
+                          "cad/api-integration/api-endpoints/general/get-account",
+                          "cad/api-integration/api-endpoints/general/get-account-1",
+                          "cad/api-integration/api-endpoints/general/check-api-id",
+                          "cad/api-integration/api-endpoints/general/apply-permission-key",
+                          "cad/api-integration/api-endpoints/general/modify-account-permissions",
+                          "cad/api-integration/api-endpoints/general/ban-user",
+                          "cad/api-integration/api-endpoints/general/verify-secret",
+                          "cad/api-integration/api-endpoints/general/set-postal-config",
+                          "cad/api-integration/api-endpoints/general/set-clock-time",
+                          "cad/api-integration/api-endpoints/general/send-photo",
+                          "cad/api-integration/api-endpoints/general/upload-bodycam-recording",
+                          "cad/api-integration/api-endpoints/general/leave-community",
+                          "cad/api-integration/api-endpoints/general/join-community"
+                        ],
+                        "root": "cad/api-integration/api-endpoints/general"
+                      }
+                    ]
+                  }
+                ],
+                "root": "cad/api-integration"
+              }
+            ]
+          },
+          {
+            "group": "Pricing",
+            "pages": [
+              {
+                "group": "Pricing FAQ",
+                "pages": [
+                  "cad/pricing/faq/accessing-the-payment-center",
+                  "cad/pricing/faq/create-and-manage-a-subscription",
+                  "cad/pricing/faq/request-discord-role"
+                ],
+                "root": "cad/pricing/faq"
+              }
+            ]
+          },
+          {
+            "group": "Roadmap",
+            "pages": [
+              {
+                "group": "Roadmap & Changelog",
+                "pages": [
+                  "cad/roadmap/roadmap-and-changelog/changelog"
+                ],
+                "root": "cad/roadmap/roadmap-and-changelog"
+              }
+            ]
+          },
+          {
+            "group": "Other",
+            "pages": [
+              {
+                "group": "Policy",
+                "pages": [
+                  "cad/other/policy/rocket-cad-closure",
+                  "cad/other/policy/terms-of-service",
+                  "cad/other/policy/privacy-policy",
+                  "cad/other/policy/refund-and-purchase-policy",
+                  "cad/other/policy/discord-bot"
+                ],
+                "root": "cad/other/policy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "product": "CMS",
+        "icon": "building",
+        "groups": [
+          {
+            "group": "Start here",
+            "pages": [
+              "cms",
+              "cms/download"
+            ]
+          },
+          {
+            "group": "Tutorials",
+            "pages": [
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "cms/tutorials/getting-started/registering-your-account",
+                  "cms/tutorials/getting-started/registering-your-community",
+                  "cms/tutorials/getting-started/inviting-users-to-your-cms",
+                  "cms/tutorials/getting-started/troubleshooting"
+                ],
+                "root": "cms/tutorials/getting-started"
+              },
+              {
+                "group": "User Management",
+                "pages": [
+                  "cms/tutorials/user-management/creating-departments",
+                  "cms/tutorials/user-management/rank-promotions",
+                  "cms/tutorials/user-management/modify-users-permissions-and-information",
+                  "cms/tutorials/user-management/viewing-a-community-profile",
+                  "cms/tutorials/user-management/configuring-user-permissions",
+                  "cms/tutorials/user-management/merge-duplicate-accounts"
+                ],
+                "root": "cms/tutorials/user-management"
+              },
+              {
+                "group": "Rosters",
+                "pages": [
+                  "cms/tutorials/rosters/creating-custom-rosters",
+                  "cms/tutorials/rosters/viewing-rosters",
+                  "cms/tutorials/rosters/roster-automations"
+                ],
+                "root": "cms/tutorials/rosters"
+              },
+              {
+                "group": "Community Website",
+                "pages": [
+                  "cms/tutorials/community-website/website-builder",
+                  "cms/tutorials/community-website/site-ai",
+                  "cms/tutorials/community-website/toolbar-customization",
+                  "cms/tutorials/community-website/forum-system",
+                  "cms/tutorials/community-website/gallery-system"
+                ],
+                "root": "cms/tutorials/community-website"
+              },
+              {
+                "group": "Customization",
+                "pages": [
+                  "cms/tutorials/customization/community-branding-and-settings",
+                  "cms/tutorials/customization/fonts",
+                  "cms/tutorials/customization/custom-domain",
+                  "cms/tutorials/customization/community-profile-fields"
+                ],
+                "root": "cms/tutorials/customization"
+              },
+              "cms/tutorials/community-events",
+              "cms/tutorials/your-drive-and-documents",
+              {
+                "group": "Forms and Applications",
+                "pages": [
+                  "cms/tutorials/forms/creating-custom-forms",
+                  "cms/tutorials/forms/form-submissions",
+                  "cms/tutorials/forms/revision-history",
+                  "cms/tutorials/forms/clock-in-out-system",
+                  "cms/tutorials/forms/ai-form-processing"
+                ],
+                "root": "cms/tutorials/forms"
+              },
+              {
+                "group": "Administrative",
+                "pages": [
+                  "cms/tutorials/administrative/archive-community-member",
+                  "cms/tutorials/administrative/delete-community",
+                  "cms/tutorials/administrative/delete-user-account",
+                  "cms/tutorials/administrative/view-your-limits",
+                  {
+                    "group": "Growth and Discovery",
+                    "pages": [
+                      "cms/tutorials/administrative/growth-and-discovery/growth-panel",
+                      "cms/tutorials/administrative/growth-and-discovery/discovery"
+                    ],
+                    "root": "cms/tutorials/administrative/growth-and-discovery"
+                  },
+                  "cms/tutorials/administrative/actions",
+                  {
+                    "group": "Security Center",
+                    "pages": [
+                      "cms/tutorials/administrative/security-center/account-flags",
+                      "cms/tutorials/administrative/security-center/logging-center"
+                    ],
+                    "root": "cms/tutorials/administrative/security-center"
+                  },
+                  "cms/tutorials/administrative/disciplinary-panel",
+                  "cms/tutorials/administrative/url-shortener",
+                  "cms/tutorials/administrative/backups"
+                ],
+                "root": "cms/tutorials/administrative"
+              }
+            ]
+          },
+          {
+            "group": "Integration Capabilities",
+            "pages": [
+              "cms/integration-capabilities/sonoran-cad-sync",
+              "cms/integration-capabilities/sonoran-radio-sync",
+              "cms/integration-capabilities/discord-bot-integration",
+              {
+                "group": "TeamSpeak 3 Role Sync",
+                "pages": [
+                  "cms/integration-capabilities/teamspeak-3-role-sync/getting-started",
+                  "cms/integration-capabilities/teamspeak-3-role-sync/adding-ranks",
+                  "cms/integration-capabilities/teamspeak-3-role-sync/adding-your-teamspeak-uid"
+                ],
+                "root": "cms/integration-capabilities/teamspeak-3-role-sync"
+              },
+              "cms/integration-capabilities/discord-rich-presence",
+              "cms/integration-capabilities/discord-webhooks",
+              {
+                "group": "FiveM Game Panel",
+                "pages": [
+                  "cms/integration-capabilities/fivem-game-panel/installation",
+                  {
+                    "group": "QBCore & Qbox Panel",
+                    "pages": [
+                      "cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel/dashboard",
+                      "cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel/players",
+                      "cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel/vehicles",
+                      "cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel/whitelist",
+                      "cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel/logs",
+                      "cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel/resources",
+                      "cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel/aces-and-principals",
+                      "cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel/characters",
+                      "cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel/items",
+                      "cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel/jobs",
+                      "cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel/gangs",
+                      "cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel/job-sync",
+                      "cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel/environment"
+                    ],
+                    "root": "cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel"
+                  },
+                  {
+                    "group": "vMenu Panel",
+                    "pages": [
+                      "cms/integration-capabilities/fivem-game-panel/vmenu-panel/dashboard",
+                      "cms/integration-capabilities/fivem-game-panel/vmenu-panel/players",
+                      "cms/integration-capabilities/fivem-game-panel/vmenu-panel/vehicles",
+                      "cms/integration-capabilities/fivem-game-panel/vmenu-panel/environment",
+                      "cms/integration-capabilities/fivem-game-panel/vmenu-panel/whitelist",
+                      "cms/integration-capabilities/fivem-game-panel/vmenu-panel/logs",
+                      "cms/integration-capabilities/fivem-game-panel/vmenu-panel/resources",
+                      "cms/integration-capabilities/fivem-game-panel/vmenu-panel/aces-and-principals"
+                    ],
+                    "root": "cms/integration-capabilities/fivem-game-panel/vmenu-panel"
+                  },
+                  {
+                    "group": "Troubleshooting",
+                    "pages": [
+                      "cms/integration-capabilities/fivem-game-panel/troubleshooting/error-codes"
+                    ],
+                    "root": "cms/integration-capabilities/fivem-game-panel/troubleshooting"
+                  }
+                ],
+                "root": "cms/integration-capabilities/fivem-game-panel"
+              },
+              {
+                "group": "ER:LC Game Panel",
+                "pages": [
+                  "cms/integration-capabilities/er-lc-game-panel/installation",
+                  {
+                    "group": "Usage",
+                    "pages": [
+                      "cms/integration-capabilities/er-lc-game-panel/usage/dashboard",
+                      "cms/integration-capabilities/er-lc-game-panel/usage/command-palette",
+                      "cms/integration-capabilities/er-lc-game-panel/usage/player-records",
+                      "cms/integration-capabilities/er-lc-game-panel/usage/vision",
+                      "cms/integration-capabilities/er-lc-game-panel/usage/moderation",
+                      "cms/integration-capabilities/er-lc-game-panel/usage/whitelist",
+                      "cms/integration-capabilities/er-lc-game-panel/usage/environment",
+                      "cms/integration-capabilities/er-lc-game-panel/usage/cms-integrations",
+                      "cms/integration-capabilities/er-lc-game-panel/usage/shifts-and-activity",
+                      "cms/integration-capabilities/er-lc-game-panel/usage/migration-import"
+                    ],
+                    "root": "cms/integration-capabilities/er-lc-game-panel/usage"
+                  },
+                  "cms/integration-capabilities/er-lc-game-panel/compare-to-other-providers"
+                ],
+                "root": "cms/integration-capabilities/er-lc-game-panel"
+              },
+              {
+                "group": "In-Game Integration Resources",
+                "pages": [
+                  {
+                    "group": "FiveM Installation",
+                    "pages": [
+                      "cms/integration-capabilities/in-game-integration-resources/core/free-plugin-installation-next-steps",
+                      {
+                        "group": "FiveM Submodules",
+                        "pages": [
+                          "cms/integration-capabilities/in-game-integration-resources/core/core-submodules/clock-in",
+                          "cms/integration-capabilities/in-game-integration-resources/core/core-submodules/ace-permission-sync",
+                          "cms/integration-capabilities/in-game-integration-resources/core/core-submodules/whitelist",
+                          "cms/integration-capabilities/in-game-integration-resources/core/core-submodules/job-sync"
+                        ],
+                        "root": "cms/integration-capabilities/in-game-integration-resources/core/core-submodules"
+                      }
+                    ],
+                    "root": "cms/integration-capabilities/in-game-integration-resources/core"
+                  },
+                  {
+                    "group": "Minecraft Integrations",
+                    "pages": [
+                      "cms/integration-capabilities/in-game-integration-resources/minecraft-integrations/minecraft-resource-installation",
+                      {
+                        "group": "Available Resources",
+                        "pages": [
+                          "cms/integration-capabilities/in-game-integration-resources/minecraft-integrations/available-resources/whitelist"
+                        ],
+                        "root": "cms/integration-capabilities/in-game-integration-resources/minecraft-integrations/available-resources"
+                      }
+                    ],
+                    "root": "cms/integration-capabilities/in-game-integration-resources/minecraft-integrations"
+                  },
+                  {
+                    "group": "Roblox Integrations",
+                    "pages": [
+                      "cms/integration-capabilities/in-game-integration-resources/roblox-integrations/roblox-resource-installation",
+                      {
+                        "group": "Available Resources",
+                        "pages": [
+                          "cms/integration-capabilities/in-game-integration-resources/roblox-integrations/available-resources/whitelist"
+                        ],
+                        "root": "cms/integration-capabilities/in-game-integration-resources/roblox-integrations/available-resources"
+                      }
+                    ],
+                    "root": "cms/integration-capabilities/in-game-integration-resources/roblox-integrations"
+                  },
+                  "cms/integration-capabilities/in-game-integration-resources/ip-whitelisting"
+                ],
+                "root": "cms/integration-capabilities/in-game-integration-resources"
+              }
+            ]
+          },
+          {
+            "group": "Developer API Documentation",
+            "pages": [
+              {
+                "group": "📖 API Integration",
+                "pages": [
+                  {
+                    "group": "Getting Started",
+                    "pages": [
+                      "cms/developer-api-documentation/api-integration/getting-started/retrieving-your-credentials",
+                      "cms/developer-api-documentation/api-integration/getting-started/api-id-system"
+                    ],
+                    "root": "cms/developer-api-documentation/api-integration/getting-started"
+                  },
+                  {
+                    "group": "Push Events",
+                    "pages": [
+                      "cms/developer-api-documentation/api-integration/push-events/account-updated",
+                      "cms/developer-api-documentation/api-integration/push-events/account-kicked",
+                      "cms/developer-api-documentation/api-integration/push-events/account-banned"
+                    ],
+                    "root": "cms/developer-api-documentation/api-integration/push-events"
+                  },
+                  {
+                    "group": "API Endpoints",
+                    "pages": [
+                      {
+                        "group": "General",
+                        "pages": [
+                          "cms/developer-api-documentation/api-integration/api-endpoints/general/get-sub-version",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/general/check-com-api-id",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/general/get-com-account",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/general/get-current-clock-in",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/general/get-accounts",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/general/get-departments",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/general/get-departments-1",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/general/get-account-ranks",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/general/set-account-ranks",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/general/clock-in-out",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/general/kick-account",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/general/ban-account",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/general/ban-account-1"
+                        ],
+                        "root": "cms/developer-api-documentation/api-integration/api-endpoints/general"
+                      },
+                      {
+                        "group": "Servers",
+                        "pages": [
+                          "cms/developer-api-documentation/api-integration/api-endpoints/servers/get-game-servers",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/servers/set-game-servers",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/servers/verify-whitelist",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/servers/full-whitelist",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/servers/activity-tracker-start-stop",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/servers/activity-tracker-server-start"
+                        ],
+                        "root": "cms/developer-api-documentation/api-integration/api-endpoints/servers"
+                      },
+                      {
+                        "group": "Events",
+                        "pages": [
+                          "cms/developer-api-documentation/api-integration/api-endpoints/events/rsvp"
+                        ],
+                        "root": "cms/developer-api-documentation/api-integration/api-endpoints/events"
+                      },
+                      {
+                        "group": "Rosters",
+                        "pages": [
+                          "cms/developer-api-documentation/api-integration/api-endpoints/rosters/get-roster-contents"
+                        ],
+                        "root": "cms/developer-api-documentation/api-integration/api-endpoints/rosters"
+                      },
+                      {
+                        "group": "Disciplinary",
+                        "pages": [
+                          "cms/developer-api-documentation/api-integration/api-endpoints/disciplinary/get-member-points",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/disciplinary/get-roster-contents",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/disciplinary/add-member-record",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/disciplinary/add-member-record-1",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/disciplinary/add-member-record-2"
+                        ],
+                        "root": "cms/developer-api-documentation/api-integration/api-endpoints/disciplinary"
+                      },
+                      {
+                        "group": "Forms",
+                        "pages": [
+                          "cms/developer-api-documentation/api-integration/api-endpoints/forms/get-form-submissions",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/forms/get-form-lock-status",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/forms/set-form-lock-status"
+                        ],
+                        "root": "cms/developer-api-documentation/api-integration/api-endpoints/forms"
+                      },
+                      {
+                        "group": "Sessions",
+                        "pages": [
+                          "cms/developer-api-documentation/api-integration/api-endpoints/sessions/get-current-session",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/sessions/start-session",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/sessions/stop-session",
+                          "cms/developer-api-documentation/api-integration/api-endpoints/sessions/cancel-session"
+                        ],
+                        "root": "cms/developer-api-documentation/api-integration/api-endpoints/sessions"
+                      }
+                    ]
+                  },
+                  {
+                    "group": "API Endpoints V2",
+                    "pages": [
+                      "cms/developer-api-documentation/api-integration/api-endpoints-v2/libraries",
+                      {
+                        "group": "General",
+                        "pages": [
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-community",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-sub-version",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/general/lookup-community",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-departments",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-profile-fields",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-clockin-types",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-custom-log-types",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-promotion-flows",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/general/trigger-promotion-flows",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/general/undo-rank-change",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/general/create-short-url"
+                        ],
+                        "root": "cms/developer-api-documentation/api-integration/api-endpoints-v2/general"
+                      },
+                      {
+                        "group": "Accounts",
+                        "pages": [
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/get-accounts",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/search-accounts",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/get-account",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/get-account-ranks",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/get-account-identifiers",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/register-identifiers",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/set-account-name",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/set-account-ranks",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/edit-profile-fields",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/clock-account",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/get-current-clock-in",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/get-latest-activity",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/force-sync"
+                        ],
+                        "root": "cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts"
+                      },
+                      {
+                        "group": "Servers",
+                        "pages": [
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/get-servers",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/set-servers",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/add-servers",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/get-ace-config",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/set-ace-config",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/set-server-type",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/verify-whitelist",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/full-whitelist",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/activity-tracker",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/activity-tracker-server-start"
+                        ],
+                        "root": "cms/developer-api-documentation/api-integration/api-endpoints-v2/servers"
+                      },
+                      {
+                        "group": "Events",
+                        "pages": [
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/events/rsvp"
+                        ],
+                        "root": "cms/developer-api-documentation/api-integration/api-endpoints-v2/events"
+                      },
+                      {
+                        "group": "Forms",
+                        "pages": [
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/forms/change-stage",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/forms/get-template-submissions",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/forms/get-lock-status",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/forms/set-lock-status",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/forms/get-submission"
+                        ],
+                        "root": "cms/developer-api-documentation/api-integration/api-endpoints-v2/forms"
+                      },
+                      {
+                        "group": "Rosters",
+                        "pages": [
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/rosters/get-roster-contents"
+                        ],
+                        "root": "cms/developer-api-documentation/api-integration/api-endpoints-v2/rosters"
+                      },
+                      {
+                        "group": "Disciplinary",
+                        "pages": [
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary/get-member-points",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary/get-member-records",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary/add-member-record",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary/update-member-record-points",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary/update-member-record-reason",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary/update-member-record-status"
+                        ],
+                        "root": "cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary"
+                      },
+                      {
+                        "group": "ERLC",
+                        "pages": [
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/erlc/get-online-players",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/erlc/get-player-queue",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/erlc/add-record",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/erlc/execute-command",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/erlc/lock-team",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/erlc/unlock-team"
+                        ],
+                        "root": "cms/developer-api-documentation/api-integration/api-endpoints-v2/erlc"
+                      },
+                      {
+                        "group": "Sessions",
+                        "pages": [
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/sessions/get-current-session",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/sessions/start-session",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/sessions/stop-session",
+                          "cms/developer-api-documentation/api-integration/api-endpoints-v2/sessions/cancel-session"
+                        ],
+                        "root": "cms/developer-api-documentation/api-integration/api-endpoints-v2/sessions"
+                      },
+                      "cms/developer-api-documentation/api-integration/api-endpoints-v2/rate-limits"
+                    ],
+                    "root": "cms/developer-api-documentation/api-integration/api-endpoints-v2"
+                  },
+                  "cms/developer-api-documentation/api-integration/development-branch"
+                ],
+                "root": "cms/developer-api-documentation/api-integration"
+              }
+            ]
+          },
+          {
+            "group": "Roadmap",
+            "pages": [
+              {
+                "group": "Roadmap & Changelog",
+                "pages": [
+                  "cms/roadmap/roadmap-and-changelog/changelog"
+                ],
+                "root": "cms/roadmap/roadmap-and-changelog"
+              }
+            ]
+          },
+          {
+            "group": "Pricing",
+            "pages": [
+              {
+                "group": "Pricing FAQ",
+                "pages": [
+                  "cms/pricing/pricing-faq/branding-removal",
+                  "cms/pricing/pricing-faq/accessing-the-payment-center",
+                  "cms/pricing/pricing-faq/create-and-manage-a-subscription",
+                  "cms/pricing/pricing-faq/request-discord-role"
+                ],
+                "root": "cms/pricing/pricing-faq"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Radio",
+        "icon": "walkie-talkie",
+        "groups": [
+          {
+            "group": "Start here",
+            "pages": [
+              "radio",
+              "radio/download-the-app"
+            ]
+          },
+          {
+            "group": "Tutorials",
+            "pages": [
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "radio/tutorials/getting-started/register-a-community",
+                  "radio/tutorials/getting-started/invite-and-manage-users",
+                  "radio/tutorials/getting-started/configure-game-integration",
+                  "radio/tutorials/getting-started/transfer-or-delete-a-community"
+                ],
+                "root": "radio/tutorials/getting-started"
+              },
+              {
+                "group": "Using Sonoran Radio",
+                "pages": [
+                  {
+                    "group": "Dispatch & Admin Panel",
+                    "pages": [
+                      "radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel",
+                      "radio/tutorials/usage/dispatch-panel/configure-channels",
+                      "radio/tutorials/usage/dispatch-panel/custom-voice-effects",
+                      "radio/tutorials/usage/dispatch-panel/custom-sfx",
+                      "radio/tutorials/usage/dispatch-panel/custom-tone-board",
+                      "radio/tutorials/usage/dispatch-panel/emergency-calls",
+                      "radio/tutorials/usage/dispatch-panel/transmission-logs",
+                      "radio/tutorials/usage/dispatch-panel/default-user-settings",
+                      "radio/tutorials/usage/dispatch-panel/multi-server",
+                      "radio/tutorials/usage/dispatch-panel/custom-domain-vanity-url",
+                      "radio/tutorials/usage/dispatch-panel/logging"
+                    ],
+                    "root": "radio/tutorials/usage/dispatch-panel"
+                  },
+                  {
+                    "group": "Radio Overlay",
+                    "pages": [
+                      "radio/tutorials/usage/desktop-overlay/overlay-ai",
+                      "radio/tutorials/usage/desktop-overlay/changing-radio-frames"
+                    ],
+                    "root": "radio/tutorials/usage/desktop-overlay"
+                  },
+                  "radio/tutorials/usage/dispatch-ai",
+                  {
+                    "group": "Troubleshooting",
+                    "pages": [
+                      "radio/tutorials/usage/troubleshooting/error-codes",
+                      "radio/tutorials/usage/troubleshooting/client-debug-mode",
+                      "radio/tutorials/usage/troubleshooting/browser-microphone-permissions",
+                      "radio/tutorials/usage/troubleshooting/mac-keybinds",
+                      "radio/tutorials/usage/troubleshooting/device-in-use",
+                      "radio/tutorials/usage/troubleshooting/read-and-write-permissions",
+                      "radio/tutorials/usage/troubleshooting/windows-app-volume",
+                      "radio/tutorials/usage/troubleshooting/system-microphone-volume-changing"
+                    ],
+                    "root": "radio/tutorials/usage/troubleshooting"
+                  }
+                ],
+                "root": "radio/tutorials/usage"
+              },
+              {
+                "group": "Other Integrations",
+                "pages": [
+                  "radio/tutorials/integrations/stream-deck-plugin",
+                  "radio/tutorials/integrations/sonoran-cad-integration",
+                  {
+                    "group": "Discord",
+                    "pages": [
+                      "radio/tutorials/integrations/discord-bot-integration/role-sync"
+                    ],
+                    "root": "radio/tutorials/integrations/discord-bot-integration"
+                  },
+                  "radio/tutorials/integrations/sonoran-cms"
+                ],
+                "root": "radio/tutorials/integrations"
+              }
+            ]
+          },
+          {
+            "group": "Game Integrations",
+            "pages": [
+              "radio/game-integrations/game-integrations",
+              {
+                "group": "FiveM",
+                "pages": [
+                  "radio/game-integrations/fivem/fivem",
+                  "radio/game-integrations/fivem/installing-the-in-game-resource",
+                  {
+                    "group": "In-Game Radio",
+                    "pages": [
+                      {
+                        "group": "Using the In-Game Radio",
+                        "pages": [
+                          "radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands"
+                        ],
+                        "root": "radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio"
+                      },
+                      "radio/game-integrations/fivem/in-game-radio/customizing-radio-frames",
+                      "radio/game-integrations/fivem/in-game-radio/fivem",
+                      "radio/game-integrations/fivem/in-game-radio/hear-nearby-radio-chatter",
+                      "radio/game-integrations/fivem/in-game-radio/pursuit-callouts",
+                      "radio/game-integrations/fivem/in-game-radio/radio-scanners",
+                      "radio/game-integrations/fivem/in-game-radio/radio-jammers",
+                      "radio/game-integrations/fivem/in-game-radio/in-game-repeaters",
+                      "radio/game-integrations/fivem/in-game-radio/geo-channels",
+                      "radio/game-integrations/fivem/in-game-radio/tunnels-and-degrade-zones",
+                      "radio/game-integrations/fivem/in-game-radio/in-game-speakers",
+                      "radio/game-integrations/fivem/in-game-radio/connected-users-list",
+                      "radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions",
+                      "radio/game-integrations/fivem/in-game-radio/ip-whitelisting",
+                      "radio/game-integrations/fivem/in-game-radio/background-audio-injection",
+                      "radio/game-integrations/fivem/in-game-radio/tablet"
+                    ],
+                    "root": "radio/game-integrations/fivem/in-game-radio"
+                  },
+                  "radio/game-integrations/fivem/vehicle-radio-display",
+                  "radio/game-integrations/fivem/big-daddy-radio-animations",
+                  "radio/game-integrations/fivem/fivem-inventories",
+                  "radio/game-integrations/fivem/fivem-phone-scripts",
+                  {
+                    "group": "FiveM Troubleshooting",
+                    "pages": [
+                      "radio/game-integrations/fivem/troubleshooting/in-game-microphone-not-working",
+                      "radio/game-integrations/fivem/troubleshooting/set-mic-in-game-for-radio",
+                      "radio/game-integrations/fivem/troubleshooting/in-game-volume-too-low",
+                      "radio/game-integrations/fivem/troubleshooting/in-game-timeouts"
+                    ],
+                    "root": "radio/game-integrations/fivem/troubleshooting"
+                  }
+                ],
+                "root": "radio/game-integrations/fivem"
+              },
+              {
+                "group": "ER:LC (Roblox)",
+                "pages": [
+                  "radio/game-integrations/roblox/erlc",
+                  "radio/game-integrations/roblox/erlc-setup",
+                  "radio/game-integrations/roblox/erlc-1",
+                  "radio/game-integrations/roblox/erlc-signal-towers"
+                ],
+                "root": "radio/game-integrations/roblox"
+              },
+              {
+                "group": "Arma 3 Integration",
+                "pages": [
+                  "radio/game-integrations/arma-3/arma-3",
+                  "radio/game-integrations/arma-3/install-and-connect",
+                  "radio/game-integrations/arma-3/signal-towers-and-repeaters",
+                  "radio/game-integrations/arma-3/radio-items-and-team-frames",
+                  "radio/game-integrations/arma-3/ai-hearing",
+                  "radio/game-integrations/arma-3/mission-maker-api",
+                  "radio/game-integrations/arma-3/troubleshooting"
+                ],
+                "root": "radio/game-integrations/arma-3"
+              },
+              "radio/game-integrations/star-citizen"
+            ]
+          },
+          {
+            "group": "Pricing",
+            "pages": [
+              {
+                "group": "Pricing FAQ",
+                "pages": [
+                  "radio/pricing/pricing-faq/standalone-pricing"
+                ],
+                "root": "radio/pricing/pricing-faq"
+              }
+            ]
+          },
+          {
+            "group": "Roadmap & Changelog <a href=\"#roadmap\" id=\"roadmap\"></a>",
+            "pages": [
+              {
+                "group": "Roadmap & Changelog",
+                "pages": [
+                  "radio/roadmap/roadmap-and-changelog/changelog",
+                  "radio/roadmap/roadmap-and-changelog/migration-guides"
+                ],
+                "root": "radio/roadmap/roadmap-and-changelog"
+              }
+            ]
+          },
+          {
+            "group": "Developer Documentation",
+            "pages": [
+              {
+                "group": "Developer Documentation",
+                "pages": [
+                  "radio/developer-documentation/developer-documentation/open-source-contributions",
+                  "radio/developer-documentation/developer-documentation/resource-events",
+                  "radio/developer-documentation/developer-documentation/stream-deck-api",
+                  {
+                    "group": "API Endpoints v1",
+                    "pages": [
+                      "radio/developer-documentation/developer-documentation/api-endpoints/node-library",
+                      "radio/developer-documentation/developer-documentation/api-endpoints/data-structures",
+                      {
+                        "group": "Users",
+                        "pages": [
+                          "radio/developer-documentation/developer-documentation/api-endpoints/users/get-connected-users",
+                          "radio/developer-documentation/developer-documentation/api-endpoints/users/get-connected-user",
+                          "radio/developer-documentation/developer-documentation/api-endpoints/users/approve-members",
+                          "radio/developer-documentation/developer-documentation/api-endpoints/users/kick-members",
+                          "radio/developer-documentation/developer-documentation/api-endpoints/users/ban-members",
+                          "radio/developer-documentation/developer-documentation/api-endpoints/users/set-member-permissions",
+                          "radio/developer-documentation/developer-documentation/api-endpoints/users/set-member-display-names",
+                          "radio/developer-documentation/developer-documentation/api-endpoints/users/set-user-channels",
+                          "radio/developer-documentation/developer-documentation/api-endpoints/users/set-user-display-name"
+                        ],
+                        "root": "radio/developer-documentation/developer-documentation/api-endpoints/users"
+                      },
+                      {
+                        "group": "Channels",
+                        "pages": [
+                          "radio/developer-documentation/developer-documentation/api-endpoints/channels/get-community-channels",
+                          "radio/developer-documentation/developer-documentation/api-endpoints/channels/play-tone"
+                        ],
+                        "root": "radio/developer-documentation/developer-documentation/api-endpoints/channels"
+                      },
+                      {
+                        "group": "Community Server",
+                        "pages": [
+                          "radio/developer-documentation/developer-documentation/api-endpoints/community-server/set-server-ip",
+                          "radio/developer-documentation/developer-documentation/api-endpoints/community-server/get-server-subscription-from-ip",
+                          "radio/developer-documentation/developer-documentation/api-endpoints/community-server/set-in-game-speaker-locations"
+                        ],
+                        "root": "radio/developer-documentation/developer-documentation/api-endpoints/community-server"
+                      }
+                    ]
+                  },
+                  {
+                    "group": "API Endpoints v2",
+                    "pages": [
+                      "radio/developer-documentation/developer-documentation/api-endpoints-v2/retrieving-your-credentials",
+                      "radio/developer-documentation/developer-documentation/api-endpoints-v2/libraries",
+                      "radio/developer-documentation/developer-documentation/api-endpoints-v2/authentication",
+                      {
+                        "group": "Users",
+                        "pages": [
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/users/get-connected-users",
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/users/get-members",
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/users/get-connected-user",
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/users/approve-members",
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/users/kick-members",
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/users/ban-members",
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/users/unban-members",
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/users/set-member-permissions",
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/users/set-member-display-names",
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/users/set-user-channels",
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/users/set-user-display-name"
+                        ],
+                        "root": "radio/developer-documentation/developer-documentation/api-endpoints-v2/users"
+                      },
+                      {
+                        "group": "Channels",
+                        "pages": [
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/channels/get-community-channels",
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/channels/get-transmissions",
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/channels/play-tone"
+                        ],
+                        "root": "radio/developer-documentation/developer-documentation/api-endpoints-v2/channels"
+                      },
+                      {
+                        "group": "Community Server",
+                        "pages": [
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/community-server/get-server-info",
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/community-server/set-server-ip",
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/community-server/get-server-subscription-from-ip",
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/community-server/set-in-game-speaker-locations",
+                          "radio/developer-documentation/developer-documentation/api-endpoints-v2/community-server/manage-zones"
+                        ],
+                        "root": "radio/developer-documentation/developer-documentation/api-endpoints-v2/community-server"
+                      }
+                    ],
+                    "root": "radio/developer-documentation/developer-documentation/api-endpoints-v2"
+                  },
+                  {
+                    "group": "Push Events",
+                    "pages": [
+                      "radio/developer-documentation/developer-documentation/push-events/play-tone",
+                      "radio/developer-documentation/developer-documentation/push-events/user-connected"
+                    ],
+                    "root": "radio/developer-documentation/developer-documentation/push-events"
+                  },
+                  "radio/developer-documentation/developer-documentation/development-branch"
+                ],
+                "root": "radio/developer-documentation/developer-documentation"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Bot",
+        "icon": "robot",
+        "groups": [
+          {
+            "group": "Start here",
+            "pages": [
+              "bot"
+            ]
+          },
+          {
+            "group": "Tutorials",
+            "pages": [
+              "bot/tutorials/getting-started",
+              "bot/tutorials/discord-role-sync",
+              {
+                "group": "Sonoran CMS Integration",
+                "pages": [
+                  "bot/tutorials/sonoran-cms-integration/account-link",
+                  {
+                    "group": "Role Mapping",
+                    "pages": [
+                      "bot/tutorials/sonoran-cms-integration/role-mapping/discord-sync-logic"
+                    ],
+                    "root": "bot/tutorials/sonoran-cms-integration/role-mapping"
+                  },
+                  "bot/tutorials/sonoran-cms-integration/import-discord-roles",
+                  "bot/tutorials/sonoran-cms-integration/promotion-flows",
+                  "bot/tutorials/sonoran-cms-integration/calendar-event-sync"
+                ],
+                "root": "bot/tutorials/sonoran-cms-integration"
+              },
+              "bot/tutorials/sonoran-cad-integration",
+              "bot/tutorials/sonoran-radio-integration",
+              {
+                "group": "Usage",
+                "pages": [
+                  "bot/tutorials/usage/settings",
+                  "bot/tutorials/usage/commands",
+                  "bot/tutorials/usage/tickets",
+                  "bot/tutorials/usage/moderation"
+                ],
+                "root": "bot/tutorials/usage"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Store",
+        "icon": "bag-shopping",
+        "groups": [
+          {
+            "group": "Start here",
+            "pages": [
+              "store"
+            ]
+          },
+          {
+            "group": "General",
+            "pages": [
+              "store/general/information",
+              "store/general/tebex-assets",
+              "store/general/gun-placement",
+              "store/five-bundle",
+              {
+                "group": "🏧 ATM Robbery",
+                "pages": [
+                  "store/atm-robbery/getting-started",
+                  "store/atm-robbery/advanced-docs"
+                ],
+                "root": "store/atm-robbery"
+              },
+              {
+                "group": "🧣 Bandanas",
+                "pages": [
+                  "store/bandanas/installation"
+                ],
+                "root": "store/bandanas"
+              },
+              {
+                "group": "🦺 Safety Vests",
+                "pages": [
+                  "store/safety-vests/installation"
+                ],
+                "root": "store/safety-vests"
+              },
+              {
+                "group": "👗 Short Slip Dress",
+                "pages": [
+                  "store/short-slip-dress/installation"
+                ],
+                "root": "store/short-slip-dress"
+              },
+              {
+                "group": "🧣 Scarf",
+                "pages": [
+                  "store/scarf/installation"
+                ],
+                "root": "store/scarf"
+              },
+              {
+                "group": "📹 CCTV",
+                "pages": [
+                  "store/cctv/installation",
+                  "store/cctv/configuration",
+                  "store/cctv/camera-setup",
+                  "store/cctv/playback",
+                  "store/cctv/permissions",
+                  "store/cctv/developer-api",
+                  "store/cctv/troubleshooting"
+                ],
+                "root": "store/cctv"
+              },
+              {
+                "group": "🚓 Dashcam",
+                "pages": [
+                  "store/dashcam/installation",
+                  "store/dashcam/configuration",
+                  "store/dashcam/vehicle-setup",
+                  "store/dashcam/recording",
+                  "store/dashcam/playback",
+                  "store/dashcam/permissions",
+                  "store/dashcam/developer-api",
+                  "store/dashcam/troubleshooting"
+                ],
+                "root": "store/dashcam"
+              },
+              {
+                "group": "🎥 Bodycam",
+                "pages": [
+                  "store/bodycam/installation",
+                  "store/bodycam/configuration",
+                  "store/bodycam/wearer-setup",
+                  "store/bodycam/recording",
+                  "store/bodycam/playback",
+                  "store/bodycam/permissions",
+                  "store/bodycam/developer-api",
+                  "store/bodycam/troubleshooting"
+                ],
+                "root": "store/bodycam"
+              },
+              {
+                "group": "📸 Evidence Camera",
+                "pages": [
+                  "store/evidence-camera/getting-started",
+                  "store/evidence-camera/advanced-docs"
+                ],
+                "root": "store/evidence-camera"
+              },
+              {
+                "group": "🚛 Mobile Command Center",
+                "pages": [
+                  "store/mcc/getting-started",
+                  "store/mcc/advanced-docs"
+                ],
+                "root": "store/mcc"
+              },
+              {
+                "group": "🗒️ Sonoran Notepad",
+                "pages": [
+                  "store/sonoran-notepad/installation",
+                  "store/sonoran-notepad/usage-and-sync",
+                  "store/sonoran-notepad/troubleshooting"
+                ],
+                "root": "store/sonoran-notepad"
+              },
+              {
+                "group": "⚡ Power Grid",
+                "pages": [
+                  "store/power-grid/getting-started",
+                  "store/power-grid/advanced-documentation"
+                ],
+                "root": "store/power-grid"
+              },
+              {
+                "group": "📶 Radar Detector / Jammer",
+                "pages": [
+                  "store/radar-detector/getting-started"
+                ],
+                "root": "store/radar-detector"
+              },
+              {
+                "group": "📟 Radar Display",
+                "pages": [
+                  "store/radar-display/getting-started"
+                ],
+                "root": "store/radar-display"
+              },
+              {
+                "group": "🖥️ Sonoran Station Displays",
+                "pages": [
+                  "store/sonoran-station-displays/installation",
+                  "store/sonoran-station-displays/updating",
+                  "store/sonoran-station-displays/configuration",
+                  "store/sonoran-station-displays/permissions",
+                  "store/sonoran-station-displays/display-management",
+                  "store/sonoran-station-displays/display-pages",
+                  "store/sonoran-station-displays/active-units",
+                  "store/sonoran-station-displays/calls",
+                  "store/sonoran-station-displays/live-map",
+                  "store/sonoran-station-displays/bodycams",
+                  "store/sonoran-station-displays/in-game-clock",
+                  "store/sonoran-station-displays/sonorancad-integration",
+                  "store/sonoran-station-displays/administrative-webhooks",
+                  "store/sonoran-station-displays/persistence",
+                  "store/sonoran-station-displays/performance",
+                  "store/sonoran-station-displays/diagnostics",
+                  "store/sonoran-station-displays/troubleshooting",
+                  "store/sonoran-station-displays/developer-api",
+                  "store/sonoran-station-displays/dui-message-protocol",
+                  "store/sonoran-station-displays/changelog"
+                ],
+                "root": "store/sonoran-station-displays"
+              },
+              {
+                "group": "🛣️ Sonoran Street Signs",
+                "pages": [
+                  "store/street-signs/getting-started",
+                  "store/street-signs/configuration-reference",
+                  "store/street-signs/permissions",
+                  "store/street-signs/commands-and-usage",
+                  "store/street-signs/integrations-and-webhooks",
+                  "store/street-signs/faq-and-troubleshooting"
+                ],
+                "root": "store/street-signs"
+              },
+              {
+                "group": "🔫 Shot Spotter",
+                "pages": [
+                  "store/shot-spotter/getting-started",
+                  "store/shot-spotter/advanced-docs"
+                ],
+                "root": "store/shot-spotter"
+              },
+              {
+                "group": "📹 Speed Cameras / ALPR",
+                "pages": [
+                  "store/speed-camera/getting-started",
+                  "store/speed-camera/advanced-docs"
+                ],
+                "root": "store/speed-camera"
+              },
+              {
+                "group": "🚗 Traffic Engine",
+                "pages": [
+                  "store/traffic-engine/getting-started",
+                  "store/traffic-engine/advanced-documentation"
+                ],
+                "root": "store/traffic-engine"
+              }
+            ]
+          },
+          {
+            "group": "Other",
+            "pages": [
+              "store/other/policy"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Studio",
+        "icon": "clapperboard",
+        "groups": [
+          {
+            "group": "Start here",
+            "pages": [
+              "studio",
+              "studio/downloads"
+            ]
+          },
+          {
+            "group": "Tutorials",
+            "pages": [
+              "studio/tutorials/stream-widgets",
+              "studio/tutorials/smart-lighting",
+              "studio/tutorials/stream-automations"
+            ]
+          },
+          {
+            "group": "Pricing",
+            "pages": [
+              "studio/pricing/pricing"
+            ]
+          },
+          {
+            "group": "Developer Documentation",
+            "pages": [
+              "studio/developer-documentation/developer-documentation"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "https://support.sonoransoftware.com"
+      },
+      {
+        "label": "Website",
+        "href": "https://sonoransoftware.com"
+      }
+    ]
+  },
+  "seo": {
+    "indexing": "all",
+    "metatags": {
+      "robots": "noindex, follow",
+      "canonical": "https://docs.sonoransoftware.com"
+    }
+  },
+  "redirects": [
+    {
+      "source": "/cad/integration-plugins/discord-rich-presence",
+      "destination": "/cad/integration-plugins/discord-bot-integration/discord-rich-presence"
+    },
+    {
+      "source": "/cad/integration-plugins/discord-webhooks",
+      "destination": "/cad/integration-plugins/discord-bot-integration/discord-webhooks"
+    },
+    {
+      "source": "/cad/integration-plugins/discord/role-sync",
+      "destination": "/cad/integration-plugins/discord-bot-integration/role-sync"
+    },
+    {
+      "source": "/radio/tutorials/game-integrations",
+      "destination": "/radio/game-integrations/game-integrations"
+    },
+    {
+      "source": "/radio/tutorials/game-integrations/fivem",
+      "destination": "/radio/game-integrations/fivem"
+    },
+    {
+      "source": "/radio/tutorials/game-integrations/fivem/troubleshooting",
+      "destination": "/radio/game-integrations/fivem/troubleshooting"
+    },
+    {
+      "source": "/radio/tutorials/game-integrations/roblox",
+      "destination": "/radio/game-integrations/roblox"
+    },
+    {
+      "source": "/radio/tutorials/game-integrations/roblox/erlc-setup",
+      "destination": "/radio/game-integrations/roblox/erlc-setup"
+    },
+    {
+      "source": "/radio/tutorials/game-integrations/star-citizen",
+      "destination": "/radio/game-integrations/star-citizen"
+    },
+    {
+      "source": "/radio/tutorials/getting-started/installing-the-in-game-resource",
+      "destination": "/radio/game-integrations/fivem/installing-the-in-game-resource"
+    },
+    {
+      "source": "/radio/tutorials/integrations/arma-3",
+      "destination": "/radio/game-integrations/arma-3"
+    },
+    {
+      "source": "/radio/tutorials/integrations/arma-3/ai-hearing",
+      "destination": "/radio/game-integrations/arma-3/ai-hearing"
+    },
+    {
+      "source": "/radio/tutorials/integrations/arma-3/install-and-connect",
+      "destination": "/radio/game-integrations/arma-3/install-and-connect"
+    },
+    {
+      "source": "/radio/tutorials/integrations/arma-3/mission-maker-api",
+      "destination": "/radio/game-integrations/arma-3/mission-maker-api"
+    },
+    {
+      "source": "/radio/tutorials/integrations/arma-3/radio-items-and-team-frames",
+      "destination": "/radio/game-integrations/arma-3/radio-items-and-team-frames"
+    },
+    {
+      "source": "/radio/tutorials/integrations/arma-3/signal-towers-and-repeaters",
+      "destination": "/radio/game-integrations/arma-3/signal-towers-and-repeaters"
+    },
+    {
+      "source": "/radio/tutorials/integrations/arma-3/troubleshooting",
+      "destination": "/radio/game-integrations/arma-3/troubleshooting"
+    },
+    {
+      "source": "/radio/tutorials/integrations/big-daddy-radio-animations",
+      "destination": "/radio/game-integrations/fivem/big-daddy-radio-animations"
+    },
+    {
+      "source": "/radio/tutorials/integrations/discord/role-sync",
+      "destination": "/radio/tutorials/integrations/discord-bot-integration/role-sync"
+    },
+    {
+      "source": "/radio/tutorials/integrations/dispatch-ai",
+      "destination": "/radio/tutorials/usage/dispatch-ai"
+    },
+    {
+      "source": "/radio/tutorials/integrations/dispatch-ai/arma-3",
+      "destination": "/radio/game-integrations/arma-3/arma-3"
+    },
+    {
+      "source": "/radio/tutorials/integrations/dispatch-ai/erlc",
+      "destination": "/radio/game-integrations/roblox/erlc"
+    },
+    {
+      "source": "/radio/tutorials/integrations/dispatch-ai/fivem",
+      "destination": "/radio/game-integrations/fivem/fivem"
+    },
+    {
+      "source": "/radio/tutorials/integrations/fivem-inventories",
+      "destination": "/radio/game-integrations/fivem/fivem-inventories"
+    },
+    {
+      "source": "/radio/tutorials/integrations/fivem-phone-scripts",
+      "destination": "/radio/game-integrations/fivem/fivem-phone-scripts"
+    },
+    {
+      "source": "/radio/tutorials/integrations/vehicle-radio-display",
+      "destination": "/radio/game-integrations/fivem/vehicle-radio-display"
+    },
+    {
+      "source": "/radio/tutorials/usage/changing-radio-frames",
+      "destination": "/radio/tutorials/usage/desktop-overlay/changing-radio-frames"
+    },
+    {
+      "source": "/radio/tutorials/usage/changing-radio-frames/erlc",
+      "destination": "/radio/game-integrations/roblox/erlc-1"
+    },
+    {
+      "source": "/radio/tutorials/usage/changing-radio-frames/fivem",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/fivem"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio",
+      "destination": "/radio/game-integrations/fivem/in-game-radio"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/background-audio-injection",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/background-audio-injection"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/configuring-ace-permissions",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/connected-users-list",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/connected-users-list"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/customizing-radio-frames",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/customizing-radio-frames"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/erlc-signal-towers",
+      "destination": "/radio/game-integrations/roblox/erlc-signal-towers"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/geo-channels",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/geo-channels"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/hear-nearby-radio-chatter",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/hear-nearby-radio-chatter"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/in-game-repeaters",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/in-game-repeaters"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/in-game-speakers",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/in-game-speakers"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/ip-whitelisting",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/ip-whitelisting"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/pursuit-callouts",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/pursuit-callouts"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/radio-jammers",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/radio-jammers"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/radio-scanners",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/radio-scanners"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/tablet",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/tablet"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/tunnels-and-degrade-zones",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/tunnels-and-degrade-zones"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/using-the-in-game-radio",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio"
+    },
+    {
+      "source": "/radio/tutorials/usage/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands",
+      "destination": "/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands"
+    },
+    {
+      "source": "/radio/tutorials/usage/overlay-ai",
+      "destination": "/radio/tutorials/usage/desktop-overlay/overlay-ai"
+    },
+    {
+      "source": "/radio/tutorials/usage/troubleshooting/in-game-microphone-not-working",
+      "destination": "/radio/game-integrations/fivem/troubleshooting/in-game-microphone-not-working"
+    },
+    {
+      "source": "/radio/tutorials/usage/troubleshooting/in-game-timeouts",
+      "destination": "/radio/game-integrations/fivem/troubleshooting/in-game-timeouts"
+    },
+    {
+      "source": "/radio/tutorials/usage/troubleshooting/in-game-volume-too-low",
+      "destination": "/radio/game-integrations/fivem/troubleshooting/in-game-volume-too-low"
+    },
+    {
+      "source": "/radio/tutorials/usage/troubleshooting/set-mic-in-game-for-radio",
+      "destination": "/radio/game-integrations/fivem/troubleshooting/set-mic-in-game-for-radio"
+    },
+    {
+      "source": "/studio/sonoran-studio/developer-documentation",
+      "destination": "/studio/developer-documentation/developer-documentation"
+    },
+    {
+      "source": "/studio/sonoran-studio/downloads",
+      "destination": "/studio/downloads"
+    },
+    {
+      "source": "/studio/sonoran-studio/pricing",
+      "destination": "/studio/pricing/pricing"
+    },
+    {
+      "source": "/studio/sonoran-studio/smart-lighting",
+      "destination": "/studio/tutorials/smart-lighting"
+    },
+    {
+      "source": "/studio/sonoran-studio/stream-automations",
+      "destination": "/studio/tutorials/stream-automations"
+    },
+    {
+      "source": "/studio/sonoran-studio/stream-widgets",
+      "destination": "/studio/tutorials/stream-widgets"
+    }
+  ]
+}

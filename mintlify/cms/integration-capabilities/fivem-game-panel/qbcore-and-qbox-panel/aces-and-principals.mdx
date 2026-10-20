@@ -1,0 +1,36 @@
+---
+title: Aces & Principals
+description: Easily grant ACE Permissions to users directly from CMS.
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/f0/f0da288a104d9ac12c0fc5406876a03f5f3ac39fb0ee1116ee5596ea1b79180d.png" alt="" />
+
+*Sonoran CMS - QBCore Game Panel Promotional Image*
+
+
+
+## Setup {#setup}
+
+Ensure you have the following in your `server.cfg` (if you don't permissions won't be able to be granted)
+
+```
+add_ace resource.sonorancms command allow
+```
+
+## Mapping Ranks to ACE Principal Identifiers {#mapping-ranks-to-ace-principal-identifiers}
+
+You can select the ranks you would like and input the principal identifier you would like to grant them. This makes it easy to grant users in-game permissions en masse.
+
+
+
+<img src="https://i.imgur.com/j5XTpYT.png" alt="" />
+
+*Sonoran CMS -QBCore Game Panel - Aces & Principals*
+
+
+
+You can further customize the permissions each Principal group receives in your `server.cfg`, make sure to follow the conventions outlined in [this guide](https://forum.cfx.re/t/basic-aces-principals-overview-guide/90917).
+
+Additionally, ensure all players have added their [API ID](/cms/developer-api-documentation/api-integration/getting-started/api-id-system) to the CMS.
+
+For more details, read our documentation on the "Ace Permission Sync" module for CMS Core [here](/cms/integration-capabilities/in-game-integration-resources/core/core-submodules/ace-permission-sync).

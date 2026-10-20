@@ -1,0 +1,166 @@
+---
+title: Whitelist
+description: A whitelist system that utilizes Sonoran CMS's game whitelist system.
+---
+
+<Info>
+
+All players of your server must have their [API ID](/cms/developer-api-documentation/api-integration/getting-started/api-id-system) setup and must be given a rank that has whitelist permissions for the specified server.
+</Info>
+
+<Check>
+
+Looking for VPS, web, or dedicated hosting? Check out our official [server hosting](https://github.com/Sonoran-Software/SonoranCMS-Documentation/blob/master/integration-capabilities/in-game-integration-resources/minecraft-integrations/available-resources/broken-reference/README.md)!
+</Check>
+
+This resource is a whitelist system that utilizes Sonoran CMS's game whitelist system by checking against that whitelist upon each player connection.
+
+
+
+<iframe src="https://www.youtube-nocookie.com/embed/4PAtKYQokXE" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+
+## Installation {#installation}
+
+### 1. Download the Resource {#id-1.-download-the-resource}
+
+<Tabs>
+<Tab title="Forge">
+
+You can download a copy [here](https://github.com/Sonoran-Software/Sonoran-CMS-Minecraft-Integration/releases/tag/1.0.0).
+
+Ensure that you download the one that has `forge` in the name.
+
+</Tab>
+
+<Tab title="Fabric">
+
+You can download a copy [here](https://github.com/Sonoran-Software/Sonoran-CMS-Minecraft-Integration/releases/tag/1.0.0).
+
+Ensure that you download the one that has `fabric` in the name.
+
+</Tab>
+
+<Tab title="Bukkit/Spigot/Paper">
+
+You can download a copy [here](https://github.com/Sonoran-Software/Sonoran-CMS-Minecraft-Integration/releases/tag/1.0.0).
+
+Ensure that you download the one that has `plugin` in the name.
+
+</Tab>
+
+</Tabs>
+
+### 2. Install the Resource {#id-2.-install-the-resource}
+
+Follow the standard resource installation guide for the whitelist resource, available [here](/cms/integration-capabilities/in-game-integration-resources/minecraft-integrations/minecraft-resource-installation).
+
+### 3. Setup Whitelist Permissions {#id-3.-setup-whitelist-permissions}
+
+Navigate to the Rank Manager within the Administrative Panel.
+
+`Administrative Panel` > `Ranks`
+
+![Sonoran CMS Departments & Ranks](https://docs-assets.sonoransoftware.com/sha256/ba/ba7c6667a3f77bff78b947fb0cf9fe77ba1b84536806bea8d64746498b25d73d.png)
+
+For users in your Sonoran CMS community to be accepted through the whitelist, they'll need to be granted permission for the whitelist through rank permissions. You will need to grant each rank the permission of **Allow Whitelist** that you want to be allowed through the whitelist. You will want to grant each rank with the permission of **Block Whitelist** if you want them to be blocked from passing through the whitelist.
+
+<Warning>
+
+**Block Whitelist** will ALWAYS overrule **Allow Whitelist**\
+\
+If a user is granted both **Block Whitelist** and **Allow Whitelist** through various ranks they will be blocked from the whitelist. Block will always overrule allow.
+</Warning>
+
+![Sonoran CMS - Rank Manager Server Permissions](https://docs-assets.sonoransoftware.com/sha256/59/599e753cefd9c1ece548062271895139bcc9ed485bccb1cb7078393804df6c58.png)
+
+### 4. Add your API ID {#id-4.-add-your-api-id}
+
+Ensure all players have added their [API ID](/cms/developer-api-documentation/api-integration/getting-started/api-id-system) to the CMS!
+
+## Configuration {#configuration}
+
+<Tabs>
+<Tab title="Forge">
+
+The config file is called `cmswhitelist-common.toml` in the config folder of your Minecraft server folder.
+
+```
+[SonoranCMS]
+	#This is your SonoranCMS Community ID.
+	"Community ID" = ""
+	#This is your SonoranCMS API key.
+	"Community API Key" = ""
+	#Which identifier to use, either UUID or Username. UUID is preferred.
+	"Identifier Type" = "UUID"
+	#The server ID found in SonoranCMS that this whitelist should check against.
+	"Server ID" = 1
+```
+
+
+
+| Value Name | Description | Default |
+| --- | --- | --- |
+| Server ID | This is the game server ID set in the CMS management panel. | `1` |
+| Community ID | This is the community ID that is found in the API Integration section of the management panel. | `""` |
+| Community API Key | This is the API key listed in the API Integration section of the management panel. | `""` |
+| Identifier Type | This controls whether a player's UUID or username is used for identifying. | `"UUID"` (Recommended) |
+
+
+
+</Tab>
+
+<Tab title="Fabric">
+
+The config file is called `sonorancms.json` in the config folder of your Minecraft server folder.
+
+```
+{
+  "CMS_Settings": {
+    "Community_ID": "",
+    "Community_API_Key": "",
+    "Identifier": "UUID",
+    "Server_ID": 1
+  }
+}
+```
+
+
+
+| Value Name | Description | Default |
+| --- | --- | --- |
+| Server_ID | This is the game server ID set in the CMS management panel. | `1` |
+| Community_ID | This is the community ID that is found in the API Integration section of the management panel. | `""` |
+| `Community_API_Key` | This is the API key listed in the API Integration section of the management panel. | `""` |
+| Identifier | This controls whether a player's UUID or username is used for identifying. | `"UUID"` (Recommended) |
+
+
+
+</Tab>
+
+<Tab title="Bukkit/Spigot/Paper">
+
+The config file is called `config.yml` in the `plugins/SonoranCMSWhitelist` folder of your Minecraft server folder.
+
+```
+CommunityID: ''
+CommunityAPIKey: ''
+Identifier: UUID
+ServerID: 1
+```
+
+
+
+| Value Name | Description | Default |
+| --- | --- | --- |
+| ServerID | This is the game server ID set in the CMS management panel. | `1` |
+| CommunityID | This is the community ID that is found in the API Integration section of the management panel. | `''` |
+| CommunityAPIKey | This is the API key listed in the API Integration section of the management panel. | `''` |
+| Identifier | This controls whether a player's UUID or username is used for identifying. | `UUID` (Recommended) |
+
+
+
+</Tab>
+
+</Tabs>

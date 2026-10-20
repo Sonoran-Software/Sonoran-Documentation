@@ -1,0 +1,82 @@
+---
+title: Get Characters
+description: This endpoint allows you to retrieve all characters associated with a
+  user account in the CAD.
+---
+
+<Warning>
+
+This API endpoint requires the **plus** version of Sonoran CAD or higher. For more information, see our [pricing ](/cad/pricing/faq)page.
+</Warning>
+
+## Get Characters {#get-characters}
+
+`POST` `https://api.sonorancad.com/civilian/get_characters`
+
+This endpoint allows you to retrieve all characters associated with a user account in the CAD.
+
+#### Request Body {#request-body}
+
+| Name | Type   | Description                |
+| ---- | ------ | -------------------------- |
+| id   | string | Your community's ID        |
+| key  | string | Your community's API Key   |
+| type | string | GET\_CHARACTERS            |
+| data | array  | Array of character objects |
+
+<Tabs>
+<Tab title="200 A successful call will be met with the following response:">
+
+```javascript
+// Array of custom record character objects
+[]
+```
+
+</Tab>
+
+<Tab title="400 The following 400 errors may be sent in response:">
+
+```http
+INVALID REQUEST TYPE
+INVALID COMMUNITY ID
+API IS NOT ENABLED FOR THIS COMMUNITY
+INVALID API KEY
+```
+
+</Tab>
+
+<Tab title="404 ">
+
+```
+API ID NOT LINKED TO AN ACCOUNT IN THIS COMMUNITY
+```
+
+</Tab>
+
+</Tabs>
+
+```javascript
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "GET_CHARACTERS",
+    "data": [
+        {
+            "apiId": "STEAM:1234" // (OPTION 1) API ID, Typically, this is their STEAM Hex
+            "account": "000-000-000" // (OPTION 2) Sonoran Account UUID
+        },
+    ]
+}
+```
+
+#### Result Ordering {#result-ordering}
+
+The current/most recently selected character the user has set in the CAD will always be the first record in the list returned by this endpoint (index 0).
+
+#### Record Formatting {#record-formatting}
+
+Custom records require a strict format with several dozen different data fields. You can view a detailed explanation of [custom record formatting](/cad/api-integration/api-endpoints/general/custom-records#record-formatting).
+
+#### Lookup via Account {#lookup-via-account}
+
+Communities can optionally lookup via a user's Sonoran account UUID, by using the `account` value. This value is internal, and not exposed to on the UI. The [verify\_secret ](/cad/api-integration/api-endpoints/general/verify-secret)or [get\_account ](/cad/api-integration/api-endpoints/general/get-account)endpoints will allow communities to capture the account UUID programmatically.

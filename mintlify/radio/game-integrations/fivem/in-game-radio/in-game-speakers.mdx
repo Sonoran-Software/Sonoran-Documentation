@@ -1,0 +1,108 @@
+---
+title: In-Game Speakers
+description: Configure in-game speakers that dispatchers can send tones to!
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/07/07710e9df0d031a327f3843d3594e1fb8571c247e50d1efd89aab97ec8291bde.png" alt="" />
+
+
+
+
+
+<iframe src="https://www.youtube-nocookie.com/embed/q-8u20usxvg" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+
+## Configuring In-Game Speakers {#configuring-in-game-speakers}
+
+### 1. Access the Menu {#id-1.-access-the-menu}
+
+Open the menu with the in-game `/radiomenu` command and select `Toneboard Speaker Menu` > `Spawn/Move/Delete Speaker`
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/70/70ac6ac075391a9debb265006e615f8dbad9726c0011a11d5feac76a0a89e930.png" alt="" width="222" />
+
+*Sonoran Radio - /radiomenu*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/da/da6038d7d2325c2d9bc1215a1c1b0ecd1aeb7e66760bb08d365fa35e2f93c976.png" alt="" width="222" />
+
+*Sonoran Radio - Toneboard Speaker Menu*
+
+
+
+### 2. Configure the Speaker {#id-2.-configure-the-speaker}
+
+#### Menu Options {#menu-options}
+
+The spawn (create) and edit menu will allow you to set the speaker type, name, range, and position.
+
+
+
+<img src="https://images-ext-1.discordapp.net/external/U2ds6All9FbMQfcQwxwjdF1WIt6ExVgfdFaQY1gHg9I/https/cdn.jordan2139.me/u/1052403544944283680/DczIjmhx.png?format=webp&quality=lossless" alt="" width="375" />
+
+
+
+#### Speaker Types {#speaker-types}
+
+When spawning a new speaker please select the type you would like to use. See types below:
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/2d/2d5ee97dd17d939f47611074c12dae67225d88284e8d45d4f21caff36c08a3f6.png" alt="" />
+
+*Small - Wall*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/9b/9b568104d649563d49f191dc9007cf921334af2a56079d77f38acfdbc3f65f10.png" alt="" />
+
+*Medium*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/6e/6ecad0ba8c21855148271f821578ba14caaf7ef8688be989503a2fe5233fca35.png" alt="" />
+
+*Medium - Wall*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/0f/0faf9d6d42f73bb03ae8b99daf2c6b0d49e7c1b627d1e952247827c0e1daab36.png" alt="" />
+
+*Large*
+
+
+
+#### Speaker Position {#speaker-position}
+
+Use the controls displayed on screen to rotate and move the speaker to the desired location.
+
+
+
+<img src="https://images-ext-1.discordapp.net/external/QpaFNLLXgyKaCSITDzzPoyCElQH-nFXr9JVC-uniLiA/https/cdn.jordan2139.me/u/1052403544944283680/qLCwBu8I.png?format=webp&quality=lossless" alt="" />
+
+*Sonoran Radio - Speaker Position Controls*
+
+
+
+### 3. Speaker Grouping {#id-3.-speaker-grouping}
+
+Speakers can be grouped by a customizable name when placed. Grouped speakers show up as a single option on the tone board.
+
+If you would like to group already placed speakers you can do so by navigating to the `speakers.json` file and adding a `group` property. (If the value of the group property is empty, speakers will not group together). See below for more:
+
+| Ungrouped Speaker(s)                                                             | Grouped Speaker(s)                                                               |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| <img src="https://docs-assets.sonoransoftware.com/sha256/8e/8e81581e89d0e6a35bf6e67c56f95ceb1637fd6905fbfbf9a944817709b4bc49.png" alt="" /> | <img src="https://docs-assets.sonoransoftware.com/sha256/0f/0f1cfa9719d0c40dd63f6035f9d389ada9216f6bdda93d88301d4a909568f9b5.png" alt="" /> |
+
+## Playing Tones to In-Game Speakers {#playing-tones-to-in-game-speakers}
+
+Dispatchers can now [use the tone board](/radio/tutorials/usage/dispatch-panel/custom-tone-board) and select one of the in-game speaker options to broadcast tones, microphone recordings, or AI powered text-to-speech to.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d7/d7e48a80d1f3b1ba7a4208483564c5c1cec78de5cce1857b485b092cd41c88e4.png" alt="" width="219" />
+
+*Sonoran Radio - In-Game Speaker Broadcast*

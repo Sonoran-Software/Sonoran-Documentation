@@ -1,0 +1,86 @@
+---
+title: Rich Presence
+description: Our desktop app allows you to advertise your community right in Discord!
+---
+
+<Info>
+
+Rich presence is included with all versions of Sonoran CAD, but customization requires the **Standard** plan or higher, and the **Pro** plan for complete customization with the icon.\
+For more information, see our [pricing](/cad/pricing/faq) or view how to check your community [limits](/cad/tutorials/getting-started/view-your-limits).
+</Info>
+
+## What is Discord Rich Presence? {#what-is-discord-rich-presence}
+
+When running our [desktop application](/cad/download), Discord can automatically detect and display information about your community.
+
+![Sonoran CAD - Discord Rich Presence](https://docs-assets.sonoransoftware.com/sha256/7b/7be7516fd7edb1b8be1c9a21899d4eac8d8c4c24416a6b634d49321b308dce77.png)
+
+## Customizing your Rich Presence {#customizing-your-rich-presence}
+
+![Sonoran CAD - Discord Presence Customization](https://docs-assets.sonoransoftware.com/sha256/a7/a70062e202136461ae0fc1a300c0ec51d40d59d9327ad01744e89fc74d4f8cff.png)
+
+### Customizing Buttons {#customizing-buttons}
+
+Discord presence currently allows for two customizable buttons.
+
+Navigate to Admin > Customization > Customization > Discord Rich Presence
+
+#### For communities on the **Standard** plan or higher: {#for-communities-on-the-standard-plan-or-higher}
+
+\- Button #2 may be customized to any [Sonoran CAD](/cad/tutorials/customization/custom-login-page#in-game-tablet) or [Sonoran CMS](/cms/why-choose-sonoran-cms/why-choose-sonoran-cms) invitation link.\
+\- Ex: `https://sonorancad.com/#/?comid=mycommunityid` or `https://sonorancms.com/#/?comid=mycommunityid`
+
+#### For communities on the Pro plan: {#for-communities-on-the-pro-plan}
+
+\- Both buttons may be customized to any URL desired.\
+\- The Icon and title can also be customized with a Discord developer application.
+
+### Customizing the Icon {#customizing-the-icon}
+
+Communities on the **Pro** version may customize the rich presence icon:
+
+#### 1. Create a new Discord Application {#id-1.-create-a-new-discord-application}
+
+On [https://discord.com/developers/applications](https://discord.com/developers/applications) create a new application
+
+![Discord Developer - New Application](https://docs-assets.sonoransoftware.com/sha256/26/26b667205df33634d7a2ac9fb93ba25e7f1188f2b4ba60a8896b18518909f8ad.png)
+
+#### 2. Copy your Client ID {#id-2.-copy-your-client-id}
+
+Under OAuth2, copy your `Client ID`
+
+![Discord Developer - Application Client ID](https://docs-assets.sonoransoftware.com/sha256/3f/3ffd20ee73ea6b40581ca351182b88d5a6c08523e3688fffcd2bf3d3a1c6682f.png)
+
+#### 3. Add an Icon {#id-3.-add-an-icon}
+
+Next, upload an icon for your new application. Be sure to copy down the name of the icon for later.
+
+![Discord Developer - Application Icon](https://docs-assets.sonoransoftware.com/sha256/26/26c82bfafb80fa2ce860d1dad6298322fd08143f0288052cfa6a5c9cfe55f293.png)
+
+#### 4. Configure in Sonoran CAD {#id-4.-configure-in-sonoran-cad}
+
+Back in the admin customization menu, we can paste the Discord application's Client ID and Icon name.
+
+![Sonoran CAD - Custom Discord Presence Config](https://docs-assets.sonoransoftware.com/sha256/14/14bd69995f8896f8f52736fd208d284b8d92c435b013ee3385c1507642581daf.png)
+
+Once saved, your Discord presence for all community members will reflect your custom icon, title, and buttons.
+
+![Sonoran CAD - Custom Discord Presence View](https://docs-assets.sonoransoftware.com/sha256/29/291deb971d27ccb4d8b0e7fd52494953bfc33fc9bea3c8e4f5f46e17e5125398.png)
+
+## Toggle On/Off Rich Presence {#toggle-on-off-rich-presence}
+
+### Community Toggle {#community-toggle}
+
+To hide the invite button for your community's Discord rich presence, simply leave the button text and URL blank.
+
+### User Toggle {#user-toggle}
+
+In the settings menu, users can toggle this display on or off for their individual desktop client.
+
+![Sonoran CAD Settings - Disable Discord's Rich Presence](https://docs-assets.sonoransoftware.com/sha256/bb/bb58851811fee76f2239c3d38c7528f13c03a165747667bdf69d53904cb120e3.png)
+
+## Known Issues {#known-issues}
+
+#### My presence visible, but not to others? {#my-presence-visible-but-not-to-others}
+
+If your Discord presence is visible to you personally but not to others, ensure the button labels don't include any sort of `:emoji:` in them.

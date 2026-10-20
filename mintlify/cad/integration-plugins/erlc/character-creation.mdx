@@ -1,0 +1,75 @@
+---
+title: Character Creation
+description: Create a character in the CAD from an in-game command, no CAD access
+  or account required!
+---
+
+## ER:LC Character Creation {#er-lc-character-creation}
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/94/94eebe2a43a0972b3f0225d247e50e3193d1b3dbefaf05514fe67e96b5deba8f.png" alt="" />
+
+
+
+Use customizable in-game commands allowing users to register their character in the CAD, no account or CAD access required!
+
+Once created, their civilian character will be searchable and can be used to [automatically register their vehicle](/cad/integration-plugins/erlc/vehicle-registrations).
+
+## In-Game Registration Command Configuration {#in-game-registration-command-configuration}
+
+Register a character via a custom in-game command.
+
+### Persistent Character Creation {#persistent-character-creation}
+
+
+
+<Accordion title="In-Game Persistent Character Creation Command">
+
+
+
+When the character creation command is ran a new character will be created in the CAD. The character will include the first name, last name, and avatar photo.
+
+If the user already has an in-game character created, it will be replaced by this new character.
+
+
+
+</Accordion>
+
+
+
+### Temporary Registration {#temporary-registration}
+
+
+
+<Accordion title="In-Game Temporary Registration Command">
+
+
+
+Running the temporary character creation command will perform the same actions as above. However, the civilian character record will be automatically **deleted after 24 hours**.
+
+
+
+</Accordion>
+
+
+
+## Using the In-Game Commands {#using-the-in-game-commands}
+
+When in-game, users can run the customizable character creation commands followed by the **First** and **Last** name.
+
+Ex: `;civ John Doe`
+
+Once the character has been created in the CAD, users will be notified by an optional in-game message.
+
+Once a character has been created, users can [register their vehicle with a single command](/cad/integration-plugins/erlc/vehicle-registrations).
+
+[In-game commands not working? Make sure you have connected the webhook.](/cad/integration-plugins/erlc/getting-started#id-3.-link-er-lc-event-webhooks-to-sonoran-cad)
+
+## Customize the In-Game Commands {#customize-the-in-game-commands}
+
+In-Game commands can be customized under **Admin** > **In-Game Integration** > **ER:LC** > **Server** > **Civilian Registration**
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/24/24ee68adadcc4f99c86c4b83655f3b5bd541e62b21ba1e3f3c33f97539283968.png" alt="" width="375" />

@@ -1,0 +1,89 @@
+---
+title: FiveM Radio Frames
+description: Configure FiveM radio frames, vehicle-specific layouts, and frame access.
+---
+
+FiveM radio frames are managed in the Radio panel under **Customize > Overlay**. The same editor supplies the desktop overlay.
+
+Add a **Panic** control to layouts that need one. See [Sonoran CAD Integration](/radio/tutorials/integrations/sonoran-cad-integration) for the FiveM CAD plugin and desktop overlay panic setup. Desktop overlay synchronization requires the CAD API link under **Customize > Dispatch AI**.
+
+## Create or edit a frame {#create-or-edit-a-frame}
+
+Select **FiveM** in **Customize > Game Integration**, then follow [Create a custom overlay](/radio/tutorials/usage/desktop-overlay#create-a-custom-overlay). Upload your artwork, position the screen and buttons, and select **Save changes**. Uploading new custom artwork requires **Pro**.
+
+With Pro, [Overlay AI](/radio/tutorials/usage/desktop-overlay/overlay-ai) can generate your radio frame artwork and editable screen from text or reference photos. Start with a blank frame or refine an existing one, then select **Save changes**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/72/72adf5262d855e28e907a93b305dd1bcc5690d4ecf15c2aaa42887f7ba07721d.jpg" alt="Shared Radio Overlay editor with a County Patrol frame" />
+
+*Edit FiveM frames from the Radio panel.*
+
+
+
+Use an updated FiveM resource. With your server's push URL configured, saving sends the updated frames to connected players. The resource also checks on startup and roughly every 30 seconds. If a check fails, it keeps the last successfully loaded frames and tries again.
+
+## Set a layout for vehicle classes {#set-a-layout-for-vehicle-classes}
+
+The **On-foot**, **Vehicle**, and **Aircraft** layout controls appear when the community has **FiveM** selected as its game. A frame can have several vehicle layouts, each with its own image, screen, buttons, and vehicle classes.
+
+1. In **Customize > Overlay**, select the frame you want to edit and choose **Vehicle** or **Aircraft**.
+2. Select **Add layout**, or choose an existing entry from **Vehicle layout** or **Aircraft layout**.
+3. Under **Vehicle classes**, select the classes that should use that layout. For example, class `18` is **Emergency**, while `15` and `16` are aircraft. Clearing all selected classes makes a vehicle layout match every class.
+4. Use **Change image** and the editor controls to position its screen and buttons. Use the up and down arrows to set layout order, then select **Save changes**.
+
+FiveM uses the **first** vehicle layout whose class list matches the vehicle. Put a layout that matches all classes after more specific layouts. Aircraft-only layouts appear under **Aircraft**; layouts with any non-aircraft class appear under **Vehicle**. The order is shared between those tabs.
+
+The radio automatically applies that layout when you enter a matching vehicle and returns to On-foot when you exit. If no vehicle layout matches, it uses On-foot. See [FiveM Frame Changes](/radio/game-integrations/fivem/in-game-radio/fivem) for examples and troubleshooting.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/59/59e38f3a0895b6a76f691633018f9e8c270a15d632c56d6de0795d8b74cada93.jpg" alt="FiveM Overlay editor with Vehicle selected, a vehicle layout, and Emergency class 18 selected" />
+
+*Choose a FiveM vehicle layout and the classes that use it.*
+
+
+
+## Change your frame in game {#change-your-frame-in-game}
+
+1. Open the radio's **Settings**.
+2. Select the **FiveM** tab.
+3. Choose a frame from **Radio Frame**.
+
+Only frames available to your player appear in the list.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/b6/b6be012d1066943c58034f480cc58ee7afdcc2acf83af00642bd99b1053b758a.jpg" alt="FiveM settings with the Radio Frame dropdown showing Default, County Patrol, and Signal Pro" />
+
+*Choose a frame in Settings > FiveM.*
+
+
+
+## Restrict frame access {#restrict-frame-access}
+
+Create and edit frames in the Radio panel's **Customize > Overlay** editor. To control which FiveM players can select each frame, configure `Config.frames` in your server's Sonoran Radio resource **config.lua**. The in-game radio only lets players choose from the frames available to them; frame setup and permission rules are not configured in that menu.
+
+- `permissionMode = 'none'` lets everyone use all available frames.
+- Use `ace`, `qbcore`, `qbox`, or `esx` to restrict frames by department permissions or job grades.
+- Copy the ID shown below each frame's name in the Overlay editor into the department's `allowedFrames` list. Use the exact `frame:<ID>` value, such as `frame:2`; the frame's display name is not a permission identifier.
+
+For example, allow players with the `sonoranradio.patrol` ACE to use two community frames:
+
+```lua
+Config.frames = {
+    permissionMode = 'ace',
+    adminPermission = 'sonoranradio.admin',
+    departments = {
+        patrol = {
+            label = 'County Patrol',
+            permissions = {
+                ace = { 'sonoranradio.patrol' }
+            },
+            allowedFrames = { 'frame:1', 'frame:2' }
+        }
+    }
+}
+```
+
+Replace those IDs with your own. Grant `sonoranradio.patrol` to the players who should use the patrol frames through your server's ACE configuration. For framework permissions, use `permissions.jobs` and the allowed `grades` from the resource's example configuration. [Sonoran CMS can manage ACE permissions from community roles](/cms/integration-capabilities/sonoran-radio-sync).

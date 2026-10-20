@@ -1,0 +1,543 @@
+---
+title: Using the In-Game Radio
+description: Learn more about the in-game radio resource.
+---
+
+<iframe src="https://www.youtube-nocookie.com/embed/x51SsH0LHUM" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+
+## Initial Setup {#initial-setup}
+
+### Displaying the In-Game Radio {#displaying-the-in-game-radio}
+
+By default, the radio display remains visible on-screen at all times. Users can toggle focus on the radio, enabling interaction when needed and un-focusing when done.
+
+1. Use the [customizable keybind](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio#setting-your-push-to-talk-ptt-keybind) (Default is `~` right above tab)
+2. Use the `/radio` command
+
+Access to the radio can be restricted with [ACE permissions](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions).
+
+### Hiding the In-Game Radio {#hiding-the-in-game-radio}
+
+#### A. Via Button {#a.-via-button}
+
+Use the purple button or icon on the radio frames:
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d9/d937ac172ea95ea45b76ee2915475524891032da1119390f74235d9fda4397fa.png" alt="" width="375" />
+
+*Vehicle Radio: Hide Button*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/b8/b8bdbc8293326f09a29a6cbff8998f32127554bb860b6071411bb61dccdb223d.png" alt="" width="208" />
+
+*Handheld Radio: Hide Button*
+
+
+
+#### B. Via Command {#b.-via-command}
+
+Use the `/radio hide` command in-game to hide the radio.
+
+#### C. ESC Options {#c.-esc-options}
+
+You can also [customize the display behavior when pressing `ESC`](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio#escape-mode).
+
+### Logging In {#logging-in}
+
+
+
+<Accordion title="Login with Account">
+
+
+
+When you first use the in-game resource, you'll need to log in.\
+A 4-digit code will appear for you to sign in from your browser.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/1d/1d739ff8ed5a3962e0235cdc3df41a01a53b132eab8f249a81b2f2b5c2d068fd.png" alt="" width="375" />
+
+
+
+This will open [sradio.link](https://sradio.link) in a web browser, log in if needed, and your radio will be linked automatically with a 4-digit code.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/cd/cdf2efea56f6ad1b7c3fe85a5577d41071a1a745c2cd3e86de43268819ac3089.png" alt="" width="375" />
+
+*Sonoran Radio - Activate Link*
+
+
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Login as Guest">
+
+
+
+When you first use the in-game resource, you'll need to log in.\
+If your community has ACE permissions configured, no account creation or link is necessary.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/3e/3ee7d89951c840eb1e9f6ef5b02ae10488883ee09baf34880ada2b8d500f1e6a.png" alt="" />
+
+
+
+Select **Login as guest** to bypass the account link and start using your radio. This guest option will only display if `acePermsForGuests` is set to `true`.
+
+If `Config.forceGuestLogin = true` it will bypass this screen and automatically login radio users in as guest using ACE permissions.
+
+#### Permission Configuration {#permission-configuration}
+
+Learn how to [configure ACE permissions for the radio](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions#ace-permission-sync).
+
+#### Display Name {#display-name}
+
+Custom display names are saved locally in your cache and automatically restored on future guest logins.
+
+Guest usernames are set in the following priority order (whichever is found first):
+
+* Last used guest display name
+* [Custom framework function](/radio/developer-documentation/developer-documentation/resource-events#guest-display-names)
+* First and last name from QBCore, QBox, or ESX.
+* In-game display name
+
+[Users with permission can change this name](/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel#display-names).
+
+
+
+</Accordion>
+
+
+
+### Logging Out {#logging-out}
+
+You can logout/un-link your in-game radio via the settings menu (gear icon).
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/0d/0d7296745883f544c3754519cd3f7b5c4906a3540b5dd98796346c333f850742.png" alt="" />
+
+*In-Game Radio - Settings*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d4/d49ea3fd3b7d2acc3034916f99d8b1ef1e53e9f93a77390f10821564be273b38.png" alt="" />
+
+*In-Game Radio - Unlink*
+
+
+
+***
+
+## Using the In-Game Radio {#using-the-in-game-radio}
+
+### Setting your Push-To-Talk (PTT) Keybind {#setting-your-push-to-talk-ptt-keybind}
+
+[You can customize your PTT button in your GTA Settings.](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands)
+
+### Connecting and Switching Channels {#connecting-and-switching-channels}
+
+
+
+<Accordion title="Channel Selection via Knob">
+
+
+
+The radio will connect when you turn it on with the power button ([unless you need to login first](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio#logging-in)).
+
+**Previous/Next Channel (In Group)**
+
+* Left click the top knob to rotate to the next channel inside the channel group.
+
+**Previous/Next Group**
+
+* Right-click the top knob to change its mode from channel changing to group changing.
+* Left click the top knob to rotate to the next channel group.
+
+![Sonoran Radio: Power Button](https://docs-assets.sonoransoftware.com/sha256/e4/e4008ed781b03804a02c60a8a964edc99e33125f40cf4fe11eded52537321fb5.png) ![Sonoran Radio: Channel List](https://docs-assets.sonoransoftware.com/sha256/2b/2be4e544c1bc00718585a85434c12d23c70fb55bd96f017aab6d250d83f0c805.png)
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Channel Selection via Menu">
+
+
+
+Select the channel menu icon to open the channel selection options. Click on the channel you wish to transmit on.
+
+`CTRL` + `Click` allows you to select multiple channels to transmit on at once.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/4d/4d0702ba3b889a9fd65a2103295f60492d28f3da7c68b561cfcf3b6b0d2774ed.png" alt="" width="279" />
+
+*Modern UI - Channel Menu Icon*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/12/121f5e5fb6c191014280ce8cb450c0a42a059029da6f0fa4d8afb13b22ceb6c3.png" alt="" width="279" />
+
+*Text UI - Channel Menu Icon*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ba/ba69d6abdb89d2eb073f86a793fb446cf64cc121b70e49fc3664246c6ddf65e4.png" alt="" width="277" />
+
+*Modern UI - Channel Selection*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ab/ab30dbb4652f6da2db5695c0524631936ec2b1cf237de264a7d2e2776b2ebcde.png" alt="" width="280" />
+
+*Text UI - Multi-Channel Selection*
+
+
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Channel Selection via Hotkeys, Commands, and Stream Deck">
+
+
+
+Channels can also be changed via:
+
+* [Channel Change Keybind](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands#prev-next-channel-in-group)
+* [In-Game Commands (Optional Stream Deck Integration)](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands#fivem-client-commands)
+
+
+
+</Accordion>
+
+
+
+### Channel Scanning/Listening {#channel-scanning-listening}
+
+
+
+<Accordion title="Scanning Radio Channels">
+
+
+
+Scanning a radio channel allows users to hear all transmissions, even if they are not actively transmitting on that channel. However, transmissions on the primary channel (the one you are actively talking on) will take priority, muting transmissions from scanned channels whenever someone speaks on the primary channel.
+
+**Selecting Scanned Channels (**[**Modern or Text Display**](/radio/tutorials/usage/desktop-overlay#create-a-custom-overlay)**)**
+
+1. Select the Channel Scan Icon
+2. Select the channel group to view the contained channels
+3. Click on a channel to toggle on/off scanning
+
+[Learn how to toggle a channel scan via command or Stream Deck!](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands#toggle-channel-scan)
+
+![](https://docs-assets.sonoransoftware.com/sha256/4f/4ffff048a41e6ff7d3b0bbbeec7c6554bf0c0b400f1e10fceeb7d03f07819261.png) ![](https://docs-assets.sonoransoftware.com/sha256/e7/e7fe3da6acbc5ee1c5e222f1f0e7c06515557e6dce28903ae5fce52909beafb8.png)
+
+Users can also [create a scan list](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio#scan-lists) to swap between multiple scanned channels at once.
+
+
+
+</Accordion>
+
+
+
+### Custom Scan Lists {#custom-scan-lists}
+
+
+
+<Accordion title="Scan Lists">
+
+
+
+Users can scan one or more channels to listen without transmitting. For monitoring multiple channels, "Scan Lists" let users group channels and easily switch between them.
+
+**Creating a Scan List (**[**Modern or Text Display**](/radio/tutorials/usage/desktop-overlay#create-a-custom-overlay)**)**
+
+1. Toggle scanning on one or more channels.
+2. Select the `+` icon next to `Scan Lists` to create a new scan list with the current selection.
+3. Scan lists can be reordered via drag-and-drop.
+4. Select the adjust button to rename or remove the scan list.
+5. Click on the scan list to scan all of the channels inside of it.
+6. Scan lists can be reordered via drag-and-drop
+
+[Learn how to toggle a scan list via command or Stream Deck](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands#toggle-scan-list)!
+
+![](https://docs-assets.sonoransoftware.com/sha256/e9/e9ed97fda58bc52625c18c8a4f625c9052ddfb5fd956da84bf54cc492f7b80f0.png) ![](https://docs-assets.sonoransoftware.com/sha256/8e/8e99aee2aadf5734f7527d3abb9977caf2d597923f7341c01cb0dfdfaf135355.png)
+
+
+
+</Accordion>
+
+
+
+### Adjust Volume {#adjust-volume}
+
+<Info>
+
+Your radio volume also controls how loudly [nearby users hear the radio chatter](/radio/game-integrations/fivem/in-game-radio/hear-nearby-radio-chatter).
+</Info>
+
+
+
+<Accordion title="Radio Volume">
+
+
+
+**System-Wide Volume**
+
+In the settings menu (gear icon) you can adjust the radio's total volume output.
+
+![In-Game Radio - Settings](https://docs-assets.sonoransoftware.com/sha256/0d/0d7296745883f544c3754519cd3f7b5c4906a3540b5dd98796346c333f850742.png) ![](https://docs-assets.sonoransoftware.com/sha256/75/750f027bbb78cba68b6d9422d6fb13e571e780b1f0694abb7cee864a673bdb0e.png)
+
+**Per-User Volume**
+
+You can also right-click on any user to adjust their volume specifically.
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/15/153cf4f806f475c00bc21073b6673dd5cc059528189e7b52d77aeca0c45e0589.png" alt="In-Game Radio - Per-User Volume" />
+
+**Per-Channel Volume**
+
+Select the volume icon to change the current channel's transmission volume.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/97/97d8d3d5c14ea2df4d247e6a9d51ca121fcbc67b60d5e15e2a611fa955133366.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/4d/4d52e563f7150947db6c80c0bf32c424cd9685b5689e64c9aeb1dee1d96d3d9c.png" alt="" />
+
+
+
+**Volume Hotkey**
+
+[You can also use the in-game keybind to quickly adjust volume.](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands#volume-up-down)
+
+The adjustment amount is customizable in the settings menu.
+
+![](https://docs-assets.sonoransoftware.com/sha256/ba/bab2d6016d01d8c084dcac49ed2ae220dd5b6c7b0c1f1d57f881142702c9726b.png)
+
+
+
+</Accordion>
+
+
+
+### Adjust Volume With Sirens {#adjust-volume-with-sirens}
+
+
+
+<Accordion title="Automatic Volume Increase w/Sirens">
+
+
+
+When in-game, turning on your sirens will increase your overall radio volume by the configured amount. Turning your sirens back off will lower the volume back down.
+
+This feature is automatically integrated with [Luxart Vehicle Control](https://github.com/TrevorBarns/luxart-vehicle-control).\
+If the resource is not named `LVC`, the [`config.luxartResourceName` value must be updated](/radio/game-integrations/fivem/installing-the-in-game-resource#updates).
+
+For communities not using LVC, the functionality will fall back to a FiveM native that will trigger the functionality if either lights or sirens are activated.
+
+![](https://docs-assets.sonoransoftware.com/sha256/fb/fb37f06adf92d43b245e08c1860ee90d7e681d39efaac57774be5840fab152c8.png)
+
+
+
+</Accordion>
+
+
+
+### Move and Resize the Radio {#move-and-resize-the-radio}
+
+<Info>
+
+**If you move your radio too far off of your screen:**
+
+Use `/radio reset` to reset the size and position.
+</Info>
+
+
+
+<Accordion title="Radio Move and Resize">
+
+
+
+On the radio screen, open the `Settings` modal by pressing the gear icon.
+
+Select `Move/Resize`
+
+* Click and drag the radio to change it's position on your screen.
+* Hold `ctrl` and drag to resize the radio.
+* Press `esc` to save the new size and position.
+
+![In-Game Radio - Settings](https://docs-assets.sonoransoftware.com/sha256/0d/0d7296745883f544c3754519cd3f7b5c4906a3540b5dd98796346c333f850742.png) ![In-Game Radio - Move/Resize](https://docs-assets.sonoransoftware.com/sha256/6d/6db96fb4a28f2a23d60c42b3f277d8d4ffc7dc36084140b5d0950bda0578a4cc.png)
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/3f/3f3f47763f3aa95200bb1c15ee1b8a0c3b70f5d3499c29eccf0dc61dac708a12.png" alt="In-Game Radio - Adjustment" />
+
+
+
+</Accordion>
+
+
+
+### Escape Mode {#escape-mode}
+
+
+
+<Accordion title="ESC Radio Display Behavior">
+
+
+
+The Escape Mode selector changes the in-game radio display behavior after pressing `ESC`.\
+The server default for this setting can be configured in the [config's `defaultEscapeMode` property](/radio/game-integrations/fivem/installing-the-in-game-resource#updates).
+
+`Keep Radio Visible`
+
+* The radio stays visible on `ESC`
+
+`Hide Radio`
+
+* The radio closes on `ESC`
+
+`XMITT (PTT)`
+
+* The radio closes on `ESC`, but is visible while transmitting
+
+![](https://docs-assets.sonoransoftware.com/sha256/fb/fb37f06adf92d43b245e08c1860ee90d7e681d39efaac57774be5840fab152c8.png)
+
+
+
+</Accordion>
+
+
+
+### Panic {#panic}
+
+
+
+<Accordion title="In-Game Panic">
+
+
+
+Pressing the orange panic button on the in-game radio toggles your panic status.
+
+This can also toggle your panic status in [Sonoran CAD](/radio/tutorials/integrations/sonoran-cad-integration#cad-panic).
+
+[Dispatchers will also be able to see and clear your panic status.](/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel#unit-panic)
+
+Sonoran Radio has a [configurable option](/radio/game-integrations/fivem/installing-the-in-game-resource#updates) to automatically press a users PTT button for a configurable amount of time when the user presses their radio panic button:
+
+```lua
+Config.autoPttOnPanic = {
+	enabled = true, -- Enable automatic PTT when panic button is pressed
+	duration = 15 -- Duration in seconds to hold PTT when panic button is pressed
+}
+```
+
+![](https://docs-assets.sonoransoftware.com/sha256/16/167b9a993adba6d8285405066e2166717a9e74b97b1fedf5799f75d09a325bec.png)
+
+
+
+</Accordion>
+
+
+
+### Display Names {#display-names}
+
+
+
+<Accordion title="Update User Display Name">
+
+
+
+[View several different methods to update a user's display name in the radio.](/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel#display-names)
+
+
+
+</Accordion>
+
+
+
+### Radio Types {#radio-types}
+
+Sonoran Radio offers three radio platforms: handheld, top-down HUD, and vehicle.\
+All three radio platforms can have [customizable frame styles](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio#change-radio-frames).
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/bd/bdee0f40e48ea5e4c261aa17f33551d0d926f306d153924572fd863e5298be5a.png" alt="" />
+
+
+
+When opening the radio via `/radio` the handheld radio will display on-screen.\
+The vehicle UI will display when opening the radio inside of a vehicle.\
+The top-down HUD style can be viewed with the `/radiohud` command.
+
+### Change Radio Frames {#change-radio-frames}
+
+The settings menu also allows you to customize your radio frame:
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d3/d3401806b340e7004e714c0f9d25f086316edd2b96e438f8174a77d53f63808e.png" alt="" width="165" />
+
+*Sonoran Radio - Custom Frames*
+
+
+
+Learn more about customizable radio frames:
+
+
+
+<Card title="[customizing-radio-frames.md](../customizing-radio-frames.md)" href="/radio/game-integrations/fivem/in-game-radio/customizing-radio-frames" />
+
+
+
+## Civilian Usage {#civilian-usage}
+
+### Placing an Emergency (911) Call {#placing-an-emergency-911-call}
+
+Civilians can place an emergency call to speak directly with dispatchers:
+
+
+
+<Card title="[emergency-calls.md](../../dispatch-panel/emergency-calls.md)" href="/radio/tutorials/usage/dispatch-panel/emergency-calls" />
+
+
+
+## Custom Animations {#custom-animations}
+
+Unlock multiple more custom radio animations, FREE with Sonoran Radio pro!
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/37/37ca282783d0c3f9528b6b1a3784ec3d0e38a7e5d03218aa5fa44a9deec1bca8.png" alt="" />
+
+*Sonoran Radio x Big Daddy Scripts*
+
+
+
+
+
+<Card title="[big-daddy-radio-animations.md](../../../integrations/big-daddy-radio-animations.md)" href="/radio/game-integrations/fivem/big-daddy-radio-animations" />

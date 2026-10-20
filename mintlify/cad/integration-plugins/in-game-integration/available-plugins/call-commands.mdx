@@ -1,0 +1,85 @@
+---
+title: Call Commands
+description: Send emergency calls from in-game to the CAD.
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/04/048b2f3a8e27dbc7d0f4130c56fc79d03630bfca86c9c580146768f76af86bc8.png" alt="" />
+
+
+
+## Activation Guide {#activation-guide}
+
+### 1. Download and Install the Resource {#id-1.-download-and-install-the-resource}
+
+<Info>
+
+This submodule is already **enabled by default** when installing the [Sonoran CAD FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
+
+\
+The [locations submodule](/cad/integration-plugins/in-game-integration/available-plugins/locations) includes required logic to send location data and is **already enabled by default**. Keep this submodule enabled to maintain functionality.
+
+\
+The [postals submodule](/cad/integration-plugins/in-game-integration/available-plugins/postals) is optional and also enabled by default. Keep this submodule enabled if you wish to include postal code information with emergency calls.
+</Info>
+
+### 2. Adjust the Configuration {#id-2.-adjust-the-configuration}
+
+The CAD display settings are stored inside of the `/configuration/callcommands_config.lua` file.
+
+<Info>
+
+Notifications are handled by the Sonoran CAD core. See [Core Configuration](/cad/integration-plugins/in-game-integration/fivem-installation#4.-configure-the-resource) for settings and supported values.
+</Info>
+
+### 3. Ensure Players are Linked {#id-3.-ensure-players-are-linked}
+
+Ensure the player has already [linked their CAD](/cad/integration-plugins/in-game-integration/link-user-in-game) for this integration's panic feature to work.
+
+## Usage {#usage}
+
+### Commands {#commands}
+
+In-game commands can be used to
+
+* `/panic` Toggles your unit's panic status
+* `/911` Sends a 911 call to the CAD
+* `/511` Sends a 511 call to the CAD (Civil)
+* `/311` Sends a non-emergency call to the CAD (Civil)
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d1/d14af634e62cdebda159dae86af238cec2483488d5af9914084bcedd452135ca.png" alt="" />
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d4/d4f22fab9c73361fe9e65ee34f0f380f62f3e460a73f456f6ee803be4ea3d8dd.png" alt="" />
+
+
+
+### Key Binds {#key-binds}
+
+Users can customize a keybind to toggle their panic status.
+
+Navigate to **Settings** > **Keybinds** > **FiveM** and look for the **Panic Button** keybind under the resource `sonorancad`.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/66/661e9d63aced04e17cbc4d5b0c9a719c20b8bbfeae74ae9183a0feb6af4dd6bd.png" alt="" />
+
+
+
+### ACE Permissions {#ace-permissions}
+
+The distributed `sonorancad.cfg` grants the panic command node used by the panic keybind:
+
+```cfg
+add_ace builtin.everyone command.panic allow
+```
+
+`/panic` is currently registered with ACE restriction disabled, so this bundled entry provides compatibility/default access rather than acting as an authorization boundary. The `/911`, `/311`, and `/511` commands are also registered without ACE restriction. Do not replace this line with a group grant expecting `/panic` to become role-restricted; the current source does not enforce `command.panic`.
+
+### Call Location {#call-location}
+
+By default, calls responded to via the `/rcall` command located in [Dispatch Notify](/cad/integration-plugins/in-game-integration/available-plugins/dispatch-notify) will attempt to be routed to the callers current location, rather than the location of the call. If you would like calls to route to the location of the original call, please set `useCallLocation` to `true`

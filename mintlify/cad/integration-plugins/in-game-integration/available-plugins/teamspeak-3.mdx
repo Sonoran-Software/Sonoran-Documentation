@@ -1,0 +1,85 @@
+---
+title: TeamSpeak 3
+description: The TeamSpeak 3 integration submodule requires that users must be logged
+  into the CAD police, fire, EMS, or Dispatch page in order to access specific voice
+  channels.
+---
+
+<Warning>
+
+This submodule utilizes API endpoints that require the **plus** version of Sonoran CAD or higher. For more information, view our [pricing ](/cad/pricing/faq)page.
+</Warning>
+
+<Check>
+
+Looking for VPS, web, or dedicated hosting? Check out our official [server hosting](/broken/pages/-MRResNcPrj2q6MmmS6j)!
+</Check>
+
+## Activation Guide {#activation-guide}
+
+### 1. Download and Install the Core {#id-1.-download-and-install-the-core}
+
+If you haven't already, be sure to install and configure the [SonoranCAD Core](/cad/integration-plugins/in-game-integration/fivem-installation) first.
+
+### 2. Activate the Submodule and all Dependencies {#id-2.-activate-the-submodule-and-all-dependencies}
+
+Follow the [submodule activation guide](/cad/integration-plugins/in-game-integration/submodule-configuration#activating-a-submodule) for the required submodules.
+
+### 3. Configure your TeamSpeak Connection {#id-3.-configure-your-teamspeak-connection}
+
+Your TeamSpeak server credentials can either be set in the config or as [convars](/cad/integration-plugins/in-game-integration/available-plugins/teamspeak-3#advanced-configuration) in your `server.cfg` file. In the `ts3integration_config.json` file, you can modify the following settings:
+
+|                     |                                                                                                                                                                                                                                                     |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ts3server\_host     | TS3 Public Server IP                                                                                                                                                                                                                                |
+| ts3server\_port     | Public connection portDefault is <code>9987</code>                                                                                                                                                                                    |
+| ts3server\_qport    | Sever Query PortDefault is <code>10011</code>                                                                                                                                                                                         |
+| ts3server\_user     | Typically, this will be your server admin username.If you do not have one, you [can create a new one](https://www.teamspeak3.com/support/teamspeak-3-add-server-query-user.php).                                           |
+| ts3server\_pass     | Typically, this will be your server admin password.If you do not have one, you [can create a new one](https://www.teamspeak3.com/support/teamspeak-3-add-server-query-user.php).                                           |
+| onduty\_servergroup | Name of the server group that the submodule will grant users when they're on duty.You will need to configure this server group with permissions to join specific channels, etc.                                                       |
+| enforced\_channels  | A list of channels that units will be kicked from if they log out of the CAD                                                                                                                                                                        |
+| logoutGraceTime     | The amount of time between the user logging out of the CAD and being kicked from the TS3 <code>enforced_channels</code>.This prevents brief internet disconnections from the CAD from continually kicking users out of their channel. |
+
+![TS3 - Integration Config](https://docs-assets.sonoransoftware.com/sha256/88/88a9e3de2d8bfe25c2b1abd08f2a9b7d1cc380f32afd575eeccf6103e70ad8d0.png)
+
+### 4. Retrieve Your Individual TS3 ID {#id-4.-retrieve-your-individual-ts3-id}
+
+Every member from your community will need to retrieve their unique TS3 ID.\
+This is found in TS under Tools > Identities > Default > Unique ID
+
+![TS3 - Retrieve your unique ID](https://docs-assets.sonoransoftware.com/sha256/ae/ae67aea2f8d4e9571c86d18a89c454c543d6614543086bc5561e1001c63008f0.png)
+
+### 5. Add your TS3 ID as an API ID {#id-5.-add-your-ts3-id-as-an-api-id}
+
+Paste in this TS3 unique ID as a [new API ID in the CAD](/cad/api-integration/getting-started/setting-your-api-id).
+
+<Warning>
+
+Every member of your community will need to add their unique ID to their CAD account in your community.
+</Warning>
+
+![API ID - Paste New ID](https://docs-assets.sonoransoftware.com/sha256/c3/c37bc3c3373edcb7a3ebfa19c7cfbb85dbd1d5ddf5287d3b7cdb938e7b61ac69.png)
+
+### 6. Utilize the TS3 Integration {#id-6.-utilize-the-ts3-integration}
+
+Once configured, when the user joins the TS3 server they will be granted the `onduty_servergroup` once they sign into the police, fire, EMS, or dispatch page.
+
+Signing out of or exiting the CAD will result in the user being kicked from any of the `enforced_channels` from the config.
+
+![TS3 - Server Group Granted](https://docs-assets.sonoransoftware.com/sha256/e9/e964cb9636d2eadc416d08996e275d4b16c44cddecff47a1fd3db5f01c5f7874.png)
+
+![TS3 - Channel Kicked](https://docs-assets.sonoransoftware.com/sha256/d5/d5ee342290f7979bbfad62375b656d7a57c91506fec9c9304b12fa725fd3be09.png)
+
+## Advanced Configuration {#advanced-configuration}
+
+You may utilize [convars](https://docs.fivem.net/docs/scripting-reference/convars/) in your `server.cfg` if you wish to store your TS3 connection info there instead. There is no default version of these convars preset. If you wish to use convars in your `server.cfg` instead of your config file please **LEAVE ts3server\_user BLANK** in your config file. Convars are as follows:
+
+| Convar Name               | Config Equivelant |
+| ------------------------- | ----------------- |
+| `sonorants3_server_host`  | `ts3server_host`  |
+| `sonorants3_server_port`  | `ts3server_port`  |
+| `sonorants3_server_qport` | `ts3server_qport` |
+| `sonorants3_server_user`  | `ts3server_user`  |
+| `sonorants3_server_pass`  | `ts3server_pass`  |
+
+They can be set in your `server.cfg` following the format of `set [convar] "value"`

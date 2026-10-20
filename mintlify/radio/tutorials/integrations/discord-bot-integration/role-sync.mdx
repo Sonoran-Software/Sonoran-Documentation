@@ -1,0 +1,83 @@
+---
+title: Role sync
+description: Choose the Radio permissions and private channels each Discord role gives
+  your members.
+---
+
+Give members Radio permissions through their Discord roles.
+
+## 1. Connect Discord {#id-1.-connect-discord}
+
+Follow [Connect your server](/radio/tutorials/integrations/discord-bot-integration), then open **Customize > Discord**. You can also select **Set up role sync** in **Members**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/12/129cb9d95abb29075ef9b952913bd3a111b9bab545fb0d4c3a85b07b23eca3ec.jpg" alt="Radio Members banner with a Set up role sync button" />
+
+*Open role sync from the Members panel.*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/5a/5a8427d0f025cc83c1cdbf4840f0a152b463d990e84cde9c2930270232b4261e.jpg" alt="Radio Role sync panel showing Police and Dispatch mappings for Sonoran Valey Roleplay with edit and delete buttons" />
+
+*Each role shows its Discord server and assigned permissions.*
+
+
+
+<Info>
+
+If this community uses Sonoran CMS, configure [Radio permissions in CMS](/cms/integration-capabilities/sonoran-radio-sync). Radio role mapping is disabled for communities managed by CMS.
+</Info>
+
+## 2. Add a role {#id-2.-add-a-role}
+
+1. Select **Add role**.
+2. If more than one Discord server is connected, choose the correct server.
+3. Type a role name and select it. The dot beside its name shows its Discord role color.
+4. Choose what members can do under **Permissions**. Scroll to see all permissions.
+5. Under **Private channels**, choose the channels members can use.
+6. Wait for **Changes saved automatically**, then select **Done**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/48/48b547bba88dcb2c8e528b69ef6221be7b1211609c2910718283d0be04b39b91.jpg" alt="Searchable Discord role menu showing colored dots beside role names" width="563" />
+
+*Type to find a Discord role.*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/57/57d82b46c80d49e7ccb181477c9463f6623a0b61ffbb248f5df91a6d5eaa5c1b.jpg" alt="Radio role editor showing access and member permission toggles" width="563" />
+
+*Choose what members with this role can do.*
+
+
+
+**Radio access** is included with every mapping. A matching role can approve a pending member even when no extra permissions are selected.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/a2/a20f8ea37cb333c66328472df0c17b56d69194b3d5abc3656543f464aa7d3121.jpg" alt="Radio private channel settings with Police channel access selected" width="563" />
+
+*Give this role access to specific private channels.*
+
+
+
+## 3. Sync members {#id-3.-sync-members}
+
+1. Members join your Radio community.
+2. Members run `/sync` in Discord. If their account needs linking, the bot shows them how.
+
+After a mapping changes, all linked members automatically resync **5 minutes after your last edit**. Finishing the sync may take a little longer.
+
+Once a member is linked, adding or removing their Discord roles automatically updates their Radio permissions. They do not need to run `/sync` after each role change. The five-minute delay applies to mapping edits.
+
+Members receive the combined permissions and private channel access from all their mapped roles across connected Discord servers. Sync replaces manually assigned Radio permissions and private channel grants. The community owner keeps full access.
+
+## Edit or remove a mapping {#edit-or-remove-a-mapping}
+
+1. Select **Edit permissions** beside a role to change its permissions or private channels. Changes save automatically.
+2. Select **Delete role mapping** beside a role to remove its mapping. This removes the mapping, not the Discord role.

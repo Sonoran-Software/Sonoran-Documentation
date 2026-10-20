@@ -1,0 +1,63 @@
+---
+title: Set Ident Group
+description: This endpoint allows you to set, change, or remove the group for one
+  or more unit identifiers.
+---
+
+<Warning>
+
+This API endpoint requires the **pro** version of Sonoran CAD or higher. For more information, see our [pricing](/cad/pricing/faq) page.
+</Warning>
+
+## Update Unit Status {#update-unit-status}
+
+`POST` `https://api.sonorancad.com/emergency/idents_to_group`
+
+The unit location API endpoint allows you to update a unit's location from in-game.
+
+#### Request Body {#request-body}
+
+| Name | Type   | Description                  |
+| ---- | ------ | ---------------------------- |
+| id   | string | Your community's ID          |
+| key  | string | Your community's API Key     |
+| type | string | UNIT\_STATUS                 |
+| data | array  | Array of unit status objects |
+
+<Tabs>
+<Tab title="200 A successful call will be met with the following response:">
+
+```
+Set idents 123, 456, 789 to group 'Group 1".
+```
+
+</Tab>
+
+<Tab title="400 The following 400 errors may be sent in response:">
+
+```http
+INVALID REQUEST TYPE
+INVALID COMMUNITY ID
+API IS NOT ENABLED FOR THIS COMMUNITY
+INVALID API KEY
+```
+
+</Tab>
+
+</Tabs>
+
+```javascript
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "IDENTS_TO_GROUP",
+    "data": [
+        {
+            "serverId": 1,          // Server ID
+            "identIds": [123, 456, 789], // Array of identifier ID integers
+            "account": "000-000-000", // OPTIONAL: Specify the Sonoran account GUID's current identifier to be added to the list of identIds
+            "groupName": "Group 1" // Name of group to set the identifiers to. Use an empty string to clear their group.
+        },
+    ]
+}
+```

@@ -1,0 +1,48 @@
+---
+title: Submodule Configuration
+description: This guide covers the activation process for a general submodule.
+---
+
+## Install the Resource {#install-the-resource}
+
+If you have not already, [install the base FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
+
+## Activating a Submodule {#activating-a-submodule}
+
+The [FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation) contains multiple "submodules" for each integration. These can be individually enabled/disabled and configured.
+
+
+
+<Card title="[available-plugins](../available-plugins/)" href="/cad/integration-plugins/in-game-integration/available-plugins" />
+
+
+
+This example uses the `postals` submodule.
+
+### 1. Configure and Enable the Submodule {#id-1.-configure-and-enable-the-submodule}
+
+* Navigate to the `\sonorancad\configuration` folder and locate the configuration file for your desired submodule.
+  * For this example we will be using the `sonrad_config.lua` file (name depends on the submodule).
+* **Enable** the submodule by changing the `enabled` variable from `false` to `true` in the submodule config.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/0e/0e4f343e0e9e563d545f8bea3153f4aacca20fab75bb1ece2867b64d04f9ef8a.png" alt="" />
+
+
+
+### 2. Rename and Save {#id-2.-rename-and-save}
+
+#### Rename {#rename}
+
+While the pre-configured resource should already have the file renamed, you may need to remove `.dist` from the configuration file name.
+
+Ex: `sonrad_config.dist.lua` > `sonrad_config.lua`
+
+#### Save {#save}
+
+Save the lua file's changes.
+
+### 3. Restart Sonoran CAD {#id-3.-restart-sonoran-cad}
+
+Restart the `sonorancad` resource by entering `ensure sonorancad` in the server console and enjoy your submodule!

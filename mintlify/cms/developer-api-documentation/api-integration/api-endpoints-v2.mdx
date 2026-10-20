@@ -1,0 +1,116 @@
+---
+title: API Endpoints V2
+description: REST-style v2 API documentation for Sonoran CMS.
+---
+
+<Info>
+
+The v2 API uses `Authorization: Bearer <api key>`, standard HTTP verbs, proper status codes, and a consistent success envelope:
+
+```json
+{
+  "success": true,
+  "data": {},
+  "meta": {
+    "timestamp": "2026-04-14T00:00:00.000Z",
+    "path": "/v2/community"
+  }
+}
+```
+
+Errors are returned as `application/problem+json`.
+</Info>
+
+Base URL example: `https://api.sonorancms.com/v2`
+
+Each section below expands into individual endpoint pages.
+
+## Rate Limits {#rate-limits}
+
+
+
+<Card title="[rate-limits.md](rate-limits.md)" href="/cms/developer-api-documentation/api-integration/api-endpoints-v2/rate-limits" />
+
+
+
+## Available Sections {#available-sections}
+
+### Libraries {#libraries}
+
+Use the official Sonoran SDK libraries if you want package-managed helpers for the v2 API.
+
+
+
+<Card title="[libraries.md](libraries.md)" href="/cms/developer-api-documentation/api-integration/api-endpoints-v2/libraries" />
+
+
+
+### General {#general}
+
+
+
+<Card title="[general](general/)" href="/cms/developer-api-documentation/api-integration/api-endpoints-v2/general" />
+
+
+
+### Accounts {#accounts}
+
+
+
+<Card title="[accounts](accounts/)" href="/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts" />
+
+
+
+### Servers {#servers}
+
+
+
+<Card title="[servers](servers/)" href="/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers" />
+
+
+
+### Events {#events}
+
+
+
+<Card title="[events](events/)" href="/cms/developer-api-documentation/api-integration/api-endpoints-v2/events" />
+
+
+
+### Forms {#forms}
+
+
+
+<Card title="[forms](forms/)" href="/cms/developer-api-documentation/api-integration/api-endpoints-v2/forms" />
+
+
+
+### Rosters {#rosters}
+
+
+
+<Card title="[rosters](rosters/)" href="/cms/developer-api-documentation/api-integration/api-endpoints-v2/rosters" />
+
+
+
+### Disciplinary {#disciplinary}
+
+
+
+<Card title="[disciplinary](disciplinary/)" href="/cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary" />
+
+
+
+### ERLC {#erlc}
+
+
+
+<Card title="[erlc](erlc/)" href="/cms/developer-api-documentation/api-integration/api-endpoints-v2/erlc" />
+
+
+
+### Sessions {#sessions}
+
+
+
+<Card title="[sessions](sessions/)" href="/cms/developer-api-documentation/api-integration/api-endpoints-v2/sessions" />

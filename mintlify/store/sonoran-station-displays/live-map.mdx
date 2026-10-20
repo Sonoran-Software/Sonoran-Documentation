@@ -1,0 +1,136 @@
+---
+title: Localized Live Map
+description: Configure the calibrated GTA V satellite map, modes, markers, interaction,
+  and debugging.
+keywords:
+- live map
+- coordinates
+- markers
+---
+
+The `LIVE_MAP` page plots cached GTA world coordinates over a bundled GTA V satellite image. It uses no external map service, API key, or runtime tile requests.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d5/d57e638539e84b8c93612ca4f6ef14389643d11fdadbede692a1cfd41ef4712b.webp" alt="Sonoran Station Displays live map in Auto Fit mode" />
+
+*Auto Fit with controlled unit, call, and station markers.*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/3e/3e51d799cca83fdf840f71c382375e6e17f6c669edfbaf0ca86b885c273d3c2f.webp" alt="Sonoran Station Displays full-island map view" />
+
+*A sparse dataset expands to a full-island operational view.*
+
+
+
+## Bundled asset and calibration {#bundled-asset-and-calibration}
+
+The production asset is `web/assets/gtav-satellite-z4.webp`, derived from the MIT-licensed CreepPork GTAV-Maps project. Station Displays crops the source image to its useful play-area rectangle and projects world coordinates into that cropped rectangle before fitting it into the 16:9 map viewport.
+
+The calibrated bounds are:
+
+| Axis        | Minimum | Maximum |
+| ----------- | ------: | ------: |
+| GTA world X | `-4230` |  `4970` |
+| GTA world Y | `-5170` |  `8420` |
+
+World X increases east/right. World Y increases north/up; image Y is inverted during projection because browser pixels increase downward. The renderer also accounts for letterboxing so markers remain aligned with the visible image instead of the unused side bands.
+
+Calibration was checked against representative locations including LSIA, Mission Row, Del Perro, Sandy Shores, Grapeseed, Paleto Bay, Fort Zancudo, Mount Chiliad, Humane Labs, and Terminal.
+
+## Marker sources {#marker-sources}
+
+| Marker        | Source                      | Appearance                     |
+| ------------- | --------------------------- | ------------------------------ |
+| LEO unit      | Normalized unit coordinates | Blue circle and callsign       |
+| Fire/EMS unit | Normalized unit coordinates | Orange circle and callsign     |
+| Call          | Call `metaData` X/Y         | Red diamond and call label     |
+| Station       | Saved display position      | White square labeled `STATION` |
+
+The display's service filter is applied before map state is built. Calls without usable coordinates remain on their list page but have no map marker. Stale unit markers use reduced opacity and a dashed outline.
+
+## Modes {#modes}
+
+### Auto Fit - `AUTO_FIT` {#auto-fit-auto_fit}
+
+Fits all valid visible unit, call, and enabled station points. The configured padding and minimum/maximum spans keep extremely tight or wide datasets usable.
+
+### Follow Units - `FOLLOW_UNITS` {#follow-units-follow_units}
+
+Fits valid unit points and ignores calls/station when choosing the viewport. It follows the visible unit group rather than one selected officer. In the current release, a normal dataset can look identical to Auto Fit.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d5/d57e638539e84b8c93612ca4f6ef14389643d11fdadbede692a1cfd41ef4712b.webp" alt="Sonoran Station Displays Follow Units map mode" />
+
+*Follow Units using the same dense controlled unit dataset as Auto Fit; the matching viewport is expected for this dataset.*
+
+
+
+### Fixed Region - `FIXED_REGION` {#fixed-region-fixed_region}
+
+Uses the saved center and zoom:
+
+* Center X/Y: `-20000` to `20000`
+* Zoom: `0.1` to `10.0`
+* Default center: `215, -810`
+* Default zoom: `1.0`
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/88/88956967d398b1121ff4d6e37cd7c1e6d5ef7c0bf4ad9194527a99ac0c9f0c3a.webp" alt="Sonoran Station Displays live map in Fixed Region mode" />
+
+*A saved fixed-region viewport.*
+
+
+
+## Nearby map controls {#nearby-map-controls}
+
+When `Config.MapInteraction.enabled` is true and the targeted display is currently on Live Map:
+
+| Default key  | Action              |
+| ------------ | ------------------- |
+| Numpad 8 / 2 | Pan north / south   |
+| Numpad 4 / 6 | Pan west / east     |
+| Numpad 5     | Reset temporary pan |
+
+Panning is temporary and synchronized to authorized nearby viewers. It is not written to `data/displays.json`. Leaving the Live Map page or using reset restores the display's saved map mode.
+
+Target selection uses each display's interaction distance, camera angle, line of sight, routing bucket, and interior. All bindings are rebindable in FiveM settings.
+
+## Configuration {#configuration}
+
+Per-display options are under:
+
+```
+Display Configuration > Map Behavior
+```
+
+Global defaults live in `Config.Map`: mode, center, zoom, minimum/maximum span, padding, call visibility, station-marker visibility, and the debug overlay.
+
+Map state follows shared cache changes. Unit polling defaults to 2 seconds and call polling to 3 seconds. `Config.MapRefreshInterval` exists for compatibility but is not read by the current renderer.
+
+## Debug overlay {#debug-overlay}
+
+Set `Config.Map.debug = true` only while calibrating or troubleshooting. The overlay reports asset and crop dimensions, configured bounds, clipping, selected viewport points, and projection values.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/14/1483e432a30e1ab4e796dfe404078b7f6f64a7f9363138768406b96ca30405a9.webp" alt="Live Map projection debug overlay" />
+
+*Projection diagnostics rendered over the production map.*
+
+
+
+Debug data can reveal coordinates and is visually noisy; disable it after testing.
+
+## Limitations {#limitations}
+
+* Raster imagery and GTA coordinate sources have finite positional accuracy.
+* Dense labels can overlap even though the renderer offsets nearby labels.
+* Records outside the calibrated bounds are excluded from production rendering; debug mode reports clipping.
+* The map has no routing, navigation, external layers, or customer-selectable tile source.
+* `FOLLOW_UNITS` follows the visible group, not a selected unit.

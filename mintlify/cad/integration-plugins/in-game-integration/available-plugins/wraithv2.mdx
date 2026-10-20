@@ -1,0 +1,308 @@
+---
+title: WraithV2
+description: Implements the Wraith ARS 2X plate reader for automated plate reading.
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/26/26723d59b6b62aa1094e6731a17ac41aedc25e692e23fc4d3112062447f90b66.png" alt="" />
+
+
+
+## Showcase Video {#showcase-video}
+
+View our [WraithV2 showcase video](https://www.youtube.com/watch?v=5oL7Mg6LQgg)!
+
+## Activation Guide {#activation-guide}
+
+### 1. Download and Install the Resource {#id-1.-download-and-install-the-resource}
+
+<Info>
+
+This submodule is already **enabled by default** when installing the [Sonoran CAD FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
+
+\
+The [locations submodule](/cad/integration-plugins/in-game-integration/available-plugins/locations) includes all logic required to send bodycam images to the CAD and is **already enabled by default**. Keep this submodule enabled to maintain functionality.
+</Info>
+
+<Info>
+
+Use of this submodule requires the Sonoran version of [Wraith ARS 2X](https://github.com/sonoran-Software/wk_wars2x)[ ](https://github.com/Sonoran-Software/wk_wars2x)radar and plate reader to function. This resource is bundled with the [Sonoran CAD FiveM Resource](/cad/integration-plugins/in-game-integration/fivem-installation) as `wk_wars2x`.
+</Info>
+
+### 2. Adjust the Configuration {#id-2.-adjust-the-configuration}
+
+The bodycam settings are stored inside of the `/configuration/wraithv2_config.lua` file.
+
+<Info>
+
+Notifications are handled by the Sonoran CAD core. See [Core Configuration](/cad/integration-plugins/in-game-integration/fivem-installation#4.-configure-the-resource) for settings and supported values.
+</Info>
+
+
+
+<Accordion title="wraithv2config.lua">
+
+
+
+| Config Option       | Description                                                                                |
+| ------------------- | ------------------------------------------------------------------------------------------ |
+| useExpires          | use vehicle registration expirations, or not                                               |
+| useMiddleInitial    | use middle initials?                                                                       |
+| alertNoRegistration | alert if no registration was found on scan?                                                |
+| statusUid           | Custom record field UID containing the status                                              |
+| expiresUid          | Custom record field UID containing the expiration date                                     |
+| flagOnStatuses      | List of statuses to flag/alert on                                                          |
+| vehTypeFilter       | List of Classes that will NOT get ran through CAD                                          |
+| notificationTimers  | Time in MS, for how long each alert type will last                                         |
+| customFields        | Additional custom fields to show in your ALPR messages, such as insurance expiration, etc. |
+
+
+
+</Accordion>
+
+
+
+### 3. Ensure Players are Linked {#id-3.-ensure-players-are-linked}
+
+Ensure the player has already [linked their CAD](/cad/integration-plugins/in-game-integration/link-user-in-game) for this integration to work.
+
+### 4. Custom Record Handling {#id-4.-custom-record-handling}
+
+The in-game radar can alert you about expired registrations, BOLOs, warrants, and more:
+
+
+
+<Accordion title="Alert on Vehicle Status (Expired, Stolen, etc.)">
+
+
+
+When a vehicle is scanned by your radar, you can be notified if the vehicle registration status is inactive, expired, etc.
+
+**1. Get the Status field ID**
+
+In the custom record configuration panel, copy the field ID for your vehicle registration's status field. Typically this would be a dropdown (or "select") type field with options like "Active", "Pending", "Expired", etc.
+
+![](https://docs-assets.sonoransoftware.com/sha256/fa/faf42eaa4f17593c716e7b9777b37cd43471d9c7aa852d04456a1a2faa294dc6.png)
+
+**2. Set the Field ID in your Config**
+
+Ensure the `statusUid` configuration value matches your status field ID from the custom record.
+
+If your vehicle registration record has an expiration date value in it, be sure to set the `expiresUid` value to its field ID and set `useExpires` to `true`. This will display the registration expiration date in the notifications.
+
+![](https://docs-assets.sonoransoftware.com/sha256/d4/d482c0bd19835449c66e9098e2bacc7c91acde44fa271c33a7fa56758b75a32a.png)
+
+**3. Set Status Flag Options**
+
+Customize the `flagOnStatuses` list to configure which vehicle registration statuses your radar will alter you on.
+
+If the vehicle registration's status field (the record field ID that matches your `statusUid`) matches one of the `flagOnStatuses` values, your in-game radar will alert you.
+
+![](https://docs-assets.sonoransoftware.com/sha256/44/44db054e6e621b75e7efaef327d2f51c7c02faf4042db242e927e48a090bd996.png)
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Alert on BOLO or Warrant">
+
+
+
+When a vehicle is scanned by your radar, you can be notified of any active warrant or BOLO record with that license plate on it.
+
+**1. Ensure your Warrant or BOLO Record has a Status Field**
+
+In order for the radar to determine if the warrant or BOLO record is active, ensure your custom record has a `status` type field on it.
+
+![](https://docs-assets.sonoransoftware.com/sha256/8e/8e09900e1e02c1cebd3c617d7d0274dac5e8bb07ee1335b93c0981365f92ab84.png)
+
+**2. Ensure your Warrant or BOLO Record has a Plate Field**
+
+In order to match the vehicle plate with a record, ensure your custom record has a field with the field ID set to `plate`.
+
+![](https://docs-assets.sonoransoftware.com/sha256/cf/cf245ac6d8dc84d167a2c43f1f8554cc788edcff72a8be1f264c977e7bc65851.png)
+
+**3. Receive In-Game Alerts**
+
+Your radar will alter you when a scanned vehicle matches:
+
+* A Warrant or BOLO record with the `status` type field of `ACTIVE`
+* A license plate matching the `plate` field ID of one of those active records
+
+
+
+</Accordion>
+
+
+
+### 5. Custom Field Display {#id-5.-custom-field-display}
+
+You can configure custom fields to display in the Wraith ALPR notification. The fields are configured in the `wraithv2_config.lua` under the `customFields` section. You can get your custom field ID's from the Sonoran CAD Admin menu > Customize > [Custom Records](/cad/tutorials/customization/creating-custom-record-and-report-types) section.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/60/601dc6ac8472294789efd92c57fb5a1298a4885309fc17e36befd8f3e112388f.png" alt="" />
+
+*SonoranCADFiveM - WraithV2 Configuration*
+
+ 
+
+<img src="https://cdn.discordapp.com/attachments/630973482221436938/1440107400320516196/image.png?ex=691cf408&is=691ba288&hm=c7286089dfef9cb96efe48fc74d591f9a4b0ed24e8aa864115d71918282b2b49&" alt="" />
+
+*Sonoran CAD - Custom Records*
+
+
+
+## Usage {#usage}
+
+For more information on using the in-game UI, please view the Sonoran version of the [Wraith ARS 2X](https://forum.cfx.re/t/release-wraith-ars-2x-police-radar-and-plate-reader-v1-2-4/1058277)[ ](https://github.com/Sonoran-Software/wk_wars2x)release information.\
+**Results are sent directly to your CAD when a license plate is locked.**
+
+WraithV2 now reuses a shared plate lookup cache. When a plate is scanned or locked, SonoranCAD caches the parsed plate result for 60 seconds and reuses it for repeat scans of the same normalized plate instead of running the full CAD lookup each time.
+
+### Developer Usage {#developer-usage}
+
+If you are building your own server-side resource and want the same parsed data that Wraith uses, call the shared export documented in [Server Functions](/cad/integration-plugins/in-game-integration/framework-development-documentation/server-functions#cadgetplateinformation):
+
+```lua
+exports.sonorancad.cadGetPlateInformation("ABC123", function(regData, vehData, charData, boloData, warrantData)
+    local registration = regData[1]
+    local vehicle = vehData[1]
+    local owner = charData[1]
+
+    print(json.encode({
+        registration = registration,
+        vehicle = vehicle,
+        owner = owner,
+        boloData = boloData,
+        warrantData = warrantData
+    }))
+end, {
+    autoLookup = "123456789123456789",
+    cacheTtlMs = 60000
+})
+```
+
+Use `forceRefresh = true` in the options table if you need to bypass the existing cached result and pull fresh data immediately.
+
+![Wraith ARS 2X Controls](https://docs-assets.sonoransoftware.com/sha256/f6/f6224541d28f1b2797160d2951c6265ab1889b3a036c5822381a596910b2b0c2.png)
+
+## Sonoran wk\_wars2x {#sonoran-wk_wars2x}
+
+<Info>
+
+These features are not found in the original wk\_wars2x resource, and only come packaged with our [Sonoran CAD FiveM Resource](/cad/integration-plugins/in-game-integration/fivem-installation).
+</Info>
+
+### Additional Features {#additional-features}
+
+* Added the ability to blacklist certain vehicle classes via the config.lua, these blacklisted vehicles will show on the plate reader as the `CONFIG.noPlateValue` value (default: "NO PLATE").
+* Added the feature `CONFIG.realisticPlateScanning`. This feature is disabled by default due to certain vehicles having incorrect metadata causing this feature to display `CONFIG.noPlateValue` falsely. Behavior when enabled: when you are traveling toward/away from a vehicle that does not have a front/back plate the plate reader will not be able to scan it and will display the `CONFIG.noPlateValue` value.
+* Added custom sounds when a BOLO, Warrant or unregistered vehicle plate is scanned.
+
+### Realistic Plate Scanning {#realistic-plate-scanning}
+
+Set `CONFIG.realisticPlateScanning` to `true` to enable only scanning vehicles with the ALPR when they have a plate.
+
+Note: Some vehicles may show a plate due to missing vehicle metadata or being able to remove the plate with extras.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/26/269e9bebc2af607f60feaf4f8020abdb6a1eaad1cf825cf3bd078c636966508e.png" alt="" />
+
+*Sonoran wk_wars2x - Additional Config Options*
+
+
+
+### Custom Alert Tones {#custom-alert-tones}
+
+Custom tones will now play when you scan a plate that is has either a BOLO, Warrant or is unregistered. These tones can be customized by replacing the existing files in the `/sonorancad/submodules/wraithv2/sfx` folder with your own. **Please note the files names need to be the same as the ones you are replacing**
+
+### Doppler Sounds {#doppler-sounds}
+
+The Doppler Effect allows the radar to automatically capture vehicle speeds while in motion. As patrol speed increases, the radar adjusts its frequency shift calculations to accurately track and lock moving targets in front of or behind the unit—enabling reliable speed detection without requiring the officer to remain stationary.
+
+The doppler effect can be adjusted by opening the **controller** (F5 by default) > **Menu**
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/96/9628f3e70160c937161e4758949f101f9eddcf4b8839011584a8543d18c71851.png" alt="" width="209" />
+
+
+
+The doppler effect can be adjusted per client from a volume of 0 (off) to 5 (max volume). Additionally servers can disable the entire system via the configuration option `CONFIG.enable_doppler`
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/93/9349961c9ac97eeb47ac415762b9be8e3302a343b733985d20e2fd17d2d135cb.png" alt="" />
+
+*Sonoran CAD - Wraith WkWars2x - Doppler Off*
+
+ 
+
+<img src="https://cdn.discordapp.com/attachments/871554360285474847/1468339426567655475/image.png?ex=6983a927&is=698257a7&hm=185cbe9959a1c6bf0c74d41335e06ac94819dc1c41553275b3648d2c954c3bc8&" alt="" />
+
+*Sonoran CAD - Wraith WkWars2x - Doppler Max Volume*
+
+
+
+#### Doppler Direction {#doppler-direction}
+
+You can customize the antenna that will trigger the doppler noise via the client settings menu between the options of "btH" (both), "rEr" (rear) or "FNt" (front). This will create the doppler audio effect based upon a vehicles speed in the respective antenna
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/1a/1a08259b950593dc9c17abd16dea968f946706474f13127766cf47216cba1246.png" alt="" />
+
+*Sonoran CAD - Wraith WkWars2x - Front Only*
+
+ 
+
+<img src="https://cdn.discordapp.com/attachments/871554360285474847/1468340770007285873/image.png?ex=6983aa68&is=698258e8&hm=5e561a7c6de7e7abfd76fb3617d9c188f1181e87f5649c5349ab5b915061f4a6&" alt="" />
+
+*Sonoran CAD - Wraith WkWars2x - Both Antennas*
+
+ 
+
+<img src="https://cdn.discordapp.com/attachments/871554360285474847/1468340770363674827/image.png?ex=6983aa68&is=698258e8&hm=540beada2276ca6ae389cd118061d15273004f60076545ddd45c112c8f2842e6&" alt="" />
+
+*Sonoran CAD - Wraith WkWars2x - Rear Only*
+
+
+
+## Troubleshooting {#troubleshooting}
+
+### AI Cars are Spamming the Reader {#ai-cars-are-spamming-the-reader}
+
+The framework ships with the `wk_wars2x` plate reader included. This will have the `config.use_sonorancad` set to `true`. When enabled, the plate reader will not run a lookup on any AI vehicle.
+
+![Wraith - Use Sonoran CAD Config Option](https://docs-assets.sonoransoftware.com/sha256/c0/c05adf327598d3ce2c57d1d84f15714ba41647394888e156f8295c666fcfd00c.png)
+
+### Vehicles Aren't Being Flagged {#vehicles-arent-being-flagged}
+
+#### Status {#status}
+
+Keep in mind that AI vehicles won't display or be ran unless there's a vehicle registration record added to the CAD with that plate.
+
+Ensure that you've correctly followed [step 5](https://github.com/Sonoran-Software/SonoranCAD-Documentation/blob/master/broken/pages/-M7U3aBbrsfrj1Cmeqmm/README.md#5.-custom-record-handling) and the `statusUid` and `expirationUid` fields have been set correctly, both in the CAD record template and the submodule config.
+
+Ensure that the `flagOnStatuses` array has the exact string/text values that match the options in your custom record template.
+
+#### BOLO and Warrant {#bolo-and-warrant}
+
+Ensure that your custom BOLO and Warrant records have a field with the `type` set to `status`. Otherwise, there's no way to determine if the BOLO/Warrant is active, closed, etc. The plate reader will warn of any active BOLO or Warrant records with the vehicle plate attached _and_ the `status` type field set to active/open.
+
+### Error: attempt to index a nil value (local 'vehicle') {#error-attempt-to-index-a-nil-value-local-vehicle}
+
+Some servers will see this error in their server console:
+
+```
+sv_wraithv2.lua:112 - attempt to index a nil value (local 'vehicle')
+```
+
+To fix this, navigate to your `[sonorancad]/wk_wars2x` folder, and rename `config.dist.lua` to just `config.lua`
+
+The config not being renamed is the most common cause of this error, however, if for some reason that doesn't fix it, feel free to open a [support ticket](https://support.sonoransoftware.com) with us.

@@ -1,0 +1,99 @@
+---
+title: Submodule Troubleshooting
+description: View some basic troubleshooting steps when activating Sonoran CAD submodules.
+---
+
+## Core Commands {#core-commands}
+
+Sonoran CAD's core includes powerful built-in commands. **These commands are entered into your server console.**
+
+**Ex:** A [support member](https://support.sonoransoftware.com) may ask you to send detailed logging information to them. They will give you the specific ID number to enter. (ex: 123)\
+Entering `sonorancad support 123` in your server console will send your plugin configuration directly to our support application.
+
+For ERS issues, run `sonorancad ers` in the **server console** first. It shows the ERS connection, callout-list status, and the most recent failure. Use the [ERS troubleshooting guide](/cad/integration-plugins/in-game-integration/available-plugins/ers#troubleshooting) to check the reported problem. Support uploads include these ERS details automatically.
+
+| Command                       | Description                                                                                                                                                                                                                                                                                        |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| sonorancad debugmode          | Enables detailed debug logging                                                                                                                                                                                                                                                                     |
+| sonorancad info               | Displays version and config information                                                                                                                                                                                                                                                            |
+| sonorancad support &lt;_NUMBER_> | Sends important information for [customer support](https://support.sonoransoftware.com) purposes.The <em>NUMBER</em> parameter will be provided to you by a support team member.Ex: <code>sonorancad support 123</code> sends us your plugin information for help. |
+| sonorancad plugin &lt;_NAME_>    | Displays plugin informationEx: <code>sonorancad plugin callcommands</code>                                                                                                                                                                                                           |
+
+## Quick Checks {#quick-checks}
+
+### 1. Ensure your community is on a paid version. {#id-1.-ensure-your-community-is-on-a-paid-version}
+
+Your community's subscription may have expired and failed to renew. Do a quick check on your [community limits](/cad/tutorials/getting-started/view-your-limits) to make sure your community version includes the submodule you are trying to install.
+
+<Info>
+
+Each submodule guide lists the required subscription version at the top.
+</Info>
+
+### 2. Ensure your submodule is enabled {#id-2.-ensure-your-submodule-is-enabled}
+
+Be sure to follow the [core installation](/cad/integration-plugins/in-game-integration/fivem-installation) and [submodule activation](/cad/integration-plugins/in-game-integration/submodule-configuration) guides thoroughly, depending on the specific submodule you are trying to activate.
+
+\
+Make sure you have not forgotten to enable the submodule in the plugin config file!
+
+Enter `sonorancad info` into your server console.
+
+![Sonoran Info - Disabled Plugins](https://docs-assets.sonoransoftware.com/sha256/d0/d03b3d8160e23fce9acd563f6d368dd5694a5db16d7a475348b12ca3ba1fde47.png)
+
+If the submodule you are having trouble with is listed as DISABLED, you may have forgotten to enable it in the submodule configuration.
+
+![The "enabled" field should be set to "true"](https://docs-assets.sonoransoftware.com/sha256/5a/5a50d9ddabd5017566cfebc57988bcea3d6aad4dbf3946d43bfb2fa051943d7a.png)
+
+### 3. Ensure your API ID is set correctly. {#id-3.-ensure-your-api-id-is-set-correctly}
+
+Ensure you have set your [API ID in the CAD](/cad/api-integration/getting-started/setting-your-api-id) using the value from the [API ID submodule](/cad/integration-plugins/in-game-integration/available-plugins/api-id-checker).
+
+## Debug Mode {#debug-mode}
+
+The SonoranCAD core includes a powerful debug mode. Enable this by entering `sonorancad debugmode` into your server console.
+
+Debug mode will print out additional error information and JSON data for all API calls or push events.
+
+### 1. Check your API ID: {#id-1.-check-your-api-id}
+
+For plugins that require your individual CAD user account to have the API ID set (live map, unit locations, panic, etc.) you can view this data in the console output.
+
+The image below shows an API Call being made from the server to Sonoran CAD. This API call is type `UNIT_LOCATION` and includes all the data necessary.
+
+Ensure the `APIID` listed in the API call matches the [API ID set in your CAD's user account](/cad/api-integration/getting-started/setting-your-api-id).
+
+![Debug Mode - Unit Location API Call](https://docs-assets.sonoransoftware.com/sha256/e3/e3f582289fde22fb9c9e6f9d6fdce1cb02857b4f9b72df37c32588c203786c48.png)
+
+### 2. Check the Community ID and API Key {#id-2.-check-the-community-id-and-api-key}
+
+Your community ID and API key is also listed in the debug API call information. Be sure that the [community ID and API key](/cad/api-integration/getting-started/retrieving-your-credentials) are correct.
+
+## Still Having Trouble? {#still-having-trouble}
+
+If you're still having trouble, our dedicated support team is here to help.
+
+[Reach out to us and generate a support ticket at any time](https://support.sonoransoftware.com).
+
+## Common Errors {#common-errors}
+
+### Error: Ensure config.json is present {#error-ensure-config.json-is-present}
+
+Your framework or plugin config is not correctly named `config.json`. Ensure that is has been spelt correctly, is not `config.json.json`, etc.
+
+You may need to open the file in a text editor to more easily see the file extension, and ensure that it is correctly named as `config.json`.
+
+### Community Has Been API Blacklisted {#community-has-been-api-blacklisted}
+
+The CAD backend will temporarily "blacklist" (deny) all API calls if multiple requests are made with an invalid format.
+
+#### Causes {#causes}
+
+* Third-party or custom integration scripts may not be utilizing our API correctly. Try disabling them to rule out the issue.
+* A bug with one of our [FiveM submodules](/cad/integration-plugins/in-game-integration/available-plugins).
+
+#### Diagnosis {#diagnosis}
+
+1. Enable debug mode on your FiveM server by entering the server command `sonorancad debugmode`. All API calls made will have the full JSON payload printed in your server console.
+2. Wait for your next API blacklist notice. In your server console, you should see multiple failed/errored API calls at the same time as your blacklist. The JSON will show the full, bad data being sent to Sonoran CAD. Based on the `type` of these API calls, you can narrow down the source to a third-party/custom script or one of our FiveM submodules.
+   1. If the bad API calls leading to the blacklist appear to be from an official Sonoran CAD submodule, [reach out to our support team](https://support.sonoransoftware.com/).

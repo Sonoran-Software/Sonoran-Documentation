@@ -1,0 +1,227 @@
+---
+title: Custom Voice Effects
+description: Customize transmission voice effects for your community, or local user!
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d6/d6f06bdc8f48483e36098114b08b44023daf5b343a93b721e88ece3d7884c95f.png" alt="" />
+
+*Sonoran Radio: Voice Effect Customization*
+
+
+
+## Available Voice Effects {#available-voice-effects}
+
+Sonoran Radio lets you create custom voice effect profiles for transmissions. These effects can be independently assigned to specific radio channels and emergency calls. Or, users can also customize their own voice effect preferences!
+
+By clicking the **headphone** icon and using the signal strength sliders, you can hear how the effect will sound when users are talking.
+
+### Vocoder {#vocoder}
+
+<Info>
+
+The **vocoder** effect remains consistent and does not fluctuate based on [in-game signal strength](/radio/game-integrations/fivem/in-game-radio/in-game-repeaters)
+</Info>
+
+
+
+<Accordion title="Vocoder">
+
+
+
+The Vocoder voice effect simulates a modern P25-style radio compression using an AMBE-like encoding approach, commonly heard in proprietary digital radio systems. It’s ideal for communities seeking realistic conditions and authentic downsides.
+
+When enabled, audio is routed through a vocoder for encoding and decoding before broadcast, causing a slight transmission delay.
+
+The vocoder has optional bitrates of `3200`, `2400`, `1600`, `1400`, `1300`, `1200`, `700` and `450` bit/s. While the suggested bitrate is `2400`, the bitrate can be increased for "less effect" or increased for "more effect".
+
+**It is recommended to use the** [**clipping voice effect**](/radio/tutorials/usage/dispatch-panel/custom-voice-effects#clipping) **in addition to the vocoder to have in-game signal strength impact the transmission quality.**
+
+
+
+</Accordion>
+
+
+
+### Clipping {#clipping}
+
+
+
+<Accordion title="Clipping">
+
+
+
+The clipping voice effect mutes or "clips" audio intermittently based on in-game signal strength. As the signal weakens, more audio is cut, making transmissions increasingly difficult to understand.
+
+
+
+</Accordion>
+
+
+
+### Digital {#digital}
+
+
+
+<Accordion title="Digital">
+
+
+
+The digital voice effect applies bitrate compression to the audio, causing it to sound increasingly robotic and harder to understand as signal quality decreases.
+
+
+
+</Accordion>
+
+
+
+### Analog {#analog}
+
+
+
+<Accordion title="Analog">
+
+
+
+The analog voice effect adds static and scratchiness to the audio, making it sound progressively fuzzier and less clear as signal quality deteriorates.
+
+
+
+</Accordion>
+
+
+
+### Equalizer (Pre & Post-Effects) {#equalizer-pre-and-post-effects}
+
+<Info>
+
+This **EQ** effect remains consistent and does not fluctuate based on [in-game signal strength](/radio/game-integrations/fivem/in-game-radio/in-game-repeaters)
+</Info>
+
+
+
+<Accordion title="Equalizer">
+
+
+
+The equalizer effect allows you to boost or reduce frequencies throughout the audio range.\
+\&#xNAN;_**Tip:** For a "tin can" effect, increase the mid frequencies while reducing the low and high ranges._
+
+**Pre-Effect EQ**
+
+The pre-effect EQ is a profile applied directly to the mic input before any effects (vocoder, digital, analogue, etc.) are applied. This can help improve clarity with the vocoder, grant a tin-can style effect, and more.
+
+**Post-Effect EQ**
+
+The post-effect EQ is a profile applied to the audio after all effects have been processed. This can help improve clarity and improve the finalized effects.
+
+
+
+</Accordion>
+
+
+
+## Applying the Voice Effect {#applying-the-voice-effect}
+
+### On the User-Side {#on-the-user-side}
+
+Voice effects can be customized by the individual listener, based on their preferences. Users can open their **Settings** menu and select the **Voice FX** tab to customize.
+
+Toggle **Community FX** to **Local FX** mode to [bypass the community set channel effects](/radio/tutorials/usage/dispatch-panel/custom-voice-effects#to-radio-channels).
+
+<Warning>
+
+Enabling the vocoder locally forces your client to encode and decode all incoming transmissions, which can impact performance at higher user counts.
+
+For better performance, [enable the vocoder at the channel level](/radio/tutorials/usage/dispatch-panel/custom-voice-effects#to-radio-channels) so users pre-process transmissions on their end.
+
+When a [channel has vocoder FX enabled](/radio/tutorials/usage/dispatch-panel/custom-voice-effects#to-radio-channels), it cannot be bypassed client-side—all transmissions are already vocoded before playback.
+</Warning>
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/6d/6d113b0e710b3b2d91e12e4335a2ffd102a6b218aa92b0340360eaf675a78001.png" alt="" width="375" />
+
+
+
+### To Radio Channels {#to-radio-channels}
+
+In the [channel editor, you can select the desired voice effect](/radio/tutorials/usage/dispatch-panel/configure-channels#setting-the-voice-effect). This voice effect will apply to anyone talking in that channel.
+
+[User-side voice FX can bypass channel effects](/radio/tutorials/usage/dispatch-panel/custom-voice-effects#on-the-user-side), but enabling Vocoder FX forces all transmissions through the vocoder, ensuring it still applies to all custom FX.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/51/511dfc068b3404e7c60eec264f64aa833f1ee6e3dfbc29e16777e0d2af702c6c.png" alt="" width="282" />
+
+*Sonoran Radio: Channel Voice Effect*
+
+
+
+### To Emergency Calls {#to-emergency-calls}
+
+To apply a custom voice effect for [emergency phone calls](/radio/tutorials/usage/dispatch-panel/emergency-calls), toggle the phone icon in the voice effect tab.
+
+**Note:** If no custom voice effect is selected for emergency calls, a default "tin can" EQ effect will be applied.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/12/128a9727e9f421f8273bc2092ed3b6ab0afb170ace6891fd209976942f33dae8.png" alt="" width="375" />
+
+*Sonoran Radio: Emergency Call Voice Effect Selection*
+
+
+
+## Import and Export Effects {#import-and-export-effects}
+
+You can import and export voice effect profiles to share with other communities. See some of our [public effect examples](/radio/tutorials/usage/dispatch-panel/custom-voice-effects#voice-profile-examples) to import.
+
+To Export:
+
+* Click the Import/Export Button.
+* Click `Download` to save the current voice effect to a JSON file.
+
+To Import:
+
+* Click the Import/Export Button.
+* Click the file icon to import a JSON file directly.
+* Or, paste the JSON contents into the `Import` box and press `Import`.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/80/809a4c808df427bfc097265141d3f5a4000faab32a5f25006289907a15d038f5.png" alt="" width="375" />
+
+
+
+## Voice Profile Examples {#voice-profile-examples}
+
+We've pre-configured voice effects for popular use. Copy the JSON code below to import into your voice effects panel.
+
+### Vocoder Example {#vocoder-example}
+
+These voice effects combines the vocoder with pre and post-effect EQ customizations for the best possible clarity.
+
+#### #1 Vocoder {#id-1-vocoder}
+
+[Click to listen to this example.](https://sonoransoftware.com/assets/files/sonoranradio/voice_effects/vocoder_example_1.mp3)
+
+```json
+{"id":11,"label":"Vocoder Example #1","vocoder":{"mode":"3200","enabled":true},"equalizer":[{"q":1,"freq":31,"gain":-20,"type":"lowshelf","freqlabel":"<31","bandwidthLabel":"2.5"},{"q":1,"freq":62,"gain":-20,"type":"peaking","freqlabel":"63","bandwidthLabel":"1.8"},{"q":1,"freq":125,"gain":-4,"type":"peaking","freqlabel":"125","bandwidthLabel":"1.2"},{"q":1,"freq":250,"gain":0,"type":"peaking","freqlabel":"250","bandwidthLabel":"0.6"},{"q":1,"freq":500,"gain":0,"type":"peaking","freqlabel":"500","bandwidthLabel":"0.0"},{"q":1,"freq":1000,"gain":-3.5,"type":"peaking","freqlabel":"1k","bandwidthLabel":"0.0"},{"q":1,"freq":2000,"gain":0.5,"type":"peaking","freqlabel":"2k","bandwidthLabel":"1.2"},{"q":1,"freq":4000,"gain":1.5,"type":"peaking","freqlabel":"4k","bandwidthLabel":"1.8"},{"q":1,"freq":8000,"gain":4.5,"type":"peaking","freqlabel":"8k","bandwidthLabel":"2.5"},{"q":1,"freq":16000,"gain":13.5,"type":"highshelf","freqlabel":">16k","bandwidthLabel":"2.5"}],"equalizerGain":{"low":0,"mid":0,"high":0},"postEqualizer":[{"q":1,"freq":31,"gain":-20,"type":"lowshelf","freqlabel":"<31","bandwidthLabel":"2.5"},{"q":1,"freq":62,"gain":-16.5,"type":"peaking","freqlabel":"63","bandwidthLabel":"1.8"},{"q":1,"freq":125,"gain":-12.5,"type":"peaking","freqlabel":"125","bandwidthLabel":"1.2"},{"q":1,"freq":250,"gain":-2,"type":"peaking","freqlabel":"250","bandwidthLabel":"0.6"},{"q":1,"freq":500,"gain":2.5,"type":"peaking","freqlabel":"500","bandwidthLabel":"0.0"},{"q":1,"freq":1000,"gain":3,"type":"peaking","freqlabel":"1k","bandwidthLabel":"0.0"},{"q":1,"freq":2000,"gain":5.5,"type":"peaking","freqlabel":"2k","bandwidthLabel":"1.2"},{"q":1,"freq":4000,"gain":1.5,"type":"peaking","freqlabel":"4k","bandwidthLabel":"1.8"},{"q":1,"freq":8000,"gain":-4,"type":"peaking","freqlabel":"8k","bandwidthLabel":"2.5"},{"q":1,"freq":16000,"gain":-1,"type":"highshelf","freqlabel":">16k","bandwidthLabel":"2.5"}],"clipDistortion":{"max":0.09,"min":0,"enabled":true,"aggressiveness":0.05},"analogDistortion":{"max":2,"min":0,"enabled":false,"aggressiveness":0.05,"constantStatic":0},"digitalDistortion":{"max":0,"min":0,"enabled":false,"aggressiveness":0,"constantStatic":0}}
+```
+
+#### #2 - Vocoder with Additional Bass {#id-2-vocoder-with-additional-bass}
+
+[Click to listen to this example.](https://sonoransoftware.com/assets/files/sonoranradio/voice_effects/vocoder_example_2.mp3)
+
+```json
+{"id":9,"label":"Vocoder Example #2 (More Bass)","vocoder":{"mode":"3200","enabled":true},"equalizer":[{"q":1,"freq":31,"gain":-20,"type":"lowshelf","freqlabel":"<31","bandwidthLabel":"2.5"},{"q":1,"freq":62,"gain":-11.5,"type":"peaking","freqlabel":"63","bandwidthLabel":"1.8"},{"q":1,"freq":125,"gain":-4,"type":"peaking","freqlabel":"125","bandwidthLabel":"1.2"},{"q":1,"freq":250,"gain":-10,"type":"peaking","freqlabel":"250","bandwidthLabel":"0.6"},{"q":1,"freq":500,"gain":-3,"type":"peaking","freqlabel":"500","bandwidthLabel":"0.0"},{"q":1,"freq":1000,"gain":4.5,"type":"peaking","freqlabel":"1k","bandwidthLabel":"0.0"},{"q":1,"freq":2000,"gain":-3.5,"type":"peaking","freqlabel":"2k","bandwidthLabel":"1.2"},{"q":1,"freq":4000,"gain":-4.5,"type":"peaking","freqlabel":"4k","bandwidthLabel":"1.8"},{"q":1,"freq":8000,"gain":-14,"type":"peaking","freqlabel":"8k","bandwidthLabel":"2.5"},{"q":1,"freq":16000,"gain":-18,"type":"highshelf","freqlabel":">16k","bandwidthLabel":"2.5"}],"equalizerGain":{"low":0,"mid":0,"high":0},"postEqualizer":[{"q":1,"freq":31,"gain":3,"type":"lowshelf","freqlabel":"<31","bandwidthLabel":"2.5"},{"q":1,"freq":62,"gain":3,"type":"peaking","freqlabel":"63","bandwidthLabel":"1.8"},{"q":1,"freq":125,"gain":3,"type":"peaking","freqlabel":"125","bandwidthLabel":"1.2"},{"q":1,"freq":250,"gain":3,"type":"peaking","freqlabel":"250","bandwidthLabel":"0.6"},{"q":1,"freq":500,"gain":3,"type":"peaking","freqlabel":"500","bandwidthLabel":"0.0"},{"q":1,"freq":1000,"gain":3,"type":"peaking","freqlabel":"1k","bandwidthLabel":"0.0"},{"q":1,"freq":2000,"gain":3,"type":"peaking","freqlabel":"2k","bandwidthLabel":"1.2"},{"q":1,"freq":4000,"gain":3,"type":"peaking","freqlabel":"4k","bandwidthLabel":"1.8"},{"q":1,"freq":8000,"gain":3,"type":"peaking","freqlabel":"8k","bandwidthLabel":"2.5"},{"q":1,"freq":16000,"gain":3,"type":"highshelf","freqlabel":">16k","bandwidthLabel":"2.5"}],"clipDistortion":{"max":0,"min":0,"enabled":false,"aggressiveness":0},"analogDistortion":{"max":0,"min":0,"enabled":false,"aggressiveness":0,"constantStatic":0},"digitalDistortion":{"max":0,"min":0,"enabled":false,"aggressiveness":0,"constantStatic":0}}
+```
+
+#### Emergency Call Example {#emergency-call-example}
+
+This voice effect utilizes EQ customizations for the best possible phone call effect.
+
+[Click to listen to this example.](https://sonoransoftware.com/assets/files/sonoranradio/voice_effects/emergency_example_1.mp3)
+
+```json
+{"id":10,"label":"Emergency Call Example","vocoder":{"mode":"3200","enabled":false},"equalizer":[{"q":1,"freq":31,"gain":-20,"type":"lowshelf","freqlabel":"<31","bandwidthLabel":"2.5"},{"q":1,"freq":62,"gain":-20,"type":"peaking","freqlabel":"63","bandwidthLabel":"1.8"},{"q":1,"freq":125,"gain":-20,"type":"peaking","freqlabel":"125","bandwidthLabel":"1.2"},{"q":1,"freq":250,"gain":-17,"type":"peaking","freqlabel":"250","bandwidthLabel":"0.6"},{"q":1,"freq":500,"gain":-5,"type":"peaking","freqlabel":"500","bandwidthLabel":"0.0"},{"q":1,"freq":1000,"gain":8.5,"type":"peaking","freqlabel":"1k","bandwidthLabel":"0.0"},{"q":1,"freq":2000,"gain":4,"type":"peaking","freqlabel":"2k","bandwidthLabel":"1.2"},{"q":1,"freq":4000,"gain":-8,"type":"peaking","freqlabel":"4k","bandwidthLabel":"1.8"},{"q":1,"freq":8000,"gain":-13.5,"type":"peaking","freqlabel":"8k","bandwidthLabel":"2.5"},{"q":1,"freq":16000,"gain":-20,"type":"highshelf","freqlabel":">16k","bandwidthLabel":"2.5"}],"equalizerGain":{"low":0,"mid":0,"high":0},"postEqualizer":[{"q":1,"freq":31,"gain":-20,"type":"lowshelf","freqlabel":"<31","bandwidthLabel":"2.5"},{"q":1,"freq":62,"gain":-20,"type":"peaking","freqlabel":"63","bandwidthLabel":"1.8"},{"q":1,"freq":125,"gain":-16.5,"type":"peaking","freqlabel":"125","bandwidthLabel":"1.2"},{"q":1,"freq":250,"gain":-6.5,"type":"peaking","freqlabel":"250","bandwidthLabel":"0.6"},{"q":1,"freq":500,"gain":0,"type":"peaking","freqlabel":"500","bandwidthLabel":"0.0"},{"q":1,"freq":1000,"gain":6.5,"type":"peaking","freqlabel":"1k","bandwidthLabel":"0.0"},{"q":1,"freq":2000,"gain":-4.5,"type":"peaking","freqlabel":"2k","bandwidthLabel":"1.2"},{"q":1,"freq":4000,"gain":-10.5,"type":"peaking","freqlabel":"4k","bandwidthLabel":"1.8"},{"q":1,"freq":8000,"gain":-16,"type":"peaking","freqlabel":"8k","bandwidthLabel":"2.5"},{"q":1,"freq":16000,"gain":-20,"type":"highshelf","freqlabel":">16k","bandwidthLabel":"2.5"}],"clipDistortion":{"max":0.07,"min":0.02,"enabled":true,"aggressiveness":0.02},"analogDistortion":{"max":1,"min":1,"enabled":true,"aggressiveness":0,"constantStatic":0},"digitalDistortion":{"max":0,"min":0,"enabled":false,"aggressiveness":0,"constantStatic":0}}
+```

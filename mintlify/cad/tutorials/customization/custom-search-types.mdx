@@ -1,0 +1,257 @@
+---
+title: Custom Search Types
+description: Create lookup types for your custom record fields. Search by any custom
+  record field in your community!
+---
+
+## Custom Lookup Types {#custom-lookup-types}
+
+With Sonoran CAD’s custom records, communities can define custom lookup types that enable users to search records using tailored criteria.
+
+Example: Vehicle Search — locate a registration by attributes such as make, model, color, etc.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/f7/f7a065b1cf1ff9214956ce927322e54956336375643b2f36e0fdd9eaf4a72003.png" alt="" />
+
+
+
+## Configuring Lookup Types {#configuring-lookup-types}
+
+Lookup Types can be customized under **Admin** > **Customization** > **Customization** > **Lookup Types**
+
+### Basic Lookup Types {#basic-lookup-types}
+
+Basic lookup types allow you to search based on a single record field.
+
+In this example, we will create a lookup type to look for a civilian character's SSN (Social Security Number).
+
+
+
+<Accordion title="1. Add Lookup Type">
+
+
+
+Select **Add Lookup Type** at the bottom of the menu.
+
+Enter the lookup name, **SSN**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/44/448efc2d87b8e015b91228cf284bda261d18cc2cf3088d643c50109054c55756.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="2. Select the Record Field">
+
+
+
+Select the **Record Field** button. This will open a dialog to select a specific record field. Once selected, this field will be searchable when opening a record lookup.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ce/ce013947f0c6c6f2f795727744ac63df4f251773554515bfea2907376e7613fc.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/af/afbb962e4e849cb9d8b0140aa2f242549eefddf1ea4cdcc023a06aff07c58d4f.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="3. Optional: Re-Index Record Fields">
+
+
+
+Whenever a record is created or updated, any fields tied to custom lookup types are re-indexed in the database. These indices are what power custom lookup queries.
+
+To ensure records created before a custom lookup type existed are included, [those records must be re-indexed](/cad/tutorials/customization/custom-search-types#re-index-records).
+
+
+
+</Accordion>
+
+
+
+### Advanced Lookup Types {#advanced-lookup-types}
+
+Advanced lookup types allow you to search based on multiple record field criteria at once.
+
+In this example, we will create a lookup type to look for a character based off of optional address, height, weight, skin color, etc.
+
+
+
+<Accordion title="1. Add Lookup Type">
+
+
+
+Select **Add Lookup Type** at the bottom of the menu.
+
+Enter the lookup name, **Character**.
+
+Toggle the mode to **Advanced**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e9/e9543869d92f28f05e565ecc4ab96938b136567c86794cd31888cd961ab61f1a.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="2. Select the Record Fields">
+
+
+
+Advanced lookup types work the same as basic lookup types, but allow for more than one criteria.
+
+* Select the **Add Field** button.
+* Enter a **Field Label** (Address).
+* Select the **Record Field**. This will open a dialog to select a specific record field.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/c6/c6d471ed2ea4cbbe39f2b91795e2e0d7b6843d5f356748cb52d92d08968e42bd.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/05/05df7d2dd9888b026bfc0e8e39cc0baf0a1d0eca26834ee5891c3ebc8029d8bb.png" alt="" />
+
+
+
+Repeat the steps above to add as many search fields as desired.
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="4. Additional Field Options">
+
+
+
+**Requirement**
+
+Toggle **Requirement** from **Optional** to **Required** to force users in the lookup window to enter data into this field prior to running a lookup.
+
+**Width**
+
+The **Width** determines how wide the search field is in the lookup window. For custom search types with several search fields, this can be used to condense the UI.
+
+Width values range from 1-12, with 12 being full-width.
+
+Select the **Preview** button at the top of the section to see the layout of your custom lookup type. Fields can be reordered via drag-and-drop.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/c6/c61a57648fd3014777b3e67786a074c2dc8802671640ef85b23f064f9a3d3064.png" alt="" />
+
+
+
+**Range Search**
+
+Text fields with a mask restricting input to numbers only (`#` symbol) will display the option to enable a range input. This allows users to search based on minimum and maximum number values.
+
+Ex: Search by minimum and/or maximum age.
+
+**Placeholder**
+
+Placeholder text will be displayed inside the lookup field when empty.
+
+**Mask**
+
+Custom text input search fields can have a mask applied to enforce a specific format of numbers, symbols, letters, etc.
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="3. Optional: Re-Index Record Fields">
+
+
+
+Whenever a record is created or updated, any fields tied to custom lookup types are re-indexed in the database. These indices are what power custom lookup queries.
+
+To ensure records created before a custom lookup type existed are included, [those records must be re-indexed](/cad/tutorials/customization/custom-search-types#re-index-records).
+
+
+
+</Accordion>
+
+
+
+## Re-Index Records {#re-index-records}
+
+Whenever a record is created or updated, any fields tied to custom lookup types are re-indexed in the database. These indices are what power custom lookup queries.
+
+To re-index all existing records, select **Re-Index All Records** at the top to start this process.
+
+Depending on the number of custom records in your community, this may take some time. **Record re-indexing can only be performed once per 12-hours.**
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/de/de8f5f2fd826dd2c9fd1161adcfdef718af6231e5678968d05429f61a2d6881b.png" alt="" />
+
+
+
+## Lookups Across Multiple Record Types {#lookups-across-multiple-record-types}
+
+When a custom lookup type is configured with a linked field, the system uses the **Field Mapping ID** to determine which database fields to query.
+
+The **Field Mapping ID** defined in the lookup type is shown in the **Record Field** selector. Any [custom record type](/cad/tutorials/customization/creating-custom-record-and-report-types) containing a field with the same **Field Mapping ID** will be included in the search.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/8f/8fad92c7f913cd41730c38d9cfd43dbc4a8369b80192d466cdf14834b627538b.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/2d/2d9ce6910cc4c1ead1a09e51d51d4a8e22545e2666aa951c23bbf2c817810d52.png" alt="" />
+
+
+
+## Database Sync Configuration {#database-sync-configuration}
+
+
+
+<Accordion title="Database Sync Configuration">
+
+
+
+If the search field is provided by your in-game database with [database sync](/cad/integration-plugins/database-sync-and-merge), this custom record column will be display in your database sync configuration for any character, license, or vehicle registration.
+
+This will then allow you to search characters, licenses, or vehicle registrations from your in-game database based on this custom column value.
+
+![Sonoran CAD - Database Sync and Custom Searches](https://docs-assets.sonoransoftware.com/sha256/f0/f04c9f49c4f1ff123bd610d0be2d8e4aa2b7ab0b4ab828dea7c7d061ecad2929.png)
+
+
+
+</Accordion>

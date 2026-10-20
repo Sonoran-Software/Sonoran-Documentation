@@ -1,0 +1,446 @@
+---
+title: Shared Functions
+description: This page will explain all exported functions from the SonoranCAD Core
+  that can be used on the client and server side
+---
+
+### isPluginLoaded {#ispluginloaded}
+
+Checks if a specific plugin is loaded by searching through the `submodules` table.
+
+```lua
+exports.sonorancad.isPluginLoaded(submoduleName)
+```
+
+<Tabs>
+<Tab title="Parameters">
+
+
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `submoduleName` | `string` | The name of the submodule to check for in the `submodules` table. |
+
+
+
+</Tab>
+
+<Tab title="Returns">
+
+
+
+| Type | Description |
+| --- | --- |
+| `boolean` | `true` if the specified submodule ( `pluginName` ) is found in the `submodules` table. `false` otherwise. |
+
+
+
+</Tab>
+
+<Tab title="Usage Example">
+
+```lua
+submodules = { "callcommands", "dispatchnotify", "civintegration" }
+
+local isLoaded = isPluginLoaded("dispatchnotify")
+print(isLoaded)  -- Output: true
+
+local isLoaded2 = isPluginLoaded("vehreg")
+print(isLoaded2)  -- Output: false
+```
+
+</Tab>
+
+</Tabs>
+
+***
+
+### shallowcopy {#shallowcopy}
+
+Creates a shallow copy of a table or directly returns non-table values.
+
+```lua
+exports.sonorancad.shallowcopy(data)
+```
+
+<Tabs>
+<Tab title="Parameters">
+
+
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `orig` | `any` | The value or table to copy. Can be of any type: table, string, number, etc. |
+
+
+
+</Tab>
+
+<Tab title="Returns">
+
+
+
+| Type | Description |
+| --- | --- |
+| `any` | If `orig` is a table: Returns a new table with the same key-value pairs as `orig` . If `orig` is not a table (e.g., a number, string, boolean): Returns the value directly. |
+
+
+
+</Tab>
+
+<Tab title="Usage Example">
+
+```lua
+-- Example 1: Shallow copying a table
+local original = { a = 1, b = 2, c = { 3, 4 } }
+local copy = exports.sonorancad.shallowcopy(original)
+
+print(copy.a)  -- Output: 1
+print(copy.b)  -- Output: 2
+print(copy.c)  -- Output: table: 0x... (same reference as original.c in shallow copy)
+
+-- Example 2: Copying a non-table value
+local value = 42
+local valueCopy = exports.sonorancad.shallowcopy(value)
+print(valueCopy)  -- Output: 42
+
+```
+
+</Tab>
+
+</Tabs>
+
+***
+
+### stringsplit {#stringsplit}
+
+Splits a string into substrings based on a specified delimiter.
+
+```lua
+exports.sonorancad.stringsplit(inputstr, sep)
+```
+
+<Tabs>
+<Tab title="Parameters">
+
+
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `inputstr` | `string` | The input string that will be split into substrings based on a specified delimiter ( `sep` ) |
+| `sep` | `string` | (Optional) If not provided, the default is `"%s"` , which matches any whitespace character |
+
+
+
+</Tab>
+
+<Tab title="Returns">
+
+
+
+| Type | Description |
+| --- | --- |
+| `table` | The table contains the substrings of `inputstr` split by the delimiter `sep` . The substrings are stored sequentially starting at index `1` |
+
+
+
+</Tab>
+
+<Tab title="Usage Example">
+
+```lua
+local result = exports.sonorancad.stringsplit("Hello,World,Lua", ",")
+-- result = { "Hello", "World", "Lua" }
+
+local result2 = exports.sonorancad.stringsplit("One Two Three")
+-- result2 = { "One", "Two", "Three" } (uses default separator: whitespace)
+
+```
+
+</Tab>
+
+</Tabs>
+
+***
+
+### findIndex {#findindex}
+
+Searches for a specific identifier in the `LocationCache` table and returns the index of the first matching entry.
+
+```lua
+exports.sonorancad.findIndex(identifier)
+```
+
+<Tabs>
+<Tab title="Parameters">
+
+
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `identifier` | `any` | The identifier to search for, compared against the `apiId` field of each entry in `LocationCache` . |
+
+
+
+</Tab>
+
+<Tab title="Returns">
+
+
+
+| Type | Description |
+| --- | --- |
+| `number` or `nil` | The index ( `i` ) of the first entry in `LocationCache` whose `apiId` matches `identifier` . `nil` if no matching entry is found |
+
+
+
+</Tab>
+
+<Tab title="Usage Example">
+
+```lua
+-- Example: Searching for an identifier in LocationCache
+LocationCache = {
+    { apiId = 101, name = "LocationA" },
+    { apiId = 202, name = "LocationB" },
+    { apiId = 303, name = "LocationC" },
+}
+
+local index = exports.sonorancad.findIndex(202)
+print(index)  -- Output: 2
+
+local notFound = exports.sonorancad.findIndex(404)
+print(notFound)  -- Output: nil
+```
+
+</Tab>
+
+</Tabs>
+
+***
+
+### GetIdentifiers {#getidentifiers}
+
+Extracts and organizes player identifiers into a key-value table format.
+
+```lua
+exports.sonorancad.GetIdentifiers(player)
+```
+
+<Tabs>
+<Tab title="Parameters">
+
+
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `player` | `PlayerSource` | The player source ID for whom the identifiers are being retrieved. |
+
+
+
+</Tab>
+
+<Tab title="Returns">
+
+
+
+| Type | Description |
+| --- | --- |
+| `table` | A key-value table where the keys are identifier types (e.g., `steam` , `license` , `discord` ) and the values are the corresponding identifier strings. |
+
+
+
+</Tab>
+
+<Tab title="Example Usage">
+
+```lua
+local playerIdentifiers = exports.sonorancad.GetIdentifiers(1)
+
+-- Output
+-- playerIdentifiers = {
+--     steam = "110000112345678",
+--     license = "abcdef1234567890",
+--     discord = "123456789012345678"
+-- }
+
+print(playerIdentifiers.steam)    -- Output: 110000112345678
+print(playerIdentifiers.license)  -- Output: abcdef1234567890
+print(playerIdentifiers.discord)  -- Output: 123456789012345678
+
+```
+
+</Tab>
+
+</Tabs>
+
+***
+
+### PerformHttpRequestS {#performhttprequests}
+
+Simplifies making HTTP requests by providing a wrapper around `exports["sonorancad"]:HandleHttpRequest`.
+
+```lua
+exports.sonorancad.PerformHttpRequestS(url, cb, method, data, headers)
+```
+
+<Tabs>
+<Tab title="Parameters">
+
+
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `url` | `string` | The URL to which the HTTP request is sent. |
+| `cb` | `function` | The callback function executed when the HTTP request completes. |
+| `method` | `string` | The HTTP method to use (e.g., `GET` , `POST` , `PUT` , `DELETE` ). |
+| `data` | `string` | (Optional) The data to send with the HTTP request. Defaults to an empty string. |
+| `headers` | `table` | (Optional) A table containing custom headers for the HTTP request. Defaults to include `X-User-Agent` . |
+
+
+
+</Tab>
+
+<Tab title="Returns">
+
+
+
+| Type | Description |
+| --- | --- |
+| `none` | This function does not directly return a value. Results are handled asynchronously via the `cb` callback function. |
+
+
+
+</Tab>
+
+<Tab title="Usage Example">
+
+```lua
+-- Example: Performing a POST request with custom data
+local function callback(statusCode, response)
+    print("Status:", statusCode)
+    print("Response:", response)
+end
+
+exports.sonorancad.PerformHttpRequestS(
+    "https://api.example.com/data", 
+    callback, 
+    "POST", 
+    '{"key": "value"}', 
+    { ["Content-Type"] = "application/json" }
+)
+
+```
+
+</Tab>
+
+</Tabs>
+
+***
+
+### has\_value {#has_value}
+
+Checks if a specific value exists in a table.
+
+```lua
+exports.sonorancad.has_value(tab, val)
+```
+
+<Tabs>
+<Tab title="Parameters">
+
+
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `tab` | `table` | The table to search for the value. |
+| `val` | `any` | The value to search for within the table. |
+
+
+
+</Tab>
+
+<Tab title="Returns">
+
+
+
+| Type | Description |
+| --- | --- |
+| `boolean` | `true` if `val` is found in the table tab. `false` if `val` is not found, or if tab is nil. |
+
+
+
+</Tab>
+
+<Tab title="Usage Example">
+
+```lua
+-- Example 1: Checking if a value exists in a table
+local myTable = { "apple", "banana", "cherry" }
+
+local exists = exports.sonorancad.has_value(myTable, "banana")
+print(exists)  -- Output: true
+
+local notExists = exports.sonorancad.has_value(myTable, "grape")
+print(notExists)  -- Output: false
+
+-- Example 2: Handling a nil table
+local nilTable = nil
+local result = exports.sonorancad.has_value(nilTable, "value")
+print(result)  -- Output: false (with debugLog: "nil passed to has_value, ignore")
+```
+
+</Tab>
+
+</Tabs>
+
+***
+
+### compareVersions {#compareversions}
+
+Compares two semantic version strings.
+
+```lua
+exports.sonorancad.compareVersions(version1, version2)
+```
+
+<Tabs>
+<Tab title="Parameters">
+
+
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `version1` | `string` | The first version string (e.g., `1.0.0` ). |
+| `version2` | `string` | The second version string (e.g., `1.0.1` ). |
+
+
+
+</Tab>
+
+<Tab title="Returns">
+
+
+
+| Type | Description |
+| --- | --- |
+| `table` | `result` : `true` if `version1` is greater than `version2` , `false` otherwise. `parsedVersion1` : The weighted numeric representation of `version1` . `parsedVersion2` : The weighted numeric representation of `version2` . `version1` : The original `version1` string. `version2` : The original `version2` string. |
+
+
+
+</Tab>
+
+<Tab title="Usage Example">
+
+```lua
+-- Example: Comparing two versions
+local comparison = exports.sonorancad.compareVersions("1.2.3", "1.1.10")
+
+print(comparison.result)          -- Output: true
+print(comparison.parsedVersion1)  -- Output: 10203
+print(comparison.parsedVersion2)  -- Output: 10110
+```
+
+</Tab>
+
+</Tabs>

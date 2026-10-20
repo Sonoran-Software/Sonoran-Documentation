@@ -1,0 +1,24 @@
+---
+title: Closed Dispatch
+description: The dispatch event sends a notice to your community when a dispatch call
+  is closed.
+---
+
+### EVENT\_DISPATCH\_CLOSED POST {#event_dispatch_closed-post}
+
+<Warning>
+
+This push event is not sent triggered via the API.\
+API triggers should be listened to locally on the game server.
+</Warning>
+
+```javascript
+{
+    "key": "YOUR_API_KEY", // Authenticate legitimate event traffic
+    "type": "EVENT_DISPATCH_CLOSED",
+    "data": {
+        "eventOriginIdent": 123, // Identifier that created/caused this event
+        "callIds": [1234, 5678]
+    }
+}
+```

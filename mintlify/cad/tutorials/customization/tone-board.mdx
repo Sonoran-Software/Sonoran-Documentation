@@ -1,0 +1,134 @@
+---
+title: Tone Board
+description: Learn more about Sonoran CAD's customizable tone board!
+---
+
+<Info>
+
+The tone board is limited based upon your community's version.\
+For more information, see our [pricing](/cad/pricing/faq) or view how to check your community [limits](/cad/tutorials/getting-started/view-your-limits).
+</Info>
+
+## Customizing Tones {#customizing-tones}
+
+### 1. Access the Customization Menu {#id-1.-access-the-customization-menu}
+
+In the admin page, navigate to `Customization` > `Customization` > `Tone Board`
+
+![Sonoran CAD - Tone Board Customization](https://docs-assets.sonoransoftware.com/sha256/fe/fec782fb919755e691daaf21a50229ec0aec931ec59caa7c70c1a1b95e49e892.png)
+
+### 2. Uploading Tones {#id-2.-uploading-tones}
+
+#### Direct Upload {#direct-upload}
+
+You can upload .mp3, .wav, and .mp4 files directly to the CAD with the **plus** version.
+
+![Sonoran CAD - Tone Uploader](https://docs-assets.sonoransoftware.com/sha256/93/931773692a86af5e21c468edb133347c9862ba190bbd2ab34c3abcc0bebcd8f2.png)
+
+#### External Upload {#external-upload}
+
+If your community is not on the plus version or higher, you will need to link your tone from an external URL. You can upload to a website or file store of your choosing, but it must be a direct link ending in the file extension (.mp3, .mp4, .wav).
+
+You can even use something as easy as Discord.
+
+1. Upload your tone file to Discord in any chat
+2. Right click on the file name or download button
+3. Select `Copy Link`
+4. Paste the direct URL into Sonoran CAD
+
+![Discord - Copy Direct File Link](https://docs-assets.sonoransoftware.com/sha256/23/2398ee0f11f6a63fe95f40d89142057af4453d5c7f2c01d3a0723f1bc29551c5.gif)
+
+Your direct link will look something like this:\
+`https://cdn.discordapp.com/attachments/12345/abc123/signal_100.mp3`
+
+### 3. Customize the Available Tones {#id-3.-customize-the-available-tones}
+
+Here, you can add new tones and specify the following:
+
+* Tone Label
+* Tone Link/URL (Direct uploading available based on your [version](/cad/pricing/faq))
+* Tone Button Color (Hex)
+* Tone Button Icon
+
+#### Tone Icons {#tone-icons}
+
+Tone buttons support icons from several different web libraries. Clicking the search icon will open the [Font Awesome icon library](https://fontawesome.com/v5.15/icons) search. Here, you can search for an icon - click on it - and paste the icon name into the CAD. You can also use [material theme icons](https://fonts.google.com/icons).
+
+![Font Awesome - Example Icon Name](https://docs-assets.sonoransoftware.com/sha256/74/74202ce4c1b6a983c1c21b4ceeaa6dff65342de83787d732fe9830264e5a5640.png)
+
+#### Save your Tones {#save-your-tones}
+
+Don't forget to press save!
+
+## Selecting the Tone "Play To" Groups {#selecting-the-tone-play-to-groups}
+
+The tone board can be set to play tones for specific identifiers, groups, agencies, departments, subdivisions, and dispatch calls.
+
+You can click on any one of these items and select "Tone Board" to add this group to the play target on the tone board.
+
+![Sonoran CAD - Tone Board Targets](https://docs-assets.sonoransoftware.com/sha256/72/72115ba494b5898c21ee23eaf6775e60a7bbaab9ac5aca35dda04d2f4584b9fb.gif)
+
+## Playing Tones as Dispatch {#playing-tones-as-dispatch}
+
+### Opening the Tone Board Window {#opening-the-tone-board-window}
+
+The tone board can be opened by users in dispatch or self-dispatch mode.
+
+From the start menu, this panel is located under `Dispatch` > `Tone Board`
+
+This window can also be opened via a [custom hotkey](/cad/tutorials/other-features/configurable-hotkeys), also supported with our [Streamdeck Integration](/cad/integration-plugins/stream-deck-integration).
+
+The window can also be minimized, and [pinned to the taskbar](/cad/tutorials/customization/customizing-your-layout#7-tab-system) on your screen for quick access.
+
+### Tone Board Shortcuts {#tone-board-shortcuts}
+
+The tone board is designed to be as efficient as possible.
+
+#### Search Filtering {#search-filtering}
+
+The top of the tone board includes a search box, allowing you to quickly filter tone options as you type.\
+If you filter down the options to a single tone, the search label will turn green - allowing you to press `ENTER` to play the tone.
+
+The tone board is also designed to auto-focus this search box whenever it is opened, or the header is clicked.
+
+![Sonoran CAD - Tone Board](https://docs-assets.sonoransoftware.com/sha256/64/6449b2c1261075bd85aa21dc3a7e4748b56d1f59b9c683bb30a3bca6f7e9edf1.png)
+
+#### Hotkey Auto-Window {#hotkey-auto-window}
+
+[Global hotkeys](/cad/tutorials/other-features/configurable-hotkeys) allow you to open the tone board in a more advanced way. Opening the tone board with your [keyboard ](/cad/tutorials/other-features/configurable-hotkeys)or [Streamdeck ](/cad/integration-plugins/stream-deck-integration)shortcut will first check for any existing tone board window opened or minimized. If one is found, that existing window will be opened and focused to the search bar. Otherwise, a new tone board window will be opened with the search box focused.
+
+#### Manual Tone Select {#manual-tone-select}
+
+Instead of using the search box filtering, users can also manually click the tone board button to play the audio.
+
+### Tone Board Repeat {#tone-board-repeat}
+
+Tones can be repeated at a specific interval.
+
+When sending a new tone, toggle `repeat` on and customize the `seconds` and `count` values. When the tone is sent, the repeat timer and counter will visualize any actively repeating tones.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/5d/5dff10f659689b948a5cdf9328665541dfc0bd50f17536b79df99af159407e2b.png" alt="" />
+
+
+
+### Stacked Tones {#stacked-tones}
+
+Toggle the **Stack** icon on and select multiple tones to be played in order. Drag-and-drop the tones to re-order. Press the **Play** button to play the stack.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/2c/2c1e75885aea9acc91ba5093dd0081e3babedfa8a7eead21efce81a97984d309.png" alt="" />
+
+
+
+### Text-to-Speech {#text-to-speech}
+
+The tone board can also play text-to-speech to users. Enter text into the **Text To Speech** box to send.
+
+Additionally, you can select the **Microphone** button to record your own voice and translate that to text before sending out the speech-to-text tone.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/50/5051aee3b4df0dc8ea9f55f46832a4e9a002df540991b309b9cd605730211d7b.png" alt="" />

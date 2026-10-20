@@ -1,0 +1,383 @@
+---
+title: In-Game Repeaters
+description: Configure and customize destructible radio towers in-game to impact radio
+  performance.
+---
+
+<iframe src="https://www.youtube-nocookie.com/embed/sHAgi1Z_Er8" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+
+## Available Repeater Types {#available-repeater-types}
+
+### Server Rack {#server-rack}
+
+Server rack style repeaters are found by default inside of police stations and hospitals. These repeaters offer the most interactive destruction experience.
+
+Press `E` on the door to open it.
+
+Each server inside can be individually destroyed and will fall separately out of the rack. These can be configured with 1-5 servers in each. As more of these servers are destroyed, the repeater signal will diminish.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/4f/4f9187fbffdefacdb9e2e38735695af0f374f004347e0ede8bd555f9e6e0e469.png" alt="" />
+
+*Server Rack*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/29/293148b69ca56dc546a69a8dc5829fd5d9a1a0338eebddda494e0d37dd7e1f01.png" alt="" />
+
+*Server Rack - Opened*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/53/535100a9213296bd6e6f138fab7efd179315c3500a5bcca88fc606b7fdcff02e.png" alt="" />
+
+*Server Rack - Destroyed*
+
+
+
+### Radio Tower {#radio-tower}
+
+Tower style repeaters are found by default on hills, mountains, and large rooftops.
+
+Players can climb the ladder to reach the top.
+
+There are four dishes inside that each account for 25% of the health. As more of these dishes are destroyed, the repeater signal will diminish.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/be/bef861c9bab16c7ada9f06e38214a652859cf910f73d85e8632f3d52506b1e3c.png" alt="" />
+
+*Radio Tower*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/4a/4aff790795787f30ccd1d53995ce147668b0818f619717c8c7afa2d0fc93e854.png" alt="" />
+
+*Radio Tower - Destroyed*
+
+
+
+### Cellular Antenna {#cellular-antenna}
+
+Cellular antenna style repeaters are found by default on the side of high-rises and other buildings.
+
+Destroying this antenna will disable it's repeater range.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/8c/8c015699f1e4c6dadbe369eb384e3ee1f84ddb9b80ad172be04314e75681da75.png" alt="" />
+
+*Cellular Antenna*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d2/d2918d5dcd69e826d8124af19aef0b2a0c9c20d85358fdf8a5039a60eed78c0d.png" alt="" />
+
+*Cellular Antenna - Destroyed*
+
+
+
+### Custom Repeaters {#custom-repeaters}
+
+Additional integrations like the [mobile command center](/radio/game-integrations/fivem/in-game-radio/in-game-repeaters#mobile-command-center-repeater), [power grid hacking](/radio/game-integrations/fivem/in-game-radio/in-game-repeaters#hacking-repeaters-power-grid-integration), and [custom vehicle repeaters](/radio/game-integrations/fivem/in-game-radio/in-game-repeaters#mobile-vehicle-repeaters) offer further customization.
+
+***
+
+## Configuration {#configuration}
+
+### Tower Placement {#tower-placement}
+
+#### Default Positions {#default-positions}
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/0c/0c22892a4c506f6935898bad7a2eecae6eb41bef40e38ca82bf1db2d5d70d722.png" alt="" width="303" />
+
+*Sonoran Radio - Default Tower Positions*
+
+
+
+#### Game Menu Configuration {#game-menu-configuration}
+
+To add, edit, or remove a repeater, open the configuration menu by typing `/radiomenu`.
+
+Access to this command requires the `command.radiomenu` [ACE permission](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions).
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/f3/f3f9648c7a3c9f354ad0a2a141434df17f7029969e7de2d1b05466261f575b81.png" alt="" />
+
+*Spawn Repeater*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/64/64d315b788761198c15c5af5c068f7f01348c06ac1c9197499428373c23fe17c.png" alt="" />
+
+*Move/Edit Repeater*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/dd/dde68f8f11d2da99d11d9a62fcbd828418b90702998c89b2a816b5bbde9df5ec.png" alt="" />
+
+*Delete Repeater*
+
+
+
+#### Manual Configuration {#manual-configuration}
+
+Alternatively, you can edit the individual `towers.json` file in the `sonoranradio` resource.
+
+
+
+<Accordion title="towers.json">
+
+
+
+```json
+[
+  // Radio Tower
+  {
+    // Unique Identifier
+    "Id": "74d910e5-5705-4b58-baaf-88a8ca82734c",
+    // Type of repeater (tower)
+    "type": "radioTower",
+    // XYZ Coordinates
+    "PropPosition": {
+      "x": -577.4769287109375,
+      "y": -138.4747314453125,
+      "z": 51.9765625
+    },
+    // Signal range in units
+    "Range": 1500,
+    // Allow destruction
+    "Destruction": true
+  },
+  // Server Rack
+  {
+    // Unique Identifier
+    "Id": "50a9c40a-e5bb-46b2-9a83-c5164599c64c",
+    // Type of repeater (Server Rack)
+    "type": "serverRack",
+    // XYZ Coordinates
+    "PropPosition": {
+      "x": 443.3538513183594,
+      "y": -983.1824340820312,
+      "z": 30.6783447265625
+    },
+    // 360 degree compass heading for angles
+    "heading": 90,
+    // Signal range in units
+    "Range": 1500,
+    // Status of each server in rack: "alive" or "dead"
+    "serverStatus": [
+      "alive",
+      "alive",
+      "alive",
+      "alive",
+      "alive"
+    ],
+    // Is the repeater on or not
+    "Powered": true,
+    // Make the repeater invisible by setting to true
+    "NotPhysical": false,
+    // Temporary repeater
+    "DontSaveMe": false,
+    // Allow destruction
+    "Destruction": true
+  },
+  // Cell Repeater
+  {
+    // Unique Identifier
+    "Id": "1f68f034-500b-4b29-9356-8c8bf63fda04",
+    // Type of repeater (cell repeater)
+    "type": "cellRepeater",
+    // XYZ Coordinates
+    "PropPosition": {
+      "x": 152.5,
+      "y": -775.9000244140625,
+      "z": 264.29998779296877
+    },
+    // 360 degree compass heading for angles
+    "heading": 340.0,
+    // Signal range in units
+    "Range": 1500.0,
+    // Is the repeater on or not
+    "Powered": true,
+    // Make the repeater invisible by setting to true
+    "NotPhysical": false,
+    // Temporary repeater
+    "DontSaveMe": false,
+    // Status of the antenna: "alive" or "dead"
+    "AntennaStatus": "alive",
+    // Allow destruction
+    "Destruction": true
+  }
+]
+
+```
+
+
+
+</Accordion>
+
+
+
+***
+
+## Using the In-Game Towers {#using-the-in-game-towers}
+
+### Destroying a Tower {#destroying-a-tower}
+
+When tower destruction is enabled, users can use any form of weapon to damage the repeaters.
+
+Once damaged and destroyed, the tower no longer provides radio coverage within that range.
+
+### Repairing a Tower {#repairing-a-tower}
+
+#### Individual Towers {#individual-towers}
+
+Players can walk up to a destroyed repeater and press `G` to being the repair process.
+
+The repair time can be configured in the `config.lua`'s `towerRepairTimer`.
+
+You can also restrict permissions to repairing a tower with [ACE permissions](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions) by setting `acePermsForTowerRepair` to `true` in the `config.lua`.
+
+#### All Towers {#all-towers}
+
+The configuration menu can be used to repair all repeaters on the map at once.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/20/20e3c1e001507f3aaeedb0f458c3d0575b16af9dae993b0ca8fd4f371142b74c.png" alt="" width="222" />
+
+*Sonoran Radio: Repair All Repeaters*
+
+
+
+### Viewing Tower Coverage {#viewing-tower-coverage}
+
+#### Via In-Game Map {#via-in-game-map}
+
+Enabling`Config.debug` in the `config.lua` file will display a radius around each tower, where the edge represents 50% radio quality.
+
+#### Via Sonoran CAD Live Map {#via-sonoran-cad-live-map}
+
+View Sonoran Radio repeater signal strength and health on the integrated CAD live map.\
+Or, view dispatch call information on the in-game radio!
+
+
+
+<Card title="[sonoran-cad-integration.md](../../integrations/sonoran-cad-integration.md)" href="/radio/tutorials/integrations/sonoran-cad-integration" />
+
+
+
+### Viewing Signal Strength {#viewing-signal-strength}
+
+Coming Soon!
+
+***
+
+## Degrade Signals in Tunnels {#degrade-signals-in-tunnels}
+
+Sonoran Radio also allows you to configure tunnels and other areas where signal will be degraded!
+
+
+
+<Card title="[tunnels-and-degrade-zones.md](tunnels-and-degrade-zones.md)" href="/radio/game-integrations/fivem/in-game-radio/tunnels-and-degrade-zones" />
+
+
+
+***
+
+## Additional Integrations {#additional-integrations}
+
+### Mobile Command Center Repeater {#mobile-command-center-repeater}
+
+The [Sonoran Mobile Command Center](https://www.sonoran.store/package/5287071) also offers a built-in radio repeater to improve reception on a scene.
+
+Raise the radio antenna by running the `/mccradio` command.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/5e/5e15472c0d679f88e89dee73a75beea6e08b654316488be0bb8053ebe901ebbc.png" alt="" />
+
+*Sonoran Mobile Command Center*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/90/90640a7c4d5bc807d9e09669c8366107fad8d6b6ac04c60affd9dc460d3f6ba5.png" alt="" />
+
+*Sonoran Mobile Command Center*
+
+
+
+### Hacking Repeaters - Power Grid Integration {#hacking-repeaters-power-grid-integration}
+
+Communities can add additional [Sonoran Power Grid](https://www.sonoran.store/package/5120025) integration support, enabling users to hack a radio repeater's power source instead of destroying it.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/86/864369edaca880ee77e4d6abf793893ce2ec74220514c1fb7da9b58f082dbed5.png" alt="" width="563" />
+
+*Sonoran Power Grid*
+
+
+
+### Mobile (Vehicle) Repeaters {#mobile-vehicle-repeaters}
+
+Mobile repeaters extend radio coverage from configured vehicle models and attached trailer models. Their coverage moves with the vehicle while the repeater is active.
+
+Enable the feature in `config.lua`:
+
+```lua
+Config.enableVehicleRepeaters = true
+```
+
+Vehicle models are configured via in-game menu.
+
+#### Configure a Vehicle Model {#configure-a-vehicle-model}
+
+Configuration requires the `command.radiomenu` [ACE permission](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions).
+
+1. Enter the vehicle you want to configure. To configure a trailer model, attach the trailer to the vehicle first.
+2. Open `/radiomenu`.
+3. Select **Radio Repeaters** > **Mobile Repeater Vehicles**.
+4. Select **Add Current Vehicle** or **Add Attached Trailer**.
+5. Set the menu label and repeater range, then select **Save Vehicle Repeater**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/60/60b588fc7f3f6eb3a304d1ebd9e062edd32bb2ac2b66dbbf30085c8f78ede662.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/1f/1fead9b29e6d721556720533fad6fc0a6e9c1040ce4f4ba4a60e2482ded7d5b2.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/05/0561a2cf78433b4e7848f344b9dfd3365ea5d6407a8dc6fbe13a344b8e88435e.png" alt="" />
+
+
+
+The range must be between `1` and `10000`. The detected model is saved, so the configuration applies to every vehicle with that model, not only the vehicle used during setup.
+
+Use the same menu to update an existing model or select **Remove Configured Vehicle** to delete it. Removing a model also disables active repeaters using that model.
+
+#### Activate a Mobile Repeater {#activate-a-mobile-repeater}
+
+Activation does not require the administrator configuration permission.
+
+1. Sit in the driver or front-passenger seat of a configured vehicle.
+2. Run `/radio repeater` to open the activation menu.
+3. Select **Enable Current Vehicle Repeater** or **Enable Attached Trailer Repeater**. The menu displays whether the repeater is active or inactive.
+
+If both the towing vehicle and its attached trailer are configured, the activation menu targets the trailer. Administrators can also activate or deactivate the detected repeater from **Mobile Repeater Vehicles** in `/radiomenu`.
+
+#### Repeater Lifecycle {#repeater-lifecycle}
+
+The server tracks active mobile repeaters as their networked vehicles move. A mobile repeater is automatically disabled when its vehicle is destroyed, despawns, or its model is removed from the configuration.
+
+If menu changes do not persist, check the server log and verify that the resource has permission to write `mobileRepeaters.json`.

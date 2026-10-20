@@ -1,0 +1,116 @@
+---
+title: Postals
+description: Allows sending nearest postal to the CAD via the location field. Also
+  enables postal auto-fill for new dispatches and calls.
+---
+
+<Check>
+
+Looking for VPS, web, or dedicated hosting? Check out our official [server hosting](/broken/pages/-MRResNcPrj2q6MmmS6j)!
+</Check>
+
+## Activation Video {#activation-video}
+
+Click to view our [locations and postal install video](https://youtu.be/Rc6MT0D6rcI).
+
+## Activation Guide {#activation-guide}
+
+### 1. Download and Install the Core {#id-1.-download-and-install-the-core}
+
+If you haven't already, be sure to install and configure the [SonoranCAD Core](/cad/integration-plugins/in-game-integration/fivem-installation) first.
+
+### 2. Activate the Submodule and all Dependencies {#id-2.-activate-the-submodule-and-all-dependencies}
+
+Follow the [submodule activation guide](/cad/integration-plugins/in-game-integration/submodule-configuration#activating-a-submodule) for the required submodules.
+
+### 3. Configure Postal Script and Exports {#id-3.-configure-postal-script-and-exports}
+
+1. If you're using the publicly available [nearest-postal script](https://forum.cfx.re/t/release-nearest-postal-script/293511), you will need to follow the steps in the [usage](/cad/integration-plugins/in-game-integration/available-plugins/postals#using-nearest-postal) section below.
+2. If you're using a custom postal codes file, you will need to add the file to the plugin and Sonoran CAD's fxmanifest as shown in the [usage ](/cad/integration-plugins/in-game-integration/available-plugins/postals#custom-postal-codes-file)section below.
+3. If you're using an event triggered by a custom postals script, you must configure it as explained in the [usage](/cad/integration-plugins/in-game-integration/available-plugins/postals#custom-postal-events) section below.
+
+<Warning>
+
+nearestPostalResourceName should **ONLY** be filled out if you're using [our specific nearest postal script](https://forum.cfx.re/t/release-nearest-postal-script/293511). In other words, **do not** put the name of your HUD script here, as **that will not work**.
+</Warning>
+
+## Configuration {#configuration}
+
+
+
+| Option | Description | Default |
+| --- | --- | --- |
+| sendTimer | Time between sending postal updates to the server. | 950 ms |
+| shouldSendPostalData | Toggles the plugin on/off | True |
+| nearestPostalResourceName | If using our [nearest-postal](https://forum.cfx.re/t/release-nearest-postal-script/293511) script, specify the name of its folder here | nearest-postal |
+| mode | Specify what "mode" this plugin should use to determine postals. If using nearest-postal, set this to `resource` . If using an event fired by another resource, set this to `event` . If using a custom postals file, set this to `file` . | resource |
+| nearestPostalEvent | If you've set `mode` to `event` , specify the name of the event fired by your postals resource here |  |
+| customPostalCodesFile | If you've set `mode` to `file` , copy your custom postal codes file to the postals plugin folder, and add the name of that file here. |  |
+
+
+
+## Usage {#usage}
+
+<Info>
+
+If the configured postal resource or custom postal data is unavailable at runtime, SonoranCAD will now continue sending regular street names and coordinate-based location updates without a postal prefix. Check the troubleshooting error codes `ERR-LOC-104`, `ERR-LOC-105`, and `ERR-LOC-106` if postal data is missing or failing.
+</Info>
+
+### Using [Nearest-Postal](https://forum.cfx.re/t/release-nearest-postal-script/293511)
+
+<Warning>
+
+The plugin only supports 1.5.0 or higher of the nearest-postal plugin. Be sure to download the latest version before using.
+</Warning>
+
+If you're using the publicly available [nearest-postal script](https://forum.cfx.re/t/release-nearest-postal-script/293511), some minor configuration is required.
+
+#### 1. Set the Resource Name {#id-1.-set-the-resource-name}
+
+In the Sonoran CAD postals plugin config, change the `nearestPostalsResourceName` value to the _**exact**_ name of your nearest postals resource.\
+\
+Ex: `nearest-postals-1.5`
+
+#### 2. Ensure Proper Startup Order {#id-2.-ensure-proper-startup-order}
+
+Be sure that you are starting the nearest-postals addon/resource **before/above** where you `ensure sonorancad` in your `server.cfg`.
+
+Be sure to restart both the Sonoran CAD resource and the nearest-postal script, or restart your server entirely to apply the changes made.
+
+### Custom Postal Codes File {#custom-postal-codes-file}
+
+If you want to use your own custom postal codes file with this plugin, open the config and change `mode` to `file`.
+
+Next, copy your custom postal codes file to the `submodules/postals` folder, and set the value of `customPostalCodesFile` to the name of this file. Include the .json file extension in the name.
+
+### Custom Postal Events {#custom-postal-events}
+
+If you're not using the nearest-postal script or a custom postal codes file, you will need to create a export in your postals script, and have it return the player's current postal as a string.
+
+Additionally, you will need to edit the config to set `mode` to `event`, then specify the name of this event in `nearestPostalEvent`.
+
+Need help? You can always [hire a developer](https://support.sonoransoftware.com/#/).
+
+## Troubleshooting {#troubleshooting}
+
+If postal lookup fails, location updates for units will still continue using normal street/location data. Postal-specific failures now surface through the troubleshooting codes below instead of stopping all location updates:
+
+* `ERR-LOC-104`: postal resource unavailable
+* `ERR-LOC-105`: configured postal file missing or invalid
+* `ERR-LOC-106`: postal lookup failed at runtime
+
+See the [FiveM error codes reference](/cad/integration-plugins/in-game-integration/fivem-installation/troubleshooting/error-codes) for the full descriptions and recommended fixes.
+
+### The configured postals file (postals\_file.json) was not found {#the-configured-postals-file-postals_file.json-was-not-found}
+
+This error may be seen by users attempting to set up the plugin to use a [custom postal codes file](/cad/integration-plugins/in-game-integration/available-plugins/postals#custom-postal-codes-file). Specifically, the error will look something like this, substituting `postals_file.json` for whatever you've named your custom postal codes file to:
+
+```
+The configured postals file (postals_file.json) was not found. Please check it.
+```
+
+This means that either the postal codes file has not been correctly added to the fxmanifest, or that it has not been added at all. Please reference the above instructions on how to do so.
+
+We recommend replacing the `files { }` section of your fxmanifest with the given code snippet, then changing `postals_file.json` to match the name of whatever postals file you're using.
+
+If you've manually entered the line, verify that all the lines in the section **except for the last** are followed with a comma to ensure that the system can properly read it.

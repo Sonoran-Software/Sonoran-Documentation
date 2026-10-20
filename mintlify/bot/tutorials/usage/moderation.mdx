@@ -1,0 +1,63 @@
+---
+title: Moderation
+description: Learn more about SonoranBot's Discord moderation capabilities.
+---
+
+Using SonoranBot, you have access to several commands that are all logged to a special channel. Keep moderation actions organized and easily control access!
+
+<Info>
+
+Moderation commands are available to any Discord server linked to a community, including those on the Free version of CAD and/or CMS!
+</Info>
+
+## Getting Started {#getting-started}
+
+### Set Permissions {#set-permissions}
+
+<Warning>
+
+The permissions in the below table are also what SonoranBot will need to perform them, otherwise you will get an error message.
+</Warning>
+
+By default, all commands are set to what you expect:
+
+| Command | Required Permission       |
+| ------- | ------------------------- |
+| `/ban`  | Ban Members               |
+| `/kick` | Kick Members              |
+| `/mute` | Timeout Members           |
+| `/warn` | Manage Guild ("disabled") |
+
+The `/warn` command is attached to Manage Guild by default like all other commands - you will want to give this command to certain roles as desired. This can be accomplished within Discord's Integrations settings (Desktop/Web only).
+
+![SonoranBot - Manage Integration](https://docs-assets.sonoransoftware.com/sha256/77/7767b107defce98cb88be33260b0877c6a673a32231c1db87f734bc4795a2ba6.png)
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ef/ef9d66927c4ed28ccbaae0a149044db765db8229ecf0c70c81645b90473fa5d1.png" alt="SonoranBot - Warn Permission" width="563" />
+
+Managing integration permissions is outside the scope of this guide, but Discord [has a guide](https://support.discord.com/hc/en-us/articles/4644915651095-Command-Permissions) of their own to walk you through the process. Chances are, you've already done this if you're using the CAD/CMS integrations.
+
+## Usage Examples {#usage-examples}
+
+When a command is used, a logging entry will be created depending on the action.
+
+### Ban/Unban {#ban-unban}
+
+![SonoranBot - /Ban Command](https://docs-assets.sonoransoftware.com/sha256/45/45a19917632baaff824fa26716b99c822e4eda403740e3f7bccae8ea2aa9303c.png) ![SonoranBot - Ban Message](https://docs-assets.sonoransoftware.com/sha256/3a/3a296503cfc6505ce194c4f66d98a2fc86eb96b86d91cf3780b59ff049dae69c.png)
+
+***
+
+### Kick {#kick}
+
+![SonoranBot - /Kick Command](https://docs-assets.sonoransoftware.com/sha256/c1/c1fbd3fda77a3d2f9cb58446c3c40251b4bb7a9213e758fc03ea2d4f36746e8a.png) ![SonoranBot - Kick Message](https://docs-assets.sonoransoftware.com/sha256/e2/e2459bdf9654c7cb11a14d5236d423eaa06ca38c50288ca76956c314eb737084.png)
+
+***
+
+### Mute/Unmute {#mute-unmute}
+
+![SonoranBot - /Mute Command](https://docs-assets.sonoransoftware.com/sha256/1a/1a95645e9b7b9fefa25412843031ad3595d4244b008b7ad8b9ad99c9a794676b.png) ![SonoranBot - /Unmute Command](https://docs-assets.sonoransoftware.com/sha256/d9/d966993d6095ffe9184bc8ce2fdb5d9a7c94bba9b2ae075281294449d93869f1.png)
+
+***
+
+### Warn {#warn}
+
+![SonoranBot - /Warn Command](https://docs-assets.sonoransoftware.com/sha256/14/14a1810ff72ee8839b0d8b061b5aca5a45d0edf929364c150402f1d3c7a5ca6d.png) ![SonoranBot - /Warn Message](https://docs-assets.sonoransoftware.com/sha256/80/8006722230ee4222e305339f1985728ead803568db3ef3186abf11ca0f255bbc.png)

@@ -1,0 +1,192 @@
+---
+title: Tablet & Mini-CAD
+description: Utilize an in-game overlay to attach to calls, view information, and
+  more. Or, use the dedicated tablet item to access your full CAD screen.
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d5/d5daba1ad77151215f6d0d8ff28cfc0faecda087703d778f0d5087aa9b6310d9.png" alt="" />
+
+*Sonoran CAD - Mini-CAD*
+
+
+
+## Activation Guide {#activation-guide}
+
+### 1. Download and Install the Resource {#id-1.-download-and-install-the-resource}
+
+<Info>
+
+This resource is already **enabled by default** inside of the `sonorancad.cfg` when installing the [Sonoran CAD FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
+</Info>
+
+<Info>
+
+The tablet resource must be running to use vehicle and station laptop screens with [CAD Display](/cad/integration-plugins/in-game-integration/available-plugins/cad-display).
+</Info>
+
+### 2. Ensure Players are Linked {#id-2.-ensure-players-are-linked}
+
+Ensure the player has already [linked their CAD](/cad/integration-plugins/in-game-integration/link-user-in-game) for this integration to work.
+
+## Configuration {#configuration}
+
+
+
+<Accordion title="Optional: URL Convar">
+
+
+
+If you wish to use a custom login page, you can set a convar in your server.cfg.\
+\
+The easiest way to show your [custom login page](/cad/tutorials/customization/custom-login-page) is to use a query string.
+
+`"https://sonorancad.com/?comid=YOUR_COMMUNITY_ID_HERE"`
+
+Simply replace `YOUR_COMMUNITY_ID_HERE` in the URL with your [community ID](/cad/tutorials/getting-started/finding-your-community-id-and-authentication-code).\
+EX: `https://app.sonorancad.com/?comid=midwestrp`
+
+Add the following to your server.cfg **before** starting the tablet resource:
+
+```
+setr sonorantablet_cadUrl "YOUR_URL_HERE"
+```
+
+Fill in with your actual URL above with the comid you want.
+
+
+
+</Accordion>
+
+
+
+## Keybinds {#keybinds}
+
+Users can customize keybinds for the tablet and Mini-CAD.
+
+Navigate to **Settings** > **Keybinds** > **FiveM** and look for the keybinds under the resource `tablet`.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/dc/dc0b5032a70f1788e9b55b7251c049288db17a153fc2abff048941d9aaa79c70.png" alt="" />
+
+
+
+## Commands {#commands}
+
+The commands below use the default `/tablet` command. Running `/tablet` by itself shows command help; use `/tablet open` to open the handheld tablet.
+
+* `/tablet open` Opens the in-game tablet
+* `/tablet size [width] [height]` Resize the tablet to best fit your screen. This size persists on reload of the client.
+* `/tablet checklink` Checks again whether your CAD account is linked to the server's community.
+* `/tablet refresh` Force-refresh the page when it's not loading properly.
+* `/tablet mini open` Opens the mini-CAD
+* `/tablet mini help` Displays a list of commands for the mini-CAD
+* `/tablet mini prev` Pages to the previous dispatch call on the mini-CAD
+* `/tablet mini next` Pages to the next dispatch call on the mini-CAD
+* `/tablet mini attach` Attaches to the dispatch call on the mini-CAD
+* `/tablet mini detail` Toggles expanded information on the mini-CAD
+* `/tablet mini refresh` Manually refresh the call information on the mini-CAD
+* `/tablet mini size [width] [height]` Resize the mini-CAD to best fit your screen. This size persists on reload of the client.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/93/93de8c88a0b4a52a816811498f8c76fb8cc85cc962e522391298a27e6bd8beb3.png" alt="" />
+
+
+
+## Mini-CAD Usage {#mini-cad-usage}
+
+The mini-CAD displays as an overlay in-game.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/8d/8dead18768cfc6ea8c7d1d711a88b127ce6b55b37cf406551336512c033f1c67.png" alt="" width="184" />
+
+
+
+#### Move and Close {#move-and-close}
+
+You can close or move the Mini-CAD by opening the tablet, and interacting with the Mini-CAD window.
+
+#### Controls {#controls}
+
+* Use the `Left Arrow Key` to display the previous call.
+* Use the `Right Arrow Key` to display the next call.
+* Use the `K` key to attach or detach to/from the displayed call.
+* Use the `L` key to toggle display of the call details.
+* **All these commands can be edited from the Keybinds menu.**
+
+## Tablet Usage {#tablet-usage}
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/71/7129e9263162ecf8fb5c9f9d956dd99cd11ff3e992edb91e9ed0696e5b49a43d.png" alt="" width="375" />
+
+
+
+When in-game, the tablet can be used to view your unit's Sonoran CAD police, fire, ems, or dispatch panel.
+
+With the [CAD Display submodule](/cad/integration-plugins/in-game-integration/available-plugins/cad-display) enabled, nearby players can see a periodically refreshed image of your CAD on the handheld tablet prop. Their view may lag behind what you are doing.
+
+### Using a Vehicle or Station Laptop {#using-a-vehicle-or-station-laptop}
+
+With [CAD Display](/cad/integration-plugins/in-game-integration/available-plugins/cad-display) enabled, you can use CAD directly on a configured vehicle or station laptop:
+
+1. Close the handheld tablet, then press **G** while seated near the vehicle display or standing near the station laptop.
+2. If another player controls the laptop, wait for them to accept your request. Once you have control, the camera moves toward the laptop screen.
+3. Click, scroll, and type normally in CAD. Your login and current page carry over between the handheld tablet and laptop.
+4. Click **Exit computer** beneath the screen when you are finished. Use this button if **Escape** does not respond while a CAD text field has focus.
+
+You do not need to open the handheld tablet before using a laptop. Your saved tablet size and position are kept when you leave the laptop view. Only the controlling player can interact; nearby players see a periodically refreshed image of that player's screen.
+
+See [CAD Display](/cad/integration-plugins/in-game-integration/available-plugins/cad-display) for laptop placement, control requests, permissions, and screen alignment.
+
+## Auto User Link {#auto-user-link}
+
+When a user signs into the CAD using the in-game tablet, their account will be [automatically linked](/cad/integration-plugins/in-game-integration/link-user-in-game).
+
+If your account is not recognized, run `/link` in game and follow the linking instructions, then run `/tablet checklink`.
+
+## Known Issues {#known-issues}
+
+### Timeout SonoranCAD::mini:CallSync {#timeout-sonorancad-mini-callsync}
+
+
+
+<Accordion title="Timeout SonoranCAD::mini:CallSync">
+
+
+
+Some users may see `SonoranCAD::mini:CallSync` listed multiple times after recieving a timeout.
+
+When your client recieves a timeout from the server for any reason, it will display a list of the most recent requests. Because Sonoran's Mini-CAD runs frequent sync requests, these will consequenty be displayed.
+
+**This is not an issue with or related to Sonoran CAD**. This is a general timeout between the client and server listing all recent calls as diagnostic information.
+
+![Sonoran CAD Mini - Timeout Debug](https://docs-assets.sonoransoftware.com/sha256/01/01d4a801562c1639392e1fb5b9e5c47212273de992594ba7ff56e45420c9c03d.png)
+
+
+
+</Accordion>
+
+
+
+### Tablet Showing Grey {#tablet-showing-grey}
+
+
+
+<Accordion title="Tablet Showing Grey">
+
+
+
+Some users may get a grey, black or blank screen when using the Sonoran Login method before and then opening the tablet and it just being a grey screen.
+
+To resolve this, close FiveM, then to go to your `FiveM Application Data` folder then to `data` and then delete the `nui-storage` folder.
+
+If you still are having issues reach out to our [support team](https://support.sonoransoftware.com).
+
+![Sonoran CAD Tablet - Blank Screen Issue](https://docs-assets.sonoransoftware.com/sha256/11/115bdd51a6290a4bc78ce73558885633ebddf6e6936117f96edfd52dcebd36a5.png)
+
+
+
+</Accordion>

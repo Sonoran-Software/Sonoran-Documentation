@@ -1,0 +1,52 @@
+---
+title: Get Departments
+description: Provides all departments and their ranks (and their associated IDs)
+---
+
+## Get Departments {#get-departments}
+
+`POST` `https://api.sonorancms.com/general/get_departments`
+
+Get a Sonoran CMS community account's ranks by account ID, API ID, or username.
+
+#### Request Body {#request-body}
+
+| Name                                   | Type   | Description              |
+| -------------------------------------- | ------ | ------------------------ |
+| id\*   | string | Community ID             |
+| key\*  | string | API Key                  |
+| type\* | string | GET\_COM\_ACCOUNT        |
+| data\* | array  | Array of request objects |
+
+<Tabs>
+<Tab title="200: OK ">
+
+```javascript
+[
+    "4298c76d-a1ee-46dc-b33c-8daf2e2280dd", // UUID of Rank
+    ...
+]
+```
+
+</Tab>
+
+<Tab title="400: Bad Request The following 400 errors may be sent in response:">
+
+```javascript
+INVALID API KEY
+INVALID COMMUNITY ID
+API ID NOT LINKED TO AN ACCOUNT IN THIS COMMUNITY
+NO ACCOUNT FOUND UNDER GIVEN PARAMETERS IN THIS COMMUNITY
+```
+
+</Tab>
+
+</Tabs>
+
+```
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "GET_DEPARTMENTS"
+}
+```

@@ -1,0 +1,100 @@
+---
+title: Framework Support (ESX/QBCore) and Auto Fines
+description: Adds support for ESX and QBCore automatic in-game fines.
+---
+
+<Info>
+
+ESX v2 is not supported by this submodule and will not function. Only ESX v1 is supported.
+</Info>
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/14/1436c8e316799543cf38137ab28ff58a6d0acd6ed83cc71e511ab7f6f18f54a8.png" alt="" />
+
+
+
+## Activation Guide {#activation-guide}
+
+### 1. Download and Install the Resource {#id-1.-download-and-install-the-resource}
+
+<Info>
+
+This submodule is already **enabled by default** when installing the [Sonoran CAD FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
+</Info>
+
+### 2. Adjust the Configuration {#id-2.-adjust-the-configuration}
+
+The CAD display settings are stored inside of the `/configuration/frameworksupport_config.lua` file.
+
+### 3. Ensure Players are Linked {#id-3.-ensure-players-are-linked}
+
+Ensure the players have already [linked their CAD](/cad/integration-plugins/in-game-integration/link-user-in-game) for this integration to work.
+
+### Configuration {#configuration}
+
+Review the `frameworksupport_config.lua` file to configure the submodule to behave how you like. The file is well documented. Please review **all** the settings!
+
+
+
+<Accordion title="frameworksupportconfig.lua">
+
+
+
+| Config Value             | Description                                                                                                                                                                                          |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| identityType             | Newer ESX version use license instead of steam for identity.                                                                                                                                         |
+| usePrefix                | Some ESX versions don't use the prefix (such as license:abc) with the identity, set to false to disable the prefix.                                                                                  |
+| usingQBCore              | If you are using QBCore set this to true.                                                                                                                                                            |
+| usingQBManagement        | Set to true if you want to use qb-management accounts to receive fine payments.                                                                                                                      |
+| qbManagementAccountNames | A table of department abbreviations to qb-management account names, see examples present in config                                                                                                   |
+| qbNotifyFinedPlayer      | Set to true to notify only the fined individual of the fine                                                                                                                                          |
+| qbFineMessage            | The message sent to notify the user of the fine. The placeholders are $AMOUNT and $OFFICER\_NAME where $AMOUNT is the fine total and $OFFICER\_NAME is the Unit Name of the officer issuing the fine |
+| issueFines               | Whether to issue fines to players for finable reports/forms                                                                                                                                          |
+| fineNotify               | Whether to send a message in chat when a player is issued a fine                                                                                                                                     |
+| fineableForms            | A list of the names of forms that should issue fines to players.                                                                                                                                     |
+| legacyESX                | Set to true if default settings do not get character name properly (older esx_identity/ESX legacy versions)<br /><br />created for and tested with:<br />ESX v1.1.0<br />esx_identity v1.0.2          |
+
+
+
+</Accordion>
+
+
+
+### Auto-Fines {#auto-fines}
+
+Civilians in-game can be automatically fined for the crimes they commit based on fineable forms submitted.
+
+To do so, simply enable `issueFines` in the config and add a list of custom record types to the `fineableForms` array.
+
+Ex: `fineableForms = {"Arrest Report", "Speeding Citation"}`
+
+The fines are pulled from your custom records:
+
+* `Charges` section -> `Fine` field
+* `Speed` section -> `Fine` field
+
+## Usage {#usage}
+
+This submodule can be used to issue fines to players when reports/records are entered into the CAD that include fines. You can configure the reports/records that are finable in the configuration. This submodule also adds support for ESX that other submodules can take advantage of. Currently, the following submodules are supported:
+
+* [dispatchnotify](/cad/integration-plugins/in-game-integration/available-plugins/dispatch-notify)
+  * Adds the ability to show character names in dispatch responses (officer names)
+  * Adds the ability to restrict functionality to certain jobs (like police). See the [dispatchnotify documentation](/cad/integration-plugins/in-game-integration/available-plugins/dispatch-notify) for how to do this.
+* [callcommands](/cad/integration-plugins/in-game-integration/available-plugins/call-commands)
+  * Adds the ability to show character names for the caller when they use /911. This is automatic when the submodule is installed.
+* [livemap](/cad/integration-plugins/in-game-integration/available-plugins/live-map)
+  * Adds the ability to show character names on the map.
+
+### Legacy ESX Support {#legacy-esx-support}
+
+<Warning>
+
+Legacy ESX Support utilizes MySQL-Async in order to get character information from your database directly. ESX requires this in older versions so this shouldn't be an issue.
+</Warning>
+
+This is mainly for ESX v1 releases that were made before the character system implementation using only the `users` database table. These versions of ESX used the `users` table only for player information of active characters and a `characters` table that held all character information (active and secondary characters of your players).
+
+Due to different handling of character information such as first name and last names, this option allows you to use esxsupport submodule with older "Legacy" ESX v1 releases.
+
+Simply set `legacyESX` to true in your `config_esxsupport.lua`

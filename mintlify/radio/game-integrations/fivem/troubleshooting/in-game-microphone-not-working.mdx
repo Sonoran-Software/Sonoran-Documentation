@@ -1,0 +1,61 @@
+---
+title: In-Game Microphone Not Working
+description: Fix a common issue causing the in-game microphone to not work.
+---
+
+## In-Game Microphone Not Working {#in-game-microphone-not-working}
+
+Due to an old version of Chromium (web browser) that FiveM utilizes, we are unable to change audio devices in-game. FiveM utilizes your "default" Windows microphone.
+
+To resolve this issue, simply set your desired microphone "as default" in Windows.
+
+### 1. Control Panel Sound {#id-1.-control-panel-sound}
+
+Open the `Control Panel` and select `Hardware and Sound`
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/44/44bea3324a6c34bb26814aec417b574ca81182e7286c8030ba95923393cbf07a.png" alt="" />
+
+
+
+### 2. Manage Audio Devices {#id-2.-manage-audio-devices}
+
+Select `Manage Audio Devices`
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ae/aeb95c59698988a0582958406e88bc02647cf5e1f9baba2eba0ced7e6640eeae.png" alt="" />
+
+
+
+### 3. Set Microphone as Default {#id-3.-set-microphone-as-default}
+
+* Select the `Recording` tab
+* Select your microphone
+* Select `Set Default`
+* Select `Apply`
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/54/54b417d65b846df685d7c8ec1ecf5c74b096103fa07e811bce4323dedd4199c6.png" alt="" />
+
+
+
+### 4. Restart your Game {#id-4.-restart-your-game}
+
+After setting your new default microphone restart your FiveM application.
+
+## Further Troubleshooting {#further-troubleshooting}
+
+If you have set your mic as the default device and you are still unable to hear it in game, try the following steps:
+
+* Ensure device is marked as "Default Communication Device" as well. If the "Set Default" button is greyed out, that means it is both the default device and the default communication device.
+* Reset your audio devices in Windows settings, as shown below.
+
+### Resetting Windows Audio Devices {#resetting-windows-audio-devices}
+
+1. Open Windows Settings, navigate to `System` > `Sound`
+2. Under `Advanced sound options`, click `App volume and device preferences`
+3. Scroll to the bottom and click `Reset` to reset to the Microsoft recommended defaults.
+4. Restart FiveM to ensure it recognizes the changes.

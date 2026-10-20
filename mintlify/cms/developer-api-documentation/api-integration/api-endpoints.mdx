@@ -1,0 +1,148 @@
+---
+title: API Endpoints
+description: View all of our API endpoints, learn about our data structuring, and
+  integrate your framework with Sonoran CMS.
+---
+
+<Check>
+
+Looking for VPS, web, or dedicated hosting? Check out our official [server hosting](/cad/other-products/server-hosting)!
+</Check>
+
+## Sonoran JS - NPM Library {#sonoran-js-npm-library}
+
+Sonoran CMS offers a complete Node API library from NPM!
+
+`npm i @sonoransoftware/sonoran.js`
+
+[Learn more about our NPM library](https://www.npmjs.com/package/@sonoransoftware/sonoran.js)!
+
+## Available API Endpoints {#available-api-endpoints}
+
+### General Endpoints {#general-endpoints}
+
+View all general endpoints for user account actions, administrative actions, and more!
+
+
+
+<Card title="[general](general/)" href="/cms/developer-api-documentation/api-integration/api-endpoints/general" />
+
+
+
+### Server Endpoints {#server-endpoints}
+
+View all server endpoints for game server whitelist, server management, etc.
+
+
+
+<Card title="[servers](servers/)" href="/cms/developer-api-documentation/api-integration/api-endpoints/servers" />
+
+
+
+### Server Endpoints {#server-endpoints-1}
+
+View all event endpoints for calendar events!
+
+
+
+<Card title="[events](events/)" href="/cms/developer-api-documentation/api-integration/api-endpoints/events" />
+
+
+
+## API Code Examples {#api-code-examples}
+
+### Javascript {#javascript}
+
+This example makes a [get community account request](/cms/developer-api-documentation/api-integration/api-endpoints/general/get-com-account) based on a given API ID (Discord ID here). This uses the [Axios library](https://www.npmjs.com/package/axios) to help make the HTTP POST request.
+
+The server response is then logged to console.
+
+```javascript
+// Import Axios library
+// https://www.npmjs.com/package/axios
+// Install command: `npm i axios` 
+import axios from 'axios';
+// Set the API URL (CMS backend)
+let baseURL = 'https://api.sonorancms.com';
+// Set the `api` object to be used
+let api = axios.create({ baseURL });
+
+// Format the POST body data
+// https://info.sonorancms.com/developer-api-documentation/api-integration/api-endpoints/general/get-com-account
+const data = {
+  id: 'YOUR_COMMUNITY_ID',
+  key: 'YOUR_API_KEY',
+  type: 'GET_COM_ACCOUNT',
+  data: [
+    {
+      apiId: "235947056630333440" // Discord ID
+    }
+  ],
+};
+
+// Send the POST request
+//  Format the data to JSON
+api.post('/general/get_com_account', JSON.stringify(data))
+  .then((response) => {
+    // Response back from the backend
+    console.log(response);
+  })
+  .catch((err) => {
+    // Error response back from the backend
+    console.log(err);
+ });
+```
+
+### Lua {#lua}
+
+This example makes a [get community account request](/cms/developer-api-documentation/api-integration/api-endpoints/general/get-com-account) based on a given API ID (Discord ID here). This uses the[ FiveM performHttpRequest native](https://docs.fivem.net/docs/scripting-reference/runtimes/lua/functions/PerformHttpRequest/) to help make the HTTP POST request.
+
+The server response is then logged to console.
+
+```lua
+-- Body payload object
+local payload = {}
+
+-- Specify our community ID, API key, and API method type (Panic)
+payload["id"] = "YOUR_COMMUNITY_ID"
+payload["key"] = "YOUR_API_KEY"
+payload["type"] = "GET_COM_ACCOUNT"
+
+-- Data: List (array) of unit panic objects
+--    Here, we're specifying one unit to PANIC
+local postData = {
+    {
+        ["apiId"] = "235947056630333440",  -- Discord ID
+    },
+}
+-- Add this data to our payload
+payload["data"] = postData
+
+-- Send POST request with JSON encoded body (payload)
+PerformHttpRequest("https://api.sonorancms.com/general/get_com_account", function(statusCode, res, headers)
+    if statusCode == 200 and res ~= nil then
+        -- Status code 200 (Success)
+        print("result: "..tostring(res))
+    else
+        -- Error code
+        print(("CMS API ERROR: %s %s"):format(statusCode, res))
+    end
+end, "POST", json.encode(payload), {["Content-Type"]="application/json"})
+```
+
+## Endpoints Subscription Requirements {#endpoints-subscription-requirements}
+
+Each endpoint requires a certain subscription, some may be available for communities on the Free plan or some may require the Pro plan, the table below shows what subscription is required per endpoint.
+
+
+
+| Endpoint | Minimum Subscription Level |
+| --- | --- |
+| /general/get_sub_version | Free |
+| /general/check_com_apiid | Standard |
+| /general/get_com _ account | Plus |
+| /general/get_account _ ranks | Standard |
+| /general/clock_in _ out | Plus |
+| /servers/get_game_servers | Standard |
+| /servers/verify_whitelist | Plus |
+| /servers/full_whitelist | Plus |

@@ -1,0 +1,120 @@
+---
+title: Moderation
+description: Configure moderation standards in the ER:LC panel.
+---
+
+## Priority Player List {#priority-player-list}
+
+
+
+<Accordion title="Priority Player List">
+
+
+
+The Priority Player List highlights in-game users with specific CMS ranks by moving them to the top of the player list. This is useful for quickly identifying which staff members (or other ranks) are currently online.
+
+Players with one of the configured CMS ranks will display a rank badge on their player card and appear at the top of the dashboard list.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/f4/f4876df69d7b2fb6c8d8133addc87aedab7624fe1395abbfd8f87fbc0a10438a.png" alt="" width="375" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/f0/f05b5f882738e2ba168ca8d9ffc1aa4a5c14f684d154713b1623429760765a90.png" alt="" width="207" />
+
+
+
+
+
+</Accordion>
+
+
+
+## Custom Record Types {#custom-record-types}
+
+
+
+<Accordion title="Custom Record Types">
+
+
+
+These custom log types can be created via [CMS](/cms/integration-capabilities/er-lc-game-panel/usage/player-records#via-cms-panel), [Discord](/cms/integration-capabilities/er-lc-game-panel/usage/player-records#via-discord-bot), or [in-game](/cms/integration-capabilities/er-lc-game-panel/usage/player-records#via-in-game-command)!
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/af/afe64f866918c79ca73265542a94ff3e923165a91d6fa3f7902fd432811444fd.png" alt="" />
+
+
+
+Create additional, custom player record types for things like RDM, Combat, and more!
+
+
+
+</Accordion>
+
+
+
+## Request Form Types {#request-form-types}
+
+
+
+<Accordion title="Custom Request Forms">
+
+
+
+Request form types are CMS form submissions that are displayed [right in the ER:LC panel](/cms/integration-capabilities/er-lc-game-panel/usage/dashboard#latest-activity) for quick processing.
+
+**Example: Priority Requests**
+
+Many communities require approval for a "priority" scene (a roleplay scene with multiple users, weapons, etc.)
+
+In the **Request Form Types** we've selected a custom CMS form for **Priority Requests**. When a user submits this form and it's in the **Awaiting Review** stage, it will be [displayed on the ER:LC panel](/cms/integration-capabilities/er-lc-game-panel/usage/dashboard#latest-activity).
+
+Additionally, players can submit this form (as long as their Roblox account is linked) from in-game using a custom `:log` comman&#x64;**.** All additional text after the command will be inserted into the selected form field.
+
+Ex: `:log prio this is an example` > would create a new **Priority Request** form submission with "this is an example" inserted into the form field "What is the priority for?"
+
+**Stage Actions**
+
+When a form stage is changed [automated actions, including ER:LC commands](/cms/integration-capabilities/er-lc-game-panel/usage/cms-integrations#stage-actions) can be ran.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/24/240ea039c6f4274e0e30a219209fbb13372bc733e7b2b1e763dfc341295f9cd4.png" alt="" />
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/6d/6d551740ab0ca284be9c31896b1c4e17d787cea4ca861a37774f1f9f24908d28.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+## Username Moderation {#username-moderation}
+
+
+
+<Accordion title="Username Moderation">
+
+
+
+Even with Roblox’s built-in username moderation, some inappropriate names can still bypass filters. The Username Moderation panel allows you to automatically kick users with “All” or “Others” in their username — preventing commands targeting them from affecting the entire server.
+
+You can also configure AI-based moderation standards to automatically detect and handle inappropriate usernames.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d1/d1829c1fd7d3ecddc804963a819ed45272c84ffcaa821253cbc453c2f1f2863d.png" alt="" width="375" />
+
+
+
+
+
+</Accordion>

@@ -1,0 +1,68 @@
+---
+title: Unit Panic
+description: The Unit Panic API call allows you to automatically trigger a unit panic
+  from in-game.
+---
+
+<Warning>
+
+This API endpoint requires the **standard** version of Sonoran CAD or higher. For more information, see our [pricing ](/cad/pricing/faq)page.
+</Warning>
+
+<Info>
+
+Toggling a unit's panic status via the API will not send this push event. These events should be listened for locally on the game server.
+</Info>
+
+## Unit Panic {#unit-panic}
+
+`POST` `https://api.sonorancad.com/emergency/unit_panic`
+
+This The unit panic API endpoint allows you to automatically trigger a unit panic from in-game.
+
+#### Request Body {#request-body}
+
+| Name | Type   | Description              |
+| ---- | ------ | ------------------------ |
+| id   | string | Your community's ID      |
+| key  | string | Your community's API Key |
+| type | string | UNIT\_PANIC              |
+| data | array  | Array of unit objects    |
+
+<Tabs>
+<Tab title="200 A successful call will be met with the following response:">
+
+```
+UNIT PANIC UPDATED
+```
+
+</Tab>
+
+<Tab title="400 The following errors may be sent in response:">
+
+```
+INVALID REQUEST TYPE
+INVALID COMMUNITY ID
+API IS NOT ENABLED FOR THIS COMMUNITY
+INVALID API KEY
+```
+
+</Tab>
+
+</Tabs>
+
+```javascript
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "UNIT_PANIC",
+    "data": [
+        {
+            "apiId": "STEAM:1234", // (OPTION 1): API ID entered in the unit identifiers
+            "account": "000-000-000", // (OPTION 2): Sonoran Account UUID
+            "identIds": [123,456], // (Option 3): Identifier IDs
+            "isPanic": true,
+        }
+    ]
+}
+```

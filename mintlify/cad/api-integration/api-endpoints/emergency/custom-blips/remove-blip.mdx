@@ -1,0 +1,61 @@
+---
+title: Remove Blip
+description: This endpoint allows you to remove custom blips from your community's
+  live map.
+---
+
+<Warning>
+
+This API endpoint requires the **pro** version of Sonoran CAD or higher.\
+For more information, see our [pricing ](/cad/pricing/faq)page.
+</Warning>
+
+## Remove Blip {#remove-blip}
+
+`POST` `https://api.sonorancad.com/emergency/remove_blip`
+
+This endpoint allows you to remove a custom blip from the live map.
+
+#### Request Body {#request-body}
+
+| Name                                   | Type   | Description              |
+| -------------------------------------- | ------ | ------------------------ |
+| id\*   | string | Your community's ID      |
+| key\*  | string | Your community's API Key |
+| type\* | string | REMOVE\_BLIP             |
+| data\* | array  | Array of request objects |
+
+<Tabs>
+<Tab title="200 A successful call will be met with the following response:">
+
+```
+Blip 123 removed!
+```
+
+</Tab>
+
+<Tab title="400 The following 400 errors may be sent in response:">
+
+```http
+INVALID REQUEST TYPE
+INVALID COMMUNITY ID
+API ENDPOINT IS NOT ENABLED FOR THIS COMMUNITY
+INVALID API KEY
+```
+
+</Tab>
+
+</Tabs>
+
+```javascript
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "REMOVE_BLIP",
+    "data": [
+        {
+            "ids": [1, 2, 3] // Blip ID
+        },
+    ]
+}
+```

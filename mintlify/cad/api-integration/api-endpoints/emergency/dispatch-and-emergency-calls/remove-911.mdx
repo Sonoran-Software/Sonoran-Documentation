@@ -1,0 +1,65 @@
+---
+title: Remove 911
+description: This endpoint allows you to remove an existing emergency/911 call from
+  the CAD.
+---
+
+<Warning>
+
+This API endpoint requires the **Standard** version of Sonoran CAD or higher. For more information, see our [pricing ](/cad/pricing/faq)page.
+</Warning>
+
+This endpoint allows you to remove an existing emergency/911 call from the CAD.
+
+## Remove 911 {#remove-911}
+
+`POST` `https://api.sonorancad.com/emergency/remove_911`
+
+#### Request Body {#request-body}
+
+| Name | Type   | Description              |
+| ---- | ------ | ------------------------ |
+| id   | string | Your community's ID      |
+| key  | string | Your community's API Key |
+| type | string | REMOVE\_911              |
+| data | array  | Array of request objects |
+
+<Tabs>
+<Tab title="200 A successful call will be met with the following response:">
+
+```
+API ID(s) set!
+```
+
+</Tab>
+
+<Tab title="400 The following 400 errors may be sent in response:">
+
+```http
+INVALID REQUEST TYPE
+INVALID COMMUNITY ID
+API IS NOT ENABLED FOR THIS COMMUNITY
+INVALID API KEY
+```
+
+</Tab>
+
+</Tabs>
+
+```javascript
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "REMOVE_911",
+    "data": [
+        {
+          "serverId": 1,
+          "callId": 1 // Call ID
+	}
+    ]
+}
+```
+
+#### Call ID {#call-id}
+
+The call ID integer value can be retrieved from the [get calls API endpoint](/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/get-calls), or returned in the response message when [creating a 911 call via an API call](/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/911-call).

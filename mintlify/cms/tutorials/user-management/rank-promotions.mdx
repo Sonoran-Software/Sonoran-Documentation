@@ -1,0 +1,205 @@
+---
+title: Rank Promotions
+description: Configure rank promotion flows for your community members.
+---
+
+<iframe src="https://app.guidde.com/share/playbooks/wJ25VP5VoPdCjmsS44zKHr?origin=G25dDmjNZ2b8ccFUz9X7G7W8T1k1" title="Interactive tutorial" className="w-full aspect-video rounded-xl" allowFullScreen />
+
+
+
+## What are Promotions? {#what-are-promotions}
+
+**Promotion flows** let you easily promote or demote members within your community.
+
+For example, a user with the **Rookie** rank can be promoted to **Member**, or an **Administrator** can be demoted to **Moderator**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/bf/bf43863411bcf9cb1c37dff6839d85f1edf86bc9d8846ba6219092cabd5d18df.png" alt="" />
+
+
+
+## Creating Promotion Flows {#creating-promotion-flows}
+
+
+
+<Accordion title="Flow Information and Ranks">
+
+
+
+1. **Access the Promotions Panel**
+
+Open the **Ranks** panel and select the **Promotions** tab at the top left.
+
+In the **Promotions** panel, select **Promotion Flows** to view, add, edit, or remove existing promotion flows.
+
+2. **Configure Promotion Ranks**
+
+Use the **Promote From** and **Promote To** fields to label the flow.\
+Exampl&#x65;**:** Promote from **Moderator** to **Admin**.
+
+**Configure Rank Changes**
+
+* In the **Ranks to Add** section, select **Admin**.
+* In the **Ranks to Remove** section, select **Moderator**.
+
+When executed, this flow will **add the Admin rank** and **remove the Moderator rank**, effectively promoting the user.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/5e/5eea88497e69c198978514316e066fb8391f0ed871133315f55ea5b2c0d6b1c2.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Promotion Flow Direction">
+
+
+
+**Configure Flow Direction**
+
+By default, promotional flows can be executed in either direction—promotion or demotion. To reduce the risk of misuse, flows can be restricted to a single direction.
+
+Select the toggle at the top to change between
+
+* **Promotion and Demotion**
+* **Promote Only**
+* **Demote Only**
+
+For example, a “mass demote” flow may be designed to remove all CMS ranks. If that same flow is accidentally run in reverse, it would instead grant every CMS rank to the user, leading to unintended privilege escalation.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/a8/a8792558bd3b97a96b88bb94a2385df2fd48a24d9609dcc05b59a1f5566e7957.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Flow Actions">
+
+
+
+When a promotion flow is ran, you can also run automated actions like a Discord webhook, push notification, and more.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/1b/1bf54148d7ab0485fbeb6b4acbc6cf3441d43e5714dad749403012906c3f3c58.png" alt="" width="375" />
+
+
+
+
+
+</Accordion>
+
+
+
+### Multi-Flow Actions {#multi-flow-actions}
+
+
+
+<Accordion title="Multi-Flow Actions">
+
+
+
+Communities can also define general actions that trigger when any one or more promotional flows are executed. This allows, for example, a single community announcement that summarizes all users included and all promotions applied.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d7/d71a8bf35391b4a4f5439d1e6ecbec6c805ab0b97afd9724f429258210333803.png" alt="" width="375" />
+
+
+
+
+
+</Accordion>
+
+
+
+## Running Promotion Flows {#running-promotion-flows}
+
+
+
+<Accordion title="Via CMS">
+
+
+
+In the **Run Promotions** panel, select the **user(s)**, choose the **promotion flow**, and specify whether to **promote** or **demote**.
+
+Use the **green “+” icon** to add additional rows, allowing you to run multiple promotional flows simultaneously.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/01/0179b85f3df30c442203693330fee5cb0995d9706ac8dad5d9b92e65c7a873ce.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Via Discord Command">
+
+
+
+Communities can [run promotional flows right from a Discord command](/bot/tutorials/sonoran-cms-integration/promotion-flows)!
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Via Form Stage Action">
+
+
+
+Communities can also [create custom forms](/cms/tutorials/forms/creating-custom-forms) that will run promotional flows on selected users when the stage is changed.
+
+The form can have an optional **Promotional Flow** and **Member Selector** question for the [stage action](/cms/tutorials/forms/creating-custom-forms#form-stages) to use. These form inputs can be used in the custom stage action.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/c9/c94a74534781d7ebcc23a91d2445c2432ae3b795ea53e3290870956f5b7f8ec0.png" alt="" width="375" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/03/030d22a77dd9558e9e7dbddda6f967547919dfbfe8308c7933c987463e60582d.png" alt="" width="281" />
+
+
+
+
+
+</Accordion>
+
+
+
+### Permissions {#permissions}
+
+To allow others to manage Promotion Flows on your behalf, you can assign the following [permissions](/cms/tutorials/user-management/creating-departments#assigning-rank-permissions).
+
+* Create/Edit/Remove Promotion Flows
+  * **Modify Departments**
+* Trigger Promotion Flows
+  * **Change Permissions**
+* Trigger promotion flows that include ranks above the triggering user’s permission level.
+  * **Change Higher Permission**

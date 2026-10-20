@@ -1,0 +1,71 @@
+---
+title: Whitelist
+description: A whitelist system that utilizes Sonoran CMS's game whitelist system.
+---
+
+This whitelist module utilizes Sonoran CMS's to enforce player connections.
+
+![Sonoran CMS - Whitelist](https://docs-assets.sonoransoftware.com/sha256/1b/1ba9dcbc78133e27b9d7501e98f2b5239d20403a5c8ea302d1042920a584e096.png)
+
+
+
+<iframe src="https://www.youtube-nocookie.com/embed/4PAtKYQokXE" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+
+## Whitelisting on QBCore / VMenu {#whitelisting-on-qbcore-vmenu}
+
+If using QBCore or VMenu on your server, it is recommended that you control whitelisting through their respective game panels, rather than through this plugin. For more information, see the links below:\
+[QBCore Game Panel - Whitelisting](/cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel/whitelist)
+
+[VMenu Game Panel - Whitelisting](/cms/integration-capabilities/fivem-game-panel/vmenu-panel/whitelist)
+
+## Installation / Configuration {#installation-configuration}
+
+<Info>
+
+With core version `v1.4.0` the Whitelist resource was converted to a core module and no longer requires manual installation just configuration.
+</Info>
+
+### 1. Configure Clock In Module {#id-1.-configure-clock-in-module}
+
+Locate the `whitelist` module within your `[sonorancms]/sonorancms/server/modules` folder and rename `whitelist_config.dist.json` so that it is just `whitelist_config.json`.
+
+Next, open the `whitelist_config.json` file and set `enabled` to `true`.
+
+## Configuration {#configuration}
+
+| Config Option | Description                                                                                                                |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| enabled       | If set to `true` it will enable a whitelist for your server and only individuals granted _Allow Whitelist_ as shown below. |
+
+### 2. Setup Whitelist Permissions {#id-2.-setup-whitelist-permissions}
+
+Navigate to the Rank Manager within the Administrative Panel.
+
+`Administrative Panel` > `Ranks`
+
+![Sonoran CMS - Departments & Ranks](https://docs-assets.sonoransoftware.com/sha256/0d/0dc7a24c2e24e3154ff57889fae7c55922e626472987ccd313c56d0d5a4741d7.png)
+
+For users in your Sonoran CMS community to be accepted through the whitelist, they'll need to be granted permission for the whitelist through rank permissions.
+
+Granting each rank the permission of **Allow Whitelist** allows those members through the whitelist.
+
+Granting each rank with the permission of **Block Whitelist** blocks users from passing through the whitelist.
+
+<Warning>
+
+**Block Whitelist** will ALWAYS overrule **Allow Whitelist**\
+\
+If a user is granted both **Block Whitelist** and **Allow Whitelist** through various ranks they will be blocked from the whitelist. Block will always overrule allow.
+</Warning>
+
+![Sonoran CMS - Rank Manger Server Permissions](https://docs-assets.sonoransoftware.com/sha256/4a/4aab4d0df741ea04efb3ee40793e4919d01fb2d72de00d21c0b1487e568f77dc.png)
+
+### 3. Add your API ID {#id-3.-add-your-api-id}
+
+Ensure all players have added their [API ID](/cms/developer-api-documentation/api-integration/getting-started/api-id-system) to the CMS!
+
+## Reliability Notice {#reliability-notice}
+
+In the event that the CMS API is temporarily unavailable, this resource utilizes a local backup cache. The resource will automatically fall back to the latest saved version of the whitelist, allowing members to join as normal.

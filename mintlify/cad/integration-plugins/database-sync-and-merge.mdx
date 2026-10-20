@@ -1,0 +1,414 @@
+---
+title: Database Sync and Merge
+description: Database Sync allows you to search all in-game characters, licenses,
+  and vehicle registrations stored in your FiveM database—without manually creating
+  records in Sonoran CAD.
+---
+
+<Info>
+
+Database Sync requires the **Plus** version or higher of Sonoran CAD.
+
+Additional features like Database Merge and Friendly Mapping require the **Pro** version of Sonoran CAD.
+
+For more information, see our [pricing](/cad/pricing/faq) or view how to check your community [limits](/cad/tutorials/getting-started/view-your-limits).
+</Info>
+
+<Check>
+
+Looking for VPS, web, or dedicated hosting? Check out our official [server hosting](/promotions/fivem-hosting)!
+</Check>
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/bd/bd3f08f9e76527b069941a9af6a2c4541ba127ab5bae355f3753b30839ccba23.png" alt="" />
+
+
+
+## What is DB Sync? {#what-is-db-sync}
+
+Database Sync allows you to search all in-game characters, licenses, and vehicle registrations stored in your FiveM database—without manually creating records in Sonoran CAD.
+
+When a lookup is performed, Sonoran CAD securely queries your FiveM framework’s database and displays the results using your custom record templates.
+
+## Configuring DB Sync {#configuring-db-sync}
+
+### 1. Enter Connection Credentials {#id-1.-enter-connection-credentials}
+
+In order for Sonoran CAD to read your in-game database, you must configure the connection information.
+
+<Tabs>
+<Tab title="RocketNode">
+
+**Rocket Node Hosting - Database Credentials**
+
+**1. Login**
+
+Login to your RocketNode game panel and navigate to your FiveM Server.
+
+**2. Select the Database**
+
+On the left sidebar select **Databases** > **...** menu > **Details**
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/b2/b28010cbeac007e2f89f9fbbd4d979d4c46b57250e52919822f14447c591c580.png" alt="" width="375" />
+
+
+
+**3. Copy Connection Credentials**
+
+Enter the following items from the RocketNode database details panel into Sonoran CAD
+
+* **Endpoint**
+  * This includes the "Host" and "IP" portions for Sonoran CAD. From the image below, the Sonoran CAD **Host** would be `db-ash-06.apollopanel.com` and the **Port** would be `3306`.
+* **Username**
+  * Direct copy from RocketNode to the Sonoran CAD's **Username** field.
+* **Password**
+  * Direct copy from RocketNode to the Sonoran CAD's **Password** field.
+* **Database**
+  * Outside of the database details window the database name can be clicked to be copied and pasted into the Sonoran CAD **Database** field (image 2).
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/f8/f8391b23c4f1f57a0b3aa0a31f030120dcb0ab3774929b5e6a161bc8c997fe9e.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ff/ffd2c641e410ea25062e07caa33566b16fcb63fe51402add962b3919213a4bfe.png" alt="" />
+
+
+
+</Tab>
+
+<Tab title="Zap Hosting">
+
+**Zap Hosting - Database Credentials**
+
+**1. Login**
+
+Login to your Zap Hosting Account and Navigate to your FiveM Server.
+
+**2. View the Tools Section**
+
+Scroll down until you see **TOOLS** on the left hand side of your screen and select **`Databases`.**
+
+![ZAP Hosting Tools - Database](https://docs-assets.sonoransoftware.com/sha256/fc/fc4207800ad42e370eb3e40aa9e05f8bdec8f3ffcc82a41f2bbbd1600de214b3.png)
+
+**3. View Database Credentials**
+
+In the Center of your screen you will see you're database Credentials.
+
+![Zap Hosting - Database Credentials](https://docs-assets.sonoransoftware.com/sha256/8e/8e6a047544c57320890ed9327f7309df18d88bc9cb9a63cf61ec910b8cd87449.png)
+
+**4. Set DB Credentials in Sonoran CAD**
+
+Database Translation Information
+
+| Zap Hosting | SonoranCAD   |
+| ----------- | ------------ |
+| Server/IP   | Host/Address |
+| Database    | Database     |
+| User        | Username     |
+| Password    | Password     |
+
+<Warning>
+
+See [Database Sync and Merge Connection Credentials](/cad/integration-plugins/database-sync-and-merge#written-configuration-guide) to figure out how to add Credentials to your CAD Instance using the information above.
+</Warning>
+
+</Tab>
+
+<Tab title="HeidiSQL">
+
+**HeidiSQL - Database Credentials**
+
+**1. Login to your database using HeidiSQL.**
+
+**2. Open the User Manager**
+
+At the top of your screen click `Tools` and then `User Manager.`\
+Then, click `Add` at the top left.
+
+![HeidiSQL - Open User Manager](https://docs-assets.sonoransoftware.com/sha256/aa/aa4bee88cf1de7d2306c64901dfc66c3f58e5f2e6ab5ba09f379a889df5e96d7.png)
+
+**3. Enter the Account Information**
+
+Enter a user name, password, and enter `%` in the From host field. This will allow external IPs (Sonoran CAD) to connect to your database.
+
+Under `Allow Access To` select `Add Object`
+
+![HeidiSQL - User Account Credentials](https://docs-assets.sonoransoftware.com/sha256/2b/2b271558360ea025aa56530fbbd25b7320053266814f507e9a97d6d44d5e4382.png)
+
+**4. Select the Database**
+
+Select the name of your database, then hit `Ok`.
+
+![HeidiSQL - Select Database](https://docs-assets.sonoransoftware.com/sha256/ef/ef6a8809e660e8b293c7cbc20c68aae02e705715519695dfbc22597407594e20.png)
+
+**5. Select the Permissions**
+
+Check off the `EXECUTE`, `SELECT`, and `SHOW VIEW` read permissions. Then press `Save`.
+
+![HeidiSQL - Select User Permissions](https://docs-assets.sonoransoftware.com/sha256/73/73d8ac20ce0872bfdd5f45ed8380b1ada35b56a659ad629f9488b61e09fd9f91.png)
+
+**6. Save the user and set credentials in Sonoran CAD**
+
+You will now want to go to [http://whatsmyip.org](http://whatsmyip.org) and get your Public IP Address to use as your Host.
+
+Database Translation Information
+
+| HeidiSQL  | SonoranCAD   |
+| --------- | ------------ |
+| Host      | Host/Address |
+| User name | Username     |
+| Password  | Password     |
+| Database  | Database     |
+
+<Warning>
+
+See [Database Sync and Merge Connection Credentials](/cad/integration-plugins/database-sync-and-merge#written-configuration-guide) to figure out how to add Credentials to your CAD Instance using the information above.
+</Warning>
+
+</Tab>
+
+<Tab title="phpMyAdmin">
+
+**phpMyAdmin - Database Credentials**
+
+**1. Navigate to your phpMyAdmin Web Panel**
+
+**2. Navigate to User Accounts**
+
+At the top of your screen click on **`User Accounts`**.
+
+![](https://docs-assets.sonoransoftware.com/sha256/77/774d4d0b5cbf7d8d63f28ef3ab555d135436e5ac6fc06edd5941a37984d4de1c.png)
+
+**3. Create a new user account**
+
+![phpMyAdmin - New User Account](https://docs-assets.sonoransoftware.com/sha256/38/38414ad48a447c587d9164fa724822eb464fa1fc568a5e7273283480d079c9ec.png)
+
+**4. Fill out the account information**
+
+The `Host Name` field should be set as `Any Host` and the value as `%`. This will allow external IPs (Sonoran CAD) to connect to your database.
+
+![phpMyAdmin - New User Information](https://docs-assets.sonoransoftware.com/sha256/91/910423d86103993fce93a8178f71e279ed24b65c3b86e9fb69e383255a8bbbfc.png)
+
+**5. Once created, edit the user account privileges**
+
+![phpMyAdmin - Edit Account Privileges](https://docs-assets.sonoransoftware.com/sha256/a7/a73ad0454d756c37980df3ebc5d87b52499ba30cac34f298517b37e738008b7d.png)
+
+**6. Select your specific database**
+
+![phpMyAdmin - Set Database](https://docs-assets.sonoransoftware.com/sha256/83/83b8b8581763001aca894f3f44d03651acf3bbb480cf61d0349663b50310c37c.png)
+
+**7. Select only the required permissions**
+
+`SELECT` and `SHOW VIEW` will ensure this account can only read from your database.
+
+![phpMyAdmin - Read Only Permissions](https://docs-assets.sonoransoftware.com/sha256/c3/c3d8c55ea7723ad5de93f7b813612376d3b5d277e4f2b053df325dce40bb6948.png)
+
+**8. Save the user and set credentials in Sonoran CAD**
+
+You will now want to go to [http://whatsmyip.org](http://whatsmyip.org) and get your Public IP Address to use as your Host.
+
+Database Translation Informatio&#x6E;**:**
+
+| phpMyAdmin | SonoranCAD   |
+| ---------- | ------------ |
+| Host       | Host/Address |
+| Database   | Database     |
+| User name  | Username     |
+| Password   | Password     |
+
+<Warning>
+
+See [Database Sync and Merge Connection Credentials](/cad/integration-plugins/database-sync-and-merge#written-configuration-guide) to figure out how to add Credentials to your CAD Instance using the information above.
+</Warning>
+
+</Tab>
+
+</Tabs>
+
+
+
+<Accordion title="Manual Port Forwarding">
+
+
+
+If your database port has not already been opened, you will need to forward/open this port.\
+Typically, the default MySQL port is `3306`.
+
+To check if your MySQL port has been properly opened, [visit a port checking utility](https://www.yougetsignal.com/tools/open-ports/) and enter your MySQL server's IP address and port.
+
+**If you are unsure how to open a port, you will need to contact your hosting provider.**
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="IP Whitelisting">
+
+
+
+## IP Whitelisting {#ip-whitelisting-1}
+
+My community wants to whitelist **only** the Sonoran CAD IP address to connect on this SQL user account. How can I do this?
+
+You may whitelist the following IPs:
+
+```
+34.173.36.190
+```
+
+Last Updated : 1/15/2026
+
+
+
+</Accordion>
+
+
+
+### 2. Combine API and DB Sync Records {#id-2.-combine-api-and-db-sync-records}
+
+
+
+<Accordion title="Combine API and DB Sync Records">
+
+
+
+When a community uses database sync, all record lookups run against that community’s external database. Some communities may also want to include CAD records created through [integrations such as ERS](/cad/integration-plugins/in-game-integration/available-plugins/ers). Enabling this option allows lookups to return both in-game data, such as characters, licenses, and vehicles, and API-created characters and vehicles from ERS.
+
+To enable this, turn on **Include CAD API records in DB Sync lookups**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/b3/b386cb4939562532f5798321fcf4d2fca337d828dc6d32491719b2b078ea0976.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+### 3. Automatic AI Setup {#id-3.-automatic-ai-setup}
+
+
+
+<Accordion title="Automatic AI Setup">
+
+
+
+Sonoran CAD's automatic AI setup handles all of the configuration for you. Once your connection credentials are entered correctly, select **AI Automatic Setup** to complete the full configuration.
+
+The AI will automatically add any primary key columns if missing, will update your license record for any additional types, and will configure friendly mapping values if your community is on the Pro version. This process typically takes 60-90 seconds.
+
+Once completed, the AI will inform you of any missing columns (record fields that don't exist in your database) and will save the new configuration.
+
+Next, run a lookup in the police or dispatch panel to test searching for exisitng in-game characters, licenses, and vehicle registrations.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/64/6403ae11afc945219dba1385a88c2156951a034197d1afd1a2ec4f7d4c25f3c8.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/64/6489dcf19a7bd9a4290318f9691c26ab6f69471690adcc09f8102b5b522c82a6.png" alt="" />
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/5d/5d7db4ce4ec25d193982cf52182483338556f8dff582172aa8e34ef60d5c80a8.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/2c/2ce177d173cc3d5cf3bc35d01e512406801d74ca5ca9ec644a8f6b8f7db48a16.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+### 4. Automatic Selfie/Portraits {#id-4.-automatic-selfie-portraits}
+
+
+
+<Accordion title="Automatic Character Photos">
+
+
+
+FiveM communities can also use the [Civilian Registration](/cad/integration-plugins/in-game-integration/available-plugins/civilian-registration) submodule to create automatic character photos on their db sync records.
+
+Ensure the submodule has been enabled and started, then run the AI configurator to ensure the `sonoran_mugshot` DB column has been mapped to your character record's image field.
+
+
+
+</Accordion>
+
+
+
+## Database Merge {#database-merge}
+
+
+
+<Accordion title="Database Merge">
+
+
+
+For security, Sonoran CAD’s database sync is read-only. It retrieves information from your in-game database but never modifies it. Available fields—such as vehicle color, hair color, and other character details—are automatically loaded into your custom record templates.
+
+If your database does not contain the information required for certain custom fields, those fields will appear blank. Database Merge allows you to manually complete these records without changing your in-game database.
+
+When you enter information into a blank field, Sonoran CAD saves the additional data separately. During future lookups, it automatically combines your in-game database information with the manually entered CAD data to display a more complete record.
+
+Database Merge is available exclusively to Pro communities and can be enabled from the Connection Credentials tab.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/db/dbf9b43566d84aede3377ee5c47f4647d34878e57f79728dab2a983d4e83e696.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+## Friendly Mapping {#friendly-mapping}
+
+
+
+<Accordion title="Friendly Mapping">
+
+
+
+Friendly mapping allows you to convert any raw database value to a more user friendly value.
+
+\
+Ex:
+
+* `drive_license` in your database is converted to `Driver's License`.
+* `color1` in your database is converted to `Brown`.
+
+To manually configure friendly mapping on a field, select the **Modify** button under the **Friendly Mapping** column. Enter in a raw database value and the friendly value that should be replaced.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/0a/0aa2c507d352df50b8e3e25f672ba60944ba434c42601d1d448d3962308e7020.png" alt="" />
+
+
+
+
+
+</Accordion>

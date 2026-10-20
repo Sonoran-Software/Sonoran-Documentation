@@ -1,0 +1,84 @@
+---
+title: Get Identifiers
+description: Sonoran CAD allows you to retrieve all account unit identifiers via API
+  endpoint.
+---
+
+<Warning>
+
+This API endpoint requires the **Plus** version of Sonoran CAD or higher. For more information, see our [pricing ](/cad/pricing/faq)page.
+</Warning>
+
+## Get Account Identifiers {#get-account-identifiers}
+
+`POST` `https://api.sonorancad.com/emergency/get_identifiers`
+
+This endpoint allows you to retrieve all unit identifiers for a specified account in your community.
+
+#### Request Body {#request-body}
+
+| Name                                   | Type   | Description              |
+| -------------------------------------- | ------ | ------------------------ |
+| id\*   | string | Your community's ID      |
+| key\*  | string | Your community's API Key |
+| type\* | string | GET\_IDENTIFIERS         |
+| data\* | array  | Array of request objects |
+
+<Tabs>
+<Tab title="200 A successful call will be met with the following response:">
+
+```javascript
+{
+    "selectedIdent": 1,
+    "identifiers": [
+        {
+            "id": 12,
+            "accId": "00000000-0000-0000-0000-000000000000",
+            "status": 0,
+            "isPanic": false,
+            "location": "",
+            "aop": "Los Santos",
+            "data": {
+                "unitNum": "A-10",
+                "name": "John Doe",
+                "district": "Los Santos",
+                "department": "LSPD",
+                "subdivision": "Patrol",
+                "rank": "Officer",
+                "group": "CAR-51",
+                "communityUserId": "license:abc123"
+            },
+            "isDispatch": false
+        }
+    ]
+}
+```
+
+</Tab>
+
+<Tab title="400 The following 400 errors may be sent in response:">
+
+```http
+INVALID REQUEST TYPE
+INVALID COMMUNITY ID
+API IS NOT ENABLED FOR THIS COMMUNITY
+INVALID API KEY
+```
+
+</Tab>
+
+</Tabs>
+
+```javascript
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "GET_IDENTIFIERS",
+    "data": [
+        {
+            "apiId": "Steam:1234", // (OPTION 1): Generally the Steam HEX
+            "account": "000-000-000" // (OPTION 2): Sonoran Account UUID
+        }
+    ]
+}
+```

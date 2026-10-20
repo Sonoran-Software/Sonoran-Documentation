@@ -1,0 +1,52 @@
+---
+title: Environment
+description: Easily set the weather and time in your server, directly from CMS!
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/22/22d77dc4619d95ff464ce889ff64f88c7ced2d14d403d554918f1a9391fdcc66.png" alt="" />
+
+*Sonoran CMS - VMenu Game Panel Promotional Image*
+
+
+
+## Manage Weather {#manage-weather}
+
+Here you can set the current weather on your server. Open the dropdown menu and choose from 15 different weather options! You can also toggle `Freeze` and `Blackout` on the side.
+
+`Freeze` forces the weather to stay as what you set it to, if toggled, it will not change on its own.
+
+`Blackout` simulates a power outage, and all buildings will show as if they don't have electricity.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/3a/3a2fd37449cc5cae33671b6d13ed06c32cbe88afd5550cda1f518d4279bdd07a.png" alt="" width="375" />
+
+*Sonoran CMS - VMenu Game Panel - Weather*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/8c/8c4f68f1d5adf30a2f2106b904143a111e05e7ac0365f4d32b4f556b5af2d660.png" alt="" width="275" />
+
+*Sonoran CMS - VMenu Game Panel - Weather Options*
+
+
+
+## Manage Time {#manage-time}
+
+You can also set the time to any time of day using the time selector. You can also toggle `Freeze` which locks the time to whatever you've set it to.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/8b/8bc747235b98bd2923dc30fc3d3ba39a6f82802c4f1ebb3963616b5ead0dc46c.png" alt="" width="375" />
+
+*Sonoran CMS - VMenu Game Panel - Time*
+
+
+
+## Weather Flickering Issue {#weather-flickering-issue}
+
+Sometimes, having CMS installed can cause an issue where the weather and time in the server seem to rapidly "flicker". This occurs when another resource is also trying to manage weather.
+
+If you are encountering this issue and would like to disable CMS's weather management, then please set `Config.EnableWeatherSync` to `false` in the resource's `config.lua`.

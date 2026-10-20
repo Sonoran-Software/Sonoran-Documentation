@@ -1,0 +1,43 @@
+---
+title: Link User In-Game
+description: Easily link your in-game FiveM user to Sonoran CAD by running the /link
+  command.
+---
+
+## Linking FiveM to Sonoran CAD {#linking-fivem-to-sonoran-cad}
+
+Sonoran CAD requires players to link their in-game identity to a CAD account in order to match units and other integration features correctly.
+
+Players can do this by running the `/link` command in-game and selecting the **Link CAD** button. This opens an external browser to `sonorancad.com/id`, where the link code is automatically applied.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/5c/5c3bf04ec7973ae5effb24f098f2c3278f8873c081ac26970db0d564fa29b6c1.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/b7/b7562ac2fa174f3b920bc2245b70995490435758e7cea465cbc4b4b767e52889.png" alt="" />
+
+
+
+
+
+<Accordion title="Developer Information">
+
+
+
+Once completed, the player’s FiveM license ID (or the configured `primaryIdentifier`) is associated with the `communityUserId` field via the API.
+
+Learn more about [mapping players to CAD users](/cad/api-integration/getting-started/setting-your-api-id).
+
+
+
+</Accordion>
+
+
+
+### Enforce Player Links {#enforce-player-links}
+
+Communities can optionally configure the [**Force Register**](/cad/integration-plugins/in-game-integration/available-plugins/forcereg) submodule to help remind, or even force, users to link their CAD before playing.
+
+The [tablet resource](/cad/integration-plugins/in-game-integration/available-plugins/tablet) can also be used to automatically link the user when they login.

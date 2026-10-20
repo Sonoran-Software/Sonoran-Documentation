@@ -1,0 +1,191 @@
+---
+title: Getting Started
+description: Sonoran CAD offers the most immersive, free ER:LC integrations available.
+  Complete with a 3D live map, bodycam live streams, traffic stop automations, emergency
+  calls, plate reader, and more!
+---
+
+## Video Tutorials {#video-tutorials}
+
+Follow these tutorials in order, or watch the [Sonoran CAD ERLC Tutorials playlist](https://www.youtube.com/playlist?list=PLMVNElMT07L4).
+
+### 1. ER:LC Integration Setup {#id-1.-er-lc-integration-setup}
+
+Create your ER:LC API key, connect your server to Sonoran CAD, configure the Event Log Webhook, and test the connection.
+
+
+
+<iframe src="https://www.youtube-nocookie.com/embed/Fl_A6Aop9_Q" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+
+### 2. Accounts and Permissions {#id-2.-accounts-and-permissions}
+
+Invite members to your community, review pending accounts, and manage individual permissions. This tutorial also introduces Discord role mapping for automatic permission sync.
+
+
+
+<iframe src="https://www.youtube-nocookie.com/embed/PwsWTvn0IOs" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+
+## Linking your ER:LC Server {#linking-your-er-lc-server}
+
+### 1. Create an ER:LC API Key {#id-1.-create-an-er-lc-api-key}
+
+
+
+<Accordion title="ER:LC API Key">
+
+
+
+ER:LC grants API access as a paid upgrade.
+
+Once in-game, select the **Menu** button at the top right > **Servers** > **Owned Servers** > Select your private server > **Upgrade Packs** > **API Pack**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/05/05e515d29de607d5e2fd68b9da79700eb3cd23342b1d9d61cac65cbe0aca5a62.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/b1/b14279d50593c02ac90a720aab44b098b14025fa135e2cafef5c06d2ab8d699a.png" alt="" />
+
+
+
+Once in your private ER:LC server, open the **Server Info** tab.
+
+Select **Edit Server Settings** > Navigate To **ER:LC API** > Select **Edit** to Copy.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/39/399eaa1120785ce94683d095dc9501db1533411c33690d49a5aed52a894ee0aa.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/92/9242983c282c803cb78da8bfd85cca14414b511b8b84cdc995453fd64ff3d6d1.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/29/292127583baddc5a6b902f951849c6b39b196ef87f7a6b42b48efce212d23df7.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+### 2. Link ER:LC to Sonoran CAD {#id-2.-link-er-lc-to-sonoran-cad}
+
+
+
+<Accordion title="Linking ER:LC to Sonoran CAD">
+
+
+
+1. In the CAD, navigate to **Admin** > **Advanced** > **In-Game Integration**.
+2. At the top right, make sure **Game: ER:LC** is selected.
+3. Select the **ER:LC** tab and **Start Setup**.
+4. Select **Start Setup** and paste your **ER:LC API Key** in.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/c1/c10e99c303bd99adbbb81ad52a8aec0b33fc326f99e5e39d6567ed1520105213.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+### 3. Link ER:LC Event Webhooks to Sonoran CAD {#id-3.-link-er-lc-event-webhooks-to-sonoran-cad}
+
+
+
+<Accordion title="Link ER:LC Event Webhooks to Sonoran CAD">
+
+
+
+ER:LC sends Sonoran CAD events for custom commands like traffic stops and vehicle registrations. Additionally, in-game events for robberies, fires, etc. are also sent.
+
+1. Open the **Server Info**
+2. Select **Edit Server Settings**
+3. Under **ER:LC API** > **Event Log Webhook** > **Edit**
+   1. Paste: `https://events.sonoransoftware.com/erlc`
+4. In the in-game chat, enter `;test` to verify.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/f0/f0de2d624cd1d2e0687959cd5723536b83c910645adbab05852159c3a5c384d9.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/7e/7e7af7a78e4afb17a7418a7666f373dc7cd0afda5cde83527c60b58c6c534f85.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/28/28eb2c8ec9d649142042bdc40dc487a8e9eef41bd8458e9cb02355c22b691362.png" alt="" />
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/56/56b63a83a1da40ea2357a6cfa29b046561298c22b1a1b735c2dc48d031da2c8f.png" alt="" />
+
+
+
+**Webhook Errors**
+
+The ER:LC API may be experiencing a partial outage—this is common after weekend game updates. If you see a red error when setting the Event Log Webhook, it’s likely due to this issue.
+
+**This outage is on the ER:LC side, not Sonoran CAD.** When we’re notified, we’ll relay the issue to the PRC/ER:LC development team and keep you updated as more information becomes available.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/67/67f5eec4d7280f3057306e00bffd32e4f3e76051741fe24b27fcfdfe8e4a46e3.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+## Linking your Roblox Account {#linking-your-roblox-account}
+
+Players must link their Roblox account to their Sonoran account in order to use in-game integrations.
+
+Once linked, the Sonoran account can be used for ER:LC integrations across Sonoran CAD, CMS, and radio.
+
+
+
+<Accordion title="Linking Roblox to Sonoran">
+
+
+
+If a user in an ER:LC linked community does not have their Roblox account linked, the **Roblox Account Link Required** banner will display at the top of the screen. Press the red **Link** button to redirect to Roblox and link your account.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/77/7769b8ee186d2a499e8c77a00137baaf86cefadd2ee3c775ca49087d0cca4ada.png" alt="Roblox Account Link Required banner with Refresh and Link buttons" />
+
+
+
+Pressing **Link** will open up a window to login and link with Roblox:
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/b8/b8298060e479b117428dd34a44c3ab0346f680836dbae667d55ad0519d9c0125.png" alt="" />
+
+
+
+Once linked, return to the CAD and press **Refresh**. The banner disappears when your linked account is detected.
+
+
+
+</Accordion>

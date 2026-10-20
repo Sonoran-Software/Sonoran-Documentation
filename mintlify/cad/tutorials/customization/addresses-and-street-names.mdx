@@ -1,0 +1,71 @@
+---
+title: Addresses and Street Names
+description: Sonoran CAD allows you to upload custom street names to auto-populate
+  in the dispatch call editor.
+---
+
+<Warning>
+
+Street address customization requires the **plus** version of Sonoran CAD or higher.\
+For more information, see our [pricing](/cad/pricing/faq) or view how to check your community [limits](/cad/tutorials/getting-started/view-your-limits).
+</Warning>
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/01/014c7031fa8788bb1d6d2876daf939ff1507555002baf4ebe20d4ea5b5ed5b7c.png" alt="" />
+
+
+
+## Import Street Names from a Spreadsheet (CSV) {#import-street-names-from-a-spreadsheet-csv}
+
+### 1. Copy the Google Sheet {#id-1.-copy-the-google-sheet}
+
+* [GTAV Street Names](https://docs.google.com/spreadsheets/d/1IkbNJNhMYToqHQE6eb3ujp6ufkjPkLgDgq29g9woGR0/copy)
+* [ER:LC Roblox Street Names](https://docs.google.com/spreadsheets/d/1QEuImE6GH1H6sZFltLMYt7HUcExBF3_-hhNWAB9r6Hg/edit?usp=sharing)
+
+Navigate to one of our official street name Google sheet and make a copy. Using a copy of our official sheet ensures your street names are formatted correctly.
+
+![Sonoran CAD - Copy Street Name Spreadsheet](https://docs-assets.sonoransoftware.com/sha256/7e/7e56bf54289db36a9567ac7e135ecf25507156893fc94cc243fc8ade5bf6a446.png)
+
+### 2. Add Your Street Names {#id-2.-add-your-street-names}
+
+Now that you have copied this sheet into your Google Drive, you can add new rows and format your street names and addresses.
+
+<Warning>
+
+**Do NOT add additional columns.**\
+Every street name must be on a separate row to be properly imported into Sonoran CAD.
+</Warning>
+
+![Sonoran CAD - Street Names CSV](https://docs-assets.sonoransoftware.com/sha256/c6/c6f134f6633a2c7e6811c8183620a82196a4f37f99598c4695f6dd26dfc5801c.png)
+
+### 3. Download the CSV {#id-3.-download-the-csv}
+
+In Google Sheets, navigate to File > Download > Comma Separated Values (.csv) to download the file.
+
+![Google Sheets - Download CSV](https://docs-assets.sonoransoftware.com/sha256/aa/aac43822b1b2f35ad87c96715d4802581eefedb6b57be6bdfed86de901b6bfe9.png)
+
+### 4. Import the CSV File {#id-4.-import-the-csv-file}
+
+In Sonoran CAD, navigate to Admin > Customization > Customization > Addresses
+
+In the addresses section, select the "Import" button.\
+Then, select "CSV" as the import type and select your downloaded CSV file.
+
+![Sonoran CAD - Import Data](https://docs-assets.sonoransoftware.com/sha256/81/81b26d13f1ec9f2e3bbdbac5f82ff1482ac1c3308b75c40699fe8833bb0e16d9.png)
+
+![File Selector - Select CSV](https://docs-assets.sonoransoftware.com/sha256/2b/2b778936d2e51d3ab908f4017ce0e3251f2d77c243db458301a1c58d1eda6272.png)
+
+After selecting the CSV file, your street names and addresses will be imported into the CAD and saved automatically.
+
+### 5. View the Call Editor {#id-5.-view-the-call-editor}
+
+In the dispatch call editor, the `address` section is now a dropdown. This dropdown will auto-filter and suggest your street names and addresses as you type.
+
+![](https://docs-assets.sonoransoftware.com/sha256/3f/3fc8fa926999e8c3324ba202a612ad671fa560425d95034c2c7db68d68ce75c9.gif)
+
+### 6. Utilize in Custom Records {#id-6.-utilize-in-custom-records}
+
+Custom records can also have a field with the type set to `address`. This field will auto-filter the same list of street addresses from your gamemode.
+
+![Custom Records - Address Field](https://docs-assets.sonoransoftware.com/sha256/70/709ed5a5e58a84f6fdc6fae2c9221d64cf88731c19188b4494e2f0d4c86474db.gif)

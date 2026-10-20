@@ -1,0 +1,200 @@
+---
+title: Player Records
+description: Log player records for warnings, punishments, notes, and more!
+---
+
+## Creating Player Records {#creating-player-records}
+
+### Via CMS Panel {#via-cms-panel}
+
+
+
+<Accordion title="Via CMS Panel">
+
+
+
+New player records can be created directly from the ER:LC server dashboard.
+
+* **Kick** and **Ban** records automatically execute the corresponding in-game commands.
+* **Disciplinary Point** records add a specified number of points to a user and can be used for warnings or punishments.
+* **Note** records allow staff to store important information or observations about a player.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/44/44bbde55a9c295041dcc06f5d36a57813b3adaaca07bb35d3a43034f1bc70df4.png" alt="" width="375" />
+
+
+
+
+
+</Accordion>
+
+
+
+### Via In-Game Vision {#via-in-game-vision}
+
+
+
+<Accordion title="Via CMS Vision">
+
+
+
+Users with the CMS desktop application can use [Vision with a hotkey to open an in-game overlay](/cms/integration-capabilities/er-lc-game-panel/usage/vision) and quickly add records to the nearby player.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/6a/6a1f451df33b449e69e4b4083b3348a717f7ad7f64529cbb8ff7bffaf94709fe.webp" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+### Via Discord Bot {#via-discord-bot}
+
+
+
+<Accordion title="Via Discord Bot">
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/9f/9ff539caa9de7663f76fe905d961db5759fc812355d089202aa72a364183992f.png" alt="" />
+
+
+
+Player records can be added via [Discord bot](/cms/integration-capabilities/discord-bot-integration) by using the `/erlc record` command.
+
+* **ServerID** specifies the ER:LC server you wish to add this player record to.
+* **Player** is a selected Discord user or Roblox user ID.
+  * Players must [have their Discord linked](/cms/integration-capabilities/er-lc-game-panel/installation#id-3.-link-roblox-and-discord-to-cms) for this to work!
+* **Type** is the type of player record (kick, ban, disciplinary, note, etc.)
+* Additional inputs may be needed for reasoning, points, etc.
+
+
+
+</Accordion>
+
+
+
+### Via In-Game Command {#via-in-game-command}
+
+
+
+<Accordion title="Via In-Game Command">
+
+
+
+Players in-game can use the `:log` command to create records.
+
+Syntax: `:log record [type] [player name] [points - optional] [reason]`
+
+Example: `:log record note John This is an example note!`
+
+Record Types:
+
+* `points` (uses extra `[points]` parameter)
+* `note`
+* `kick`
+* `ban`
+* [Custom Log Type](/cms/integration-capabilities/er-lc-game-panel/usage/moderation#custom-record-types)
+
+Players can also manage their timeclock in-game using the `:log` command.
+
+[Learn more about in-game timeclock commands here.](/cms/integration-capabilities/er-lc-game-panel/usage/shifts-and-activity#timeclock)
+
+
+
+</Accordion>
+
+
+
+## Adding Custom Record Types {#adding-custom-record-types}
+
+Communities can [configure additional custom record types in the Moderation panel](/cms/integration-capabilities/er-lc-game-panel/usage/moderation#custom-record-types).
+
+## Searching Player Records {#searching-player-records}
+
+### Search Filters {#search-filters}
+
+
+
+<Accordion title="Search Filters">
+
+
+
+Find a specific record by expanding the filter menu on the Latest Activity section to specify a record's type, staff member, user, and date range.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/16/1629300a121882908eda9af31502df819f9e1438af9111a202f52b1773c97107.png" alt="" width="375" />
+
+
+
+
+
+</Accordion>
+
+
+
+### In Latest Activity {#in-latest-activity}
+
+
+
+<Accordion title="In Latest Activity">
+
+
+
+Click the orange icon to toggle the latest activity from viewing all activity logs and records to viewing only recently added records.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/5e/5ef82bf6c52834ebe197d68c42a5649c659df4150954e73cba11f5aa835c8446.png" alt="" width="375" />
+
+
+
+
+
+</Accordion>
+
+
+
+### In Player Activity {#in-player-activity}
+
+
+
+<Accordion title="In Player Activity">
+
+
+
+Click any player to open their account modal. You can view all recent activity and records in the `Activity` expansion area. Additionally, click the orange icon to toggle from viewing all activity logs and records to viewing only recently added records.
+
+
+
+</Accordion>
+
+
+
+## Editing Player Records {#editing-player-records}
+
+
+
+<Accordion title="Editing Player Records">
+
+
+
+Click any player record to open it in the editor. Here, you can modify the record and view the record's edit history.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/10/109f53ec30f724f2c1b9eceb25fd6d464e1c5bb34691ebd7cb76e13d5fbc743f.png" alt="" width="375" />
+
+
+
+
+
+</Accordion>

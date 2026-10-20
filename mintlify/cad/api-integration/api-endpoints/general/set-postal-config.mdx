@@ -1,0 +1,66 @@
+---
+title: Set Postal Config
+description: This endpoint allows you to set your community's postal configuration
+  to be used with the Live Map search.
+---
+
+<Warning>
+
+This API endpoint requires the **Pro** version of Sonoran CAD or higher.\
+For more information, see our [pricing ](/cad/pricing/faq)page.
+</Warning>
+
+## Set Postal Config {#set-postal-config}
+
+`POST` `https://api.sonorancad.com/general/set_postals`
+
+This endpoint sets your community's postal configuration for Live Map search.
+
+#### Request Body {#request-body}
+
+| Name | Type   | Description              |
+| ---- | ------ | ------------------------ |
+| id   | string | Your community's ID      |
+| key  | string | Your community's API Key |
+| type | string | SET\_POSTALS        |
+| data | object | Request object           |
+
+<Tabs>
+<Tab title="200 A successful call will be met with the following response:">
+
+```
+Success
+```
+
+</Tab>
+
+<Tab title="400 The following 400 errors may be sent in response:">
+
+```http
+Error: Server ID: x has IP set to: '1.2.3.4' -> your IP: '4.3.2.1'
+Server not found with ID: 123
+```
+
+</Tab>
+
+</Tabs>
+
+```javascript
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "SET_POSTALS",
+    "data": [
+        {
+            "code": "2000",
+            "x": 2325.4345703125,
+            "y": 5147.21484375,
+        },
+        {
+            "x": 2151.2138671875,
+            "y": 5166.0888671875,
+            "code": "2001"
+        },
+    ]
+}
+```

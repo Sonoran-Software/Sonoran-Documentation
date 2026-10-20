@@ -1,0 +1,35 @@
+---
+title: Unit Status Update
+description: This push event is sent whenever a unit's status call is changed.
+---
+
+### EVENT\_UNIT\_STATUS {#event_unit_status}
+
+```javascript
+{
+    "key": "YOUR_API_KEY", // Authenticate legitimate event traffic
+    "type": "EVENT_UNIT_STATUS",
+    "data": [
+        {
+            "identIds": 1,
+            "status": 0
+        }
+    ]
+}
+```
+
+### Ident Field {#ident-field}
+
+The `identIds` array contains the unit identifier ID(s).
+
+### Enumeration Values {#enumeration-values}
+
+Sonoran CAD uses integer enumeration values for the unit `STATUS` field. See the tables below for more information. These values reflect the default [unit status](/cad/tutorials/customization/unit-status-codes) options.
+
+| Integer (Enumeration) Value | Status Description |
+| --------------------------- | ------------------ |
+| 0                           | UNAVAILABLE        |
+| 1                           | BUSY               |
+| 2                           | AVAILABLE          |
+| 3                           | ENROUTE            |
+| 4                           | ON\_SCENE          |

@@ -1,0 +1,233 @@
+---
+title: Installation
+---
+
+This guide covers downloading, installing, and locating the Sonoran Short Slip Dress EUP item.
+
+<Info>
+
+The resource folder should be named `sonoran-shortdress` and started with `ensure sonoran-shortdress`. If the downloaded ZIP uses a different folder name, use that exact name instead.
+</Info>
+
+<Info>
+
+This EUP asset is escrow protected by Tebex. [Learn more about what this means.](/store/short-slip-dress/installation#texture-customization)
+</Info>
+
+## Before You Begin {#before-you-begin}
+
+You will need:
+
+* Access to the Cfx.re Portal account that purchased the Short Slip Dress.
+* Access to your FiveM server's `resources` folder.
+* Access to your server's `server.cfg` file.
+* A way to fully restart the server after installation.
+
+## Download the Resource {#download-the-resource}
+
+1. Sign in to the [Cfx.re Portal](https://portal.cfx.re/).
+2. Open the purchased assets or packages area for the account that owns the Short Slip Dress.
+3. Download the Short Slip Dress `.zip` file.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e2/e2129bd6ea4cc0a199a87a6098bd9ab5b77e2196be8411a2819411f1226b0fcd.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/5c/5c467323dcbed9ccafe0f390bec152f5b59167043311312bc1987483e3bcc10f.png" alt="" />
+
+
+
+## Install the Resource {#install-the-resource}
+
+1.  Extract or unzip the downloaded file.
+
+    
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/a3/a30ff8e423e0c4e85a965255dda59a8ee9b8c228d70be66c794015860aca8481.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ad/adf140f911bb7c5a471caf6e9f4be874194e85d8116835fc1dc1cf777565d3ba.png" alt="" />
+
+
+2.  Locate the extracted resource folder. It should be named:
+
+    ```
+    sonoran-shortdress
+    ```
+
+    If the package uses a different folder name, keep that exact name and use it in the `ensure` line below.
+
+    
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/94/94cf2abeb4310f6d12376968c49449af153404ab51edbd4e94ac6b526594f8d1.png" alt="" />
+
+
+3.  Copy the complete resource folder directly into your server's `resources` directory:
+
+    ```
+    server-data/
+    └── resources/
+        └── sonoran-shortdress/
+    ```
+
+    Do not create an extra nested folder such as `sonoran-shortdress/sonoran-shortdress/`. The resource manifest should be directly inside the resource folder.
+
+    
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/51/51fe34e3d477252e7f0847c7836cdc9063a3dd8d545259911aa7ded644f27bd1.png" alt="" />
+
+
+4.  Open `server.cfg` and add:
+
+    ```cfg
+    ensure sonoran-shortdress
+    ```
+
+    
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/69/69fd3500238e2f15258fa3495c312063c9a8531a24b61c676a8243fa400ff1af.png" alt="" />
+
+
+5.  Save the file and fully restart the FiveM server.
+
+    
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/40/40f977c827e270d01d2dca53e06c5f6b10297d3cb3ea7c293647e267eb57d9af.png" alt="" />
+
+
+6.  Check the startup console for resource errors.
+
+    
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/9a/9a7168f7700d3bff836d175f58e229f1548a3aa19762f27d4eac4aa405b3fd2f.png" alt="" />
+
+
+
+## Locate the Short Slip Dress In-Game {#locate-the-short-slip-dress-in-game}
+
+The Short Slip Dress is accessed as female EUP clothing through vMenu.
+
+1. Join the server with a female character that can access vMenu's clothing options.
+2. Open **vMenu**.
+3. Open **Player Appearance**.
+4. Select **Shirt overlay / Jackets**.
+5. Scroll all the way to the end of the category.
+6. Select item **633**.
+7. Use the texture/variation controls to preview the 22 available textures.
+
+## EUP Streamed-Asset Troubleshooting {#eup-streamed-asset-troubleshooting}
+
+If the resource starts but the Short Slip Dress does not appear, appears invisible, or causes players to disconnect or crash when selected, the issue may be related to FiveM streamed EUP assets or server limits.
+
+### 1. Confirm the resource installation {#id-1.-confirm-the-resource-installation}
+
+* Confirm the resource folder name matches the name used in `server.cfg`.
+* Confirm the resource is directly inside the server's `resources` folder.
+* Confirm `server.cfg` contains the correct `ensure` line.
+* Confirm the server was fully restarted after installation.
+* Confirm the startup console does not report a missing manifest or failed file load.
+
+### 2. Check the Cfx.re Element Club subscription {#id-2.-check-the-cfx.re-element-club-subscription}
+
+Some EUP streamed assets require an active Cfx.re **Element Club** subscription. If the dress is installed correctly but the streamed clothing asset does not load, verify that the server owner's Element Club subscription is active and associated with the account used for the server's Cfx.re license/key.
+
+1. Sign in to the [Cfx.re Portal](https://portal.cfx.re/).
+2. Check the server owner's Element Club subscription status.
+3. Confirm the subscription is active for the account associated with the server license/key.
+4. Restart the server after correcting the subscription or account association.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/62/6263732f62a1b91ff9017265dcb1594be699fcc3570877688d09d188b975a36d.png" alt="" />
+
+
+
+<Warning>
+
+Never post private license keys, account information, or payment details in support screenshots.
+</Warning>
+
+### 3. Temporarily set the maximum players to 10 {#id-3.-temporarily-set-the-maximum-players-to-10}
+
+If the EUP asset still does not stream, temporarily set the server's maximum player count to 10. Add or update this line in `server.cfg`:
+
+```cfg
+sv_maxclients 10
+```
+
+Fully restart the server and test the Short Slip Dress again.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d6/d69fc4965532a1bab9eb401fb9b632069abae833562ce6c081ae4481f958eaca.png" alt="" />
+
+*TxAdmin - Setting Max Players to 10*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/8b/8ba511634a990cd0a47163ce0306b4e7a47abad3cf4b493c9c241ba2bb90013a.png" alt="" />
+
+*RocketNode Panel - Setting Max Players to 10*
+
+
+
+<Info>
+
+Use the 10-player limit as a troubleshooting step. After the streamed asset works correctly, test a higher player count again if your server setup and Cfx.re requirements support it.
+</Info>
+
+### 4. Clear client cache and reconnect {#id-4.-clear-client-cache-and-reconnect}
+
+After changing streamed assets or server settings:
+
+1. Stop FiveM.
+2. Clear the FiveM client cache using your normal cache-cleaning procedure. Do not delete the entire FiveM installation.
+3. Restart FiveM and reconnect to the server.
+4. Open vMenu and check **Player Appearance → Shirt overlay / Jackets**, item **633**, again.
+
+### 5. Test for EUP resource conflicts {#id-5.-test-for-eup-resource-conflicts}
+
+Temporarily disable other recently added EUP or clothing resources and restart the server. If the dress appears, re-enable the other resources one at a time to identify the conflict.
+
+### 6. Review client and server logs {#id-6.-review-client-and-server-logs}
+
+Look for errors mentioning:
+
+* The dress resource name
+* Streamed assets
+* EUP clothing components
+* Asset or archetype limits
+* Texture or drawable loading
+
+When requesting support, include the relevant error text, your FiveM build, vMenu version, and a list of other EUP resources. Redact license keys and personal account information first.
+
+## Quick Verification Checklist {#quick-verification-checklist}
+
+* [ ] The resource folder name matches the `ensure` line.
+* [ ] The resource is directly inside the server's `resources` directory.
+* [ ] The server was fully restarted.
+* [ ] The resource has no startup errors.
+* [ ] vMenu opens successfully.
+* [ ] **Player Appearance → Shirt overlay / Jackets** is available.
+* [ ] The Short Slip Dress is visible at item **633**, at the end of the category.
+* [ ] The 22 textures can be previewed.
+* [ ] If the asset does not stream, Element Club status was checked and `sv_maxclients 10` was tested.
+
+## Escrow Protection {#escrow-protection}
+
+Sonoran’s short slip dress EUP is protected through Tebex and Cfx.re Asset Escrow. This helps prevent unauthorized redistribution, leaks, and resale.
+
+#### Runs as a Separate Resource {#runs-as-a-separate-resource}
+
+Because the asset is escrow-protected, the EUP must run as its own separate resource and cannot be merged into an existing clothing pack.
+
+The resource is heavily optimized for smooth performance, and textures can still be customized.
+
+#### Texture Customization {#texture-customization}
+
+This EUP cannot be edited through Durty Cloth Tool due to Asset Escrow restrictions.
+
+Textures can still be modified by opening the included `.ytd` file in OpenIV.

@@ -1,0 +1,60 @@
+---
+title: Get Record Templates
+description: Sonoran CAD allows you to retrieve your custom record and report templates
+  via API.
+---
+
+<Warning>
+
+This API endpoint requires the **Plus** version of Sonoran CAD or higher. For more information, see our [pricing ](/cad/pricing/faq)page.
+</Warning>
+
+## Get Record Templates {#get-record-templates}
+
+`POST` `https://api.sonorancad.com/general/get_templates`
+
+This endpoint allows you to retrieve all custom record and report templates in your community.
+
+#### Request Body {#request-body}
+
+| Name       | Type   | Description              |
+| ---------- | ------ | ------------------------ |
+| templateId | number | Unique template ID       |
+| id         | string | Your community's ID      |
+| key        | string | Your community's API Key |
+| type       | string | GET\_TEMPLATES           |
+| data       | array  | Empty Array              |
+
+<Tabs>
+<Tab title="200 ">
+
+```
+[{RECORD TEMPLATES}]
+```
+
+</Tab>
+
+<Tab title="400 ">
+
+```
+INVALID REQUEST TYPE
+INVALID COMMUNITY ID
+API IS NOT ENABLED FOR THIS COMMUNITY
+INVALID API KEY
+```
+
+</Tab>
+
+</Tabs>
+
+```javascript
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "GET_TEMPLATES",
+    "recordTypeId": 123, // OPTIONAL - Matches a specific record's recordTypeId field
+}
+```
+
+#### Record Formatting {#record-formatting}
+
+Custom records require a strict format with several dozen different data fields. You can view a detailed explanation of [custom record formatting](/cad/api-integration/api-endpoints/general/custom-records#record-formatting).

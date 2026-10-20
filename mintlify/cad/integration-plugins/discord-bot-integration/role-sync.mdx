@@ -1,0 +1,70 @@
+---
+title: Role sync
+description: Choose the CAD permissions each Discord role gives your members.
+---
+
+Give members CAD permissions through their Discord roles.
+
+## 1. Connect Discord {#id-1.-connect-discord}
+
+Follow [Connect your server](/cad/integration-plugins/discord-bot-integration), then open **Administration > Advanced > Discord Integration > Role sync**. You can also select **Set up role sync** in **Administration > Accounts**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/de/de58efd1cab6e2fbbddb32f513dd777e78ac393c4154d14ba70c858f3e748bd6.jpg" alt="CAD Role sync tab showing Police Officer and Dispatcher mappings with edit and remove buttons" />
+
+*Each role shows its Discord server and assigned permissions.*
+
+
+
+<Info>
+
+If this community uses Sonoran CMS, configure [CAD permissions in CMS](/cms/integration-capabilities/sonoran-cad-sync). CAD role mapping is disabled for CMS-managed communities.
+</Info>
+
+## 2. Add a role {#id-2.-add-a-role}
+
+1. Select **Add role**.
+2. Type a role name and select it. Check the role color and server name.
+3. Choose permissions under **Access**, **Records**, and **Administration**.
+4. Wait for **Saved automatically**, then select **Done**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/1a/1a773fd6184d6ecd11f05bc3ad38e5929a06adefc9f8b6a71db4c51fe273a928.jpg" alt="Searchable Discord role menu showing role names, colors, and their server" />
+
+*Choose the role from the correct Discord server.*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/1f/1f0a2dbaf3aa0db06434f3ef5d5701dc0cfa278062661c1ac1f674e6c7f6ab7c.jpg" alt="Police Officer role mapping with CAD access permissions and Saved automatically confirmation" />
+
+*Choose the permissions this role gives members.*
+
+
+
+Under **Records**, expand a template to choose what members can view, create, edit, or delete. See [Account permissions](/cad/tutorials/getting-started/permissions#record-permissions) for permission details.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/f4/f414685a630e33262b8f7a81505ad06850c8b7fc0e148d42ca791cbec3ded37e.jpg" alt="Police Officer mapping with Incident Report View, Create, and Edit own permissions enabled" />
+
+*Set permissions separately for each record template.*
+
+
+
+## 3. Sync members {#id-3.-sync-members}
+
+1. Members join your CAD community.
+2. Members run `/sync` in Discord. If their account needs linking, the bot shows them how.
+
+After a mapping changes, all linked members automatically resync **5 minutes after your last edit**. Finishing the sync may take a little longer.
+
+Members receive the combined permissions from all their mapped roles. Sync replaces their CAD permissions, including permissions assigned manually or through a key.
+
+## Edit or remove a mapping {#edit-or-remove-a-mapping}
+
+1. Select the **Edit permissions** icon beside a role to change its permissions. Changes save automatically.
+2. To remove a mapping, select the **Remove role** icon and confirm. This removes the mapping, not the Discord role.

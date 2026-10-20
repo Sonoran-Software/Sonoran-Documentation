@@ -1,0 +1,94 @@
+---
+title: Traffic Stops
+description: Create automatic traffic stop calls with an in-game command or hotkey!
+---
+
+## Traffic Stop Integration {#traffic-stop-integration}
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/76/765207e07e3f92e769a0a464113f636dafa0f78f3447e1378897a96e40e3b906.png" alt="" />
+
+
+
+When the the traffic stop command is used a dispatch call will be created in the CAD.
+
+This call will:
+
+* Attach the unit that performed the command
+* Include the unit's address and postal code
+* [Display on the live map](/cad/integration-plugins/erlc/3d-live-map)
+* Include the vehicle's make, model, year, color, and license plate in the [customizable description template](/cad/integration-plugins/erlc/traffic-stops#dispatch-description)
+* [Include the customizable 10-code](/cad/integration-plugins/erlc/traffic-stops#id-10-code)
+* Automatically search the license plate
+
+## Traffic Stop Command Configuration {#traffic-stop-command-configuration}
+
+Configure the traffic stop behavior under **Admin** > **In-Game Integration** > **ER:LC** > **Server** > **Traffic Stops**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/4f/4feb546523c56c99759090cbd87fbb6413e4c5127e88b0a23388569eaad6a1d5.png" alt="" width="375" />
+
+
+
+### Command {#command}
+
+Customize the command from `;ts` to anything else.
+
+### Dispatch Description {#dispatch-description}
+
+When the traffic stop call is created, the call description can contain customizable information about the vehicle, license plate, and more. Select the `</>` icon to view available variables, click-to-copy, and paste them into the description.
+
+#### 10-Code {#id-10-code}
+
+When the traffic stop call is created, it will use the selected [custom 10-code](/cad/tutorials/customization/10-codes).
+
+## CAD Permission Requirements {#cad-permission-requirements}
+
+In order to use this command in-game, players must have a [linked Roblox account](/cad/integration-plugins/erlc/getting-started#linking-your-roblox-account) with the **Dispatch** or **Self Dispatch** permission to create a traffic stop call.
+
+## Using the Desktop Hotkey {#using-the-desktop-hotkey}
+
+### 1. Download the Desktop Application {#id-1.-download-the-desktop-application}
+
+In order to use hotkeys, download the Windows or OSX desktop application.
+
+### 2. Configure your Hotkey {#id-2.-configure-your-hotkey}
+
+Configure a traffic stop hotkey under **Customization** > **Hotkeys** > **Traffic Stop**
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/37/37b720945eb54380c1486556561bb88ee0b7650e21d11ebd3db2cf29bad3d2dd.png" alt="" width="375" />
+
+
+
+#### 3. Utilize the Hotkey {#id-3.-utilize-the-hotkey}
+
+Once in-game, press your desktop hotkey to generate a traffic stop.
+
+* The vehicle must be nearby with a player in it.
+* You must have a [linked Roblox account](/cad/integration-plugins/erlc/getting-started#linking-your-roblox-account).
+
+## Using the In-Game Commands {#using-the-in-game-commands}
+
+The CAD will automatically find the closest vehicle to the unit. The call will automatically include the vehicle description, plate, and location.
+
+Ex: `;ts`
+
+[In-game commands not working? Make sure you have connected the webhook.](/cad/integration-plugins/erlc/getting-started#id-3.-link-er-lc-event-webhooks-to-sonoran-cad)
+
+### Customizing the In-Game Command {#customizing-the-in-game-command}
+
+## Result {#result}
+
+Once the hotkey or in-game command has been ran, a traffic stop call will be generated with the details, a plate lookup will open, and the call will be visible on the [live map](/cad/integration-plugins/erlc/3d-live-map).
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/8f/8f4d73eb69fe9243881f22cf0ab4969af0bb54af00d52882151c91dbb75153e6.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/13/134fcbfdbf911b00b48b77c362f1011b6c01be2e240a9607b0d5c35633f19a50.png" alt="" />

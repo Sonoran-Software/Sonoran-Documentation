@@ -1,0 +1,162 @@
+---
+title: Emergency Calls
+description: Place and answer emergency calls through Sonoran Radio.
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/bc/bc30e0150b0f4e6c964cf80032bec65288b3b93f31af0c5d4de5f5e2de86b235.png" alt="" />
+
+*Sonoran Radio - Emergency Calls*
+
+
+
+## Creating Emergency Calls {#creating-emergency-calls}
+
+### Via Portal/App {#via-portal-app}
+
+
+
+<Accordion title="Via Portal/App">
+
+
+
+Users can place emergency calls directly from the web, desktop, or mobile apps.&#x20;
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e9/e9c44c4a38fd45adab9b74ef9ea425f2fb4abdc7ac3aac0dad7ae0edf9dedbf0.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/97/97697a7364bc1a04adbf8f8e342c79f02cf62901c3dfc08525216a23a3fa4d8f.png" alt="" />
+
+
+
+**Permissions**
+
+Users can be restricted to accessing the emergency call panel and not the radio with the **Call-Only** [permission](/radio/tutorials/getting-started/invite-and-manage-users).
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e4/e4e4c352e96ef496b7019cf3e08e290f9d0d6dff5e3c83a22c4e475473744cb1.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+### FiveM Emergency Calling {#fivem-emergency-calling}
+
+
+
+<Accordion title="FiveM Emergency Calling">
+
+
+
+Players are able to make an emergency call in FiveM with `/radio 911`. This will place them in a call on the Dispatch Panel waiting for a dispatcher.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/52/52cdea71bb37fd1b3164c099a16ab72cffdc81a0af74c6d6d1aff9968a9f2f68.png" alt="" />
+
+*Sonoran Radio FiveM - Emergency Call*
+
+
+
+#### Caller Microphone {#caller-microphone}
+
+The emergency call will use the caller's default microphone. If the caller can not be heard, they may need to [change the input device selection](/radio/game-integrations/fivem/troubleshooting/set-mic-in-game-for-radio) with `/radio 911 mic`.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/18/18dfd3664746f33bad83b0c610b09a9608fc1a61eee4304e3eb20e727a6e909e.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/12/12c251a24b9111be1281a3553b381551781cd69e833641fcb3166bf7aeb624e3.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+## Answering the Emergency Call {#answering-the-emergency-call}
+
+You can join and listen to an emergency call using the microphone and headphone buttons, just like any other channel in Sonoran Radio. The buttons will highlight green and red respectively when enabled
+
+<Info>
+
+Mic clicks are disabled in emergency channels
+</Info>
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/00/0008c3ebd26cc527bea2101d04714ff94a4fbcd8bf98c93954a659b82d431e37.png" alt="" />
+
+*Sonoran Radio - Speaking in 911 Call*
+
+
+
+## Ending the Emergency Call {#ending-the-emergency-call}
+
+Dispatchers can end an emergency call with the red "End Call" button, and FiveM players can end it by using `/radio 911` again.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e5/e53b09b60123fd459c3e12c65d333a7720b44f217982333d8ed83c4283cda321.png" alt="" />
+
+*Sonoran Radio - End 911 Call*
+
+
+
+## Redial the Caller {#redial-the-caller}
+
+In some cases, the caller may hang up or dispatch needs to call them back for more information.
+
+Once the call has ended, a `Re-dial {user}` option will appear. Click the green call button to re-dial.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/be/be6d9cadb28a4c2f1f42f55c50cf985608894a9acff71d5e8285c3f8b97c13be.png" alt="" />
+
+
+
+## Dial a Specific Number {#dial-a-specific-number}
+
+Dispatchers can also manually dial an in-game number to call someone directly.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/78/7895300cfc5548f069c1904fe6407b2be0cbb97a483ad0eab8b9c9330a3e4a9e.png" alt="" />
+
+
+
+## FiveM: Customize the Emergency Number & Banner {#fivem-customize-the-emergency-number-and-banner}
+
+By [editing the config file](/radio/game-integrations/fivem/installing-the-in-game-resource#configuration-values) you can customize the following options:
+
+1. Customize `911` to any other number or word by editing the `emergencyCommand` property.
+2. Hide the user's emergency call banner by setting `showEmergencyCallHelp` to `false`.
+
+## FiveM Phone Scripts {#fivem-phone-scripts}
+
+Sonoran Radio also integrates with popular FiveM phone scripts like LB Phone!
+
+
+
+<Card title="[fivem-phone-scripts.md](../../integrations/fivem-phone-scripts.md)" href="/radio/game-integrations/fivem/fivem-phone-scripts" />
+
+
+
+## FiveM Developer Documentation {#fivem-developer-documentation}
+
+Third-party scripts, such as a phone system, can also programmatically start and end emergency calls.
+
+
+
+<Card title="[resource-events.md](../../../developer-documentation/developer-documentation/resource-events.md)" href="/radio/developer-documentation/developer-documentation/resource-events" />

@@ -1,0 +1,154 @@
+---
+title: Tunnels and Degrade Zones
+description: Configure tunnels, underpasses, and other areas where radio signal will
+  be degraded!
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/3f/3f1fcb020ad2f8110f4e50e79e8c99a7e7a5ada879abb8225bf773b652eaf16d.png" alt="" />
+
+*Sonoran Radio - Tunnel Detection System*
+
+
+
+
+
+<iframe src="https://www.youtube-nocookie.com/embed/IHNPs6aATQU" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+
+## What are Degrade Zones? {#what-are-degrade-zones}
+
+Degradation zones are areas like tunnels, underground areas, or mountain valleys that would experience signal loss in a realistic scenario. [Custom voice effects](/radio/tutorials/usage/dispatch-panel/custom-voice-effects) will distort the audio more as signal loss increases.
+
+## Creating and Modifying Zones {#creating-and-modifying-zones}
+
+### Via Radio Panel {#via-radio-panel}
+
+
+
+<Accordion title="Degrade Zones via Panel">
+
+
+
+1. Open **Customization** > **Game Integration** > **FiveM**.
+2. Under **FiveM Zones**, choose your **Server** and select **Degrade Zones**.
+3. Use the polygon, rectangle, or circle tool to draw a zone.
+4. Select the zone to set its name, Z coordinates (floor and ceiling height), and degrade strength.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/95/9529460e0c097c0ecb11d14c2e41eec77e9a04a7c83f8cf2cfa7b3a0c6afa862.jpg" alt="FiveM Degrade Zones in Game Integration" />
+
+
+
+
+
+</Accordion>
+
+
+
+### Via In-Game Menu {#via-in-game-menu}
+
+
+
+<Accordion title="1. Accessing the Menu">
+
+
+
+Open the menu with the in-game `/radiomenu` command and select `Degradation Zones`
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/54/543db9a1f7b07e6261d8b93fdf735a0ab8c9253591bc25e24a20ec0a6e8013f4.png" alt="" width="222" />
+
+*Sonoran Radio -*
+
+
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="2. Zone Configuration Options">
+
+
+
+In the `Degradation Zones` menu, you can specify the strength and add points to create a 3D zone.
+
+When creating a zone you can visualize via the drawn polygon and manipulate and move your last placed point using the on-screen controls
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e4/e4338e1596ad482faf16002a488df1891b135401f54c0243f77367e6cbaaeed7.png" alt="" width="222" />
+
+*Sonoran Radio - Degradation Zone Options*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ea/ea635ab5a854e1742677ddac208c042f6cc87c03cba87e561552c8313c02bfde.png" alt="" width="375" />
+
+*Sonoran Radio - Degradation Zone Poly*
+
+
+
+`Strength`\
+\- The percent the signal strength will be cut by when inside the zone (0-1).\
+\- Example: 0.5 = 50% [voice effect](/radio/tutorials/usage/dispatch-panel/custom-voice-effects) degradation
+
+`Add Point to Zone`\
+\- Adds another point to the 3D zone
+
+`Undo Last Point`\
+\- Removes the last place point in the 3D zone
+
+`Min Z`\
+\- The minimum Z value (floor height) of the 3D zone
+
+`Max Z`\
+\- The maximum Z value (ceiling height) of the 3D zone
+
+`Finish Zone Creation`\
+\- Finishes the 3D zone and saves to the `tunnels.json` file
+
+`Cancel Zone Creation`\
+\- Cancels the 3D zone editor and closes the menu
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="3. View and Remove Configured Zones">
+
+
+
+Select `Edit Degradation Zone` in the menu and toggle on `Show Zones`. All configured zones on the map will be displayed in green. If the config.lua's `debug` mode is set to `true`, all zones will also be made visible.
+
+Use the `Select Zone` menu option to swap back and forth between zones. Your selected zone will be displayed in red.
+
+Use the `Delete Zone` menu option to delete the selected (red) zone.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e0/e0af62ec8d84b7ebc43f3c42698245558520e20bdf9dda9fe06bb197244a26b6.png" alt="" />
+
+*Degradation Zone: Visible*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/cb/cbf15920c67d4b054769d0a7397e4219be332c442439d7101312698a342924eb.png" alt="" />
+
+*Degradation Zone: Selected*
+
+
+
+
+
+</Accordion>

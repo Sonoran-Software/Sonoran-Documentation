@@ -1,0 +1,171 @@
+---
+title: Creating Rosters
+description: Track community members, in-game activity time, and more all in one place
+  with custom columns and automations.
+---
+
+## Accessing the Roster Editor {#accessing-the-roster-editor}
+
+Rosters can be configured in the **Admin** panel > **Rosters**
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/94/94c31cc8bbd5b5403408a3b37ac9a61848a9182df9f474cd5eb7ee33563103c4.png" alt="" />
+
+
+
+Hover over a roster to **View** or **Edit**, or use the **Add Roster** button to create a new one.
+
+## Creating Rosters {#creating-rosters}
+
+### Roster Types {#roster-types}
+
+There are three types of rosters to choose from:
+
+* **Selected Ranks**: This allows you to select specific CMS ranks. Anyone with these ranks will automatically appear on the roster.
+* **Manual**: This allows you to manually add each member and row to the roster.
+
+### Roster Columns {#roster-columns}
+
+Drag-and-drop columns to add them to your custom roster.
+
+
+
+<Accordion title="General Columns">
+
+
+
+The **General** columns include text, textarea, select, checkbox, date, and time.
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Member Columns">
+
+
+
+The **Member Data** columns include automatic fields for the user like their ID, name, rank, primary identifier, and current disciplinary points.
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Time Columns">
+
+
+
+The **Time** columns include automatic fields like time log hours, activity tracker hours, and last active date.
+
+**Activity Tracker Hours**
+
+* This column shows the current amount of in-game time for the selected date range. These hours are automatically calculated whenever a user joins and leaves your game server.
+  * For [ER:LC](/cms/integration-capabilities/er-lc-game-panel) communities, you can also select the specific team(s) to show.
+  * [FiveM](/cms/integration-capabilities/fivem-game-panel) communities are also automated.
+  * Our [API](/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/activity-tracker-server-start) can be used for custom games that don't currently have a management panel.
+
+**Time Log Hours**
+
+* This column shows the current amount of player time from the clock in/out system. It must be pointed to a form type with the time clock section added.
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Social Columns">
+
+
+
+The **Social** columns include automatic fields for Discord ID/username/nickname, TeamSpeak ID, and Roblox ID/Username.
+
+
+
+</Accordion>
+
+
+
+## Roster Customization {#roster-customization}
+
+
+
+<Accordion title="Column Styles">
+
+
+
+Select a column to open the editor. Here, you can customize the alignment, text color, cell color, and more.
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Actions">
+
+
+
+Roster columns can have additional conditional options to set the values and styles. Select a column to open the editor and select the **Actions** tab. The flowchart can be expanded to add IF/THEN conditions to set the value(s) and style(s).
+
+Ex: This flowchart sets the **Status** column to **Active** if their in-game hours (via activity tracker column) is greater than 1.5 hours. If not, it will set the status column to **In-Active** or **Exempt** based on them having a specific rank or not.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e6/e6e0a920168d6fd41f727326da71facc89ceed55f1f0f0bc06b8078b81c322a9.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+## Roster Permissions {#roster-permissions}
+
+
+
+<Accordion title="Column Permissions">
+
+
+
+Columns can also be set to only be visible based on a user's ranks. Select a column to open the editor and use the **Permissions** tab. On the **Allowed Ranks to View** button, select the custom CMS ranks that are allowed to view the column.
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Roster Permissions">
+
+
+
+The [rank manager](/cms/tutorials/user-management/creating-departments) allows communities to configure who can view, edit, download, and other roster options.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/80/80939ee40dc292f3aed95576524cc793bae5757ccb8dfe2b718b2b2efe37cd53.png" alt="" width="563" />
+
+*Sonoran CMS - Rank Editor - Roster Permissions*
+
+
+
+
+
+</Accordion>

@@ -1,0 +1,67 @@
+---
+title: Get Current Clock In
+description: This endpoint allows you to get the current clock in for a community
+  account by account ID, API ID, Discord ID, Unique ID, or username.
+---
+
+## Get Current Clock In {#get-current-clock-in}
+
+`POST` `https://api.sonorancms.com/general/get_current_clock_in`
+
+Get a Sonoran CMS community account's current clock in by account ID, API ID, Discord ID, Unique ID, or username.
+
+#### Request Body {#request-body}
+
+| Name                                   | Type   | Description        |
+| -------------------------------------- | ------ | ------------------ |
+| id\*   | string | Community ID       |
+| key\*  | string | API Key            |
+| type\* | string | GET\_COM\_ACCOUNT  |
+| data\* | object | Requst Data Object |
+
+<Tabs>
+<Tab title="201: OK ">
+
+```javascript
+{
+  "id": 1,
+  "startTime": "2025-02-22 20:28:40.000 -0800",
+  "endTime": null,
+  "completed": false,
+  "notes": [];
+}
+```
+
+```
+Not Clocked In
+```
+
+</Tab>
+
+<Tab title="400: Bad Request The following 400 errors may be sent in response:">
+
+```javascript
+INVALID API KEY
+INVALID COMMUNITY ID
+API ID NOT LINKED TO AN ACCOUNT IN THIS COMMUNITY
+NO ACCOUNT FOUND UNDER GIVEN PARAMETERS IN THIS COMMUNITY
+```
+
+</Tab>
+
+</Tabs>
+
+```
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "GET_CURRENT_CLOCK_IN",
+    "data": {
+        "apiId": "SOME_API_ID", // Optional - must have one
+        "username": "SOMEUSERNAME", // Optional - must have one
+        "accId": "SOMEACCID", // Optional - must have one
+        "discord": "111122223333444455", // Optional - must have one
+        "uniqueId": 1234 // Optional - must have one
+    }
+}
+```

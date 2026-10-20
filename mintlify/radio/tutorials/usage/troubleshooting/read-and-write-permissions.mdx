@@ -1,0 +1,143 @@
+---
+title: Read and Write Permissions
+description: How to fix SonoranRadio issues caused by read-only file permissions on
+  Windows and Linux servers.
+---
+
+#### <br /> {#undefined}
+
+## SonoranRadio – Fix “Config File Is Read-Only” Error {#sonoranradio-fix-config-file-is-read-only-error}
+
+***
+
+### Step 1: Open Your Game Panel {#step-1-open-your-game-panel}
+
+Log into the game panel where your FiveM server is hosted\
+(e.g. **ZAP-Hosting, txAdmin, Pterodactyl, Gamepanel, VPS**).
+
+***
+
+### Step 2: Locate the Config File {#step-2-locate-the-config-file}
+
+Navigate to:
+
+```
+resources/sonoranradio/config.lua
+```
+
+***
+
+## 🪟 WINDOWS HOSTS {#windows-hosts}
+
+#### Step 1: Locate the file {#step-1-locate-the-file}
+
+```
+resources\sonoranradio\config.lua
+```
+
+***
+
+#### Step 2: Open file properties {#step-2-open-file-properties}
+
+1. Right-click `config.lua`
+2. Click **Properties**
+
+***
+
+#### Step 3: Allow Read & Write access {#step-3-allow-read-and-write-access}
+
+1. Under the **General** tab:
+   * ❌ Uncheck **Read-only**
+2. Click **Apply**
+3. Click **OK**
+
+This allows the file to be both **read and written** by the server.
+
+***
+
+#### If it keeps reverting to Read-Only {#if-it-keeps-reverting-to-read-only}
+
+Apply the change to the entire folder:
+
+1. Right-click the **`sonoranradio`** folder
+2. Click **Properties**
+3. Uncheck **Read-only**
+4. Click **Apply**
+5. Select **Apply changes to this folder, subfolders, and files**
+6. Click **OK**
+
+***
+
+## 🐧 LINUX HOSTS {#linux-hosts}
+
+(ZAP-Hosting, Gamepanel, Pterodactyl, VPS)
+
+#### Step 1: Open your game panel or file manager {#step-1-open-your-game-panel-or-file-manager}
+
+Log into the panel where your FiveM server is hosted.
+
+***
+
+#### Step 2: Locate the config file {#step-2-locate-the-config-file-1}
+
+```
+resources/sonoranradio/config.lua
+```
+
+***
+
+#### Step 3: Fix file permissions {#step-3-fix-file-permissions}
+
+Set the file permissions so the server can write to it:
+
+* **Recommended:** `766`
+* **If that fails:** `666`
+
+If your panel supports it:
+
+1. Right-click `config.lua`
+2. Select **Permissions**
+3. Apply the change
+
+⚠️ If your panel does **not** allow permission changes, contact your hosting provider and ask them to make the file writable.
+
+***
+
+### Linux File Permissions – Quick Reference {#linux-file-permissions-quick-reference}
+
+Each permission digit is the sum of:
+
+* **4** = Read (r)
+* **2** = Write (w)
+* **1** = Execute (x)
+
+#### Common Permission Values {#common-permission-values}
+
+* `0` = --- (No access)
+* `4` = r-- (Read only)
+* `6` = rw- (Read + Write)
+* `7` = rwx (Read + Write + Execute)
+
+#### Permission Structure {#permission-structure}
+
+```
+OWNER | GROUP | OTHERS
+  X   |   Y   |   Z
+```
+
+Example:
+
+* `766` → Owner has full access, group/others can read & write
+* `666` → Read & write for everyone (no execute)
+
+***
+
+### Final Step: Restart SonoranRadio {#final-step-restart-sonoranradio}
+
+After making changes, restart the resource or server:
+
+```
+restart sonoranradio
+```
+
+#### <br /> {#undefined-1}

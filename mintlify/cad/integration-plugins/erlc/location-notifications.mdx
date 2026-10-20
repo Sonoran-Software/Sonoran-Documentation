@@ -1,0 +1,51 @@
+---
+title: 3D Location Webhooks
+description: Send ERLC emergency and dispatch calls to Discord with an aerial location
+  image.
+---
+
+![ERLC 3D Location Webhooks](https://docs-assets.sonoransoftware.com/sha256/67/673b30972e39233a04cd4316a264e7306beffcf5ce39367e68ca9b3f65e061b2.png)
+
+See the call and its location together in Discord. Notifications include the call details and a watermarked aerial image when a matching location image is available.
+
+Before you start, [connect Sonoran Bot to your CAD community](/bot/tutorials/getting-started). For in-game 911 calls, complete [ERLC setup](/cad/integration-plugins/erlc/getting-started) too.
+
+### 1. Check ERLC mode {#id-1.-check-erlc-mode}
+
+Make sure your CAD community is in **ER:LC** mode under **Administration → Advanced → In-Game Integration**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/fb/fbce76ee84f03f185a5deb552d0c7e99bc2ea4cc05ed6e3080e9c6448d4a915c.png" alt="" width="375" />
+
+
+
+### 2. Choose your notifications {#id-2.-choose-your-notifications}
+
+Open **Administration → Advanced → Discord Integration**. Enable the events you want:
+
+* **Emergency Call · Created** — new 911 calls.
+* **Dispatch · Created** — new dispatch calls.
+* **Dispatch · Modified** — updated dispatch calls.
+
+### 3. Pick a channel {#id-3.-pick-a-channel}
+
+Choose your Discord **Server** and **Channel** for each enabled event. Changes save automatically.
+
+For the 3D aerial images, [dispatch calls must have a postal code set](/cad/integration-plugins/erlc/call-editor-pin-drop). In-game 911 calls already include the required location information.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/32/32722e663ca46aaa018c955f234d93a7a65d98007ba44b099dfd7ba855c80af4.png" alt="" width="375" />
+
+
+
+## Webhook Examples {#webhook-examples}
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/41/41444e20d6ad7067aa9080ff2f1de840d02d71cad8b9c2b164fcd0e19e8268fa.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ba/bac85766e7e2fbf2474ee47c9ef1263d8d842f899dd0c038a24ca4206dcbac58.png" alt="" />

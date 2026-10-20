@@ -1,0 +1,127 @@
+---
+title: Granting Account Permissions
+description: Choose page access and record permissions for each member of your community.
+---
+
+## Discord role sync {#discord-role-sync}
+
+Let Discord roles manage member permissions. Choose a role and its permissions in CAD; changes save automatically.
+
+
+
+<Card title="[Discord role sync](../../integration-plugins/discord/role-sync.md)" href="/cad/integration-plugins/discord-bot-integration/role-sync" />
+
+
+
+## Manually Granting Permissions {#manually-granting-permissions}
+
+1. Open **Administration > Accounts**.
+2. Find the member and select their account. Use the **Pending** filter for members without permissions.
+3. Choose permissions, then select **Save permissions**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/78/78e34cca57c2920b2da51c89bd80c4c1bb8ccbf1f2059a694e421f51614e40a6.png" alt="Account permission editor for Alex Morgan with Police page access enabled" />
+
+*Choose the pages and tools a member can use.*
+
+
+
+The editor has three tabs:
+
+* **Access:** Community pages and operational tools.
+* **Records:** Permissions for each of your community's record templates.
+* **Administration:** Account management and other administrative tools.
+
+Click a permission card to enable or disable it. Use **Search permissions** to find a setting or template, and **Enabled only** to review the permissions already selected.
+
+For an editable pending or active membership, saving a nonempty permission list makes the account **Active** (subject to your member limit). Clearing all permissions returns it to **Pending**. Bans are managed separately under **Account actions**.
+
+The Accounts table now shows **Community User ID**, the current identifier used by FiveM `/link`, in place of legacy API IDs. See [Link User In-Game](/cad/integration-plugins/in-game-integration/link-user-in-game).
+
+## Record Permissions {#record-permissions}
+
+Open **Records** and expand a template. Permissions apply to that template, so a member can edit licenses without receiving the same access to arrest reports or other records.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/3d/3d41c2bfd2d6a1b8bf73c4e6b5fee633816b1ad6efe86933509a368abaedc09d.png" alt="Incident Report permissions with View, Create, Edit own and selected-field editing enabled" />
+
+*Choose the actions allowed for each record template.*
+
+
+
+| Permission | Allows the member to |
+| --- | --- |
+| View | Find and view records of this type. |
+| Create | Create a record of this type. |
+| Edit own | Edit records owned by their account. |
+| Edit any | Edit records owned by any account, including their own, without field opt-in. |
+| Edit selected fields on others' records | Edit only opted-in fields on records owned by another account. Does not include Edit own. |
+| Delete own | Delete records owned by their account. |
+| Delete any | Delete records owned by any account, including their own. |
+| Supervisor fields | Update fields marked supervisor-only, alongside the required record editing permission. |
+
+## Record editing permissions {#record-editing-permissions}
+
+<Info>
+
+CAD 3.44.1 separates full editing from selected-field editing. Integrations should use the [permission catalog](/cad/api-integration/api-endpoints-v2/general/accounts/get-permission-catalog) to discover supported grants, including `edit.selected`.
+</Info>
+
+Each record template has independent editing permissions:
+
+| Permission | Access |
+| --- | --- |
+| **Edit own** | Edit records created by the account. |
+| **Edit selected fields on others' records** | Edit only fields marked **Allow limited editing** on records created by other accounts. Does not include Edit own. |
+| **Edit any** | Edit anyone's records, including the account's own records, without field opt-in. Includes Edit own. |
+
+**Supervisor fields** is an additional requirement for supervisor-only fields, not a substitute for an editing permission. **Read-only** fields remain locked. View, page access, record creation and deletion are separate permissions.
+
+These rules apply to all record templates, regardless of which panel opens a record. For example:
+
+- Give an officer **Edit own** to write and maintain their own reports, together with the separate Create and View permissions.
+- Give a records supervisor **Edit any** to edit other officers' reports without enabling every field individually.
+- For an officer who should change only license points or a character's address, grant **Edit selected fields on others' records** on that template and enable **Allow limited editing** on those specific fields. Leave Edit any off for that template.
+- An administrator who should edit the whole character record can receive **Edit any** instead.
+
+### Configure limited editing {#configure-limited-editing}
+
+1. Open Administration > Customization > Custom Records and select the record template.
+2. Select each field officers may update and enable **Allow limited editing**. This field setting was previously labeled **Editable by other users**.
+3. Save the template.
+4. In the account or permission-key editor, grant **Edit selected fields on others' records** for that template, along with the required page and View permissions. Add **Edit own** separately if needed.
+5. Ensure the account does not also receive **Edit any** for that template through another permission key or role mapping. Full editing takes precedence.
+6. Close and reopen an existing record created by a different account to verify the allowed fields. Test supervisor-only and read-only fields separately.
+
+### Existing communities {#existing-communities}
+
+No database migration, template recreation or report recreation is needed. Existing Edit own and Edit any grants are retained, and existing field selections are preserved. The new selected-fields permission is not automatically assigned. Edit any now means full editing; communities that want limited access should replace Edit any with the selected-fields permission for those roles.
+
+Turning off Read-only does not opt a field into limited editing. Enabling Supervisor fields does not bypass the limited-field selection. On the updated backend, Edit any users do not need field opt-in.
+
+Role sync can overwrite manually assigned permissions. Update the role's permissions in the [Role sync panel](/cad/integration-plugins/discord-bot-integration/role-sync) when applicable.
+
+## Permission Keys {#permission-keys}
+
+### Create a Key {#create-a-key}
+
+Open **Administration > Permission Keys**, select **+**, enter a key name, and choose its permissions using the same editor. Save the key and share it with the intended members.
+
+### Apply a Key {#apply-a-key}
+
+Members enter the key in the community menu. Keys are case-sensitive, so they must enter the exact capitalization.
+
+![Enter a permission key from the community menu](https://docs-assets.sonoransoftware.com/sha256/90/90012989f941130e9d2c327d767086008909644b737921d99d031b22a4d79a92.png)
+
+## Role Sync {#role-sync}
+
+Choose the setup your community uses:
+
+* **Discord roles → CAD permissions:** Follow the [Sonoran Bot setup guide](/bot/tutorials/sonoran-cad-integration).
+* **CMS ranks → CAD permissions:** Follow the [Sonoran CMS setup guide](/cms/integration-capabilities/sonoran-cad-sync). Use this path if the bot is configured for CMS.
+
+Update permissions in the role or rank mapping. A later sync can overwrite manual changes and permission-key grants made directly in CAD.
+
+Sonoran CMS supports granular per-template CAD permissions in its role/rank mappings. Apply the same distinction between **Edit any** and **Edit selected fields on others' records** when configuring sync.

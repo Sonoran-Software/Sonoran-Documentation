@@ -1,0 +1,75 @@
+---
+title: Set Character
+description: This endpoint allows you to set a user's currently selected character
+  in the CAD.
+---
+
+<Warning>
+
+This API endpoint requires the **plus** version of Sonoran CAD or higher. For more information, see our [pricing ](/cad/pricing/faq)page.
+</Warning>
+
+## Get Characters {#get-characters}
+
+`POST` `https://api.sonorancad.com/civilian/set_character`
+
+This endpoint allows you to set a user's currently selected character in the CAD.
+
+#### Request Body {#request-body}
+
+| Name | Type   | Description                |
+| ---- | ------ | -------------------------- |
+| id   | string | Your community's ID        |
+| key  | string | Your community's API Key   |
+| type | string | GET\_CHARACTERS            |
+| data | array  | Array of character objects |
+
+<Tabs>
+<Tab title="200 A successful call will be met with the following response:">
+
+```javascript
+// Array of custom record character objects
+[]
+```
+
+</Tab>
+
+<Tab title="400 The following 400 errors may be sent in response:">
+
+```http
+INVALID REQUEST TYPE
+INVALID COMMUNITY ID
+API IS NOT ENABLED FOR THIS COMMUNITY
+INVALID API KEY
+```
+
+</Tab>
+
+<Tab title="404 ">
+
+```
+API ID NOT LINKED TO AN ACCOUNT IN THIS COMMUNITY
+```
+
+</Tab>
+
+</Tabs>
+
+```javascript
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "SET_CHARACTER",
+    "data": [
+        {
+            "apiId": "STEAM:1234", // (OPTION 1) API ID, Typically, this is their STEAM Hex
+            "account": "000-000-000", // (OPTION 2) Sonoran Account UUID
+            "charId": 123, // ID of character, matches the GET_CHARACTERS result - either the `id` or `syncId` depending on whether or not DB sync is enabled
+        },
+    ]
+}
+```
+
+#### Set via Account {#set-via-account}
+
+Communities can optionally set a user's selected character via a user's Sonoran account UUID, by using the `account` value. This value is internal, and not exposed to on the UI. The [verify\_secret ](/cad/api-integration/api-endpoints/general/verify-secret)or [get\_account ](/cad/api-integration/api-endpoints/general/get-account)endpoints will allow communities to capture the account UUID programmatically.

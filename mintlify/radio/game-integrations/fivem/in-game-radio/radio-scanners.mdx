@@ -1,0 +1,179 @@
+---
+title: Radio Scanners
+description: Discretely listen to your community's radio
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/8e/8eb2caa78156bc7e795232ffb6d4388ed299c5eb53e24f93b217bc1bf7f675ab.png" alt="" />
+
+*Sonoran Radio - In-Game Scanner*
+
+
+
+<Warning>
+
+Due to bandwidth usage, this feature is automatically enabled with the Pro version only!
+
+[Learn more about our paid subscription plans.](/radio/pricing/pricing-faq/standalone-pricing)
+</Warning>
+
+## Video Example {#video-example}
+
+## Using the Radio Scanner {#using-the-radio-scanner}
+
+### Enabling the Scanner {#enabling-the-scanner}
+
+An active Sonoran Radio Pro subscription is required for nearby radio chatter and all scanner types, including permanent scanners.
+
+1. Enable the `config.chatter` option in your [config.lua](/radio/game-integrations/fivem/installing-the-in-game-resource#updates).
+2. Add the `sonoranradio.scanner` [ace permission](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions).
+
+### Opening in Standalone {#opening-in-standalone}
+
+You can use `/radio scanner` command to open a personal scanner. This requires the `sonoranradio.scanner` [ace permission](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions).
+
+### Opening in a Framework Server (QBCore, Qbox, etc.) {#opening-in-a-framework-server-qbcore-qbox-etc}
+
+With the radio scanner item in their inventory, users can double click to open the [scanner menu](/radio/game-integrations/fivem/in-game-radio/radio-scanners#using-the-radio-scanner-1).
+
+[View our complete list of supported FiveM frameworks an inventories.](/radio/game-integrations/fivem/fivem-inventories)
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d9/d99c8c42041f8d154f66c29029ebe4afcf8fe2c1807090364a07cf9ca77c3b72.png" alt="" />
+
+*Sonoran Radio Scanner Item in Inventory*
+
+
+
+#### Item Drop {#item-drop}
+
+<Warning>
+
+Dropping scanners is not currently supported in OX inventory.
+
+Support will be added at a later date, pending more information from the OX development team.
+</Warning>
+
+If the scanner item is dropped on the floor, you can open its scanner menu by being near it and pressing `E`.
+
+If the scanner is powered, transmissions will be heard by nearby users.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/39/397b54cff399eba92f0a1a58789130f79696d4aed4adea6d248bffc2e91935f2.png" alt="" />
+
+*Sonoran Radio Scanner Item Drop Use Hint*
+
+
+
+### Radio Scanner Menu {#radio-scanner-menu}
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/fa/fab258ea2bf55ab43397f29419724566c52c52498cf17cd1d37cb42fdae658e3.png" alt="" width="209" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/45/45451ce19be746b5ec043579fb1661de971d803aef4dfafc8dc932fae4900f10.png" alt="" width="200" />
+
+
+
+Press the power button and the scanner will auto-connect to the default channel. Use the knob to scroll through all available channels.
+
+By default, only public radio channels will be available. For [private channels](/radio/tutorials/usage/dispatch-panel/configure-channels#restrict-channel-visibility), you can [configure ACE permissions to access them](/radio/game-integrations/fivem/in-game-radio/radio-scanners#ace-permissions).
+
+## Permanent Scanners {#permanent-scanners}
+
+Permanent Scanners are scanners that are available to everybody at configurable locations across the map. For example, you can add a scanner in the Sandy Shores Sheriff Station that will always listen the `County Patrol Ops` channel.
+
+#### Configuring Permanent Scanners {#configuring-permanent-scanners}
+
+You can use `/radiomenu` to easily add, move, or delete persistent scanners
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/c3/c35f1a085fce37290bd6443521d9bab50073c22773795fe6f3b12a2c542c40dc.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/b0/b0b6136c9de5d97f85401ea8b8a3286a1c12f9ff4e7cc9c517eefaa1e35c9884.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/cc/ccdcb5d8f6ebee564fada090f8b8b60e6d168928ec6afd31900384622883dd8b.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/5f/5fb185f0e10452e37926663e242cc908f176fc70ad9b7fed826a6d53929efaaf.png" alt="" />
+
+
+
+When creating a scanner, you have the ability to choose between many different scanner-like models to best fit your needs
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e4/e42dd7a0373df4c27948596e71ff53f111b86ff109a8832344bca1e9fc00aab3.png" alt="" width="375" />
+
+
+
+You can also modify the `scanners.json` JSON config file for more customization. By default, scanners connect to the default channel, but you can customize the channel ID it uses.
+
+
+
+<Accordion title="Example Scanner JSON">
+
+
+
+```json
+{
+    "Id": "036a2ad1-eeae-4519-be4c-67157b8a035d",
+    "Note": "Sandy Sheriff Station",
+    "Powered": true,
+    "ChannelId": 31226,
+    "PropModel": "prop_cs_hand_radio",
+    "PropPosition": {
+        "x": 1853.98,
+        "y": 3688.92,
+        "z": 34.38054,
+        "heading": 32.76,
+        "exact": false
+    }
+}
+```
+
+
+
+</Accordion>
+
+
+
+#### Finding Channel IDs {#finding-channel-ids}
+
+The channel IDs can be found in the [dispatcher panel](/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel#channel-ids) or [in-game radio](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands#copying-channel-and-scan-list-ids).
+
+## Developers {#developers}
+
+### Ace Permissions {#ace-permissions}
+
+If you have enabled `Config.acePermsForScanners`, you must add permissions in your `server.cfg`for the scanner to work.
+
+The channel IDs can be found in the [dispatcher panel](/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel#channel-ids) or [in-game radio](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands#copying-channel-and-scan-list-ids).
+
+```bash
+# Give the group access to /radio scanner
+add_ace group.admin sonoranradio.scanner allow
+
+# Only public (non-private) channels are accessible
+# Grant access to a private channel with the ID of 123
+add_ace group.admin sonoranradio.channel.123 allow
+```
+
+### Giving the Scanner Item (QBCore) {#giving-the-scanner-item-qbcore}
+
+Sonoran Radio does not provide a way to get the scanner item independently. You can give the item with any method, but here's an example chat command:
+
+```
+/giveitem <playerId> sonoran_radio_scanner 1
+```
+
+Please note that if you changed `Config.ScannerItem.name`, it will not work with `sonoran_radio_scanner`

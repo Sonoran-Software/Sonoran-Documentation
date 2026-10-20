@@ -1,0 +1,51 @@
+---
+title: Discord
+description: Connect Discord to manage CAD permissions and receive notifications.
+---
+
+Connect your Discord server once, then set up role sync or notifications in CAD.
+
+## 1. Connect your server {#id-1.-connect-your-server}
+
+You need **Manage Server** in Discord to invite and set up the bot.
+
+1. Open **Administration > Advanced > Discord Integration > Invite bot**.
+2. Select **Invite Sonoran Bot** and choose your Discord server.
+3. In Discord, run `/settings`. Choose a logging channel, select **Discord Only**, and enter the **Community ID** and **API Key** shown in CAD. Leave Radio blank if you do not use it.
+4. Return to CAD and select **Refresh Discord connection**. Your server appears under **Connected Discord servers**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/8a/8af3f9223c38ebd4383c00c14e717707faa764bb08f4146cca75f10dc0d09dca.jpg" alt="CAD Invite bot tab with a connected San Andreas Roleplay server and three setup steps" />
+
+*Connect your server from the Invite bot tab.*
+
+
+
+**Already using the bot?** Run `/settings > API Settings > Change CAD Setup` to link this CAD community, then refresh in CAD.
+
+**Using CMS?** Follow the **CMS Use** setup instructions in CAD, then manage [CAD permissions in CMS](/cms/integration-capabilities/sonoran-cad-sync).
+
+Webhooks and Role sync unlock when a connected server appears. Use **Invite bot** to add another server or the **×** beside a server to disconnect it.
+
+## 2. Choose what to set up {#id-2.-choose-what-to-set-up}
+
+
+
+<Card title="[Role sync](discord/role-sync.md)" href="/cad/integration-plugins/discord-bot-integration/role-sync" />
+
+
+
+
+
+<Card title="[Webhooks](discord-webhooks.md)" href="/cad/integration-plugins/discord-bot-integration/discord-webhooks" />
+
+
+
+
+
+<Card title="[Discord Rich Presence](discord-rich-presence.md)" href="/cad/integration-plugins/discord-bot-integration/discord-rich-presence" />
+
+
+
+For other bot features, see the [Sonoran Bot guides](/bot/tutorials/getting-started).

@@ -1,0 +1,154 @@
+---
+title: Vehicle Registrations
+description: Automatically register vehicles using an in-game command!
+---
+
+## ER:LC Vehicle Registration {#er-lc-vehicle-registration}
+
+Automatically register vehicles using an in-game command!
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/4a/4ab010ea241b7a8a3ca2c5046addfe03b025b5d4ebc158c3f7fc38fdccb8af13.png" alt="" />
+
+
+
+## Civilian Panel Access {#civilian-panel-access}
+
+Automatically register your current vehicle via the civilian panel.
+
+
+
+<Accordion title="Civilian Panel Automatic Registration">
+
+
+
+Users can automatically register their current vehicle via the civilian panel.
+
+1. Create and Select a Character
+
+Create and select the character you wish to register the vehicle to.
+
+2. Trigger ER:LC Automatic Registration
+
+* **Civilian** > **DMV** > **ER:LC Automatic Registration**
+
+3. View the Registration
+
+* Select the **Records** button to search and view your new vehicle registration.
+
+
+
+</Accordion>
+
+
+
+## In-Game Registration Command Configuration {#in-game-registration-command-configuration}
+
+Register a vehicle via a custom in-game command.
+
+### Persistent Registration {#persistent-registration}
+
+
+
+<Accordion title="In-Game Persistent Registration Command">
+
+
+
+When the registration command is ran a new vehicle registration will be created under the user's currently selected character in the CAD. The registration information will include the character information, license plate, make, and color.
+
+If the user already has this license plate registered under any of their characters, the registration will be moved to the currently selected character and the vehicle information will be updated.
+
+
+
+</Accordion>
+
+
+
+### Temporary Registration {#temporary-registration}
+
+
+
+<Accordion title="In-Game Temporary Registration Command">
+
+
+
+Running the temporary registration command will perform the same actions as above. However, the registration record will be automatically **deleted after 24 hours**.
+
+
+
+</Accordion>
+
+
+
+#### Note: Vehicle Registration Persistence {#note-vehicle-registration-persistence}
+
+Vehicles purchased in public ER:LC servers persist their license plate across public and private servers. If a vehicle is purchased in a private server, vehicles are not persisted and are removed when the user leaves the game. For private server vehicles, it is best to use the temporary registration command.
+
+## CAD Permission Requirements {#cad-permission-requirements}
+
+Users in-game must first register a character in the CAD. This can be done with or without a CAD account all from [an in-game command or in the CAD](/cad/integration-plugins/erlc/character-creation).
+
+## Using the In-Game Commands {#using-the-in-game-commands}
+
+When in-game, users can run the customizable vehicle registration commands followed by the license plate on the vehicle.
+
+Ex: `;register`
+
+Once the registration has been created in the CAD, users will be notified by an optional in-game message.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/bc/bcb294c69479432772d828ee03973713b3797ee761968742e87e75dcee979b1b.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/7b/7b4b4c9371b0da11ccd5cd5b865429c25ff27c3141f6753cdb75de4e18121a41.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/11/11493188e2fc38a66abdce266bbcc164a2a0ae7741d21614bb67f6d035a89b03.png" alt="" />
+
+
+
+[In-game commands not working? Make sure you have connected the webhook.](/cad/integration-plugins/erlc/getting-started#id-3.-link-er-lc-event-webhooks-to-sonoran-cad)
+
+## Customize the In-Game Commands {#customize-the-in-game-commands}
+
+In-Game commands can be customized under **Admin** > **In-Game Integration** > **ER:LC** > **Server** > **Vehicle Registration**
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/b4/b48f28911cf6755ae49cc8bb5d30333d8291e7d8af8b45e6c53fa93048d92f03.png" alt="" width="375" />
+
+
+
+## Troubleshooting {#troubleshooting}
+
+### Registration Fields Blank {#registration-fields-blank}
+
+
+
+<Accordion title="Registration Fields Blank">
+
+
+
+In order for Sonoran CAD to know where to place information (license plate, color, etc.) in your custom record fields, the field IDs must match.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/7c/7c692f206edd6d51958db188d7c076eefa51d46689ecb3caeb1d2d983e92a63b.png" alt="" />
+
+
+
+| Field ID | Use                                              |
+| -------- | ------------------------------------------------ |
+| `plate`  | License Plate<br />Ex: <code>ABC-123</code> |
+| `make`   | Vehicle Name<br />Ex: <code>Captain</code>  |
+| `model`  | Vehicle Model<br />Ex: <code>Chevlon</code> |
+| `year`   | Vehicle Year<br />Ex: <code>1992</code>     |
+| `color`  | Vehicle Color<br />Ex: <code>Crimson</code> |
+
+
+
+</Accordion>

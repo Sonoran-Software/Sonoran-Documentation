@@ -1,0 +1,72 @@
+---
+title: Apply Permission Key
+description: This endpoint allows you to apply a permission key to a user from your
+  community.
+---
+
+<Warning>
+
+This API endpoint requires the **plus** version of Sonoran CAD or higher. For more information, see our [pricing ](/cad/pricing/faq)page.
+</Warning>
+
+## Apply Permission Key {#apply-permission-key}
+
+`POST` `https://api.sonorancad.com/general/apply_permission_key`
+
+This endpoint allows you to apply a permission key to a user in your community.
+
+#### Request Body {#request-body}
+
+| Name | Type   | Description                                  |
+| ---- | ------ | -------------------------------------------- |
+| id   | string | Your community's ID                          |
+| key  | string | Your community's API Key                     |
+| type | string | APPLY\_PERMISSION\_KEY                       |
+| data | array  | Array of user account permission key objects |
+
+<Tabs>
+<Tab title="200 A successful call will be met with the following response:">
+
+```
+Permission key {{ KEY }} applied!
+```
+
+</Tab>
+
+<Tab title="400 The following 400 errors may be sent in response:">
+
+```http
+INVALID REQUEST TYPE
+INVALID COMMUNITY ID
+API ENDPOINT IS NOT ENABLED FOR THIS COMMUNITY
+INVALID API KEY
+```
+
+</Tab>
+
+<Tab title="404 A non-linked API ID will be met with the following response:">
+
+```
+API ID NOT LINKED TO AN ACCOUNT IN THIS COMMUNITY
+```
+
+</Tab>
+
+</Tabs>
+
+```javascript
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "APPLY_PERMISSION_KEY",
+    "data": [
+        {
+            "apiId": "STEAM:1234", // API ID entered in the unit identifiers
+                                   // Typically, this is their STEAM ID
+            "permissionKey": "Key123" // Name of Permission Key
+        },
+    ]
+}
+```
+
+Learn more about [configuring permission keys](/cad/tutorials/getting-started/permissions).

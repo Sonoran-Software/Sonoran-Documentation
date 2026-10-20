@@ -1,0 +1,233 @@
+---
+title: Whitelist
+description: The ER:LC whitelist panel enables social, server, team, vehicle, and
+  livery restrictions.
+---
+
+## Social Requirements {#social-requirements}
+
+The `Social Requirements` section allows you to require that CMS accounts be linked to both Discord and Roblox accounts. When users have both social accounts connected, the ER:LC panel and Discord integrations can operate with full functionality.
+
+### Enabling Social Requirements {#enabling-social-requirements}
+
+
+
+<Accordion title="Enabling Social Requirements">
+
+
+
+Toggle the `Roblox` and/or `Discord` requirement(s). Then, define custom actions to trigger when a user joins your ER:LC panel without having a linked Roblox or Discord account in the CMS.
+
+Available actions include public or private in-game messages, Discord webhooks, push notifications, and more.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/67/67d297a786ca6d15cee4bf1e8937a7959515717bf058c51473eb0b6c057cc6b9.png" alt="" width="375" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/d1/d1319dd5d98f9aa6e8b748decab3db39d0750ef64bc3c47768ebe9fe79fa72ac.png" alt="" width="243" />
+
+
+
+
+
+</Accordion>
+
+
+
+## Allow and Deny Players Whitelist {#allow-and-deny-players-whitelist}
+
+
+
+<Accordion title="Allow and Deny List">
+
+
+
+The allow and deny lists let you control game access based on CMS ranks. These lists are activated once one or more ranks are configured.
+
+When enabled, only users with a Roblox account linked to a CMS account that holds an **allowed rank** can join the server. Users without an allowed rank will be kicked automatically.
+
+If a user’s CMS rank appears on the **deny list**, that restriction overrides the allow list — those users will be kicked upon joining.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ac/ac88632db4049f0d50d9ab108b3bd16d364427de534b4546509f236fdac6c291.png" alt="" width="375" />
+
+
+
+
+
+</Accordion>
+
+
+
+## Team Locks and Restrictions {#team-locks-and-restrictions}
+
+### Team Locks {#team-locks}
+
+Each ER:LC team can be locked down to a maximum amount of players. Teams can be locked via the CMS **Lock** icon, or via Discord bot command.
+
+#### Lock via CMS {#lock-via-cms}
+
+
+
+<Accordion title="Lock via CMS">
+
+
+
+Next to the team, select the **Lock** icon to enable or disable the lock, then enter a number into the **Max**
+
+Use the **Shield** icon to add CMS ranks that bypass and ignore this lock.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/3a/3aec265ad75406c858c391fadb6ca2e60be12150f914091383efba92298b75ee.png" alt="" width="375" />
+
+
+
+
+
+</Accordion>
+
+
+
+#### Lock via Discord {#lock-via-discord}
+
+
+
+<Accordion title="Lock via Discord">
+
+
+
+Team locks can also be configured via [Discord bot](/cms/integration-capabilities/discord-bot-integration) by using the `/erlc lock` and `/erlc unlock` commands.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/12/12f3050c3239de58a10a61652c463043143e7572f55247c7b37de770cd22ff7e.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+#### Lock Actions {#lock-actions}
+
+
+
+<Accordion title="Lock Actions">
+
+
+
+When a player joins a team that has already reached its maximum amount of players, custom actions can be used to kick the user off of the team, send a message, Discord webhook, and more!
+
+Select **Actions** next to the team > Add a new action > And toggle the mode to **Lock** to apply this action whenever a team lock is reached.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e2/e2bd118fa6185b3564b6816741c986e7e7b83277351b37451f4bbfca4581ab31.png" alt="" width="375" />
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/c1/c1ab71102f3684003a521d07d6e892ff86750f57f362f70e00ecd82c58e1cc6d.png" alt="" width="286" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/cf/cfff3d5b0092bd51452db79821ecfbcc6236d45e21f3601e4897bba6a124878a.png" alt="" width="286" />
+
+
+
+
+
+</Accordion>
+
+
+
+### Team Restrictions {#team-restrictions}
+
+
+
+<Accordion title="Team Restrictions">
+
+
+
+Each team can also be locked to users with specific CMS ranks.
+
+Select the **Shield** icon to configure which ranks are allowed to join the team.
+
+Select the **Actions** panel to create actions that apply when a user joins a team without the proper CMS rank.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/c1/c1a8cef2e2fd59bdab24fd5b19503177ce12dc9fc6fd9f50a32dc67e12f66ea1.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/94/947a42750ce95c6cc39cc40d623161c4dd4bd20425132bb19101ae8152785d0d.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+## Vehicle & Livery Restrictions {#vehicle-and-livery-restrictions}
+
+
+
+<Accordion title="Vehicle & Livery Restrictions">
+
+
+
+Vehicles and vehicle liveries can also be restricted to users with specific CMS ranks.
+
+Just like teams, select the **Shield** icon to which ranks are allowed to use the vehicle and vehicle liveries.
+
+Select the **Actions** panel to create actions that apply when a user uses a vehicle or livery without the proper CMS rank.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/0d/0dde480d3caa28d9f48918fbac3f623d8b91bf4592918c27cda932d3d8896899.png" alt="" width="375" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/68/68f4a8054c24bda160dd63a61bd676b3fd41df2c217c109d63c8c14b8a84cc2f.png" alt="" width="246" />
+
+
+
+
+
+</Accordion>
+
+
+
+## AOP (Area-of-Play) {#aop-area-of-play}
+
+
+
+<Accordion title="AOP Restrictions">
+
+
+
+Some communities wish to restrict users to an AOP (area-of-play) on the map.
+
+In the CMS, use the polygon, square, or circle tool to create a custom AOP. Once created, the AOP can be enabled and disabled. Select the **Actions** tab to configure custom CMS automations that will fire once a player is outside of all enabled AOPs.
+
+Select the **Rank** button to add CMS ranks that bypass AOP restrictions.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/83/83ebda4bbf15d6ba913e38c525b2f8a5478a0075bc0cd4610bfdd35e4c528d39.png" alt="" />
+
+
+
+
+
+</Accordion>

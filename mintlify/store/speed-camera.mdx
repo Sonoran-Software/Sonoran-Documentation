@@ -1,0 +1,219 @@
+---
+title: Speed Cameras / ALPR
+description: Automated system to detect and warn when a vehicle with an active BOLO
+  or a speeding vehicle is spotted.
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/fa/fa967a316a3a75cc58bb689c6c9eec114636e4b41efd8cdca415a032188e876c.png" alt="" />
+
+*Sonoran Software - Speed Cameras Promotional Image*
+
+
+
+
+
+<iframe src="https://www.youtube-nocookie.com/embed/qfBXvV287pc" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+Sonoran Software - Speed Cameras Promotional Video
+
+
+## Speed Cameras / ALPR {#speed-cameras-alpr}
+
+### Features {#features}
+
+* Ability to operate standalone
+* Support for Ace Perms, ESX, QBCore, and custom permissions systems
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/f3/f395062555a349178a63565c43989108d3ca95dff2d2b99893f2640a09efd556.png" alt="" />
+
+*Sonoran Software - Speed Cameras Promotional Image*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/cc/cccd88cd357999870b937c9c96a4f1ba20a51686232995c0e071bec159f01aff.png" alt="" />
+
+*Sonoran Software - Speed Cameras Promotional Image*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/32/326f8ca70311957e53fd82e01af33e2adf96e5f2de82d2e1abfb4c3165ffabc8.png" alt="" />
+
+*Sonoran Software - Speed Cameras Promotional Image*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/85/85dba58bf9d06f94ebbd0f97ca9b0d230142038784b28e85830b3696efe17f8e.png" alt="" />
+
+*Sonoran Software - Speed Cameras Promotional Image*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/72/725d8ad93dd7d2f71e1f5ac383471d3709d7e6fd21a41f3596cc3bb1edbeb6f2.png" alt="" />
+
+*Sonoran Software - Speed Cameras Promotional Image*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/68/681efae5be0efb7d11b4fffbe821d73da6c857b149eb6b277e92c1cb7d9c30da.png" alt="" />
+
+*Sonoran Software - Speed Cameras Promotional Image*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/66/669a334e9a2f97d6f3227acfbcaa33076ec0312bf92f28a332ad305139c89033.png" alt="" />
+
+*Sonoran Software - Speed Cameras Promotional Image*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/5c/5c2a23e8dda23865c8bd53a6cb2d5c17fb1488bca789e105c008d04bcc112fb6.png" alt="" />
+
+*Sonoran Software - Speed Cameras Promotional Image*
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ff/ff4d21ec116380c0af4d40bb4b063a42eafd808bd03eac3bc75847ea03d76e15.png" alt="" />
+
+*Sonoran Software - Speed Cameras Promotional Image*
+
+
+
+### Commands {#commands}
+
+These are the default names of commands, they may have been modified by the server owner.
+
+| Command Name                 | Command Description                                                                                                                                                                                    | Required Permission    |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
+| `/spawnnewcam [prop] [name]` | This command will allow an admin to spawn a new camera using a gun placement system where the name argument is the label for the new camera and the prop argument is the text name of the model to use | Admin or as configured |
+| `/addplate [plate]`          | This command will add a plate to the standalone BOLO system when in use.                                                                                                                               | LEO or as configured   |
+| `/delplate [plate]`          | This command will remove a plate from the standalone BOLO system when in use.                                                                                                                          | LEO or as configured   |
+| `/listplates`                | This command will list the plates currently configured in the standalone BOLO system when in use                                                                                                       | LEO or as configured   |
+| `/showcamid`                 | This command will draw the ID of cameras which you are in the radius of with 3D text near the camera                                                                                                   | N/A                    |
+| `/getpositiondata`           | This command will print the current positional data of the camera to the chat                                                                                                                          | Admin or as configured |
+| `/changepositiondata`        | This command will change the value which you specify of the camera you specify, run this command without arguments for example usage. All changes made with this command will be immediately saved     | Admin or as configured |
+| `/reloadcameras`             | This command will completely reload the cameras.json from the server's storage                                                                                                                         | Admin or as configured |
+| `/disablecamera`             | This command will disable the camera with the ID specified as an argument, this will prevent that camera from flagging vehicles                                                                        | LEO or as configured   |
+| `/enablecamera`              | This command will enable the camera with the ID specified as an argument, this resume that camera's ability to flag vehicles                                                                           | LEO or as configured   |
+| `/cancelcamplacement`        | This command will cancel the current camera placement if one is currently in progress.                                                                                                                 | N/A                    |
+
+### Model Options {#model-options}
+
+The model on the left is named `prop_traffic_cam` and the model is named `radar01`.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/a1/a1e7f29a7592f979abf3ee1aec87db58008dfa151c5882ffc4f922d60bc51895.png" alt="" />
+
+*Sonoran Software - Speed Cameras Promotional Image*
+
+
+
+### Changelog {#changelog}
+
+#### v2.2.5 {#v2.2.5}
+
+**Bug Fixes**
+
+* `Fixed SonoranCAD bolo & warrant checks`
+
+**Feature**
+
+* `Added option to add "warrant" type plates to standalone bolo system`
+
+#### v2.1.9 {#v2.1.9}
+
+**Improvements**
+
+* `Camera falls to ground and disables`
+
+#### v2.1.8 {#v2.1.8}
+
+**Bug Fixes**
+
+#### v2.1.7 {#v2.1.7}
+
+**Hotpatch**
+
+* `Fix issue of rotation data not being called in the initial spawning of the traffic cameras`
+
+#### v2.1.6 {#v2.1.6}
+
+**Hotpatch**
+
+* `Update ESX shared object call in regards to depreciation notice`
+
+#### v2.1.5 {#v2.1.5}
+
+**Hotpatch**
+
+* `Add restart handling to prevent crashing`
+
+#### v2.1.4 {#v2.1.4}
+
+**Feature**
+
+* `Added support for custom scripts for speed limit display`
+
+#### v2.1.3 {#v2.1.3}
+
+**Hotfix**
+
+* `Fix Ace permission issues`
+
+#### v2.1.2 {#v2.1.2}
+
+**Hotfix**
+
+* `Fix ESX depreciation notice`
+* `Fix QBCore Auto Fines`
+
+#### v2.1.1 {#v2.1.1}
+
+**Hotfix**
+
+* `Fix fxmanifest not reading discord.lua`
+
+#### v2.0.0 {#v2.0.0}
+
+* `ALPR-only Mode`
+* `Configurable Auto Fine System`
+* `Integration with an Upcoming Sonoran Release`
+
+#### v1.5.4 {#v1.5.4}
+
+**Bugfixes and Improvements**
+
+* `Fixes a QB-Core bug that was experienced on certain servers and led to physics crashes`
+
+#### v1.5.0 {#v1.5.0}
+
+**Features**
+
+* `Added ability to list BOLO plates with the standalone system`
+* `Added the ability to edit and reload cameras in real time for admins`
+* `Added the ability to enable and disable specific cameras`
+* `Added a development tool to draw the IDs of cameras in the vicinity as 3D text`
+
+**Bugfixes and Improvements**
+
+* `Added a warning when both standalone and CAD BOLO systems are enabled`
+* `Overhauled the BOLO permissions system to allow selecting specific job grades allowed to access it for framework servers, and allowed a separate ace object to be used`

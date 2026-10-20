@@ -1,0 +1,15 @@
+---
+title: Push Events
+description: Sonoran CAD pushes event data to your community for further integration
+  possibilities. Learn more below!
+---
+
+## Configuring your Listener {#configuring-your-listener}
+
+Sonoran CAD defaults to websocket delivery when an active [API websocket session](/cad/api-integration/websocket-api/push-events) exists for the target `serverId`. For the [FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation), this socket is setup automatically.
+
+If no matching websocket session exists, Sonoran CAD falls back to `http://ip:gameport/sonorancad/event` **utilizing your existing game port**.
+
+Server IP and port configuration is automatically added by the [FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation) on startup for HTTP fallback compatibility.
+
+You can also [manually configure the server information in the admin panel](/cad/tutorials/customization/configuring-multiple-servers).

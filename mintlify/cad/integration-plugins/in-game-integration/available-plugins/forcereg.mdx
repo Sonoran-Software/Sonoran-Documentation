@@ -1,0 +1,138 @@
+---
+title: Force Register (ForceReg)
+description: Requires players to register on the CAD via a nag screen or freezing
+  them. This can be restricted to specific jobs or ACE permissions.
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/c2/c26233e0139ce66163c1bc579a3a73f628845fd46281fe6b65a56cab6cd9d8bd.png" alt="" />
+
+
+
+## Activation Guide {#activation-guide}
+
+### 1. Download and Install the Resource {#id-1.-download-and-install-the-resource}
+
+<Info>
+
+This submodule is already **enabled by default** when installing the [Sonoran CAD FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
+</Info>
+
+### 2. Adjust the Configuration {#id-2.-adjust-the-configuration}
+
+The CAD display settings are stored inside of the `/configuration/forcereg_config.lua` file.
+
+### 3. (OPTIONAL) Utilize the Tablet's Auto Link {#id-3.-optional-utilize-the-tablets-auto-link}
+
+The [tablet resource](/cad/integration-plugins/in-game-integration/available-plugins/tablet) can be configured to automatically link the user when they login, removing the need for users to manually type this in.
+
+## Configuration {#configuration}
+
+
+
+<Accordion title="forceregconfig.lua">
+
+
+
+| Option            | Description                                                                                                                          | Default Value                                                                                    |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| captiveOption     | The mode to use for telling players to sign up.                                                                                      | Nag                                                                                              |
+| captiveMessage    | Message to show to the player.                                                                                                       | See Config                                                                                       |
+| verifyMessage     | Message to show how to confirm the player registered.                                                                                | See Config                                                                                       |
+| whitelist.enabled | Restrict forcing registration to only the configured people                                                                          | `false`                                                                                          |
+| whitelist.mode    | What the whitelist will use to check if a player is whitelisted                                                                      | <code>qb-core</code><br />Options: <code>qb-core</code>, <code>esx</code>, <code>ace</code> |
+| whitelist.aces    | Ace permissions that will pass the whitelist and will get the ForceReg notifications if `whitelist.mode` is set to `ace`.            | `forcereg.whitelist`                                                                             |
+| whitelist.jobs    | QBCore of ESX jobs that will pass the whitelist and get the ForceReg notifications if `whitelist.mode` is set to `qb-core` or `esx`. | `police`                                                                                         |
+
+
+
+</Accordion>
+
+
+
+### ACE Permissions {#ace-permissions}
+
+The ACE whitelist is inactive with the shipped defaults (`whitelist.enabled = false` and `whitelist.mode = "qb-core"`). To use ACE access, enable the whitelist and set `whitelist.mode = "ace"`. The default `whitelist.aces` entry is `forcereg.whitelist`, and the list is configurable; any listed node can pass the whitelist.
+
+For example:
+
+```cfg
+add_ace group.sonoran_cad_linked forcereg.whitelist allow
+```
+
+Grant this node only to the role that should receive ForceReg registration notifications when the ACE whitelist is enabled.
+
+## Commands {#commands}
+
+In-game commands can be used to
+
+* `/link` Opens the link menu in-game
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/9f/9f23af08d0281550e354d28d96b59e676ee4b698c1520c351deff8c63230b18a.png" alt="" />
+
+
+
+## Modes {#modes}
+
+In the configuration file, the `captiveOption` can be set to `Nag` or `Freeze`. This changes the behavior of the [link menu](/cad/integration-plugins/in-game-integration/available-plugins/forcereg#link-menu) popup.
+
+
+
+<Accordion title="Nag Mode">
+
+
+
+When the `captiveOption` is set to `Nag` an in-game text message will display at the top, informing the user to run the `/link` command to connect to the CAD.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/3e/3e452fe4a29eb3d337487612d7a2ae4c9557f1e63341610c819f3d3cc3e4a4f0.png" alt="" width="375" />
+
+
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Freeze Mode">
+
+
+
+When the `captiveOption` is set to `Freeze` the link menu will be automatically displayed and users will be unable to close it until they have linked their CAD account.
+
+
+
+</Accordion>
+
+
+
+### Link Menu {#link-menu}
+
+The link menu displays a code and button to link. Selecting the **Link CAD** button will automatically open sonorancad.com/id in an external browser, with the code already entered.
+
+If the user is not yet logged into Sonoran CAD in their browser, they must do so first.
+
+After linking, the user will be automatically joined to the CAD community if not already.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/b7/b7562ac2fa174f3b920bc2245b70995490435758e7cea465cbc4b4b767e52889.png" alt="" width="302" />
+
+
+
+### Event {#event}
+
+This event is sent to the **client** after the check is completed.
+
+```lua
+Event: "SonoranCAD::forcereg:PlayerReg"
+
+Parameters:
+    identifier: The identifier checked
+    exists: true/false, if the identifier is linked to a CAD account
+```

@@ -1,0 +1,56 @@
+---
+title: Submodule Configuration Updates
+description: Learn how to manually update your submodule configuration file when there
+  has been a configuration update.
+---
+
+`Submodule Updater: X has a new configuration version`: This means one of your submodules has been updated, but there is a newer configuration file available with additional properties. To resolve, we need to manually migrate the configuration file for the submodule.
+
+## 1. Open the Configuration Files {#id-1.-open-the-configuration-files}
+
+In the `\sonorancad\configuration`directory, there will be two configuration files for the updated submodule:
+
+* NEW: `{submoduleName}_config.dist.lua`
+* OLD: `{submoduleName}_config.lua`
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ae/ae0f63b5f0883c11dfd6f9d263b43099042839e89b436c7aeee313e9dcec4746.png" alt="" width="375" />
+
+*New WraithV2 Configuration File*
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/4e/4e4cc313bd95cb74dab72d7778b347812859d41e3ce6a2903bc8565bfcc7986d.png" alt="" width="375" />
+
+*Old WraithV2 Configuration File*
+
+
+
+## 2. Compare the Config Files {#id-2.-compare-the-config-files}
+
+Note the differences in the file. In this example:
+
+* The `configVersion` is `1.5`on our current file but is `1.6`on the newly downloaded one.
+* Additionally we are missing the entire `notificationTimers` section in our current config file.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/56/56d9863773c3dd81c2d939db08c604d6ebca808188d9a3fdf7da5eb26e00f0ce.png" alt="" width="563" />
+
+*SonoranCAD - WraithV2 Configuration Differences*
+
+
+
+## 3. Migrate the Configuration Values {#id-3.-migrate-the-configuration-values}
+
+### Method 1 (Recommended) - Overwrite Old Configuration File {#method-1-recommended-overwrite-old-configuration-file}
+
+* Simply copy and paste the entire contents of your **new** config file into your **existing** config file and make any needed configuration changes.
+* Save the file and restart the resource
+
+### Method 2 (Not Recommended) - Manually Add Changes {#method-2-not-recommended-manually-add-changes}
+
+* Note down the changes in the **new configuration file** and add any missing properties to your **existing** configuration file.
+* Ensure you change the version number to the correct version from the **new** file.
+* Save your **existing** file and restart the resource

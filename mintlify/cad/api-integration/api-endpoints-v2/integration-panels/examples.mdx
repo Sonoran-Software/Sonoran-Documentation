@@ -1,0 +1,59 @@
+---
+title: Examples
+description: Copy complete Integration Panel examples for common FiveM and third-party
+  systems.
+---
+
+These examples show how an existing FiveM resource or third-party system can expose its live data and controls inside CAD. Each one includes a rendered panel, complete definition, sample state, action IDs, and a short server-side integration outline.
+
+The same two-way pattern applies to every example:
+
+1. Your resource publishes its current state to CAD.
+2. Connected CAD users see the update immediately.
+3. A CAD interaction creates an action for your resource.
+4. Your resource receives the action by push, applies it, acknowledges it, then publishes the updated state. Slow polling is a backup for missed events; see [Action Push Events](/cad/api-integration/api-endpoints-v2/integration-panels#action-push-events).
+
+<Info>
+
+Use the AI plugins and MCP tools at [sonoransoftware.com/developers](https://sonoransoftware.com/developers) to adapt an example to your script, then verify it in the [visual panel builder](https://sonorancad.com/integration-panel-builder).
+</Info>
+
+For an editor attached to a map marker, see [Smart Signs: Live Map Editor](/cad/api-integration/api-endpoints-v2/integration-panels/examples/smart-signs). It includes a reusable three-row sign editor, per-sign state, a blip reference, and the Save action workflow.
+
+## Fire Alarm {#fire-alarm}
+
+Connect an in-game fire alarm resource so dispatchers can see every alarm and its current state. An alarm triggered in-game appears and pulses in CAD; a dispatcher can also change its state from the panel, and the resource applies that change in-game.
+
+
+
+<Card title="[fire-alarm.md](fire-alarm.md)" href="/cad/api-integration/api-endpoints-v2/integration-panels/examples/fire-alarm" />
+
+
+
+## Door Locks {#door-locks}
+
+Connect a door lock resource to show police station, jail, and prison doors by facility. Changes made at an in-game door update CAD, while CAD users can lock one door, unlock one door, or request a lock-all action.
+
+
+
+<Card title="[door-locks.md](door-locks.md)" href="/cad/api-integration/api-endpoints-v2/integration-panels/examples/door-locks" />
+
+
+
+## Tow and Impound {#tow-and-impound}
+
+Connect a tow resource so new in-game requests appear for dispatchers with vehicle and location details. CAD users can accept or complete a request, and the resource updates the job for in-game tow operators.
+
+
+
+<Card title="[tow-impound.md](tow-impound.md)" href="/cad/api-integration/api-endpoints-v2/integration-panels/examples/tow-impound" />
+
+
+
+## Fleet Management {#fleet-management}
+
+Connect a garage or fleet resource to group police, fire, and EMS vehicles and show fuel, health, and service state. Vehicle changes made in-game update the panel, while repair requests from CAD are sent back to the resource.
+
+
+
+<Card title="[fleet-management.md](fleet-management.md)" href="/cad/api-integration/api-endpoints-v2/integration-panels/examples/fleet-management" />

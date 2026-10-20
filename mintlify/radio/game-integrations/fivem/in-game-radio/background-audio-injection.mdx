@@ -1,0 +1,66 @@
+---
+title: Background Audio Injection
+description: Background audio injection blends in-game sounds—like sirens, helicopter
+  rotors, boat engines, and gunshots—into your microphone output.
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e0/e097a62070e9a5df5af36a1206c923cb3f3ea468a92eafe432ffe04446161768.png" alt="" />
+
+*Sonoran Radio - Background Noise Injection*
+
+
+
+## Example Video {#example-video}
+
+The example video shows audio snippets with:
+
+* [Digital Effect](/radio/tutorials/usage/dispatch-panel/custom-voice-effects): Sirens in Background
+* [Vocoder](/radio/tutorials/usage/dispatch-panel/custom-voice-effects): Helicopter Rotors
+
+
+
+<iframe src="https://www.youtube-nocookie.com/embed/Ea9EowWi-Io" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+Sonoran Radio: Background Audio Injection
+
+
+## Using Background Audio Injection {#using-background-audio-injection}
+
+### What is Background Audio Injection? {#what-is-background-audio-injection}
+
+Background audio injection blends in-game sounds—like sirens, helicopter rotors, boat engines, and gunshots—into your microphone output.
+
+If you're responding with sirens active, others on the radio will hear them in the background of your voice transmissions. The sound effect volume level is determined by the distance to the source.
+
+### Enabling Background Audio Injection {#enabling-background-audio-injection}
+
+To enable this feature:
+
+1. Ensure your community is on the Pro version of Sonoran Radio.
+2. Set `enableBackgroundAudio` to `true` in your [config.lua](/radio/game-integrations/fivem/installing-the-in-game-resource#updates) file.
+
+### Customizing Background Audio Sounds {#customizing-background-audio-sounds}
+
+Background audio sounds can be customized in the event of a specific siren type, gunshot sound, etc.
+
+Communities can override the sound effects with custom files in the admin [SFX Customization panel](/radio/tutorials/usage/dispatch-panel/custom-sfx#background-audio-injection).
+
+## Troubleshooting {#troubleshooting}
+
+### Can't Hear Sirens {#cant-hear-sirens}
+
+If sirens are not playing in the background of your microphone (when next to a vehicle with one on), follow these troubleshooting steps.
+
+#### LVC Users (Luxart Vehicle Control) {#lvc-users-luxart-vehicle-control}
+
+Sonoran Radio integrates with Luxart Vehicle Control to determine when sirens are activated.
+
+1. Ensure you have configured the `Config.luxartResourceName` configuration option to match the resource name of your installed Luxart Vehicle Control resource.
+2. Ensure you are on the latest version of Luxart Vehicle Control, as older versions do not contain the developer events needed.
+   1. LVC (v3.2.9-Rev2+): [Download](https://github.com/TrevorBarns/luxart-vehicle-control/releases)
+   2. LVC Fleet (v1.0.1+): [Download](https://github.com/TrevorBarns/luxart-vehicle-control-fleet/releases)
+
+#### Native Fallback {#native-fallback}
+
+For communities not using LVC, the radio defaults to native siren detection. However, it cannot distinguish between just police lights and lights with sirens. As a result, background siren audio will play whenever police lights are active.

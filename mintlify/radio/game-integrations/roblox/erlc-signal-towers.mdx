@@ -1,0 +1,104 @@
+---
+title: Virtual Towers & Live Players
+description: Place virtual towers and view ER:LC player signal coverage.
+---
+
+Virtual towers provide location-based radio signal to your **desktop overlay while playing ER:LC**. The signal bars change as you drive into and out of tower coverage.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/8c/8c04de0b9c3213d5f2d3ba70da7af412282f0f4a1cfbfc60722cc488722f1041.png" alt="Driving in ERLC with the Sonoran Radio desktop overlay and an arrow pointing to its tower signal bars" />
+
+*The overlay's signal bars reflect your coverage from the virtual towers.*
+
+
+
+
+
+<Card title="[Radio Overlay](../desktop-overlay.md)" href="/radio/tutorials/usage/desktop-overlay" />
+
+
+
+First, [link your private server and Roblox account](/radio/game-integrations/roblox/erlc-setup), then open the desktop overlay.
+
+## Place a Tower {#place-a-tower}
+
+1. Open **Customize** > **Game Integration** > **ER:LC**.
+2. Under **ER:LC Map Configuration**, select **Towers**.
+3. Select **Place Tower**, then click a location on the map.
+4. Enter a **Tower name** and set its **Range**.
+5. Click outside the field to finish editing. Changes save automatically.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/24/24bb45f9bce74d33b98446d6f9834bbe511bf4ad6f2422cd75f5d377add4096a.jpg" alt="ER:LC virtual tower coverage with the Edit Tower controls open" />
+
+*Name each tower and adjust its coverage range.*
+
+
+
+Click a tower to edit it. Drag its marker to move it, or select **Delete Tower** to remove it.
+
+With **zero towers**, Radio keeps signal at **100%** even if the user's Roblox account or player location is unavailable. Placing the first tower enables location-based signal. Removing the last tower restores full signal on the next refresh.
+
+## Check Signal Coverage {#check-signal-coverage}
+
+Green indicates stronger coverage; yellow and red indicate weaker coverage. Outside a tower's range, it provides no signal. Where towers overlap, players use the strongest available signal.
+
+In **Towers** mode, hover over the map to preview the signal percentage at that location.
+
+To make signal quality affect transmission audio, your community needs to configure **Custom Voice Effects** and assign the effect profile to its radio channels. Enable effects such as **Clipping**, **Digital**, or **Analog** to make audio cut out, distort, or become static-filled as tower signal weakens. Follow the guide below to customize and apply these effects.
+
+
+
+<Card title="[Custom Voice Effects](../dispatch-panel/custom-voice-effects.md)" href="/radio/tutorials/usage/dispatch-panel/custom-voice-effects" />
+
+
+
+
+## View Live Players {#view-live-players}
+
+Players matched to linked Roblox accounts appear as blue markers with their names and signal percentages. Join the linked ER:LC server and allow a few seconds for the map to refresh.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/05/050a876a313927ce0948f4a37ceaa2ac636cf013b75c367b2e63042ae5c78c09.jpg" alt="ER:LC map showing player names and different signal percentages" />
+
+*Player markers show how coverage changes across the map.*
+
+
+
+
+
+<Accordion title="Configure emergency zones">
+
+
+
+1. Select **Emergency Zones** in the same map editor.
+2. Choose the **Room**.
+3. Select **Draw Polygon** and place at least three points, then select **Finish Zone**. Or select **Draw Circle**, click its center, then click its edge.
+4. Enter a **Zone name** and choose **Transmit channels** in the zone settings.
+
+Select a zone to edit it. Drag the handles to reshape it, or select **Delete Zone** to remove it. Zones belong to the selected room; changes save automatically.
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="A player is missing or has no signal">
+
+
+
+1. Confirm the private server is linked under **Game Integration**.
+2. Confirm the player joined that ER:LC private server.
+3. Link the Roblox account the player is using to their Sonoran account.
+4. Make sure the player is within a tower's range.
+5. Allow a few seconds for the next update.
+
+
+
+</Accordion>

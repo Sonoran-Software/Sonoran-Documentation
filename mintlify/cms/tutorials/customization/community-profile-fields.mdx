@@ -1,0 +1,133 @@
+---
+title: Customizing Profile Fields
+description: Allow further customization on your community member's profiles. Easily
+  add and edit date directly on a profile with view & edit permissions.
+---
+
+<iframe src="https://www.youtube-nocookie.com/embed/f7kPZXi1Fdc" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/31/318311813da4eae32b2976252d1428fc09c4124d137cdfa71bc884275bf385fb.png" alt="" />
+
+*Sonoran CMS - Profile View - Profile Information / Profile Fields*
+
+
+
+Profile Fields allow communities to put direct information onto member's profiles that can be restricted to certain viewers, editors, etc. with rank permissions. Profile Fields are dynamically displayed on profiles depending on what ranks the profile you're viewing holds.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/29/29abdba7641cda65bfe7b93919334b9360455626d21bccebb4fc0b2086340f03.png" alt="" />
+
+*Sonoran CMS - Profile Fields Editor*
+
+
+
+Easily create and edit profile fields to your liking to fit your community's needs. Each field can be customized to have a different type and label with more to come in the future. Additionally, you can drag and drop profile field blocks to change the order in which they display on user's profiles.
+
+### Creating Profile Fields {#creating-profile-fields}
+
+To start creating profile fields go to the `Administrative Panel` > `Profile Fields`.
+
+Once you've located the editor you can start by clicking the green Plus button, this will enable the creation process. From here you'll customize the label, type, and options (if you have chosen the field type of **select**).
+
+If you choose the field type of **select** you'll be required to enter at least one option, once you type in an option press **Enter** on your keyboard and a new option will be added.
+
+Once you're satisfied with the customizations you made to the field you can click the orange **Save** button.
+
+Now that you've created a field you'll want to move onto the next section detailing the permissions associated with fields.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/71/71860ee1a3029bf1af74f19910566526bab3446f08d28a963a27a55bf98ac034.png" alt="" />
+
+
+
+<Info>
+
+All existing profile fields will display on the preview profile, this is how they'll appear in the member profile view.
+</Info>
+
+### Managing Profile Field Permissions {#managing-profile-field-permissions}
+
+Profile Field Permissions are essential to managing your fields for your members, permissions create "settings" for each field that accounts abide by when viewing profiles. Understanding these permissions will allow you to better leverage the use of Profile Fields.
+
+Below we've outlined each permission and how they work with fields:
+
+
+
+| Permission | Explanation |
+| --- | --- |
+| Restrict Visibility | Only users with specified ranks are allowed to view this field. |
+| Allow Editing | Users are allowed to edit this field on their profile. |
+| Allow Others to Edit | Users with specified ranks are allowed to modify this field on another's profile. |
+
+
+
+In the Profile Fields editor, you can select the specific ranks that you want to apply this permission to. Click on the profile field you would like to edit, then click on `Edit Permissions` at the bottom of the box.
+
+This will open a box where you can select which permission you would like to modify, and within it you can select which ranks you would like to grant this permission to. In the following example, the ranks "Manager", "Super Admin", and "Admin" are given permission to edit this field on their profiles.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/eb/ebfe71324cb9ef213b544d968bfff0589decf6dddcc54e2b8f925478a6af47cf.png" alt="" />
+
+*Sonoran CMS - Profile Fields - Edit Permissions*
+
+
+
+You can also control these permissions from the Rank editor. To do this, navigate to `Administrative Panel` > `Ranks`.
+
+Select the rank that you'd like to edit and review the permissions below while selecting which permissions you'd like to grant to the rank.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/50/5037f1f7a78865f1bcfcc735877a6f80b3ca16ab7edcd769b3d8466c89edd6e4.png" alt="" />
+
+*Sonoran CMS - Department Editor - Profile Fields Permissions*
+
+
+
+These permissions integrate with the permission settings in the Profile Fields editor, toggling a permission in the rank editor will automatically check the rank's box inside the Profile Fields permission editor.
+
+### Editing Profile Fields {#editing-profile-fields}
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/eb/ebc7354cee770fca1cbdfa4c610a84e478ba221004aabde9933f5b786d0b2c1a.png" alt="" />
+
+*Sonoran CMS - Member Profile - Hover on Profile Field*
+
+
+
+While viewing a profile you can hover over them to determine if you have edit permissions or not. Hovering over a field that you can edit will display the tooltip as shown above.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/bd/bdee00ce79dde069a8fbbd320692b67bb477fd82b80ecc2c5d52aafe61d8fcb5.png" alt="" />
+
+*Sonoran CMS - Member Profile - Editing Profile Field*
+
+
+
+Once you've clicked a field it will give you a pop-up to begin editing the field's value. Depending on what field type it is it will display the relevant field input type. Once you're satisfied with the fields new value you can press the `Enter` button to save it on the profile.
+
+#### Text Array Profile Field Editing {#text-array-profile-field-editing}
+
+The `text array` profile field allows for multiple strings of text to be added to an individual profile field, this is useful to store notes, Steam IDs, IPs, etc.
+
+To edit, click the "Expand" expansion located under the Profile Field Label. This will display all entries of the array. Click in the middle of the entries or if you have none, you can press the "Click Me" button. Once you're satisfied with the field's new value(s) you can press the `Enter` button to save it on the profile.
+
+<Info>
+
+**TIP:** You can organize the order in which the entries are sorted by dragging and dropping them in the order of your preference.
+</Info>
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/77/77bae6f5b017c9b6398b29f402c41736ff34a06a6b5d35a2f2abdbd5c980fc8a.png" alt="" />
+
+*Editing a Text Array Profile Field within Profile*

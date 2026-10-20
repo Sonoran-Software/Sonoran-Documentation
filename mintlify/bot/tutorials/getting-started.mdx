@@ -1,0 +1,80 @@
+---
+title: Getting Started
+description: Start using Sonoran Bot to link Sonoran products to your discord and
+  perform common moderation actions.
+---
+
+Sonoran Bot supports role sync with [Sonoran CAD](/bot/tutorials/sonoran-cad-integration) and [Sonoran Radio](/bot/tutorials/sonoran-radio-integration). Or, Sonoran Bot can sync roles with [Sonoran CMS](/bot/tutorials/sonoran-cms-integration) ranks. CMS ranks manage CAD, Radio, Drive, website, whitelisting, and more.
+
+<Warning>
+
+You need **Manage Server** to invite and configure the bot.
+</Warning>
+
+For CAD, follow the [CAD Discord setup guide](/cad/integration-plugins/discord-bot-integration). Role permissions are configured in the CAD UI.
+
+For Radio, follow the [Radio Discord setup guide](/radio/tutorials/integrations/discord-bot-integration). Role permissions and private channels are configured in the Radio UI.
+
+### 1. Invite the Bot to Your Server {#id-1.-invite-the-bot-to-your-server}
+
+
+
+<Accordion title="Inviting Sonoran Bot">
+
+
+
+[Invite the bot to your Discord server](https://sonoranbot.com/invite). You must have the "Manage Server" permission to add bots; plus any permissions the bot requires to function. You will also be joined to our support server (Sonoran Software Systems) automatically.
+
+
+
+</Accordion>
+
+
+
+### 2. Setup the Bot and Link your Communities {#id-2.-setup-the-bot-and-link-your-communities}
+
+
+
+<Accordion title="Setting up Sonoran Bot">
+
+
+
+After inviting the bot, run the `/settings` command. You will then be prompted to select a logging channel for Sonoran Bot to use.
+
+![Sonoran Bot - Set Logging Channel](https://docs-assets.sonoransoftware.com/sha256/4b/4bcac0e5cce635ae468970553a6622d4c2504271eb651c30eaffbfb2c7b2a4e9.png)
+
+Next, the bot will ask you if you are using Sonoran CMS or if you wish to manage Sonoran CAD/Radio manually with Discord roles.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/29/29027ce1f25425127aff83778c35f7b145657dff09337b633ecadf5cbb52f7d3.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/96/96948e8e1dd7178cd7aea6b62fe83a572b9ee8c7fde1620a43639d8d7fa01af3.png" alt="" />
+
+
+
+Enter your community ID and API key for [Sonoran CAD](/cad/api-integration/getting-started/retrieving-your-credentials) and/or [Sonoran Radio](/radio/developer-documentation/developer-documentation/api-endpoints-v2/retrieving-your-credentials).
+
+If you are using [Sonoran CMS](https://sonorancms.com/) to manage your community, you only need to enter your [CMS community ID and API key](/cms/developer-api-documentation/api-integration/getting-started/retrieving-your-credentials). Sonoran CMS manages your [CAD](/cms/integration-capabilities/sonoran-cad-sync) and [Radio](/cms/integration-capabilities/sonoran-radio-sync) permissions inside the app with CMS user ranks.
+
+
+
+</Accordion>
+
+
+
+### 3. Invite to Additional Servers {#id-3.-invite-to-additional-servers}
+
+If your community uses multiple discord servers, you can link them all to the same community to utilize the permissions sync easily. Simply set them up normally as you just did, and they will automatically be synced! You will be able to use the bot's commands just like on the primary server.
+
+### 4. Set up Integrations {#id-4.-set-up-integrations}
+
+At this point, you will need to select either CAD or CMS integration. We highly encourage users to make use of the CMS integration as the CMS can integrate with the CAD on its own!
+
+* [CMS Integration](/bot/tutorials/sonoran-cms-integration)&#x20;
+* [CAD Integration](/bot/tutorials/sonoran-cad-integration)
+* [Radio Integration](/bot/tutorials/sonoran-radio-integration)
+* [Settings](/bot/tutorials/usage/settings)&#x20;
+* [Commands](/bot/tutorials/usage/commands)

@@ -1,0 +1,199 @@
+---
+title: Stream Deck Plugin
+description: Sonoran Radio's official Stream Deck plugin gives you faster, customizable
+  control over channels, volume, presets, and more.
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/03/036b954fb9c821ed0735e340e16acbc743fc439ea0a810a8247f413717d71b26.png" alt="" />
+
+
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/39/39c900c5d5ccccaddcfed71a2b6c68cca94901dc64453fdb79f3b405dbe72ab5.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ad/ada01ebd4aeea7ac715315c2f8f9ac9be8d5c0232e5a6e2247302459eaed544f.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/46/4604928bc54dac34db1b08ce605a34bb62f013d609f3e9d4c40bf8bca4436c77.png" alt="" />
+
+
+
+## Introduction <span id="introduction" /> {#introduction}
+
+Sonoran Radio's MacOS and Windows desktop applications offer direct integration with [Stream Deck hardware](https://www.elgato.com/us/en/p/stream-deck). By installing our official Stream Deck plugin, users can change channels, toggle preset channel groups, change channel and system volumes, and more - faster than ever before.
+
+Don't have a physical Stream Deck? Download the [free Stream Deck Mobile app](https://www.elgato.com/us/en/s/stream-deck-mobile)!
+
+## Installation <span id="installation" /> {#installation}
+
+### 1. Download and Install the Plugin <span id="id-1.-download-and-install-the-plugin" /> {#id-1.-download-and-install-the-plugin}
+
+[Download the official Sonoran Radio Stream Deck plugin from the Elgato Marketplace.](https://marketplace.elgato.com/product/sonoran-radio-6e959b5a-4cd3-40c8-b145-8eb1ea982fd5)
+
+### 2. Configure Actions <span id="id-2.-configure-actions" /> {#id-2.-configure-actions}
+
+Using the Stream Deck desktop application search for **Sonoran Radio** in the **Keys** and **Dials** sections.
+
+Drag-and-drop an action category to the Stream Deck. Select the action to update the sub-type.
+
+Ex: **Channel** key type > **Toggle XMIT Channels** > **Select Channels**
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/34/34e2877f1aa7b40bc07e888bf2fdf2d55d794b164c8156de15892270ca8a479e.png" alt="" width="375" />
+
+
+
+### 3. Optional: FiveM Integration {#id-3.-optional-fivem-integration}
+
+Each action can be configured to control the desktop app (default) or [FiveM in-game resource](/radio/game-integrations/fivem/in-game-radio).
+
+For clients using the in-game radio in FiveM, simply toggle each action from **Desktop** to **FiveM**.
+
+Sonoran Radio then acts as a local bridge between the Stream Deck, the desktop app, and the FiveM radio. The desktop app must be running, but does not have to have any radio community open or selected.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/9f/9ffb98d4a9208e203015fc078e7b6c49313423875ef375307cb90527ba76aee1.png" alt="" width="375" />
+
+
+
+1. Stream Deck sends the action to Sonoran Radio Desktop on localhost
+2. Sonoran Radio Desktop forwards the command to a localhost WebSocket
+3. your FiveM client script listens to that socket and forwards the event into the radio iframe/NUI
+4. the iframe/NUI sends radio state snapshots back through your FiveM client script to Sonoran Radio Desktop
+5. Stream Deck reads those snapshots for channel lists, labels, and action state
+
+This means the normal setup for users is:
+
+* keep **Sonoran Radio Desktop** running
+* switch the Stream Deck action target to **FiveM**
+* run a FiveM client script that connects to the desktop socket and forwards the documented messages
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/4f/4f28842205e856f43e27e2caa99f331be012b296a2e91d12d8b2ec9a77e06ad7.png" alt="" width="267" />
+
+
+
+### 4. FiveM Developer Setup {#id-4.-fivem-developer-setup}
+
+If you are implementing the FiveM side yourself, use the documented developer contract here:
+
+
+
+<Card title="[stream-deck-api.md](../../developer-documentation/developer-documentation/stream-deck-api.md)" href="/radio/developer-documentation/developer-documentation/stream-deck-api" />
+
+
+
+## Capabilities <span id="action-capabilities" /> {#action-capabilities}
+
+### Keys {#keys}
+
+
+
+<Accordion title="Channel Category Buttons">
+
+
+
+Channel actions allow you to do somethin
+
+* **Next Group**
+* **Previous Group**
+* **Next Channel**
+* **Previous Channel**
+* **Toggle XMIT Channels**
+  * Select one or more channels
+  * Toggling this action will add and remove the selected channel(s) from your transmit list
+* **Temporary XMIT Channel**
+  * Select a channel
+  * Pressing this action will temporarily transmit in the selected channel and return to your previous channel(s) after release
+* **Toggle Scan Channels**
+  * Select one or more channels
+  * Toggling this action will add and remove the selected channel(s) from your scan list
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Toggle Category Buttons">
+
+
+
+* **Push to Talk**
+* **Toggle AI Mode**
+* **Toggle Tone Board**
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Audio Category Buttons">
+
+
+
+* **Volume Up**
+* **Volume Down**
+* **SFX Volume Up**
+* **SFX Volume Down**
+* **AI Volume Up**
+* **AI Volume Down**
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Desktop Category Buttons">
+
+
+
+* **Connected Users Overlay**
+* **Focus Radio Overlay**
+* **Toggle Radio Overlay**
+
+
+
+</Accordion>
+
+
+
+### Dials {#dials}
+
+Stream Deck hardware with dials have the following supported actions:
+
+
+
+<Accordion title="Dial Options">
+
+
+
+* **Cycle Groups (Prev/Next)**
+* **Cycle Channels (Prev/Next)**
+* **Adjust Volume**
+  * Optional Press to Mute
+* **Adjust SFX Volume**
+  * Optional Press to Mute
+* **Adjust AI Volume**
+  * Optional Press to Mute
+* **Adjust Current Channel Volume**
+  * Optional Press to Mute
+
+
+
+</Accordion>

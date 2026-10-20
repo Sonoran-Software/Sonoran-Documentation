@@ -1,0 +1,24 @@
+---
+title: Webhooks
+description: Choose which CAD events send notifications to your Discord channels.
+---
+
+Send CAD alerts to Discord, including panic alerts, call updates, record changes, and account activity.
+
+## Set up notifications {#set-up-notifications}
+
+1. [Connect your Discord server](/cad/integration-plugins/discord-bot-integration).
+2. Open **Administration > Advanced > Discord Integration > Webhooks**.
+3. Expand an event group and turn on the events you want.
+4. Choose the **Server** and **Channel** for each event.
+5. Optionally choose **Roles to ping (optional)**. Changes save automatically.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/85/85a1514cd34aef9a6a241fcf9a11bb12b47878c64ebc6c1b8d41a3dbba08eeee.jpg" alt="CAD Webhooks tab with a panic alert routed to the cad-alerts channel and Police Officer role" />
+
+*Choose a channel for each notification.*
+
+
+
+To stop a notification, turn off that event. The bot must have permission to view and send messages in the selected channel.

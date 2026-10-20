@@ -1,0 +1,83 @@
+---
+title: Get Map Blips
+description: This endpoint allows you to retrieve all custom blips for a community's
+  live map!
+---
+
+<Warning>
+
+This API endpoint requires the **pro** version of Sonoran CAD or higher.\
+For more information, see our [pricing ](/cad/pricing/faq)page.
+</Warning>
+
+## Get Blips {#get-blips}
+
+`POST` `https://api.sonorancad.com/emergency/get_blips`
+
+This endpoint allows you to retrieve all custom blips on your live map.
+
+#### Request Body {#request-body}
+
+| Name                                   | Type   | Description              |
+| -------------------------------------- | ------ | ------------------------ |
+| id\*   | string | Your community's ID      |
+| key\*  | string | Your community's API Key |
+| type\* | string | GET\_BLIPS               |
+| data\* | array  | Array of request objects |
+
+<Tabs>
+<Tab title="200 A successful call will be met with the following response:">
+
+```json
+// Array of blip objects
+[
+    {
+        "id": 1,
+        "subType": "Example", // Differentiate custom blips types
+        "coordinates": {
+            "x": 0,
+            "y": 0
+        },
+        "color": "#000FFF",
+        "icon": "https://example.com/icon.png",
+        "data": [
+            {
+                "title": "Example 1",
+                "text": "123",
+            },
+            {
+                "title": "Example 2",
+                "text": "456",
+            }
+        ]
+    }
+]
+```
+
+</Tab>
+
+<Tab title="400 The following 400 errors may be sent in response:">
+
+```http
+INVALID REQUEST TYPE
+INVALID COMMUNITY ID
+API ENDPOINT IS NOT ENABLED FOR THIS COMMUNITY
+INVALID API KEY
+```
+
+</Tab>
+
+</Tabs>
+
+```javascript
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "GET_BLIPS",
+    "data": [
+        {
+            "serverId": 1 // Server ID
+        },
+    ]
+}
+```

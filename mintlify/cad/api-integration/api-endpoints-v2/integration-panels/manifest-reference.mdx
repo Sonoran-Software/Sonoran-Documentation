@@ -1,0 +1,282 @@
+---
+title: Manifest Reference
+description: Reference for Integration Panel definitions, UI nodes, bindings, styling,
+  actions, search, sorting, and sounds.
+---
+
+A panel definition is a JSON object stored at a stable `panelKey`. The definition controls presentation and behavior; state is stored separately per `serverId` and `instanceKey`.
+
+## Definition {#definition}
+
+| Property        | Type      | Required | Description                                         |
+| --------------- | --------- | -------- | --------------------------------------------------- |
+| `schemaVersion` | integer   | Yes      | Must be `1`.                                        |
+| `key`           | string    | No       | When present, must equal the route `panelKey`.      |
+| `name`          | string    | Yes      | Panel header name; maximum 80 characters.           |
+| `icon`          | string    | No       | Quasar or Font Awesome icon, such as `fas fa-lock`. |
+| `surfaces`      | string\[] | No       | Layout availability: any of `dispatch`, `police`, `fire`, or `ems`. An empty array hides the panel from Add Window; explicit live-map blip references still work. This is not an authorization restriction. |
+| `sounds`        | object\[] | No       | Up to 20 sound triggers.                            |
+| `body`          | object\[] | Yes      | Recursive UI nodes; maximum 200 root nodes.         |
+
+## Bindings {#bindings}
+
+| Binding       | Value                                    |
+| ------------- | ---------------------------------------- |
+| `$state.path` | Current instance state                   |
+| `$item.path`  | Current item inside a `repeat` node      |
+| `$inputs.id`  | Current local control value, or the control's displayed `value` when untouched. Explicit empty strings are preserved. |
+| `$itemInputs` | Object of all control values in the current repeated item, including untouched defaults. Keys are unprefixed control IDs. |
+| `$itemInputs.id` | One control value in the current repeated item. |
+| `$itemChanges` | Object containing only current-item controls whose values differ from their published defaults. Keys are unprefixed control IDs. |
+| `$value`      | New value emitted by the current control |
+
+Use a binding as the entire property value, such as `"value": "$item.locked"`. For text containing other words, use interpolation such as `"Fuel: {{item.fuel}}%"` or `"Active: {{state.summary.active}}"`.
+
+### Saving one repeated item {#saving-one-repeated-item}
+
+`$inputs` includes controls from the entire panel instance. Repeated controls use keys such as `sign-12:line1`. Avoid sending the entire `$inputs` object when an action edits just one item. Inside a `repeat`, use `$itemInputs` for a complete item form or `$itemChanges` for a partial edit:
+
+```json
+{
+  "type": "button",
+  "label": "Save sign",
+  "action": {
+    "id": "sign.save",
+    "values": { "signId": "$item.id", "changes": "$itemChanges" }
+  }
+}
+```
+
+Give every control a stable, unique `id` within its repeated item and every item a stable, unique `id` within the panel instance. These bindings collect controls under the nearest `repeat`, including controls inside layout containers; they exclude nested repeats, other items, and local search/sort settings. Without a repeated-item context, both objects are empty. Without an item ID, controls use their original source-array index; stable IDs are recommended when the collection can change.
+
+`$itemInputs` includes untouched defaults. `$itemChanges` compares current values with the controls' default `value` bindings, usually sourced from the latest published `$item` state. Reverting a field to its default removes it from the changes object. Deliberate `""`, `false`, `0`, and `null` values are preserved. No differences produces `{}`; the button still emits an action. Your integration should treat missing fields as unchanged and an empty changes object as a successful no-op. Validate and apply only allowed field IDs, then acknowledge and publish the complete authoritative state. CAD does not apply the partial edit to state automatically.
+
+The `changes` name is your integration's payload convention, not a reserved API property. Use `"fields": "$itemInputs"` instead if your handler expects all fields for one item. Existing explicit bindings such as `"line1": "$inputs.line1"` remain supported for non-repeated forms. Deploy a CAD frontend with these item bindings before changing your manifest; they are currently available on staging.
+
+## Node Types {#node-types}
+
+| Type       | Main properties                                                      | Purpose                                  |
+| ---------- | -------------------------------------------------------------------- | ---------------------------------------- |
+| `row`      | `children`, `gap`, `align`                                           | Horizontal layout that wraps as needed   |
+| `column`   | `children`, `gap`, `align`                                           | Vertical layout                          |
+| `grid`     | `children`, `minItemWidth`, `gap`                                    | Responsive auto-fit grid                 |
+| `section`  | `title`, `children`, `style`, `animation`                            | Card-like group                          |
+| `repeat`   | `source`, `children`, `search`, `sort`, `layout`                     | Render state array items                 |
+| `text`     | `text`, `variant`, `appearance`                                      | Text; variants are `title` and `caption` |
+| `icon`     | `icon`, `size`, `color`                                              | Quasar or Font Awesome icon              |
+| `badge`    | `label`, `appearance`                                                | Compact status chip                      |
+| `divider`  | —                                                                    | Separator line                           |
+| `spacer`   | `size`                                                               | Vertical space in pixels                 |
+| `alert`    | `text`, `appearance`                                                 | Highlighted message                      |
+| `input`    | `id`, `label`, `value`, `placeholder`, `action`                      | Text input                               |
+| `number`   | `id`, `label`, `value`, `action`                                     | Numeric input                            |
+| `textarea` | `id`, `label`, `value`, `action`                                     | Multiline input                          |
+| `select`   | `id`, `label`, `value`, `options`, `multiple`, `clearable`, `action` | Selection control                        |
+| `iconPicker` | `id`, `label`, `value`, `options` or `sections`, `searchable`, `readonly`, `action` | Square SVG picker |
+| `toggle`   | `id`, `label`, `value`, `color`, `action`                            | Boolean switch                           |
+| `checkbox` | `id`, `label`, `value`, `color`, `action`                            | Boolean checkbox                         |
+| `button`   | `label`, `icon`, `disabled`, `appearance`, `action`                  | Explicit action                          |
+
+Common layout properties are `grow`, `columns` from 1-12, and `gap` using `none`, `xs`, `sm`, `md`, `lg`, or `xl`.
+
+Select options may be primitive values or `{ "label": "Display", "value": "stored-value" }` objects.
+
+### SVG icon picker {#svg-icon-picker}
+
+An `iconPicker` is a 40-pixel square, matching the height of a dense text input. Clicking it opens a scrollable menu. Supply a flat `options` array, or group icons with `sections: [{ "name": "Response", "options": [...] }]`. Each section needs a heading in `name`. When `sections` is present, it takes precedence over `options`. Each icon needs a stable string `value` and inline SVG markup in `svg`. An optional icon `name` supplies the tooltip and accessible name; without it, the picker uses `value`.
+
+Set `searchable` to `true` to show a local search field. It matches an icon's `name` or `value`, showing only sections with matching icons. A matching section heading shows all its icons. Search is off by default. The selected `value` is stored locally and available as `$value` in its action; your integration should process the action and publish the updated state.
+
+![SVG icon picker in the panel builder with its menu open](https://docs-assets.sonoransoftware.com/sha256/f0/f0666f8a55046b35bb5cd0da87065a384981255b225a22f38138ba94fa28a86f.png)
+
+Typing `fi` narrows the menu to Fire in its section:
+
+![SVG icon picker filtered by name](https://docs-assets.sonoransoftware.com/sha256/4b/4bcf72bd1417d4d8690d9d2752779b1109bbcac9ca68c5273ed823c84ce62f62.png)
+
+```json
+{
+  "type": "iconPicker",
+  "id": "unit-icon",
+  "label": "Unit icon",
+  "value": "$state.unit.icon",
+  "searchable": true,
+  "sections": [
+    {
+      "name": "Response",
+      "options": [
+        {
+          "value": "shield",
+          "name": "Shield",
+          "svg": "<svg viewBox=\"0 0 24 24\"><path fill=\"#5AAAF8\" d=\"M12 2 3 6v5c0 5.4 3.8 9.7 9 11 5.2-1.3 9-5.6 9-11V6l-9-4Z\"/></svg>"
+        },
+        {
+          "value": "fire",
+          "name": "Fire",
+          "svg": "<svg viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"#F6815B\"/></svg>"
+        }
+      ]
+    },
+    {
+      "name": "Equipment",
+      "options": [
+        {
+          "value": "radio",
+          "name": "Radio",
+          "svg": "<svg viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"9\" width=\"18\" height=\"12\" fill=\"#B595ED\"/></svg>"
+        }
+      ]
+    }
+  ],
+  "action": { "id": "unit.set-icon", "values": { "icon": "$value" } }
+}
+```
+
+SVGs are rendered as images. Use basic shapes and explicit colors; scripts, external references, and unsupported SVG elements or attributes are rejected. A picker shows up to 100 options in total across its sections. Flat `options` use the same icon object format.
+
+## Conditions {#conditions}
+
+Add `visibleWhen` to any node. Use one comparison with a bound `path`.
+
+```json
+{
+  "visibleWhen": {
+    "path": "$item.status",
+    "in": ["PENDING", "ASSIGNED"]
+  }
+}
+```
+
+Supported comparisons are `equals`, `notEquals`, and `in`. With no comparison, visibility follows the truthiness of `path`.
+
+## Actions {#actions}
+
+Controls use the same action envelope. The CAD creates an event containing the action ID, resolved values, actor, panel, instance, and server.
+
+```json
+{
+  "type": "toggle",
+  "id": "door-locked",
+  "label": "Locked",
+  "value": "$item.locked",
+  "action": {
+    "id": "door.set-locked",
+    "confirm": "Change this door?",
+    "values": {
+      "doorId": "$item.id",
+      "locked": "$value"
+    }
+  }
+}
+```
+
+`confirm` is optional. It displays a CAD confirmation dialog before the action is queued.
+
+Resolved action `values` must fit within 32 KiB of UTF-8 JSON. This is an application and database budget for each queued command, independent of the larger panel-state limit. An oversized action is rejected before queueing or push delivery. Keep actions limited to the affected item's fields or changes; state updates remain full replacements of up to 512 KiB.
+
+`input`, `number`, and `textarea` actions are emitted once when the user leaves a changed field. Selects, toggles, checkboxes, and icon pickers emit on selection or click. Successful action acknowledgments are quiet; failures show an error notification.
+
+## Repeated Collections {#repeated-collections}
+
+Set `source` to a state array. Child nodes can bind to the current `$item`.
+
+```json
+{
+  "type": "repeat",
+  "source": "$state.doors",
+  "emptyText": "No doors reported",
+  "layout": "grid",
+  "minItemWidth": 245,
+  "gap": "sm",
+  "children": []
+}
+```
+
+`minItemWidth` accepts 120-800 pixels. The grid automatically changes its column count with the panel width.
+
+### Search {#search}
+
+Search is local to the CAD client and does not call the API.
+
+```json
+{
+  "search": {
+    "placeholder": "Search doors",
+    "fields": ["name", "facility", "status"]
+  }
+}
+```
+
+If `fields` is omitted, primitive properties on the item are searched.
+
+### Sort {#sort}
+
+Each option has a stable `value` and ordered rules. A rule can use `direction` (`asc` or `desc`) or an explicit `order` array.
+
+```json
+{
+  "sort": {
+    "label": "Order",
+    "default": "priority",
+    "options": [
+      {
+        "label": "Pending first",
+        "value": "priority",
+        "rules": [
+          { "path": "status", "order": ["PENDING", "ASSIGNED", "COMPLETED"] },
+          { "path": "createdAt", "direction": "asc" }
+        ]
+      }
+    ]
+  }
+}
+```
+
+## Theme-Safe Styling {#theme-safe-styling}
+
+Arbitrary CSS is not accepted. This keeps community panels safe and compatible with every CAD theme.
+
+`appearance` supports `positive`, `negative`, `warning`, `primary`, `info`, `muted`, and `neutral`.
+
+Color fields and `style.backgroundColor`, `style.borderColor`, or `style.color` must use one of these v2 token names:
+
+`amber`, `amber-text`, `background`, `blue`, `blue-text`, `component-border`, `foreground`, `foreground-light`, `icon`, `positive`, `positive-text`, `primary`, `primary-faded`, `primary-text`, `text-inverse`, `text-primary`, `text-subtitle`, or `text-title`.
+
+Allowed non-color style properties are `borderRadius`, `borderStyle`, `borderWidth`, `fontSize`, `fontWeight`, `margin`, `maxHeight`, `minHeight`, `opacity`, `padding`, and `textAlign`.
+
+Built-in animations are `pulse-negative`, `pulse-warning`, and `pulse-positive`. Animation values may be bound to state.
+
+## Sounds {#sounds}
+
+Sound URLs must use HTTPS. Local paths and localhost HTTP are accepted while developing. Browser autoplay rules may require the user to interact with the CAD before audio can play.
+
+```json
+{
+  "sounds": [
+    {
+      "id": "alarm-active",
+      "url": "https://s3.sonorancad.com/default/examples/demos/fire-alarm-demo.mp3",
+      "volume": 0.7,
+      "maxDurationMs": 8000,
+      "trigger": {
+        "event": "state",
+        "path": "summary.active",
+        "operator": "increased"
+      }
+    }
+  ]
+}
+```
+
+| Property           | Rules                                                                         |
+| ------------------ | ----------------------------------------------------------------------------- |
+| `id`               | Stable sound identifier                                                       |
+| `url`              | HTTPS audio URL                                                               |
+| `volume`           | 0-1; default `0.7`                                                            |
+| `maxDurationMs`    | 1,000-30,000; default `10,000`                                                |
+| `trigger.event`    | `state` or `action`                                                           |
+| `trigger.path`     | Dot path in state; omit to compare complete state                             |
+| `trigger.operator` | `changed`, `increased`, `decreased`, `equals`, `becameTrue`, or `becameFalse` |
+| `trigger.value`    | Comparison value for `equals`                                                 |
+| `trigger.actionId` | Optional action ID filter for action sounds                                   |
+
+State sounds compare the prior and current values and do not play on initial load. Duplicate playback is suppressed for 500 ms.

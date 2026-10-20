@@ -1,0 +1,76 @@
+---
+title: Local Callers
+description: Nearby witnesses will send an emergency call during car jackings, weapons
+  being brandished, and more! Stop or cut their descriptions short by killing them
+  in time!
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e7/e7d43247db19b2a7b84a698430770f52cf19e1bb0a97754fe4b15567a4d1b4c3.png" alt="" />
+
+
+
+## Promo Video {#promo-video}
+
+
+
+<iframe src="https://www.youtube-nocookie.com/embed/BJHeFP5j3qY" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+
+
+## Installation Guide {#installation-guide}
+
+### 1. Download and Install the Resource {#id-1.-download-and-install-the-resource}
+
+<Info>
+
+This submodule is already **enabled by default** when installing the [Sonoran CAD FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
+
+\
+The [locations submodule](/cad/integration-plugins/in-game-integration/available-plugins/locations) includes all logic required to send bodycam images to the CAD and is **already enabled by default**. Keep this submodule enabled to maintain functionality.
+</Info>
+
+### 2. Adjust the Configuration {#id-2.-adjust-the-configuration}
+
+The bodycam settings are stored inside of the `/configuration/localcallers_config.lua` file.
+
+### Configuration {#configuration}
+
+
+
+<Accordion title="localcallersconfig.lua">
+
+
+
+
+
+| Variable | Type | Description |
+| --- | --- | --- |
+| `callCoolDown` | `int` | How long in between calls for the same player |
+| `clearRecordsAfter` | `int` | Time in minutes to clear records after a call is made \| 0 will disable this feature |
+| `callTypes` | `table` | Events that will trigger a 911 call. `gun` Will trigger based on brandishing or shooting a firearm. `carJacking` will trigger if you are trying to steal a car. `death` will trigger if a player dies |
+| `localRunTime` | `int` | Time in seconds for how long "locals" will run towards the player to show interest in the call, `0` will disable this feature |
+| `callTimers` | `table` | How long each call type will take to put through |
+| `whitelistZones` | `table` | Zones where only specific call types will trigger. (I.e. A shooting range won't trigger a brandishing call) |
+| `language` | `table` | Translations |
+| `clothingConfig` | `table` | Configure clothing colors and names if you have custom EUP as well as whitelist certain EUP items or peds to not trigger calls |
+| `weaponConfig` | `table` | Configure custom caller descriptions for weapons. |
+
+
+
+
+
+</Accordion>
+
+
+
+## Usage {#usage}
+
+#### Emergency Calls {#emergency-calls}
+
+When near an AI "local/ped" in-game, they will automatically pull out their phone and begin to place an emergency call if you are spotted committing one of the configured crimes.
+
+#### Emergency Call Information {#emergency-call-information}
+
+While the local caller is placing the emergency call, killing them before the configured timer expires will only send a partial report—making it harder for police to get a full description of you.
+
+Descriptions from the caller are based on clothing items. These can be configured and improved in the `clothingConfig` for custom items.

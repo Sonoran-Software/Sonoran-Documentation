@@ -1,0 +1,87 @@
+---
+title: Ticket System
+description: Create and manage private support tickets with Sonoran Bot.
+---
+
+Sonoran Bot can create private support channels from configurable ticket panels. Each panel can use its own support roles, categories, intake questions, limits, transcripts, and logging channels.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/98/9877cfa2f0c6c105138e8ec7f3c5659493c1c43c5b353d7a38e875bb84eb6a76.png" alt="A Sonoran Bot ticket panel with a Create Ticket button" width="456" />
+
+*Members select the panel button to open a private ticket.*
+
+
+
+## Create a Ticket Panel {#create-a-ticket-panel}
+
+You need the **Manage Server** permission to configure ticket panels. Sonoran Bot also needs permission to manage channels and messages in the ticket categories.
+
+1. Create the panel and select an initial support role and open-ticket category:
+
+   `/ticket panel create name:Support support_role:@Support open_category:Open Tickets`
+2. Configure where closed tickets, transcripts, and ticket logs should go:
+
+   `/ticket panel edit panel:Support closed_category:Closed Tickets transcript_channel:#ticket-transcripts log_channel:#ticket-logs`
+3. Publish the panel in a channel members can access:
+
+   `/ticket panel send panel:Support channel:#open-a-ticket`
+
+Use `/ticket panel list` to view existing panels. Running `/ticket panel send` again publishes another copy of the same panel.
+
+## Add Intake Questions {#add-intake-questions}
+
+A panel can ask up to five questions before opening the ticket. Add each question with `/ticket form add`:
+
+`/ticket form add panel:Support question:What can we help you with? style:Paragraph required:True`
+
+Use `/ticket form list`, `/ticket form remove`, or `/ticket form clear` to review and change the questions.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/3c/3ce87dada7e0be4c2a1dcd0449ba2ab14126ea149f944765c35d104f30059848.png" alt="A Discord modal containing ticket intake questions" width="523" />
+
+*Intake answers are displayed to the support team when the ticket opens.*
+
+
+
+## Configure Access and Limits {#configure-access-and-limits}
+
+Use `/ticket panel role-add` and `/ticket panel role-remove` to manage these role groups:
+
+* **Support team:** Can view and manage tickets for the panel.
+* **Read-only observer:** Can view tickets without replying.
+* **Allowed to open:** Limits panel use to selected roles.
+* **Blocked from opening:** Prevents selected roles from opening tickets.
+* **Bypass ticket limits:** Allows selected roles to ignore panel limits.
+
+`/ticket panel edit` also configures the maximum open tickets per user and across the panel, automatic transcripts, claiming, close confirmation, channel names, and behavior when a ticket owner leaves the server.
+
+## Manage Tickets {#manage-tickets}
+
+New tickets include buttons to close, claim, and save a transcript. The main ticket message is pinned automatically when that panel option is enabled.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/10/10d49a12238cdc9e7a905d1b07cacbf4d32891bc4b654da79f862336a201247b.png" alt="An open Sonoran Bot support ticket with Close, Claim, and Transcript buttons" width="602" />
+
+*A private ticket channel visible to the ticket owner and configured support roles.*
+
+
+
+The ticket owner and support team can use the available buttons or these commands:
+
+| Command | Function |
+| --- | --- |
+| `/ticket open` | Open a ticket from a selected panel. Support staff can open one for another member. |
+| `/ticket close` | Close an open ticket. |
+| `/ticket reopen` | Reopen a closed ticket. |
+| `/ticket delete` | Permanently delete a ticket channel. |
+| `/ticket claim` and `/ticket unclaim` | Assign or unassign a support team member. |
+| `/ticket add` and `/ticket remove` | Add or remove a user or role. |
+| `/ticket rename` | Rename the ticket channel. |
+| `/ticket transfer` | Transfer ownership to another member. |
+| `/ticket transcript` | Export up to 1,000 messages as an HTML transcript. |
+| `/ticket info` | View the ticket owner, status, assignment, and participants. |
+
+Most ticket-management commands accept an optional `ticket` channel. If it is omitted, the command uses the current channel.

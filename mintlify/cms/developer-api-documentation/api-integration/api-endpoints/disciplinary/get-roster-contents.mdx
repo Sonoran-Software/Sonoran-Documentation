@@ -1,0 +1,67 @@
+---
+title: Get Member Records
+description: This endpoint allows you to get a member's disciplinary records
+---
+
+## Get Member Records {#get-member-records}
+
+`POST` `https://api.sonorancms.com/disciplinary/get_member_records`
+
+Get a Sonoran CMS community member's disciplinary records by member search fields.
+
+#### Request Body {#request-body}
+
+| Name                                   | Type   | Description          |
+| -------------------------------------- | ------ | -------------------- |
+| id\*   | string | Community ID         |
+| key\*  | string | API Key              |
+| type\* | string | GET\_MEMBER\_RECORDS |
+| data\* | object | Object               |
+
+<Tabs>
+<Tab title="200: OK ">
+
+```json
+  [
+    {
+      "id": "123",
+      "status": true,
+      "accId": "123",
+      "source": "user",
+      "sourceId": "123",
+      "points": 5,
+      "reason": "",
+      "metadata": {},
+      "history": [],
+    }
+  ]
+```
+
+</Tab>
+
+<Tab title="400: Bad Request The following 400 errors may be sent in response:">
+
+```javascript
+INVALID API KEY
+INVALID COMMUNITY ID
+MEMBER NOT FOUND
+```
+
+</Tab>
+
+</Tabs>
+
+```json
+{
+    "id": "YOUR_COMMUNITY_ID",
+    "key": "YOUR_API_KEY",
+    "type": "GET_MEMBER_RECORDS",
+    "data": {
+        "apiId": "SOME_API_ID", // Optional - must have one
+        "username": "SOMEUSERNAME", // Optional - must have one
+        "accId": "SOMEACCID", // Optional - must have one
+        "discord": "111122223333444455", // Optional - must have one
+        "uniqueId": 1234 // Optional - must have one
+    }
+}
+```

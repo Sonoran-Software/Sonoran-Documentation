@@ -1,0 +1,59 @@
+---
+title: Call Editor Pin Drop
+description: Select a location on the ERLC map to fill a dispatch call's street address
+  and postal code.
+---
+
+![ERLC Call Editor Pin Drop](https://docs-assets.sonoransoftware.com/sha256/95/958c0e1e5ee5fa06ccc22ae8d27e51eed3d52d072b2132395e0231f734388ceb.png)
+
+Drop a pin instead of typing an address. Select a location on the 2D ERLC map and Sonoran CAD fills the nearest street name and postal code in your dispatch call.
+
+### 1. Check ERLC mode {#id-1.-check-erlc-mode}
+
+Make sure your CAD community is in **ER:LC** mode under **Administration → Advanced → In-Game Integration**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/fb/fbce76ee84f03f185a5deb552d0c7e99bc2ea4cc05ed6e3080e9c6448d4a915c.png" alt="" width="375" />
+
+
+
+### 2. Open the map {#id-2.-open-the-map}
+
+Create or edit a dispatch call. Select the **pin icon** inside the **Address** field to open the 2D map picker.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/80/80f5df4993fe24ae28fda35df191fc179961c57f674bbd23b02bbbc8e1a9622a.png" alt="" width="375" />
+
+
+
+### 3. Select the location {#id-3.-select-the-location}
+
+Drag to pan and scroll to zoom. Open **Legend** to access the map controls, including the **map labels** button to show or hide street and postal labels.
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/a6/a65b226ee2beb3acff2f55e2334581adb5c48098c6b953d0bfc50b7a57d814de.jpg" alt="The ERLC 2D map picker with street names and postal labels" width="375" />
+
+Click the call's location. The map closes and fills the **Address** and **Postal** fields.
+
+## Use the ERLC street list {#use-the-erlc-street-list}
+
+The type-to-filter **Address** field is also pre-configured with the full list of ER:LC's street and trail names. These [custom street names](/cad/tutorials/customization/addresses-and-street-names) can be re-applied under **Administration → Advanced → In-Game Integration → ER:LC**. In **Addresses**, select **Use ER:LC street list**.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/99/999eac8bcb2c7a57484fd47a86f9b5e2a213aea8db657e9d220d1f01684c946e.png" alt="" />
+
+ 
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/a2/a226a773b2144a80fb40c833f7776f0035eda2e6552357652ba3cfefbfde7a33.png" alt="" />
+
+
+
+## Send the location to Discord {#send-the-location-to-discord}
+
+You can also enable [ERLC 3D Location Webhooks](/cad/integration-plugins/erlc/location-notifications) to include an aerial location image with emergency and dispatch call webhooks.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/67/673b30972e39233a04cd4316a264e7306beffcf5ce39367e68ca9b3f65e061b2.png" alt="" width="375" />

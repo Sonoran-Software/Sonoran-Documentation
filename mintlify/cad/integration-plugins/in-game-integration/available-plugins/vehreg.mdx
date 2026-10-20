@@ -1,0 +1,82 @@
+---
+title: Vehicle Register (VehReg)
+description: Register a vehicle with a single in-game command!
+---
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/5e/5e8c2f501f9b4025edeaeab0e14bd53685d7c68356f80d4e70397b8a34368a7b.png" alt="" />
+
+
+
+## Activation Guide {#activation-guide}
+
+### 1. Download and Install the Resource {#id-1.-download-and-install-the-resource}
+
+<Info>
+
+This submodule is already **enabled by default** when installing the [Sonoran CAD FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
+</Info>
+
+### 2. Adjust the Configuration {#id-2.-adjust-the-configuration}
+
+The bodycam settings are stored inside of the `/configuration/vehreg_config.lua` file.
+
+
+
+<Accordion title="vehregconfig.lua">
+
+
+
+
+
+| Option | Description | Default |
+| --- | --- | --- |
+| reigsterCommand | The command used to register current vehicle | reg |
+| defaultRegExpire | The default date that all registrations will expire | 01/02/2030 |
+| defaultRegStatus | The default status that all registrations will have \| MUST BE IN CAPS | VALID |
+| language | Array of language used within the script | English |
+| recordData | Array of field UID's based on your vehicle registration record | Default from CAD |
+| customData | Array of preset vehicle information, commonly used for addon vehicles where names may not be present | <pre><code className="language-lua">{"customData = {\n    {\n        spawncode = \"adder\",\n        model = \"Adder\",\n    },\n    {\n        spawncode = \"blista\",\n        model = \"Blista\",\n    }\n}\n"}</code></pre> |
+
+
+
+
+
+</Accordion>
+
+
+
+### 3. Ensure Players are Linked {#id-3.-ensure-players-are-linked}
+
+Ensure the player has already [linked their CAD](/cad/integration-plugins/in-game-integration/link-user-in-game) for this integration to work.
+
+### 4. Configure Custom Record Fields {#id-4.-configure-custom-record-fields}
+
+When a player registers a vehicle in-game, the submodule must know what fields in your custom vehicle registration to enter the vehicle information into. The `recordData` portion of the config contains the `Field Mapping ID` for the default vehicle record template.
+
+Custom record templates are found in `Admin` > `Customization` > `Custom Records`
+
+If you have modified the [vehicle registration template](/cad/tutorials/customization/creating-custom-record-and-report-types), update the `recordData` configuration accordingly.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/c9/c9cca0995565d1e3a0a9c58f0a84968b9b4af923a76c6ee8bf537c702b9ea30e.png" alt="" />
+
+*Vehreg: Custom Record Field Mapping*
+
+
+
+## Commands {#commands}
+
+In-game commands can be used to
+
+* `/reg` Registers the vehicle you are currently sitting inside to your currently selected CAD character
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/63/6371b90ace1d6ab6d9efdc58265cf1c66461d3962c990237807e63c20196897d.png" alt="" />
+
+
+
+## Developer Documentation {#developer-documentation}
+
+You can now implement our vehicle registration system into your own scripts by simply calling a server event! See our [Server Events documentation](/cad/integration-plugins/in-game-integration/framework-development-documentation/server-events#sonorancad-registervehicle) for usage.

@@ -1,0 +1,104 @@
+---
+title: CCTV
+description: Record incidents automatically and replay historic CCTV footage after
+  the scene is clear.
+keywords:
+- fivem
+- cctv
+- cameras
+- historic playback
+---
+
+CCTV gives your FiveM server a persistent camera network that does more than show a live feed. Cameras record activity around motion detections and operator bookmarks so authorized staff can return later, find the incident in the archive, and replay what happened after the people and vehicles have left.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/37/3788fbacd4b54e7e22fce1b037de3b9b7406dd1d8ba6c56ec8fbf12908819aba.webp" alt="Sonoran CCTV historic playback product overview" />
+
+*Record incidents automatically, then return later to review the scene.*
+
+
+
+<Info>
+
+**CCTV is a paid DLC for the free Events Core package.** Install Events Core once to provide the shared recording, replay, storage, and event logic required by CCTV and other Events DLC. Events Core does not add a separate gameplay interface by itself.
+</Info>
+
+## Replay the past {#replay-the-past}
+
+CCTV preserves the activity around an incident instead of requiring an operator to watch every camera live. Motion events and manual bookmarks create archive entries with before-and-after context. Reviewers can later open a recording and control the historic playback.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/16/16a59b0cde2f56fce07bb8322f95329af5f1892f564d2d3720c503bab621926e.webp" alt="A person captured by a CCTV camera" />
+
+*A subject captured from a configured CCTV camera.*
+
+
+
+Historic playback includes:
+
+* Play, pause, seek, restart, and timeline navigation
+* Skip backward or forward and step through the recording
+* Adjustable playback speed
+* The camera angle saved when the incident occurred
+* Archive controls for reviewing, preserving, exporting, or sharing recordings when configured
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/94/9441c0a0b197e98c13ac602a293654196b6369e0be22ba32840416210391ea8e.webp" alt="CCTV recording archive and historic playback controls" />
+
+*Motion detections and bookmarks remain available in the archive for later review.*
+
+
+
+## Complete camera management {#complete-camera-management}
+
+* Create persistent terminals and organize cameras into permission-controlled groups
+* Place and reposition cameras in the world
+* View cameras live with zoom and optional pan or tilt
+* Configure field of view, capture range, event cooldowns, and retention
+* Enable motion-triggered recordings or create manual bookmarks
+* Use normal, night-vision, and configured viewing modes
+* Optionally discover compatible CCTV props already included in maps and MLOs
+* Control administrators, live viewers, reviewers, deletion, uploads, Discord sharing, and remote access with ACE permissions
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ac/ac5b7823504f66d54252e245930781bab63361ff5ad4c790390e4eb438d95ada.webp" alt="CCTV camera network operator screen" />
+
+*Persistent terminals and permission-filtered cameras appear in one operator interface.*
+
+
+
+## How it works {#how-it-works}
+
+1. An administrator creates a terminal and adds one or more cameras.
+2. A camera detects configured activity, or an operator creates a bookmark.
+3. Events Core preserves the incident with pre-event and post-event context.
+4. The recording appears in the CCTV archive.
+5. An authorized reviewer opens the recording and replays the historic scene.
+
+CCTV can also be used for live monitoring, but live viewing is not required for an incident to be recorded.
+
+## Requirements {#requirements}
+
+| Requirement | Details                                                                                           |
+| ----------- | ------------------------------------------------------------------------------------------------- |
+| Events Core | Free required package: [download Events Core](https://sonoran.store/packages/7606652-events-core) |
+| Events CCTV | Paid DLC package: [download CCTV](https://sonoran.store/packages/7606654-events-cctv)             |
+| FXServer    | A current FiveM server with OneSync enabled                                                       |
+| Permissions | ACE permissions for administrators, operators, and reviewers                                      |
+| Framework   | Standalone by default; ESX, QBCore, and Qbox context can be configured                            |
+| Database    | No SQL database is required by the default configuration                                          |
+
+## Start here {#start-here}
+
+1. Follow [Installation](/store/cctv/installation) to install Events Core and CCTV in the correct order.
+2. Review [Configuration](/store/cctv/configuration) and [Permissions](/store/cctv/permissions).
+3. Create your first terminal and camera with [Camera Setup](/store/cctv/camera-setup).
+4. Test both live viewing and [Historic Playback](/store/cctv/playback).
+
+Building an integration? See the [Developer API](/store/cctv/developer-api) for the supported remote-session exports.
+
+For help, see [Troubleshooting](/store/cctv/troubleshooting) or contact [Sonoran Software support](https://support.sonoransoftware.com/).

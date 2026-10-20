@@ -1,0 +1,90 @@
+---
+title: Role Mapping
+description: Learn more about mapping Discord roles in Sonoran CMS!
+---
+
+## Mapping Discord Roles and CMS Ranks {#mapping-discord-roles-and-cms-ranks}
+
+In the **Administration** panel, navigate to **Integrations** > **Discord** > **Role Mapping**
+
+Configure your CMS x Discord [One-to-One](/bot/tutorials/sonoran-cms-integration/role-mapping#one-to-one-mapping) and [Category](/bot/tutorials/sonoran-cms-integration/role-mapping#category-mapping) mappings below.
+
+## One-to-One Mapping {#one-to-one-mapping}
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/e1/e1c7a31bb5e98595441d072e567932a33862c1d50d77027e10f066a684a3d8db.png" alt="" width="375" />
+
+*CMS x Discord: One-to-One Mapping*
+
+
+
+
+
+<Accordion title="One-to-One Mapping Explained">
+
+
+
+One-to-one mapping allows you to map a CMS rank to one or more Discord roles. Adding or removing a one-to-one mapped rank in the CMS will add or remove the Discord role and vice versa.
+
+**This mapping type is the most common.**
+
+* CMS: `Admin` rank
+* Discord: `Admin` role in one or more Discord guilds
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/43/43299419aaeed337113547a056fd8b78ac2da029f7cfb867ae0bebed03c443a2.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+## Category Mapping {#category-mapping}
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ad/ada15140a3da84204fe2079f317602ed6d5dc206686fe070a68c162178b9d4f9.png" alt="" width="375" />
+
+*CMS x Discord: Category Mapping*
+
+
+
+
+
+<Accordion title="Category Mapping Explained">
+
+
+
+Category mapping allows you to map multiple CMS ranks to a single Discord role. If a user has any of the CMS ranks they will receive the Discord role. If a user has none of the CMS ranks the Discord role will be removed.
+
+This mapping type is best used for role categories.
+
+* CMS: Multiple staff ranks `Moderator`, `Admin` and `Director`
+* Discord: A general `Staff` role
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/a6/a6ff11fcd4f1b9d8be50582ae9709032ba628cafcb27788f45fa0d049cc7ea8a.png" alt="" />
+
+
+
+
+
+</Accordion>
+
+
+
+## Syncing the Role Map {#syncing-the-role-map}
+
+<Info>
+
+After modifying the mapping, your community will automatically be re-synced.\
+This may take a couple of minutes to complete.
+</Info>
+
+While changes are automatic, you can also manually re-sync users with the `/sync` command. Administrators can also run `/sync community: yes` to re-sync the entire community in all linked Discord guilds.

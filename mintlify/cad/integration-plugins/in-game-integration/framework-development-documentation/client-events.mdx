@@ -1,0 +1,40 @@
+---
+title: Client Events
+description: This page will explain all client events from the SonoranCAD Core that
+  can be used on the client side
+---
+
+### Bodycam Record Toggle {#bodycam-record-toggle}
+
+This client event triggers a bodycam recording using a custom trigger name. This event requires the [Body Camera submodule](/cad/integration-plugins/in-game-integration/available-plugins/bodycam) to be enabled.
+
+```lua
+TriggerEvent('SonoranCAD::bodycam::AutoRecordTrigger', triggerName)
+```
+
+<Tabs>
+<Tab title="Parameters">
+
+
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `triggerName` | `string` | A custom label describing what caused the recording to start. |
+
+
+
+</Tab>
+
+<Tab title="Example Usage">
+
+```lua
+RegisterCommand('bodycamclip', function()
+    TriggerEvent('SonoranCAD::bodycam::AutoRecordTrigger', 'manual-clip')
+end, false)
+```
+
+</Tab>
+
+</Tabs>
+
+Use this event from your own client-side scripts whenever you want to create a bodycam clip for a specific gameplay action.

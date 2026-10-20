@@ -1,0 +1,308 @@
+---
+title: Dispatch AI
+description: Use voice commands to control your radio, set timers, and work with Sonoran
+  CAD across games.
+---
+
+Dispatch AI helps you control Sonoran Radio and work with Sonoran CAD by voice. Change channels, manage scanned channels, set timers, review your current CAD call, and more while playing.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/cf/cf6ed1bcb6fdccfe0270c7c90ad4f6742d657b3b629929a228493745d9b47ef4.webp" alt="Sonoran Radio Dispatch AI" />
+
+
+
+<Warning>
+
+Dispatch AI is in public beta. Usage limits depend on your community's [subscription](/radio/pricing/pricing-faq/standalone-pricing#dispatch-ai); a free tier is available.
+</Warning>
+
+<span id="setup-documentation" />
+
+## Common Setup {#common-setup}
+
+Complete this setup once for each Radio server using Dispatch AI. **The current setup requires a linked Sonoran CAD community, including for radio commands.**
+
+1. In Sonoran CAD, open **Admin** > **Advanced** > **In-Game Integration** > **Web API**. Copy the community ID and API key.
+2. In CAD, open **Admin** > **Customization** > **Servers** and note the server ID. The default is `1`.
+3. In Radio's admin panel, open **Customization** > **Dispatch AI**. Select a Radio server or use **+** to create one.
+4. Under **Link Sonoran CAD**, enter the CAD community ID, API key, and server ID. Fields save automatically when you leave them.
+5. Toggle **Dispatch AI Enabled** on.
+6. Sign in to Radio with your Sonoran account, join that Radio server, and connect to a channel. Use the same account in CAD for actions involving your unit.
+
+This CAD API link is also required for [desktop overlay panic synchronization](/radio/tutorials/integrations/sonoran-cad-integration#desktop-overlay-panic). Configure it for the Radio server used by your overlay. Panic synchronization works even when **Dispatch AI Enabled** is off.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/31/319a68757bf6ad5cb5fbef824e77d3f7730469bd3085da7285ac3120081c286a.jpg" alt="Dispatch AI configuration showing enable controls, timer settings, and the Sonoran CAD link" />
+
+*Configure Dispatch AI for the selected Radio server.*
+
+
+
+## Using the AI {#using-the-ai}
+
+Hold push-to-talk and start your request with **Dispatch**, the default wake word. For example: “Dispatch, switch me to TAC 1.” Wait for the AI's response before making another request.
+
+When the first user connects, allow a few seconds for the “Dispatch Online” announcement.
+
+<span id="via-hotkey" />
+
+
+
+<Accordion title="Wake words and hotkeys">
+
+
+
+1. Open **Settings** > **AI** to configure your wake word. Use the microphone button to record a custom wake word.
+2. For a manual trigger in the web or desktop app, open **Settings** > **Hotkeys** and set **AI Toggle**.
+3. Hold push-to-talk, activate the AI, and speak your request.
+
+Listen for the activation beep. Say the wake word near the start of your transmission.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/86/8696ef95183ed9afbe869f4290f6a90069b89040960c9f253464dce15be89c70.png" alt="Dispatch AI wake word settings" />
+
+
+
+FiveM players can also use the [in-game AI keybind](/radio/game-integrations/fivem/fivem#setup).
+
+
+
+</Accordion>
+
+
+
+<span id="ai-commands-and-features" />
+<span id="radio-functionality" />
+
+## Radio Commands {#radio-commands}
+
+These commands work across games, including **FiveM, ER:LC, and Arma 3**. Use the channel names configured by your community.
+
+| Action | Example |
+| --- | --- |
+| Change your primary transmit channel | “Dispatch, switch me to TAC 1.” |
+| Move another connected user | “Dispatch, move A-12 to Dispatch.” |
+| Add a scanned channel | “Dispatch, add Fire to my scanned channels.” |
+| Remove a scanned channel | “Dispatch, remove Fire from my scanned channels.” |
+| Hear your current channels | “Dispatch, what channel am I on?” |
+
+Channel changes respect community access permissions. Moving another user requires permission to move clients. Include the group name when several channels have the same name, or answer the AI's clarification.
+
+## Timers {#timers}
+
+Ask for a timer by duration and, optionally, a purpose. Dispatch AI tells you when it expires.
+
+| Action | Example |
+| --- | --- |
+| Start a timer | “Dispatch, set a timer for five minutes.” |
+| Start a named timer | “Dispatch, start a two-minute PIT timer.” |
+| Cancel your timer | “Dispatch, cancel my timer.” |
+
+You can have one active timer in the Radio server. Starting another replaces it. Timers must be at least 10 seconds and no longer than the community's configured maximum, up to 30 minutes.
+
+
+
+<Accordion title="Configure community timer limits">
+
+
+
+1. Open **Customization** > **Dispatch AI** and select the Radio server.
+2. Under **Dispatch Timers**, turn **Enable dispatch timers** on or off.
+3. Set **Maximum timer duration (minutes)** from `1` to `30`. Leave the field to save.
+
+The default maximum is 30 minutes. See the [setup screenshot](#common-setup) for these controls.
+
+
+
+</Accordion>
+
+
+
+## Sonoran CAD Commands {#sonoran-cad-commands}
+
+CAD actions use the community and server linked in [Common Setup](#common-setup). Be on duty with the appropriate unit selected in CAD when asking about your status or current call.
+
+
+
+<Accordion title="Review your current call">
+
+
+
+Ask the AI to repeat the details of the CAD dispatch call you are attached to.
+
+“Dispatch, repeat my current call.”
+
+You can also ask about the latest call or give a short correction to a recent request, such as “Dispatch, actually, the plate is ABC124.” Be specific if several calls or units could match.
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Status, lookups, and panic">
+
+
+
+| Action | Example |
+| --- | --- |
+| Update your status | “Dispatch, A-10, mark me available.” |
+| Update another unit's status | “Dispatch, set B-11 to 10-8.” |
+| Run a plate lookup | “Dispatch, run the plate ABC123.” |
+| Run a name lookup | “Dispatch, check John Doe.” |
+| Toggle panic | “Dispatch, toggle my panic status.” |
+
+Use your community's configured status codes. Lookup results are sent to CAD with a brief radio response.
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Create and manage calls">
+
+
+
+| Action | Example |
+| --- | --- |
+| Create a call | “Dispatch, show me out on traffic with a blue sedan, plate ABC123.” |
+| Attach to a call | “Dispatch, attach me to the robbery in progress.” |
+| Attach another unit | “Dispatch, attach B-11 to my call.” |
+| Add a note | “Dispatch, add a note to my call: the vehicle is white.” |
+| Detach yourself | “Dispatch, clear my call.” |
+| Close the call | “Dispatch, close my call.” |
+
+New calls use your unit's location when available unless you specify another location. Including a plate in a new call also runs a plate lookup.
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Unit groups">
+
+
+
+“Dispatch, add me and B-11 to group Ladder 12.”
+
+“Dispatch, clear my unit group.”
+
+Use the unit number or name to identify other units.
+
+
+
+</Accordion>
+
+
+
+<span id="fivem-gps-route-to-postal" />
+<span id="fivem-gps-route-to-unit" />
+<span id="fivem-automatic-status-on-postal" />
+
+## Game-Specific Features {#game-specific-features}
+
+The shared commands above apply across games. Choose your game for additional setup and integrations.
+
+
+
+<CardGroup cols={2}>
+
+<Card title="FiveM" href="/radio/game-integrations/fivem/fivem" img="https://docs-assets.sonoransoftware.com/sha256/7c/7c719e838572e937e9fd0b21910f8c7f901540f20398c8a206deccea62966a2d.jpg">
+
+Emergency call readouts, GPS routing, and automatic arrival status.
+
+</Card>
+
+<Card title="ER:LC" href="/radio/game-integrations/roblox/erlc" img="https://docs-assets.sonoransoftware.com/sha256/7b/7b9fb50a59fa9c260868ce650de0f180af60383c8830b2a60595097643ce3aec.jpg">
+
+Read emergency calls over the channels assigned to each map zone.
+
+</Card>
+
+<Card title="Arma 3" href="/radio/game-integrations/arma-3/arma-3" img="https://docs-assets.sonoransoftware.com/sha256/0e/0ec57997ada994cae817755d1564aefca615df284b55c435e488810cf9ed98b3.jpg">
+
+Use shared radio commands and timers from the desktop overlay.
+
+</Card>
+
+</CardGroup>
+
+
+
+## Customization {#customization}
+
+
+
+<Accordion title="Community phrases and human dispatchers">
+
+
+
+Open **Customization** > **Dispatch AI** and select the Radio server.
+
+* Expand an action under **Example prompts** to add short examples of your community's radio phrases.
+* Use the human-dispatcher button to choose whether AI stays active or pauses when a dispatcher is active in CAD.
+
+Keep example phrases short and specific.
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="Language, transcripts, and phrase corrections">
+
+
+
+Open **Settings** > **AI** to choose the AI language, review **Recent Transcripts**, or add **Phrase Overrides** for commonly misheard words. The AI uses the app's language by default.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/ee/eee896a7a4531da2ccde8d6e8ec57cef662ceaa6c38b84ae0e840aec1c11403a.png" alt="Recent transcripts and phrase override controls" />
+
+
+
+
+
+</Accordion>
+
+
+
+
+
+<Accordion title="AI volume and replies">
+
+
+
+Adjust **AI Volume** under **Settings** > **Audio**. In the AI settings, choose whether to hear replies to other users or only replies directed to you.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/07/075077af99587d672c3800c75bb6144bdddba952d0e2036c8d0fb1f6119f12da.png" alt="Settings for hearing Dispatch AI replies" />
+
+
+
+
+
+</Accordion>
+
+
+
+## Token Usage {#token-usage}
+
+View your community's usage under **Settings** > **AI** > **Token Usage**, or in the admin **Dispatch AI** panel. Limits reset on the first of each month. Once the limit is reached, further AI requests are unavailable until the reset or a subscription upgrade.
+
+See [Dispatch AI usage limits](/radio/pricing/pricing-faq/standalone-pricing#dispatch-ai).

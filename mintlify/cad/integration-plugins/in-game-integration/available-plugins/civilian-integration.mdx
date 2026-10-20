@@ -1,0 +1,83 @@
+---
+title: Civilian Integration
+description: Allows players to fetch ID information from the CAD on demand.
+---
+
+To create a new civilian character from an in-game form, see [Civilian Registration (CivReg)](/cad/integration-plugins/in-game-integration/available-plugins/civilian-registration).
+
+![Sonoran CAD - Civilian Integration Lookup](https://docs-assets.sonoransoftware.com/sha256/b8/b809a53c182c03f0fdeca0a32127c697b67e094a52bcf2e93ce96423aab70fba.png)
+
+## Activation Guide {#activation-guide}
+
+### 1. Download and Install the Resource {#id-1.-download-and-install-the-resource}
+
+<Info>
+
+This submodule is already **enabled by default** when installing the [Sonoran CAD FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
+</Info>
+
+### 2. Adjust the Configuration {#id-2.-adjust-the-configuration}
+
+The CAD display settings are stored inside of the `/configuration/civintegration_config.lua` file.
+
+### 3. Ensure Players are Linked {#id-3.-ensure-players-are-linked}
+
+Ensure the player has already [linked their CAD](/cad/integration-plugins/in-game-integration/link-user-in-game) for this integration to work.
+
+## Configuration {#configuration}
+
+
+
+<Accordion title="civintegrationconfig.lua">
+
+
+
+| Option         | Description                                                                                                                                                                                                                                                                            | Default Value |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| cacheTime      | Time to cache characters in seconds                                                                                                                                                                                                                                                    | 3600          |
+| allowCustomIds | Allow players to use /setid to set a custom name.                                                                                                                                                                                                                                      | true          |
+| allowPurge     | Allow players to use /refreshid to "purge" their character list from cache.                                                                                                                                                                                                            | true          |
+| enableIDCardUI | <strong>Recommended</strong>: Allows for a more realistic identification ui with /showid<br /><br /><strong>IF USING:</strong> Please ensure you start the resource <code>sonoran_idcard</code> <strong>BEFORE</strong> <code>sonorancad</code> in your server resource start order | false         |
+
+
+
+</Accordion>
+
+
+
+## Usage {#usage}
+
+#### Commands {#commands}
+
+In-game commands can be used to
+
+* `/civid show` Show the ID of your currently selected character in the CAD to the nearest player.
+  * If using the `/civid set` command, it will show your manually configured character info instead of from the CAD.
+* `/civid set` Manually enter character information for your ID.
+* `/civid reset` Result the manually entered character information for your ID.
+* `/civid refresh` Removes the "cached" characters for the client. This allows players to swap characters in the CAD without relogging or waiting for the cache timer.
+* `/civid help` Displays a list of commands.
+
+
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/56/5657a52a57a37cb26a33e2be4699bc5815c7f9d6f43e813a9702fea851d4d20a.png" alt="" />
+
+
+
+### Export {#export}
+
+You can use this export to fetch all characters for a specific player ID. This is a server-side export only.
+
+```lua
+Function: "GetCharacters"
+Parameters:
+    player: the player ID
+    callback: function to call after fetching the data. Returns an array of character objects.
+
+Example:
+    exports["sonorancad"]:GetCharacters(playerId, function(result)
+        -- do stuff with result, an array of character objects
+    end)
+```
+
+This function can also be used in other submodules (without the export bit).

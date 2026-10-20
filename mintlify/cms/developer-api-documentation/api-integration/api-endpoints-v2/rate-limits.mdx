@@ -1,0 +1,110 @@
+---
+title: Rate Limits
+description: Rate limits for the v2 API.
+---
+
+The documented ceilings below are intentionally a little lower than the live gateway limits so normal integration bursts still have a safety buffer.
+
+All limits are enforced per credential.
+
+## General {#general}
+
+| Endpoint                                                      | Safe Limit        |
+| ------------------------------------------------------------- | ----------------- |
+| [Get Community](/cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-community)                     | `13 requests/min` |
+| [Get Sub Version](/cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-sub-version)                 | `13 requests/min` |
+| [Lookup Community](/cms/developer-api-documentation/api-integration/api-endpoints-v2/general/lookup-community)               | `13 requests/min` |
+| [Get Departments](/cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-departments)                 | `13 requests/min` |
+| [Get Profile Fields](/cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-profile-fields)           | `13 requests/min` |
+| [Get Clock In Types](/cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-clockin-types)            | `13 requests/min` |
+| [Get Custom Log Types](/cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-custom-log-types)       | `13 requests/min` |
+| [Get Promotion Flows](/cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-promotion-flows)         | `13 requests/min` |
+| [Trigger Promotion Flows](/cms/developer-api-documentation/api-integration/api-endpoints-v2/general/trigger-promotion-flows) | `13 requests/min` |
+| [Undo Rank Change](/cms/developer-api-documentation/api-integration/api-endpoints-v2/general/undo-rank-change)               | `13 requests/min` |
+| [Create Short URL](/cms/developer-api-documentation/api-integration/api-endpoints-v2/general/create-short-url)               | `13 requests/min` |
+
+## Accounts {#accounts}
+
+| Endpoint                                                       | Safe Limit        |
+| -------------------------------------------------------------- | ----------------- |
+| [Get Accounts](/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/get-accounts)                       | `22 requests/min` |
+| [Search Accounts](/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/search-accounts)                 | `27 requests/min` |
+| [Get Account](/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/get-account)                         | `27 requests/min` |
+| [Get Account Ranks](/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/get-account-ranks)             | `27 requests/min` |
+| [Get Account Identifiers](/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/get-account-identifiers) | `22 requests/min` |
+| [Register Identifiers](/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/register-identifiers)       | `22 requests/min` |
+| [Set Account Name](/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/set-account-name)               | `22 requests/min` |
+| [Set Account Ranks](/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/set-account-ranks)             | `22 requests/min` |
+| [Edit Profile Fields](/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/edit-profile-fields)         | `22 requests/min` |
+| [Clock Account](/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/clock-account)                     | `22 requests/min` |
+| [Get Current Clock In](/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/get-current-clock-in)       | `27 requests/min` |
+| [Get Latest Activity](/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/get-latest-activity)         | `27 requests/min` |
+| [Force Sync](/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/force-sync)                           | `27 requests/min` |
+
+## Servers {#servers}
+
+| Endpoint                                                                  | Safe Limit        |
+| ------------------------------------------------------------------------- | ----------------- |
+| [Get Servers](/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/get-servers)                                     | `13 requests/min` |
+| [Set Servers](/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/set-servers)                                     | `9 requests/min`  |
+| [Add Servers](/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/add-servers)                                     | `9 requests/min`  |
+| [Get ACE Config](/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/get-ace-config)                               | `27 requests/min` |
+| [Set ACE Config](/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/set-ace-config)                               | `18 requests/min` |
+| [Set Server Type](/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/set-server-type)                             | `18 requests/min` |
+| [Verify Whitelist](/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/verify-whitelist)                           | `27 requests/min` |
+| [Full Whitelist](/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/full-whitelist)                               | `13 requests/min` |
+| [Activity Tracker](/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/activity-tracker)                           | `27 requests/min` |
+| [Activity Tracker Server Start](/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/activity-tracker-server-start) | `27 requests/min` |
+
+## Events {#events}
+
+| Endpoint               | Safe Limit        |
+| ---------------------- | ----------------- |
+| [RSVP](/cms/developer-api-documentation/api-integration/api-endpoints-v2/events/rsvp) | `27 requests/min` |
+
+## Forms {#forms}
+
+| Endpoint                                                      | Safe Limit        |
+| ------------------------------------------------------------- | ----------------- |
+| [Change Form Stage](/cms/developer-api-documentation/api-integration/api-endpoints-v2/forms/change-stage)                    | `27 requests/min` |
+| [Get Template Submissions](/cms/developer-api-documentation/api-integration/api-endpoints-v2/forms/get-template-submissions) | `13 requests/min` |
+| [Get Form Lock Status](/cms/developer-api-documentation/api-integration/api-endpoints-v2/forms/get-lock-status)              | `27 requests/min` |
+| [Set Form Lock Status](/cms/developer-api-documentation/api-integration/api-endpoints-v2/forms/set-lock-status)              | `18 requests/min` |
+| [Get Submission](/cms/developer-api-documentation/api-integration/api-endpoints-v2/forms/get-submission)                     | `27 requests/min` |
+
+## Rosters {#rosters}
+
+| Endpoint                                              | Safe Limit       |
+| ----------------------------------------------------- | ---------------- |
+| [Get Roster Contents](/cms/developer-api-documentation/api-integration/api-endpoints-v2/rosters/get-roster-contents) | `9 requests/min` |
+
+## Disciplinary {#disciplinary}
+
+| Endpoint                                                                   | Safe Limit        |
+| -------------------------------------------------------------------------- | ----------------- |
+| [Get Member Points](/cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary/get-member-points)                     | `27 requests/min` |
+| [Get Member Records](/cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary/get-member-records)                   | `27 requests/min` |
+| [Add Member Record](/cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary/add-member-record)                     | `18 requests/min` |
+| [Update Member Record Points](/cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary/update-member-record-points) | `18 requests/min` |
+| [Update Member Record Reason](/cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary/update-member-record-reason) | `18 requests/min` |
+| [Update Member Record Status](/cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary/update-member-record-status) | `18 requests/min` |
+
+## ERLC {#erlc}
+
+| Endpoint                                         | Safe Limit        |
+| ------------------------------------------------ | ----------------- |
+| [Get Online Players](/cms/developer-api-documentation/api-integration/api-endpoints-v2/erlc/get-online-players) | `27 requests/min` |
+| [Get Player Queue](/cms/developer-api-documentation/api-integration/api-endpoints-v2/erlc/get-player-queue)     | `27 requests/min` |
+| [Add ERLC Record](/cms/developer-api-documentation/api-integration/api-endpoints-v2/erlc/add-record)            | `18 requests/min` |
+| [Execute Command](/cms/developer-api-documentation/api-integration/api-endpoints-v2/erlc/execute-command)       | `18 requests/min` |
+| [Lock Team](/cms/developer-api-documentation/api-integration/api-endpoints-v2/erlc/lock-team)                   | `18 requests/min` |
+| [Unlock Team](/cms/developer-api-documentation/api-integration/api-endpoints-v2/erlc/unlock-team)               | `18 requests/min` |
+
+## Sessions {#sessions}
+
+| Endpoint                                               | Safe Limit        |
+| ------------------------------------------------------ | ----------------- |
+| [Get Current Session](/cms/developer-api-documentation/api-integration/api-endpoints-v2/sessions/get-current-session) | `27 requests/min` |
+| [Start Session](/cms/developer-api-documentation/api-integration/api-endpoints-v2/sessions/start-session)             | `27 requests/min` |
+| [Stop Session](/cms/developer-api-documentation/api-integration/api-endpoints-v2/sessions/stop-session)               | `27 requests/min` |
+| [Cancel Session](/cms/developer-api-documentation/api-integration/api-endpoints-v2/sessions/cancel-session)           | `9 requests/min`  |
