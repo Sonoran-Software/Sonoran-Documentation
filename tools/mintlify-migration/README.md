@@ -1,35 +1,7 @@
-# Sonoran documentation migration
+# Documentation validation tools
 
-This branch stages the public GitBook documentation in Mintlify without changing the GitBook source tree or production documentation hostname. Mintlify publishes the `mintlify/` subdirectory of `codex/mintlify-migration` at https://sonoran-software-systems.mintlify.site/.
+The active documentation is authored directly in `mintlify/` and published from `master` at https://docs.sonoransoftware.com. This directory retains its historical name for compatibility; it no longer regenerates the site from GitBook Markdown.
 
-The routing manifest records source commit `d01ddc8d7df4cc47d0d15d6e0e2842aa7a7d41c3`, 914 source pages, 913 published URLs, and the live heading IDs. `fragment-aliases.json` preserves older authored anchors; `link-overrides.json` records evidence for repaired obsolete links and the few related prose corrections. Source Markdown remains authoritative while GitBook is live. Reconcile later source changes before cutover; do not regenerate the manifest from filenames alone.
+See [validation.md](validation.md) for local MDX/schema/code-example checks, preserved route/anchor checks and hosted production acceptance. `routing-manifest.json` and `fragment-aliases.json` record the URL compatibility baseline. The schema and dependency lockfile make local and CI validation repeatable.
 
-## Rebuild
-
-Use Python 3.10+ with PyYAML and beautifulsoup4 installed. From the repository root:
-
-```sh
-python tools/mintlify-migration/build.py
-```
-
-The builder reads source Markdown and the checked-in manifests, and writes only `mintlify/` plus its conversion report. It does not upload assets or modify DNS. Keep the official branding and asset host in `asset-manifest.json`. Large animation derivatives preserve the original object mapping and use a separate `optimizedEntries` list.
-
-The default `--mode staging` includes global `noindex, follow` metadata. When production cutover is authorized, `python tools/mintlify-migration/build.py --mode production` omits that global staging directive. It retains the production canonical domain, `seo.indexing: "all"`, and the intentional source-only page's `noindex: true`. Use the production acceptance command in [validation.md](validation.md) after the production deployment and hostname routing are ready. Editing generated `docs.json` alone does not change the builder's default for later rebuilds.
-
-Run the checks in [validation.md](validation.md), then inspect the complete Mintlify deployment log and hosted pages. A successful deployment status alone does not guarantee that every page was included. The workflow validates syntax, code examples, route/link/anchor coverage, and configuration before a change is treated as ready.
-
-## Media
-
-The isolated R2 bucket is `docs-mintlify`; its public hostname is https://docs-assets.sonoransoftware.com/. Objects use immutable SHA-256 keys. Original source assets are read directly from Git objects, avoiding another local media copy. Public CORS allows GET/HEAD and video range requests.
-
-`r2-assets.cjs` uses the AWS S3 SDK, including for `--help`; install `@aws-sdk/client-s3` separately or point `AWS_SDK_MODULE` at an existing installation. `ffprobe` is required for `upload-optimized`; `sharp` is used only by `branding`. Run `node tools/mintlify-migration/r2-assets.cjs --help` for options. Supply existing credentials through environment variables or an untracked credentials file; never commit or log credential values. Keep working manifests and generated verification reports in the ignored `reports/` directory. Uploading is a separate operation from rebuilding, and ordinary site validation needs no credentials.
-
-See [media.md](media.md) for reproduction commands, encoding settings, uploader usage, and review limits. The small checked-in [media verification evidence](evidence/media-verification.json) records the completed storage, public response, and optimized-video checksum checks.
-
-## Acceptance and cutover
-
-See [MIGRATION_STATUS.md](../../MIGRATION_STATUS.md) for the remaining work and production cutover gate, and [integration-acceptance.md](integration-acceptance.md) for the GitBook-specific API/MCP differences. Staging is marked `noindex` and canonicalizes to the current production URLs. Those staging settings must be reviewed for production.
-
-The Starter plan is selected and the reader Assistant service is inactive. The Pro trial remains available until November 2 because Billing provides no visible early-end control. CSS also hides residual trial Assistant controls; this is not cancellation of the trial or a service control.
-
-Keep GitBook live and retain the current documentation DNS until the user approves a tested cutover. The 15-minute recovery automation should pause once staging acceptance is complete.
+The complete pre-cleanup source, committed media, conversion builder, original R2 asset inventory and upload tooling are on branch `archive/gitbook-2026-10-20` and annotated tag `gitbook-final-2026-10-20`. See the root [README](../../README.md) for recovery instructions and archive scope. Existing R2 objects remain live and unchanged.

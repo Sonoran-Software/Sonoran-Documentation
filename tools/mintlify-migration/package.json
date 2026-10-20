@@ -4,7 +4,7 @@
   "type": "module",
   "description": "Syntax and hosted acceptance checks for the Sonoran Mintlify documentation migration.",
   "scripts": {
-    "validate": "node validate-site.mjs --root ../../mintlify --source-root ../.. --manifest routing-manifest.json",
+    "validate": "node validate-site.mjs --root ../../mintlify --mode production",
     "probe": "node probe-hosted.mjs"
   },
   "dependencies": {

@@ -1,0 +1,22 @@
+# Legacy files can remain in existing workspaces after the archive migration.
+# Active documentation belongs under mintlify/.
+/bot/
+/cad/
+/cms/
+/radio/
+/store/
+/studio/
+/welcome/
+/gitbook-docs.yaml
+/docs.json
+/MIGRATION_STATUS.md
+/tools/promo-images/
+/tools/mintlify-migration/build.py
+/tools/mintlify-migration/r2-assets.cjs
+/tools/mintlify-migration/asset-manifest.json
+/tools/mintlify-migration/conversion-report.json
+/tools/mintlify-migration/link-overrides.json
+/tools/mintlify-migration/media.md
+/tools/mintlify-migration/feature-parity.md
+/tools/mintlify-migration/integration-acceptance.md
+/tools/mintlify-migration/evidence/
