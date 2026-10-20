@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-20T01:25:56.754696+00:00",
+  "scope": "Public Mintlify staging, read-only HTTP and native search/content checks. No production DNS or GitBook cancellation.",
+  "stagingBase": "https://sonoran-software-systems.mintlify.site",
+  "officialDeploymentBase": "https://sonoran-software-systems.mintlify.app",
+  "sourceCommit": "d01ddc8d7df4cc47d0d15d6e0e2842aa7a7d41c3",
+  "fullVerificationCommit": "ea4373357be8209188d22c36306a2f5e54a60a6e",
+  "followUpCommit": "621ade5dd0bde229e39831b5fbf9deb66bcb8761",
+  "fullVerification": {
+    "routesChecked": 914,
+    "htmlGet200": 914,
+    "htmlHead200": 914,
+    "markdownGet200": 914,
+    "markdownHead200": 914,
+    "htmlNoindex": 914,
+    "markdownHeadNoindex": 914,
+    "canonicalMatches": 914,
+    "redirectsChecked": 58,
+    "redirectStatusCounts": {
+      "308": 58
+    },
+    "redirectsMatch": 58,
+    "recursiveIndexCoverage": {
+      "expectedCount": 913,
+      "excludedCount": 1,
+      "missing": [],
+      "excludedButIndexed": [],
+      "unexpected": []
+    },
+    "sitemapCoverage": {
+      "expectedCount": 913,
+      "locationCount": 913,
+      "missing": [],
+      "unexpected": []
+    },
+    "rootAndIndexCanonical": "https://docs.sonoransoftware.com",
+    "rootAndIndexStatus": 200,
+    "mcp": {
+      "initializeStatus": 200,
+      "toolListStatus": 200,
+      "readOnlySearchesPassed": 2,
+      "readOnlyFileReadsPassed": 1,
+      "assistantOrFeedbackInvoked": false
+    },
+    "deploymentChecks": [
+      {
+        "name": "Mintlify Deployment",
+        "status": "completed",
+        "conclusion": "success",
+        "detailsUrl": "https://mintlify.com",
+        "snapshotPages": 914,
+        "failedPageParseReported": false
+      },
+      {
+        "name": "validate",
+        "status": "completed",
+        "conclusion": "success",
+        "detailsUrl": "https://github.com/Sonoran-Software/Sonoran-Documentation/actions/runs/39352414788/job/118399409418",
+        "snapshotPages": null,
+        "failedPageParseReported": false
+      }
+    ]
+  },
+  "followUp": {
+    "changedPagesChecked": 8,
+    "allPassed": true,
+    "recursiveIndexedPageCount": 913,
+    "compiledIframeHost": "embed.app.guidde.com",
+    "browserPlayerReviewIncluded": false,
+    "pages": [
+      {
+        "route": "/cms/tutorials/getting-started/inviting-users-to-your-cms",
+        "htmlStatus": 200,
+        "htmlHeadStatus": 200,
+        "markdownStatus": 200,
+        "markdownHeadStatus": 200,
+        "canonical": "https://docs.sonoransoftware.com/cms/tutorials/getting-started/inviting-users-to-your-cms",
+        "htmlNoindex": true,
+        "markdownNoindex": true,
+        "expectedIframeUrls": [
+          "https://embed.app.guidde.com/playbooks/9cFxjht6JjCRnDrBKpSeHN?autoplay=false"
+        ],
+        "expectedEmbedHost": true,
+        "markdownHasExpectedIframe": true,
+        "passed": true,
+        "compiledIframeUrls": [
+          "https://embed.app.guidde.com/playbooks/9cFxjht6JjCRnDrBKpSeHN?autoplay=false"
+        ],
+        "compiledFramesMatch": true
+      },
+      {
+        "route": "/cms/tutorials/getting-started/registering-your-account",
+        "htmlStatus": 200,
+        "htmlHeadStatus": 200,
+        "markdownStatus": 200,
+        "markdownHeadStatus": 200,
+        "canonical": "https://docs.sonoransoftware.com/cms/tutorials/getting-started/registering-your-account",
+        "htmlNoindex": true,
+        "markdownNoindex": true,
+        "expectedIframeUrls": [
+          "https://embed.app.guidde.com/playbooks/cKaxjBfjELSb29e43BA4Yd?autoplay=false"
+        ],
+        "expectedEmbedHost": true,
+        "markdownHasExpectedIframe": true,
+        "passed": true,
+        "compiledIframeUrls": [
+          "https://embed.app.guidde.com/playbooks/cKaxjBfjELSb29e43BA4Yd?autoplay=false"
+        ],
+        "compiledFramesMatch": true
+      },
+      {
+        "route": "/cms/tutorials/getting-started/registering-your-community",
+        "htmlStatus": 200,
+        "htmlHeadStatus": 200,
+        "markdownStatus": 200,
+        "markdownHeadStatus": 200,
+        "canonical": "https://docs.sonoransoftware.com/cms/tutorials/getting-started/registering-your-community",
+        "htmlNoindex": true,
+        "markdownNoindex": true,
+        "expectedIframeUrls": [
+          "https://embed.app.guidde.com/playbooks/6kTLSFXwofS2QDNHnuMcjQ?autoplay=false"
+        ],
+        "expectedEmbedHost": true,
+        "markdownHasExpectedIframe": true,
+        "passed": true,
+        "compiledIframeUrls": [
+          "https://embed.app.guidde.com/playbooks/6kTLSFXwofS2QDNHnuMcjQ?autoplay=false"
+        ],
+        "compiledFramesMatch": true
+      },
+      {
+        "route": "/cms/tutorials/user-management/configuring-user-permissions",
+        "htmlStatus": 200,
+        "htmlHeadStatus": 200,
+        "markdownStatus": 200,
+        "markdownHeadStatus": 200,
+        "canonical": "https://docs.sonoransoftware.com/cms/tutorials/user-management/configuring-user-permissions",
+        "htmlNoindex": true,
+        "markdownNoindex": true,
+        "expectedIframeUrls": [
+          "https://embed.app.guidde.com/playbooks/tZ6JoJVGXMWeJZejtoNmci?autoplay=false"
+        ],
+        "expectedEmbedHost": true,
+        "markdownHasExpectedIframe": true,
+        "passed": true,
+        "compiledIframeUrls": [
+          "https://embed.app.guidde.com/playbooks/tZ6JoJVGXMWeJZejtoNmci?autoplay=false"
+        ],
+        "compiledFramesMatch": true
+      },
+      {
+        "route": "/cms/tutorials/user-management/creating-departments",
+        "htmlStatus": 200,
+        "htmlHeadStatus": 200,
+        "markdownStatus": 200,
+        "markdownHeadStatus": 200,
+        "canonical": "https://docs.sonoransoftware.com/cms/tutorials/user-management/creating-departments",
+        "htmlNoindex": true,
+        "markdownNoindex": true,
+        "expectedIframeUrls": [
+          "https://embed.app.guidde.com/playbooks/a7SxReQKBLpNWVAx1G9LZv?autoplay=false"
+        ],
+        "expectedEmbedHost": true,
+        "markdownHasExpectedIframe": true,
+        "passed": true,
+        "compiledIframeUrls": [
+          "https://embed.app.guidde.com/playbooks/a7SxReQKBLpNWVAx1G9LZv?autoplay=false"
+        ],
+        "compiledFramesMatch": true
+      },
+      {
+        "route": "/cms/tutorials/user-management/modify-users-permissions-and-information",
+        "htmlStatus": 200,
+        "htmlHeadStatus": 200,
+        "markdownStatus": 200,
+        "markdownHeadStatus": 200,
+        "canonical": "https://docs.sonoransoftware.com/cms/tutorials/user-management/modify-users-permissions-and-information",
+        "htmlNoindex": true,
+        "markdownNoindex": true,
+        "expectedIframeUrls": [
+          "https://embed.app.guidde.com/playbooks/9t7tJGYCTmTCa9V68Hzf7f?autoplay=false"
+        ],
+        "expectedEmbedHost": true,
+        "markdownHasExpectedIframe": true,
+        "passed": true,
+        "compiledIframeUrls": [
+          "https://embed.app.guidde.com/playbooks/9t7tJGYCTmTCa9V68Hzf7f?autoplay=false"
+        ],
+        "compiledFramesMatch": true
+      },
+      {
+        "route": "/cms/tutorials/user-management/rank-promotions",
+        "htmlStatus": 200,
+        "htmlHeadStatus": 200,
+        "markdownStatus": 200,
+        "markdownHeadStatus": 200,
+        "canonical": "https://docs.sonoransoftware.com/cms/tutorials/user-management/rank-promotions",
+        "htmlNoindex": true,
+        "markdownNoindex": true,
+        "expectedIframeUrls": [
+          "https://embed.app.guidde.com/playbooks/wJ25VP5VoPdCjmsS44zKHr?autoplay=false"
+        ],
+        "expectedEmbedHost": true,
+        "markdownHasExpectedIframe": true,
+        "passed": true,
+        "compiledIframeUrls": [
+          "https://embed.app.guidde.com/playbooks/wJ25VP5VoPdCjmsS44zKHr?autoplay=false"
+        ],
+        "compiledFramesMatch": true
+      },
+      {
+        "route": "/cms/tutorials/user-management/viewing-a-community-profile",
+        "htmlStatus": 200,
+        "htmlHeadStatus": 200,
+        "markdownStatus": 200,
+        "markdownHeadStatus": 200,
+        "canonical": "https://docs.sonoransoftware.com/cms/tutorials/user-management/viewing-a-community-profile",
+        "htmlNoindex": true,
+        "markdownNoindex": true,
+        "expectedIframeUrls": [
+          "https://embed.app.guidde.com/playbooks/9pgQ43qPRgvuuVcyA8ma8n?autoplay=false"
+        ],
+        "expectedEmbedHost": true,
+        "markdownHasExpectedIframe": true,
+        "passed": true,
+        "compiledIframeUrls": [
+          "https://embed.app.guidde.com/playbooks/9pgQ43qPRgvuuVcyA8ma8n?autoplay=false"
+        ],
+        "compiledFramesMatch": true
+      }
+    ],
+    "deploymentChecks": [
+      {
+        "name": "Mintlify Deployment",
+        "status": "completed",
+        "conclusion": "success",
+        "detailsUrl": "https://mintlify.com",
+        "snapshotPages": 914,
+        "failedPageParseReported": false
+      },
+      {
+        "name": "validate",
+        "status": "completed",
+        "conclusion": "success",
+        "detailsUrl": "https://github.com/Sonoran-Software/Sonoran-Documentation/actions/runs/39353154347/job/118401794698",
+        "snapshotPages": null,
+        "failedPageParseReported": false
+      }
+    ]
+  },
+  "indexCacheObservation": {
+    "siteAliasDirectChildIndexWasStale": true,
+    "advertisedAppChildIndexFresh": true,
+    "cacheBustedSiteChildIndexFresh": true,
+    "resolution": "Follow advertised exact same-project child-index URLs. Do not rewrite .app child URLs back to the separately cached .site alias."
+  },
+  "paidTrialState": "Assistant dashboard disabled by owner; trial end was not cancelled. No paid Assistant request was made by these checks."
+}

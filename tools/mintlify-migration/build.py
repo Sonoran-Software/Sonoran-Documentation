@@ -179,6 +179,11 @@ class Converter:
             for im in c.find_all('img'): im.replace_with(self.image(im))
             for br in c.find_all('br'): br.replace_with(' / ')
             for code in c.find_all('code'): code.replace_with(self.token('`'+code.get_text()+'`'))
+            for i,item in enumerate(c.find_all('li')):
+                item.insert_before((self.token('<br />') if i else '')+'• ')
+            # Inline emphasis must not split endpoint identifiers such as get_com_account.
+            for inline in c.find_all(['em','strong','b','i','u','s','mark','span','sub','sup']): inline.unwrap()
+            c.smooth()
             return markers+c.get_text(' ',strip=True).replace('|','\\|').replace('\n',' ')
         matrix=[[cell(c) for c in tr.find_all(['td','th'],recursive=False)] for tr in rows]
         matrix=[r for r in matrix if r]
@@ -401,6 +406,14 @@ class Converter:
                 if alias not in self.routes and alias!=p['publishedPath']:
                     redirects.append({'source':alias,'destination':p['publishedPath']})
         cfg={'$schema':'https://mintlify.com/docs.json','theme':'mint','name':'Sonoran Software Documentation','colors':{'primary':'#1D7DCF','light':'#3297ED','dark':'#1465AA'},'navigation':self.nav(),'navbar':{'links':[{'label':'Support','href':'https://support.sonoransoftware.com'},{'label':'Website','href':'https://sonoransoftware.com'}]},'seo':{'indexing':'all','metatags':{'robots':'noindex, follow','canonical':'https://docs.sonoransoftware.com'}},'redirects':redirects}
+        cfg['footer']={
+            'socials':{'discord':'https://discord.sonoransoftware.com/','x':'https://x.com/Sonoran_SW','instagram':'https://www.instagram.com/sonoransoftware/','youtube':'https://www.youtube.com/channel/UC-IfsakmGGmPrG8qcV3VVsA'},
+            'links':[
+                {'header':'Support','items':[{'label':'Customer Support','href':'https://support.sonoransoftware.com/'}]},
+                {'header':'Policies','items':[
+                    {'label':'Refund and Purchase Policy','href':'/policy/policy/refund-and-purchase-policy'},
+                    {'label':'Terms of Service','href':'/policy/policy/terms-of-service'},
+                    {'label':'Privacy Policy','href':'/policy/policy/privacy-policy'}]}]}
         if self.branding.get('logoLight') and self.branding.get('logoDark'):
             cfg['logo']={'light':self.branding['logoLight'],'dark':self.branding['logoDark'],'href':'/'}
         if self.branding.get('favicon'): cfg['favicon']=self.branding['favicon']

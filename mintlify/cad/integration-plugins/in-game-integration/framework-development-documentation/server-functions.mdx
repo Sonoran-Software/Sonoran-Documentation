@@ -19,8 +19,8 @@ exports.sonorancad.CadIsPlayerLinked(apiId, callback)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `apiId` | `string` | The CAD API ID to check. If empty or `nil` , the function assumes the ID does not exist. |
-| `callback` | `function` | A function executed after the check completes. Receives a single parameter: `exists` ( `boolean` ). |
+| `apiId` | `string` | The CAD API ID to check. If empty or `nil`, the function assumes the ID does not exist. |
+| `callback` | `function` | A function executed after the check completes. Receives a single parameter: `exists` (`boolean`). |
 
 
 
@@ -81,7 +81,7 @@ exports.sonorancad.GetPluginConfig(submoduleName)
 
 | Type | Description |
 | --- | --- |
-| `table` or `nil` | A table containing the configuration for the specified plugin. Returns `nil` if the plugin name is invalid or if no configuration exists. |
+| `table` or `nil` | • A table containing the configuration for the specified plugin. <br />• Returns `nil` if the plugin name is invalid or if no configuration exists. |
 
 
 
@@ -133,7 +133,7 @@ exports.sonorancad.GetUnitByPlayerId(player)
 
 | Type | Description |
 | --- | --- |
-| `table` or `nil` | A table representing the unit information for the player if found in `UnitCache` . `nil` if no associated unit is found. |
+| `table` or `nil` | • A table representing the unit information for the player if found in `UnitCache`. <br />• `nil` if no associated unit is found. |
 
 
 
@@ -180,7 +180,7 @@ exports['sonorancad']:GetUnitCache(includeDispatchers, callback)
 
 | Type | Description |
 | --- | --- |
-| `table` | The entire `UnitCache` table, which stores unit-related data. If `UnitCache` is empty or uninitialized, an empty table is returned. If `includeDispatchers` is `true` , will return `arg1` - Standard `UnitCache` table, `arg2` - Array of dispatchers online. If `false` will only return standard `UnitCache` array. When `callback` is provided, the same values are passed to the callback as `unitCache, dispatchers` . If `includeDispatchers` is `false` , the callback receives an empty dispatcher table for the second argument. Dispatchers will be shown regardless if they are in-game or not. To check if a dispatcher is also in-game use the `isInGame` flag ( `boolean` ) on the unit |
+| `table` | • The entire `UnitCache` table, which stores unit-related data. <br />• If `UnitCache` is empty or uninitialized, an empty table is returned. <br />• If `includeDispatchers` is `true`, will return `arg1` - Standard `UnitCache` table, `arg2`- Array of dispatchers online. If `false` will only return standard `UnitCache` array. <br />• When `callback` is provided, the same values are passed to the callback as `unitCache, dispatchers`. If `includeDispatchers` is `false`, the callback receives an empty dispatcher table for the second argument. <br />• Dispatchers will be shown regardless if they are in-game or not. To check if a dispatcher is also in-game use the `isInGame` flag (`boolean`) on the unit |
 
 
 
@@ -292,8 +292,8 @@ exports.sonorancad.addBlip(coords, colorHex, subType, toolTip, icon, dataTable, 
 | Parameter | Type | Description |
 | --- | --- | --- |
 | `coords` | `vec2 (table)` | A table containing `x` and `y` coordinates for the blip location. |
-| `colorHex` | `string` | The hexadecimal color code (e.g., `"#FF0000"` ) for the blip. |
-| `subType` | `string` | The subtype of the blip (e.g., `police` , `fire` , etc.). |
+| `colorHex` | `string` | The hexadecimal color code (e.g., `"#FF0000"`) for the blip. |
+| `subType` | `string` | The subtype of the blip (e.g., `police`, `fire`, etc.). |
 | `toolTop` | `string` | The tooltip text that appears when hovering over the blip. |
 | `icon` | `string` | The icon for the blip (e.g., a specific image or identifier for visual context). |
 | `dataTable` | `table` | Additional data associated with the blip, stored in a custom table. |
@@ -561,7 +561,7 @@ exports.sonorancad.removeWithSubtype(subType, cb)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `subType` | `string` | The subtype of the blips to be removed (e.g., `police` , `fire` , etc.). |
+| `subType` | `string` | The subtype of the blips to be removed (e.g., `police`, `fire`, etc.). |
 | `cb` | `function` | (Optional) A callback function executed with the API response containing the blips. |
 
 
@@ -724,7 +724,7 @@ exports.sonorancad.addTempBlipData(blipId, color, waitSeconds, returnToColor)
 | Parameter | Type | Description |
 | --- | --- | --- |
 | `blipId` | `number` | The unique ID of the blip to modify. |
-| `color` | `string` | The temporary hexadecimal color code to apply to the blip (e.g., `"#FF0000"` ) |
+| `color` | `string` | The temporary hexadecimal color code to apply to the blip (e.g., `"#FF0000"`) |
 | `waitSeconds` | `number` | The duration in seconds for which the temporary data will be applied. |
 | `returnToColor` | `string` | The original hexadecimal color code to revert the blip to after the duration expires |
 

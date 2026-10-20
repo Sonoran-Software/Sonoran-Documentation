@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-20T01:28:49.710176+00:00",
+  "scope": "Static comparison of authored public documentation and generated MDX; browser rendering is verified separately.",
+  "sourceCommit": "d01ddc8d7df4cc47d0d15d6e0e2842aa7a7d41c3",
+  "pagesChecked": 914,
+  "fencedCode": {
+    "authoredBlocks": 2426,
+    "intentionallyUnpublishedBlocks": 1,
+    "visibleSourceBlocks": 2425,
+    "generatedBlocks": 2425,
+    "orderedPayloadMismatches": 0,
+    "authoredIndentedBlocks": 0,
+    "unprotectedFences": 0,
+    "mdxParseErrors": 0
+  },
+  "visibilityDirectives": {
+    "explicitFalseBranches": 1,
+    "excludedSource": "radio/sonoran-radio/tutorials/getting-started/installing-the-in-game-resource.md",
+    "excludedFenceLine": 77,
+    "literalFalseDirectivesInsideBlockOrInlineCode": 0,
+    "note": "The excluded manual-installation branch is authored as unpublished content. Code payloads outside that branch remain unchanged."
+  },
+  "htmlPreCode": {
+    "visibleSourceBlocks": 22,
+    "generatedBlocks": 22,
+    "decodedPayloadMismatches": 0,
+    "method": "Compare authored pre/code text to decoded generated JSON-string payloads, preserving newlines and literal pipes."
+  },
+  "figures": {
+    "visibleSourceFigures": 1255,
+    "multipleMediaFigures": 0,
+    "figuresWithoutImage": 0,
+    "figuresWithExtraBodyOrIconContent": 0,
+    "figuresWithLinkedImages": 0,
+    "note": "Every current figure contains one image and an optional caption; the converter's first-image selection drops no additional figure content in this corpus."
+  },
+  "tabs": {
+    "panelsChecked": 2486,
+    "markdownHeadingsInsidePanels": 0,
+    "htmlHeadingsInsidePanels": 0,
+    "inactivePanelHeadingDeepLinks": 0
+  },
+  "htmlTables": {
+    "cellsWithLists": 5,
+    "listItems": 16,
+    "listItemBoundariesPreserved": true,
+    "splitEndpointIdentifiersCorrected": 3,
+    "verifiedEndpointIdentifiers": [
+      "/general/get_com_account",
+      "/general/get_account_ranks",
+      "/general/clock_in_out"
+    ],
+    "note": "List cells now retain visible bullet and line-break separators. Inline emphasis is unwrapped and adjacent text merged before table extraction, preserving endpoint underscores. Changed generated tables were reviewed for text and code preservation."
+  },
+  "rawHtml": {
+    "blockquotes": 0,
+    "videoElements": 0,
+    "audioElements": 0,
+    "note": "Literal placeholders inside code were excluded from HTML classification. Remaining unusual tags are escaped changelog placeholders or table selection metadata whose displayed labels remain."
+  },
+  "detectedOutstandingConversionContentLosses": [],
+  "limitations": [
+    "These checks do not replace browser checks of media playback, layout, expandable sections, or heading scrolling.",
+    "They assess conversion fidelity and do not certify the accuracy of inherited documentation content."
+  ]
+}

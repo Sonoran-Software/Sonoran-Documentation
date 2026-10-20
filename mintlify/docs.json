@@ -2147,6 +2147,42 @@
       "destination": "/studio/tutorials/stream-widgets"
     }
   ],
+  "footer": {
+    "socials": {
+      "discord": "https://discord.sonoransoftware.com/",
+      "x": "https://x.com/Sonoran_SW",
+      "instagram": "https://www.instagram.com/sonoransoftware/",
+      "youtube": "https://www.youtube.com/channel/UC-IfsakmGGmPrG8qcV3VVsA"
+    },
+    "links": [
+      {
+        "header": "Support",
+        "items": [
+          {
+            "label": "Customer Support",
+            "href": "https://support.sonoransoftware.com/"
+          }
+        ]
+      },
+      {
+        "header": "Policies",
+        "items": [
+          {
+            "label": "Refund and Purchase Policy",
+            "href": "/policy/policy/refund-and-purchase-policy"
+          },
+          {
+            "label": "Terms of Service",
+            "href": "/policy/policy/terms-of-service"
+          },
+          {
+            "label": "Privacy Policy",
+            "href": "/policy/policy/privacy-policy"
+          }
+        ]
+      }
+    ]
+  },
   "logo": {
     "light": "https://docs-assets.sonoransoftware.com/sha256/a8/a8af14e6458cb682c1c8d33ca8b56d25dcd5999b2589e0de14b2be9f8dbe20a5.png",
     "dark": "https://docs-assets.sonoransoftware.com/sha256/0b/0be9cc0ac8f90ee8aa8607653b830270c319a8ebe0c9051d1d2c7a79fb5453ab.png",

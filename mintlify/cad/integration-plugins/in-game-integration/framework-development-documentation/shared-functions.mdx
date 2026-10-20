@@ -31,7 +31,7 @@ exports.sonorancad.isPluginLoaded(submoduleName)
 
 | Type | Description |
 | --- | --- |
-| `boolean` | `true` if the specified submodule ( `pluginName` ) is found in the `submodules` table. `false` otherwise. |
+| `boolean` | `true` if the specified submodule (`pluginName`) is found in the `submodules` table. `false` otherwise. |
 
 
 
@@ -82,7 +82,7 @@ exports.sonorancad.shallowcopy(data)
 
 | Type | Description |
 | --- | --- |
-| `any` | If `orig` is a table: Returns a new table with the same key-value pairs as `orig` . If `orig` is not a table (e.g., a number, string, boolean): Returns the value directly. |
+| `any` | If `orig` is a table: Returns a new table with the same key-value pairs as `orig`. If `orig` is not a table (e.g., a number, string, boolean): Returns the value directly. |
 
 
 
@@ -127,8 +127,8 @@ exports.sonorancad.stringsplit(inputstr, sep)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `inputstr` | `string` | The input string that will be split into substrings based on a specified delimiter ( `sep` ) |
-| `sep` | `string` | (Optional) If not provided, the default is `"%s"` , which matches any whitespace character |
+| `inputstr` | `string` | The input string that will be split into substrings based on a specified delimiter (`sep`) |
+| `sep` | `string` | (Optional) If not provided, the default is `"%s"`, which matches any whitespace character |
 
 
 
@@ -140,7 +140,7 @@ exports.sonorancad.stringsplit(inputstr, sep)
 
 | Type | Description |
 | --- | --- |
-| `table` | The table contains the substrings of `inputstr` split by the delimiter `sep` . The substrings are stored sequentially starting at index `1` |
+| `table` | The table contains the substrings of `inputstr` split by the delimiter `sep`. The substrings are stored sequentially starting at index `1` |
 
 
 
@@ -178,7 +178,7 @@ exports.sonorancad.findIndex(identifier)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `identifier` | `any` | The identifier to search for, compared against the `apiId` field of each entry in `LocationCache` . |
+| `identifier` | `any` | The identifier to search for, compared against the `apiId` field of each entry in `LocationCache`. |
 
 
 
@@ -190,7 +190,7 @@ exports.sonorancad.findIndex(identifier)
 
 | Type | Description |
 | --- | --- |
-| `number` or `nil` | The index ( `i` ) of the first entry in `LocationCache` whose `apiId` matches `identifier` . `nil` if no matching entry is found |
+| `number` or `nil` | The index (`i`) of the first entry in `LocationCache` whose `apiId` matches `identifier`. `nil` if no matching entry is found |
 
 
 
@@ -246,7 +246,7 @@ exports.sonorancad.GetIdentifiers(player)
 
 | Type | Description |
 | --- | --- |
-| `table` | A key-value table where the keys are identifier types (e.g., `steam` , `license` , `discord` ) and the values are the corresponding identifier strings. |
+| `table` | A key-value table where the keys are identifier types (e.g., `steam`, `license`, `discord`) and the values are the corresponding identifier strings. |
 
 
 
@@ -293,9 +293,9 @@ exports.sonorancad.PerformHttpRequestS(url, cb, method, data, headers)
 | --- | --- | --- |
 | `url` | `string` | The URL to which the HTTP request is sent. |
 | `cb` | `function` | The callback function executed when the HTTP request completes. |
-| `method` | `string` | The HTTP method to use (e.g., `GET` , `POST` , `PUT` , `DELETE` ). |
+| `method` | `string` | The HTTP method to use (e.g., `GET`, `POST`, `PUT`, `DELETE`). |
 | `data` | `string` | (Optional) The data to send with the HTTP request. Defaults to an empty string. |
-| `headers` | `table` | (Optional) A table containing custom headers for the HTTP request. Defaults to include `X-User-Agent` . |
+| `headers` | `table` | (Optional) A table containing custom headers for the HTTP request. Defaults to include `X-User-Agent`. |
 
 
 
@@ -411,8 +411,8 @@ exports.sonorancad.compareVersions(version1, version2)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| `version1` | `string` | The first version string (e.g., `1.0.0` ). |
-| `version2` | `string` | The second version string (e.g., `1.0.1` ). |
+| `version1` | `string` | The first version string (e.g., `1.0.0`). |
+| `version2` | `string` | The second version string (e.g., `1.0.1`). |
 
 
 
@@ -424,7 +424,7 @@ exports.sonorancad.compareVersions(version1, version2)
 
 | Type | Description |
 | --- | --- |
-| `table` | `result` : `true` if `version1` is greater than `version2` , `false` otherwise. `parsedVersion1` : The weighted numeric representation of `version1` . `parsedVersion2` : The weighted numeric representation of `version2` . `version1` : The original `version1` string. `version2` : The original `version2` string. |
+| `table` | • `result`: `true` if `version1` is greater than `version2`, `false` otherwise. <br />• `parsedVersion1`: The weighted numeric representation of `version1`. <br />• `parsedVersion2`: The weighted numeric representation of `version2`. <br />• `version1`: The original `version1` string. <br />• `version2`: The original `version2` string. |
 
 
 

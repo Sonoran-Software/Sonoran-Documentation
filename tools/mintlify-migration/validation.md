@@ -17,9 +17,11 @@ Run the public staging acceptance probe after a completed deployment:
 
 ```sh
 npm run probe --prefix tools/mintlify-migration -- --base https://sonoran-software-systems.mintlify.site --mcp
+# Full manifest, recursive index coverage, and actual public search/content reads:
+npm run probe --prefix tools/mintlify-migration -- --base https://sonoran-software-systems.mintlify.site --sha COMMIT --all-routes --mcp-read-only
 ```
 
-This reads product roots, Markdown exports, canonicals, robots metadata, recursive agent indexes, and MCP capability discovery. The optional protocol check initializes MCP and lists tools; it does not invoke Assistant, API playground operations, feedback, or admin tools. It writes ignored `reports/hosted-probe.json`.
+This reads product roots, Markdown exports, canonicals, robots metadata, recursive agent indexes, and MCP capability discovery. `--all-routes` checks HTML and Markdown GET/HEAD responses for each route with six concurrent workers, checks explicit 307/308 redirects and `robots.txt`/`sitemap.xml`, and compares agent-index/sitemap coverage against every local page except pages explicitly marked `noindex`. The expected canonical domain is the existing production domain, while staging HTML must remain globally `noindex`. The optional `--mcp` protocol check initializes MCP and lists tools. `--mcp-read-only` additionally performs two public search queries and one fixed `head` content read; it never invokes Assistant, API playground operations, feedback, or admin tools. `--sha` records which successfully deployed commit is under review; it does not prove server revision. Reports are written to ignored `reports/hosted-probe.json`, or `--report PATH`. Progress is checkpointed every100 routes; `--resume` reuses completed checks only from the same report version, base URL, and SHA label. Network timeouts and server errors receive at most two retries. Failed availability, canonical, robots, index coverage, or MCP acceptance checks exit nonzero.
 
 Inspect the full GitHub Mintlify check output as well as its conclusion. Mintlify can report deployment success while omitting individual pages that failed to parse. On the first staging deployment, one unescaped pipe in a Markdown table's JSX code string produced a 404 page while the overall check remained successful; enabling GFM in local compilation reproduces this failure.
 
