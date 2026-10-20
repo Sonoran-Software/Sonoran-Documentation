@@ -1,0 +1,1083 @@
+{
+  "byPage": {
+    "/cad/tutorials/customization/penal-codes": {
+      "import-from-spreadsheet-csv": "import-from-customized-spreadsheet-csv",
+      "1-copy-the-google-sheet": "id-1.-copy-the-google-sheet"
+    },
+    "/studio/tutorials/stream-widgets": {
+      "4-add-source-to-streaming-app": "id-4.-add-source-to-streaming-app"
+    },
+    "/studio/tutorials/smart-lighting": {
+      "creating-light-sequences": "creating-device-sequences"
+    },
+    "/promotions/discord-rewards": {
+      "manual-link": "b.-manual-link",
+      "automatic-invite-link": "a.-automatic-invite-link",
+      "register-your-rewards-id": "id-3.-register-your-rewards-id"
+    },
+    "/cms/tutorials/customization/community-branding-and-settings": {
+      "community-name-customization": "naming-format",
+      "community-id": "community-id-and-vanity-url",
+      "member-on-join-settings": "member-on-join-actions"
+    },
+    "/cad/integration-plugins/database-sync-and-merge": {
+      "written-configuration-guide": "id-1.-enter-connection-credentials",
+      "3.-automatic-ai-setup": "id-3.-automatic-ai-setup",
+      "2.-combine-api-and-db-sync-records": "id-2.-combine-api-and-db-sync-records"
+    },
+    "/cad/integration-plugins/twitch-overlay-and-bot": {
+      "3-toggle-and-configure-keys": "id-3.-toggle-and-configure-keys",
+      "2-configuring-text-file-location": "id-2.-configuring-text-file-location"
+    },
+    "/cad/api-integration/api-endpoints/general/lookup-by-integer": {
+      "lookup-by-int": "lookup-by-value"
+    },
+    "/cad/api-integration/api-endpoints/general/custom-records": {
+      "section": "record-formatting"
+    },
+    "/cad/integration-plugins/erlc/bodycam": {
+      "2-select-the-roblox-game": "id-2.-select-the-roblox-game"
+    },
+    "/cad/integration-plugins/in-game-integration/fivem-installation": {
+      "4.-configure-the-resource": "id-4.-configure-the-resource"
+    },
+    "/cad/tutorials/dispatching/creating-a-call": {
+      "import-export-saved-call-types": "saved-call-types",
+      "note-links": "manage-a-call"
+    },
+    "/cad/integration-plugins/in-game-integration/available-plugins/dispatch-notify": {
+      "2-officer-attaches-to-the-call": "id-2.-officer-attaches-to-the-call"
+    },
+    "/cad/integration-plugins/in-game-integration/available-plugins/live-map": {
+      "using-a-custom-map-fivem": "fivem-custom-map"
+    },
+    "/cad/tutorials/customization/customizing-your-layout": {
+      "7-tab-system": "tab-system",
+      "enable-classic-mode": "classic-layout",
+      "8-classic-layout": "classic-layout",
+      "4-locking-unlocking": "locking-unlocking",
+      "2-quick-resize": "quick-resize",
+      "6-taskbar": "taskbar",
+      "7.-tab-system": "tab-system"
+    },
+    "/cad/integration-plugins/in-game-integration/framework-development-documentation/server-events": {
+      "sonorancad-registervehicle": "sonorancad-registerveh",
+      "example-usage": "sonorancad-registerveh"
+    },
+    "/cad/integration-plugins/in-game-integration/available-plugins/framework-support-esx-qbcore-and-auto-fines/esx-support": {
+      "4-optional-add-your-game-server-ip-and-port": "id-3.-optional-add-your-game-server-ip-and-port"
+    },
+    "/cad/tutorials/customization/10-codes": {
+      "1-copy-the-google-sheet": "id-1.-copy-the-google-sheet"
+    },
+    "/cad/tutorials/dispatching/timers": {
+      "undefined": "timer-attachments"
+    },
+    "/cms/roadmap/roadmap-and-changelog/changelog": {
+      "v0.5.56-beta-pending-release": "v0.5.56-beta-8-29-2023"
+    },
+    "/cms/tutorials/your-drive-and-documents": {
+      "share-settings": "share-and-public-view-settings",
+      "publicly-accessible-files": "share-and-public-view-settings",
+      "uploading-batch-files-zip": "uploading-files"
+    },
+    "/cms/integration-capabilities/er-lc-game-panel/usage/cms-integrations": {
+      "stage-actions": "form-stage-actions"
+    },
+    "/cms/tutorials/forms/creating-custom-forms": {
+      "form-stage-actions": "customizing-stages",
+      "action-explanation-change-submitters-department-rank": "customizing-stages",
+      "limiting-form-submissions": "form-settings",
+      "limits": "form-settings"
+    },
+    "/cms/tutorials/user-management/creating-departments": {
+      "4.-customize-rank-cosmetic-styling": "customize-rank-cosmetic-styling"
+    },
+    "/cms/tutorials/community-website/website-builder": {
+      "custom-page-paths": "title-and-url-slug",
+      "default-dashboard-page": "default-home-landing-page",
+      "default--home-landing-page": "default-home-landing-page"
+    },
+    "/cms/tutorials/rosters/creating-custom-rosters": {
+      "department-automatic": "roster-types"
+    },
+    "/cms/tutorials/customization/custom-domain": {
+      "custom-login-page": "custom-domain",
+      "vanity-urls-not-implemented": "vanity-urls"
+    },
+    "/radio/tutorials/usage/dispatch-panel/emergency-calls": {
+      "customize-the-emergency-number-and-banner": "fivem-customize-the-emergency-number-and-banner"
+    },
+    "/radio/game-integrations/fivem/installing-the-in-game-resource": {
+      "configuration-options": "configuration-values",
+      "id-3.-configure-community-information": "configuration-values"
+    },
+    "/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands": {
+      "debug-mode": "debug-mode-toggle"
+    },
+    "/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio": {
+      "automatic-volume-increase-w-sirens": "adjust-volume-with-sirens",
+      "login-as-guest": "logging-in",
+      "scan-lists": "custom-scan-lists",
+      "radio-volume": "adjust-volume"
+    },
+    "/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel": {
+      "channel-ids": "viewing-channel-ids",
+      "switching-transmit-and-scanned-channels-1": "switching-transmit-and-scanned-channels",
+      "volume-sliders": "volume-changes",
+      "user-actions-right-click": "user-actions",
+      "dispatch-hotkeys": "hotkeys-keybinds"
+    },
+    "/radio/game-integrations/fivem/in-game-radio/radio-jammers": {
+      "using-the-radio-scanner-1": "using-the-radio-jammer"
+    },
+    "/radio/game-integrations/fivem/in-game-radio/radio-scanners": {
+      "using-the-radio-scanner-1": "using-the-radio-scanner"
+    },
+    "/radio/tutorials/usage/dispatch-panel/configure-channels": {
+      "restrict-channel-visibility": "channel-options",
+      "toggle-talkover-protection": "channel-options",
+      "setting-the-voice-effect": "channel-options"
+    },
+    "/radio/tutorials/integrations/sonoran-cad-integration": {
+      "cad-panic": "panic-toggle"
+    },
+    "/radio/tutorials/usage/dispatch-panel/custom-tone-board": {
+      "visual-customizatio": "visual-customization"
+    },
+    "/store/traffic-engine/getting-started": {
+      "region-creation": "region-and-zone-management",
+      "zone-creation": "region-and-zone-management"
+    },
+    "/studio/developer-documentation/developer-documentation": {
+      "streamerbot-actions": "streamer.bot-actions"
+    }
+  },
+  "evidence": [
+    {
+      "path": "/cad/tutorials/customization/penal-codes",
+      "oldFragment": "import-from-spreadsheet-csv",
+      "publishedId": "import-from-customized-spreadsheet-csv",
+      "heading": "Import from Customized Spreadsheet (CSV)",
+      "source": "cad/sonoran-cad/tutorials/customization/penal-codes.md",
+      "sourceLine": 136,
+      "referringPages": [
+        "/cad"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/studio/tutorials/stream-widgets",
+      "oldFragment": "4-add-source-to-streaming-app",
+      "publishedId": "id-4.-add-source-to-streaming-app",
+      "heading": "4. Add Source to Streaming App",
+      "source": "studio/sonoran-studio/sonoran-studio/stream-widgets.md",
+      "sourceLine": 53,
+      "referringPages": [
+        "/studio"
+      ],
+      "method": "equivalent heading slug, ignoring punctuation and GitBook id- prefix"
+    },
+    {
+      "path": "/studio/tutorials/smart-lighting",
+      "oldFragment": "creating-light-sequences",
+      "publishedId": "creating-device-sequences",
+      "heading": "Creating Device Sequences",
+      "source": "studio/sonoran-studio/sonoran-studio/smart-lighting.md",
+      "sourceLine": 284,
+      "referringPages": [
+        "/studio"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/promotions/discord-rewards",
+      "oldFragment": "manual-link",
+      "publishedId": "b.-manual-link",
+      "heading": "B. Manual Link",
+      "source": "welcome/documentation-portal/promotions/discord-rewards.md",
+      "sourceLine": 51,
+      "referringPages": [
+        "/promotions/discord-rewards"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/promotions/discord-rewards",
+      "oldFragment": "automatic-invite-link",
+      "publishedId": "a.-automatic-invite-link",
+      "heading": "A. Automatic Invite Link",
+      "source": "welcome/documentation-portal/promotions/discord-rewards.md",
+      "sourceLine": 47,
+      "referringPages": [
+        "/promotions/discord-rewards"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/promotions/discord-rewards",
+      "oldFragment": "register-your-rewards-id",
+      "publishedId": "id-3.-register-your-rewards-id",
+      "heading": "3. Register Your Rewards ID",
+      "source": "welcome/documentation-portal/promotions/discord-rewards.md",
+      "sourceLine": 31,
+      "referringPages": [
+        "/promotions/discord-rewards"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/tutorials/customization/community-branding-and-settings",
+      "oldFragment": "community-name-customization",
+      "publishedId": "naming-format",
+      "heading": "Naming Format",
+      "source": "cms/sonoran-cms/tutorials/customization/community-branding-and-settings.md",
+      "sourceLine": 58,
+      "referringPages": [
+        "/bot/tutorials/usage/settings",
+        "/cms/roadmap/roadmap-and-changelog/changelog"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/integration-plugins/database-sync-and-merge",
+      "oldFragment": "written-configuration-guide",
+      "publishedId": "id-1.-enter-connection-credentials",
+      "heading": "1. Enter Connection Credentials",
+      "source": "cad/sonoran-cad/integration-plugins/database-sync-and-merge/README.md",
+      "sourceLine": 32,
+      "referringPages": [
+        "/cad/integration-plugins/database-sync-and-merge"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/integration-plugins/twitch-overlay-and-bot",
+      "oldFragment": "3-toggle-and-configure-keys",
+      "publishedId": "id-3.-toggle-and-configure-keys",
+      "heading": "3. Toggle and Configure Keys",
+      "source": "cad/sonoran-cad/integration-plugins/twitch-overlay-and-bot.md",
+      "sourceLine": 300,
+      "referringPages": [
+        "/cad/integration-plugins/twitch-overlay-and-bot"
+      ],
+      "method": "equivalent heading slug, ignoring punctuation and GitBook id- prefix"
+    },
+    {
+      "path": "/cad/integration-plugins/twitch-overlay-and-bot",
+      "oldFragment": "2-configuring-text-file-location",
+      "publishedId": "id-2.-configuring-text-file-location",
+      "heading": "2. Configuring Text File Location",
+      "source": "cad/sonoran-cad/integration-plugins/twitch-overlay-and-bot.md",
+      "sourceLine": 292,
+      "referringPages": [
+        "/cad/integration-plugins/twitch-overlay-and-bot"
+      ],
+      "method": "equivalent heading slug, ignoring punctuation and GitBook id- prefix"
+    },
+    {
+      "path": "/cad/api-integration/api-endpoints/general/lookup-by-integer",
+      "oldFragment": "lookup-by-int",
+      "publishedId": "lookup-by-value",
+      "heading": "Lookup By Value",
+      "source": "cad/sonoran-cad/api-integration/api-endpoints/general/lookup-by-integer.md",
+      "sourceLine": 17,
+      "referringPages": [
+        "/cad/api-integration/api-endpoints/general/lookup-by-integer"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/api-integration/api-endpoints/general/custom-records",
+      "oldFragment": "section",
+      "publishedId": "record-formatting",
+      "heading": "Record Formatting",
+      "source": "cad/sonoran-cad/api-integration/api-endpoints/general/custom-records/README.md",
+      "sourceLine": 45,
+      "referringPages": [
+        "/cad/api-integration/api-endpoints/general/custom-records/api-options-for-adding-and-modifying-records"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/integration-plugins/erlc/bodycam",
+      "oldFragment": "2-select-the-roblox-game",
+      "publishedId": "id-2.-select-the-roblox-game",
+      "heading": "2. Select the Roblox Game",
+      "source": "cad/sonoran-cad/integration-plugins/erlc/bodycam.md",
+      "sourceLine": 26,
+      "referringPages": [
+        "/cad/integration-plugins/erlc/bodycam"
+      ],
+      "method": "equivalent heading slug, ignoring punctuation and GitBook id- prefix"
+    },
+    {
+      "path": "/cad/integration-plugins/in-game-integration/fivem-installation",
+      "oldFragment": "4.-configure-the-resource",
+      "publishedId": "id-4.-configure-the-resource",
+      "heading": "4. Configure the Resource",
+      "source": "cad/sonoran-cad/integration-plugins/in-game-integration/fivem-installation/README.md",
+      "sourceLine": 73,
+      "referringPages": [
+        "/cad/integration-plugins/in-game-integration/available-plugins/cad-display",
+        "/cad/integration-plugins/in-game-integration/available-plugins/call-commands",
+        "/cad/integration-plugins/in-game-integration/available-plugins/dispatch-notify",
+        "/cad/integration-plugins/in-game-integration/available-plugins/record-printer",
+        "/cad/integration-plugins/in-game-integration/available-plugins/wraithv2",
+        "/cad/integration-plugins/in-game-integration/fivem-installation"
+      ],
+      "method": "equivalent heading slug, ignoring punctuation and GitBook id- prefix"
+    },
+    {
+      "path": "/cad/tutorials/dispatching/creating-a-call",
+      "oldFragment": "import-export-saved-call-types",
+      "publishedId": "saved-call-types",
+      "heading": "Saved Call Types",
+      "source": "cad/sonoran-cad/tutorials/dispatching/creating-a-call.md",
+      "sourceLine": 128,
+      "referringPages": [
+        "/cad/integration-plugins/in-game-integration/available-plugins/call-templates"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/integration-plugins/database-sync-and-merge",
+      "oldFragment": "3.-automatic-ai-setup",
+      "publishedId": "id-3.-automatic-ai-setup",
+      "heading": "3. Automatic AI Setup",
+      "source": "cad/sonoran-cad/integration-plugins/database-sync-and-merge/README.md",
+      "sourceLine": 250,
+      "referringPages": [
+        "/cad/integration-plugins/in-game-integration/available-plugins/civilian-registration"
+      ],
+      "method": "equivalent heading slug, ignoring punctuation and GitBook id- prefix"
+    },
+    {
+      "path": "/cad/integration-plugins/in-game-integration/available-plugins/dispatch-notify",
+      "oldFragment": "2-officer-attaches-to-the-call",
+      "publishedId": "id-2.-officer-attaches-to-the-call",
+      "heading": "2. Officer Attaches to the Call",
+      "source": "cad/sonoran-cad/integration-plugins/in-game-integration/available-plugins/dispatch-notify.md",
+      "sourceLine": 122,
+      "referringPages": [
+        "/cad/integration-plugins/in-game-integration/available-plugins/dispatch-notify"
+      ],
+      "method": "equivalent heading slug, ignoring punctuation and GitBook id- prefix"
+    },
+    {
+      "path": "/cad/integration-plugins/database-sync-and-merge",
+      "oldFragment": "2.-combine-api-and-db-sync-records",
+      "publishedId": "id-2.-combine-api-and-db-sync-records",
+      "heading": "2. Combine API and DB Sync Records",
+      "source": "cad/sonoran-cad/integration-plugins/database-sync-and-merge/README.md",
+      "sourceLine": 236,
+      "referringPages": [
+        "/cad/integration-plugins/in-game-integration/available-plugins/ers"
+      ],
+      "method": "equivalent heading slug, ignoring punctuation and GitBook id- prefix"
+    },
+    {
+      "path": "/cad/integration-plugins/in-game-integration/available-plugins/live-map",
+      "oldFragment": "using-a-custom-map-fivem",
+      "publishedId": "fivem-custom-map",
+      "heading": "FiveM Custom Map",
+      "source": "cad/sonoran-cad/integration-plugins/in-game-integration/available-plugins/live-map.md",
+      "sourceLine": 127,
+      "referringPages": [
+        "/cad/integration-plugins/in-game-integration/available-plugins/live-map"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/tutorials/customization/customizing-your-layout",
+      "oldFragment": "7-tab-system",
+      "publishedId": "tab-system",
+      "heading": "Tab System",
+      "source": "cad/sonoran-cad/tutorials/customization/customizing-your-layout.md",
+      "sourceLine": 90,
+      "referringPages": [
+        "/cad/integration-plugins/in-game-integration/available-plugins/live-map",
+        "/cad/tutorials/customization/customizing-your-layout",
+        "/cad/tutorials/customization/tone-board",
+        "/cad/tutorials/records-management/searching-for-records"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/integration-plugins/in-game-integration/framework-development-documentation/server-events",
+      "oldFragment": "sonorancad-registervehicle",
+      "publishedId": "sonorancad-registerveh",
+      "heading": "sonorancad::registerVeh",
+      "source": "cad/sonoran-cad/integration-plugins/in-game-integration/framework-development-documentation/server-events.md",
+      "sourceLine": 9,
+      "referringPages": [
+        "/cad/integration-plugins/in-game-integration/available-plugins/vehreg"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/integration-plugins/in-game-integration/framework-development-documentation/server-events",
+      "oldFragment": "example-usage",
+      "publishedId": "sonorancad-registerveh",
+      "heading": "sonorancad::registerVeh",
+      "source": "cad/sonoran-cad/integration-plugins/in-game-integration/framework-development-documentation/server-events.md",
+      "sourceLine": 9,
+      "referringPages": [
+        "/cad/integration-plugins/in-game-integration/framework-development-documentation/server-events"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/integration-plugins/in-game-integration/available-plugins/framework-support-esx-qbcore-and-auto-fines/esx-support",
+      "oldFragment": "4-optional-add-your-game-server-ip-and-port",
+      "publishedId": "id-3.-optional-add-your-game-server-ip-and-port",
+      "heading": "3. [Optional] Add your Game Server IP and Port",
+      "source": "cad/sonoran-cad/integration-plugins/in-game-integration/available-plugins/framework-support-esx-qbcore-and-auto-fines/esx-support.md",
+      "sourceLine": 38,
+      "referringPages": [
+        "/cad/integration-plugins/in-game-integration/available-plugins/framework-support-esx-qbcore-and-auto-fines/esx-support"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/tutorials/customization/10-codes",
+      "oldFragment": "1-copy-the-google-sheet",
+      "publishedId": "id-1.-copy-the-google-sheet",
+      "heading": "1. Copy the Google Sheet",
+      "source": "cad/sonoran-cad/tutorials/customization/10-codes.md",
+      "sourceLine": 37,
+      "referringPages": [
+        "/cad/tutorials/customization/10-codes"
+      ],
+      "method": "equivalent heading slug, ignoring punctuation and GitBook id- prefix"
+    },
+    {
+      "path": "/cad/tutorials/customization/customizing-your-layout",
+      "oldFragment": "enable-classic-mode",
+      "publishedId": "classic-layout",
+      "heading": "Classic Layout",
+      "source": "cad/sonoran-cad/tutorials/customization/customizing-your-layout.md",
+      "sourceLine": 105,
+      "referringPages": [
+        "/cad/tutorials/customization/customizing-your-layout"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/tutorials/customization/customizing-your-layout",
+      "oldFragment": "8-classic-layout",
+      "publishedId": "classic-layout",
+      "heading": "Classic Layout",
+      "source": "cad/sonoran-cad/tutorials/customization/customizing-your-layout.md",
+      "sourceLine": 105,
+      "referringPages": [
+        "/cad/tutorials/customization/customizing-your-layout"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/tutorials/customization/customizing-your-layout",
+      "oldFragment": "4-locking-unlocking",
+      "publishedId": "locking-unlocking",
+      "heading": "Locking/Unlocking",
+      "source": "cad/sonoran-cad/tutorials/customization/customizing-your-layout.md",
+      "sourceLine": 48,
+      "referringPages": [
+        "/cad/tutorials/customization/customizing-your-layout"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/tutorials/customization/customizing-your-layout",
+      "oldFragment": "2-quick-resize",
+      "publishedId": "quick-resize",
+      "heading": "Quick Resize",
+      "source": "cad/sonoran-cad/tutorials/customization/customizing-your-layout.md",
+      "sourceLine": 32,
+      "referringPages": [
+        "/cad/tutorials/customization/customizing-your-layout"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/tutorials/customization/customizing-your-layout",
+      "oldFragment": "6-taskbar",
+      "publishedId": "taskbar",
+      "heading": "Taskbar",
+      "source": "cad/sonoran-cad/tutorials/customization/customizing-your-layout.md",
+      "sourceLine": 52,
+      "referringPages": [
+        "/cad/tutorials/customization/customizing-your-layout"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/tutorials/customization/penal-codes",
+      "oldFragment": "1-copy-the-google-sheet",
+      "publishedId": "id-1.-copy-the-google-sheet",
+      "heading": "1. Copy the Google Sheet",
+      "source": "cad/sonoran-cad/tutorials/customization/penal-codes.md",
+      "sourceLine": 150,
+      "referringPages": [
+        "/cad/tutorials/customization/penal-codes"
+      ],
+      "method": "equivalent heading slug, ignoring punctuation and GitBook id- prefix"
+    },
+    {
+      "path": "/cad/tutorials/customization/customizing-your-layout",
+      "oldFragment": "7.-tab-system",
+      "publishedId": "tab-system",
+      "heading": "Tab System",
+      "source": "cad/sonoran-cad/tutorials/customization/customizing-your-layout.md",
+      "sourceLine": 90,
+      "referringPages": [
+        "/cad/tutorials/customization/quick-links",
+        "/cad/tutorials/dispatching/timers",
+        "/cad/tutorials/records-management/adding-a-criminal-record"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/tutorials/dispatching/timers",
+      "oldFragment": "undefined",
+      "publishedId": "timer-attachments",
+      "heading": "Timer Attachments",
+      "source": "cad/sonoran-cad/tutorials/dispatching/timers.md",
+      "sourceLine": 57,
+      "referringPages": [
+        "/cad/tutorials/dispatching/timers"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cad/tutorials/dispatching/creating-a-call",
+      "oldFragment": "note-links",
+      "publishedId": "manage-a-call",
+      "heading": "Manage a Call",
+      "source": "cad/sonoran-cad/tutorials/dispatching/creating-a-call.md",
+      "sourceLine": 62,
+      "referringPages": [
+        "/cad/tutorials/records-management/searching-for-records"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/roadmap/roadmap-and-changelog/changelog",
+      "oldFragment": "v0.5.56-beta-pending-release",
+      "publishedId": "v0.5.56-beta-8-29-2023",
+      "heading": "v0.5.56 (Beta) 8/29/2023",
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "sourceLine": 5435,
+      "referringPages": [
+        "/cms/integration-capabilities/discord-webhooks"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/tutorials/your-drive-and-documents",
+      "oldFragment": "share-settings",
+      "publishedId": "share-and-public-view-settings",
+      "heading": "Share and Public View Settings",
+      "source": "cms/sonoran-cms/tutorials/your-drive-and-documents.md",
+      "sourceLine": 47,
+      "referringPages": [
+        "/cms/roadmap/roadmap-and-changelog/changelog",
+        "/cms/tutorials/your-drive-and-documents"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/integration-capabilities/er-lc-game-panel/usage/cms-integrations",
+      "oldFragment": "stage-actions",
+      "publishedId": "form-stage-actions",
+      "heading": "Form Stage Actions",
+      "source": "cms/sonoran-cms/integration-capabilities/er-lc-game-panel/usage/cms-integrations.md",
+      "sourceLine": 7,
+      "referringPages": [
+        "/cms/integration-capabilities/er-lc-game-panel/usage/moderation"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/tutorials/customization/community-branding-and-settings",
+      "oldFragment": "community-id",
+      "publishedId": "community-id-and-vanity-url",
+      "heading": "Community ID and Vanity URL",
+      "source": "cms/sonoran-cms/tutorials/customization/community-branding-and-settings.md",
+      "sourceLine": 35,
+      "referringPages": [
+        "/cms/pricing/pricing-faq/branding-removal",
+        "/cms/roadmap/roadmap-and-changelog/changelog"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/tutorials/forms/creating-custom-forms",
+      "oldFragment": "form-stage-actions",
+      "publishedId": "customizing-stages",
+      "heading": "Customizing Stages",
+      "source": "cms/sonoran-cms/tutorials/forms/creating-custom-forms.md",
+      "sourceLine": 196,
+      "referringPages": [
+        "/cms/pricing/pricing-faq/branding-removal",
+        "/cms/tutorials/administrative/disciplinary-panel"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/tutorials/user-management/creating-departments",
+      "oldFragment": "4.-customize-rank-cosmetic-styling",
+      "publishedId": "customize-rank-cosmetic-styling",
+      "heading": "Customize Rank Cosmetic Styling",
+      "source": "cms/sonoran-cms/tutorials/user-management/creating-departments.md",
+      "sourceLine": 69,
+      "referringPages": [
+        "/cms/roadmap/roadmap-and-changelog/changelog"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/tutorials/forms/creating-custom-forms",
+      "oldFragment": "action-explanation-change-submitters-department-rank",
+      "publishedId": "customizing-stages",
+      "heading": "Customizing Stages",
+      "source": "cms/sonoran-cms/tutorials/forms/creating-custom-forms.md",
+      "sourceLine": 196,
+      "referringPages": [
+        "/cms/roadmap/roadmap-and-changelog/changelog"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/tutorials/community-website/website-builder",
+      "oldFragment": "custom-page-paths",
+      "publishedId": "title-and-url-slug",
+      "heading": "Title and URL Slug",
+      "source": "cms/sonoran-cms/tutorials/community-website/website-builder.md",
+      "sourceLine": 95,
+      "referringPages": [
+        "/cms/roadmap/roadmap-and-changelog/changelog"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/tutorials/rosters/creating-custom-rosters",
+      "oldFragment": "department-automatic",
+      "publishedId": "roster-types",
+      "heading": "Roster Types",
+      "source": "cms/sonoran-cms/tutorials/rosters/creating-custom-rosters.md",
+      "sourceLine": 19,
+      "referringPages": [
+        "/cms/roadmap/roadmap-and-changelog/changelog"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/tutorials/forms/creating-custom-forms",
+      "oldFragment": "limiting-form-submissions",
+      "publishedId": "form-settings",
+      "heading": "Form Settings",
+      "source": "cms/sonoran-cms/tutorials/forms/creating-custom-forms.md",
+      "sourceLine": 64,
+      "referringPages": [
+        "/cms/roadmap/roadmap-and-changelog/changelog"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/tutorials/customization/custom-domain",
+      "oldFragment": "custom-login-page",
+      "publishedId": "custom-domain",
+      "heading": "Custom Domain",
+      "source": "cms/sonoran-cms/tutorials/customization/custom-domain.md",
+      "sourceLine": 36,
+      "referringPages": [
+        "/cms/roadmap/roadmap-and-changelog/changelog"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/tutorials/community-website/website-builder",
+      "oldFragment": "default-dashboard-page",
+      "publishedId": "default-home-landing-page",
+      "heading": "Default / Home Landing Page",
+      "source": "cms/sonoran-cms/tutorials/community-website/website-builder.md",
+      "sourceLine": 133,
+      "referringPages": [
+        "/cms/roadmap/roadmap-and-changelog/changelog"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/tutorials/customization/community-branding-and-settings",
+      "oldFragment": "member-on-join-settings",
+      "publishedId": "member-on-join-actions",
+      "heading": "Member On Join Actions",
+      "source": "cms/sonoran-cms/tutorials/customization/community-branding-and-settings.md",
+      "sourceLine": 84,
+      "referringPages": [
+        "/cms/roadmap/roadmap-and-changelog/changelog"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/tutorials/your-drive-and-documents",
+      "oldFragment": "publicly-accessible-files",
+      "publishedId": "share-and-public-view-settings",
+      "heading": "Share and Public View Settings",
+      "source": "cms/sonoran-cms/tutorials/your-drive-and-documents.md",
+      "sourceLine": 47,
+      "referringPages": [
+        "/cms/roadmap/roadmap-and-changelog/changelog"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/tutorials/your-drive-and-documents",
+      "oldFragment": "uploading-batch-files-zip",
+      "publishedId": "uploading-files",
+      "heading": "Uploading Files",
+      "source": "cms/sonoran-cms/tutorials/your-drive-and-documents.md",
+      "sourceLine": 133,
+      "referringPages": [
+        "/cms/roadmap/roadmap-and-changelog/changelog"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/tutorials/customization/custom-domain",
+      "oldFragment": "vanity-urls-not-implemented",
+      "publishedId": "vanity-urls",
+      "heading": "Vanity URL's",
+      "source": "cms/sonoran-cms/tutorials/customization/custom-domain.md",
+      "sourceLine": 24,
+      "referringPages": [
+        "/cms/roadmap/roadmap-and-changelog/changelog"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/cms/tutorials/community-website/website-builder",
+      "oldFragment": "default--home-landing-page",
+      "publishedId": "default-home-landing-page",
+      "heading": "Default / Home Landing Page",
+      "source": "cms/sonoran-cms/tutorials/community-website/website-builder.md",
+      "sourceLine": 133,
+      "referringPages": [
+        "/cms/tutorials/community-website/site-ai"
+      ],
+      "method": "equivalent heading slug, ignoring punctuation and GitBook id- prefix"
+    },
+    {
+      "path": "/cms/tutorials/forms/creating-custom-forms",
+      "oldFragment": "limits",
+      "publishedId": "form-settings",
+      "heading": "Form Settings",
+      "source": "cms/sonoran-cms/tutorials/forms/creating-custom-forms.md",
+      "sourceLine": 64,
+      "referringPages": [
+        "/cms/tutorials/forms/ai-form-processing"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/tutorials/usage/dispatch-panel/emergency-calls",
+      "oldFragment": "customize-the-emergency-number-and-banner",
+      "publishedId": "fivem-customize-the-emergency-number-and-banner",
+      "heading": "FiveM: Customize the Emergency Number & Banner",
+      "source": "radio/sonoran-radio/tutorials/usage/dispatch-panel/emergency-calls.md",
+      "sourceLine": 77,
+      "referringPages": [
+        "/radio/game-integrations/fivem/fivem-phone-scripts",
+        "/radio/roadmap/roadmap-and-changelog/migration-guides"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/game-integrations/fivem/installing-the-in-game-resource",
+      "oldFragment": "configuration-options",
+      "publishedId": "configuration-values",
+      "heading": "Configuration Values",
+      "source": "radio/sonoran-radio/tutorials/getting-started/installing-the-in-game-resource.md",
+      "sourceLine": 93,
+      "referringPages": [
+        "/radio/game-integrations/fivem/fivem"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands",
+      "oldFragment": "debug-mode",
+      "publishedId": "debug-mode-toggle",
+      "heading": "Debug Mode Toggle",
+      "source": "radio/sonoran-radio/tutorials/usage/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands.md",
+      "sourceLine": 108,
+      "referringPages": [
+        "/radio/game-integrations/fivem/installing-the-in-game-resource"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio",
+      "oldFragment": "automatic-volume-increase-w-sirens",
+      "publishedId": "adjust-volume-with-sirens",
+      "heading": "Adjust Volume With Sirens",
+      "source": "radio/sonoran-radio/tutorials/usage/in-game-radio/using-the-in-game-radio/README.md",
+      "sourceLine": 228,
+      "referringPages": [
+        "/radio/game-integrations/fivem/installing-the-in-game-resource"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio",
+      "oldFragment": "login-as-guest",
+      "publishedId": "logging-in",
+      "heading": "Logging In",
+      "source": "radio/sonoran-radio/tutorials/usage/in-game-radio/using-the-in-game-radio/README.md",
+      "sourceLine": 36,
+      "referringPages": [
+        "/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions",
+        "/radio/game-integrations/fivem/installing-the-in-game-resource"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel",
+      "oldFragment": "channel-ids",
+      "publishedId": "viewing-channel-ids",
+      "heading": "Viewing Channel IDs",
+      "source": "radio/sonoran-radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel.md",
+      "sourceLine": 240,
+      "referringPages": [
+        "/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions",
+        "/radio/game-integrations/fivem/in-game-radio/radio-scanners"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/game-integrations/fivem/in-game-radio/radio-jammers",
+      "oldFragment": "using-the-radio-scanner-1",
+      "publishedId": "using-the-radio-jammer",
+      "heading": "Using the Radio Jammer",
+      "source": "radio/sonoran-radio/tutorials/usage/in-game-radio/radio-jammers.md",
+      "sourceLine": 15,
+      "referringPages": [
+        "/radio/game-integrations/fivem/in-game-radio/radio-jammers"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/game-integrations/fivem/in-game-radio/radio-scanners",
+      "oldFragment": "using-the-radio-scanner-1",
+      "publishedId": "using-the-radio-scanner",
+      "heading": "Using the Radio Scanner",
+      "source": "radio/sonoran-radio/tutorials/usage/in-game-radio/radio-scanners.md",
+      "sourceLine": 17,
+      "referringPages": [
+        "/radio/game-integrations/fivem/in-game-radio/radio-scanners"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/tutorials/usage/dispatch-panel/configure-channels",
+      "oldFragment": "restrict-channel-visibility",
+      "publishedId": "channel-options",
+      "heading": "Channel Options",
+      "source": "radio/sonoran-radio/tutorials/usage/dispatch-panel/configure-channels.md",
+      "sourceLine": 75,
+      "referringPages": [
+        "/radio/game-integrations/fivem/in-game-radio/radio-scanners",
+        "/radio/tutorials/usage/dispatch-panel/transmission-logs"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio",
+      "oldFragment": "scan-lists",
+      "publishedId": "custom-scan-lists",
+      "heading": "Custom Scan Lists",
+      "source": "radio/sonoran-radio/tutorials/usage/in-game-radio/using-the-in-game-radio/README.md",
+      "sourceLine": 167,
+      "referringPages": [
+        "/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/tutorials/integrations/sonoran-cad-integration",
+      "oldFragment": "cad-panic",
+      "publishedId": "panic-toggle",
+      "heading": "Panic Toggle",
+      "source": "radio/sonoran-radio/tutorials/integrations/sonoran-cad-integration.md",
+      "sourceLine": 33,
+      "referringPages": [
+        "/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio",
+        "/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio",
+      "oldFragment": "radio-volume",
+      "publishedId": "adjust-volume",
+      "heading": "Adjust Volume",
+      "source": "radio/sonoran-radio/tutorials/usage/in-game-radio/using-the-in-game-radio/README.md",
+      "sourceLine": 190,
+      "referringPages": [
+        "/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/game-integrations/fivem/installing-the-in-game-resource",
+      "oldFragment": "id-3.-configure-community-information",
+      "publishedId": "configuration-values",
+      "heading": "Configuration Values",
+      "source": "radio/sonoran-radio/tutorials/getting-started/installing-the-in-game-resource.md",
+      "sourceLine": 93,
+      "referringPages": [
+        "/radio/roadmap/roadmap-and-changelog/migration-guides"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/tutorials/usage/dispatch-panel/configure-channels",
+      "oldFragment": "toggle-talkover-protection",
+      "publishedId": "channel-options",
+      "heading": "Channel Options",
+      "source": "radio/sonoran-radio/tutorials/usage/dispatch-panel/configure-channels.md",
+      "sourceLine": 75,
+      "referringPages": [
+        "/radio/tutorials/usage/dispatch-panel/custom-sfx"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/tutorials/usage/dispatch-panel/custom-tone-board",
+      "oldFragment": "visual-customizatio",
+      "publishedId": "visual-customization",
+      "heading": "Visual Customization",
+      "source": "radio/sonoran-radio/tutorials/usage/dispatch-panel/custom-tone-board.md",
+      "sourceLine": 39,
+      "referringPages": [
+        "/radio/tutorials/usage/dispatch-panel/custom-tone-board"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/tutorials/usage/dispatch-panel/configure-channels",
+      "oldFragment": "setting-the-voice-effect",
+      "publishedId": "channel-options",
+      "heading": "Channel Options",
+      "source": "radio/sonoran-radio/tutorials/usage/dispatch-panel/configure-channels.md",
+      "sourceLine": 75,
+      "referringPages": [
+        "/radio/tutorials/usage/dispatch-panel/custom-voice-effects"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel",
+      "oldFragment": "switching-transmit-and-scanned-channels-1",
+      "publishedId": "switching-transmit-and-scanned-channels",
+      "heading": "Switching Transmit and Scanned Channels",
+      "source": "radio/sonoran-radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel.md",
+      "sourceLine": 69,
+      "referringPages": [
+        "/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel",
+      "oldFragment": "volume-sliders",
+      "publishedId": "volume-changes",
+      "heading": "Volume Changes",
+      "source": "radio/sonoran-radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel.md",
+      "sourceLine": 204,
+      "referringPages": [
+        "/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel",
+      "oldFragment": "user-actions-right-click",
+      "publishedId": "user-actions",
+      "heading": "User Actions",
+      "source": "radio/sonoran-radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel.md",
+      "sourceLine": 104,
+      "referringPages": [
+        "/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel",
+      "oldFragment": "dispatch-hotkeys",
+      "publishedId": "hotkeys-keybinds",
+      "heading": "Hotkeys (Keybinds)",
+      "source": "radio/sonoran-radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel.md",
+      "sourceLine": 19,
+      "referringPages": [
+        "/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/store/traffic-engine/getting-started",
+      "oldFragment": "region-creation",
+      "publishedId": "region-and-zone-management",
+      "heading": "Region and Zone Management",
+      "source": "store/sonoran-store/traffic-engine/getting-started.md",
+      "sourceLine": 81,
+      "referringPages": [
+        "/store/traffic-engine/getting-started"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/store/traffic-engine/getting-started",
+      "oldFragment": "zone-creation",
+      "publishedId": "region-and-zone-management",
+      "heading": "Region and Zone Management",
+      "source": "store/sonoran-store/traffic-engine/getting-started.md",
+      "sourceLine": 81,
+      "referringPages": [
+        "/store/traffic-engine/getting-started"
+      ],
+      "method": "reviewed source content and current heading; same feature or containing section"
+    },
+    {
+      "path": "/studio/developer-documentation/developer-documentation",
+      "oldFragment": "streamerbot-actions",
+      "publishedId": "streamer.bot-actions",
+      "heading": "Streamer.bot actions",
+      "source": "studio/sonoran-studio/sonoran-studio/developer-documentation.md",
+      "sourceLine": 238,
+      "referringPages": [
+        "/studio/tutorials/stream-automations"
+      ],
+      "method": "equivalent heading slug, ignoring punctuation and GitBook id- prefix"
+    }
+  ],
+  "linkRewrites": {
+    "/cms/tutorials/forms/creating-custom-forms#sharing-direct-submission-access": "/cms/tutorials/forms/form-submissions#sharing-a-form-submission",
+    "/cms/tutorials/customization/community-branding-and-settings#toolbar": "/cms/tutorials/community-website/toolbar-customization",
+    "/radio/developer-documentation/developer-documentation/api-endpoints#set-server-ip": "/radio/developer-documentation/developer-documentation/api-endpoints/community-server/set-server-ip",
+    "/radio/developer-documentation/developer-documentation/api-endpoints#set-in-game-speaker-locations": "/radio/developer-documentation/developer-documentation/api-endpoints/community-server/set-in-game-speaker-locations",
+    "/radio/developer-documentation/developer-documentation/api-endpoints/community-server/get-server-subscription-from-ip#set-server-ip": "/radio/developer-documentation/developer-documentation/api-endpoints/community-server/set-server-ip",
+    "/radio/developer-documentation/developer-documentation/api-endpoints/community-server/set-in-game-speaker-locations#set-server-ip": "/radio/developer-documentation/developer-documentation/api-endpoints/community-server/set-server-ip",
+    "/radio/developer-documentation/developer-documentation/push-events#play-tone": "/radio/developer-documentation/developer-documentation/push-events/play-tone",
+    "/cms/tutorials/forms/creating-custom-forms#custom-form-folders": "/cms/tutorials/forms/creating-custom-forms",
+    "/cms/tutorials/forms/creating-custom-forms#sorting-forms": "/cms/tutorials/forms/creating-custom-forms",
+    "/cms/tutorials/community-website/website-builder#sorting-pages": "/cms/tutorials/community-website/website-builder"
+  },
+  "obsoleteFragmentEvidence": {
+    "/cms/tutorials/forms/creating-custom-forms#custom-form-folders": "Historical changelog link; no custom-form-folder instructions or corresponding section exist in the current Creating Forms page. Keep the valid current page link without claiming a section.",
+    "/cms/tutorials/forms/creating-custom-forms#sorting-forms": "Historical changelog link; sorting instructions no longer appear in current Creating Forms page. Keep valid current page link, remove invalid fragment.",
+    "/cms/tutorials/community-website/website-builder#sorting-pages": "Historical changelog link; sorting instructions no longer appear in current Website Builder page. Keep valid current page link, remove invalid fragment."
+  },
+  "unresolved": []
+}

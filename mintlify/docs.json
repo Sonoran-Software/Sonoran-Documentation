@@ -184,7 +184,7 @@
             ]
           },
           {
-            "group": "Integration Capabilities <a href=\"#integration-plugins\" id=\"integration-plugins\"></a>",
+            "group": "Integration Capabilities",
             "pages": [
               "cad/integration-plugins/dispatch-ai",
               {
@@ -1476,7 +1476,7 @@
             ]
           },
           {
-            "group": "Roadmap & Changelog <a href=\"#roadmap\" id=\"roadmap\"></a>",
+            "group": "Roadmap & Changelog",
             "pages": [
               {
                 "group": "Roadmap & Changelog",
@@ -2146,5 +2146,11 @@
       "source": "/studio/sonoran-studio/stream-widgets",
       "destination": "/studio/tutorials/stream-widgets"
     }
-  ]
+  ],
+  "logo": {
+    "light": "https://docs-assets.sonoransoftware.com/sha256/a8/a8af14e6458cb682c1c8d33ca8b56d25dcd5999b2589e0de14b2be9f8dbe20a5.png",
+    "dark": "https://docs-assets.sonoransoftware.com/sha256/0b/0be9cc0ac8f90ee8aa8607653b830270c319a8ebe0c9051d1d2c7a79fb5453ab.png",
+    "href": "/"
+  },
+  "favicon": "https://docs-assets.sonoransoftware.com/sha256/1d/1d3aaa7393e84144f39bad7742c218a4f1db8e0ceb6f330d69f2e9bc92629df4.png"
 }

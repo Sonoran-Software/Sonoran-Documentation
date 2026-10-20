@@ -1,0 +1,5 @@
+mintlify/** text eol=lf
+tools/mintlify-migration/** text eol=lf
+.github/workflows/mintlify-validation.yml text eol=lf
+MIGRATION_STATUS.md text eol=lf
+.gitattributes text eol=lf

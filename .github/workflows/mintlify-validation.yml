@@ -1,0 +1,91 @@
+name: Mintlify validation
+
+on:
+  push:
+    branches: [codex/mintlify-migration]
+    paths:
+      - mintlify/**
+      - tools/mintlify-migration/**
+      - '**/*.md'
+      - gitbook-docs.yaml
+      - .github/workflows/mintlify-validation.yml
+  pull_request:
+    paths:
+      - mintlify/**
+      - tools/mintlify-migration/**
+      - '**/*.md'
+      - gitbook-docs.yaml
+      - .github/workflows/mintlify-validation.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mintlify-validation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out source without legacy media
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !**/.gitbook/assets/
+            !/tools/promo-images/
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: tools/mintlify-migration/package-lock.json
+
+      - name: Install pinned validation dependencies
+        id: dependencies
+        run: npm ci --prefix tools/mintlify-migration --ignore-scripts --no-audit --no-fund
+
+      - name: Validate schema, MDX, and code examples
+        run: npm run validate --prefix tools/mintlify-migration
+
+      - name: Validate routes, navigation, and anchors
+        if: always() && steps.dependencies.outcome == 'success'
+        run: python3 tools/mintlify-migration/qa_converted_routes.py
+
+      - name: Summarize validation reports
+        if: always()
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          reports = Path('tools/mintlify-migration/reports')
+          lines = ['## Mintlify validation', '']
+          syntax = reports / 'validation-report.json'
+          if syntax.exists():
+              report = json.loads(syntax.read_text())
+              lines.append(f"MDX pages: {report['counts']['pages']}; navigation references: {report['counts']['navigationReferences']}.")
+              for key in ['configErrors', 'navigationErrors', 'syntaxErrors', 'codeFenceErrors']:
+                  lines.append(f"- {key}: {len(report.get(key, []))}")
+              examples = report.get('codeFences', {})
+              lines.append(f"- Source code examples checked: {examples.get('checkedBlocks', 0)}")
+          else:
+              lines.append('MDX report unavailable; inspect the job logs.')
+          routes = reports / 'route-qa.json'
+          if routes.exists():
+              report = json.loads(routes.read_text())
+              lines.extend(['', 'Route checks:'])
+              lines.extend(f'- {key}: {value}' for key, value in report['counts'].items())
+          else:
+              lines.extend(['', 'Route report unavailable; inspect the job logs.'])
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write('\n'.join(lines) + '\n')
+          PY

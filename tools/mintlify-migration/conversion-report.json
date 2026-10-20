@@ -1,0 +1,12 @@
+{
+  "sourceCommit": "d01ddc8d7df4cc47d0d15d6e0e2842aa7a7d41c3",
+  "counts": {
+    "pages": 914,
+    "assetReferences": 1720,
+    "htmlTables": 69,
+    "cardTables": 10,
+    "embeds": 75,
+    "optimizedAnimations": 3
+  },
+  "warnings": []
+}
