@@ -1909,7 +1909,6 @@
   "seo": {
     "indexing": "all",
     "metatags": {
-      "robots": "noindex, follow",
       "canonical": "https://docs.sonoransoftware.com"
     }
   },
