@@ -250,7 +250,10 @@ class Converter:
             if p.netloc in ['youtube.com','www.youtube.com']: video=urllib.parse.parse_qs(p.query).get('v',[None])[0] or (p.path.split('/')[-1] if p.path.startswith(('/embed/','/shorts/')) else None)
             elif p.netloc=='youtu.be': video=p.path.strip('/')
             if video: return '\n\n'+self.token('<iframe src='+json.dumps('https://www.youtube-nocookie.com/embed/'+video)+' title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />')+'\n\n'
-            if 'guidde.com' in p.netloc: return '\n\n'+self.token('<iframe src='+json.dumps(url)+' title="Interactive tutorial" className="w-full aspect-video rounded-xl" allowFullScreen />')+'\n\n'
+            if p.netloc=='app.guidde.com' and p.path.startswith('/share/playbooks/'):
+                guide=p.path.removeprefix('/share/playbooks/').strip('/')
+                player='https://embed.app.guidde.com/playbooks/'+urllib.parse.quote(guide,safe='')+'?autoplay=false'
+                return '\n\n'+self.token('<iframe src='+json.dumps(player)+' title="Interactive tutorial" className="w-full aspect-video rounded-xl" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin" />')+'\n\n'
             return '\n\n'+self.token('<Card title="Open guide" href='+json.dumps(url)+' />')+'\n\n'
         s=re.sub(r'{%\s*embed\s+url="([^"]*)"[^%]*%}',embed,s)
         s=re.sub(r'{%\s*(?:endembed|code[^%]*|endcode)\s*%}','',s)
