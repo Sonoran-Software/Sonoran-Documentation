@@ -255,5 +255,14 @@
     "cacheBustedSiteChildIndexFresh": true,
     "resolution": "Follow advertised exact same-project child-index URLs. Do not rewrite .app child URLs back to the separately cached .site alias."
   },
-  "paidTrialState": "Assistant dashboard disabled by owner; trial end was not cancelled. No paid Assistant request was made by these checks."
+  "paidTrialState": "Assistant dashboard disabled by owner; trial end was not cancelled. No paid Assistant request was made by these checks.",
+  "tableAndFooterFollowup": {
+    "commit": "927cb07",
+    "selectedPages": 9,
+    "pageFailures": 0,
+    "redirectRulesChecked": 58,
+    "indexedPages": 913,
+    "sitemapPages": 913,
+    "notes": "Nine changed table pages passed HTML/Markdown GET+HEAD, canonicals and noindex. Browser verified endpoint underscores and restored legal/social footer."
+  }
 }

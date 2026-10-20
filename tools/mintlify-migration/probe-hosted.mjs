@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 const args = process.argv.slice(2);
 const option = (name, fallback) => args.includes(name) ? args[args.indexOf(name) + 1] : fallback;
 if (!option('--base')) {
-  console.error('Usage: node probe-hosted.mjs --base https://staging.mintlify.site [--sha commit] [--all-routes] [--mcp] [--mcp-read-only] [--report file.json]');
+  console.error('Usage: node probe-hosted.mjs --base https://staging.mintlify.site [--sha commit] [--all-routes | --routes-file paths.json] [--mcp] [--mcp-read-only] [--report file.json]');
   process.exit(2);
 }
 const base = new URL(option('--base'));
@@ -47,9 +47,17 @@ async function request(route, init = {}) {
 }
 const attrs = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)\s*=\s*["']([^"']*)["']/g)].map(m => [m[1].toLowerCase(), m[2]]));
 let manifest;
-if (args.includes('--all-routes')) manifest = JSON.parse(await fs.readFile(manifestPath, 'utf8'));
-const routes = manifest ? manifest.pages.map(p => ({route: p.expectedPath, page: p.mintlifyPage, title: p.title})) :
+if (args.includes('--all-routes') || option('--routes-file')) manifest = JSON.parse(await fs.readFile(manifestPath, 'utf8'));
+let routes = manifest ? manifest.pages.map(p => ({route: p.expectedPath, page: p.mintlifyPage, title: p.title})) :
   ['/', '/index', '/cad', '/cms', '/radio', '/bot', '/store', '/studio'].map(route => ({route, page: route === '/' ? 'index' : route.slice(1)}));
+if (option('--routes-file')) {
+  const requested = JSON.parse(await fs.readFile(option('--routes-file'), 'utf8'));
+  if (!Array.isArray(requested) || !requested.length || requested.some(p => typeof p !== 'string')) throw new Error('Route selection must be a nonempty JSON array of paths');
+  const matches = (r, p) => [r.route, r.page, `/${r.page}`].includes(p);
+  if (requested.some(p => !routes.some(r => matches(r, p)))) throw new Error('Route selection contains an unknown path');
+  routes = routes.filter(r => requested.some(p => matches(r, p)));
+  report.routeScope = {kind: 'selected', selected: routes.length, totalManifestPages: manifest.pages.length};
+}
 async function checkPage({route, page, title}) {
   try {
     const {response, body} = await request(route);

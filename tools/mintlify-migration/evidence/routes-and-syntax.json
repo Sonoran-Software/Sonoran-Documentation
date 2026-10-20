@@ -23,5 +23,11 @@
     "checkedPages": 914,
     "checkedBlocks": 2425
   },
-  "knownNonFailure": "One source-only legacy adapter has page noindex, matching its unpublished GitBook status."
+  "knownNonFailure": "One source-only legacy adapter has page noindex, matching its unpublished GitBook status.",
+  "errors": {
+    "configErrors": 0,
+    "navigationErrors": 0,
+    "syntaxErrors": 0,
+    "codeFenceErrors": 0
+  }
 }

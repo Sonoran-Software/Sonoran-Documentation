@@ -418,7 +418,7 @@ class Converter:
             cfg['logo']={'light':self.branding['logoLight'],'dark':self.branding['logoDark'],'href':'/'}
         if self.branding.get('favicon'): cfg['favicon']=self.branding['favicon']
         (OUT/'docs.json').write_text(json.dumps(cfg,ensure_ascii=False,indent=2)+'\n','utf-8')
-        (OUT/'style.css').write_text('/* Sonoran documentation: preserve original branding and readable media. */\n#content-area img { max-width: 100%; height: auto; }\niframe { border: 0; }\n/* Starter preview: the Assistant service is also inactive in the dashboard. */\n#assistant-entry, #assistant-entry-mobile, #chat-assistant-sheet, #ask-assistant-code-block-button { display: none !important; }\n','utf-8')
+        (OUT/'style.css').write_text('/* Sonoran documentation: preserve original branding and readable media. */\n#content-area img { max-width: 100%; height: auto; }\niframe { border: 0; }\nfooter a { white-space: normal; text-overflow: clip; }\n/* Starter preview: the Assistant service is also inactive in the dashboard. */\n#assistant-entry, #assistant-entry-mobile, #chat-assistant-sheet, #ask-assistant-code-block-button { display: none !important; }\n','utf-8')
         report={'sourceCommit':self.manifest['sourceCommit'],'counts':dict(self.counts),'warnings':self.warnings}
         REPORT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf-8')
         print(json.dumps({'counts':dict(self.counts),'warningCounts':dict(collections.Counter(w['kind'] for w in self.warnings))}))

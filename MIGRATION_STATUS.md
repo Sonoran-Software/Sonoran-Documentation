@@ -4,7 +4,8 @@
 
 - Work branch: `codex/mintlify-migration`.
 - GitBook continues publishing its existing `master` content. Production documentation DNS has not been switched.
-- Mintlify publishes this branch, subdirectory `mintlify`, at https://sonoran-software-systems.mintlify.site/.
+- Mintlify publishes this branch, subdirectory `mintlify`, at https://sonoran-software-systems.mintlify.app/. The `.site` alias serves the same project but can retain older CDN cache entries.
+- Draft review: https://github.com/Sonoran-Software/Sonoran-Documentation/pull/9.
 - R2 media uses the new isolated bucket `docs-mintlify` and https://docs-assets.sonoransoftware.com/. The pre-existing `docs` bucket is untouched.
 - A 15-minute chat recovery automation continues the work. It must pause once staging meets the criteria below. The final documentation-domain cutover and GitBook cancellation require a later explicit user request.
 - Source snapshot: `d01ddc8d7df4cc47d0d15d6e0e2842aa7a7d41c3` (`master`, October 19, 2026).
@@ -14,25 +15,27 @@
 
 - 914 source content pages generated; 913 currently published GitBook pages mapped exactly once.
 - All 913 existing canonical GitBook URLs return HTTP 200. Fifty-eight paths differ from filesystem inference and are explicitly preserved.
-- Hosted Mintlify deployment `96bb405` includes all 914 pages with no failed parses; the independent GitHub validation workflow also passed. Its predecessor exposed why the full deployment log must be checked rather than only the success badge.
-- All 914 MDX files pass compile-only validation with GitHub-flavored Markdown. All 2,425 visible fenced code examples are preserved. Mintlify also accepted the generated configuration.
+- Hosted deployment `927cb07` includes all 914 pages with no failed parses; push and pull-request validation workflows passed. An early predecessor exposed why the full deployment log must be checked rather than only its success badge.
+- Full hosted baseline: all 914 HTML/Markdown GET and HEAD checks, 58 redirects, exact 913-page sitemap and recursive agent indexes, MCP discovery, two real searches and a file read passed. Subsequent targeted checks covered all eight Guidde corrections and all nine table changes. Evidence records the corresponding commit SHAs.
+- All 914 MDX files pass compile-only validation with GitHub-flavored Markdown. All 2,425 visible fenced examples and 22 HTML code payloads are preserved. All 1,255 figures contain one image/caption, and none of the 2,486 tab panels contains a heading that could become inaccessible in an inactive tab. Mintlify accepted the generated configuration.
 - Route QA checks all 914 generated pages and 2,153 internal links: no missing routes/aliases, bad page/fragment links, missing published heading IDs, duplicate explicit IDs, or incorrect navigation entries. All 6,028 published heading IDs are preserved, with 74 authored fragment aliases.
 - Fifty-two inherited external links containing `broken-reference` were repaired with evidence-backed topic links or, for obsolete historical features, their original text retained without a dead hyperlink.
 - The cloud-only restricted Support space contains six pages: Software Troubleshooting and CAD have test text; CMS, Radio, and Example are blank; Billing is a section listing. Visible page text is archived locally outside the public repository. No restricted Support content was published. Platform version history and analytics remain a separate pre-cancellation archive task.
 - R2 contains 2,875 unique objects, including three optimized animations. Complete object size/checksum verification found zero missing, mismatched, or unexpected objects. Public delivery, MIME, cache policy, CORS, and video seeking are verified.
 - Every visible source page is in the new navigation. Hidden pages are excluded from navigation.
-- Permanent Starter plan is selected. The Pro trial remains available until November 2; there is no early-end control visible in Billing. The trial-only reader assistant was explicitly disabled in its dashboard, but propagation to the public site still needs verification after deployment.
-- Staging has global `noindex, follow` metadata and canonical metadata pointing to the existing production documentation domain. Hosted behavior still requires verification.
+- Permanent Starter plan is selected. The Pro trial remains available until November 2; no early-end control is visible in Billing. The reader Assistant service is Inactive, and browser checks confirm that its remaining trial controls are absent. Ordinary search works.
+- Hosted HTML has `noindex, follow`, Markdown exports have `X-Robots-Tag: noindex`, and canonical URLs point to the corresponding existing production paths. Agent retrieval remains available.
+- Representative desktop/mobile checks across all seven product areas cover official light/dark branding, product/navigation drawers, SDK tabs, scrollable tables, accordion opening and direct fragment opening, ordinary search, image loading, all three optimized animations, Guidde playback and YouTube playback. This is representative visual coverage, not a pixel comparison of every page.
+- Support/social/legal footer links are restored. The Terms of Service link now uses its verified Terms route, repairing an inherited incorrect footer target. No legal text changed.
+- Private Kara compatibility work preserves GitBook as the default and prepares explicit Mintlify search/Markdown retrieval plus recursive indexes. The full application and real test project compile with zero errors; 562 tests passed, zero failed, and nine existing opt-in PostgreSQL tests were skipped. Native read-only search/content retrieval passed all seven products. The patch and local branch remain private; production Support is unchanged.
+- Fourteen unmerged GitBook draft review captures are preserved locally outside this public repository: eight report no changes and six contain visible changed-page text. These are review-text/media-reference captures, not full binary/revision-history exports. No drafts were published or marked reviewed.
+- The live GitBook site reports no installed integrations. Sampled public scripts expose no GA/GTM/third-party widget to port. Native GitBook analytics, reader AI and collaboration history are separate plan/platform differences described in `tools/mintlify-migration/feature-parity.md`.
 
 ## Current work
 
-1. Visually verify the official light/dark branding, disabled trial UI, and optimized animation playback in the next hosted build.
-2. Recheck the inherited external-link repairs on the hosted build. Internal routes and both published/authored anchor variants now pass locally.
-3. Recheck the public staging site after every substantive build: page HTTP responses, redirects, Markdown export, robots metadata, canonicals, index completeness, native MCP search/page retrieval, and public images.
-4. Visually compare pages across all seven product areas and each complex content type, on desktop and mobile. Fix layout, branding, tab/accordion/table/media behavior, and content loss. Use existing official branding assets.
-5. Package reproducible build/upload/validation tools and concrete results in `tools/mintlify-migration`.
-6. Prepare and test the Kara/Sonoran documentation integration changes before any domain cutover. Existing GitBook-specific MCP clients need discovery/adapter changes; a URL redirect alone is insufficient. Preserve recursive llms index support if Mintlify splits its index.
-7. Inventory or securely archive cloud-only restricted Support test content, draft changes, GitBook settings, redirect history, comments, and platform history. Do not publish protected material into the public staging site.
+1. Finish the final cloud API/settings inventory and record any records that cannot be exported through the current UI.
+2. Deploy the final footer-label wrapping adjustment and verify its presentation and checks.
+3. Keep the recovery automation active until the remaining staging acceptance work is complete, then pause it. Production cutover and cancellation remain gated below.
 
 ## Staging acceptance criteria
 

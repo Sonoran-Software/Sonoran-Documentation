@@ -25,6 +25,8 @@ This reads product roots, Markdown exports, canonicals, robots metadata, recursi
 
 Inspect the full GitHub Mintlify check output as well as its conclusion. Mintlify can report deployment success while omitting individual pages that failed to parse. On the first staging deployment, one unescaped pipe in a Markdown table's JSX code string produced a 404 page while the overall check remained successful; enabling GFM in local compilation reproduces this failure.
 
+For a later targeted content change, add `--routes-file paths.json` to the probe command. The file is a nonempty JSON array of known routes or page identifiers, such as `["cms/developer-api-documentation/api-integration/api-endpoints"]`. Selected pages receive the same GET/HEAD and Markdown checks; the complete manifest still supplies sitemap/index expectations and redirect checks. Use `--all-routes` for the complete page sweep. Selection never turns a partial page sweep into a claim that every page was rechecked.
+
 The public MCP names must be discovered from the deployed site. Initial staging advertised `search_sonoran_software_documentation` and `query_docs_filesystem_sonoran_software_documentation`; search retained `Title:`/`Link:` text blocks. Native `getPage` and GitBook's `askQuestion` are absent. Search and `.md` content retrieval are available on Starter; the reader AI Assistant and Developer API require paid entitlements.
 
 Check route, navigation, and anchor preservation with Python (standard library only):

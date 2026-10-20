@@ -1,5 +1,6 @@
 /* Sonoran documentation: preserve original branding and readable media. */
 #content-area img { max-width: 100%; height: auto; }
 iframe { border: 0; }
+footer a { white-space: normal; text-overflow: clip; }
 /* Starter preview: the Assistant service is also inactive in the dashboard. */
 #assistant-entry, #assistant-entry-mobile, #chat-assistant-sheet, #ask-assistant-code-block-button { display: none !important; }
