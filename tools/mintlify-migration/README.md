@@ -14,6 +14,8 @@ python tools/mintlify-migration/build.py
 
 The builder reads source Markdown and the checked-in manifests, and writes only `mintlify/` plus its conversion report. It does not upload assets or modify DNS. Keep the official branding and asset host in `asset-manifest.json`. Large animation derivatives preserve the original object mapping and use a separate `optimizedEntries` list.
 
+The default `--mode staging` includes global `noindex, follow` metadata. When production cutover is authorized, `python tools/mintlify-migration/build.py --mode production` omits that global staging directive. It retains the production canonical domain, `seo.indexing: "all"`, and the intentional source-only page's `noindex: true`. Use the production acceptance command in [validation.md](validation.md) after the production deployment and hostname routing are ready. Editing generated `docs.json` alone does not change the builder's default for later rebuilds.
+
 Run the checks in [validation.md](validation.md), then inspect the complete Mintlify deployment log and hosted pages. A successful deployment status alone does not guarantee that every page was included. The workflow validates syntax, code examples, route/link/anchor coverage, and configuration before a change is treated as ready.
 
 ## Media

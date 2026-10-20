@@ -21,7 +21,8 @@ def clean_title(s):
     return re.sub(r'\s+',' ',re.sub(r'[*_`\\]','',s)).strip()
 
 class Converter:
-    def __init__(self, asset_manifest=None, asset_base=None):
+    def __init__(self, asset_manifest=None, asset_base=None, mode='staging'):
+        self.mode=mode
         self.manifest=json.loads(MANIFEST.read_text('utf-8'))
         self.pages={p['source']:p for p in self.manifest['pages']}
         self.routes={p['publishedPath']:p for p in self.pages.values()}
@@ -406,6 +407,7 @@ class Converter:
                 if alias not in self.routes and alias!=p['publishedPath']:
                     redirects.append({'source':alias,'destination':p['publishedPath']})
         cfg={'$schema':'https://mintlify.com/docs.json','theme':'mint','name':'Sonoran Software Documentation','colors':{'primary':'#1D7DCF','light':'#3297ED','dark':'#1465AA'},'navigation':self.nav(),'navbar':{'links':[{'label':'Support','href':'https://support.sonoransoftware.com'},{'label':'Website','href':'https://sonoransoftware.com'}]},'seo':{'indexing':'all','metatags':{'robots':'noindex, follow','canonical':'https://docs.sonoransoftware.com'}},'redirects':redirects}
+        if self.mode=='production': cfg['seo']['metatags'].pop('robots')
         cfg['footer']={
             'socials':{'discord':'https://discord.sonoransoftware.com/','x':'https://x.com/Sonoran_SW','instagram':'https://www.instagram.com/sonoransoftware/','youtube':'https://www.youtube.com/channel/UC-IfsakmGGmPrG8qcV3VVsA'},
             'links':[
@@ -425,6 +427,7 @@ class Converter:
 
 if __name__=='__main__':
     ap=argparse.ArgumentParser()
+    ap.add_argument('--mode',choices=['staging','production'],default='staging',help='Production omits global staging robots metadata; source-only page exclusions remain')
     ap.add_argument('--asset-manifest',default=str(BASE/'asset-manifest.json') if (BASE/'asset-manifest.json').exists() else None); ap.add_argument('--asset-base',default='https://docs-assets.sonoransoftware.com')
     ap.add_argument('--source-root',type=Path,default=REPO)
     ap.add_argument('--routing-manifest',type=Path,default=MANIFEST)
@@ -435,4 +438,4 @@ if __name__=='__main__':
     BASE=args.data_root.resolve(); REPO=args.source_root.resolve(); MANIFEST=args.routing_manifest.resolve()
     OUT=args.output.resolve() if args.output else REPO/'mintlify'; REPORT=args.report.resolve()
     if OUT==REPO or REPO not in OUT.parents: raise SystemExit('Output must be a subdirectory of the source checkout')
-    Converter(args.asset_manifest,args.asset_base).run()
+    Converter(args.asset_manifest,args.asset_base,args.mode).run()

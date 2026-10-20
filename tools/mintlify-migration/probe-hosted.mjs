@@ -4,13 +4,15 @@ import {fileURLToPath} from 'node:url';
 
 const args = process.argv.slice(2);
 const option = (name, fallback) => args.includes(name) ? args[args.indexOf(name) + 1] : fallback;
+const mode = option('--mode', 'staging');
+if (!['staging', 'production'].includes(mode)) throw new Error('--mode must be staging or production');
 if (!option('--base')) {
-  console.error('Usage: node probe-hosted.mjs --base https://staging.mintlify.site [--sha commit] [--all-routes | --routes-file paths.json] [--mcp] [--mcp-read-only] [--report file.json]');
+  console.error('Usage: node probe-hosted.mjs --base https://docs.example.com [--mode staging|production] [--sha commit] [--all-routes | --routes-file paths.json] [--mcp] [--mcp-read-only] [--report file.json]');
   process.exit(2);
 }
 const base = new URL(option('--base'));
-if (base.protocol !== 'https:') throw new Error('Expected an HTTPS public staging URL');
-const report = {schemaVersion: 2, base: base.origin, commit: option('--sha', null), generatedAt: new Date().toISOString(), pages: [], indexes: [], discovery: {}, mcp: null};
+if (base.protocol !== 'https:') throw new Error('Expected an HTTPS public documentation URL');
+const report = {schemaVersion: 3, mode, base: base.origin, commit: option('--sha', null), generatedAt: new Date().toISOString(), pages: [], indexes: [], discovery: {}, mcp: null};
 const here = path.dirname(fileURLToPath(import.meta.url));
 const localRoot = path.resolve(option('--root', path.join(here, '../../mintlify')));
 const manifestPath = path.resolve(option('--manifest', path.join(here, 'routing-manifest.json')));
@@ -28,7 +30,7 @@ let cachedPages = new Map();
 if (args.includes('--resume')) {
   try {
     const previous = JSON.parse(await fs.readFile(reportPath, 'utf8'));
-    if (previous.schemaVersion === report.schemaVersion && previous.base === report.base && previous.commit === report.commit) {
+    if (previous.schemaVersion === report.schemaVersion && previous.mode === mode && previous.base === report.base && previous.commit === report.commit) {
       cachedPages = new Map(previous.pages.filter(p => p && !p.error).map(p => [p.route, p]));
       console.error(`Resuming ${cachedPages.size} completed route checks`);
     }
@@ -46,9 +48,13 @@ async function request(route, init = {}) {
   }
 }
 const attrs = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)\s*=\s*["']([^"']*)["']/g)].map(m => [m[1].toLowerCase(), m[2]]));
+const blocksIndexing = value => /(?:^|[\s,:;])(?:noindex|none)(?=$|[\s,;])/i.test(value || '');
+const sourceOnly = page => page.mappingMethod === 'source-only-unpublished' || page.liveStatus === 404;
 let manifest;
-if (args.includes('--all-routes') || option('--routes-file')) manifest = JSON.parse(await fs.readFile(manifestPath, 'utf8'));
-let routes = manifest ? manifest.pages.map(p => ({route: p.expectedPath, page: p.mintlifyPage, title: p.title})) :
+const manifestRoutes = args.includes('--all-routes') || option('--routes-file');
+if (manifestRoutes || mode === 'production') manifest = JSON.parse(await fs.readFile(manifestPath, 'utf8'));
+const intentionalNoindex = new Set((manifest?.pages || []).filter(sourceOnly).map(p => p.mintlifyPage));
+let routes = manifestRoutes ? manifest.pages.map(p => ({route: p.expectedPath, page: p.mintlifyPage, title: p.title})) :
   ['/', '/index', '/cad', '/cms', '/radio', '/bot', '/store', '/studio'].map(route => ({route, page: route === '/' ? 'index' : route.slice(1)}));
 if (option('--routes-file')) {
   const requested = JSON.parse(await fs.readFile(option('--routes-file'), 'utf8'));
@@ -62,14 +68,24 @@ async function checkPage({route, page, title}) {
   try {
     const {response, body} = await request(route);
     const canonical = [...body.matchAll(/<link\b[^>]*>/gi)].map(m => attrs(m[0])).find(a => a.rel === 'canonical')?.href;
-    const robots = [...body.matchAll(/<meta\b[^>]*>/gi)].map(m => attrs(m[0])).find(a => a.name?.toLowerCase() === 'robots')?.content;
+    const robotsTags = [...body.matchAll(/<meta\b[^>]*>/gi)].map(m => attrs(m[0])).filter(a => /^(robots|googlebot|bingbot)$/i.test(a.name || ''));
+    const robots = robotsTags.find(a => a.name.toLowerCase() === 'robots')?.content;
     const mdRoute = `/${page}.md`;
     const md = await request(mdRoute);
     const head = await request(route, {method: 'HEAD'});
     const mdHead = await request(mdRoute, {method: 'HEAD'});
     const expectedCanonical = `https://docs.sonoransoftware.com${page === 'index' ? '' : `/${page}`}`;
+    const blockers = robotsTags.filter(a => blocksIndexing(a.content)).map(a => ({source: `meta:${a.name}`, value: a.content}));
+    for (const [source, headers] of [['GET', response.headers], ['HEAD', head.response.headers]]) {
+      const value = headers.get('x-robots-tag');
+      if (blocksIndexing(value)) blockers.push({source: `${source}:X-Robots-Tag`, value});
+    }
+    const expectedNoindex = mode === 'staging' || intentionalNoindex.has(page);
+    const hasNoindex = robotsTags.some(a => a.name.toLowerCase() === 'robots' && blocksIndexing(a.content));
+    const indexingMatches = expectedNoindex ? hasNoindex : blockers.length === 0;
     return {route, page, expectedTitle: title, status: response.status, canonical: canonical || null, robots: robots || null,
-      hasNoindex: /noindex/i.test(robots || ''), expectedCanonical, canonicalMatches: canonical === expectedCanonical,
+      hasNoindex, indexing: {expected: expectedNoindex ? 'excluded' : 'indexable', matches: indexingMatches, blockers},
+      expectedCanonical, canonicalMatches: canonical === expectedCanonical,
       head: {status: head.response.status, type: head.response.headers.get('content-type'), robots: head.response.headers.get('x-robots-tag')},
       titlePresent: !title || body.includes(title.replaceAll('&', '&amp;')) || body.includes(title),
       markdown: {route: mdRoute, status: md.response.status, headStatus: mdHead.response.status,
@@ -118,6 +134,7 @@ while (queue.length && seenIndexes.size < 24) {
 }
 report.indexedPageCount = markdownUrls.size;
 report.systemEndpoints = [];
+let robotsBody;
 for (const route of ['/robots.txt', '/sitemap.xml']) {
   try {
     const {response, body} = await request(route);
@@ -128,6 +145,7 @@ for (const route of ['/robots.txt', '/sitemap.xml']) {
       entry.locations = [...body.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
       entry.locationCount = entry.locations.length;
     }
+    if (route === '/robots.txt') robotsBody = body;
     report.systemEndpoints.push(entry);
   } catch (error) { report.systemEndpoints.push({route, error: error.message}); }
 }
@@ -138,7 +156,8 @@ if (manifest) {
   for (const page of manifest.pages) {
     const content = await fs.readFile(path.join(localRoot, `${page.mintlifyPage}.mdx`), 'utf8');
     const frontmatter = content.match(/^---\r?\n([\s\S]*?)\r?\n---/m)?.[1] || '';
-    (/^noindex:\s*true\s*$/m.test(frontmatter) ? excluded : expected).push(`/${page.mintlifyPage}.md`);
+    const excludedPage = mode === 'production' ? sourceOnly(page) : /^noindex:\s*true\s*$/m.test(frontmatter);
+    (excludedPage ? excluded : expected).push(`/${page.mintlifyPage}.md`);
   }
   report.indexCoverage = {expectedCount: expected.length, excludedCount: excluded.length,
     missing: expected.filter(p => !indexedPaths.has(p)), excludedButIndexed: excluded.filter(p => indexedPaths.has(p)),
@@ -168,6 +187,53 @@ if (manifest) {
   }
   // The home route is also reachable through Mintlify's generated index path.
   report.homeIndex = await checkPage({route: '/index', page: 'index'});
+}
+// Check the public HTML routes against generic, Google, and Bing crawler rules.
+// The longest matching path wins; Allow wins an equally specific conflict.
+function robotsGroups(body) {
+  const groups = [];
+  let group = {agents: [], rules: []}, rulesStarted = false;
+  for (const raw of body.split(/\r?\n/)) {
+    const line = raw.replace(/#.*$/, '').trim();
+    const colon = line.indexOf(':');
+    if (colon < 0) continue;
+    const name = line.slice(0, colon).trim().toLowerCase(), value = line.slice(colon + 1).trim();
+    if (name === 'user-agent') {
+      if (rulesStarted) { groups.push(group); group = {agents: [], rules: []}; rulesStarted = false; }
+      group.agents.push(value.toLowerCase());
+    } else if (['allow', 'disallow'].includes(name) && group.agents.length) {
+      rulesStarted = true;
+      if (value.startsWith('/')) group.rules.push({allow: name === 'allow', path: value});
+    }
+  }
+  groups.push(group);
+  return groups;
+}
+function robotsBlock(groups, agent, route) {
+  const matching = groups.map(group => ({group, specificity: Math.max(-1, ...group.agents.map(value => value === '*' ? 0 : value && agent.toLowerCase().includes(value) ? value.length : -1))}));
+  const specificity = Math.max(-1, ...matching.map(item => item.specificity));
+  const rules = matching.filter(item => item.specificity === specificity && specificity >= 0).flatMap(item => item.group.rules);
+  let winner;
+  for (const rule of rules) {
+    const end = rule.path.endsWith('$');
+    const pattern = (end ? rule.path.slice(0, -1) : rule.path).replace(/[.+?^${}()|[\]\\]/g, '\\$&').replaceAll('*', '.*');
+    if (!new RegExp(`^${pattern}${end ? '$' : ''}`).test(route)) continue;
+    const length = Buffer.byteLength(rule.path.replace(/\*/g, '').replace(/\$$/, ''));
+    if (!winner || length > winner.length || (length === winner.length && rule.allow)) winner = {...rule, length};
+  }
+  return winner && !winner.allow ? winner.path : null;
+}
+if (mode === 'production' && robotsBody !== undefined) {
+  const publicRoutes = manifest.pages.filter(page => !sourceOnly(page)).map(page => page.expectedPath);
+  if (!publicRoutes.includes('/index')) publicRoutes.push('/index');
+  const groups = robotsGroups(robotsBody), blocked = [];
+  for (const agent of ['*', 'Googlebot', 'Bingbot']) {
+    for (const route of publicRoutes) {
+      const rule = robotsBlock(groups, agent, new URL(route, base).pathname);
+      if (rule) blocked.push({agent, route, rule});
+    }
+  }
+  report.robotsCoverage = {checkedRoutes: publicRoutes.length, agents: ['*', 'Googlebot', 'Bingbot'], blocked};
 }
 try {
   const {response, body} = await request('/.well-known/mcp/server-card.json');
@@ -206,7 +272,7 @@ if (args.includes('--mcp') || args.includes('--mcp-read-only')) {
     } finally { await reader.cancel(); }
   }
   try {
-    const initialized = await rpc({jsonrpc: '2.0', id: 1, method: 'initialize', params: {protocolVersion: '2025-03-26', capabilities: {}, clientInfo: {name: 'sonoran-staging-validation', version: '1'}}});
+    const initialized = await rpc({jsonrpc: '2.0', id: 1, method: 'initialize', params: {protocolVersion: '2025-03-26', capabilities: {}, clientInfo: {name: `sonoran-${mode}-validation`, version: '1'}}});
     const protocol = initialized.data?.result?.protocolVersion;
     if (protocol) headers['MCP-Protocol-Version'] = protocol;
     await rpc({jsonrpc: '2.0', method: 'notifications/initialized'});
@@ -240,17 +306,19 @@ if (args.includes('--mcp') || args.includes('--mcp-read-only')) {
 }
 report.inProgress = false;
 await saveCheckpoint();
-const pageFailures = report.pages.filter(p => p.error || p.status !== 200 || p.head?.status !== 200 || !p.hasNoindex || !p.canonicalMatches || p.markdown?.status !== 200 || p.markdown?.headStatus !== 200 || !/noindex/i.test(p.markdown?.headRobots || '') || p.markdown?.looksLikeHtml);
+const pageFailed = p => p.error || p.status !== 200 || p.head?.status !== 200 || !p.indexing?.matches || !p.canonicalMatches || p.markdown?.status !== 200 || p.markdown?.headStatus !== 200 || (mode === 'staging' && !blocksIndexing(p.markdown?.headRobots)) || p.markdown?.looksLikeHtml;
+const pageFailures = report.pages.filter(pageFailed);
 const indexFailures = report.indexes.filter(i => i.error || i.status !== 200);
 const mcpFailures = (report.mcp?.acceptance || []).filter(a => a.error || a.isError || a.status !== 200 || (a.kind === 'search' && !a.hasSourceLinks) || (a.kind === 'filesystem' && !a.hasExpectedContent));
 const redirectFailures = (report.redirects || []).filter(r => !r.matches);
-const homeIndexFailure = report.homeIndex && (report.homeIndex.status !== 200 || !report.homeIndex.canonicalMatches || !report.homeIndex.hasNoindex || report.homeIndex.markdown?.status !== 200);
+const homeIndexFailure = report.homeIndex && pageFailed(report.homeIndex);
 const systemFailures = report.systemEndpoints.filter(e => e.error || e.status !== 200 || e.headStatus !== 200);
-const failed = pageFailures.length || indexFailures.length || systemFailures.length || report.indexCoverage?.missing.length || report.indexCoverage?.excludedButIndexed.length || report.indexCoverage?.unexpected.length || report.sitemapCoverage?.missing.length || report.sitemapCoverage?.unexpected.length || redirectFailures.length || homeIndexFailure || report.discovery.status !== 200 || mcpFailures.length || report.mcp?.error || report.mcp?.initialized?.data?.error || report.mcp?.listed?.data?.error || (report.mcp && report.mcp.listed?.status !== 200);
+const failed = pageFailures.length || indexFailures.length || systemFailures.length || report.robotsCoverage?.blocked.length || report.indexCoverage?.missing.length || report.indexCoverage?.excludedButIndexed.length || report.indexCoverage?.unexpected.length || report.sitemapCoverage?.missing.length || report.sitemapCoverage?.unexpected.length || redirectFailures.length || homeIndexFailure || report.discovery.status !== 200 || mcpFailures.length || report.mcp?.error || report.mcp?.initialized?.data?.error || report.mcp?.listed?.data?.error || (report.mcp && report.mcp.listed?.status !== 200);
 const compactCoverage = coverage => coverage && Object.fromEntries(Object.entries(coverage).map(([key, value]) => [key, Array.isArray(value) ? {count: value.length, examples: value.slice(0, 8)} : value]));
-console.log(JSON.stringify({base: report.base, commit: report.commit, checkedPages: report.pages.length, pageFailureCount: pageFailures.length,
-  pageFailures: pageFailures.slice(0, 15).map(p => ({route: p.route, status: p.status, error: p.error, canonical: p.canonical, expectedCanonical: p.expectedCanonical, noindex: p.hasNoindex, head: p.head?.status, mdStatus: p.markdown?.status, mdHead: p.markdown?.headStatus})), indexedPages: report.indexedPageCount,
+console.log(JSON.stringify({base: report.base, mode, commit: report.commit, checkedPages: report.pages.length, pageFailureCount: pageFailures.length,
+  pageFailures: pageFailures.slice(0, 15).map(p => ({route: p.route, status: p.status, error: p.error, canonical: p.canonical, expectedCanonical: p.expectedCanonical, noindex: p.hasNoindex, indexing: p.indexing, head: p.head?.status, mdStatus: p.markdown?.status, mdHead: p.markdown?.headStatus})), indexedPages: report.indexedPageCount,
   indexCoverage: compactCoverage(report.indexCoverage), sitemapCoverage: compactCoverage(report.sitemapCoverage), systemFailures,
+  robotsCoverage: report.robotsCoverage && {...report.robotsCoverage, blocked: {count: report.robotsCoverage.blocked.length, examples: report.robotsCoverage.blocked.slice(0, 15)}},
   redirectsChecked: report.redirects?.length, redirectFailures, homeIndex: report.homeIndex,
   discoveryStatus: report.discovery.status, mcp: report.mcp?.error || report.mcp?.listed?.status,
   mcpAcceptanceFailures: mcpFailures, report: reportPath}, null, 2));

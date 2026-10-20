@@ -21,7 +21,27 @@ npm run probe --prefix tools/mintlify-migration -- --base https://sonoran-softwa
 npm run probe --prefix tools/mintlify-migration -- --base https://sonoran-software-systems.mintlify.site --sha COMMIT --all-routes --mcp-read-only
 ```
 
-This reads product roots, Markdown exports, canonicals, robots metadata, recursive agent indexes, and MCP capability discovery. `--all-routes` checks HTML and Markdown GET/HEAD responses for each route with six concurrent workers, checks explicit 307/308 redirects and `robots.txt`/`sitemap.xml`, and compares agent-index/sitemap coverage against every local page except pages explicitly marked `noindex`. The expected canonical domain is the existing production domain, while staging HTML must remain globally `noindex`. The optional `--mcp` protocol check initializes MCP and lists tools. `--mcp-read-only` additionally performs two public search queries and one fixed `head` content read; it never invokes Assistant, API playground operations, feedback, or admin tools. `--sha` records which successfully deployed commit is under review; it does not prove server revision. Reports are written to ignored `reports/hosted-probe.json`, or `--report PATH`. Progress is checkpointed every100 routes; `--resume` reuses completed checks only from the same report version, base URL, and SHA label. Network timeouts and server errors receive at most two retries. Failed availability, canonical, robots, index coverage, or MCP acceptance checks exit nonzero.
+This reads product roots, Markdown exports, canonicals, robots metadata, recursive agent indexes, and MCP capability discovery. `--all-routes` checks HTML and Markdown GET/HEAD responses for each route with six concurrent workers, checks explicit 307/308 redirects and `robots.txt`/`sitemap.xml`, and compares agent-index/sitemap coverage against every local page except pages explicitly marked `noindex`. The default `--mode staging` requires globally excluded HTML and Markdown HEAD `noindex` headers. The expected canonical domain is the existing production domain. The optional `--mcp` protocol check initializes MCP and lists tools. `--mcp-read-only` additionally performs two public search queries and one fixed `head` content read; it never invokes Assistant, API playground operations, feedback, or admin tools. `--sha` records which successfully deployed commit is under review; it does not prove server revision. Reports are written to ignored `reports/hosted-probe.json`, or `--report PATH`. Progress is checkpointed every 100 routes; `--resume` reuses completed checks only from the same report version, mode, base URL, and SHA label. Network timeouts and server errors receive at most two retries. Failed availability, canonical, robots, index coverage, or MCP acceptance checks exit nonzero.
+
+## Production acceptance
+
+Once cutover is authorized, prepare the production configuration from the repository root:
+
+```sh
+python tools/mintlify-migration/build.py --mode production
+```
+
+This omits only the global staging `seo.metatags.robots` directive. It retains `seo.indexing: "all"`, the existing production canonical domain, and per-page exclusions for source-only unpublished content. The default builder mode remains staging, so production rebuilds must continue to pass the flag while this migration builder is in use.
+
+After reviewing/deploying that commit and routing the production hostname, run from the repository root:
+
+```sh
+node tools/mintlify-migration/probe-hosted.mjs --base https://docs.sonoransoftware.com --mode production --sha COMMIT --all-routes --mcp-read-only --report tools/mintlify-migration/reports/hosted-production.json
+```
+
+Production mode requires public HTML to be indexable: no `noindex` or `none` in robots/Googlebot/Bingbot meta tags or either HTML GET/HEAD `X-Robots-Tag` header. It checks `robots.txt` rules for all published paths plus `/index`, including generic, Googlebot, and Bingbot groups, longest-path precedence, wildcard rules, and equally specific Allow overrides. The source-only unpublished legacy page must remain excluded from HTML indexing, the sitemap, and agent indexes. Exclusions come from the recorded manifest rather than accepting an accidental new `noindex` on a published page. Markdown exports must remain readable; their own `X-Robots-Tag: noindex` is allowed because those exports need not become duplicate search results. A production run always loads the manifest for inventory/exclusion checks; use `--all-routes` for complete page coverage.
+
+These commands do not deploy, change DNS, remove dashboard indexing restrictions, or prove that external search engines have crawled the result. Keep the current noindex staging deployment until the cutover is authorized, and review the full deployment output as well as the probe results. A production probe against current staging should fail its public HTML indexing checks.
 
 Inspect the full GitHub Mintlify check output as well as its conclusion. Mintlify can report deployment success while omitting individual pages that failed to parse. On the first staging deployment, one unescaped pipe in a Markdown table's JSX code string produced a 404 page while the overall check remained successful; enabling GFM in local compilation reproduces this failure.
 
