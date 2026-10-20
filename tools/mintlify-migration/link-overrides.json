@@ -83,7 +83,8 @@
       "/broken/pages/-M7U3aBbrsfrj1Cmeqmm": "/cad/integration-plugins/in-game-integration/available-plugins/wraithv2"
     },
     "cms/sonoran-cms/README.md": {
-      "https://info.sonorancad.com/why-choose-sonoran-cad/about": "/cad"
+      "https://info.sonorancad.com/why-choose-sonoran-cad/about": "/cad",
+      "https://github.com/Sonoran-Software/SonoranCMS-Documentation/blob/master/broken-reference/README.md": "/other/translation-support"
     },
     "cms/sonoran-cms/developer-api-documentation/api-integration/api-endpoints/README.md": {
       "https://info.sonorancad.com/other-products/server-hosting": "/promotions/fivem-hosting"
@@ -92,7 +93,8 @@
       "https://info.sonorancad.com/other-products/server-hosting": "/promotions/fivem-hosting"
     },
     "cms/sonoran-cms/integration-capabilities/discord-rich-presence.md": {
-      "https://info.sonorancms.com/why-choose-sonoran-cms/why-choose-sonoran-cms": "/cms"
+      "https://info.sonorancms.com/why-choose-sonoran-cms/why-choose-sonoran-cms": "/cms",
+      "https://github.com/Sonoran-Software/SonoranCMS-Documentation/blob/master/integration-capabilities/broken-reference/README.md": "/cad"
     },
     "cms/sonoran-cms/integration-capabilities/in-game-integration-resources/core/README.md": {
       "https://info.sonoranbot.com/en/tutorials/getting-started/sonoran-cms-integration#h-1-discord-sso-linking": "/bot/tutorials/sonoran-cms-integration/account-link"
@@ -150,6 +152,9 @@
       "https://app.gitbook.com/s/-M4pGN81fb4R6zFhodcu/integration-plugins/in-game-integration/submodule-configuration": "/cad/integration-plugins/in-game-integration/submodule-configuration",
       "https://app.gitbook.com/s/-MdBOa9OFjtdqw9FdXli/integration-capabilities/in-game-integration-resources/core/free-plugin-installation-next-steps": "/cms/integration-capabilities/in-game-integration-resources/core/free-plugin-installation-next-steps",
       "https://app.gitbook.com/s/fCk5zoeun5gx3ujYW6eg/tutorials/usage": "/radio/tutorials/usage"
+    },
+    "cms/sonoran-cms/tutorials/administrative/growth-and-discovery/growth-panel.md": {
+      "https://github.com/Sonoran-Software/SonoranCMS-Documentation/blob/master/tutorials/administrative/growth-and-discovery/broken-reference/README.md": "https://sonorancms.com/pricing"
     }
   },
   "entries": [
@@ -545,6 +550,24 @@
       "oldTarget": "https://app.gitbook.com/s/fCk5zoeun5gx3ujYW6eg/tutorials/usage",
       "destination": "/radio/tutorials/usage",
       "evidence": "GitBook space identifier resolves to documented product prefix; route checked against current public inventory (pricing is linked externally in current navigation)."
+    },
+    {
+      "source": "cms/sonoran-cms/README.md",
+      "oldTarget": "https://github.com/Sonoran-Software/SonoranCMS-Documentation/blob/master/broken-reference/README.md",
+      "destination": "/other/translation-support",
+      "evidence": "Both source labels explicitly describe translation/i18n. Current shared Translation Support page documents CMS language selection and contributions; staging target GET200."
+    },
+    {
+      "source": "cms/sonoran-cms/integration-capabilities/discord-rich-presence.md",
+      "oldTarget": "https://github.com/Sonoran-Software/SonoranCMS-Documentation/blob/master/integration-capabilities/broken-reference/README.md",
+      "destination": "/cad",
+      "evidence": "Source anchor is Sonoran CAD alongside Sonoran CMS invitation-link documentation; preserve broad product reference with current public CAD landing page; staging GET200."
+    },
+    {
+      "source": "cms/sonoran-cms/tutorials/administrative/growth-and-discovery/growth-panel.md",
+      "oldTarget": "https://github.com/Sonoran-Software/SonoranCMS-Documentation/blob/master/tutorials/administrative/growth-and-discovery/broken-reference/README.md",
+      "destination": "https://sonorancms.com/pricing",
+      "evidence": "Source anchor pro version is a subscription-tier reference. Official CMS pricing URL opened successfully; current documentation navigation also uses that external pricing URL."
     }
   ],
   "contentChanges": [
@@ -606,6 +629,186 @@
       "replaceExact": "Looking for VPS, web, or dedicated hosting? Check out our official [server hosting](https://info.sonorancad.com/other-products/server-hosting).",
       "replacement": "Looking for FiveM hosting? View our [current hosting offer](/promotions/fivem-hosting).",
       "evidence": "Change obsolete VPS/web/dedicated hosting sentence to current FiveM hosting promotion wording."
+    },
+    {
+      "source": "cms/sonoran-cms/developer-api-documentation/api-integration/push-events/README.md",
+      "replaceExact": "[pricing ](https://github.com/Sonoran-Software/SonoranCMS-Documentation/blob/master/developer-api-documentation/api-integration/push-events/broken-reference/README.md)",
+      "replacement": "[pricing ](https://sonorancms.com/pricing)",
+      "evidence": "Pricing label references the required Plus subscription tier; current official CMS pricing URL, rather than a guessed documentation page."
+    },
+    {
+      "source": "cms/sonoran-cms/developer-api-documentation/api-integration/push-events/README.md",
+      "replaceExact": "[integration plugins](https://github.com/Sonoran-Software/SonoranCMS-Documentation/blob/master/developer-api-documentation/api-integration/push-events/broken-reference/README.md)",
+      "replacement": "[integration plugins](/cms/integration-capabilities/in-game-integration-resources)",
+      "evidence": "Current CMS In-Game Integration Resources overview covers plugin integration; staging target GET200."
+    },
+    {
+      "source": "cms/sonoran-cms/developer-api-documentation/api-integration/push-events/README.md",
+      "replaceExact": "Looking for VPS, web, or dedicated hosting? Check out our official [server hosting](https://github.com/Sonoran-Software/SonoranCMS-Documentation/blob/master/developer-api-documentation/api-integration/push-events/broken-reference/README.md)!",
+      "replacement": "Looking for FiveM hosting? View our [current hosting offer](/promotions/fivem-hosting).",
+      "evidence": "Replace obsolete VPS/web/dedicated offer with documented current FiveM hosting promotion wording; production official page and staging GET200 checked."
+    },
+    {
+      "source": "cms/sonoran-cms/integration-capabilities/in-game-integration-resources/minecraft-integrations/available-resources/whitelist.md",
+      "replaceExact": "Looking for VPS, web, or dedicated hosting? Check out our official [server hosting](https://github.com/Sonoran-Software/SonoranCMS-Documentation/blob/master/integration-capabilities/in-game-integration-resources/minecraft-integrations/available-resources/broken-reference/README.md)!",
+      "replacement": "Looking for FiveM hosting? View our [current hosting offer](/promotions/fivem-hosting).",
+      "evidence": "Replace obsolete VPS/web/dedicated offer with documented current FiveM hosting promotion wording; production official page and staging GET200 checked."
+    },
+    {
+      "source": "cms/sonoran-cms/integration-capabilities/in-game-integration-resources/roblox-integrations/available-resources/whitelist.md",
+      "replaceExact": "Looking for VPS, web, or dedicated hosting? Check out our official [server hosting](https://github.com/Sonoran-Software/SonoranCMS-Documentation/blob/master/integration-capabilities/in-game-integration-resources/roblox-integrations/available-resources/broken-reference/README.md)!",
+      "replacement": "Looking for FiveM hosting? View our [current hosting offer](/promotions/fivem-hosting).",
+      "evidence": "Replace obsolete VPS/web/dedicated offer with documented current FiveM hosting promotion wording; production official page and staging GET200 checked."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[**QBCore Game Panel**](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[**QBCore Game Panel**](/cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel)",
+      "evidence": "Current QBCore & Qbox Panel documents the named game panel and management features. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[**QB Core Game Panel**](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[**QB Core Game Panel**](/cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel)",
+      "evidence": "Current QBCore & Qbox Panel is the current spelling/name of this documented panel. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[**QB Core Management Panel**](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[**QB Core Management Panel**](/cms/integration-capabilities/fivem-game-panel/qbcore-and-qbox-panel)",
+      "evidence": "Current QBCore & Qbox Panel documents the named management panel. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[**vMenu Game Panel**](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[**vMenu Game Panel**](/cms/integration-capabilities/fivem-game-panel/vmenu-panel)",
+      "evidence": "Current vMenu Panel page documents the named panel. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[**Integrations**](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[**Integrations**](/cms/integration-capabilities/in-game-integration-resources)",
+      "evidence": "Immediately following changelog links describe CMS Core resources, covered by current integration overview. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[**Rank Editor**](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[**Rank Editor**](/cms/tutorials/user-management/creating-departments)",
+      "evidence": "Current Creating Ranks page describes Accessing the Rank Manager and editing ranks. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[**Rank Manager**](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[**Rank Manager**](/cms/tutorials/user-management/creating-departments)",
+      "evidence": "Current Creating Ranks page describes Accessing the Rank Manager and assigning permissions. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[**Department Manager -> Rank Manager**](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[**Department Manager -> Rank Manager**](/cms/tutorials/user-management/creating-departments)",
+      "evidence": "The changelog explicitly renames Department Manager to Rank Manager; current Creating Ranks page describes that manager. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[Department Manager](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[Department Manager](/cms/tutorials/user-management/creating-departments)",
+      "evidence": "The same changelog explicitly records rename to Rank Manager; current Creating Ranks page documents it. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[**Calendar Consolidation**](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[**Calendar Consolidation**](/cms/tutorials/community-events)",
+      "evidence": "Calendar Events is the current calendar guide with event creation, editing, removal and permissions. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[**Pricing & Subscriptions**](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[**Pricing & Subscriptions**](https://sonorancms.com/pricing)",
+      "evidence": "Current official CMS pricing; this broad pricing label does not identify an archived announcement. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[**Discovery Page UI**](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[**Discovery Page UI**](/cms/tutorials/administrative/growth-and-discovery/discovery)",
+      "evidence": "Current Discovery guide documents Community Spotlight and configuring discovery. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[Community Discovery](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[Community Discovery](/cms/tutorials/administrative/growth-and-discovery/discovery)",
+      "evidence": "Current Discovery guide documents community discovery and bumping. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[Navigation Button Visibility](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[Navigation Button Visibility](/cms/tutorials/community-website/toolbar-customization#toolbar-item-permissions)",
+      "evidence": "Changelog describes sidebar navigation permission visibility; current Toolbar Item Permissions section explicitly lists evaluation rules. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[Custom Stage Form Actions](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[Custom Stage Form Actions](/cms/tutorials/forms/creating-custom-forms#form-stages)",
+      "evidence": "Current Form Stages section includes customizable stage actions, including community status modification. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[Custom Form Stages](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[Custom Form Stages](/cms/tutorials/forms/creating-custom-forms#form-stages)",
+      "evidence": "Current Form Stages section documents stage setup and custom actions. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[Bump System](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[Bump System](/cms/tutorials/administrative/growth-and-discovery/discovery#most-recently-bumped-community)",
+      "evidence": "Current Discovery section Most Recently Bumped Community documents bumping; heading ID exists in generated MDX. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[Default Department Permissions](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[Default Department Permissions](/cms/tutorials/user-management/creating-departments#group-permissions)",
+      "evidence": "Source describes shared permissions across all department ranks; current Group Permissions explicitly applies permissions to all ranks in the group. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[Managing Rank Permissions](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "[Managing Rank Permissions](/cms/tutorials/user-management/creating-departments#assigning-rank-permissions)",
+      "evidence": "Current Assigning Rank Permissions section covers rank permission management; preserve reference without promising removed historical UI actions. Internal target staged GET200 and heading IDs checked locally where applicable."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[**Community Template**](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "**Community Template**",
+      "evidence": "Remove only dead hyperlink and retain historical label/content. This changelog line6042 explicitly says the Community Template feature was removed; no maintained guide exists in current source/route inventory."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[Template Management](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "Template Management",
+      "evidence": "Remove only dead hyperlink and retain historical label/content. This changelog line6042 explicitly says the Community Template feature was removed; no maintained guide exists in current source/route inventory."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[Community Templates](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "Community Templates",
+      "evidence": "Remove only dead hyperlink and retain historical label/content. This changelog line6042 explicitly says the Community Template feature was removed; no maintained guide exists in current source/route inventory."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[Community Template System](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "Community Template System",
+      "evidence": "Remove only dead hyperlink and retain historical label/content. This changelog line6042 explicitly says the Community Template feature was removed; no maintained guide exists in current source/route inventory."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[notice](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "notice",
+      "evidence": "Remove only dead hyperlink and retain historical announcement text. The 2023 free-pricing notice has no identifiable archived destination; pointing it at current pricing would misrepresent the old announcement."
+    },
+    {
+      "source": "cms/sonoran-cms/roadmap/roadmap-and-changelog/changelog.md",
+      "replaceExact": "[Admin Form Delete](https://github.com/Sonoran-Software/SonoranCMS-Documentation/tree/master/roadmap/roadmap-and-changelog/broken-reference/README.md)",
+      "replacement": "Admin Form Delete",
+      "evidence": "Remove only dead hyperlink and retain historical feature label/content. Current Form Submissions guide does not document deletion; no evidence supports a specific replacement destination."
     }
   ],
   "validationIssues": []

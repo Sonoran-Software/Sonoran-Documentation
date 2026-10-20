@@ -20,7 +20,9 @@ Run the checks in [validation.md](validation.md), then inspect the complete Mint
 
 The isolated R2 bucket is `docs-mintlify`; its public hostname is https://docs-assets.sonoransoftware.com/. Objects use immutable SHA-256 keys. Original source assets are read directly from Git objects, avoiding another local media copy. Public CORS allows GET/HEAD and video range requests.
 
-`r2-assets.cjs` uses the AWS S3 SDK. Install `@aws-sdk/client-s3` separately if it is not already available. Run `node tools/mintlify-migration/r2-assets.cjs --help` for options. Supply existing credentials through environment variables or an untracked credentials file; never commit or log credential values. Verification and report output should stay outside the public site. Uploading is a separate operation from rebuilding, and ordinary validation needs no credentials.
+`r2-assets.cjs` uses the AWS S3 SDK, including for `--help`; install `@aws-sdk/client-s3` separately or point `AWS_SDK_MODULE` at an existing installation. `ffprobe` is required for `upload-optimized`; `sharp` is used only by `branding`. Run `node tools/mintlify-migration/r2-assets.cjs --help` for options. Supply existing credentials through environment variables or an untracked credentials file; never commit or log credential values. Keep working manifests and generated verification reports in the ignored `reports/` directory. Uploading is a separate operation from rebuilding, and ordinary site validation needs no credentials.
+
+See [media.md](media.md) for reproduction commands, encoding settings, uploader usage, and review limits. The small checked-in [media verification evidence](evidence/media-verification.json) records the completed storage, public response, and optimized-video checksum checks.
 
 ## Acceptance and cutover
 

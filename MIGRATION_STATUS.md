@@ -14,9 +14,11 @@
 
 - 914 source content pages generated; 913 currently published GitBook pages mapped exactly once.
 - All 913 existing canonical GitBook URLs return HTTP 200. Fifty-eight paths differ from filesystem inference and are explicitly preserved.
-- Initial hosted Mintlify deployment succeeded (commit `1317525`).
+- Hosted Mintlify deployment `96bb405` includes all 914 pages with no failed parses; the independent GitHub validation workflow also passed. Its predecessor exposed why the full deployment log must be checked rather than only the success badge.
 - All 914 MDX files pass compile-only validation with GitHub-flavored Markdown. All 2,425 visible fenced code examples are preserved. Mintlify also accepted the generated configuration.
-- Route QA checks all 914 generated pages and 2,112 internal links: no missing routes/aliases, bad page/fragment links, missing published heading IDs, duplicate explicit IDs, or incorrect navigation entries. All 6,028 published heading IDs are preserved, with 74 authored fragment aliases.
+- Route QA checks all 914 generated pages and 2,153 internal links: no missing routes/aliases, bad page/fragment links, missing published heading IDs, duplicate explicit IDs, or incorrect navigation entries. All 6,028 published heading IDs are preserved, with 74 authored fragment aliases.
+- Fifty-two inherited external links containing `broken-reference` were repaired with evidence-backed topic links or, for obsolete historical features, their original text retained without a dead hyperlink.
+- The cloud-only restricted Support space contains six pages: Software Troubleshooting and CAD have test text; CMS, Radio, and Example are blank; Billing is a section listing. Visible page text is archived locally outside the public repository. No restricted Support content was published. Platform version history and analytics remain a separate pre-cancellation archive task.
 - R2 contains 2,875 unique objects, including three optimized animations. Complete object size/checksum verification found zero missing, mismatched, or unexpected objects. Public delivery, MIME, cache policy, CORS, and video seeking are verified.
 - Every visible source page is in the new navigation. Hidden pages are excluded from navigation.
 - Permanent Starter plan is selected. The Pro trial remains available until November 2; there is no early-end control visible in Billing. The trial-only reader assistant was explicitly disabled in its dashboard, but propagation to the public site still needs verification after deployment.
@@ -25,7 +27,7 @@
 ## Current work
 
 1. Visually verify the official light/dark branding, disabled trial UI, and optimized animation playback in the next hosted build.
-2. Finish auditing inherited external broken links. Internal routes and both published/authored anchor variants now pass locally.
+2. Recheck the inherited external-link repairs on the hosted build. Internal routes and both published/authored anchor variants now pass locally.
 3. Recheck the public staging site after every substantive build: page HTTP responses, redirects, Markdown export, robots metadata, canonicals, index completeness, native MCP search/page retrieval, and public images.
 4. Visually compare pages across all seven product areas and each complex content type, on desktop and mobile. Fix layout, branding, tab/accordion/table/media behavior, and content loss. Use existing official branding assets.
 5. Package reproducible build/upload/validation tools and concrete results in `tools/mintlify-migration`.

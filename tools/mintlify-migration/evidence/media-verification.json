@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "d01ddc8d7df4cc47d0d15d6e0e2842aa7a7d41c3",
+  "bucket": "docs-mintlify",
+  "publicBase": "https://docs-assets.sonoransoftware.com",
+  "storage": {
+    "verifiedAt": "2026-10-20T01:08:42.031Z",
+    "expectedObjects": 2875,
+    "actualObjects": 2875,
+    "expectedBytes": 1158157727,
+    "actualBytes": 1158157727,
+    "missingObjects": 0,
+    "contentMismatches": 0,
+    "unexpectedObjects": 0,
+    "allObjectSizesCompared": true,
+    "allSinglePutEtagsMatchedSourceMd5": true
+  },
+  "publicResponses": {
+    "verifiedAt": "2026-10-20T01:09:50.573Z",
+    "sampledObjects": 9,
+    "allHeadStatuses": 200,
+    "allSampledLengthsAndMimeTypesMatched": true,
+    "sampledMimeTypes": [
+      "image/png",
+      "image/webp",
+      "image/jpeg",
+      "image/avif",
+      "image/gif",
+      "video/mp4",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    ],
+    "allSampledCacheControl": "public, max-age=31536000, immutable",
+    "optimizedVideosChecked": 3,
+    "allOptimizedRangeStatuses": 206,
+    "allOptimizedContentRangesAndBytesMatched": true,
+    "allOptimizedFullPublicSha256Matched": true,
+    "allOptimizedPublicAllowOrigin": "*"
+  },
+  "cors": {
+    "allowedOrigins": ["*"],
+    "allowedMethods": ["GET", "HEAD"],
+    "allowedHeaders": ["Range"],
+    "exposedHeaders": ["ETag", "Content-Length", "Content-Range", "Accept-Ranges"],
+    "maxAgeSeconds": 3600,
+    "configurationReadBackMatched": true
+  },
+  "optimizedMedia": [
+    {
+      "clip": "CAD bodycam",
+      "bytes": 5786560,
+      "sha256": "ace7f93defb46e9a969ed867956b7f953df845ab3fb4497b8284394e12b75f63",
+      "fullPublicSha256Matched": true,
+      "width": 1916,
+      "height": 892,
+      "frames": 452,
+      "durationSeconds": 15.066667,
+      "hasAudio": false
+    },
+    {
+      "clip": "Radio jammer",
+      "bytes": 1011382,
+      "sha256": "1101e1e6b32363e2fe11005f34531a4a2138d7dd6cd0561f49a2be2919a6ea40",
+      "fullPublicSha256Matched": true,
+      "width": 1920,
+      "height": 1080,
+      "frames": 70,
+      "durationSeconds": 4.681319,
+      "hasAudio": false
+    },
+    {
+      "clip": "Store safety vest",
+      "bytes": 1490758,
+      "sha256": "4a64ffabefc119f4e5706ebc339ab720a587d7f4d1d3a32d5cf34ea04321f0a1",
+      "fullPublicSha256Matched": true,
+      "width": 800,
+      "height": 450,
+      "frames": 240,
+      "durationSeconds": 8,
+      "hasAudio": false
+    }
+  ],
+  "limits": [
+    "Public MIME and cache checks describe the listed sample set, not a browser visit to every original asset.",
+    "Storage checks compare every preserved object with manifest size and source MD5; optimized public downloads also compare full SHA-256.",
+    "Encoding is lossy. Native dimensions and frame counts match; temporal samples were inspected. Browser autoplay and mobile rendering require staged page review."
+  ]
+}
