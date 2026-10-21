@@ -1372,8 +1372,7 @@
                     "group": "Radio Hardware",
                     "pages": [
                       "radio/hardware",
-                      "radio/hardware/protocols",
-                      "radio/hardware/examples"
+                      "radio/hardware/protocols"
                     ]
                   },
                   "radio/tutorials/integrations/stream-deck-plugin",
@@ -1921,6 +1920,10 @@
     }
   },
   "redirects": [
+    {
+      "source": "/radio/hardware/examples",
+      "destination": "/radio/hardware"
+    },
     {
       "source": "/cad/integration-plugins/discord-rich-presence",
       "destination": "/cad/integration-plugins/discord-bot-integration/discord-rich-presence"
