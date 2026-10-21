@@ -1,0 +1,170 @@
+---
+title: Hardware Protocols and Standards
+description: The exact external PTT profiles implemented in the mobile preview, with original specifications.
+---
+
+<Info>
+These technical details describe the development preview. Follow the
+[hardware setup guide](/radio/hardware) for normal pairing; you do not need to
+enter UUIDs or byte codes. “Zello-compatible” covers several different protocols.
+</Info>
+
+## Keyboard and HID input
+
+The operating system pairs the keyboard-style accessory. Sonoran accepts eligible
+physical key-down/key-up events; it does not infer a held button from a play/pause
+or volume shortcut. iOS uses [GCKeyboard](https://developer.apple.com/documentation/gamecontroller/gckeyboard);
+Android uses [hardware key events](https://developer.android.com/develop/ui/views/touch-and-input/keyboard-input/commands).
+Key mapping and supported keys must be tested on each platform. This adapter is foreground-only.
+
+## AINA A.18 BLE
+
+The [manufacturer's A.18 specification](https://ainaptt.com/wp-content/uploads/2024/08/AINA_APTT_Communication_Protocol_v18_aina.pdf)
+targets Voice Responder firmware FW2251A1 or later. The preview reads the baseline
+before subscribing to notifications, and never transmits from an initially held button.
+
+| Field | Value |
+| --- | --- |
+| Service | `127FACE1-CB21-11E5-93D0-0002A5D5C51B` |
+| Button characteristic | `127FBEEF-CB21-11E5-93D0-0002A5D5C51B` |
+| Primary / secondary | Bit `0x01` / bit `0x04` |
+| Heartbeat | Bit `0x80`, changing while held |
+
+Only the assigned PTT button controls transmission. A native two-second heartbeat
+watchdog disconnects an unresponsive held control. SOS, channel navigation and LED
+commands are not implemented. Other AINA profiles are not implied compatible.
+
+## Jabra / BlueParrott BLE
+
+The preview implements the [published BLE interface](https://blueparrott-developer.net/Home/InterfaceSpecificationBLE)
+directly on iOS and Android. It does not cover classic-only or MFi-only controls.
+
+| Field | Value |
+| --- | --- |
+| Service | `95665A00-8704-11E5-960C-0002A5D5C51B` |
+| Button characteristic | `66339E60-D55A-11E5-B7CB-0002A5D5C51B` |
+| Mode characteristic | `8D2EDDE0-D55A-11E5-A6C4-0002A5D5C51B` |
+| Setup | App name `Sonoran Radio`, app key `sdk`, mode `2` |
+| Physical events | `0` release, `1` press |
+
+Explicit connection configures the button and verifies its mode before accepting
+input. Tap, double-tap, and long-press shortcut events do not transmit. This changes
+the headset's configurable-button function; disconnecting does not restore it.
+Hardware/model compatibility still needs testing.
+
+## Experimental PTT-Z BLE
+
+This profile requires an advertised name starting with `PTT`, service `FFE0`, and
+notify characteristic `FFE1`. A single byte `01` is down and `00` is up. The
+characteristic is not assumed readable; the first release arms the control.
+
+The [original PTT-Z01 experiment](https://github.com/dannymcc/android-ble-ptt)
+reports **Focket PTT-Z01**, not every Pryme product. FFE0/FFE1 is also used by generic
+serial devices, so matching UUIDs alone is insufficient. Pryme compatibility is
+unconfirmed. Sleep recovery waits for the same explicitly selected device while
+the app remains in the foreground and requires a fresh release.
+
+## Blu-PTT BLE candidate
+
+This is a distinct profile from FFE0/FFE1 PTT-Z. The
+[original Blu-PTT implementation report](https://www.b4x.com/android/forum/threads/ble-manager-scan2.110849/)
+and [ProPTT2's published control reference](https://dev.proptt2.com/docs-net-bluetooth.html)
+identify the following notification interface:
+
+| Field | Value |
+| --- | --- |
+| Advertised discovery service | `2320AE58-8394-4652-95F7-0A872AC0958F` |
+| Notification service | `89A8591D-BB19-485B-9F59-58492BC33E24` |
+| Button characteristic | `894C8042-E841-461C-A5C9-5A73D25DB08E` |
+| Event | One byte: `01` pressed, `00` released |
+
+The preview also offers named Blu-PTT candidates that omit service UUIDs from
+advertisements, and Android bonded candidates. Connection must still verify the
+exact notification interface. It does not send Coda-specific configuration writes.
+The first release arms input. Falconclaw's use of the name BLU-PTT makes this a
+test candidate, not proof that its firmware uses these UUIDs.
+
+## Android BlueParrott Classic
+
+The [manufacturer's Classic specification](https://blueparrott-developer.net/Home/InterfaceSpecificationBluetoothClassic)
+defines `+ANDROID` vendor commands with qualifier `BP`. The preview selects an
+already paired headset, obtains the Android headset profile proxy, configures
+app name `Sonoran Radio`, key `sdk`, and mode `2`, then requires matching state
+confirmation before enabling input.
+
+Only the selected device's `PTT,P` and `PTT,R` events control transmission.
+Single/double/long-press shortcut events are ignored. A headset disconnect or
+reported ownership/mode change releases the control. This interface is separate
+from both BLE and the Zello SPP text commands below.
+
+## Android phone-button broadcasts
+
+The [Zello OEM specification](https://support.zello.com/zw/zello-hardware-partner-technical-integration)
+publishes these actions:
+
+| Button | Press | Release |
+| --- | --- | --- |
+| Primary | `com.zello.ptt.down` | `com.zello.ptt.up` |
+| Secondary | `com.zello.intent.buttonExtra1.down` | `com.zello.intent.buttonExtra1.up` |
+
+Sonoran registers a runtime receiver only after explicit selection. The mapper
+must broadcast implicitly or target Sonoran's Android package (`com.sonoranradio`),
+not Zello's package or a Zello-only component. No manifest receiver starts or
+unlocks the app. The exported runtime actions permit OEM/button-mapping apps to
+deliver events; they are not authenticated device identities. The shared
+hardware-user limit still applies.
+
+## iOS MFi PTT SDK
+
+The [published MFi PTT specification v1.1](https://blueparrott-developer.net/Home/CustomMfiPttProtocol)
+declares ExternalAccessory protocol `com.pttsdk.ea.protocol`. Sonoran lists that
+identifier in `UISupportedExternalAccessoryProtocols` and offers connected
+accessories that advertise it. Other MFi protocols are not accepted.
+
+Packets use start byte `3C`, a type byte, a big-endian command and length, optional
+payload, and end byte `3E`. The adapter accepts zero-payload Notify type `02`
+commands `1001` (press) and `1005` (release). Stream fragments and combined
+packets are handled; malformed framing closes the control link. Requests,
+responses, shortcuts, channel changes, replay and emergency commands do not
+transmit. A release must be observed first.
+
+[Apple advises consulting the accessory manufacturer](https://developer.apple.com/accessories/)
+about authorization for third-party apps. Declaring the protocol does not grant
+manufacturer approval. This preview adds no background-accessory mode and does
+not claim locked-screen operation. Signed iOS builds and actual accessories must
+be tested before release support is confirmed.
+
+## Android Bluetooth SPP
+
+The [Zello integration specification](https://support.zello.com/zw/zello-hardware-partner-technical-integration)
+defines serial controls. Pair first in Android settings; the device name must
+contain case-sensitive `PTT`. Sonoran uses standard SPP UUID
+`00001101-0000-1000-8000-00805F9B34FB` and parses fragmented command streams:
+
+```text
++PTTS=P   button down
++PTTS=R   button up
+```
+
+A release must be observed before transmission. Other serial commands are ignored.
+This is not an iOS SPP adapter or AINA's different serial protocol.
+
+## Android USB-C CDC
+
+The same [Zello specification](https://support.zello.com/zw/zello-hardware-partner-technical-integration)
+defines two-byte control messages on a CDC-DATA interface: key code, then odd
+state for pressed or even state for released. Sonoran maps primary `0x46` and
+secondary `0x66`; other keys are ignored.
+
+Discovery offers explicit candidates with one CDC bulk-IN endpoint. Permission
+and connection apply only to that interface, leaving audio/HID interfaces alone.
+Split messages are buffered. There is no verified VID/PID allowlist yet; a CDC
+interface alone does not prove PTT compatibility. iOS USB CDC is not implemented.
+
+## Separate integrations
+
+Other iOS MFi protocols, vendor-specific Android intents, other BLE profiles,
+and media-toggle buttons need separate implementations. The MFi profile above
+must not be assumed interchangeable with another vendor's protocol.
+The current preview does not implement emergency buttons, replay, channel knobs,
+or separate hardware channel presets.

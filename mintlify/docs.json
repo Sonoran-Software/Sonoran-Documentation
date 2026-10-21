@@ -1368,6 +1368,14 @@
               {
                 "group": "Other Integrations",
                 "pages": [
+                  {
+                    "group": "Radio Hardware",
+                    "pages": [
+                      "radio/hardware",
+                      "radio/hardware/protocols",
+                      "radio/hardware/examples"
+                    ]
+                  },
                   "radio/tutorials/integrations/stream-deck-plugin",
                   "radio/tutorials/integrations/sonoran-cad-integration",
                   {

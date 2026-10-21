@@ -1,0 +1,142 @@
+---
+title: Radio Hardware
+description: External push-to-talk accessories, supported protocol previews, setup, and testing status.
+---
+
+<Warning>
+External accessory support described here is under development. It is not yet a
+confirmed feature of the released iOS or Android apps. The implementations have
+automated checks, but no physical accessory/phone combination has been verified
+by this work. Screen-locked operation is not available in this preview.
+</Warning>
+
+An external push-to-talk button starts transmission while held and stops when
+released. It uses your current Sonoran Radio channels; it does not connect to
+Zello accounts, channels, or the Zello network.
+
+<CardGroup cols={2}>
+  <Card title="Protocols and standards" icon="bluetooth" href="/radio/hardware/protocols">
+    Implemented control profiles, platform differences, and original specifications.
+  </Card>
+  <Card title="Hardware examples" icon="headset" href="/radio/hardware/examples">
+    Example products and the evidence still needed to confirm compatibility.
+  </Card>
+</CardGroup>
+
+## Preview support
+
+| Control connection | iOS | Android |
+| --- | --- | --- |
+| OS-paired keyboard with a supported press/release key | Foreground preview | Foreground preview |
+| AINA Voice Responder A.18 BLE | Foreground preview | Foreground preview |
+| Jabra / BlueParrott published BLE button service | Foreground preview | Foreground preview |
+| Jabra / BlueParrott Classic headset commands | Not implemented | Foreground preview |
+| Blu-PTT notification profile (Falconclaw test candidate) | Experimental foreground preview | Experimental foreground preview |
+| Experimental PTT-Z FFE0/FFE1 button | Foreground preview | Foreground preview |
+| Zello-style Bluetooth SPP serial commands | Not implemented | Foreground preview |
+| Zello USB-C CDC control protocol | Not implemented | Foreground preview |
+| Published MFi PTT SDK protocol | Foreground preview; manufacturer authorization may apply | Not implemented |
+| Configured rugged-phone button broadcasts | Not implemented | Foreground preview; opt-in |
+
+These are protocol implementations, not a certified-device list. Audio and button
+control are separate: a working speaker does not establish that the PTT button or
+accessory microphone works. USB-C describes a connector, not a universal PTT protocol.
+
+## Set up an accessory
+
+1. Connect to your community using your Sonoran account.
+2. Pair Bluetooth headset audio in system settings. Pair Android serial devices
+   there too. For a keyboard-style control, use **Assign Keyboard Button**.
+3. For BLE or serial controls, choose **Find Bluetooth Accessory** and connect to
+   the intended device. Wake a PTT-Z button while scanning. For Android CDC
+   controls, choose **Find USB Accessory**; allow USB access, then find/connect again.
+   For BlueParrott Classic, pair and connect headset audio first, then choose the
+   Classic candidate. For iOS MFi, pair or plug in the accessory and choose
+   **Find MFi Accessory**. For a configured Android phone button, choose
+   **Phone PTT Buttons**, then connect the displayed phone-button adapter.
+4. Connection selects the primary button automatically. Press and release once to
+   arm it. Use **Assign Accessory Button** to select another eligible button.
+   Assignment and the settings event counter do not transmit.
+5. Close settings. Hold the button to talk and release to stop. Wait for the
+   transmit indication before speaking, especially on the first access request.
+
+Connecting a Jabra/BlueParrott BLE control assigns its configurable button to
+Sonoran Radio, replacing its previous function. Restore the function using the
+manufacturer's app when needed. Close other PTT apps that may own the connection.
+
+The app remembers one binding per platform. Primary and secondary buttons are
+alternative assignments to current Sonoran channels, not separate channel presets.
+Changing USB connection IDs after replugging can select primary again.
+MFi connection IDs may also change after reconnecting; find and connect again.
+
+## Falconclaw test setup
+
+Falconclaw's manual names separate **FALCONCLAW** audio and **BLU-PTT** control
+connections. Pair both according to the manufacturer's instructions, then use
+**Find Bluetooth Accessory** to select the Blu-PTT candidate. The implementation
+checks for the exact Blu-PTT notification service and characteristic before
+accepting events; a matching name alone is insufficient.
+
+The control profile is documented independently of Falconclaw. We have not yet
+confirmed that FC-PTT firmware exposes it. If connection succeeds, press and
+release twice while settings are open and record the button-check counter, then
+close settings to test transmission. Report microphone and speaker results
+separately. Bluetooth audio uses Falconclaw's onboard microphone, according to
+the manufacturer. A failed profile check means further integration information
+is needed; it does not establish a defective accessory.
+
+See the [hardware examples and source links](/radio/hardware/examples).
+
+## Configured Android phone buttons
+
+Your device's firmware or button mapper must deliver Zello-compatible down/up
+broadcasts to Sonoran Radio. Selecting the adapter only enables listening; it
+does not prove that the phone supports the interface. A mapping targeted only at
+Zello will not reach Sonoran. Some firmware cannot be remapped.
+
+The adapter accepts primary and secondary PTT, requires a release before the
+first transmission, and stops when the app loses the foreground. It does not
+unlock the phone or launch the app. These broadcast actions are not authenticated
+hardware signals; other local button-mapping apps can emit them while enabled.
+
+## Two simultaneous hardware users
+
+The preview allows **two hardware-access users per gaming community across all
+rooms**, on Free, Plus, and Pro. **Enable Hardware Access** or the first assigned
+press requests a slot. The slot remains occupied between transmissions; this is
+not a limit of two people speaking at the same instant.
+
+When both slots are occupied, another user gets a clear popup and can continue
+using on-screen PTT. **Release Hardware Slot**, disconnect, a lost control link,
+or leaving the foreground releases access. Failed cleanup expires within 90
+seconds. One account owns at most one hardware session in a community.
+
+Unlimited Enterprise hardware access is planned, not currently available. The
+matching backend and gateway must be deployed before the preview client is released.
+
+## Sleep, disconnection, and screen lock
+
+Keep the preview app open and the screen awake. Leaving the foreground disconnects
+the controls and releases the hardware slot. Native radio/audio work is ongoing;
+returning to the app can recover playback, but this does not guarantee reception
+after long background silence.
+
+For a sleeping PTT-Z button, the foreground adapter waits for the same device to
+wake. Press and release to wake/re-arm it, then hold again to talk. The wake press
+is not replayed. If recovery fails, find and connect again. This behavior still
+requires real-device testing.
+
+The controller cuts off a hold after 60 seconds and requires a release before
+another press. This is not an emergency communications guarantee.
+
+## Report a hardware test
+
+Include the app build, phone model, OS version, accessory model and firmware,
+selected protocol, and microphone/speaker route. For USB, include VID/PID shown
+in its candidate ID. Record separate results for button events, transmitted audio,
+received audio, rapid press/release, unplug/out-of-range while held, reconnect,
+incoming calls, sleep, and screen lock. Also test the third-user limit popup.
+
+Do not include account tokens or other credentials. See
+[client debug mode](/radio/tutorials/usage/troubleshooting/client-debug-mode)
+for existing diagnostic options.
