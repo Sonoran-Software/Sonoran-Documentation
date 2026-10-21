@@ -28,11 +28,10 @@ The **vocoder** effect remains consistent and does not fluctuate based on [in-ga
 
 
 
-The Vocoder voice effect simulates a modern P25-style radio compression using an AMBE-like encoding approach, commonly heard in proprietary digital radio systems. It’s ideal for communities seeking realistic conditions and authentic downsides.
+The Vocoder voice effect encodes and decodes audio before broadcast to create a digital radio sound. In **Customization > Voice Customization**, expand **Vocoder**, enable the effect, and choose a **Mode**:
 
-When enabled, audio is routed through a vocoder for encoding and decoding before broadcast, causing a slight transmission delay.
-
-The vocoder has optional bitrates of `3200`, `2400`, `1600`, `1400`, `1300`, `1200`, `700` and `450` bit/s. While the suggested bitrate is `2400`, the bitrate can be increased for "less effect" or increased for "more effect".
+* **Server AMBE — Pro only:** Server-sided AMBE vocoding for community voice effects. Requires a [Sonoran Radio Pro subscription](/radio/pricing/pricing-faq/standalone-pricing#server-ambe-vocoder). Server-sided processing adds a small network delay. This mode is not available for local listener effects.
+* **Codec2 — All plans:** Client-side vocoding with bitrates of `3200`, `2400`, `1600`, `1400`, `1300`, `1200`, `700` and `450` bit/s. The suggested bitrate is `2400`; higher bitrates produce less effect, while lower bitrates produce more effect. Codec2 is also available for local listener effects.
 
 **It is recommended to use the** [**clipping voice effect**](/radio/tutorials/usage/dispatch-panel/custom-voice-effects#clipping) **in addition to the vocoder to have in-game signal strength impact the transmission quality.**
 
@@ -130,7 +129,7 @@ Toggle **Community FX** to **Local FX** mode to [bypass the community set channe
 
 <Warning>
 
-Enabling the vocoder locally forces your client to encode and decode all incoming transmissions, which can impact performance at higher user counts.
+Enabling the Codec2 vocoder locally forces your client to encode and decode all incoming transmissions, which can impact performance at higher user counts. Server AMBE is available only for community voice effects with Pro.
 
 For better performance, [enable the vocoder at the channel level](/radio/tutorials/usage/dispatch-panel/custom-voice-effects#to-radio-channels) so users pre-process transmissions on their end.
 
