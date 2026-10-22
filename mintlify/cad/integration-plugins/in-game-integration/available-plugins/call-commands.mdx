@@ -3,7 +3,7 @@ title: Call Commands
 description: Send emergency calls from in-game to the CAD.
 ---
 
-<img src="https://docs-assets.sonoransoftware.com/sha256/04/048b2f3a8e27dbc7d0f4130c56fc79d03630bfca86c9c580146768f76af86bc8.png" alt="" />
+<img src="https://docs-assets.sonoransoftware.com/sha256/cd/cd2a02329ecff9d7d0d1f18ae670805b10b3203cc5197b16dd628b0901fe6887.png" alt="Call Commands showing an in-game 911 command, its notification, and the resulting emergency call in CAD." />
 
 
 
@@ -41,7 +41,7 @@ Ensure the player has already [linked their CAD](/cad/integration-plugins/in-gam
 
 In-game commands can be used to
 
-* `/panic` Toggles your unit's panic status
+* `/panic` Activates your unit's panic status
 * `/911` Sends a 911 call to the CAD
 * `/511` Sends a 511 call to the CAD (Civil)
 * `/311` Sends a non-emergency call to the CAD (Civil)
@@ -60,7 +60,7 @@ In-game commands can be used to
 
 ### Key Binds {#key-binds}
 
-Users can customize a keybind to toggle their panic status.
+Users can customize a keybind to activate their panic status.
 
 Navigate to **Settings** > **Keybinds** > **FiveM** and look for the **Panic Button** keybind under the resource `sonorancad`.
 
@@ -82,4 +82,4 @@ add_ace builtin.everyone command.panic allow
 
 ### Call Location {#call-location}
 
-By default, calls responded to via the `/rcall` command located in [Dispatch Notify](/cad/integration-plugins/in-game-integration/available-plugins/dispatch-notify) will attempt to be routed to the callers current location, rather than the location of the call. If you would like calls to route to the location of the original call, please set `useCallLocation` to `true`
+By default, calls responded to via the `/dn respond <callId>` command located in [Dispatch Notify](/cad/integration-plugins/in-game-integration/available-plugins/dispatch-notify) will attempt to be routed to the caller's current location, rather than the location of the call. If you would like calls to route to the location of the original call, please set `useCallLocation` to `true`
