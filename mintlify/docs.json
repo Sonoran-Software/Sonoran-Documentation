@@ -301,6 +301,7 @@
                   "cad/integration-plugins/erlc/bodycam",
                   "cad/integration-plugins/erlc/call-editor-pin-drop",
                   "cad/integration-plugins/erlc/in-game-overlay",
+                  "cad/integration-plugins/erlc/id-check",
                   "cad/integration-plugins/erlc/character-creation",
                   "cad/integration-plugins/erlc/vehicle-registrations",
                   "cad/integration-plugins/erlc/emergency-calls",
