@@ -3,7 +3,7 @@ title: ID Check
 description: Request a nearby civilian's ID from the in-game overlay and view their Sonoran CAD character details.
 ---
 
-<img src="https://docs-assets.sonoransoftware.com/sha256/62/62b9b6f1345ac60e66d81dd74633c83b552888f1dcd819483ea60646d0540f7b.png" alt="ID Check showing a Liberty County identification card and the Request ID button in the in-game overlay" />
+<img src="https://docs-assets.sonoransoftware.com/sha256/e6/e63b6a383284ce1ddccf45a52886e13ccaf4bd661fa8d00728c78348c64ed9fe.png" alt="Separate Liberty County identification card popup with a Run Lookup button" />
 
 ## Identify Nearby Civilians
 
@@ -15,9 +15,10 @@ The card uses the character's saved information. Fields that have not been fille
 
 1. Connect your community's ER:LC server and link your Roblox account using the [Getting Started guide](/cad/integration-plugins/erlc/getting-started).
 2. In the Sonoran CAD desktop app, open Police or Dispatch with an active unit and select the ER:LC server you are playing in.
-3. Open the [in-game overlay](/cad/integration-plugins/erlc/in-game-overlay#using-the-in-game-overlay) and approach a player on the **Civilian** team.
-4. When their username appears at the bottom of the overlay, click **Request ID** to view their character's identification card.
-5. Close the card with **X**, or press **Escape** while the overlay is focused.
+3. Open the [in-game overlay](/cad/integration-plugins/erlc/in-game-overlay#using-the-in-game-overlay) and approach within **5 studs** of a player on the **Civilian** team.
+4. When their username appears at the bottom of the overlay, click **Request ID**. Their identification card opens in a separate popup centered on the monitor containing the overlay.
+5. Select **Run Lookup** to bring CAD forward, open the lookup tab, and search the character's **first and last name**. Both names must be present for this action.
+6. Close the card with **X**, or press **Escape** while the card is focused. You can request the same civilian's ID again while they remain within range.
 
 <img src="https://docs-assets.sonoransoftware.com/sha256/75/7573bdf191b0da54e8f60c0ee9b5d3cc92b84b8939e820c61726c2830098d9fe.png" alt="A nearby civilian's username and Request ID button at the bottom of the in-game overlay" width="420" />
 
@@ -25,4 +26,4 @@ The card uses the character's saved information. Fields that have not been fille
 
 The civilian must have a [registered character](/cad/integration-plugins/erlc/character-creation) associated with their Roblox account. ID Check uses their selected character when one is available and respects your community's character record permissions.
 
-The prompt appears for nearby civilians, including civilians seated in vehicles. Other first responders do not appear as ID Check targets. Allow a few seconds for the prompt to update after approaching someone or after they change teams.
+The prompt appears for civilians within five studs, including civilians seated in vehicles. Other first responders do not appear as ID Check targets. Allow a few seconds for the prompt to update after approaching someone or after they change teams. The prompt disappears when the player is out of range or their location data is no longer fresh.
