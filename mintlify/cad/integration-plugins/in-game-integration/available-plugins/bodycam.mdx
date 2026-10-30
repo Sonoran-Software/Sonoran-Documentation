@@ -117,11 +117,18 @@ Navigate to **Settings** > **Keybinds** > **FiveM** and look for the keybind **T
 
 #### Body Camera Overlay {#body-camera-overlay}
 
-When your bodycam is on and being viewed in the CAD a periodic beep and body overlay will appear on your screen.
+The on-screen overlay has a generic camera housing, a blinking status light, and a gold/red Sonoran CAD logo by default.
 
 
 
-<img src="https://docs-assets.sonoransoftware.com/sha256/68/68e65eb9891551c4b5e5a66748b0712f33dad2836c82693a0342fcd2fe4ac127.png" alt="" />
+<img src="https://docs-assets.sonoransoftware.com/sha256/23/2392fa98bfa5b8859a872c6fe4dbaa2e74030912f44f3e5f29395a4789e540b9.gif" alt="Sonoran CAD in-game body camera overlay with a gold/red logo and blinking red status light." width="480" />
+
+To swap the logo:
+
+1. In `sonorancad/core/client_nui/img/`, copy `bodycam_logo_standard.png` (red/white), `bodycam_logo_gold.png` (gold/red), or your own transparent PNG and name the copy `bodycam_logo.png`.
+2. Restart `sonorancad`.
+
+No configuration change is needed. Automatic updates preserve `bodycam_logo.png`; delete it to restore the default gold/red logo.
 
 
 
