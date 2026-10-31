@@ -490,6 +490,7 @@
                               "cad/api-integration/api-endpoints-v2/general/configuration/get-version",
                               "cad/api-integration/api-endpoints-v2/general/configuration/get-turn-credentials",
                               "cad/api-integration/api-endpoints-v2/general/configuration/upload-bodycam-recording",
+                              "cad/api-integration/api-endpoints-v2/general/configuration/register-external-bodycam-recording",
                               "cad/api-integration/api-endpoints-v2/general/configuration/get-servers",
                               "cad/api-integration/api-endpoints-v2/general/configuration/set-servers",
                               "cad/api-integration/api-endpoints-v2/general/configuration/set-postal-config",
