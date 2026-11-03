@@ -7,15 +7,15 @@ These events are provided by the **FiveM resource** for use in FiveM scripts. Fo
 
 ## Push-to-talk {#push-to-talk}
 
-When a user presses or releases their PTT key, the following event can be used:
+Listen for `SonoranRadio::API:Talking` in a client script to detect when the local player starts or stops transmitting. The `toggle` argument is `true` when transmitting and `false` when stopped; `inVeh` indicates whether the player is in a vehicle.
 
 ```lua
 -- Event sent from Sonoran Radio
-TriggerEvent('SonoranRadio::API:ToggleTalking', toggle, inVeh)
+TriggerEvent('SonoranRadio::API:Talking', toggle, inVeh)
 
 -- Event listener in a custom script
-AddEventHandler('SonoranRadio::API:ToggleTalking', function(toggle, inVeh) 
-  print(toggle) -- Boolean (Are the talking?)
+AddEventHandler('SonoranRadio::API:Talking', function(toggle, inVeh)
+  print(toggle) -- Boolean (Are they transmitting?)
   print(inVeh) -- Boolean (Are they in a vehicle)
 end)
 ```
