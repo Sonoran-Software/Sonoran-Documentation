@@ -50,9 +50,10 @@
             "pages": [
               "other/translation-support",
               {
-                "group": "Support API",
+                "group": "Sonoran API",
                 "pages": [
-                  "other/support-api/upload-debug"
+                  "other/support-api/upload-debug",
+                  "other/support-api/oauth"
                 ],
                 "root": "other/support-api"
               },

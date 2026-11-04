@@ -1,0 +1,201 @@
+---
+title: Sign in with Sonoran
+description: Register an OAuth application and request consent to read Sonoran usernames, communities, ownership, and subscription levels.
+---
+
+Sonoran OAuth lets a user sign in to your application and approve specific access to their Sonoran account.
+Use the authorization code flow with **PKCE (S256)**. Applications are public clients: there is no client secret.
+
+## Endpoints
+
+| Purpose | Production URL |
+| --- | --- |
+| Discovery | `https://accountapi.sonoransoftware.com/.well-known/oauth-authorization-server` |
+| OpenID discovery | `https://accountapi.sonoransoftware.com/.well-known/openid-configuration` |
+| Register | `https://accountapi.sonoransoftware.com/oauth2/register` |
+| Authorize (browser) | `https://account.sonoransoftware.com/oauth/authorize` |
+| Exchange / refresh | `https://accountapi.sonoransoftware.com/oauth2/token` |
+| Profile | `https://accountapi.sonoransoftware.com/oauth2/userinfo` |
+| Communities | `https://accountapi.sonoransoftware.com/oauth2/communities` |
+| Revoke refresh token | `https://accountapi.sonoransoftware.com/oauth2/revoke` |
+| Signing keys | `https://accountapi.sonoransoftware.com/oauth2/jwks` |
+
+For the Accounts profile and community API, use
+`resource=https://accountapi.sonoransoftware.com` throughout authorization, token exchange, and refresh.
+Existing Sonoran MCP integrations continue to use their own resource and product permissions.
+
+## Scopes
+
+Request only what your integration needs. Scopes are separated by spaces and must be included in the client's registration.
+
+| Scope | Access |
+| --- | --- |
+| `openid` | Stable Sonoran account ID (`sub`), an ID token, and access to `/oauth2/userinfo`. |
+| `profile` | Sonoran username (`preferred_username`). Requires `openid`. |
+| `email` | Verified account email and `email_verified`. Requires `openid`. |
+| `offline_access` | A rotating refresh token to remain connected. Omit for a sign-in-only flow. |
+| `cad.communities.read` | CAD community IDs, names, and ownership. |
+| `cad.subscriptions.read` | CAD community subscription tier and active status. Requires `cad.communities.read`. |
+| `cms.communities.read` | CMS community IDs, names, and ownership. |
+| `cms.subscriptions.read` | CMS community subscription tier and active status. Requires `cms.communities.read`. |
+| `radio.communities.read` | Radio community IDs, names, and ownership. |
+| `radio.subscriptions.read` | Radio community subscription tier and active status. Requires `radio.communities.read`. |
+
+Existing resource-specific scopes `cad.admin.read`, `cad.admin.write`, `cms.read`, and `cms.write` remain available
+for their corresponding Sonoran integrations. They do not grant subscription access in this API.
+Community lookup does not grant permission to administer a community or modify its subscription.
+
+## 1. Register your application
+
+Register once per application/environment and store the returned `client_id`. Supply one to ten complete
+callback URLs. Production web callbacks must use HTTPS. Credentials and URL fragments are rejected.
+Native development clients can use an HTTP IP loopback `/callback` URL, such as `http://127.0.0.1:49152/callback`.
+
+```bash
+curl -X POST https://accountapi.sonoransoftware.com/oauth2/register \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "client_name": "My Community App",
+    "redirect_uris": ["https://app.example.com/oauth/sonoran/callback"],
+    "token_endpoint_auth_method": "none",
+    "grant_types": ["authorization_code"],
+    "response_types": ["code"],
+    "scope": "openid profile cad.communities.read cad.subscriptions.read cms.communities.read cms.subscriptions.read radio.communities.read radio.subscriptions.read"
+  }'
+```
+
+The `201` response includes `client_id`, `redirect_uris`, and the allowed `scope` string.
+Registration does not grant access to an account. Users must approve an authorization request.
+To add scopes to an existing integration, register a new client with those scopes; existing registrations
+and tokens are not automatically expanded.
+
+## 2. Redirect the user to Sonoran
+
+For each login, generate a cryptographically random `state`, `nonce`, and PKCE `code_verifier`.
+The verifier must be 43–128 characters using letters, digits, `-`, `.`, `_`, or `~`.
+Set `code_challenge` to the base64url-encoded SHA-256 hash of that verifier, without padding.
+Keep the verifier and expected state/nonce tied to the user's login attempt.
+
+Open the authorization endpoint with these URL-encoded query parameters:
+
+```text
+response_type=code
+client_id=YOUR_CLIENT_ID
+redirect_uri=https://app.example.com/oauth/sonoran/callback
+resource=https://accountapi.sonoransoftware.com
+scope=openid profile cad.communities.read cad.subscriptions.read cms.communities.read cms.subscriptions.read radio.communities.read radio.subscriptions.read
+state=YOUR_RANDOM_STATE
+nonce=YOUR_RANDOM_NONCE
+code_challenge=YOUR_S256_CHALLENGE
+code_challenge_method=S256
+```
+
+Sonoran displays the account and requested permissions. Unverified callbacks show a warning;
+the user can choose **Advanced**, acknowledge the risk, then choose **Allow access**.
+Approved partner callbacks skip the warning and still require consent. Contact Sonoran support
+to request partner callback verification; developers cannot mark themselves verified.
+
+Callback verification does not change redirect matching: `redirect_uri` must exactly match a URL registered
+for this client. Only the listener port may vary for supported native IP loopback callbacks.
+Sonoran checks verification for the callback actually used in this request.
+
+## 3. Validate the callback and exchange the code
+
+After approval, the callback receives `code`, the original `state`, and
+`iss=https://accountapi.sonoransoftware.com`. Validate `state` against the login attempt and validate `iss`
+before exchanging the code. If the user cancels, handle `error=access_denied`.
+
+```bash
+curl -X POST https://accountapi.sonoransoftware.com/oauth2/token \
+  --data-urlencode 'grant_type=authorization_code' \
+  --data-urlencode 'client_id=YOUR_CLIENT_ID' \
+  --data-urlencode 'code=RETURNED_CODE' \
+  --data-urlencode 'redirect_uri=https://app.example.com/oauth/sonoran/callback' \
+  --data-urlencode 'resource=https://accountapi.sonoransoftware.com' \
+  --data-urlencode 'code_verifier=YOUR_ORIGINAL_VERIFIER'
+```
+
+The code expires after five minutes and is single-use. The exchange must use the same client, callback,
+resource, and matching PKCE verifier. The response includes `access_token`, `token_type: "Bearer"`,
+`expires_in: 900`, granted `scope`, and `resource`. `openid` adds an `id_token`;
+`offline_access` adds a `refresh_token`.
+
+Validate ID tokens with the published signing keys, issuer, your client ID as audience, expiry, and original
+nonce. Use the stable `sub` as your user identifier. Use access tokens for API calls; never use an ID token
+as a bearer API token or put tokens in query strings.
+
+## 4. Read the approved information
+
+```bash
+curl https://accountapi.sonoransoftware.com/oauth2/userinfo \
+  -H 'Authorization: Bearer YOUR_ACCESS_TOKEN'
+
+curl https://accountapi.sonoransoftware.com/oauth2/communities \
+  -H 'Authorization: Bearer YOUR_ACCESS_TOKEN'
+```
+
+Example profile with `openid profile`:
+
+```json
+{ "sub": "00000000-0000-4000-8000-000000000001", "preferred_username": "Example User" }
+```
+
+Example community response (illustrative IDs):
+
+```json
+{
+  "communities": [
+    {
+      "product": "cad",
+      "id": "00000000-0000-4000-8000-000000000002",
+      "public_id": "MYCOMMUNITY",
+      "name": "My Community",
+      "owner": true,
+      "status": "owner",
+      "subscription": { "tier": "PRO", "active": true }
+    }
+  ]
+}
+```
+
+The endpoint includes only products covered by granted `*.communities.read` scopes.
+Use `?product=cad`, `?product=cms`, or `?product=radio` to request one product;
+requesting a product without its scope returns `403`.
+
+* `id` is the product's internal community identifier; treat it as an opaque string. Radio IDs may be numeric strings.
+* `public_id` is the community's public ID. Use the product plus internal `id` as the integration key.
+* `owner` indicates registered ownership. `status` is `owner` or `member`; it is a relationship label,
+  not an administrator permission or approval/banning status.
+* `subscription` is omitted entirely without that product's `*.subscriptions.read` scope.
+  `tier` is the product-reported version (for example `FREE`, `PLUS`, `PRO`, or a Sonoran One version);
+  handle additional values and `UNKNOWN`. `active` reports the product's subscription status.
+* An empty array means the selected products report no communities. Provider lookup failures return `503`
+  (`temporarily_unavailable`), so do not treat a failed request as loss of membership or a downgrade.
+
+These endpoints disclose no API keys, payment details, or Stripe subscription IDs.
+Memberships and subscription details are read again on each request. Cache briefly if needed and handle
+changes; the token's scopes are not a permanent snapshot of community membership.
+
+## Refresh and disconnect
+
+If you requested `offline_access`, refresh with form fields `grant_type=refresh_token`, `client_id`,
+`refresh_token`, and the same `resource` at `/oauth2/token`. Refresh tokens expire after 30 days.
+Each refresh returns a replacement token: store it atomically and never reuse the old one.
+Reusing an old refresh token revokes that token family.
+
+To disconnect, POST form fields `client_id` and `token=YOUR_REFRESH_TOKEN` to `/oauth2/revoke`.
+This revokes its refresh-token family. Already-issued access tokens expire after 15 minutes.
+Delete your locally stored tokens when the user disconnects.
+
+## Common errors
+
+| Error | Action |
+| --- | --- |
+| `invalid_redirect_uri` / unregistered `redirect_uri` | Use a permitted callback and the exact registered URL. |
+| `invalid_scope` | Check registered scopes and product scope dependencies. |
+| `invalid_target` | Use the same supported resource in all flow steps. |
+| `access_denied` | The user cancelled; return to your app without linking. |
+| `invalid_grant` | Restart login; check code expiry, single use, callback, resource, and verifier. |
+| HTTP `401` | Access token is invalid/expired or has the wrong audience. Refresh or sign in again. |
+| HTTP `403` / `insufficient_scope` | Request the required scope through a new consent flow. |
+| HTTP `503` / `temporarily_unavailable` | Retry later; preserve the last known membership state. |
