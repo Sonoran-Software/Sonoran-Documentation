@@ -49,14 +49,16 @@ Community lookup does not grant permission to administer a community or modify i
 
 Register once per application/environment and store the returned `client_id`. Supply one to ten complete
 callback URLs. Production web callbacks must use HTTPS. Credentials and URL fragments are rejected.
-Native development clients can use an HTTP IP loopback `/callback` URL, such as `http://127.0.0.1:49152/callback`.
+Use an HTTPS callback on your application's domain, as shown below. Native desktop clients may also use an HTTP IP loopback `/callback` URL.
 
 ```bash
 curl -X POST https://accountapi.sonoransoftware.com/oauth2/register \
   -H 'Content-Type: application/json' \
   -d '{
     "client_name": "My Community App",
-    "redirect_uris": ["https://app.example.com/oauth/sonoran/callback"],
+    "client_uri": "https://example.com",
+    "logo_uri": "https://example.com/assets/logo.png",
+    "redirect_uris": ["https://example.com/oauth/sonoran/callback"],
     "token_endpoint_auth_method": "none",
     "grant_types": ["authorization_code"],
     "response_types": ["code"],
@@ -65,6 +67,10 @@ curl -X POST https://accountapi.sonoransoftware.com/oauth2/register \
 ```
 
 The `201` response includes `client_id`, `redirect_uris`, and the allowed `scope` string.
+The optional `client_uri` is your application's HTTPS website URL. Set `logo_uri` to a publicly accessible
+HTTPS image URL to display your application's logo on the consent page. A square image works best;
+without a logo, Sonoran displays a generic application icon. Supplying a logo does not verify your application.
+
 Registration does not grant access to an account. Users must approve an authorization request.
 To add scopes to an existing integration, register a new client with those scopes; existing registrations
 and tokens are not automatically expanded.
@@ -81,7 +87,7 @@ Open the authorization endpoint with these URL-encoded query parameters:
 ```text
 response_type=code
 client_id=YOUR_CLIENT_ID
-redirect_uri=https://app.example.com/oauth/sonoran/callback
+redirect_uri=https://example.com/oauth/sonoran/callback
 resource=https://accountapi.sonoransoftware.com
 scope=openid profile cad.communities.read cad.subscriptions.read cms.communities.read cms.subscriptions.read radio.communities.read radio.subscriptions.read
 state=YOUR_RANDOM_STATE
@@ -110,7 +116,7 @@ curl -X POST https://accountapi.sonoransoftware.com/oauth2/token \
   --data-urlencode 'grant_type=authorization_code' \
   --data-urlencode 'client_id=YOUR_CLIENT_ID' \
   --data-urlencode 'code=RETURNED_CODE' \
-  --data-urlencode 'redirect_uri=https://app.example.com/oauth/sonoran/callback' \
+  --data-urlencode 'redirect_uri=https://example.com/oauth/sonoran/callback' \
   --data-urlencode 'resource=https://accountapi.sonoransoftware.com' \
   --data-urlencode 'code_verifier=YOUR_ORIGINAL_VERIFIER'
 ```
