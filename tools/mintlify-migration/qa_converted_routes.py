@@ -47,6 +47,16 @@ def main():
     args=ap.parse_args();root=args.root.resolve();report=args.report.resolve()
     manifest=json.loads(args.manifest.resolve().read_text(encoding='utf-8'))
     canonicalHost=urlsplit(manifest['domain']).hostname
+    retiredSections=manifest.get('retiredSections',[])
+    def retired(route):
+        return any(route==section or route.startswith(section+'/') for section in retiredSections)
+    activePages=[p for p in manifest['pages'] if not retired(p['publishedPath'])]
+    retiredRoutes={r for p in manifest['pages'] if retired(p['publishedPath'])
+                   for r in [p['publishedPath'],p['expectedPath'],*p['aliases']]}
+    ignore=root/'.mintignore'
+    rules=set(ignore.read_text(encoding='utf-8').splitlines()) if ignore.exists() else set()
+    retirementErrors=[{'missingIgnoreRule':rule} for section in retiredSections
+                      for rule in (section+'.mdx',section+'/') if rule not in rules]
     files={}
     for ext in ['*.mdx','*.md']:
         for path in root.rglob(ext):
@@ -54,6 +64,9 @@ def main():
             if '.gitbook/' in rel or rel.startswith(('.git/','node_modules/','migration/')):continue
             route='/'+rel.rsplit('.',1)[0]
             if route=='/index':route='/'
+            if retired(route):
+                retiredRoutes.add(route)
+                continue
             files[route]=path
     docs=json.loads((root/'docs.json').read_text(encoding='utf-8-sig'))
     redirects={item['source']:item['destination'] for item in docs.get('redirects',[]) if isinstance(item,dict) and 'source' in item and 'destination' in item}
@@ -70,8 +83,13 @@ def main():
                         else:readnav(page)
                 elif isinstance(item,(dict,list)):readnav(item)
     readnav(docs.get('navigation',{}))
-    missingNav=[p['publishedPath'] for p in manifest['pages'] if not p['hidden'] and p['mintlifyPage'] not in navrefs]
-    hiddenInNav=[p['publishedPath'] for p in manifest['pages'] if p['hidden'] and p['mintlifyPage'] in navrefs]
+    retirementErrors.extend({'inNavigation':ref} for ref in navrefs if retired('/'+ref))
+    for route in sorted(retiredRoutes):
+        destination=redirects.get(route)
+        if destination not in files or destination in redirects or destination.lstrip('/') not in navrefs:
+            retirementErrors.append({'retiredRoute':route,'invalidRedirect':destination})
+    missingNav=[p['publishedPath'] for p in activePages if not p['hidden'] and p['mintlifyPage'] not in navrefs]
+    hiddenInNav=[p['publishedPath'] for p in activePages if p['hidden'] and p['mintlifyPage'] in navrefs]
     contents={route:without_code(path.read_text(encoding='utf-8-sig')) for route,path in files.items()}
     ids={route:anchors(text) for route,text in contents.items()}
     duplicateIds=[]
@@ -79,13 +97,13 @@ def main():
         explicit=re.findall(r'\bid=["\']([^"\']+)["\']',text)+re.findall(r'\{#([^}]+)\}',text)
         duplicateIds.extend({'page':route,'id':anchor,'count':count} for anchor,count in Counter(explicit).items() if count>1)
     missingPublishedIds=[]
-    for page in manifest['pages']:
+    for page in activePages:
         existing=ids.get(page['publishedPath'],set())
         for heading in page.get('publishedHeadings',[]):
             if heading.get('id') and heading['id'] not in existing:missingPublishedIds.append({'page':page['publishedPath'],'id':heading['id'],'text':heading['text']})
-    missingPages=[p['publishedPath'] for p in manifest['pages'] if p['publishedPath'] not in files]
+    missingPages=[p['publishedPath'] for p in activePages if p['publishedPath'] not in files]
     missingAliases=[]
-    for p in manifest['pages']:
+    for p in activePages:
         for alias in p['aliases']:
             if alias not in files and redirects.get(alias)!=p['publishedPath']:missingAliases.append({'source':alias,'destination':p['publishedPath']})
     badLinks=[];badFragments=[];oldGitBook=[];linksChecked=0
@@ -115,12 +133,12 @@ def main():
             linksChecked+=1
             fragment=unquote(parsed.fragment)
             if fragment and fragment not in ids[path]:badFragments.append({'page':route,'target':target,'resolved':path,'fragment':fragment})
-    out={'root':str(root),'sourceCommit':manifest['sourceCommit'],'counts':{'expectedPages':len(manifest['pages']),'generatedRoutes':len(files),'checkedLinks':linksChecked,'missingPages':len(missingPages),'missingAliases':len(missingAliases),'badPageLinks':len(badLinks),'badFragments':len(badFragments),'remainingGitBookLinks':len(oldGitBook),'missingVisibleNavigation':len(missingNav),'hiddenPagesInNavigation':len(hiddenInNav),'missingPublishedHeadingIds':len(missingPublishedIds),'duplicateExplicitIds':len(duplicateIds)},'missingPages':missingPages,'missingAliases':missingAliases,'missingVisibleNavigation':missingNav,'hiddenPagesInNavigation':hiddenInNav,'missingPublishedHeadingIds':missingPublishedIds,'duplicateExplicitIds':duplicateIds,'badPageLinks':badLinks,'badFragments':badFragments,'remainingGitBookLinks':oldGitBook}
+    out={'root':str(root),'sourceCommit':manifest['sourceCommit'],'counts':{'expectedPages':len(activePages),'generatedRoutes':len(files),'checkedLinks':linksChecked,'missingPages':len(missingPages),'missingAliases':len(missingAliases),'badPageLinks':len(badLinks),'badFragments':len(badFragments),'remainingGitBookLinks':len(oldGitBook),'missingVisibleNavigation':len(missingNav),'hiddenPagesInNavigation':len(hiddenInNav),'missingPublishedHeadingIds':len(missingPublishedIds),'duplicateExplicitIds':len(duplicateIds),'retiredRoutes':len(retiredRoutes),'retirementErrors':len(retirementErrors)},'missingPages':missingPages,'missingAliases':missingAliases,'missingVisibleNavigation':missingNav,'hiddenPagesInNavigation':hiddenInNav,'missingPublishedHeadingIds':missingPublishedIds,'duplicateExplicitIds':duplicateIds,'badPageLinks':badLinks,'badFragments':badFragments,'remainingGitBookLinks':oldGitBook,'retirementErrors':retirementErrors}
     report.parent.mkdir(parents=True,exist_ok=True)
     report.write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(out['counts'],indent=2))
     print('Report:',report)
-    failures=sum(out['counts'][key] for key in ['missingPages','missingAliases','badPageLinks','badFragments','remainingGitBookLinks','missingVisibleNavigation','hiddenPagesInNavigation','missingPublishedHeadingIds','duplicateExplicitIds'])
+    failures=sum(out['counts'][key] for key in ['missingPages','missingAliases','badPageLinks','badFragments','remainingGitBookLinks','missingVisibleNavigation','hiddenPagesInNavigation','missingPublishedHeadingIds','duplicateExplicitIds','retirementErrors'])
     return 1 if failures else 0
 
 if __name__=='__main__':raise SystemExit(main())

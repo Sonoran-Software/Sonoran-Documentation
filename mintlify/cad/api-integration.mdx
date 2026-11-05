@@ -10,7 +10,7 @@ description: Sonoran CAD's open API endpoints allow you to automatically update 
 
 ## How are API calls sent? {#how-are-api-calls-sent}
 
-All API calls are sent via an HTTP POST with a JSON formatted body.
+The v2 API uses standard HTTP methods and JSON request bodies where applicable. See [Authentication](/cad/api-integration/api-endpoints-v2/authentication) for the base URL and required headers.
 
 ## Can I integrate this with my gamemode/framework? {#can-i-integrate-this-with-my-gamemode-framework}
 
@@ -22,7 +22,7 @@ You can also write your own script using our API endpoints:
 
 
 
-<Card title="api-endpoints" href="/cad/api-integration/api-endpoints" />
+<Card title="API Endpoints v2" href="/cad/api-integration/api-endpoints-v2" />
 
 
 
@@ -44,7 +44,7 @@ Or, learn more about receiving push events directly to your game server:
 
 ## Are there rate limits? {#are-there-rate-limits}
 
-Yes, Sonoran CAD will automatically block any malicious or spammed traffic. While we don't publicly publish these limits, it's best to not make more than one call per second for an extended period of time.
+Yes. Requests are limited per API key. Check the individual endpoint page for its limit.
 
 
 

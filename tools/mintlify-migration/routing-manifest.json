@@ -13,6 +13,11 @@
       "sitemap-title-match": 51
     }
   },
+  "retiredSections": [
+    "/cad/api-integration/api-endpoints",
+    "/cms/developer-api-documentation/api-integration/api-endpoints",
+    "/radio/developer-documentation/developer-documentation/api-endpoints"
+  ],
   "pages": [
     {
       "source": "bot/sonoran-bot/README.md",

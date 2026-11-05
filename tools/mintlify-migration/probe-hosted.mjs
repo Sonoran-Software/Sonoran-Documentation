@@ -52,7 +52,12 @@ const blocksIndexing = value => /(?:^|[\s,:;])(?:noindex|none)(?=$|[\s,;])/i.tes
 const sourceOnly = page => page.mappingMethod === 'source-only-unpublished' || page.liveStatus === 404;
 let manifest;
 const manifestRoutes = args.includes('--all-routes') || option('--routes-file');
-if (manifestRoutes || mode === 'production') manifest = JSON.parse(await fs.readFile(manifestPath, 'utf8'));
+if (manifestRoutes || mode === 'production') {
+  manifest = JSON.parse(await fs.readFile(manifestPath, 'utf8'));
+  const retired = manifest.retiredSections || [];
+  manifest.pages = manifest.pages.filter(page =>
+    !retired.some(section => page.publishedPath === section || page.publishedPath.startsWith(`${section}/`)));
+}
 const intentionalNoindex = new Set((manifest?.pages || []).filter(sourceOnly).map(p => p.mintlifyPage));
 let routes = manifestRoutes ? manifest.pages.map(p => ({route: p.expectedPath, page: p.mintlifyPage, title: p.title})) :
   ['/', '/index', '/cad', '/cms', '/radio', '/bot', '/store', '/studio'].map(route => ({route, page: route === '/' ? 'index' : route.slice(1)}));

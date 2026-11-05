@@ -1,0 +1,7 @@
+# Retired v1 reference: keep the sources in Git and serve the redirects in docs.json.
+/cad/api-integration/api-endpoints.mdx
+/cad/api-integration/api-endpoints/
+/cms/developer-api-documentation/api-integration/api-endpoints.mdx
+/cms/developer-api-documentation/api-integration/api-endpoints/
+/radio/developer-documentation/developer-documentation/api-endpoints.mdx
+/radio/developer-documentation/developer-documentation/api-endpoints/

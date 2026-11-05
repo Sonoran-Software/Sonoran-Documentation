@@ -612,134 +612,7 @@
                     ],
                     "root": "cad/api-integration/websocket-api"
                   },
-                  "cad/api-integration/development-branch",
-                  {
-                    "group": "API Endpoints",
-                    "pages": [
-                      "cad/api-integration/api-endpoints/api-restrictions",
-                      {
-                        "group": "Emergency",
-                        "pages": [
-                          {
-                            "group": "Identifiers",
-                            "pages": [
-                              "cad/api-integration/api-endpoints/emergency/identifiers/get-identifiers",
-                              "cad/api-integration/api-endpoints/emergency/identifiers/modify-identifier",
-                              "cad/api-integration/api-endpoints/emergency/identifiers/set-identifier",
-                              "cad/api-integration/api-endpoints/emergency/identifiers/unit-panic",
-                              "cad/api-integration/api-endpoints/emergency/identifiers/kick-unit",
-                              "cad/api-integration/api-endpoints/emergency/identifiers/unit-status",
-                              "cad/api-integration/api-endpoints/emergency/identifiers/get-active-units",
-                              "cad/api-integration/api-endpoints/emergency/identifiers/update-unit-location",
-                              "cad/api-integration/api-endpoints/emergency/identifiers/set-ident-group"
-                            ],
-                            "root": "cad/api-integration/api-endpoints/emergency/identifiers"
-                          },
-                          {
-                            "group": "Dispatch and Emergency Calls",
-                            "pages": [
-                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/get-calls",
-                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/new-dispatch",
-                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/edit-dispatch",
-                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/attach-units",
-                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/detach-unit",
-                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/update-call-postal",
-                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/add-call-note",
-                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/update-call-primary",
-                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/close-call",
-                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/911-call",
-                              "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/remove-911"
-                            ],
-                            "root": "cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls"
-                          },
-                          {
-                            "group": "Custom Blips",
-                            "pages": [
-                              "cad/api-integration/api-endpoints/emergency/custom-blips/get-map-blips",
-                              "cad/api-integration/api-endpoints/emergency/custom-blips/add-blip",
-                              "cad/api-integration/api-endpoints/emergency/custom-blips/modify-blip",
-                              "cad/api-integration/api-endpoints/emergency/custom-blips/remove-blip"
-                            ],
-                            "root": "cad/api-integration/api-endpoints/emergency/custom-blips"
-                          },
-                          {
-                            "group": "ERS",
-                            "pages": [
-                              "cad/api-integration/api-endpoints/emergency/ers/set-street-sign-config"
-                            ],
-                            "root": "cad/api-integration/api-endpoints/emergency/ers"
-                          },
-                          {
-                            "group": "Station Alert",
-                            "pages": [
-                              "cad/api-integration/api-endpoints/emergency/station-alert/set-stations"
-                            ],
-                            "root": "cad/api-integration/api-endpoints/emergency/station-alert"
-                          },
-                          {
-                            "group": "Inferno Pagers",
-                            "pages": [
-                              "cad/api-integration/api-endpoints/emergency/inferno-pagers/get-pager-config",
-                              "cad/api-integration/api-endpoints/emergency/inferno-pagers/set-pager-config"
-                            ],
-                            "root": "cad/api-integration/api-endpoints/emergency/inferno-pagers"
-                          }
-                        ],
-                        "root": "cad/api-integration/api-endpoints/emergency"
-                      },
-                      {
-                        "group": "Civilian",
-                        "pages": [
-                          "cad/api-integration/api-endpoints/civilian/set-character",
-                          "cad/api-integration/api-endpoints/civilian/get-characters",
-                          "cad/api-integration/api-endpoints/civilian/new-character",
-                          "cad/api-integration/api-endpoints/civilian/edit-character",
-                          "cad/api-integration/api-endpoints/civilian/remove-character",
-                          "cad/api-integration/api-endpoints/civilian/db-sync-get-character-links",
-                          "cad/api-integration/api-endpoints/civilian/db-sync-link-character"
-                        ],
-                        "root": "cad/api-integration/api-endpoints/civilian"
-                      },
-                      {
-                        "group": "General",
-                        "pages": [
-                          "cad/api-integration/api-endpoints/general/get-servers",
-                          "cad/api-integration/api-endpoints/general/set-servers",
-                          "cad/api-integration/api-endpoints/general/get-version",
-                          "cad/api-integration/api-endpoints/general/set-penal-codes",
-                          "cad/api-integration/api-endpoints/general/set-api-ids",
-                          {
-                            "group": "Custom Records",
-                            "pages": [
-                              "cad/api-integration/api-endpoints/general/custom-records/api-options-for-adding-and-modifying-records",
-                              "cad/api-integration/api-endpoints/general/custom-records/get-record-template",
-                              "cad/api-integration/api-endpoints/general/custom-records/new-record",
-                              "cad/api-integration/api-endpoints/general/custom-records/edit-record",
-                              "cad/api-integration/api-endpoints/general/custom-records/remove-record"
-                            ],
-                            "root": "cad/api-integration/api-endpoints/general/custom-records"
-                          },
-                          "cad/api-integration/api-endpoints/general/lookup-by-integer",
-                          "cad/api-integration/api-endpoints/general/lookup-name-or-plate",
-                          "cad/api-integration/api-endpoints/general/lookup-by-custom",
-                          "cad/api-integration/api-endpoints/general/get-account",
-                          "cad/api-integration/api-endpoints/general/get-account-1",
-                          "cad/api-integration/api-endpoints/general/check-api-id",
-                          "cad/api-integration/api-endpoints/general/apply-permission-key",
-                          "cad/api-integration/api-endpoints/general/modify-account-permissions",
-                          "cad/api-integration/api-endpoints/general/ban-user",
-                          "cad/api-integration/api-endpoints/general/verify-secret",
-                          "cad/api-integration/api-endpoints/general/set-postal-config",
-                          "cad/api-integration/api-endpoints/general/set-clock-time",
-                          "cad/api-integration/api-endpoints/general/send-photo",
-                          "cad/api-integration/api-endpoints/general/upload-bodycam-recording",
-                          "cad/api-integration/api-endpoints/general/leave-community",
-                          "cad/api-integration/api-endpoints/general/join-community"
-                        ],
-                        "root": "cad/api-integration/api-endpoints/general"
-                      }
-                    ]
-                  }
+                  "cad/api-integration/development-branch"
                 ],
                 "root": "cad/api-integration"
               }
@@ -1064,86 +937,6 @@
                       "cms/developer-api-documentation/api-integration/push-events/account-banned"
                     ],
                     "root": "cms/developer-api-documentation/api-integration/push-events"
-                  },
-                  {
-                    "group": "API Endpoints",
-                    "pages": [
-                      {
-                        "group": "General",
-                        "pages": [
-                          "cms/developer-api-documentation/api-integration/api-endpoints/general/get-sub-version",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/general/check-com-api-id",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/general/get-com-account",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/general/get-current-clock-in",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/general/get-accounts",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/general/get-departments",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/general/get-departments-1",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/general/get-account-ranks",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/general/set-account-ranks",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/general/clock-in-out",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/general/kick-account",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/general/ban-account",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/general/ban-account-1"
-                        ],
-                        "root": "cms/developer-api-documentation/api-integration/api-endpoints/general"
-                      },
-                      {
-                        "group": "Servers",
-                        "pages": [
-                          "cms/developer-api-documentation/api-integration/api-endpoints/servers/get-game-servers",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/servers/set-game-servers",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/servers/verify-whitelist",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/servers/full-whitelist",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/servers/activity-tracker-start-stop",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/servers/activity-tracker-server-start"
-                        ],
-                        "root": "cms/developer-api-documentation/api-integration/api-endpoints/servers"
-                      },
-                      {
-                        "group": "Events",
-                        "pages": [
-                          "cms/developer-api-documentation/api-integration/api-endpoints/events/rsvp"
-                        ],
-                        "root": "cms/developer-api-documentation/api-integration/api-endpoints/events"
-                      },
-                      {
-                        "group": "Rosters",
-                        "pages": [
-                          "cms/developer-api-documentation/api-integration/api-endpoints/rosters/get-roster-contents"
-                        ],
-                        "root": "cms/developer-api-documentation/api-integration/api-endpoints/rosters"
-                      },
-                      {
-                        "group": "Disciplinary",
-                        "pages": [
-                          "cms/developer-api-documentation/api-integration/api-endpoints/disciplinary/get-member-points",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/disciplinary/get-roster-contents",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/disciplinary/add-member-record",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/disciplinary/add-member-record-1",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/disciplinary/add-member-record-2"
-                        ],
-                        "root": "cms/developer-api-documentation/api-integration/api-endpoints/disciplinary"
-                      },
-                      {
-                        "group": "Forms",
-                        "pages": [
-                          "cms/developer-api-documentation/api-integration/api-endpoints/forms/get-form-submissions",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/forms/get-form-lock-status",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/forms/set-form-lock-status"
-                        ],
-                        "root": "cms/developer-api-documentation/api-integration/api-endpoints/forms"
-                      },
-                      {
-                        "group": "Sessions",
-                        "pages": [
-                          "cms/developer-api-documentation/api-integration/api-endpoints/sessions/get-current-session",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/sessions/start-session",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/sessions/stop-session",
-                          "cms/developer-api-documentation/api-integration/api-endpoints/sessions/cancel-session"
-                        ],
-                        "root": "cms/developer-api-documentation/api-integration/api-endpoints/sessions"
-                      }
-                    ]
                   },
                   {
                     "group": "API Endpoints V2",
@@ -1508,45 +1301,6 @@
                   "radio/developer-documentation/developer-documentation/open-source-contributions",
                   "radio/developer-documentation/developer-documentation/resource-events",
                   "radio/developer-documentation/developer-documentation/stream-deck-api",
-                  {
-                    "group": "API Endpoints v1",
-                    "pages": [
-                      "radio/developer-documentation/developer-documentation/api-endpoints/node-library",
-                      "radio/developer-documentation/developer-documentation/api-endpoints/data-structures",
-                      {
-                        "group": "Users",
-                        "pages": [
-                          "radio/developer-documentation/developer-documentation/api-endpoints/users/get-connected-users",
-                          "radio/developer-documentation/developer-documentation/api-endpoints/users/get-connected-user",
-                          "radio/developer-documentation/developer-documentation/api-endpoints/users/approve-members",
-                          "radio/developer-documentation/developer-documentation/api-endpoints/users/kick-members",
-                          "radio/developer-documentation/developer-documentation/api-endpoints/users/ban-members",
-                          "radio/developer-documentation/developer-documentation/api-endpoints/users/set-member-permissions",
-                          "radio/developer-documentation/developer-documentation/api-endpoints/users/set-member-display-names",
-                          "radio/developer-documentation/developer-documentation/api-endpoints/users/set-user-channels",
-                          "radio/developer-documentation/developer-documentation/api-endpoints/users/set-user-display-name"
-                        ],
-                        "root": "radio/developer-documentation/developer-documentation/api-endpoints/users"
-                      },
-                      {
-                        "group": "Channels",
-                        "pages": [
-                          "radio/developer-documentation/developer-documentation/api-endpoints/channels/get-community-channels",
-                          "radio/developer-documentation/developer-documentation/api-endpoints/channels/play-tone"
-                        ],
-                        "root": "radio/developer-documentation/developer-documentation/api-endpoints/channels"
-                      },
-                      {
-                        "group": "Community Server",
-                        "pages": [
-                          "radio/developer-documentation/developer-documentation/api-endpoints/community-server/set-server-ip",
-                          "radio/developer-documentation/developer-documentation/api-endpoints/community-server/get-server-subscription-from-ip",
-                          "radio/developer-documentation/developer-documentation/api-endpoints/community-server/set-in-game-speaker-locations"
-                        ],
-                        "root": "radio/developer-documentation/developer-documentation/api-endpoints/community-server"
-                      }
-                    ]
-                  },
                   {
                     "group": "API Endpoints v2",
                     "pages": [
@@ -2159,6 +1913,542 @@
     {
       "source": "/studio/sonoran-studio/stream-widgets",
       "destination": "/studio/tutorials/stream-widgets"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints",
+      "destination": "/cad/api-integration/api-endpoints-v2"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/api-restrictions",
+      "destination": "/cad/api-integration/api-endpoints-v2/authentication"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/civilian",
+      "destination": "/cad/api-integration/api-endpoints-v2/civilian"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/civilian/db-sync-get-character-links",
+      "destination": "/cad/api-integration/api-endpoints-v2/civilian/get-character-links"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/civilian/db-sync-link-character",
+      "destination": "/cad/api-integration/api-endpoints-v2/civilian/add-character-link"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/civilian/edit-character",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/records/update-record"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/civilian/get-characters",
+      "destination": "/cad/api-integration/api-endpoints-v2/civilian/get-characters"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/civilian/new-character",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/records/create-record"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/civilian/remove-character",
+      "destination": "/cad/api-integration/api-endpoints-v2/civilian/delete-character"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/civilian/set-character",
+      "destination": "/cad/api-integration/api-endpoints-v2/civilian/set-selected-character"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/custom-blips",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/map"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/custom-blips/add-blip",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/map/create-blip"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/custom-blips/get-map-blips",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/map/get-blips"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/custom-blips/modify-blip",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/map/update-blip"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/custom-blips/remove-blip",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/map/delete-blips"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/calls"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/911-call",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/calls/create-911-call"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/add-call-note",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/calls/add-call-note"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/attach-units",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/calls/attach-units"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/close-call",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/calls/close-dispatch-calls"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/detach-unit",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/calls/detach-units"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/edit-dispatch",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/calls/update-dispatch-call"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/get-calls",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/calls/get-calls"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/new-dispatch",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/calls"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/remove-911",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/calls/remove-911-call"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/update-call-postal",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/calls/update-call-postal"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/dispatch-and-emergency-calls/update-call-primary",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/calls/update-call-primary"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/ers",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/ers/set-street-sign-config",
+      "destination": "/cad/api-integration/api-endpoints-v2"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/identifiers",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/identifiers"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/identifiers/get-active-units",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/units/get-active-units"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/identifiers/get-identifiers",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/identifiers/get-identifiers"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/identifiers/kick-unit",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/units/kick-unit"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/identifiers/modify-identifier",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/identifiers/update-identifier"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/identifiers/set-ident-group",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/identifiers/set-identifier-group"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/identifiers/set-identifier",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/identifiers/set-selected-identifier"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/identifiers/unit-panic",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/units/set-unit-panic"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/identifiers/unit-status",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/units/set-unit-status"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/identifiers/update-unit-location",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/units/update-unit-locations"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/inferno-pagers",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/configuration"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/inferno-pagers/get-pager-config",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/configuration/get-pager-config"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/inferno-pagers/set-pager-config",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/configuration/set-pager-config"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/station-alert",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/configuration"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/emergency/station-alert/set-stations",
+      "destination": "/cad/api-integration/api-endpoints-v2/emergency/configuration/set-stations"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general",
+      "destination": "/cad/api-integration/api-endpoints-v2/general"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/apply-permission-key",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/accounts/apply-permission-key"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/ban-user",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/accounts/ban-user"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/check-api-id",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/accounts"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/custom-records",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/records"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/custom-records/api-options-for-adding-and-modifying-records",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/records"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/custom-records/edit-record",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/records/update-record"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/custom-records/get-record-template",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/records/get-template"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/custom-records/new-record",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/records/create-record"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/custom-records/remove-record",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/records/delete-record"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/get-account",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/accounts/get-account"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/get-account-1",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/accounts/get-accounts"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/get-servers",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/configuration/get-servers"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/get-version",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/configuration/get-version"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/join-community",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/accounts"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/leave-community",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/accounts"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/lookup-by-custom",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/lookups/lookup-by-custom"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/lookup-by-integer",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/lookups/lookup-by-value"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/lookup-name-or-plate",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/lookups/lookup-name-or-plate"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/modify-account-permissions",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/accounts"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/send-photo",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/accounts/send-photo"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/set-api-ids",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/accounts"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/set-clock-time",
+      "destination": "/cad/api-integration/api-endpoints-v2/general"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/set-penal-codes",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/configuration/set-penal-codes"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/set-postal-config",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/configuration/set-postal-config"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/set-servers",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/configuration/set-servers"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/upload-bodycam-recording",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/configuration/upload-bodycam-recording"
+    },
+    {
+      "source": "/cad/api-integration/api-endpoints/general/verify-secret",
+      "destination": "/cad/api-integration/api-endpoints-v2/general/accounts/verify-secret"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/disciplinary",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/disciplinary/add-member-record",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary/add-member-record"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/disciplinary/add-member-record-1",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/disciplinary/add-member-record-2",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/disciplinary/get-member-points",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/disciplinary/get-member-points"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/disciplinary/get-roster-contents",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/rosters/get-roster-contents"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/events",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/events"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/events/rsvp",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/events/rsvp"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/forms",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/forms"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/forms/get-form-lock-status",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/forms/get-lock-status"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/forms/get-form-submissions",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/forms/get-template-submissions"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/forms/set-form-lock-status",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/forms/set-lock-status"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/general",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/general"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/general/ban-account",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/general/ban-account-1",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/edit-profile-fields"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/general/check-com-api-id",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/general/clock-in-out",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/clock-account"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/general/get-account-ranks",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/get-account-ranks"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/general/get-accounts",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/get-accounts"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/general/get-com-account",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/get-account"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/general/get-current-clock-in",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/get-current-clock-in"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/general/get-departments",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-departments"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/general/get-departments-1",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-profile-fields"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/general/get-sub-version",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/general/get-sub-version"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/general/kick-account",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/general/set-account-ranks",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/accounts/set-account-ranks"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/rosters",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/rosters"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/rosters/get-roster-contents",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/rosters/get-roster-contents"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/servers",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/servers/activity-tracker-server-start",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/activity-tracker-server-start"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/servers/activity-tracker-start-stop",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/activity-tracker"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/servers/full-whitelist",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/full-whitelist"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/servers/get-game-servers",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/get-servers"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/servers/set-game-servers",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/set-servers"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/servers/verify-whitelist",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/servers/verify-whitelist"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/sessions",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/sessions"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/sessions/cancel-session",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/sessions/cancel-session"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/sessions/get-current-session",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/sessions/get-current-session"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/sessions/start-session",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/sessions/start-session"
+    },
+    {
+      "source": "/cms/developer-api-documentation/api-integration/api-endpoints/sessions/stop-session",
+      "destination": "/cms/developer-api-documentation/api-integration/api-endpoints-v2/sessions/stop-session"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/channels",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/channels"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/channels/get-community-channels",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/channels/get-community-channels"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/channels/play-tone",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/channels/play-tone"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/community-server",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/community-server"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/community-server/get-server-subscription-from-ip",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/community-server/get-server-subscription-from-ip"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/community-server/set-in-game-speaker-locations",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/community-server/set-in-game-speaker-locations"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/community-server/set-server-ip",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/community-server/set-server-ip"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/data-structures",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/node-library",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/libraries"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/users",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/users"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/users/approve-members",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/users/approve-members"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/users/ban-members",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/users/ban-members"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/users/get-connected-user",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/users/get-connected-user"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/users/get-connected-users",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/users/get-connected-users"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/users/kick-members",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/users/kick-members"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/users/set-member-display-names",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/users/set-member-display-names"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/users/set-member-permissions",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/users/set-member-permissions"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/users/set-user-channels",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/users/set-user-channels"
+    },
+    {
+      "source": "/radio/developer-documentation/developer-documentation/api-endpoints/users/set-user-display-name",
+      "destination": "/radio/developer-documentation/developer-documentation/api-endpoints-v2/users/set-user-display-name"
     }
   ],
   "footer": {

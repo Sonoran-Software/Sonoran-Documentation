@@ -16,6 +16,8 @@ Heading IDs (`{#id}`) are masked for generic MDX compilation. Frontmatter is str
 
 The Python checker uses only the standard library and reads `routing-manifest.json` plus current MDX. It checks preserved routes, redirect aliases, navigation, internal links and useful published anchors without loading old source files. Keep the route/anchor manifests as compatibility baselines. New pages can be added without recreating historical source paths; review intentional removals or heading changes instead of blindly regenerating the baseline.
 
+The CAD, CMS, and Radio v1 REST references are retained in Git but excluded from the published site by `mintlify/.mintignore`. The `retiredSections` in the route manifest keep the original inventory intact while excluding those pages from public route and index expectations. Each retired URL must redirect to a published page in the navigation.
+
 ## Hosted acceptance
 
 After Mintlify finishes publishing, run:
