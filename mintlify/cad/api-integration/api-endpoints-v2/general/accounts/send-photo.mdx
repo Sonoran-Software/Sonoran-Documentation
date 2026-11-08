@@ -8,20 +8,38 @@ description: Send an image link to a connected user's Recent photos in CAD.
 > **Rate limit:** `10 requests per minute`\
 > Authenticated v2 endpoints are rate limited per API key rather than per IP address.
 
-Send an image link to the recipient's active CAD connections in the community associated with your API key.
+Send a photo to a user in your CAD community.
 
 ## View and attach photos in CAD {#view-and-attach-photos}
 
-The **Recent photos** folder icon in the CAD workspace toolbar shows the unread count. Open it to browse up to 30 recent photos. The list stays in memory for the current CAD session and clears when you refresh, close CAD, or leave the community.
-
-To attach a photo, open or create a custom record with an editable **Image** field. Select **Choose recent photo** in that field, select an image, and choose **Use photo** or **Replace photo**. Saving the record stores the original image URL. Use stable hosting so record viewers can load the photo later.
+Photos sent through this endpoint appear in **Recent photos**, where users can view them or attach them to a custom record.
 
 <Tabs>
-<Tab title="Recent photos">
-![Browse photos received in CAD](https://docs-assets.sonoransoftware.com/cad-recent-photos-gallery-20261107.png)
+<Tab title="View photos">
+
+1. Click the folder icon at the left of the CAD toolbar.
+
+![CAD toolbar with the Recent photos folder icon](https://docs-assets.sonoransoftware.com/cad-recent-photos-toolbar-and-field-20261107.png)
+
+2. Select a photo to view it.
+
+![Recent photos open in CAD](https://docs-assets.sonoransoftware.com/cad-recent-photos-gallery-20261107.png)
+
 </Tab>
 <Tab title="Attach to a record">
-![Choose a recent photo for a custom record Image field](https://docs-assets.sonoransoftware.com/cad-recent-photos-record-picker-20261107.png)
+
+1. Open a custom record and click the folder icon in its **Image** field.
+
+![Custom record with the folder button at the top right of the empty Image field](https://docs-assets.sonoransoftware.com/cad-recent-photos-toolbar-and-field-20261107.png)
+
+2. Select a photo and click **Use photo** (or **Replace photo** for an existing image).
+
+![Select a recent photo and click Use photo](https://docs-assets.sonoransoftware.com/cad-recent-photos-record-picker-20261107.png)
+
+3. The photo appears in the record. Save the record to keep it.
+
+![Photo attached to the record's Image field](https://docs-assets.sonoransoftware.com/cad-recent-photos-attached-record-20261107.png)
+
 </Tab>
 </Tabs>
 
