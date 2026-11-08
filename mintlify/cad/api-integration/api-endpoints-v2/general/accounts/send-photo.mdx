@@ -1,6 +1,6 @@
 ---
 title: Send Photo
-description: Send a photo URL to active connections for a community user ID.
+description: Send an image link to a connected user's Recent photos in CAD.
 ---
 
 `POST` `https://api.sonorancad.com/v2/general/photos`
@@ -8,11 +8,18 @@ description: Send a photo URL to active connections for a community user ID.
 > **Rate limit:** `10 requests per minute`\
 > Authenticated v2 endpoints are rate limited per API key rather than per IP address.
 
-Send a photo URL to every active connection linked to a community user ID.
+Send an image link to the recipient's active CAD connections in the community associated with your API key.
+
+## View and attach photos in CAD {#view-and-attach-photos}
+
+The **Recent photos** folder icon in the CAD workspace toolbar shows the unread count. Open it to browse up to 30 recent photos. The list stays in memory for the current CAD session and clears when you refresh, close CAD, or leave the community.
+
+To attach a photo, open or create a custom record with an editable **Image** field. Select **Choose recent photo** in that field, select an image, and choose **Use photo** or **Replace photo**. Saving the record stores the original image URL. Use stable hosting so record viewers can load the photo later.
 
 ## Request Body {#request-body}
 
-Use `communityUserId` by default, or provide `roblox` or `discord` to target the linked account that should receive the photo.
+- `communityUserId` is the recipient's community user ID.
+- `url` is an absolute HTTPS link to an image the recipient's CAD client can load. Use a link without embedded credentials.
 
 ```json
 {
@@ -40,7 +47,7 @@ local sonoran = Sonoran.createClient({
 
 local response = sonoran.cad:sendPhotoV2({
     communityUserId = 'player-1234',
-    url = 'https =//example.com/mugshot.png',
+    url = 'https://example.com/mugshot.png',
   })
 
 -- Inspect response.success, response.data, or response.reason as needed.
@@ -96,8 +103,8 @@ After getting the Lua export client:
 
 ```lua
 local response = cad:sendPhotoV2({
-    apiId = '1234567890',
-    url = 'https =//example.com/mugshot.png',
+    communityUserId = 'player-1234',
+    url = 'https://example.com/mugshot.png',
   })
 
 -- Inspect response.success, response.data, or response.reason as needed.
@@ -192,7 +199,7 @@ openapi: "3.0.3"
 info:
   title: "Sonoran CAD v2 - Send Photo"
   version: "1.0.0"
-  description: "Send a photo URL to active connections for a community user ID."
+  description: "Send an HTTPS image link to the recipient's CAD connections in the authenticated community."
 servers:
   -
     url: "https://api.sonorancad.com"
@@ -202,15 +209,25 @@ paths:
       summary: "Send Photo"
       operationId: "sendPhoto"
       responses:
-        200:
-          description: "Successful response"
+        "200":
+          description: "The photo link was routed to the listed number of CAD connections."
           content:
             application/json:
               schema:
                 type: "object"
+                properties:
+                  communityUserId:
+                    type: "string"
+                  delivered:
+                    type: "integer"
+                    description: "Number of CAD connections the link was routed to."
               example:
                 communityUserId: "player-1234"
                 delivered: 1
+        "400":
+          description: "The request is missing a required value or the image URL is invalid."
+        "404":
+          description: "No eligible CAD connection was found for the recipient in this community."
       security:
         -
           bearerAuth:
@@ -220,6 +237,15 @@ paths:
           application/json:
             schema:
               type: "object"
+              required: [communityUserId, url]
+              properties:
+                communityUserId:
+                  type: "string"
+                  description: "Recipient's community user ID."
+                url:
+                  type: "string"
+                  format: "uri"
+                  description: "Absolute HTTPS image URL without embedded credentials."
             example:
               communityUserId: "player-1234"
               url: "https://cdn.example.com/mugshots/example.png"
@@ -253,7 +279,7 @@ curl --request POST \
 
 ## Response {#response}
 
-Successful requests return `application/json`.
+Successful requests return `application/json`. The `delivered` value counts the CAD connections the link was routed to.
 
 ```json
 {
@@ -261,3 +287,5 @@ Successful requests return `application/json`.
   "delivered": 1
 }
 ```
+
+The endpoint returns `400 Bad Request` for missing or invalid inputs and `404 Not Found` when the recipient has no eligible CAD connection in the authenticated community.

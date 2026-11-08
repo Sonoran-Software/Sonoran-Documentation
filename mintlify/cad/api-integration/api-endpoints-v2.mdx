@@ -2510,17 +2510,28 @@ paths:
   /v2/general/photos:
     post:
       summary: Send Photo
+      description: Send an HTTPS image link to the recipient's CAD connections in the authenticated community.
       operationId: sendPhoto
       responses:
         '200':
-          description: Successful response
+          description: The photo link was routed to the listed number of CAD connections.
           content:
             application/json:
               schema:
                 type: object
+                properties:
+                  communityUserId:
+                    type: string
+                  delivered:
+                    type: integer
+                    description: Number of CAD connections the link was routed to.
               example:
                 communityUserId: player-1234
                 delivered: 1
+        '400':
+          description: The request is missing a required value or the image URL is invalid.
+        '404':
+          description: No eligible CAD connection was found for the recipient in this community.
       security:
       - bearerAuth: []
       requestBody:
@@ -2529,6 +2540,15 @@ paths:
           application/json:
             schema:
               type: object
+              required: [communityUserId, url]
+              properties:
+                communityUserId:
+                  type: string
+                  description: Recipient's community user ID.
+                url:
+                  type: string
+                  format: uri
+                  description: Absolute HTTPS image URL without embedded credentials.
             example:
               communityUserId: player-1234
               url: https://cdn.example.com/mugshots/example.png
