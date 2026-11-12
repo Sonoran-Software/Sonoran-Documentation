@@ -1,0 +1,62 @@
+---
+title: Migrate FiveM Configuration
+description: Upload a FiveM server's existing settings to CAD.
+---
+
+`POST` `https://api.sonorancad.com/v2/fivem/servers/{serverId}/configuration/migrate`
+
+Upload the server's existing settings when its startup [configuration request](/cad/api-integration/api-endpoints-v2/general/configuration/get-fivem-configuration) reports that migration is pending. CAD saves the configuration for that server and makes it available to fetch.
+
+## Authentication and parameters {#authentication-and-parameters}
+
+Send `Authorization: Bearer YOUR_API_KEY` and `Content-Type: application/json`. The URL must identify a server registered in the API key's CAD community.
+
+| Body field | Value |
+| --- | --- |
+| `serverId` | Positive integer matching the server ID in the URL. |
+| `config` | The exported JSON object, with a `core` object and plugin objects at the top level. Send the contents as JSON. |
+
+If the export includes `core.serverId`, it must match the same ID. Keep local bootstrap settings out of new exports. CAD strips `communityID`, `apiKey`, `serverId`, and `mode` from the uploaded core settings before saving.
+
+## Example request {#example-request}
+
+Create a request body like the one below. The example is abbreviated. Use the server's exported configuration as the value of `config`.
+
+```json
+{
+  "serverId": 1,
+  "config": {
+    "core": {
+      "notificationSystem": "auto"
+    },
+    "bodycam": {
+      "enabled": true
+    }
+  }
+}
+```
+
+```bash
+curl --request POST "https://api.sonorancad.com/v2/fivem/servers/1/configuration/migrate" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  --data-binary @migration.json
+```
+
+## Response {#response}
+
+```json
+{
+  "serverId": 1,
+  "status": "saved"
+}
+```
+
+A `200 OK` with status `saved` means the upload succeeded. Status `alreadyMigrated` means this server has a saved configuration. A repeated upload preserves any subsequent edits in CAD. Fetch the configuration after either result.
+
+| Status | Meaning |
+| --- | --- |
+| `400` | The server ID does not match, or the configuration is missing, malformed, or fails validation. |
+| `401` | The API key is missing or invalid. |
+| `404` | The server is not registered in the authenticated community. |
+| `413` | The request exceeds the upload limit. The configuration object is limited to 1 MiB. |

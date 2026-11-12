@@ -484,6 +484,7 @@
                             "group": "Configuration",
                             "pages": [
                               "cad/api-integration/api-endpoints-v2/general/configuration/get-fivem-configuration",
+                              "cad/api-integration/api-endpoints-v2/general/configuration/migrate-fivem-configuration",
                               "cad/api-integration/api-endpoints-v2/general/configuration/acknowledge-fivem-configuration",
                               "cad/api-integration/api-endpoints-v2/general/configuration/get-database-sync-configuration",
                               "cad/api-integration/api-endpoints-v2/general/configuration/get-penal-codes",
