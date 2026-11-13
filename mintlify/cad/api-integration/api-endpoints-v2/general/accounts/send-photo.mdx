@@ -1,6 +1,6 @@
 ---
-title: Send Photo
-description: Send an image link to a connected user's Recent photos in CAD.
+title: Send Files
+description: Send image, video, audio, PDF, and external file links to a connected user in CAD.
 ---
 
 `POST` `https://api.sonorancad.com/v2/general/photos`
@@ -8,52 +8,41 @@ description: Send an image link to a connected user's Recent photos in CAD.
 > **Rate limit:** `10 requests per minute`\
 > Authenticated v2 endpoints are rate limited per API key rather than per IP address.
 
-Send a photo to a user in your CAD community.
+Send files to a user in your CAD community. The existing `/v2/general/photos` route and SDK method names are unchanged.
 
 ## View and attach photos in CAD {#view-and-attach-photos}
 
-Photos sent through this endpoint appear in **Recent photos**, where users can view them or attach them to a custom record.
+Files sent through this endpoint appear in **Recent files**, where users can preview images, videos, audio clips, and PDFs, or open external links.
 
-<Tabs>
-<Tab title="View photos">
+In the custom record builder, add an **Evidence** section. When filling out a record, click **Select evidence**, select the files to attach, and click **Attach selected**. You can also use **Add file URL** to attach a link directly. Click an attachment to preview it, then save the record to keep the attachments. Record PDF exports include clickable file links.
 
-1. Click the folder icon at the left of the CAD toolbar.
+Existing **Image** fields continue to support photos: click the folder icon, choose a photo, and click **Use photo** or **Replace photo**.
 
-![CAD toolbar with the Recent photos folder icon](https://docs-assets.sonoransoftware.com/cad-recent-photos-toolbar-and-field-20261107.png)
-
-2. Select a photo to view it.
-
-![Recent photos open in CAD](https://docs-assets.sonoransoftware.com/cad-recent-photos-gallery-20261107.png)
-
-</Tab>
-<Tab title="Attach to a record">
-
-1. Open a custom record and click the folder icon in its **Image** field.
-
-![Custom record with the folder button at the top right of the empty Image field](https://docs-assets.sonoransoftware.com/cad-recent-photos-toolbar-and-field-20261107.png)
-
-2. Select a photo and click **Use photo** (or **Replace photo** for an existing image).
-
-![Select a recent photo and click Use photo](https://docs-assets.sonoransoftware.com/cad-recent-photos-record-picker-20261107.png)
-
-3. The photo appears in the record. Save the record to keep it.
-
-![Photo attached to the record's Image field](https://docs-assets.sonoransoftware.com/cad-recent-photos-attached-record-20261107.png)
-
-</Tab>
-</Tabs>
+<Note>Multiple files and Evidence sections are available on CAD staging. Existing single-photo requests remain compatible with production.</Note>
 
 ## Request Body {#request-body}
 
-- `communityUserId` is the recipient's community user ID.
-- `url` is an absolute HTTPS link to an image the recipient's CAD client can load. Use a link without embedded credentials.
+Authenticate with `Authorization: Bearer YOUR_API_KEY`.
+
+- `communityUserId` (required): the recipient's community user ID in the authenticated community.
+- Supply exactly one of `url` (one URL) or `urls` (an array of 1–30 URLs). Each must be an absolute HTTPS URL without embedded credentials. Duplicate URLs are delivered once. The entire batch is validated before delivery.
+- `fileType` (optional): `image`, `video`, `audio`, `pdf`, or `link`. Applies to every URL in the request; use it for extensionless or signed file URLs. Without it, the type is inferred separately from each URL's path. Unrecognized paths in `urls` become external links; an unrecognized legacy `url` remains an image.
+
+Supported type inference includes images (`jpg`, `jpeg`, `png`, `gif`, `webp`, `avif`, `bmp`, `svg`), video (`mp4`, `webm`, `mov`, `m4v`, `ogv`), audio (`mp3`, `wav`, `ogg`, `m4a`, `aac`, `flac`, `opus`), and `pdf`. Playback and embedded PDF viewing depend on the browser and file host; **Open file** is available when a preview is unavailable.
 
 ```json
 {
   "communityUserId": "player-1234",
-  "url": "https://cdn.example.com/mugshots/example.png"
+  "urls": [
+    "https://cdn.example.com/evidence/scene.png",
+    "https://cdn.example.com/evidence/bodycam.webm",
+    "https://cdn.example.com/evidence/statement.pdf",
+    "https://cdn.example.com/evidence/call.mp3"
+  ]
 }
 ```
+
+To send an extensionless PDF, use `"urls": ["https://cdn.example.com/signed-file"], "fileType": "pdf"`.
 
 ## Example Request {#example-request}
 
@@ -74,7 +63,7 @@ local sonoran = Sonoran.createClient({
 
 local response = sonoran.cad:sendPhotoV2({
     communityUserId = 'player-1234',
-    url = 'https://example.com/mugshot.png',
+    urls = { 'https://example.com/scene.png', 'https://example.com/statement.pdf' },
   })
 
 -- Inspect response.success, response.data, or response.reason as needed.
@@ -131,7 +120,7 @@ After getting the Lua export client:
 ```lua
 local response = cad:sendPhotoV2({
     communityUserId = 'player-1234',
-    url = 'https://example.com/mugshot.png',
+    urls = { 'https://example.com/scene.png', 'https://example.com/statement.pdf' },
   })
 
 -- Inspect response.success, response.data, or response.reason as needed.
@@ -157,7 +146,7 @@ const Sonoran = require('@sonoransoftware/sonoran.js');
 
   const response = await instance.cad.sendPhotoV2({
     communityUserId: 'player-1234',
-    url: 'https://example.com/mugshot.png',
+    urls: ['https://example.com/scene.png', 'https://example.com/statement.pdf'],
   });
   console.log(response);
 })();
@@ -181,7 +170,7 @@ instance = Instance(
 
 response = instance.cad.sendPhotoV2({
     "communityUserId": 'player-1234',
-    "url": 'https://example.com/mugshot.png',
+    "urls": ["https://example.com/scene.png", "https://example.com/statement.pdf"],
   })
 
 print(response.success)
@@ -208,7 +197,7 @@ using var sonoran = new SonoranClient(new SonoranClientOptions
 var response = await sonoran.Cad.sendPhotoV2(new SendPhotoV2Request
 {
     CommunityUserId = "player-1234",
-    Url = "https://example.com/mugshot.jpg"
+    Urls = new[] { "https://example.com/scene.png", "https://example.com/statement.pdf" }
 });
 
 Console.WriteLine(response.success);
@@ -224,20 +213,20 @@ Import this YAML into Postman with **Import -> Raw text** to create a single-end
 ```yaml
 openapi: "3.0.3"
 info:
-  title: "Sonoran CAD v2 - Send Photo"
+  title: "Sonoran CAD v2 - Send Files"
   version: "1.0.0"
-  description: "Send an HTTPS image link to the recipient's CAD connections in the authenticated community."
+  description: "Send HTTPS file links to the recipient's CAD connections in the authenticated community."
 servers:
   -
     url: "https://api.sonorancad.com"
 paths:
   /v2/general/photos:
     post:
-      summary: "Send Photo"
+      summary: "Send Files"
       operationId: "sendPhoto"
       responses:
         "200":
-          description: "The photo link was routed to the listed number of CAD connections."
+          description: "The files were routed to the listed number of CAD connections."
           content:
             application/json:
               schema:
@@ -245,14 +234,18 @@ paths:
                 properties:
                   communityUserId:
                     type: "string"
+                  files:
+                    type: "integer"
+                    description: "Number of distinct file URLs."
                   delivered:
                     type: "integer"
                     description: "Number of CAD connections the link was routed to."
               example:
                 communityUserId: "player-1234"
                 delivered: 1
+                files: 2
         "400":
-          description: "The request is missing a required value or the image URL is invalid."
+          description: "The request is missing a required value or a file URL or fileType is invalid."
         "404":
           description: "No eligible CAD connection was found for the recipient in this community."
       security:
@@ -264,7 +257,12 @@ paths:
           application/json:
             schema:
               type: "object"
-              required: [communityUserId, url]
+              required: [communityUserId]
+              oneOf:
+                - required: [url]
+                  not: { required: [urls] }
+                - required: [urls]
+                  not: { required: [url] }
               properties:
                 communityUserId:
                   type: "string"
@@ -272,10 +270,18 @@ paths:
                 url:
                   type: "string"
                   format: "uri"
-                  description: "Absolute HTTPS image URL without embedded credentials."
+                  description: "Single absolute HTTPS file URL without embedded credentials."
+                urls:
+                  type: array
+                  minItems: 1
+                  maxItems: 30
+                  items: { type: string, format: uri }
+                fileType:
+                  type: string
+                  enum: [image, video, audio, pdf, link]
             example:
               communityUserId: "player-1234"
-              url: "https://cdn.example.com/mugshots/example.png"
+              urls: ["https://cdn.example.com/scene.png", "https://cdn.example.com/statement.pdf"]
 components:
   securitySchemes:
     bearerAuth:
@@ -296,7 +302,7 @@ curl --request POST \
   --header "Content-Type: application/json" \
   --data '{
   "communityUserId": "player-1234",
-  "url": "https://cdn.example.com/mugshots/example.png"
+  "urls": ["https://cdn.example.com/scene.png", "https://cdn.example.com/statement.pdf"]
 }'
 ```
 
@@ -306,12 +312,13 @@ curl --request POST \
 
 ## Response {#response}
 
-Successful requests return `application/json`. The `delivered` value counts the CAD connections the link was routed to.
+Successful requests return `application/json`. The `delivered` value counts recipient CAD connections, and `files` counts distinct file URLs. Delivery confirms routing to those connections, not that the browser loaded every file.
 
 ```json
 {
   "communityUserId": "player-1234",
-  "delivered": 1
+  "delivered": 1,
+  "files": 2
 }
 ```
 
