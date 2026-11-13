@@ -13,7 +13,7 @@ This reference applies to versions of CAD and the FiveM resource that support CA
 
 Send `Authorization: Bearer YOUR_API_KEY`. Replace `serverId` with the positive numeric ID of a server registered in the API key's CAD community. The request has no body.
 
-Pass the installed SonoranCAD FiveM resource version as the optional `version` query parameter. It is a string, for example `"3.4.0"`.
+Pass the installed SonoranCAD FiveM resource version as the required `version` query parameter. It must be a nonempty string, such as `"3.4.0"`.
 
 ## Example request {#example-request}
 
@@ -44,5 +44,6 @@ The full response includes default values for missing settings. New communities 
 | Status | Meaning |
 | --- | --- |
 | `200` | Configuration is ready. |
+| `400` | The `version` query parameter is missing or blank. |
 | `401` | The API key is missing or invalid. |
 | `404` | The server is unknown to the authenticated community or is waiting for its [migration upload](/cad/api-integration/api-endpoints-v2/general/configuration/migrate-fivem-configuration). The error title identifies which case occurred. |
