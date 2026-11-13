@@ -26,29 +26,21 @@ Click to view our [WraithV2 plate reader and lookup installation video](https://
 
 ## Activation Guide {#activation-guide}
 
-### 1. Download and Install the Core {#id-1.-download-and-install-the-core}
+### Download and Install the Core {#id-1.-download-and-install-the-core}
 
 If you haven't already, be sure to install and configure the [SonoranCAD Core](/cad/integration-plugins/in-game-integration/fivem-installation) first.
 
-### 2. Activate the Submodule and all Dependencies {#id-2.-activate-the-submodule-and-all-dependencies}
+### Activate the Submodule and all Dependencies {#id-2.-activate-the-submodule-and-all-dependencies}
 
-Follow the [submodule activation guide](/cad/integration-plugins/in-game-integration/submodule-configuration#activating-a-submodule) for the required submodules.
+Lookups is included and enabled automatically for the plugins that need it. It is hidden from the CAD plugin list; there is no separate enable toggle to find.
 
-### 3. Set Your API ID {#id-3.-set-your-api-id}
+### Set Your API ID {#id-3.-set-your-api-id}
 
 Don't forget to set your account [API ID](/cad/api-integration/getting-started/setting-your-api-id) to properly link your in-game user to the CAD.
 
 ## Configuration {#configuration}
 
-<Warning>
-
-Do not set the cache timer too low or you may run into rate limiting.
-</Warning>
-
-| Option          | Description                                                     | Default                  |
-| --------------- | --------------------------------------------------------------- | ------------------------ |
-| maxCacheTime    | How long to cache a looked-up plate.                            | 120 seconds              |
-| stalePurgeTimer | How long between "stale" plate cleanups (keep unscanned plates) | 600 seconds (10 minutes) |
+Lookup caching is managed by the resource. Cache and purge timers are not exposed in the CAD editor.
 
 ## Usage {#usage}
 

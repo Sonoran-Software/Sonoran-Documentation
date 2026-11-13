@@ -5,46 +5,26 @@ description: Allows you to change a unit's status in the CAD.
 
 <img src="https://docs-assets.sonoransoftware.com/sha256/c6/c6eeb9fc952507e09f4db9385596d443bd1ca7fcad8916aa39e8077f1f6a1d47.png" alt="Unit Status showing status commands and a CAD unit marked AVAILABLE." />
 
-
-
 ## Activation Guide {#activation-guide}
 
-### 1. Download and Install the Resource {#id-1.-download-and-install-the-resource}
+### Download and Install the Resource {#id-1.-download-and-install-the-resource}
 
 <Info>
 
 This submodule is already **enabled by default** when installing the [Sonoran CAD FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
 </Info>
 
-### 2. Adjust the Configuration {#id-2.-adjust-the-configuration}
+### Adjust the Configuration {#id-2.-adjust-the-configuration}
 
-The unit status settings are stored inside of the `/configuration/unitstatus_config.lua` file.
+Unit Status is a built-in integration and is hidden from the CAD plugin list. Its default status commands remain available; there is no separate configuration panel. Configure the CAD unit status codes in **Admin > Customization > Unit Status Codes**.
 
-
-
-<Accordion title="unitstatusconfig.lua">
-
-
-
-| Option           | Description                                                  | Default                  |
-| ---------------- | ------------------------------------------------------------ | ------------------------ |
-| setStatusCommand | Command that will allow units to set their own status.       | setstatus                |
-| statusCodes      | Array of status codes, configurable to be community-specific | Default SonoranCAD setup |
-| enableAceCheck   | Require the server-side ACE check before a status update.    | `true`                   |
-
-
-
-</Accordion>
-
-
-
-### 3. Ensure Players are Linked {#id-3.-ensure-players-are-linked}
+### Ensure Players are Linked {#id-3.-ensure-players-are-linked}
 
 Ensure the player has already [linked their CAD](/cad/integration-plugins/in-game-integration/link-user-in-game) for this integration to work.
 
-### 4. Setup User Permissions {#id-4.-setup-user-permissions}
+### Setup User Permissions {#id-4.-setup-user-permissions}
 
-When `enableAceCheck` is `true` (the default), players using the status command need the literal `command.setstatus` [ACE permission](https://forum.cfx.re/t/basic-aces-principals-overview-guide/90917). The current server-side check is not derived from `setStatusCommand`, so changing the client command name does not change this permission node.
+With the default permission check, players using the status command need the literal `command.setstatus` [ACE permission](https://forum.cfx.re/t/basic-aces-principals-overview-guide/90917). This is the permission node used by the current resource.
 
 **Example**
 
@@ -58,11 +38,7 @@ In-game commands can be used to
 
 * `/setstatus [status]` Set your unit status in the CAD.
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/6d/6d5460963e66f1947e74f669d4383f56b284f9a8401387e0a1b7ae0251dcbe41.png" alt="" />
-
-
 
 ## Function {#function}
 

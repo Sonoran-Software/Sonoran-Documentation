@@ -6,60 +6,90 @@ description: Requires players to register on the CAD via a nag screen or freezin
 
 <img src="https://docs-assets.sonoransoftware.com/sha256/ff/ffe31305c8fae7c59b6a1dc7acf663325825b1b87052e8a23de6c34085420e95.png" alt="Force Register in-game CAD account linking warning" />
 
-
-
 ## Activation Guide {#activation-guide}
 
-### 1. Download and Install the Resource {#id-1.-download-and-install-the-resource}
+### Download and Install the Resource {#id-1.-download-and-install-the-resource}
 
 <Info>
 
 This submodule is already **enabled by default** when installing the [Sonoran CAD FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
 </Info>
 
-### 2. Adjust the Configuration {#id-2.-adjust-the-configuration}
+### Adjust the Configuration {#id-2.-adjust-the-configuration}
 
-The CAD display settings are stored inside of the `/configuration/forcereg_config.lua` file.
+Open **Admin > Integrations > FiveM**, select the server, then open **Force Register (ForceReg)**. Enable the plugin with the header toggle, review the settings below, and select **Save configuration**. Restart `sonorancad` to apply the saved settings.
 
-### 3. (OPTIONAL) Utilize the Tablet's Auto Link {#id-3.-optional-utilize-the-tablets-auto-link}
+See [Submodule Configuration](/cad/integration-plugins/in-game-integration/submodule-configuration) for requirements, reset, and migration details.
+
+### (OPTIONAL) Utilize the Tablet's Auto Link {#id-3.-optional-utilize-the-tablets-auto-link}
 
 The [tablet resource](/cad/integration-plugins/in-game-integration/available-plugins/tablet) can be configured to automatically link the user when they login, removing the need for users to manually type this in.
 
 ## Configuration {#configuration}
 
+<Accordion title="Account linking">
 
-
-<Accordion title="forceregconfig.lua">
-
-
-
-| Option            | Description                                                                                                                          | Default Value                                                                                    |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| captiveOption     | The mode to use for telling players to sign up.                                                                                      | Nag                                                                                              |
-| captiveMessage    | Message to show to the player.                                                                                                       | See Config                                                                                       |
-| verifyMessage     | Message to show how to confirm the player registered.                                                                                | See Config                                                                                       |
-| whitelist.enabled | Restrict forcing registration to only the configured people                                                                          | `false`                                                                                          |
-| whitelist.mode    | What the whitelist will use to check if a player is whitelisted                                                                      | <code>qb-core</code><br />Options: <code>qb-core</code>, <code>esx</code>, <code>ace</code> |
-| whitelist.aces    | Ace permissions that will pass the whitelist and will get the ForceReg notifications if `whitelist.mode` is set to `ace`.            | `forcereg.whitelist`                                                                             |
-| whitelist.jobs    | QBCore of ESX jobs that will pass the whitelist and get the ForceReg notifications if `whitelist.mode` is set to `qb-core` or `esx`. | `police`                                                                                         |
-
-
+| Setting | What it does |
+| --- | --- |
+| **Require link** | Require players to link a CAD account before they can proceed. |
+| **Link command** | Run /link to open the CAD account linking window. |
+| **Auto open link popup** | Open the link prompt automatically for unlinked players. |
+| **Allow popup close when unlinked** | Let players dismiss the linking prompt before they link. |
 
 </Accordion>
 
+<Accordion title="Unlinked players">
 
+| Setting | What it does |
+| --- | --- |
+| **Unlinked player behavior** | Choose what happens when a player has not linked their CAD account. Choices: Reminder, Freeze player. |
+| **Reminder position** | Choose where the linking reminder appears on the screen. Choices: Top, Center. |
+
+</Accordion>
+
+<Accordion title="Linking exceptions">
+
+| Setting | What it does |
+| --- | --- |
+| **Allow linking exceptions** | Limit linking checks to the configured ACE permissions or jobs. Despite this label, matching players are checked, not exempted, by the current resource. |
+| **Match players by** | Choose ACE, QBCore, or ESX to decide which players receive linking checks. Choices: ACE, QBCore, ESX. |
+| **Jobs** | Jobs whose players receive linking checks when job filtering is enabled. |
+
+</Accordion>
+
+<Accordion title="Freeze player">
+
+With **Freeze player** selected, unlinked players cannot move until they link. **Auto open link popup** controls automatic opening; **Allow popup close when unlinked** controls whether they can dismiss the prompt.
+
+</Accordion>
+
+<Accordion title="Language">
+
+Expand **Language** at the bottom of the plugin to edit its in-game messages. Keep substitution tokens such as `%s` or `{0}` intact.
+
+| Setting | What it does |
+| --- | --- |
+| **Link prompt** | Set the message players see when asked to link their CAD account. |
+| **Link button text** | Set the label of the button players press to link their CAD account. |
+| **Captive message** | Text shown to players for Captive message. Keep any substitution tokens in the text. |
+| **Verify message** | Text shown to players for Verify message. Keep any substitution tokens in the text. |
+| **Instructional message** | Text shown to players for Instructional message. Keep any substitution tokens in the text. |
+
+</Accordion>
+
+When **Match players by** is **ACE**, edit **ACE permissions** instead of **Jobs**. See [ACE Permissions](#ace-permissions) before enabling this filter.
 
 ### ACE Permissions {#ace-permissions}
 
-The ACE whitelist is inactive with the shipped defaults (`whitelist.enabled = false` and `whitelist.mode = "qb-core"`). To use ACE access, enable the whitelist and set `whitelist.mode = "ace"`. The default `whitelist.aces` entry is `forcereg.whitelist`, and the list is configurable; any listed node can pass the whitelist.
+In the current resource, **Allow linking exceptions** enables a filter for who receives linking checks. Listed players are required to link; they are not exempt. Choose **ACE** under **Match players by**, then set **ACE permissions** to the nodes for those players.
 
-For example:
+For example, with `forcereg.whitelist` in the list:
 
 ```cfg
 add_ace group.sonoran_cad_linked forcereg.whitelist allow
 ```
 
-Grant this node only to the role that should receive ForceReg registration notifications when the ACE whitelist is enabled.
+With this filter off, all players receive linking checks. **Jobs** provides the corresponding filter for QBCore or ESX.
 
 ## Commands {#commands}
 
@@ -67,49 +97,19 @@ In-game commands can be used to
 
 * `/link` Opens the link menu in-game
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/9f/9f23af08d0281550e354d28d96b59e676ee4b698c1520c351deff8c63230b18a.png" alt="" />
-
-
 
 ## Modes {#modes}
 
-In the configuration file, the `captiveOption` can be set to `Nag` or `Freeze`. This changes the behavior of the [link menu](/cad/integration-plugins/in-game-integration/available-plugins/forcereg#link-menu) popup.
+Set **Unlinked player behavior** to **Reminder** or **Freeze player**. This changes the behavior of the [link menu](/cad/integration-plugins/in-game-integration/available-plugins/forcereg#link-menu) popup.
 
+<Accordion title="Reminder">
 
-
-<Accordion title="Nag Mode">
-
-
-
-When the `captiveOption` is set to `Nag` an in-game text message will display at the top, informing the user to run the `/link` command to connect to the CAD.
-
-
+With **Reminder** selected, an in-game text message appears at **Reminder position**, informing the user to run the `/link` command to connect to the CAD.
 
 <img src="https://docs-assets.sonoransoftware.com/sha256/3e/3e452fe4a29eb3d337487612d7a2ae4c9557f1e63341610c819f3d3cc3e4a4f0.png" alt="" width="375" />
 
-
-
-
-
 </Accordion>
-
-
-
-
-
-<Accordion title="Freeze Mode">
-
-
-
-When the `captiveOption` is set to `Freeze` the link menu will be automatically displayed and users will be unable to close it until they have linked their CAD account.
-
-
-
-</Accordion>
-
-
 
 ### Link Menu {#link-menu}
 
@@ -119,11 +119,7 @@ If the user is not yet logged into Sonoran CAD in their browser, they must do so
 
 After linking, the user will be automatically joined to the CAD community if not already.
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/b7/b7562ac2fa174f3b920bc2245b70995490435758e7cea465cbc4b4b767e52889.png" alt="" width="302" />
-
-
 
 ### Event {#event}
 

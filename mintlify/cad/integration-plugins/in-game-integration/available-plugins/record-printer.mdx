@@ -5,8 +5,6 @@ description: Print CAD PDF records to viewable, sharable, in-game inventory item
 
 <img src="https://docs-assets.sonoransoftware.com/sha256/a4/a48a3233596d51c207e6c0f47e8869be7134ad05482adaf62d6ba301d167a1d7.png" alt="An in-game character holding a printed CAD record and the record document." />
 
-
-
 ## What is the Record Printer? {#what-is-the-record-printer}
 
 Sonoran CAD’s Record Printer seamlessly connects CAD records with the in-game world, enabling officers to generate and view official documents directly through an interactive in-game printer.
@@ -15,57 +13,92 @@ Records can be **printed at configurable printer objects or within vehicles**, s
 
 ## Activation Guide {#activation-guide}
 
-### 1. Download and Install the Resource {#id-1.-download-and-install-the-resource}
+### Download and Install the Resource {#id-1.-download-and-install-the-resource}
 
 <Info>
 
 This submodule is already **enabled by default** when installing the [Sonoran CAD FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
 </Info>
 
-### 2. Adjust the Configuration {#id-2.-adjust-the-configuration}
+### Adjust the Configuration {#id-2.-adjust-the-configuration}
 
-The CAD display settings are stored inside of the `/configuration/recordPrinter_config.lua` file.
+Open **Admin > Integrations > FiveM**, select the server, then open **Record Printer**. Enable the plugin with the header toggle, review the settings below, and select **Save configuration**. Restart `sonorancad` to apply the saved settings.
 
-<Info>
+See [Submodule Configuration](/cad/integration-plugins/in-game-integration/submodule-configuration) for requirements, reset, and migration details.
 
-Notifications are handled by the Sonoran CAD core. See [Core Configuration](/cad/integration-plugins/in-game-integration/fivem-installation#4.-configure-the-resource) for settings and supported values.
-</Info>
-
-### 3. Ensure Players are Linked {#id-3.-ensure-players-are-linked}
+### Ensure Players are Linked {#id-3.-ensure-players-are-linked}
 
 Ensure the players have already [linked their CAD](/cad/integration-plugins/in-game-integration/link-user-in-game) for this integration to work.
 
 ### Configuration {#configuration}
 
-The record printer settings are stored inside of the core configuration file.
+Use **Framework** to select Standalone, QBCore, ESX, ESX + ox_inventory, QBCore + Quasar, or Custom. Select the framework and inventory actually running on your server; the selector saves the required configuration switches together.
 
+<Accordion title="In-game commands">
 
-
-<Accordion title="recordPrinterconfig.lua">
-
-
-
-| Variable                 | Description                                                                     |
-| ------------------------ | ------------------------------------------------------------------------------- |
-| `recordPurgeDays`        | The number of days that the downloaded PDF's will be stored on the local server |
-| `commandPrefix`          | Base command prefix, e.g. /printer queue, /printer print, /printer share        |
-| `printQueueCommand`      | Command the view the print queue                                                |
-| `printCommand`           | Command used to print PDF's in-game                                             |
-| `clearPrintQueueCommand` | Command to clear the print queue                                                |
-| `shareCommand`           | Command to share a queued or printed record with other players                  |
-| `acceptShareCommand`     | Command to accept a shared record into your queue or your hand                  |
-| `maxPrintsPerQueue`      | Max number of print requests a user can have in their queue at a time           |
-| `vehicleConfig`          | Configuration of LEO vehicles that have a printer                               |
-| `printerObjects`         | Array of in-game printer objects that can be walked up to and print records     |
-| `printerCoords`          | Array of specific in-game coordinates where a print station is                  |
-| `frameworks`             | Framework activation configuration                                              |
-| `translations`           | List of translations                                                            |
-
-
+| Setting | What it does |
+| --- | --- |
+| **Printer command** | Run /printer to see the Record Printer commands. Enter the base command without the slash. |
+| **List queue subcommand** | Run /printer queue to list the documents waiting to print. |
+| **Print subcommand** | Run /printer print &lt;queue number&gt; to print a document from the queue. |
+| **Clear queue subcommand** | Run /printer clearqueue to remove every document from your print queue. |
+| **Share subcommand** | Run /printer recordshare [server ID] to share a held document with nearby players or send your queue to a player. Sharing requires standalone mode. |
+| **Accept share subcommand** | Run /printer accept [share number] to accept a shared document. The first share is used by default. |
 
 </Accordion>
 
+<Accordion title="Print queue">
 
+| Setting | What it does |
+| --- | --- |
+| **Notification override** | Use a different notification system for this plugin or inherit the resource default. Choices: Use server default, ox_lib, Lation UI, pNotify, Chat. |
+| **Max prints per queue** | Limit the number of print jobs each queue can hold. |
+
+</Accordion>
+
+<Accordion title="Printers">
+
+| Setting | What it does |
+| --- | --- |
+| **Interact radius** | Set how close a player must be to a printer or nearby player, in game units. |
+| **Printer models** | List the in-game props that can be used as printers. |
+| **Printer coords** | List fixed world locations where a printer can be used. |
+| **Reverse whitelist** | Treat listed vehicles as blocked vehicles. |
+| **Whitelist** | Vehicle spawn codes that can be used as printers. Reverse whitelist turns this into a blocklist. |
+
+</Accordion>
+
+<Accordion title="Inventory">
+
+| Setting | What it does |
+| --- | --- |
+| **Frameworks** | Choose which framework or inventory integrations the printer uses. |
+
+</Accordion>
+
+<Accordion title="Language">
+
+Expand **Language** at the bottom of the plugin to edit its in-game messages. Keep substitution tokens such as `%s` or `{0}` intact.
+
+| Setting | What it does |
+| --- | --- |
+| **Placed in pocket put cam away** | Change the text shown to players for Placed in pocket put cam away. Keep any substitution tokens in the text. |
+| **Placed in pocket** | Change the text shown to players for Placed in pocket. Keep any substitution tokens in the text. |
+| **Put away camera** | Change the text shown to players for Put away camera. Keep any substitution tokens in the text. |
+| **Image dropped** | Change the text shown to players for Image dropped. Keep any substitution tokens in the text. |
+| **Upload CAD print cancel** | Change the text shown to players for Upload CAD print cancel. Keep any substitution tokens in the text. |
+| **Uploaded CAD** | Change the text shown to players for Uploaded CAD. Keep any substitution tokens in the text. |
+| **Photo printing** | Change the text shown to players for Photo printing. Keep any substitution tokens in the text. |
+| **Press to drop** | Change the text shown to players for Press to drop. Keep any substitution tokens in the text. |
+| **Photo deleted** | Change the text shown to players for Photo deleted. Keep any substitution tokens in the text. |
+| **Print cancel** | Change the text shown to players for Print cancel. Keep any substitution tokens in the text. |
+| **Note pad text** | Change the text shown to players for Note pad text. Keep any substitution tokens in the text. |
+| **Look through camera** | Change the text shown to players for Look through camera. Keep any substitution tokens in the text. |
+| **Put photo away** | Change the text shown to players for Put photo away. Keep any substitution tokens in the text. |
+| **Could not hold** | Change the text shown to players for Could not hold. Keep any substitution tokens in the text. |
+| **Photo description** | Change the text shown to players for Photo description. Keep any substitution tokens in the text. |
+
+</Accordion>
 
 ## Commands {#commands}
 
@@ -77,11 +110,7 @@ In-game commands can be used to
 * `/printer recordshare` Shares a record with the closest player
 * `/printer accept` Accepts a record share from another user
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/b8/b8b5d4f80d4f784ca7c546ed1ad2085a9f76b6898f1de8d3a5d04cac7cdc3b97.png" alt="" />
-
-
 
 ## In-Game Usage {#in-game-usage}
 
@@ -91,61 +120,37 @@ When in-game, units must also be actively signed into the dispatch, police, fire
 
 Using the records section in CAD, navigate to the record you would like to print, click the **down arrow** next to the blue **PDF** button and press **Print In-Game**.
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/ef/ef413f8372d67db97a4d39b37bf889e047e30e55f5f54a79884e3db5e2c6e682.png" alt="" width="375" />
 
 *Sonoran CAD - Print Record Option*
-
-
 
 ### Printing In-Game {#printing-in-game}
 
 After selecting **Print In-Game**, an in-game notification will appear stating "**You have a new record to print. Use `/printer queue` to view queue**".
 
-You can print this file by using the command `/printer print <PRINT QUEUE #>` near a configured printer (`printerObjects`) or inside a configured vehicle (`vehicleConfig`).
+You can print this file by using the command `/printer print <PRINT QUEUE #>` near a configured **Printer model** or **Printer coords** location, or inside a vehicle allowed by **Whitelist**.
 
 Once printed, the PDF will be placed in your hand with a viewer shown on your in-game screen. Buttons on-screen will allow you to maximize, minimize, and exit the window.
 
-If configured, closing the record will [place it in your player inventory](/cad/integration-plugins/in-game-integration/available-plugins/record-printer#inventory-support). Otherwise, the record will be deleted.
-
-
+If configured, closing the record will [place it in your player inventory](/cad/integration-plugins/in-game-integration/available-plugins/record-printer#inventory-support). In **Standalone** mode, use the on-screen actions to put away, share, or drop the record.
 
 <img src="https://docs-assets.sonoransoftware.com/sha256/93/935f0a42a43f4c76114f6a4e18f8f372d700083ebde44deda9fc6639512e4b8b.png" alt="" width="375" />
 
- 
-
-<img src="https://media.discordapp.net/attachments/624489051172503555/1430304995680714873/image.png?ex=68fb4514&is=68f9f394&hm=2ad7541a1e41ee61844b25fc133e110c058263a66a9f516212f6699953935f83&=&format=webp&quality=lossless&width=3456&height=1944" alt="" />
-
- 
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/7f/7ff4a03d766c5fbd40d4ba7d3a1f924abc450567459166f63a40bc7f6d6940b1.png" alt="" width="375" />
-
-
 
 ### Drop Record on Ground {#drop-record-on-ground}
 
 In standalone mode, selecting the **Drop on Ground** icon will drop the item on the ground. Other users can interact with the drop to pick it up and view the record.
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/c1/c1516b484c54e30d65652623a0c3f810a5af8cdef69c99f9b841d3ee77242a9f.png" alt="" width="232" />
-
- 
 
 <img src="https://docs-assets.sonoransoftware.com/sha256/39/3950099268ba7806371757ca104a66efad0854fa1251e64eda8e77e2fad6dd32.png" alt="" width="375" />
 
-
-
 ### Inventory Support {#inventory-support}
 
-Records can be stored and shared as an inventory item. The `frameworks` configuration item allows for inventories like ESX, QB Core, OX Inventory, and more.
-
-
+Records can be stored and shared as an inventory item. Choose the matching inventory with **Framework** in the CAD plugin settings.
 
 <Accordion title="Optional: Ox Inventory Support">
-
-
 
 If you are using `ox_inventory` on the ESX Framework you must add the following to your `ox_inventory/data/items.lua` file in order for records to work properly:
 
@@ -162,11 +167,7 @@ If you are using `ox_inventory` on the ESX Framework you must add the following 
     },
 ```
 
-
-
 </Accordion>
-
-
 
 ### Sharing Records on Non-Framework Servers {#sharing-records-on-non-framework-servers}
 

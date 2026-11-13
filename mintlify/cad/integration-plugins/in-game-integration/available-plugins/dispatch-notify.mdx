@@ -7,8 +7,6 @@ description: Notify officers of incoming calls, allow them to attach to them, no
 
 <img src="https://docs-assets.sonoransoftware.com/sha256/c6/c62cf05495563b67ac9eb9001358c0fc26fa8fa6970194c73a2bafe2d6baef0c.png" alt="Dispatch Notify chat example showing an incoming 911 call, the /dn respond command, attachment confirmation, and in-game GPS routing." />
 
-
-
 This submodule:
 
 * Notifies officers of incoming calls
@@ -20,85 +18,115 @@ This submodule:
 
 ## Activation Guide {#activation-guide}
 
-### 1. Download and Install the Resource {#id-1.-download-and-install-the-resource}
+### Download and Install the Resource {#id-1.-download-and-install-the-resource}
 
 <Info>
 
 This submodule is already **enabled by default** when installing the [Sonoran CAD FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
 
-\
 The [locations submodule](/cad/integration-plugins/in-game-integration/available-plugins/locations) includes required logic to send location data and is **already enabled by default**. Keep this submodule enabled to maintain functionality.
 
-\
 The [call commands submodule](/cad/integration-plugins/in-game-integration/available-plugins/call-commands) includes required logic to create emergency calls and is **already enabled by default**. Keep this submodule enabled to maintain functionality.
 
-\
 The [postals submodule](/cad/integration-plugins/in-game-integration/available-plugins/postals) is optional and also enabled by default. Keep this submodule enabled if you wish to include postal code information with emergency calls.
 </Info>
 
-### 2. Adjust the Configuration {#id-2.-adjust-the-configuration}
+### Adjust the Configuration {#id-2.-adjust-the-configuration}
 
-The CAD display settings are stored inside of the `/configuration/dispatchnotify_config.lua` file.
+Open **Admin > Integrations > FiveM**, select the server, then open **Dispatch Notify**. Enable the plugin with the header toggle, review the settings below, and select **Save configuration**. Restart `sonorancad` to apply the saved settings.
 
-### 3. Ensure Players are Linked {#id-3.-ensure-players-are-linked}
+See [Submodule Configuration](/cad/integration-plugins/in-game-integration/submodule-configuration) for requirements, reset, and migration details.
+
+### Ensure Players are Linked {#id-3.-ensure-players-are-linked}
 
 Ensure the players have already [linked their CAD](/cad/integration-plugins/in-game-integration/link-user-in-game) for this integration to work.
 
 ### Configuration {#configuration}
 
-Review the `dispatchnotify_config.lua` file to configure the submodule to behave how you like. The file is well documented. Please review **all** the settings!
+Enable **Postals** and **Call Commands** first. The CAD editor disables Dispatch Notify when either required plugin is off.
 
-<Info>
+<Accordion title="Call alerts">
 
-Notifications are handled by the Sonoran CAD core. See [Core Configuration](/cad/integration-plugins/in-game-integration/fivem-installation#4.-configure-the-resource) for settings and supported values.
-</Info>
-
-
-
-<Accordion title="dispatchnotifyconfig.lua">
-
-
-
-| Config Value                  | Description                                                                                                                                                                                                                                                                                                                                                                                           |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| enableUnitNotify              | Enable incoming 911 call notifications                                                                                                                                                                                                                                                                                                                                                                |
-| emergencyCallType             | Specifies what emergency calls are displayed as. Some countries use different numbers (like 999)                                                                                                                                                                                                                                                                                                      |
-| civilCallType                 | Specifies non-emergency call types. If unused, set to blank ("")                                                                                                                                                                                                                                                                                                                                      |
-| dotCallType                   | Some communities use 511 for tow calls. Specify below, or set blank ("") to disable                                                                                                                                                                                                                                                                                                                   |
-| respondCommandName            | Command to respond to calls with                                                                                                                                                                                                                                                                                                                                                                      |
-| enableUnitResponse            | Enable call responding (self-dispatching)If disabled, running commandName will return an error to the unit                                                                                                                                                                                                                                                                              |
-| dispatchDisablesSelfResponse  | If a dispatcher is detected to be online, automatically disable the response command.                                                                                                                                                                                                                                                                                                                 |
-| dispatchDisablesUnitNotify    | If a dispatcher is detected to be online, automatically suppress incoming 911 call notifications to units.                                                                                                                                                                                                                                                                                            |
-| enableUnitNotifyToggleCommand | Enable an in-game command to override unit 911 notifications                                                                                                                                                                                                                                                                                                                                          |
-| unitNotifyToggleCommand       | In-game command to override unit 911 notifications                                                                                                                                                                                                                                                                                                                                                    |
-| unitNotifyToggleAce           | Ace permission allowed to use the command. Leave blank ("") to allow anyone to use the command                                                                                                                                                                                                                                                                                                        |
-| enableCallerNotify            | Enable "units are on the way" notifications                                                                                                                                                                                                                                                                                                                                                           |
-| notifyMessage                 | NotifyMessage: Message template to use when sending to the playerYou can use the following replacements:<strong>\{officer\}</strong> - officer name                                                                                                                                                                                                                                |
-| incomingCallMessage           | How should officers be notified of a new 911 call? Parameters:<br /><strong>\{location\}</strong> - location of call (street + postal)<br /><strong>\{description\}</strong> - description as given by civilian<br /><strong>\{caller\}</strong> - caller's name<br /><strong>\{callId\}</strong> - ID of the call so LEO can respond with /r911<br /><strong>\{command\}</strong> - The command to use            |
-| unitDutyMethod                | How to detect if units are online?<br /><strong>incad</strong>: units must be logged into the CAD<br /><strong>permissions</strong>: units must have the "sonorancad.dispatchnotify" ACE permission (see docs)<br /><strong>esxjob</strong>: requires esxsupport submodule, use jobs instead for on duty detection<br /><strong>custom</strong>: Use custom function (defined below as unitDutyCustom) |
-| esxJobsAllowed                | What jobs should count as being on duty?                                                                                                                                                                                                                                                                                                                                                              |
-| waypointType                  | Customise the title of a call made in the CAD<br /><strong>postal</strong>: set gps to caller's postal (less accurate, more realistic) - REQUIRES [CONFIGURED POSTAL](/cad/integration-plugins/in-game-integration/available-plugins/postals)SUBMODULE<br /><strong>exact</strong>: set gps to caller's position (less realistic)<br /><strong>none</strong>: disable waypointing                                                                    |
-| waypointFallbackEnabled       | Fall back to postal if exact coordinates cannot be found (for self-generated calls)                                                                                                                                                                                                                                                                                                                   |
-| callTitle                     | Type of waypoint to use when officer is attached<br /><strong>Default</strong>: OFFICER RESPONSE                                                                                                                                                                                                                                                                                                 |
-| sendNotesToUnits              | Enable "the sending of notes to units" notifications                                                                                                                                                                                                                                                                                                                                                  |
-| notifyMessage                 | NotifyMessage: Message template to use when sending to the playerYou can use the following replacements:<strong>\{callid\}</strong> - The CAD Call ID<strong>\{note\}</strong> - The Note Added                                                                                                                                                                               |
-| enableAddNote                 | Enable "the adding of the notes" notifications                                                                                                                                                                                                                                                                                                                                                        |
-| addNoteCommand                | Command to add notes to a call with                                                                                                                                                                                                                                                                                                                                                                   |
-| enableAddPlate                | Enable "the adding of plates that are locked" notifications - REQUIRES [CONFIGURED WRAITHV2 ](/cad/integration-plugins/in-game-integration/available-plugins/wraithv2)SUBMODULE                                                                                                                                                                                                                                                            |
-| addPlateCommand               | Command to add plates to a call with                                                                                                                                                                                                                                                                                                                                                                  |
-
-
+| Setting | What it does |
+| --- | --- |
+| **Enable unit notify** | Notify on-duty units in FiveM when calls arrive from CAD. |
+| **Tell callers when a unit responds** | Tell the caller in FiveM when a unit responds. |
+| **Notification override** | Use a different notification system for this plugin or inherit the resource default. Choices: Use server default, ox_lib, Lation UI, pNotify, Chat. |
+| **Emergency call type** | Set the call type code that identifies emergency calls for dispatch notifications. |
+| **Civil call type** | Set the call type code that identifies non-emergency calls for dispatch notifications. |
+| **Dot call type** | Set the call type code that identifies DOT calls for dispatch notifications. |
 
 </Accordion>
 
+<Accordion title="Eligible units">
 
+| Setting | What it does |
+| --- | --- |
+| **Unit duty method** | Choose how the plugin decides whether a player is on duty. Choices: Signed in to CAD, ACE permission, ESX job. |
+| **Allowed ESX jobs** | Shown when Unit duty method is ESX job. List the ESX jobs that qualify for in-game dispatch notifications. |
+| **Custom duty check** | Developer Mode only; select Custom in Unit duty method. Configure the resource callback that checks whether a unit is on duty. |
+
+</Accordion>
+
+<Accordion title="Responding to calls">
+
+| Setting | What it does |
+| --- | --- |
+| **Enable unit response** | Let players attach themselves to a CAD call with /dn respond &lt;call ID&gt;. |
+| **Dispatch command** | Run /dn to see the available dispatch commands. Enter the base command without the slash. |
+| **Respond subcommand** | Run /dn respond &lt;call ID&gt; to attach yourself to a CAD call. |
+| **Block self-response when dispatch is active** | Disable /dn respond while a CAD dispatcher is on duty. |
+| **Pause alerts when dispatch is active** | Pause in-game call alerts while a CAD dispatcher is on duty. |
+| **Allow units to change call alerts** | Allow units to use /dn notify on or /dn notify off to change their own call alerts. |
+| **Call alerts subcommand** | Name of the notify subcommand in /dn notify on or /dn notify off. |
+| **Call alerts ACE permission** | Set the ACE permission required to use /dn notify. |
+
+</Accordion>
+
+<Accordion title="Waypoints">
+
+| Setting | What it does |
+| --- | --- |
+| **Waypoint type** | Choose whether the response waypoint uses a postal, exact coordinates, or no waypoint. Choices: Nearest postal, Exact coordinates, None. |
+| **Waypoint fallback enabled** | Try another location source if the preferred waypoint cannot be set. |
+| **Waypoint subcommand** | Run /dn gps to turn the dispatch waypoint on or off. |
+
+</Accordion>
+
+<Accordion title="Notes and plates">
+
+| Setting | What it does |
+| --- | --- |
+| **Send notes to units** | Show new call notes to units responding in-game. |
+| **Enable add note** | Let attached units add a note with /dn note &lt;note&gt;. |
+| **Add note subcommand** | Run /dn note &lt;note&gt; to add a note to your current call. |
+| **Enable add plate** | Let attached units add their locked Wraith plate with /dn plate. |
+| **Add plate subcommand** | Run /dn plate to add the plate locked in Wraith to your current call. |
+
+</Accordion>
+
+<Accordion title="Language">
+
+Expand **Language** at the bottom of the plugin to edit its in-game messages. Keep substitution tokens such as `%s` or `{0}` intact.
+
+| Setting | What it does |
+| --- | --- |
+| **Notify message** | Text shown to players for Notify message. Keep any substitution tokens in the text. |
+| **Incoming call message** | Text shown to players for Incoming call message. Keep any substitution tokens in the text. |
+| **Incoming call message no response** | Text shown to players for Incoming call message no response. Keep any substitution tokens in the text. |
+| **Unit status attached message** | Text shown to players for Unit status attached message. Keep any substitution tokens in the text. |
+| **Unit status detached message** | Text shown to players for Unit status detached message. Keep any substitution tokens in the text. |
+| **Call title** | Text shown to players for Call title. Keep any substitution tokens in the text. |
+| **Note message** | Text shown to players for Note message. Keep any substitution tokens in the text. |
+
+</Accordion>
 
 ### ACE Permissions {#ace-permissions}
 
 This submodule uses two separate, configurable ACE checks:
 
-* `sonorancad.dispatchnotify` is the fixed node used when `unitDutyMethod = "permissions"`; it marks players with this ACE as on duty for notification logic. The shipped `unitDutyMethod` default is `"incad"`, so this ACE mode is opt-in.
-* `sonorancad.dispatchnotify.toggle` is the shipped default for `unitNotifyToggleAce`. When `enableUnitNotifyToggleCommand` is enabled (the default) and this value is not blank, it controls who may use the default `/dn notify` override. Set `unitNotifyToggleAce` to `""` to allow anyone to use that override, or replace it with another ACE name.
+* `sonorancad.dispatchnotify` is the fixed node used when `unitDutyMethod = "permissions"`; it marks players with this ACE as on duty for notification logic. The shipped **Unit duty method** default is `"incad"`, so this ACE mode is opt-in.
+* `sonorancad.dispatchnotify.toggle` is the shipped default for **Call alerts ACE permission**. When **Allow units to change call alerts** is enabled (the default) and this value is not blank, it controls who may use the default `/dn notify` override. Set **Call alerts ACE permission** to `""` to allow anyone to use that override, or replace it with another ACE name.
 
 For example, grant the nodes to the roles that need them:
 
@@ -114,48 +142,36 @@ The main `/dn` command is not itself registered as an ACE-restricted command; th
 In-game commands can be used to
 
 * `/dn respond [id`] Respond/Attach to the newly created dispatch call ID
-* `/dn notify [on/off/auto]` - Toggle chat alerts on, off, or auto (using the configuration file's default)
+* `/dn notify [on/off/auto]` - Toggle chat alerts on, off, or auto (using the saved server setting)
 * `/dn note [text]` Add a note to the current dispatch call
 * `/dn plate` Adds your currently locked license plate number as a note from the [Wraith ALPR](/cad/integration-plugins/in-game-integration/available-plugins/wraithv2) submodule
 * `/dn gps` Toggles on/off automatic GPS routing to the call's postal code
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/b8/b824d4bc63c543088a4a5fed1cf315059e8e491ff3f24feede76d62a58547eba.png" alt="" />
-
-
 
 ## Dispatch Call Responding {#dispatch-call-responding}
 
-### 1. Civilian Places a 911 Call {#id-1.-civilian-places-a-911-call}
+### Civilian Places a 911 Call {#id-1.-civilian-places-a-911-call}
 
 This call can be placed from the Civilian menu of the CAD, or via the `/911` command in-game, supplied by the [callcommands](/cad/integration-plugins/in-game-integration/available-plugins/call-commands) submodule.
 
 <span id="2-officer-attaches-to-the-call" />
 
-### 2. Officer Attaches to the Call {#id-2.-officer-attaches-to-the-call}
+### Officer Attaches to the Call {#id-2.-officer-attaches-to-the-call}
 
 The unit will see a notification message of the incoming call, complete with the command to run in order to attach.
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/1b/1ba85dcf868cafef089a9ffd62dbb53a1d7d17c506b8fcffb49e7e5952a127ef.png" alt="" />
-
-
 
 ## Primary Unit Tracking (Pursuit) {#primary-unit-tracking-pursuit}
 
 Dispatch notify can also be used to track the primary unit on a call. This will automatically update the postal code on the dispatch call to the primary unit's current location. This is highly useful for pursuits, where additional units need to catch up and join the chase.
 
-### 1. Toggle Unit Tracking for the Primary Unit {#id-1.-toggle-unit-tracking-for-the-primary-unit}
+### Toggle Unit Tracking for the Primary Unit {#id-1.-toggle-unit-tracking-for-the-primary-unit}
 
 Dispatchers (or self-dispatch) can set the primary unit to any unit currently attached to the call. The slider next to the Primary Unit box will toggle tracking mode. When enabled, the postal will automatically update based on the primary unit's location and be sent to all attached units.
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/30/3058745d8b253d0f4c464b997a35254433ab6c95364c51e529a30c54d63e3fbf.png" alt="" />
-
-
 
 ## Troubleshooting {#troubleshooting}
 

@@ -11,64 +11,88 @@ Bodycam cloud footage storage is limited based on your subscription plan.
 [View our pricing page](/cad/pricing/faq) for more information.
 </Warning>
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/05/0505af3b6a52cca3b2e2ffef5a37b8281683f41e1e2e2e22e544e5b5004a760a.png" alt="Body Camera showing the native CAD viewer with a unit video feed and recording control." />
-
-
 
 ## What is the live Body Camera? {#what-is-the-live-body-camera}
 
-Sonoran CAD is the only external CAD system offering livestream video from in-game users accessible through the [live map](/cad/integration-plugins/in-game-integration/available-plugins/bodycam#live-map), [active units preview](/cad/integration-plugins/in-game-integration/available-plugins/bodycam#active-units), or a [dedicated window](/cad/integration-plugins/in-game-integration/available-plugins/bodycam#window).
+View live video from in-game users accessible through the [live map](/cad/integration-plugins/in-game-integration/available-plugins/bodycam#live-map), [active units preview](/cad/integration-plugins/in-game-integration/available-plugins/bodycam#active-units), or a [dedicated window](/cad/integration-plugins/in-game-integration/available-plugins/bodycam#window).
 
 ## Activation Guide {#activation-guide}
 
-### 1. Download and Install the Resource {#id-1.-download-and-install-the-resource}
+### Download and Install the Resource {#id-1.-download-and-install-the-resource}
 
 <Info>
 
 This submodule is already **enabled by default** when installing the [Sonoran CAD FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
 
-\
-The [locations submodule](/cad/integration-plugins/in-game-integration/available-plugins/locations) includes all logic required to send bodycam images to the CAD and is **already enabled by default**. Keep this submodule enabled to maintain functionality.
 </Info>
 
-### 2. Adjust the Configuration {#id-2.-adjust-the-configuration}
+### Adjust the Configuration {#id-2.-adjust-the-configuration}
 
-The bodycam settings are stored inside of the `/configuration/bodycam_config.lua` file.
+Open **Admin > Integrations > FiveM**, select the server, then open **Body Camera**. Enable the plugin with the header toggle, review the settings below, and select **Save configuration**. Restart `sonorancad` to apply the saved settings.
 
+See [Submodule Configuration](/cad/integration-plugins/in-game-integration/submodule-configuration) for requirements, reset, and migration details.
 
+<Accordion title="Camera controls">
 
-<Accordion title="Configuration Options">
-
-
-
-| Variable                        | Description                                                                                                                                                                                                                            |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `command`                       | The command name to toggle your body camera on or off.                                                                                                                                                                                 |
-| `requireUnitDuty`               | If enabled, the player must be logged into the CAD to use the body camera.                                                                                                                                                             |
-| `enableAnimation`               | Play an in-game animation when activating or deactivating the body camera.                                                                                                                                                             |
-| `enableOverlay`                 | Enables or disables the blinking body camera image on screen when enabled.<br />Default <code>true</code>                                                                                                                         |
-| `overlayLocation`               | The position (corner) of the screen where the body camera image is displayed.<br />Options: <code>top-left</code>, <code>top-right</code>, <code>bottom-left</code>, <code>bottom-right</code><br />Default: <code>top-right</code> |
-| `enableBeeps`                   | Enables or disables the body camera beeping when turned on.<br />Default: <code>true</code>                                                                                                                                       |
-| `beepType`                      | Type of audio that the beeps use.<code>native</code> = GTAV Native Sounds<code>nui</code> = Custom Sound File                                                                                                     |
-| `beepFrequency`                 | Adjusts the frequency at which unit body camera beeps when turned on(in milliseconds).<br />Default: <code>60000</code> (60 seconds)                                                                                              |
-| `beepRange`                     | The range at which a person can hear the bodycam beeps                                                                                                                                                                                 |
-| `screenshotFrequency`           | Adjusts the frequency at which unit body cameras update (in milliseconds).<br />Default: <code>2000</code> (2 seconds)                                                                                                            |
-| `defaultKeybind`                | The default keybind for toggling the bodycam.                                                                                                                                                                                          |
-| `autoEnableWithLights`          | Automatically enable bodycam when emergency lights are enabled/disabled.                                                                                                                                                               |
-| `autoEnableWithWeapons`         | Automatically enable bodycam when a weapon is drawn.                                                                                                                                                                                   |
-| `clothing`                      | Clothing items that must be worn in order to have a body camera.                                                                                                                                                                       |
-| `weapons`                       | Weapons that when drawn enable bodycam.                                                                                                                                                                                                |
-| `bodycamCommandChangeFrequency` | The command to adjust your individual body camera screenshot frequency to be different than the server's <code>screenshotFrequency</code> value.<br />Default: <code>bodycamFreq</code>                                           |
-
-
+| Setting | What it does |
+| --- | --- |
+| **Body camera command** | Run /bodycam to turn the body camera on or off. Enter the command name without the slash. |
+| **Default keybind** | Set the default FiveM keyboard shortcut to toggle the body camera. |
+| **Require unit duty** | Require a player to be on duty in CAD to use this feature. |
+| **ACE permission to force off** | Set the ACE permission for /bodycam forceoff, which forces off the caller’s camera. A blank value lets anyone use it. |
+| **Notification override** | Use a different notification system for this plugin or inherit the resource default. Choices: Use server default, ox_lib, Lation UI, pNotify, Chat. |
 
 </Accordion>
 
+<Accordion title="Beeps">
 
+| Setting | What it does |
+| --- | --- |
+| **Enable beeps** | Play periodic sounds while the camera is active. |
+| **Beep interval (ms)** | Set the time between camera beeps, in milliseconds. |
+| **Beep range** | Set how far other players can hear the body camera beep, in game units. |
 
-### 3. Ensure Players are Linked {#id-3.-ensure-players-are-linked}
+</Accordion>
+
+<Accordion title="Recording">
+
+| Setting | What it does |
+| --- | --- |
+| **Shadow buffer seconds** | Set how much footage to retain before recording begins, in seconds. |
+| **Live clip seconds** | Set the default length of a live clip, in seconds. |
+| **Max clip seconds** | Limit the length of an individual clip, in seconds. |
+| **Enable recording sfx** | Play sounds when recording starts or stops. |
+| **Auto record events** | Choose which events start recording automatically. |
+| **Auto record cooldown (ms)** | Set the minimum time between automatic recordings, in milliseconds. |
+| **Toggle recording command** | Run /bodycamrecordtoggle to start or stop local recording. Leave blank to disable the command. |
+| **Toggle recording keybind** | Set the default FiveM keyboard shortcut to start or stop local recording. |
+
+</Accordion>
+
+<Accordion title="In-game display">
+
+| Setting | What it does |
+| --- | --- |
+| **Enable overlay** | Show the body camera overlay while the camera is active. |
+| **Overlay location** | Choose which screen corner shows the overlay. Choices: Top left, Top right, Bottom left, Bottom right. |
+| **Enable animation** | Play an animation when a player operates the body camera. |
+| **Vibrate controller** | Vibrate the player’s controller when the camera signals. |
+
+</Accordion>
+
+<Accordion title="Automatic activation">
+
+| Setting | What it does |
+| --- | --- |
+| **Turn on with emergency lights** | Turn on the body camera when the player activates emergency lights. |
+| **Turn on when drawing a weapon** | Turn on the body camera when the player draws a configured weapon. |
+| **Clothing** | Choose which clothing models qualify a player to use the camera. |
+| **Weapons** | List the weapon models that can trigger camera activation. |
+
+</Accordion>
+
+### Ensure Players are Linked {#id-3.-ensure-players-are-linked}
 
 Ensure the player has already [linked their CAD](/cad/integration-plugins/in-game-integration/link-user-in-game) for this integration to work.
 
@@ -78,11 +102,7 @@ When in-game, units [must also be actively signed into the dispatch, police, fir
 
 On first usage, players will be prompted to grant permission for the bodycam:
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/97/975534ab44f7dff632a9ab9d078ea4af38af20b5989e603217926de14eb0fb09.png" alt="" />
-
-
 
 #### Commands {#commands}
 
@@ -97,11 +117,7 @@ In-game commands can be used to
 * `/bodycam overlay` Toggles the [bodycam overlay](/cad/integration-plugins/in-game-integration/available-plugins/bodycam#body-camera-overlay) on and off locally
 * `/bodycam forceoff` Enables the [force-off state](/cad/integration-plugins/in-game-integration/available-plugins/bodycam#force-off), if your server has granted you permission
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/77/7788e984748abdb91bfcc6ea540acd207dbf4f9b86d13b2f06bc4896c772c4e6.png" alt="" />
-
-
 
 ### Keybind {#keybind}
 
@@ -109,17 +125,11 @@ Users can customize a keybind to toggle their bodycams on and off.
 
 Navigate to **Settings** > **Keybinds** > **FiveM** and look for the keybind **Toggle BodyCam** under the resource `sonorancad`.
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/11/11ab0b96863292b86857e061ac942f45bb129ca75de3faad3238acf7a4acdb49.png" alt="" />
-
-
 
 #### Body Camera Overlay {#body-camera-overlay}
 
 The on-screen overlay has a generic camera housing, a blinking status light, and a gold/red Sonoran CAD logo by default.
-
-
 
 <img src="https://docs-assets.sonoransoftware.com/sha256/23/2392fa98bfa5b8859a872c6fe4dbaa2e74030912f44f3e5f29395a4789e540b9.gif" alt="Sonoran CAD in-game body camera overlay with a gold/red logo and blinking red status light." width="480" />
 
@@ -129,8 +139,6 @@ To swap the logo:
 2. Restart `sonorancad`.
 
 No configuration change is needed. Automatic updates preserve `bodycam_logo.png`; delete it to restore the default gold/red logo.
-
-
 
 ### Turning Off a Camera Being Viewed {#turning-off-a-camera-being-viewed}
 
@@ -147,7 +155,7 @@ The FiveM body camera plays periodic beeps while activated. These settings are s
 #### Per-Player Commands {#per-player-commands}
 
 * `/bodycam sound 0` or `/bodycam sound 0.0` mutes local bodycam sounds, including start/stop and reminder beeps. `/bodycam sound 0.2` restores the default 20% volume.
-* `/bodycam sound` displays your current volume. Values from `0` to `1` are accepted. With `beepType = "native"`, zero mutes the beeps, but nonzero values do not adjust GTA's native sound volume.
+* `/bodycam sound` displays your current volume. Values from `0` to `1` are accepted.
 * `/bodycam frequency 30` sets a 30-second interval. `/bodycam frequency 290` sets a 290-second interval. Use whole seconds from `1` to `3600`; `/bodycam frequency` displays the current value.
 
 A frequency change restarts the reminder countdown using the new interval. It applies to your camera's reminders, including the sound requests sent to nearby players; it does not change other players' camera intervals. Local muting does not prevent nearby players from hearing your camera. Your volume and interval overrides reset when you reconnect or the resource restarts. If your server renamed the `bodycam` command, use its configured name instead.
@@ -156,26 +164,15 @@ These commands require the updated FiveM resource. Server administrators must in
 
 #### Server Configuration {#server-configuration}
 
-In `sonorancad/configuration/bodycam_config.lua`:
+In **Beeps**, set **Beep interval (ms)** to `30000` for 30 seconds or `290000` for 290 seconds. The in-game frequency command uses seconds instead.
 
-```lua
-enableBeeps = true,
-beepType = "nui",
-beepFrequency = 60000, -- milliseconds: 60 seconds
-```
+**Enable beeps** controls the recurring reminder loop. Turning it off does not silence start/stop tones or nearby cameras. **Beep range** sets how far nearby players can hear your camera.
 
-* `beepFrequency` sets the default interval in **milliseconds**. Use `30000` for 30 seconds or `290000` for 290 seconds. The in-game `frequency` command uses **seconds**.
-* `enableBeeps = false` disables the recurring beep loop, but does not silence start/stop tones or received nearby-camera beeps. A player frequency override does not re-enable a disabled loop.
-* `beepRange` determines how far away nearby players can hear the camera.
-
-Restart the resource after changing its configuration.
+Select **Save configuration** and restart `sonorancad` after changes.
 
 ### Automatic Activation {#automatic-activation}
 
-The body camera will automatically activate when an officer activates their lights or draws a firearm.
-
-* `autoEnableWithWeapons` enables automatic activation when one of the `weapons` items are used.
-* `autoEnableWithLights` to enabled automatic activation when emergency lights are enabled.
+Turn on **Turn on with emergency lights** or **Turn on when drawing a weapon** to enable those triggers. Configure eligible items in **Weapons** and required uniform items in **Clothing**.
 
 ### Force Off {#force-off}
 
@@ -196,43 +193,31 @@ Repeat the `add_principal` line for each player. Restart the server to apply, or
 
 #### Disable the Permission Check {#disable-the-permission-check}
 
-To allow everyone to use force off, set this value in `sonorancad/configuration/bodycam_config.lua`:
-
-```lua
-forceOffAce = "",
-```
-
-Restart `sonorancad` to apply. To require a different ACE permission instead, set `forceOffAce` to that permission and use it in your `add_ace` rule.
-
-Other bodycam subcommands do not require this ACE permission. The bundled keybind permissions do not grant force-off access.
+Clear **ACE permission to force off** to allow everyone to use `/bodycam forceoff`. To require a different permission, enter that ACE node and use the same node in your `add_ace` rule. Save the configuration and restart `sonorancad`.
 
 ### Unit Duty Requirement {#unit-duty-requirement}
 
-By default, the `requireUnitDuty` configuration value is set to `true`. This requires the unit to be logged into the Police, EMS or Fire portions of CAD in order to activate their bodycam.
+With **Require unit duty** enabled, the player needs an active CAD unit to activate their body camera.
 
 ### Animation {#animation}
 
-When toggling your body camera on or off an animation will play. To disable this, set `enableAnimation` to `false`.
+**Enable animation** controls the animation played when the camera is turned on or off. Players can also toggle their local animation with `/bodycam anim`.
 
 ### In-Game Recording {#in-game-recording}
 
-By default, each recording includes a 30-second shadow buffer followed by 1 minute 30 seconds of video, for a maximum total length of 2 minutes. The shadow buffer length can be adjusted with `recording.shadowBufferSeconds`, but the total recording length cannot exceed 2 minutes.
+By default, each recording includes a 30-second shadow buffer followed by 1 minute 30 seconds of video, for a maximum total length of 2 minutes. The shadow buffer length can be adjusted with **Shadow buffer seconds**, but the total recording length cannot exceed 2 minutes.
 
-Recording can be started manually using a configurable keybind located under **Keybinds -> FiveM -> Sonoran CAD**. You can also enable automatic bodycam recording through `recording.autoRecordEvents`.
+Recording can be started manually using a configurable keybind located under **Keybinds -> FiveM -> Sonoran CAD**. You can also enable automatic bodycam recording through **Auto record events**.
 
 Developers can also trigger bodycam recordings with a [client event](/cad/integration-plugins/in-game-integration/framework-development-documentation/client-events#bodycam-record-toggle).
 
 Recordings can be viewed in the CAD under **Unit Management** > **Body Cam Recordings**
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/b1/b1c0dc5bc502ec300f90f335da8432e68d768208196462665e8315545a631814.png" alt="" />
-
-
 
 ## Attach Clips to Custom Records {#attach-clips-to-custom-records}
 
-In **Administration > Customization > Custom Records**, edit a template, add a **Bodycam clips** field, and save. See [custom record templates](/cad/tutorials/customization/creating-custom-record-and-report-types) for setup.
+In **Admin > Records and Codes > Custom Records**, edit a template, add a **Bodycam clips** field, and save. See [custom record templates](/cad/tutorials/customization/creating-custom-record-and-report-types) for setup.
 
 <img src="https://docs-assets.sonoransoftware.com/sha256/2a/2af7e4b8090583dc2c81d4c76f9951b558f969b194965f6efd41a9599e4d7e63.png" alt="Custom record field settings with Bodycam clips selected as the type." width="320" />
 
@@ -248,40 +233,24 @@ CAD-hosted clips expire after **24 hours**; attaching them does not extend stora
 
 ## CAD Usage {#cad-usage}
 
-
-
 <video src="https://docs-assets.sonoransoftware.com/sha256/ac/ace7f93defb46e9a969ed867956b7f953df845ab3fb4497b8284394e12b75f63.mp4" aria-label="Documentation animation" autoPlay loop muted playsInline controls preload="metadata" className="w-full rounded-xl"><a href="https://docs-assets.sonoransoftware.com/sha256/0c/0cd8f54c81183c989068d83b23e68e8aadcd0d10f65d316457f177eb1eac9200.gif">View original animation</a></video>
-
-
 
 ### Active Units {#active-units}
 
 In the active units panel, hover over the camera icon to view a preview of their bodycam.
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/b4/b47b25d6997ffab333a2bd4a8001d64965474b35a5f38cf8aff9a6378546a2fb.png" alt="" width="297" />
-
-
 
 ### Window {#window}
 
 Click on the active unit preview or the pop out button on the live map to open a dedicated bodycam viewer window.
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/67/67f398613524e4c5c7872a719c60fc75bd4831d4c1434f900c42d7d8295f07ae.png" alt="" width="375" />
-
-
 
 ### Live Map {#live-map}
 
 In the live map, selecting a unit or hovering near a unit in the 3D map will show the bodycam.
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/6d/6d292bf643dfdb6ee15f56fe7d1c671c13ac46ecfd9dda29edda61b9326e7b35.png" alt="" />
-
- 
 
 <img src="https://docs-assets.sonoransoftware.com/sha256/36/3624d36d78e1c7925a4ba4816b5232cbb5e4dd3305b52add1ea72011a6cf76e9.png" alt="" />

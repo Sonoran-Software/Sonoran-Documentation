@@ -11,57 +11,33 @@ We've partnered with Rocket Node to bring you one-click Sonoran CAD installation
 * [Purchase your FiveM Game Server!](https://sonoran.link/v2E9hKGm)
 * Use code `SONORAN`to save big!
 
-
-
 <iframe src="https://www.youtube-nocookie.com/embed/h8Ftx14j8l8" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
 
-
-
-The Sonoran CAD FiveM resources has multiple "submodules" for every integration feature. [These are easily enabled and configured](/cad/integration-plugins/in-game-integration/submodule-configuration) in the `/configuration` folder.
-
-
+The FiveM resource includes plugins for each integration. [Enable and configure them in CAD](/cad/integration-plugins/in-game-integration/submodule-configuration).
 
 <Card title="submodule-configuration" href="/cad/integration-plugins/in-game-integration/submodule-configuration" />
-
-
 
 ***
 
 ## B. Pre-Configured Resource Installation  {#pre-configured-resource-installation-recommended}
 
-
-
 <iframe src="https://www.youtube-nocookie.com/embed/QimkcbTPl44" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
 
+### Download the ZIP {#id-1.-download-the-zip}
 
+Open **Admin > Integrations > FiveM**, select your server, and use **Start Setup** to download the preconfigured resource. Keep the downloaded connection file private because it contains your API key.
 
-### 1. Download the ZIP {#id-1.-download-the-zip}
+For an existing installation, use the [migration instructions](/cad/integration-plugins/in-game-integration/submodule-configuration#existing-installations) before changing plugin settings.
 
-Download a pre-configured version of the in-game integration resource from the panel. This download will already have your community ID and API Key in the `config.lua` file in addition to file renaming done for you.
-
-Navigate to `Admin` -> `Advanced` -> `In-Game Integration` -> `FiveM`
-
-
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/07/07488efe151f709d6bfb98b930551a1477a47b0ef08ddb72fc3e0d286fe19990.png" alt="" />
-
-*Sonoran CAD: FiveM Resource Download*
-
-
-
-### 2. Extract the ZIP File {#id-2.-extract-the-zip-file}
+### Extract the ZIP File {#id-2.-extract-the-zip-file}
 
 Extract the `.zip` file into your resources directory. Place the `[sonorancad]` folder directly in the resources root directory.
-
-
 
 <img src="https://docs-assets.sonoransoftware.com/sha256/d3/d3d7210ee40bcc6a1d72026954c12bdc99d30e5c4c0bb19c03c23062ff9785d6.png" alt="" />
 
 *Sonoran CAD - Folder Structure*
 
-
-
-### 3. Update Your Server Config {#id-3.-update-your-server-config}
+### Update Your Server Config {#id-3.-update-your-server-config}
 
 In your `server.cfg` file, simply add the following line:
 
@@ -78,11 +54,7 @@ It is very important that the `sonoran_updatehelper` resource is not started man
 **DO NOT** start the whole \[sonorancad] folder as that will also start the sonoran\_updatehelper which might cause crashing if it is started manually. Example of not what to do `ensure [sonorancad]`
 </Warning>
 
-
-
 <Accordion title="Advanced - Remove Tablet, pNotify, etc.">
-
-
 
 Adding the `exec @sonorancad/sonorancad.cfg` starts multiple resources bundled with the download. If you wish to not use one or more of the resources (or with a different name) you will need to:
 
@@ -91,118 +63,71 @@ Adding the `exec @sonorancad/sonorancad.cfg` starts multiple resources bundled w
 
 Do not update the contents of `sonorancad.cfg` as it will be overwritten on resource updates.
 
-
-
 </Accordion>
-
-
 
 <span id="4.-configure-the-resource" />
 
-### 4. Configure the Resource {#id-4.-configure-the-resource}
+### Configure the Resource {#id-4.-configure-the-resource}
 
-Modify the `/configuration/config.json`file for any additional configuration values.
+Open **Core settings** for the selected server in **Admin > Integrations > FiveM**. Change the settings below, select **Save configuration**, and restart `sonorancad`.
 
-This is also where the global FiveM notification backend is configured. Set `notificationSystem` to one of:
+<Accordion title="Settings">
 
-* `auto`
-* `ox_lib`
-* `lation_ui`
-* `pnotify`
-* `chat`
+| Setting | What it does |
+| --- | --- |
+| **Debug mode** | Write additional troubleshooting details to the FiveM console. |
+| **Notification system** | Choose which in-game notification system the resource uses by default. Choices: Automatic, ox_lib, Lation UI, pNotify, Chat. |
+| **Allow auto update** | Allow the resource to install updates automatically. |
+| **Allow update with players** | Allow the updater to install a release while players are connected. |
+| **Update ignore** | List files that the updater should leave in place. |
 
-When `notificationSystem` is `auto`, Sonoran CAD selects the first available system in this order:
+</Accordion>
 
-1. `ox_lib`
-2. `lation_ui`
-3. `pnotify`
-4. `chat`
+With **Notification system** set to **Automatic**, the resource tries ox_lib, Lation UI, pNotify, then Chat. Plugins can select a **Notification override** or inherit this choice.
 
-### 5. Configure the Submodules {#id-5.-configure-the-submodules}
+**Developer Mode** additionally exposes **Mode** (Production or Development), **Push event forwarding URL**, and its **Enable push event forwarding** toggle. These are advanced connection settings.
 
-The Sonoran CAD FiveM resources has multiple "submodules" for every integration feature. [These are easily enabled and configured](/cad/integration-plugins/in-game-integration/submodule-configuration) in the `/configuration` folder.
+The resource-root `config.json` is only a connection file. It contains the API key as a string and the server ID as a number; plugin settings belong in CAD:
 
+```json
+{ "apiKey": "YOUR_API_KEY", "serverId": 1 }
+```
 
+### Configure the Submodules {#id-5.-configure-the-submodules}
+
+The FiveM resource includes plugins for each integration. [Enable and configure them in CAD](/cad/integration-plugins/in-game-integration/submodule-configuration).
 
 <Card title="available-plugins" href="/cad/integration-plugins/in-game-integration/available-plugins" />
 
-
-
-### 6. Configure the Auto-Updater {#id-6.-configure-the-auto-updater}
+### Configure the Auto-Updater {#id-6.-configure-the-auto-updater}
 
 The Sonoran CAD FiveM resource contains an auto-updater that will override all non-configuration files when a new version of Sonoran CAD is released.
 
 #### Whitelist Specific Files {#whitelist-specific-files}
 
-Some communities have custom files inside the `[sonorancad]` folder they don't wish to have overwritten, like custom plate reader images.
-
-Simply add the direct path to the directory or individual files to the `sonorancad/configuration/updaterIgnore.json` file.
+Use **Core settings > Update ignore** to list the files or directories the updater should preserve, such as custom plate images. Save the configuration and restart the resource.
 
 #### Disable Automatic Updates {#disable-automatic-updates}
 
-To disable this auto-update entirely set `allowAutoUpdate` to `false` in the `config.json`.
-
-***
+Turn off **Allow auto update** in **Core settings**. **Allow update with players** controls whether updates may run while players are connected.
 
 ## Additional Configuration {#additional-configuration}
 
 ### Convar Overrides {#convar-overrides}
 
-
-
-<Accordion title="Convar Overrides">
-
-
-
-Starting with framework version 2.6.2, you can override any configuration option in your `config.json` file by specifying a convar before the sonorancad resource starts.
-
-<Warning>
-
-This feature does not work with arrays (like statusLabels). Any other configuration option can be set using the `sonoran_<configSettingHere>` format.
-</Warning>
-
-
-
-</Accordion>
-
-
+The current resource loads managed settings from CAD. Use **Core settings** and the plugin panels instead of adding old `sonoran_<setting>` overrides to `server.cfg`. Keep only the API key and numeric server ID in the resource-root connection file.
 
 ### Manual IP:Port Push Events {#manual-ip-port-push-events}
 
+The resource normally receives CAD events over its websocket connection. To configure the HTTP fallback, open **Admin > Integrations > FiveM > HTTP Events** for the selected server and enter its public IP address and game port (usually `30120`).
 
-
-<Accordion title="Manual IP:Port Push Events">
-
-
-
-The FiveM resource uses a [websocket](/cad/api-integration/websocket-api) to stream all events from the CAD to your local FiveM server. In the event that this websocket is not connected (games outside of FiveM) it will fall back to an optional `http://ip:port/sonorancad/event` POST method.
-
-In the CAD admin panel, navigate to: Advanced > In-Game Integration\
-Expand the "Server Events and Integrated Live Map" section.
-
-Enter your server's public IP address and your game server's port. By default, this is port `30120`.
-
-**Forward Push Events to an External Server**
-
-You may wish to also send push events to another external web server, like a Discord bot.
-
-In the framework configuration file, simply set `enablePushEventForwarding` to `true` and `pushEventForwardUrl` to your web server address.
-
-
-
-</Accordion>
-
-
+To forward events to another service, use **Push event forwarding URL** and **Enable push event forwarding** in **Core settings**, available in **Developer Mode**.
 
 ### Steam API Key {#steam-api-key}
 
-
-
 <Accordion title="Steam API Key">
 
-
-
-If your framework has the `primaryIdentifier` set to `steam` in the [configuration](#4.-configure-the-resource) (used for your API ID type), you'll need to ensure a Steam API key is set in your `server.cfg` file.
+If your existing installation uses Steam identifiers for linked players, you'll need to ensure a Steam API key is set in your `server.cfg` file.
 
 You can register a new Steam API Key at [http://steamcommunity.com/dev/apikey](http://steamcommunity.com/dev/apikey)
 
@@ -214,11 +139,7 @@ Then, paste it into your `server.cfg`
 set steam_webApiKey "YOUR_KEY_HERE"
 ```
 
-
-
 </Accordion>
-
-
 
 ## Updates {#updates}
 
@@ -232,6 +153,7 @@ The Sonoran CAD integration framework comes with several commands. These command
 
 | Command                | Description                              |
 | ---------------------- | ---------------------------------------- |
+| `sonorancad migrate` | Import an existing local configuration into CAD |
 | `sonorancad help`      | Display list of commands                 |
 | `sonorancad update`    | Run core/framework updater               |
 | `sonorancad debugmode` | Toggle debug mode on/off                 |
@@ -243,11 +165,7 @@ For ERS issues, start with the [ERS troubleshooting guide](/cad/integration-plug
 
 ## Troubleshooting {#troubleshooting}
 
-
-
 <Card title="troubleshooting" href="/cad/integration-plugins/in-game-integration/fivem-installation/troubleshooting" />
-
-
 
 ### Server Crashes {#server-crashes}
 

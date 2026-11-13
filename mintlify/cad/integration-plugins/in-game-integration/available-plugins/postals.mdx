@@ -15,39 +15,40 @@ Click to view our [locations and postal install video](https://youtu.be/Rc6MT0D6
 
 ## Activation Guide {#activation-guide}
 
-### 1. Download and Install the Core {#id-1.-download-and-install-the-core}
+### Download and Install the Core {#id-1.-download-and-install-the-core}
 
 If you haven't already, be sure to install and configure the [SonoranCAD Core](/cad/integration-plugins/in-game-integration/fivem-installation) first.
 
-### 2. Activate the Submodule and all Dependencies {#id-2.-activate-the-submodule-and-all-dependencies}
+### Activate the Submodule and all Dependencies {#id-2.-activate-the-submodule-and-all-dependencies}
 
-Follow the [submodule activation guide](/cad/integration-plugins/in-game-integration/submodule-configuration#activating-a-submodule) for the required submodules.
+Open **Admin > Integrations > FiveM**, select the server, then open **Postals**. Enable the plugin with the header toggle, review the settings below, and select **Save configuration**. Restart `sonorancad` to apply the saved settings.
 
-### 3. Configure Postal Script and Exports {#id-3.-configure-postal-script-and-exports}
+See [Submodule Configuration](/cad/integration-plugins/in-game-integration/submodule-configuration) for requirements, reset, and migration details.
 
-1. If you're using the publicly available [nearest-postal script](https://forum.cfx.re/t/release-nearest-postal-script/293511), you will need to follow the steps in the [usage](/cad/integration-plugins/in-game-integration/available-plugins/postals#using-nearest-postal) section below.
-2. If you're using a custom postal codes file, you will need to add the file to the plugin and Sonoran CAD's fxmanifest as shown in the [usage ](/cad/integration-plugins/in-game-integration/available-plugins/postals#custom-postal-codes-file)section below.
-3. If you're using an event triggered by a custom postals script, you must configure it as explained in the [usage](/cad/integration-plugins/in-game-integration/available-plugins/postals#custom-postal-events) section below.
+### Configure Postal Script and Exports {#id-3.-configure-postal-script-and-exports}
 
-<Warning>
-
-nearestPostalResourceName should **ONLY** be filled out if you're using [our specific nearest postal script](https://forum.cfx.re/t/release-nearest-postal-script/293511). In other words, **do not** put the name of your HUD script here, as **that will not work**.
-</Warning>
+Choose **Mode** below, then follow the matching resource, file, or event instructions in [Usage](#usage).
 
 ## Configuration {#configuration}
 
+<Accordion title="Postal source">
 
+| Setting | What it does |
+| --- | --- |
+| **Mode** | Choose whether to get postal coordinates from a resource, a FiveM event, or a file. Choices: Nearest postal resource, Resource event, Custom postal file. |
+| **Nearest postal resource name** | Shown for Nearest postal resource. Set the name of the installed resource that supplies nearest postals. |
+| **Nearest postal event** | Shown for Resource event. Set the client event this plugin listens to for nearest postal updates. |
+| **Custom postal codes file** | Shown for Custom postal file. Set the path to the file that contains custom postal coordinates. |
 
-| Option | Description | Default |
-| --- | --- | --- |
-| sendTimer | Time between sending postal updates to the server. | 950 ms |
-| shouldSendPostalData | Toggles the plugin on/off | True |
-| nearestPostalResourceName | If using our [nearest-postal](https://forum.cfx.re/t/release-nearest-postal-script/293511) script, specify the name of its folder here | nearest-postal |
-| mode | Specify what "mode" this plugin should use to determine postals. If using nearest-postal, set this to `resource`. If using an event fired by another resource, set this to `event`. If using a custom postals file, set this to `file`. | resource |
-| nearestPostalEvent | If you've set `mode` to `event`, specify the name of the event fired by your postals resource here |  |
-| customPostalCodesFile | If you've set `mode` to `file`, copy your custom postal codes file to the postals plugin folder, and add the name of that file here. |  |
+</Accordion>
 
+<Accordion title="Location updates">
 
+| Setting | What it does |
+| --- | --- |
+| **Should send postal data** | Send the player’s nearest postal from the game client to the FiveM server. |
+
+</Accordion>
 
 ## Usage {#usage}
 
@@ -65,13 +66,11 @@ The plugin only supports 1.5.0 or higher of the nearest-postal plugin. Be sure t
 
 If you're using the publicly available [nearest-postal script](https://forum.cfx.re/t/release-nearest-postal-script/293511), some minor configuration is required.
 
-#### 1. Set the Resource Name {#id-1.-set-the-resource-name}
+#### Set the Resource Name {#id-1.-set-the-resource-name}
 
-In the Sonoran CAD postals plugin config, change the `nearestPostalsResourceName` value to the _**exact**_ name of your nearest postals resource.\
-\
-Ex: `nearest-postals-1.5`
+Set **Mode** to **Nearest postal resource**. Enter the exact installed resource folder name in **Nearest postal resource name**, such as `nearest-postal`. The resource must provide the `getPostal` export; entering an unrelated HUD name will not work.
 
-#### 2. Ensure Proper Startup Order {#id-2.-ensure-proper-startup-order}
+#### Ensure Proper Startup Order {#id-2.-ensure-proper-startup-order}
 
 Be sure that you are starting the nearest-postals addon/resource **before/above** where you `ensure sonorancad` in your `server.cfg`.
 
@@ -79,17 +78,25 @@ Be sure to restart both the Sonoran CAD resource and the nearest-postal script, 
 
 ### Custom Postal Codes File {#custom-postal-codes-file}
 
-If you want to use your own custom postal codes file with this plugin, open the config and change `mode` to `file`.
+Set **Mode** to **Custom postal file**. Place your JSON file in `sonorancad/submodules/postals` and enter its filename, including `.json`, in **Custom postal codes file**. The current resource already includes JSON files in this folder in its manifest.
 
-Next, copy your custom postal codes file to the `submodules/postals` folder, and set the value of `customPostalCodesFile` to the name of this file. Include the .json file extension in the name.
+Each entry needs a postal code and numeric map coordinates:
+
+```json
+[{ "code": "100", "x": 123.4, "y": -456.7 }]
+```
+
+Save the configuration and restart `sonorancad`.
 
 ### Custom Postal Events {#custom-postal-events}
 
-If you're not using the nearest-postal script or a custom postal codes file, you will need to create a export in your postals script, and have it return the player's current postal as a string.
+Set **Mode** to **Resource event** and enter the event name in **Nearest postal event**. Your postal resource must trigger that **client-side event** with the player's current postal whenever it changes. For example, if the field is `my_postals:changed`:
 
-Additionally, you will need to edit the config to set `mode` to `event`, then specify the name of this event in `nearestPostalEvent`.
+```lua
+TriggerEvent('my_postals:changed', '100')
+```
 
-Need help? You can always [hire a developer](https://support.sonoransoftware.com/#/).
+This mode listens for updates; it does not call an export to request them.
 
 ## Troubleshooting {#troubleshooting}
 
@@ -103,14 +110,4 @@ See the [FiveM error codes reference](/cad/integration-plugins/in-game-integrati
 
 ### The configured postals file (postals\_file.json) was not found {#the-configured-postals-file-postals_file.json-was-not-found}
 
-This error may be seen by users attempting to set up the plugin to use a [custom postal codes file](/cad/integration-plugins/in-game-integration/available-plugins/postals#custom-postal-codes-file). Specifically, the error will look something like this, substituting `postals_file.json` for whatever you've named your custom postal codes file to:
-
-```
-The configured postals file (postals_file.json) was not found. Please check it.
-```
-
-This means that either the postal codes file has not been correctly added to the fxmanifest, or that it has not been added at all. Please reference the above instructions on how to do so.
-
-We recommend replacing the `files { }` section of your fxmanifest with the given code snippet, then changing `postals_file.json` to match the name of whatever postals file you're using.
-
-If you've manually entered the line, verify that all the lines in the section **except for the last** are followed with a comma to ensure that the system can properly read it.
+Confirm the JSON file is in `sonorancad/submodules/postals`, its filename matches **Custom postal codes file**, and each entry contains `code`, `x`, and `y`. Use the current resource manifest, which includes `submodules/postals/*.json`, then restart the resource.

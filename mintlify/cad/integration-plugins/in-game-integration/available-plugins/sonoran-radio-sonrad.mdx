@@ -8,27 +8,34 @@ description: Connects Sonoran Radio with CAD
 This submodule connects Sonoran CAD to [Sonoran Radio](https://sonoranradio.com/), a separate resource and system.
 </Info>
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/77/7771268215cb3c86b7bdd967178ebc147015774a68109666b1f5d61ae7be655f.png" alt="The Sonoran Radio handheld displaying CAD call information." />
 
 *Sonoran CAD x Sonoran Radio*
 
-
-
 ## Activation Guide {#activation-guide}
 
-### 1. Download and Install the Resource {#id-1.-download-and-install-the-resource}
+### Download and Install the Resource {#id-1.-download-and-install-the-resource}
 
 If you have not already, install the [Sonoran CAD FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
 
 Then, [enable the `sonrad` plugin](/cad/integration-plugins/in-game-integration/submodule-configuration).
 
-### 2. Adjust the Configuration {#id-2.-adjust-the-configuration}
+### Adjust the Configuration {#id-2.-adjust-the-configuration}
 
-The CAD display settings are stored inside of the `/configuration/sonrad_config.lua` file.
+Open **Admin > Integrations > FiveM**, select the server, then open **Sonoran Radio (sonrad)**. Enable the plugin with the header toggle, review the settings below, and select **Save configuration**. Restart `sonorancad` to apply the saved settings.
 
-### 3. Ensure Players are Linked {#id-3.-ensure-players-are-linked}
+See [Submodule Configuration](/cad/integration-plugins/in-game-integration/submodule-configuration) for requirements, reset, and migration details.
+
+<Accordion title="Radio name">
+
+| Setting | What it does |
+| --- | --- |
+| **Sync radio name** | Update the player’s Sonoran Radio name from their CAD unit information. |
+| **Radio name format** | Use &#123;UNIT_NUMBER&#125; for the callsign and &#123;UNIT_NAME&#125; for the unit’s name in Sonoran Radio. |
+
+</Accordion>
+
+### Ensure Players are Linked {#id-3.-ensure-players-are-linked}
 
 Ensure the players have already [linked their CAD](/cad/integration-plugins/in-game-integration/link-user-in-game) for this integration to work.
 

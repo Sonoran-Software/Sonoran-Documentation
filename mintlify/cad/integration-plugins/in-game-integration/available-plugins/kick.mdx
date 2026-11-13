@@ -6,22 +6,30 @@ description: This submodule kicks police, fire, EMS, and Dispatch users from the
 
 <img src="https://docs-assets.sonoransoftware.com/sha256/a2/a22d95065c43dfe4af890303d3d35d2a834ed8efbe613717e29b163992b74e56.png" alt="The CAD community menu with an automatic disconnect notification." />
 
-
-
 ## Activation Guide {#activation-guide}
 
-### 1. Download and Install the Resource {#id-1.-download-and-install-the-resource}
+### Download and Install the Resource {#id-1.-download-and-install-the-resource}
 
 <Info>
 
 This submodule is already **enabled by default** when installing the [Sonoran CAD FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
 </Info>
 
-### 2. Adjust the Configuration {#id-2.-adjust-the-configuration}
+### Adjust the Configuration {#id-2.-adjust-the-configuration}
 
-The CAD display settings are stored inside of the `/configuration/kick_config.lua` file.
+Open **Admin > Integrations > FiveM**, select the server, then open **Kick**. Enable the plugin with the header toggle, review the settings below, and select **Save configuration**. Restart `sonorancad` to apply the saved settings.
 
-### 3. Ensure Players are Linked {#id-3.-ensure-players-are-linked}
+See [Submodule Configuration](/cad/integration-plugins/in-game-integration/submodule-configuration) for requirements, reset, and migration details.
+
+<Accordion title="Settings">
+
+| Setting | What it does |
+| --- | --- |
+| **Notification override** | Use a different notification system for this plugin or inherit the resource default. Choices: Use server default, ox_lib, Lation UI, pNotify, Chat. |
+
+</Accordion>
+
+### Ensure Players are Linked {#id-3.-ensure-players-are-linked}
 
 Ensure the players have already [linked their CAD](/cad/integration-plugins/in-game-integration/link-user-in-game) for this integration to work.
 

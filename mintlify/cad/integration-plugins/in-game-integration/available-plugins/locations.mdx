@@ -17,32 +17,27 @@ Other HUD resources keep custom names inside their own configuration. Those name
 
 ## Custom Street Names {#custom-street-names}
 
-Open `/sonorancad/configuration/locations_config.lua` and enable `customStreetNames`. Add the same hash and display-name pairs used by your HUD:
+Open **Admin > Integrations > FiveM**, select the server, then **Unit Locations**. Turn on **Use custom street names** and add your HUD's street hash/name pairs under **Names**. For example, map `0xAC9F694E` to `Custom Freeway Name`.
 
-```lua
-customStreetNames = {
-    enabled = true,
-    names = {
-        [0xAC9F694E] = "Custom Freeway Name",
-        ["0x10A6E7C9"] = "Custom Street Name"
-    }
-}
-```
+Both primary streets and nearby crossings can be replaced. A street not in the list uses the normal FiveM name. If your HUD updates game-wide street text entries, those names work automatically without a second list.
 
-Both the primary street and the nearest crossing can be replaced. Numeric hashes, signed decimal hashes, and quoted hexadecimal hashes are supported.
-
-If a street hash is not listed, the integration falls back to the normal FiveM street name. If `customStreetNames` is disabled or is not present in an older configuration file, unit locations continue working normally with native street names.
-
-<Info>
-
-If your HUD has an option to update custom names game-wide or update game text entries, enable that option instead. The Unit Locations submodule will then receive those names automatically, without duplicating the list in both configurations.
-</Info>
+Select **Save configuration** and restart `sonorancad`.
 
 ## Configuration {#configuration}
 
-| Option                      | Description                                                                            | Default  |
-| --------------------------- | -------------------------------------------------------------------------------------- | -------- |
-| `clientCheckTime`           | How often the client checks whether location data changed.                             | `250` ms |
-| `prefixPostal`              | Prefixes the location with the nearest postal when the Postals submodule is available. | `true`   |
-| `customStreetNames.enabled` | Enables the custom street hash override list.                                          | `false`  |
-| `customStreetNames.names`   | Maps FiveM street hashes to custom display names.                                      | Empty    |
+<Accordion title="Location updates">
+
+| Setting | What it does |
+| --- | --- |
+| **Prefix postal** | Show the nearest postal code before the street name. |
+
+</Accordion>
+
+<Accordion title="Street names">
+
+| Setting | What it does |
+| --- | --- |
+| **Use custom street names** | Use the configured custom street names in CAD location updates. |
+| **Names** | Map the street hashes used by your HUD to the names CAD should display. |
+
+</Accordion>

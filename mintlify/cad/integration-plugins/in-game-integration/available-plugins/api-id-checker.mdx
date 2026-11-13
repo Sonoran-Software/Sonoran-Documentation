@@ -1,56 +1,37 @@
 ---
-title: Check API ID
-description: Easily view your API ID with a command, and check if a given API ID is
-  linked to an account.
+title: Check Account Link
+description: Check whether a FiveM identifier is linked to a CAD account.
 ---
 
-<Info>
-
-**This submodule has been merged into the SonoranCAD Core and no longer requires external configuration or setup**
-</Info>
+This check is built into the resource. It has no separate plugin settings in CAD. Players should use `/link` to link their account; the old `/apiid` command is not part of the current resource.
 
 ## Usage {#usage}
 
 ### Command {#command}
 
-This submodule supplies the command `/apiid` which will print the player's primary identifier (the one they should use in Settings) to their console.
+Administrators can run `forcecheck <identifier>` in the server console to print whether the identifier is linked. The command is restricted when invoked by a player.
 
 ### Function {#function}
 
-Callback output parameter: true/false if API ID exists.
-
-```lua
-cadApiIdExists("identifier_here", callback)
-```
+The server export accepts an identifier, an optional identifier type, and an optional callback. It also returns the result directly.
 
 #### Example {#example}
 
 ```lua
-cadApiIdExists("steam:1234567890", function(exists)
-    if exists then
-        print("API ID exists!")
-    else
-        print("API ID does not exist!")
-    end
-end)
+local linked = exports['sonorancad']:CadIsPlayerLinked('license:YOUR_LICENSE')
+print(('Linked to CAD: %s'):format(tostring(linked)))
 ```
 
 ### Event {#event}
 
-This is a _server only_ event.
-
-**Event Name:** SonoranCAD::apicheck:CheckPlayerLinked
-
-**Response Event:** SonoranCAD::apicheck:CheckPlayerLinkedResponse
+From a server script, request a check for the player's server ID. The resource resolves the player's identifier.
 
 #### Example {#example-1}
 
 ```lua
--- Request
-TriggerEvent("SonoranCAD::apicheck:CheckPlayerLinked", source, identifier)
+TriggerEvent('SonoranCAD::apicheck:CheckPlayerLinked', playerId)
 
--- Response
-AddEventHandler("SonoranCAD::apicheck:CheckPlayerLinkedResponse", function(player, identifier, exists)
-    print(("Player %s has API ID? %s"):format(player, exists))
+AddEventHandler('SonoranCAD::apicheck:CheckPlayerLinkedResponse', function(player, identifier, exists)
+    print(('Player %s linked: %s'):format(player, tostring(exists)))
 end)
 ```

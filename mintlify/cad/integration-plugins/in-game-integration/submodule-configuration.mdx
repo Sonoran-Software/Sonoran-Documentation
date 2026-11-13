@@ -1,48 +1,43 @@
 ---
 title: Submodule Configuration
-description: This guide covers the activation process for a general submodule.
+description: Enable and configure FiveM plugins from Sonoran CAD.
 ---
 
 ## Install the Resource {#install-the-resource}
 
-If you have not already, [install the base FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation).
+[Install the current Sonoran CAD FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation) and connect your server first.
 
 ## Activating a Submodule {#activating-a-submodule}
 
-The [FiveM resource](/cad/integration-plugins/in-game-integration/fivem-installation) contains multiple "submodules" for each integration. These can be individually enabled/disabled and configured.
+Open **Admin > Integrations > FiveM**. Select the server you want to change, then open a plugin. Settings belong to the selected server, so check the server selector before editing.
 
+### Configure and enable {#id-1.-configure-and-enable-the-submodule}
 
+Use the toggle beside the plugin title to enable or disable it. Hover over an input for help. Related options appear together, and settings for an unused permission mode or framework stay hidden.
 
-<Card title="available-plugins" href="/cad/integration-plugins/in-game-integration/available-plugins" />
+Requirement chips show prerequisite plugins. Select a chip to open that plugin. Enable the prerequisites first: disabling a required plugin also disables plugins that depend on it. Enabling the prerequisite again does not automatically re-enable those plugins.
 
+For FiveM control-number inputs, use the documentation icon inside the input to open the [FiveM controls reference](https://docs.fivem.net/docs/game-references/controls/).
 
+Expand **Language** at the bottom of a plugin to customize in-game text. Keep message substitution tokens intact. Custom Lua permission checks and other function editors are available only in **Developer Mode**.
 
-This example uses the `postals` submodule.
+### Save or reset {#id-2.-rename-and-save}
 
-### 1. Configure and Enable the Submodule {#id-1.-configure-and-enable-the-submodule}
+<span id="rename" />
+<span id="save" />
 
-* Navigate to the `\sonorancad\configuration` folder and locate the configuration file for your desired submodule.
-  * For this example we will be using the `sonrad_config.lua` file (name depends on the submodule).
-* **Enable** the submodule by changing the `enabled` variable from `false` to `true` in the submodule config.
+Select **Save configuration** to save your changes. The reset icon beside the enable toggle restores that plugin's defaults after confirmation; select **Save configuration** to keep the reset.
 
+### Restart Sonoran CAD {#id-3.-restart-sonoran-cad}
 
+Restart `sonorancad` from the server console after saving. Plugins read their settings on startup.
 
-<img src="https://docs-assets.sonoransoftware.com/sha256/0e/0e4f343e0e9e563d545f8bea3153f4aacca20fab75bb1ece2867b64d04f9ef8a.png" alt="" />
+### Existing installations {#existing-installations}
 
+If your resource still uses local Lua configuration files, update the resource and follow the migration prompt in CAD. Run `sonorancad migrate` in the server console to import the existing configuration. After a successful import, manage settings in CAD and restart the resource. If migration reports a readback or validation error, resolve it before removing any legacy files.
 
+### Separate resources {#separate-resources}
 
-### 2. Rename and Save {#id-2.-rename-and-save}
+Resources such as Tablet, Station Alert, and Pager have their own setup. Follow their individual guides for settings that are not part of the CAD plugin editor.
 
-#### Rename {#rename}
-
-While the pre-configured resource should already have the file renamed, you may need to remove `.dist` from the configuration file name.
-
-Ex: `sonrad_config.dist.lua` > `sonrad_config.lua`
-
-#### Save {#save}
-
-Save the lua file's changes.
-
-### 3. Restart Sonoran CAD {#id-3.-restart-sonoran-cad}
-
-Restart the `sonorancad` resource by entering `ensure sonorancad` in the server console and enjoy your submodule!
+<Card title="FiveM plugins" href="/cad/integration-plugins/in-game-integration/available-plugins" />

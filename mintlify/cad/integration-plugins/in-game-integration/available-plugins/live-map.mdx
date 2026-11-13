@@ -8,28 +8,20 @@ description: Sonoran CAD's 2D and 3D interactive live map allows you to update a
 
 *Sonoran CAD - Live Map*
 
-
-
 <Info>
 
 This submodule is built into the Sonoran CAD FiveM resource and requires no additional configuration.
 </Info>
 
-### 1. 2D Map Selection {#id-1.-2d-map-selection}
+### 2D Map Selection {#id-1.-2d-map-selection}
 
-In the admin panel, navigate to **Advanced** > **In-Game Integration** > **Live Map**
+Open **Admin > Integrations > FiveM > Live Map**. For Roblox, select **ERLC** under Integrations, then open **Live Map**.
 
-Here, you can enable and select a default map option for GTA, Roblox, or others. Additionally, pro communities can [upload a custom map](/cad/integration-plugins/in-game-integration/available-plugins/live-map#using-a-custom-map-fivem).
+Use the header toggle to enable the map. Choose **Interactive** for the live map, then select a map style or upload a custom map where your subscription allows it. Choose **Static** to use a map URL for the selected server.
 
+The server selector controls server-specific settings, including the static map URL. Map enablement and the selected interactive map style apply to the community. The FiveM panel also includes **Live map vehicle models** for matching vehicle models to map icons.
 
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/93/93321c2aa020126a81db0d50ef0bfc0f7fb5b384a75828c2a67512d187500462.png" alt="" />
-
-*Sonoran CAD - Live Map Type Selection*
-
-
-
-### 2. Link In-Game {#id-2.-link-in-game}
+### Link In-Game {#id-2.-link-in-game}
 
 Don't forget to have each community member link their in-game user to the CAD.
 
@@ -37,11 +29,11 @@ Don't forget to have each community member link their in-game user to the CAD.
 
 For Roblox users, ensure your [Roblox account is linked to your Sonoran account](/cad/integration-plugins/erlc/getting-started#linking-your-roblox-account).
 
-### 3. User Access Permission {#id-3.-user-access-permission}
+### User Access Permission {#id-3.-user-access-permission}
 
 Users will need to be granted access to view the live map. This can be done via [Discord role sync](/cad/integration-plugins/discord-bot-integration/role-sync), [permission key](/cad/tutorials/getting-started/permissions#permission-keys), or by [manually granting permissions](/cad/tutorials/getting-started/permissions#manually-granting-permissions) in the admin menu.
 
-### **4. Enjoy!** {#id-4.-enjoy}
+### **Enjoy!** {#id-4.-enjoy}
 
 In the Police, Fire, EMS, or Dispatch window you can now click the "Live Map" button to view your new live map! Selecting a blip will show it's updated position and unit information.
 
@@ -53,11 +45,7 @@ You can also [pin the live map button to your taskbar](/cad/tutorials/customizat
 The live map will only show units that are in your server and also actively logged into the police, fire, or EMS panel in the CAD. Be sure to have your [API ID](/cad/api-integration/getting-started/setting-your-api-id) set.
 </Info>
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/b0/b0be37d108f7da1e1ca84a90c0fce953e97466d2811678d67a5f31d1a1a20c49.png" alt="" width="191" />
-
-
 
 ## **Using the Live Map** {#using-the-live-map}
 
@@ -76,11 +64,7 @@ With the [postals](/cad/integration-plugins/in-game-integration/available-plugin
 
 Units, emergency calls, and dispatch calls with locations will also display a red pin icon. Clicking the icon will open the map and zoom to the location.
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/4f/4f4c3b199277fa3a86b4bd7d6cc0a3663fe25a283ff5f3f623d215ebdcd10812.gif" alt="" />
-
-
 
 #### Blip Customization {#blip-customization}
 
@@ -162,11 +146,7 @@ For more information, view our [pricing](https://sonorancad.com/pricing) page.
 
 Sonoran CAD allows communities to upload custom map images to the integrated, hosted live map. If your community does not use one of the map types provided, you can upload the images manually.
 
-
-
 <Accordion title="Extract Images">
-
-
 
 Extract the images from the YTD files with a program like OpenIV.\
 **You will need six files named exactly as follows:**\
@@ -181,50 +161,26 @@ Extract the images from the YTD files with a program like OpenIV.\
 
 ![OpenIV - Save Images](https://docs-assets.sonoransoftware.com/sha256/a0/a0286b801e260d9a94b2934c4658916aeaa6472dce288573468e17ac1c2c812a.png)
 
-
-
 </Accordion>
 
-
-
-
-
 <Accordion title="Upload Images">
-
-
 
 Navigate to Admin > Advanced > In-Game Integration > Live Map and Push Events\
 Select "Upload Custom" and upload all six correctly named files.
 
 ![Live Map - Custom Map Uploader](https://docs-assets.sonoransoftware.com/sha256/73/73c447e325d19df97fa4ce0b927fcf2144e2a8d679875b12d9b712cd88994d3f.png)
 
-
-
 </Accordion>
-
-
-
-
 
 <Accordion title="File Size">
 
-
-
 Custom map images are limited to 30MB each. **However, if you are uploading more than 100MB of images total, you will need to upload in separate batches.**
-
-
 
 </Accordion>
 
-
-
 ### Roxwood Expansion {#roxwood-expansion}
 
-
-
 <Accordion title="Roxwood Expansion">
-
-
 
 If your community is utilizing the Roxwood map expansion, there will be additional tiles to upload.
 
@@ -238,25 +194,13 @@ Additionally, two existing map tiles will need to be updated, as they contain pa
 * `minimap_sea_0_0.png`
 * `minimap_sea_0_1.png`
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/ed/ed40d954544453fd5e69ba6eaec8d1cd6a62cd2a7440c2a764c001be3355edf4.png" alt="" />
-
-
-
-
 
 </Accordion>
 
-
-
 ### Cayo Perico Expansion {#cayo-perico-expansion}
 
-
-
 <Accordion title="Cayo Perico Expansion">
-
-
 
 If your community is utilizing the Cayo Perico map expansion, there will be extra tiles to upload. Ensure these are named as:
 
@@ -266,25 +210,13 @@ If your community is utilizing the Cayo Perico map expansion, there will be extr
 * `minimap_sea_3_1.png`
 * `minimap_sea_3_2.png`
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/14/14597b230775a55b9bbf4fa485a9d8c4378667cc7a7fbc27dfafa67a60d95aac.png" alt="" width="375" />
-
-
-
-
 
 </Accordion>
 
-
-
 ## Roblox Custom Maps {#roblox-custom-maps}
 
-
-
 <Card title="3D Live Map" href="/cad/integration-plugins/erlc/3d-live-map" />
-
-
 
 ## Troubleshooting {#troubleshooting}
 
@@ -294,11 +226,7 @@ The 3D live map uses WebGL, an open source something.
 
 In Chrome, navigate to `chrome://gpu/` and check if `WebGL` is **Disabled**. If so, try the following steps:
 
-
-
 <img src="https://docs-assets.sonoransoftware.com/sha256/b2/b2eeac1e5dbfe3394f1f184682de27a2ade9ca9f5fcfe6c9cae5d34469b0d07f.png" alt="" width="316" />
-
-
 
 * **Chrome** > **Settings** > **System** > **Use Graphics Acceleration When Available**
 * Ensure Graphics Drivers are Up-to-Date

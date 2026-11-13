@@ -15,17 +15,21 @@ This submodule utilizes API endpoints that require the **plus** version of Sonor
 Looking for FiveM hosting? View our [current hosting offer](/promotions/fivem-hosting).
 </Check>
 
+<Warning>
+This page describes the legacy TeamSpeak integration. TeamSpeak is not included in the current FiveM resource or CAD plugin editor. The file settings below apply only to an existing legacy installation.
+</Warning>
+
 ## Activation Guide {#activation-guide}
 
-### 1. Download and Install the Core {#id-1.-download-and-install-the-core}
+### Download and Install the Core {#id-1.-download-and-install-the-core}
 
 If you haven't already, be sure to install and configure the [SonoranCAD Core](/cad/integration-plugins/in-game-integration/fivem-installation) first.
 
-### 2. Activate the Submodule and all Dependencies {#id-2.-activate-the-submodule-and-all-dependencies}
+### Activate the Submodule and all Dependencies {#id-2.-activate-the-submodule-and-all-dependencies}
 
-Follow the [submodule activation guide](/cad/integration-plugins/in-game-integration/submodule-configuration#activating-a-submodule) for the required submodules.
+This legacy module has no toggle in the current CAD plugin editor. Do not look for it in the current submodule configuration panel.
 
-### 3. Configure your TeamSpeak Connection {#id-3.-configure-your-teamspeak-connection}
+### Configure your TeamSpeak Connection {#id-3.-configure-your-teamspeak-connection}
 
 Your TeamSpeak server credentials can either be set in the config or as [convars](/cad/integration-plugins/in-game-integration/available-plugins/teamspeak-3#advanced-configuration) in your `server.cfg` file. In the `ts3integration_config.json` file, you can modify the following settings:
 
@@ -42,14 +46,14 @@ Your TeamSpeak server credentials can either be set in the config or as [convars
 
 ![TS3 - Integration Config](https://docs-assets.sonoransoftware.com/sha256/88/88a9e3de2d8bfe25c2b1abd08f2a9b7d1cc380f32afd575eeccf6103e70ad8d0.png)
 
-### 4. Retrieve Your Individual TS3 ID {#id-4.-retrieve-your-individual-ts3-id}
+### Retrieve Your Individual TS3 ID {#id-4.-retrieve-your-individual-ts3-id}
 
 Every member from your community will need to retrieve their unique TS3 ID.\
 This is found in TS under Tools > Identities > Default > Unique ID
 
 ![TS3 - Retrieve your unique ID](https://docs-assets.sonoransoftware.com/sha256/ae/ae67aea2f8d4e9571c86d18a89c454c543d6614543086bc5561e1001c63008f0.png)
 
-### 5. Add your TS3 ID as an API ID {#id-5.-add-your-ts3-id-as-an-api-id}
+### Add your TS3 ID as an API ID {#id-5.-add-your-ts3-id-as-an-api-id}
 
 Paste in this TS3 unique ID as a [new API ID in the CAD](/cad/api-integration/getting-started/setting-your-api-id).
 
@@ -60,7 +64,7 @@ Every member of your community will need to add their unique ID to their CAD acc
 
 ![API ID - Paste New ID](https://docs-assets.sonoransoftware.com/sha256/c3/c37bc3c3373edcb7a3ebfa19c7cfbb85dbd1d5ddf5287d3b7cdb938e7b61ac69.png)
 
-### 6. Utilize the TS3 Integration {#id-6.-utilize-the-ts3-integration}
+### Utilize the TS3 Integration {#id-6.-utilize-the-ts3-integration}
 
 Once configured, when the user joins the TS3 server they will be granted the `onduty_servergroup` once they sign into the police, fire, EMS, or dispatch page.
 
