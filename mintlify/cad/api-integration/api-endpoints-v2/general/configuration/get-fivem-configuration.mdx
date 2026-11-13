@@ -13,10 +13,12 @@ This reference applies to versions of CAD and the FiveM resource that support CA
 
 Send `Authorization: Bearer YOUR_API_KEY`. Replace `serverId` with the positive numeric ID of a server registered in the API key's CAD community. The request has no body.
 
+Pass the installed SonoranCAD FiveM resource version as the optional `version` query parameter. It is a string, for example `"3.4.0"`.
+
 ## Example request {#example-request}
 
 ```bash
-curl "https://api.sonorancad.com/v2/fivem/servers/1/configuration" \
+curl "https://api.sonorancad.com/v2/fivem/servers/1/configuration?version=3.4.0" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -27,6 +29,8 @@ A `200 OK` response contains a single JSON object with `core` and each plugin as
 ```json
 {
   "core": {
+    "communityID": "YOUR_COMMUNITY_ID",
+    "mode": "production",
     "notificationSystem": "auto"
   },
   "bodycam": {
@@ -35,7 +39,7 @@ A `200 OK` response contains a single JSON object with `core` and each plugin as
 }
 ```
 
-The full response includes default values for missing settings. New communities can fetch the stock configuration immediately. The resource keeps `communityID`, `apiKey`, `serverId`, and `mode` in its local bootstrap settings.
+The full response includes default values for missing settings. New communities can fetch the stock configuration immediately. The response includes the community ID and the configured mode (`production` or `development`). The resource keeps its API key and server ID in its local bootstrap settings.
 
 | Status | Meaning |
 | --- | --- |
