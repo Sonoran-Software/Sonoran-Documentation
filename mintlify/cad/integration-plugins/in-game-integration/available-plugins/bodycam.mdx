@@ -29,7 +29,7 @@ This submodule is already **enabled by default** when installing the [Sonoran CA
 
 ### Adjust the Configuration {#id-2.-adjust-the-configuration}
 
-Open **Admin > Integrations > FiveM**, select the server, then open **Body Camera**. Enable the plugin with the header toggle, review the settings below, and select **Save configuration**. Restart `sonorancad` to apply the saved settings.
+Open **Admin > Integrations > FiveM**, select the server, then open **Body Camera**. Enable the plugin with the header toggle and review the settings below. Changes save automatically. When saved, run `exec @sonorancad/sonorancad.cfg` in your server console to apply them.
 
 See [Submodule Configuration](/cad/integration-plugins/in-game-integration/submodule-configuration) for requirements, reset, and migration details.
 
@@ -168,7 +168,7 @@ In **Beeps**, set **Beep interval (ms)** to `30000` for 30 seconds or `290000` f
 
 **Enable beeps** controls the recurring reminder loop. Turning it off does not silence start/stop tones or nearby cameras. **Beep range** sets how far nearby players can hear your camera.
 
-Select **Save configuration** and restart `sonorancad` after changes.
+Changes save automatically. When saved, run `exec @sonorancad/sonorancad.cfg` in your server console to apply them.
 
 ### Automatic Activation {#automatic-activation}
 
@@ -193,7 +193,7 @@ Repeat the `add_principal` line for each player. Restart the server to apply, or
 
 #### Disable the Permission Check {#disable-the-permission-check}
 
-Clear **ACE permission to force off** to allow everyone to use `/bodycam forceoff`. To require a different permission, enter that ACE node and use the same node in your `add_ace` rule. Save the configuration and restart `sonorancad`.
+Clear **ACE permission to force off** to allow everyone to use `/bodycam forceoff`. To require a different permission, enter that ACE node and use the same node in your `add_ace` rule. Changes save automatically. When saved, run `exec @sonorancad/sonorancad.cfg` in your server console to apply them.
 
 ### Unit Duty Requirement {#unit-duty-requirement}
 

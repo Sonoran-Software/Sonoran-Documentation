@@ -23,7 +23,7 @@ This submodule is already **enabled by default** when installing the [Sonoran CA
 
 ### Configure the Submodule {#id-2.-configure-the-submodule}
 
-Open **Admin > Integrations > FiveM**, select the server, then open **Civilian Registration (CivReg)**. Enable the plugin with the header toggle, review the settings below, and select **Save configuration**. Restart `sonorancad` to apply the saved settings.
+Open **Admin > Integrations > FiveM**, select the server, then open **Civilian Registration (CivReg)**. Enable the plugin with the header toggle and review the settings below. Changes save automatically. When saved, run `exec @sonorancad/sonorancad.cfg` in your server console to apply them.
 
 See [Submodule Configuration](/cad/integration-plugins/in-game-integration/submodule-configuration) for requirements, reset, and migration details.
 
@@ -98,7 +98,7 @@ Autofill is optional. Players can complete the registration form without a frame
 1. Configure and enable [Framework Support](/cad/integration-plugins/in-game-integration/available-plugins/framework-support-esx-qbcore-and-auto-fines) and choose the framework running on your server.
 2. In **Civilian Registration (CivReg) > Autofill**, select each row, then click its destination field on the civilian record preview.
 3. Map **First**, **Last**, **DOB**, **Sex**, **Height**, **Phone**, and **Nationality** as needed.
-4. Save the configuration, restart `sonorancad`, and open a new form while playing a loaded framework character.
+4. Changes save automatically. When saved, run `exec @sonorancad/sonorancad.cfg` in your server console, then open a new form while playing a loaded framework character.
 
 The picker stores the selected field's mapping ID. It does not create or rename fields. Date values are adapted to the destination date format; sex values are normalized to `M` or `F`. Height units are not converted.
 

@@ -26,15 +26,19 @@ Expand **Language** at the bottom of a plugin to customize in-game text. Keep me
 <span id="rename" />
 <span id="save" />
 
-Select **Save configuration** to save your changes. The reset icon beside the enable toggle restores that plugin's defaults after confirmation; select **Save configuration** to keep the reset.
+Changes save automatically. The reset icon beside the enable toggle restores and saves that plugin's defaults after confirmation.
 
 ### Restart Sonoran CAD {#id-3.-restart-sonoran-cad}
 
-Restart `sonorancad` from the server console after saving. Plugins read their settings on startup.
+When saved, run this command in your server console to apply the changes:
+
+```cfg
+exec @sonorancad/sonorancad.cfg
+```
 
 ### Existing installations {#existing-installations}
 
-If your resource still uses local Lua configuration files, update the resource and follow the migration prompt in CAD. Run `sonorancad migrate` in the server console to import the existing configuration. After a successful import, manage settings in CAD and restart the resource. If migration reports a readback or validation error, resolve it before removing any legacy files.
+If your resource still uses local configuration files, follow the [migration guide](/cad/integration-plugins/in-game-integration/fivem-installation/fivem-resource-migration-v4) to import them into CAD.
 
 ### Separate resources {#separate-resources}
 

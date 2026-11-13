@@ -1,7 +1,6 @@
 ---
 title: Submodule Configuration Updates
-description: Learn how to manually update your submodule configuration file when there
-  has been a configuration update.
+description: Update FiveM plugins and manage their settings in Sonoran CAD.
 ---
 
 <span id="id-1.-open-the-configuration-files" />
@@ -12,6 +11,6 @@ description: Learn how to manually update your submodule configuration file when
 
 ## Updating settings
 
-Update the FiveM resource before using new settings. Open the plugin for the correct server in **Admin > Integrations > FiveM**, review the new fields, and select **Save configuration**. Restart `sonorancad` to apply them.
+Update the FiveM resource before using new settings. Open the plugin for the correct server in **Admin > Integrations > FiveM** and review the new fields. Changes save automatically. When saved, run `exec @sonorancad/sonorancad.cfg` in your server console to apply them.
 
-The reset icon restores a plugin’s defaults after confirmation. Review the resulting settings before saving. For an installation still using Lua configuration files, follow [the migration workflow](/cad/integration-plugins/in-game-integration/submodule-configuration#existing-installations).
+The reset icon restores and saves a plugin’s defaults after confirmation. For an installation still using local configuration files, follow [the migration guide](/cad/integration-plugins/in-game-integration/fivem-installation/fivem-resource-migration-v4).
