@@ -2721,6 +2721,23 @@ paths:
           format: int32
           minimum: 1
         example: 1
+      - name: version
+        in: query
+        required: true
+        description: Installed SonoranCAD FiveM resource version.
+        schema:
+          type: string
+          minLength: 1
+        example: '3.4.0'
+      - name: freshInstall
+        in: query
+        required: false
+        description: Set to true when there is no local configuration to migrate.
+          For a registered server awaiting migration, CAD returns the full default
+          configuration and leaves the migration status unchanged. Saved settings take precedence.
+        schema:
+          type: boolean
+          default: false
       security:
       - BearerAuth: []
       responses:
@@ -2731,65 +2748,35 @@ paths:
               schema:
                 type: object
                 required:
-                - revision
-                - schemaVersion
-                - templateRevision
-                - serverId
-                - values
-                - appliedRevision
-                - appliedAt
+                - core
                 properties:
-                  revision:
-                    type: integer
-                    format: int64
-                    minimum: 0
-                    description: Saved configuration revision; zero means this server
-                      has no saved configuration.
-                  schemaVersion:
-                    type: integer
-                    example: 1
-                    description: Wire protocol version.
-                  templateRevision:
-                    type: string
-                    description: SHA-256 fingerprint of the current configuration
-                      catalog.
-                  serverId:
-                    type: integer
-                    example: 1
-                  values:
+                  core:
                     type: object
                     required:
-                    - core
-                    - plugins
+                    - communityID
+                    - mode
                     properties:
-                      core:
-                        type: object
-                        additionalProperties: true
-                      plugins:
-                        type: object
-                        additionalProperties: true
-                  appliedRevision:
-                    type: integer
-                    format: int64
-                    nullable: true
-                  appliedAt:
-                    type: string
-                    format: date-time
-                    nullable: true
+                      communityID:
+                        type: string
+                      mode:
+                        type: string
+                        enum: [production, development]
+                additionalProperties:
+                  type: object
+                  description: Settings for a FiveM plugin.
               example:
-                revision: 4
-                schemaVersion: 1
-                templateRevision: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-                serverId: 1
-                values:
-                  core: {}
-                  plugins: {}
-                appliedRevision: 3
-                appliedAt: '2026-09-21T15:30:00Z'
+                core:
+                  communityID: examplecad
+                  mode: production
+                  notificationSystem: auto
+                bodycam:
+                  enabled: true
+        '400':
+          description: Missing or blank version, or invalid freshInstall value.
         '401':
           description: Missing or invalid bearer API key
         '404':
-          description: Server does not belong to the authenticated community
+          description: Unknown server, or migration is pending and freshInstall is omitted or false.
       tags:
       - General / Configuration
   /v2/general/info:

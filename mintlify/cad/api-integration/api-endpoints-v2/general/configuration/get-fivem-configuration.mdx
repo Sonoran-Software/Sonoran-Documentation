@@ -15,10 +15,12 @@ Send `Authorization: Bearer YOUR_API_KEY`. Replace `serverId` with the positive 
 
 Pass the installed SonoranCAD FiveM resource version as the required `version` query parameter. It must be a nonempty string, such as `"3.4.0"`.
 
+Set the optional boolean `freshInstall` to `true` when the resource has no local configuration to migrate. CAD returns the full default configuration for a registered server awaiting migration and returns saved settings when available. This request leaves the server's migration status unchanged. The parameter defaults to `false`.
+
 ## Example request {#example-request}
 
 ```bash
-curl "https://api.sonorancad.com/v2/fivem/servers/1/configuration?version=3.4.0" \
+curl "https://api.sonorancad.com/v2/fivem/servers/1/configuration?version=3.4.0&freshInstall=true" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -39,11 +41,11 @@ A `200 OK` response contains a single JSON object with `core` and each plugin as
 }
 ```
 
-The full response includes default values for missing settings. New communities can fetch the stock configuration immediately. The response includes the community ID and the configured mode (`production` or `development`). The resource keeps its API key and server ID in its local bootstrap settings.
+The full response includes default values for missing settings. The response includes the community ID and the configured mode (`production` or `development`). The resource keeps its API key and server ID in its local bootstrap settings.
 
 | Status | Meaning |
 | --- | --- |
 | `200` | Configuration is ready. |
-| `400` | The `version` query parameter is missing or blank. |
+| `400` | `version` is missing or blank, or `freshInstall` is present and is not a valid boolean. |
 | `401` | The API key is missing or invalid. |
-| `404` | The server is unknown to the authenticated community or is waiting for its [migration upload](/cad/api-integration/api-endpoints-v2/general/configuration/migrate-fivem-configuration). The error title identifies which case occurred. |
+| `404` | The server is unknown to the authenticated community. A server waiting for its [migration upload](/cad/api-integration/api-endpoints-v2/general/configuration/migrate-fivem-configuration) also returns this status unless `freshInstall=true`. The error title identifies which case occurred. |
