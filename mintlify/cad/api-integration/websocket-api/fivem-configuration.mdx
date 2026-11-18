@@ -15,4 +15,6 @@ The API returns the [full configuration object](/cad/api-integration/api-endpoin
 
 ## Resource behavior {#resource-behavior}
 
-For a server pending migration, use [Migrate FiveM Configuration](/cad/api-integration/api-endpoints-v2/general/configuration/migrate-fivem-configuration) to upload the existing settings before fetching them.
+On a fresh install with no legacy configuration folder, the resource requests `freshInstall=true`. CAD saves the default settings on the first successful request and makes them available in the CAD panel.
+
+If you're upgrading an existing installation and the server is pending migration, use [Migrate FiveM Configuration](/cad/api-integration/api-endpoints-v2/general/configuration/migrate-fivem-configuration) to upload the existing settings.

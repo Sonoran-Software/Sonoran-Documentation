@@ -2732,9 +2732,9 @@ paths:
       - name: freshInstall
         in: query
         required: false
-        description: Set to true when there is no local configuration to migrate.
-          For a registered server awaiting migration, CAD returns the full default
-          configuration and leaves the migration status unchanged. Saved settings take precedence.
+        description: Set to true when there is no legacy configuration to migrate.
+          CAD saves and returns the full default configuration if no settings are
+          saved and completes setup without a migration upload. Saved settings take precedence.
         schema:
           type: boolean
           default: false

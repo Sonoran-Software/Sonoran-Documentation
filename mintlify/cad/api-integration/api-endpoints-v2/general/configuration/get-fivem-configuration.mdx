@@ -15,7 +15,7 @@ Send `Authorization: Bearer YOUR_API_KEY`. Replace `serverId` with the positive 
 
 Pass the installed SonoranCAD FiveM resource version as the required `version` query parameter. It must be a nonempty string, such as `"3.4.0"`.
 
-Set the optional boolean `freshInstall` to `true` when the resource has no local configuration to migrate. CAD returns the full default configuration for a registered server awaiting migration and returns saved settings when available. This request leaves the server's migration status unchanged. The parameter defaults to `false`.
+Set the optional boolean `freshInstall` to `true` when the resource has no legacy configuration to migrate. CAD saves and returns the full default configuration if the server has no saved settings. This completes setup without a migration upload and makes the submodule settings available in the CAD panel. If settings are already saved, CAD returns them. The parameter defaults to `false`.
 
 ## Example request {#example-request}
 
