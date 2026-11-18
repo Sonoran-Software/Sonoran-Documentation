@@ -3,6 +3,8 @@ title: In-Game Speakers
 description: Configure in-game speakers that dispatchers can send tones to!
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/game-integrations/fivem/in-game-radio/in-game-speakers.mdx).
+
 <img src="https://docs-assets.sonoransoftware.com/sha256/07/07710e9df0d031a327f3843d3594e1fb8571c247e50d1efd89aab97ec8291bde.png" alt="" />
 
 
@@ -14,6 +16,10 @@ description: Configure in-game speakers that dispatchers can send tones to!
 
 
 ## Configuring In-Game Speakers {#configuring-in-game-speakers}
+
+In **Admin** > **Game Integration** > **FiveM Placements**, choose your **Radio Server** and select **Tone speakers** under **Placement type**. Select **Add** or open an existing speaker to set its name, model, coordinates, heading, range, and group. Select **Apply**. Use **Restart Sonoran Radio** to copy the restart command and run it in the FiveM server console.
+
+You can also place speakers from the in-game menu.
 
 ### 1. Access the Menu {#id-1.-access-the-menu}
 
@@ -91,7 +97,7 @@ Use the controls displayed on screen to rotate and move the speaker to the desir
 
 Speakers can be grouped by a customizable name when placed. Grouped speakers show up as a single option on the tone board.
 
-If you would like to group already placed speakers you can do so by navigating to the `speakers.json` file and adding a `group` property. (If the value of the group property is empty, speakers will not group together). See below for more:
+To group existing speakers, open each speaker in **FiveM Placements** and enter the same value in **Group**. Leave **Group** blank for a speaker that should appear on its own.
 
 | Ungrouped Speaker(s)                                                             | Grouped Speaker(s)                                                               |
 | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |

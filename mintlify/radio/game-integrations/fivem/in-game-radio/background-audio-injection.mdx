@@ -4,6 +4,8 @@ description: Background audio injection blends in-game sounds—like sirens, hel
   rotors, boat engines, and gunshots—into your microphone output.
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/game-integrations/fivem/in-game-radio/background-audio-injection.mdx).
+
 <img src="https://docs-assets.sonoransoftware.com/sha256/e0/e097a62070e9a5df5af36a1206c923cb3f3ea468a92eafe432ffe04446161768.png" alt="" />
 
 *Sonoran Radio - Background Noise Injection*
@@ -38,7 +40,8 @@ If you're responding with sirens active, others on the radio will hear them in t
 To enable this feature:
 
 1. Ensure your community is on the Pro version of Sonoran Radio.
-2. Set `enableBackgroundAudio` to `true` in your [config.lua](/radio/game-integrations/fivem/installing-the-in-game-resource#updates) file.
+2. In **Admin → Game Integration → FiveM Settings**, select your **Radio Server**. Open **Radio → Radio and audio** and enable **Include background audio**.
+3. [Restart the resource after the setting saves.](/radio/game-integrations/fivem/installing-the-in-game-resource#configuration-values)
 
 ### Customizing Background Audio Sounds {#customizing-background-audio-sounds}
 
@@ -56,7 +59,7 @@ If sirens are not playing in the background of your microphone (when next to a v
 
 Sonoran Radio integrates with Luxart Vehicle Control to determine when sirens are activated.
 
-1. Ensure you have configured the `Config.luxartResourceName` configuration option to match the resource name of your installed Luxart Vehicle Control resource.
+1. In **FiveM Settings → Calls and integrations → Game resources**, set **Luxart resource name** to the installed resource's name. Restart the FiveM resource after saving.
 2. Ensure you are on the latest version of Luxart Vehicle Control, as older versions do not contain the developer events needed.
    1. LVC (v3.2.9-Rev2+): [Download](https://github.com/TrevorBarns/luxart-vehicle-control/releases)
    2. LVC Fleet (v1.0.1+): [Download](https://github.com/TrevorBarns/luxart-vehicle-control-fleet/releases)

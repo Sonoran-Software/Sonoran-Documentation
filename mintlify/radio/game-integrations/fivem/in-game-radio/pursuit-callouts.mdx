@@ -4,6 +4,8 @@ description: Let Sonoran Radio handle your pursuit location and direction callou
   automatically!
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/game-integrations/fivem/in-game-radio/pursuit-callouts.mdx).
+
 ## Video Example {#video-example}
 
 
@@ -14,7 +16,7 @@ description: Let Sonoran Radio handle your pursuit location and direction callou
 
 ## Enabling Auto-Callouts {#enabling-auto-callouts}
 
-Auto-callouts can be enabled using the in-game keybind (configurable in the `config.lua`) or by using the `/sonradtogglecallouts` command in-game
+Use the **Toggle auto callouts** keybind or run `/sonradtogglecallouts` in-game.
 
 
 
@@ -28,19 +30,19 @@ Example: "Westbound, East Joshua Road, Speeds 85"
 
 ## Configuration {#configuration}
 
-You can [change settings for auto-callouts (`Config.autoCallouts`) in the `config.lua` file](/radio/game-integrations/fivem/installing-the-in-game-resource#updates).
+In **Admin → Game Integration → FiveM Settings**, select your **Radio Server**. Open **Calls and integrations → Pursuit callouts** and enable **Automatic pursuit callouts**. [Restart the resource after the settings save.](/radio/game-integrations/fivem/installing-the-in-game-resource#configuration-values)
 
 ### **Keybinds** {#keybinds}
 
-You can [edit the default keybinding under the `Config.keybinds['toggleAutoCallouts']` setting](/radio/game-integrations/fivem/installing-the-in-game-resource#updates). By default, it is unset.
+In **FiveM Settings → Default keybinds → Calls and automation**, set **Toggle auto callouts**. The default is blank.
 
 ### **Speeds** {#speeds}
 
-You can [configure the type of speed announced in the auto-callout using the `Config.autoCallouts.speedUnit` config option](/radio/game-integrations/fivem/installing-the-in-game-resource#updates). By default, it is in miles per hour, but can be changed to kilometers per hours (`kmh`), or speed callouts can be disabled by setting it to `none`.
+Under **Pursuit callouts**, set **Callout speed unit** to **mph** or **kmh**. Choose **None** to omit speed. The default is **mph**.
 
 ### Postal Codes {#postal-codes}
 
-You can [configure the callouts to state the unit's postal code using the `Config.autoCallouts.withPostals` config option](/radio/game-integrations/fivem/installing-the-in-game-resource#updates). Additionally, you will need to specify the name of your postal code resource in the [`Config.autoCallouts.postalResource` config option](/radio/game-integrations/fivem/installing-the-in-game-resource#updates).
+Under **Pursuit callouts**, enable **Include postals** and enter your installed postal resource's name in **Postal resource name**.
 
 ### **Languages** {#languages}
 

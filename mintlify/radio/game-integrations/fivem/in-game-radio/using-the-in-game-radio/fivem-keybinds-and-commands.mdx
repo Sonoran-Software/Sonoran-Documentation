@@ -3,13 +3,15 @@ title: FiveM Keybinds & Commands
 description: Learn more about customizing your in-game FiveM keybinds.
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands.mdx).
+
 ## FiveM Keybinds {#fivem-keybinds}
 
 Sonoran Radio allows you to customize keybinds for in-game actions on the radio.
 
 To customize these, navigate to your GTA `Settings` -> `Key Bindings` -> `FiveM` -> `(sonoranradio)`
 
-Communities can also customize the default keybinds for new users in the [configuration's](/radio/game-integrations/fivem/installing-the-in-game-resource#updates) `keybind` property with the [available options](https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/).
+To set server defaults, open **Admin → Game Integration → FiveM Settings**, select your **Radio Server**, and expand **Default keybinds**. Enter an **Input Parameter** from the [FiveM keyboard reference](https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/) in the field for the action. [Restart the resource after the settings save.](/radio/game-integrations/fivem/installing-the-in-game-resource#configuration-values)
 
 
 
@@ -41,14 +43,7 @@ This keybind will toggle your panic status in the radio, and in [Sonoran CAD](/r
 
 #### Auto PTT on Panic {#auto-ptt-on-panic}
 
-Sonoran Radio has a [configurable option](/radio/game-integrations/fivem/installing-the-in-game-resource#updates) to automatically press a users PTT button for a configurable amount of time when the user [presses their radio panic button](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio#panic):
-
-```lua
-Config.autoPttOnPanic = {
-	enabled = true, -- Enable automatic PTT when panic button is pressed
-	duration = 15 -- Duration in seconds to hold PTT when panic button is pressed
-}
-```
+To automatically transmit when a player [presses Panic](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio#panic), enable **Transmit automatically on panic** under **FiveM Settings → Radio → Panic**. Set **Panic transmission duration (seconds)** and [restart the resource](/radio/game-integrations/fivem/installing-the-in-game-resource#configuration-values).
 
 ### Volume Up/Down {#volume-up-down}
 
@@ -114,7 +109,7 @@ To activate or deactivate a configured [vehicle or trailer repeater](/radio/game
 
 `/radio repeater`
 
-This opens an activation-only menu for all players. Configuring which vehicle models have repeaters remains restricted to administrators through `/radiomenu`.
+This opens the activation menu for players. Administrators can set up supported vehicles under **FiveM Placements → Mobile repeaters** or in-game through `/radiomenu`.
 
 ***
 
@@ -126,7 +121,7 @@ Commands for the server console.
 
 ### Debug Mode Toggle {#debug-mode-toggle}
 
-Toggle the [`config.debug` mode](/radio/game-integrations/fivem/installing-the-in-game-resource#updates) with the command
+Toggle debug mode from the FiveM server console.
 
 `sonoranradio debugmode`
 

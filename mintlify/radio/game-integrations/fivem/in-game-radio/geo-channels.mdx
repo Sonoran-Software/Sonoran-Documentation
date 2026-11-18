@@ -4,6 +4,8 @@ description: Automatically change your transmit and scan channels based on in-ga
   location.
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/game-integrations/fivem/in-game-radio/geo-channels.mdx).
+
 Geo channels let you define in-game zones that automatically switch your transmitting and scanned channels based on your location.
 
 For example, entering a downtown area can automatically switch your radio to the **City** channel, while driving on the highway can switch it to the **Highway** channel.
@@ -18,18 +20,12 @@ For example, entering a downtown area can automatically switch your radio to the
 
 
 
-1. Open **Customization** > **Game Integration** > **FiveM**.
-2. Under **FiveM Zones**, choose your **Server** and select **Geo Channels**.
+1. Open **Admin → Game Integration → FiveM Settings** and select your **Radio Server**.
+2. Expand **Zones** and select **Geo Channels**.
 3. Use the polygon, rectangle, or circle tool to draw a zone.
 4. Select the zone to set its name, Z coordinates (floor and ceiling height), and channels to transmit and scan when entered.
 
 Additionally, you can enter comma separated ACE permissions for the zone. When configured, the zone will only apply to users with those ACE permissions.
-
-
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/68/683c00fd8bc3bebc41114eaffd533bcf078b0386d8793859f5a9d2878167a9fb.jpg" alt="FiveM Geo Channels in Game Integration" />
-
-
 
 
 
@@ -89,7 +85,7 @@ In the `Geo Channels` menu, you can specify which channels you want to transmit 
 
 `Finish Zone Creation`
 
-* Finishes the 3D zone creation and saves to the `geochannels.json` file
+* Saves the 3D zone for this Radio server.
 
 `Cancel Zone Creation`
 
@@ -127,7 +123,7 @@ In the `Geo Channels` menu, you can specify which channels you want to transmit 
 
 
 
-Select `Edit Geo Zones` in the menu and toggle on `Show Zones`. All configured zones on the map will be displayed in green. If the config.lua's `debug` mode is set to true, all zones will also be made visible.
+Select **Edit Geo Zones** and turn on **Show Zones** to display configured zones in green.
 
 Use the `Select Zone` menu option to swap back and forth between zones. Your selected zone will be displayed in red.
 
@@ -151,17 +147,13 @@ Use the `Delete Zone` menu option to delete the selected (red) zone.
 
 
 
-<Accordion title="FiveM Geo Channel Config + ACE Permissions">
+<Accordion title="Geo-channel switching settings">
 
 
 
-In the [config.lua](/radio/game-integrations/fivem/installing-the-in-game-resource#updates)'s `Config.geoChannels` property allows for additional customization.
+Open **FiveM Settings → Signal and equipment → Geo-channel switching**. Enable **Automatic geo-channel switching** and [restart the resource after saving](/radio/game-integrations/fivem/installing-the-in-game-resource#configuration-values).
 
-**User Toggle**
-
-Users can use `/radio geoswitch` to toggle the auto-switcher on/off for themselves.
-
-An optional `acePermission` can be added to restrict this command to specific users.
+Players can toggle switching for themselves with `/radio geoswitch` or `/sonradgeoswitch`. Change those names with **Geo-channel /radio subcommand** and **Geo-channel command**. To restrict the commands, enter a **Geo-channel ACE permission** and grant it in `server.cfg`.
 
 
 

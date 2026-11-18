@@ -4,15 +4,18 @@ description: Sonoran Radio integrates with FiveM phone scripts to allow players 
   call Sonoran Radio emergency service dispatchers right from their phone
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/game-integrations/fivem/fivem-phone-scripts.mdx).
+
 ## LB Phone {#lb-phone}
 
-LB Phone support for Sonoran Radio is as easy as changing a configuration variable.
+Players can use LB Phone to call a Sonoran Radio dispatcher from their in-game phone.
 
 ### Configuration {#configuration}
 
-1. In your [config.lua](/radio/game-integrations/fivem/installing-the-in-game-resource#updates), set `Config.phoneResource` to `'lb-phone'`.
-2. Ensure you start the `lb-phone` resource prior to Sonoran Radio.
-3. [Customize the emergency call number and hide the call banner.](/radio/tutorials/usage/dispatch-panel/emergency-calls#customize-the-emergency-number-and-banner)
+1. Start the `lb-phone` resource before Sonoran Radio in `server.cfg`.
+2. In **Admin > Game Integration > FiveM Settings**, select your **Radio Server** and open **Calls and integrations > Game resources**.
+3. Set **Phone integration** to **lb-phone**, then run the restart command after the setting saves.
+4. [Customize the emergency number and in-game call help.](/radio/tutorials/usage/dispatch-panel/emergency-calls#customize-the-emergency-number-and-banner)
 
 ### Usage {#usage}
 

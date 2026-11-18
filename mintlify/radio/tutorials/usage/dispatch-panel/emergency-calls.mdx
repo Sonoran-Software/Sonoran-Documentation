@@ -140,10 +140,13 @@ Dispatchers can also manually dial an in-game number to call someone directly.
 
 ## FiveM: Customize the Emergency Number & Banner {#fivem-customize-the-emergency-number-and-banner}
 
-By [editing the config file](/radio/game-integrations/fivem/installing-the-in-game-resource#configuration-values) you can customize the following options:
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/tutorials/usage/dispatch-panel/emergency-calls.mdx).
 
-1. Customize `911` to any other number or word by editing the `emergencyCommand` property.
-2. Hide the user's emergency call banner by setting `showEmergencyCallHelp` to `false`.
+In **Admin > Game Integration > FiveM Settings**, select your Radio server and open **Calls and integrations > Emergency calls**.
+
+1. Set **Emergency call command suffix** to change the in-game command. For example, entering `999` gives players `/radio 999`.
+2. Set **Show in-game emergency call help** to **Disabled** to hide the call banner.
+3. [Restart the resource after the settings save.](/radio/game-integrations/fivem/installing-the-in-game-resource#configuration-values)
 
 ## FiveM Phone Scripts {#fivem-phone-scripts}
 

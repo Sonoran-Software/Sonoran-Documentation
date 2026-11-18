@@ -4,6 +4,8 @@ description: Configure tunnels, underpasses, and other areas where radio signal 
   be degraded!
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/game-integrations/fivem/in-game-radio/tunnels-and-degrade-zones.mdx).
+
 <img src="https://docs-assets.sonoransoftware.com/sha256/3f/3f1fcb020ad2f8110f4e50e79e8c99a7e7a5ada879abb8225bf773b652eaf16d.png" alt="" />
 
 *Sonoran Radio - Tunnel Detection System*
@@ -30,16 +32,10 @@ Degradation zones are areas like tunnels, underground areas, or mountain valleys
 
 
 
-1. Open **Customization** > **Game Integration** > **FiveM**.
-2. Under **FiveM Zones**, choose your **Server** and select **Degrade Zones**.
+1. Open **Admin → Game Integration → FiveM Settings** and select your **Radio Server**.
+2. Expand **Zones** and select **Degrade Zones**.
 3. Use the polygon, rectangle, or circle tool to draw a zone.
 4. Select the zone to set its name, Z coordinates (floor and ceiling height), and degrade strength.
-
-
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/95/9529460e0c097c0ecb11d14c2e41eec77e9a04a7c83f8cf2cfa7b3a0c6afa862.jpg" alt="FiveM Degrade Zones in Game Integration" />
-
-
 
 
 
@@ -112,7 +108,7 @@ When creating a zone you can visualize via the drawn polygon and manipulate and 
 \- The maximum Z value (ceiling height) of the 3D zone
 
 `Finish Zone Creation`\
-\- Finishes the 3D zone and saves to the `tunnels.json` file
+\- Saves the 3D zone for this Radio server.
 
 `Cancel Zone Creation`\
 \- Cancels the 3D zone editor and closes the menu
@@ -129,7 +125,7 @@ When creating a zone you can visualize via the drawn polygon and manipulate and 
 
 
 
-Select `Edit Degradation Zone` in the menu and toggle on `Show Zones`. All configured zones on the map will be displayed in green. If the config.lua's `debug` mode is set to `true`, all zones will also be made visible.
+Select **Edit Degradation Zone** and turn on **Show Zones** to display configured zones in green.
 
 Use the `Select Zone` menu option to swap back and forth between zones. Your selected zone will be displayed in red.
 

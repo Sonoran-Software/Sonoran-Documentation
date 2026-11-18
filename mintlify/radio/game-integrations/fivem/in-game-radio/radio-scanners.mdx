@@ -3,6 +3,8 @@ title: Radio Scanners
 description: Discretely listen to your community's radio
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/game-integrations/fivem/in-game-radio/radio-scanners.mdx).
+
 <img src="https://docs-assets.sonoransoftware.com/sha256/8e/8eb2caa78156bc7e795232ffb6d4388ed299c5eb53e24f93b217bc1bf7f675ab.png" alt="" />
 
 *Sonoran Radio - In-Game Scanner*
@@ -11,7 +13,7 @@ description: Discretely listen to your community's radio
 
 <Warning>
 
-Due to bandwidth usage, this feature is automatically enabled with the Pro version only!
+Radio scanners require an active Sonoran Radio Pro subscription.
 
 [Learn more about our paid subscription plans.](/radio/pricing/pricing-faq/standalone-pricing)
 </Warning>
@@ -26,12 +28,13 @@ Due to bandwidth usage, this feature is automatically enabled with the Pro versi
 
 An active Sonoran Radio Pro subscription is required for nearby radio chatter and all scanner types, including permanent scanners.
 
-1. Enable the `config.chatter` option in your [config.lua](/radio/game-integrations/fivem/installing-the-in-game-resource#updates).
-2. Add the `sonoranradio.scanner` [ace permission](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions).
+1. In **Admin** > **Game Integration** > **FiveM Settings**, select your **Radio Server**. Expand **Radio** and enable **Radio chatter and scanners** under **Radio and audio**.
+2. If **Require ACE for scanners** is enabled under **Permissions and frames** > **ACE access**, grant the `sonoranradio.scanner` [ACE permission](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions).
+3. After the settings save, use **Restart Sonoran Radio** to copy the command and run it in the FiveM server console.
 
 ### Opening in Standalone {#opening-in-standalone}
 
-You can use `/radio scanner` command to open a personal scanner. This requires the `sonoranradio.scanner` [ace permission](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions).
+Run `/radio scanner` to open a personal scanner. If **Require ACE for scanners** is enabled, you need the `sonoranradio.scanner` permission.
 
 ### Opening in a Framework Server (QBCore, Qbox, etc.) {#opening-in-a-framework-server-qbcore-qbox-etc}
 
@@ -118,36 +121,7 @@ When creating a scanner, you have the ability to choose between many different s
 
 
 
-You can also modify the `scanners.json` JSON config file for more customization. By default, scanners connect to the default channel, but you can customize the channel ID it uses.
-
-
-
-<Accordion title="Example Scanner JSON">
-
-
-
-```json
-{
-    "Id": "036a2ad1-eeae-4519-be4c-67157b8a035d",
-    "Note": "Sandy Sheriff Station",
-    "Powered": true,
-    "ChannelId": 31226,
-    "PropModel": "prop_cs_hand_radio",
-    "PropPosition": {
-        "x": 1853.98,
-        "y": 3688.92,
-        "z": 34.38054,
-        "heading": 32.76,
-        "exact": false
-    }
-}
-```
-
-
-
-</Accordion>
-
-
+To set up a permanent scanner in Radio Admin, open **Admin** > **Game Integration** > **FiveM Placements**, select your **Radio Server**, and choose **Scanners** under **Placement type**. Select **Add** or open an existing scanner. Set its position and **Channel**. **Default channel** uses the community default. Select **Apply**. Use **Restart Sonoran Radio** to copy the restart command and run it in the FiveM server console.
 
 #### Finding Channel IDs {#finding-channel-ids}
 
@@ -157,9 +131,7 @@ The channel IDs can be found in the [dispatcher panel](/radio/tutorials/usage/di
 
 ### Ace Permissions {#ace-permissions}
 
-If you have enabled `Config.acePermsForScanners`, you must add permissions in your `server.cfg`for the scanner to work.
-
-The channel IDs can be found in the [dispatcher panel](/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel#channel-ids) or [in-game radio](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio/fivem-keybinds-and-commands#copying-channel-and-scan-list-ids).
+If **Require ACE for scanners** is enabled, grant scanner access in your `server.cfg`. To let a group tune to a private channel, grant access to that channel’s ID as well.
 
 ```bash
 # Give the group access to /radio scanner
@@ -178,4 +150,4 @@ Sonoran Radio does not provide a way to get the scanner item independently. You 
 /giveitem <playerId> sonoran_radio_scanner 1
 ```
 
-Please note that if you changed `Config.ScannerItem.name`, it will not work with `sonoran_radio_scanner`
+If you use a different item ID, replace `sonoran_radio_scanner` with the **Scanner item ID** in **FiveM Settings** > **Inventory** > **Scanner item**.

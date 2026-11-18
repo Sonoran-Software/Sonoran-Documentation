@@ -4,6 +4,8 @@ description: Deploy a signal jammer to disrupt nearby emergency radios for the u
   heist!
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/game-integrations/fivem/in-game-radio/radio-jammers.mdx).
+
 <img src="https://docs-assets.sonoransoftware.com/sha256/c5/c57fcc0b70eb1166ba9da03b0bbf8654eddca266133c486307697a944c50679b.png" alt="" />
 
 
@@ -18,16 +20,18 @@ Coming soon!
 
 ### Enabling the Jammer {#enabling-the-jammer}
 
-1. Enable the `Config.radioJammers.enabled` option in your [config.lua](/radio/game-integrations/fivem/installing-the-in-game-resource#updates).
-2. Add the `sonoranradio.jammers` [ace permission](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions).
+1. In **Admin → Game Integration → FiveM Settings**, select your **Radio Server**.
+2. Open **Jammers → Setup** and enable **Radio jammers**. Use **Jammer definitions** to configure handheld and static jammer types.
+3. In **Jammers → Access**, choose who can use jammers with **Jammer permission mode**.
+4. [Restart the resource after the settings save.](/radio/game-integrations/fivem/installing-the-in-game-resource#configuration-values)
 
 ### Opening in Standalone {#opening-in-standalone}
 
-You can use `/radio jammer` command to open a personal scanner. This requires the `sonoranradio.jammers` [ace permission](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions).
+Use `/radio jammers` to open the jammer menu. If you've changed **Jammer menu subcommand** under **Jammers → Setup**, use that value after `/radio`.
 
 ### Opening in a Framework Server (QBCore, Qbox, etc.) {#opening-in-a-framework-server-qbcore-qbox-etc}
 
-With the radio jammer item in their inventory, users can double click to open the [scanner menu](/radio/game-integrations/fivem/in-game-radio/radio-jammers#using-the-radio-scanner-1).
+With a radio jammer item in their inventory, players can use it to open the jammer menu.
 
 [View our complete list of supported FiveM frameworks an inventories.](/radio/game-integrations/fivem/fivem-inventories)
 
@@ -66,51 +70,9 @@ Permanent Jammers are available to everybody at configurable locations across th
 
 #### Configuring Permanent Jammers {#configuring-permanent-jammers}
 
-You can use `/radio jammers` to easily add, move, or delete persistent jammers
+Use `/radio jammers` in-game to add, move, or delete permanent jammers.
 
-
-
-<img src="https://cdn.discordapp.com/attachments/871554360285474847/1428501231596208158/image.png?ex=68f2baf1&is=68f16971&hm=c5157bfd8fc03dc870bdd669c9285882d5723eab799ee9ab09e07a4f6e35f046&" alt="" />
-
- 
-
-<img src="https://cdn.discordapp.com/attachments/871554360285474847/1428501231277445213/image.png?ex=68f2baf1&is=68f16971&hm=e8b2d6551fc92c517e4f831ac2864569261635c5082ff9881212cf62b72cd94a&" alt="" />
-
- 
-
-<img src="https://cdn.discordapp.com/attachments/871554360285474847/1428501231948660816/image.png?ex=68f2baf1&is=68f16971&hm=9bee1262d6a2970b252ed09984f69dad06ca517eb85b960615aebfad96d981fc&" alt="" />
-
-
-
-When creating a jammer, you have the ability to choose between many different jammer-like models to best fit your needs.
-
-
-
-<img src="https://cdn.discordapp.com/attachments/871554360285474847/1428502707408207882/image.png?ex=68f2bc51&is=68f16ad1&hm=6b588ca32861e637cedd30a8c0d58941dd956cf4988423f6e3b63ec44e13241c&" alt="" />
-
-*"Satellite Jammer"*
-
- 
-
-<img src="https://cdn.discordapp.com/attachments/871554360285474847/1428502808436412538/image.png?ex=68f2bc69&is=68f16ae9&hm=09a02f409d103d9f145da258df0ad492e145f2dcde9d90ebdfc303572493c555&" alt="" />
-
-*"Case Jammer"*
-
- 
-
-<img src="https://media.discordapp.net/attachments/871554360285474847/1428501230812004435/image.png?ex=68f2baf1&is=68f16971&hm=e07883e37771a496cd200a3ca60c611f4f27c9a5b7a46c2b955d5602f36ef286&=&format=webp&quality=lossless&width=1536&height=864" alt="" />
-
-*"Suitcase Jammer"*
-
- 
-
-<img src="https://cdn.discordapp.com/attachments/871554360285474847/1428504579489660968/1000.png?ex=68f2be10&is=68f16c90&hm=46af200ce78885145c8d881161ff32b11a60da6a9e69495ffbad041ccf79301e&" alt="" />
-
-*"Handheld Jammer"*
-
-
-
-You can also modify the `jammers.json` config file for more customization. By default, there are no jammers spawned.
+To edit placements from the portal, open **Admin → Game Integration → FiveM Placements**. Select your **Radio Server** and choose **Jammer placements** under **Placement type**. Select **Add** or open an existing entry to edit its position, model, range, or strength. Select **Apply**, then [restart the resource](/radio/game-integrations/fivem/installing-the-in-game-resource#placements). New servers start with an empty jammer placement list.
 
 ## Jamming Radio Effect {#jamming-radio-effect}
 
@@ -126,19 +88,15 @@ In-game radio screens will reflect a jamming effect, with the intensity based on
 
 ### Ace Permissions {#ace-permissions}
 
-If you have enabled `Config.radioJammers.permissionMode`, you must add permissions in your `server.cfg`for the scanner to work.
+Under **FiveM Settings → Jammers → Access**, choose **ACE** for **Jammer permission mode** to require the configured **Jammer ACE permission**. The default grant is `sonoranradio.jammers`. Add it in `server.cfg`.
 
-The ACE permission for `/radio scanner` is `sonoranradio.jammers`.
+You can also set **ACE permission (optional)** on a type under **Jammer definitions**. The default handheld jammer uses `sonoranradio.jammer_handheld`. For job-based access, use **Jammer jobs and grades** with the **QBCore** or **ESX** permission mode. Select **QBCore** for Qbox servers.
 
-The ACE permissions for specific jammer types are `sonoranradio.jammer_handheld`.
+[Learn how to grant ACE permissions.](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions)
 
-* `jammer_handheld` and other options are from the names in your [config.lua](/radio/game-integrations/fivem/installing-the-in-game-resource#updates).
+### Giving the Jammer Item (QBCore) {#giving-the-scanner-item-qbcore}
 
-Learn more about [ACE Permissions](/radio/game-integrations/fivem/in-game-radio/radio-jammers#ace-permissions).
-
-### Giving the Scanner Item (QBCore) {#giving-the-scanner-item-qbcore}
-
-Sonoran Radio does not provide a way to get the scanner item independently. You can give the item with any method, but here's an example chat command:
+Use your server's item-granting method to give the jammer item. For example, run this command in chat.
 
 ```
 /giveitem <playerId> sonoran_radio_jammer_handheld 1

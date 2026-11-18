@@ -4,6 +4,8 @@ description: Pulled over in a traffic stop? You'll hear the real radio chatter w
   an officer has an active radio nearby!
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/game-integrations/fivem/in-game-radio/hear-nearby-radio-chatter.mdx).
+
 <img src="https://docs-assets.sonoransoftware.com/sha256/15/151b96da3c9dbd5e0def58a604a1812f1293f7869c6c7bd5a50517ce82fbf640.png" alt="" />
 
 *Sonoran Radio - Hear Nearby Chatter*
@@ -14,7 +16,7 @@ Pulled over in a traffic stop? You'll hear the real radio chatter when an office
 
 <Warning>
 
-Due to bandwidth usage, this feature is automatically enabled with the Pro version only!
+Nearby radio chatter requires an active Sonoran Radio Pro subscription.
 
 [Learn more about our paid subscription plans.](/radio/pricing/pricing-faq/standalone-pricing)
 </Warning>
@@ -46,6 +48,8 @@ When someone is [making an emergency call to a dispatcher](/radio/tutorials/usag
 When someone is carrying (or has placed down) [a radio scanner](/radio/game-integrations/fivem/in-game-radio/radio-scanners), nearby users will hear the channel that the scanner is set to.
 
 ## Usage {#usage}
+
+In **Admin** > **Game Integration** > **FiveM Settings**, select your **Radio Server** and open **Radio** > **Radio and audio**. Enable **Radio chatter and scanners**, then restart the resource after the setting saves.
 
 ### Default Chatter Volume {#default-chatter-volume}
 
@@ -145,35 +149,12 @@ To remove an earpiece option, navigate to the `Remove Earpiece Item` Menu option
 
 
 
-### Manual Earpiece IDs (Advanced) {#manual-earpiece-ids-advanced}
+### Configure Earpieces in Radio Admin {#manual-earpiece-ids-advanced}
 
-
-
-<Accordion title="Manually Configure Earpiece IDs">
-
-
-
-The `earpieces.json` file defines earpiece items (custom EUP prop IDs) that block radio chatter from being heard nearby.
-
-Component IDs
-
-Look [here](https://docs.fivem.net/natives/?_0x829F2E2) for the component IDs for props (hats, glasses, earpieces, etc.). To find component IDs for drawables (shirts, pants, backpacks, etc.), look [here ](https://docs.fivem.net/natives/?_0x262B14F48D29DE80)and add 14 to the number.
-
-For example, to exclude a clothing item under ACCESSORIES, it might look like this:
-
-```lua
-{
-  componentId = 22, -- accessories (8) + offset (14) is 22
-  drawableId = 78,  -- Number in vMenu
-  texture = 0,      -- Number in vMenu (or 0 for all textures)
-}
-```
-
-
-
-</Accordion>
-
-
+1. Open **Admin** > **Game Integration** > **FiveM Placements** and select your **Radio Server**.
+2. Choose **Earpieces** under **Placement type** and select **Add** or open an existing entry.
+3. Enter the **Clothing component ID**, **Drawable ID**, and each matching texture under **Textures**. For prop slots such as hats or glasses, add `14` to the prop slot ID. Texture `0` matches the first texture.
+4. Select **Apply**. Use **Restart Sonoran Radio** to copy the restart command and run it in the FiveM server console.
 
 ## Radio Scanners {#radio-scanners}
 

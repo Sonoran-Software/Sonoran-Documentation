@@ -4,6 +4,8 @@ description: Configure and customize destructible radio towers in-game to impact
   performance.
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/game-integrations/fivem/in-game-radio/in-game-repeaters.mdx).
+
 <iframe src="https://www.youtube-nocookie.com/embed/sHAgi1Z_Er8" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
 
 
@@ -104,7 +106,7 @@ Additional integrations like the [mobile command center](/radio/game-integration
 
 To add, edit, or remove a repeater, open the configuration menu by typing `/radiomenu`.
 
-Access to this command requires the `command.radiomenu` [ACE permission](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions).
+Access to this command requires the `command.radioMenu` [ACE permission](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions).
 
 
 
@@ -126,104 +128,12 @@ Access to this command requires the `command.radiomenu` [ACE permission](/radio/
 
 
 
-#### Manual Configuration {#manual-configuration}
+#### Radio Admin Configuration {#manual-configuration}
 
-Alternatively, you can edit the individual `towers.json` file in the `sonoranradio` resource.
-
-
-
-<Accordion title="towers.json">
-
-
-
-```json
-[
-  // Radio Tower
-  {
-    // Unique Identifier
-    "Id": "74d910e5-5705-4b58-baaf-88a8ca82734c",
-    // Type of repeater (tower)
-    "type": "radioTower",
-    // XYZ Coordinates
-    "PropPosition": {
-      "x": -577.4769287109375,
-      "y": -138.4747314453125,
-      "z": 51.9765625
-    },
-    // Signal range in units
-    "Range": 1500,
-    // Allow destruction
-    "Destruction": true
-  },
-  // Server Rack
-  {
-    // Unique Identifier
-    "Id": "50a9c40a-e5bb-46b2-9a83-c5164599c64c",
-    // Type of repeater (Server Rack)
-    "type": "serverRack",
-    // XYZ Coordinates
-    "PropPosition": {
-      "x": 443.3538513183594,
-      "y": -983.1824340820312,
-      "z": 30.6783447265625
-    },
-    // 360 degree compass heading for angles
-    "heading": 90,
-    // Signal range in units
-    "Range": 1500,
-    // Status of each server in rack: "alive" or "dead"
-    "serverStatus": [
-      "alive",
-      "alive",
-      "alive",
-      "alive",
-      "alive"
-    ],
-    // Is the repeater on or not
-    "Powered": true,
-    // Make the repeater invisible by setting to true
-    "NotPhysical": false,
-    // Temporary repeater
-    "DontSaveMe": false,
-    // Allow destruction
-    "Destruction": true
-  },
-  // Cell Repeater
-  {
-    // Unique Identifier
-    "Id": "1f68f034-500b-4b29-9356-8c8bf63fda04",
-    // Type of repeater (cell repeater)
-    "type": "cellRepeater",
-    // XYZ Coordinates
-    "PropPosition": {
-      "x": 152.5,
-      "y": -775.9000244140625,
-      "z": 264.29998779296877
-    },
-    // 360 degree compass heading for angles
-    "heading": 340.0,
-    // Signal range in units
-    "Range": 1500.0,
-    // Is the repeater on or not
-    "Powered": true,
-    // Make the repeater invisible by setting to true
-    "NotPhysical": false,
-    // Temporary repeater
-    "DontSaveMe": false,
-    // Status of the antenna: "alive" or "dead"
-    "AntennaStatus": "alive",
-    // Allow destruction
-    "Destruction": true
-  }
-]
-
-```
-
-
-
-</Accordion>
-
-
+1. Open **Admin** > **Game Integration** > **FiveM Placements** and select your **Radio Server**.
+2. Set **Placement type** to **Towers and equipment**. Select **Add** or open an existing placement.
+3. Choose a **Radio tower**, **Server rack**, or **Cell repeater** under **Equipment type**. Set its coordinates, heading, and range. Turn on **Can be damaged** if players should be able to damage it.
+4. Select **Apply**, then use **Restart Sonoran Radio** to copy the restart command and run it in the FiveM server console.
 
 ***
 
@@ -239,11 +149,9 @@ Once damaged and destroyed, the tower no longer provides radio coverage within t
 
 #### Individual Towers {#individual-towers}
 
-Players can walk up to a destroyed repeater and press `G` to being the repair process.
+Players can walk up to a destroyed repeater and press `G` to begin the repair.
 
-The repair time can be configured in the `config.lua`'s `towerRepairTimer`.
-
-You can also restrict permissions to repairing a tower with [ACE permissions](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions) by setting `acePermsForTowerRepair` to `true` in the `config.lua`.
+To change **Tower repair time (seconds)** or turn on **Require ACE for tower repair**, select your **Radio Server** in **Admin** > **Game Integration** > **FiveM Settings**, then open **Signal and equipment** > **Repairs**. Use **Restart Sonoran Radio** after the settings save. If you require ACE, [grant the repair permission](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions) to the players who can repair towers.
 
 #### All Towers {#all-towers}
 
@@ -261,7 +169,7 @@ The configuration menu can be used to repair all repeaters on the map at once.
 
 #### Via In-Game Map {#via-in-game-map}
 
-Enabling`Config.debug` in the `config.lua` file will display a radius around each tower, where the edge represents 50% radio quality.
+Run `sonoranradio debugmode` in the FiveM server console to toggle debug mode. When the tower coverage radius is visible, its edge represents 50% radio quality.
 
 #### Via Sonoran CAD Live Map {#via-sonoran-cad-live-map}
 
@@ -330,17 +238,13 @@ Communities can add additional [Sonoran Power Grid](https://www.sonoran.store/pa
 
 Mobile repeaters extend radio coverage from configured vehicle models and attached trailer models. Their coverage moves with the vehicle while the repeater is active.
 
-Enable the feature in `config.lua`:
-
-```lua
-Config.enableVehicleRepeaters = true
-```
-
-Vehicle models are configured via in-game menu.
+In **Admin** > **Game Integration** > **FiveM Settings**, select your **Radio Server** and enable **Vehicle repeaters** under **Signal and equipment** > **Equipment**. Restart the resource to apply the setting.
 
 #### Configure a Vehicle Model {#configure-a-vehicle-model}
 
-Configuration requires the `command.radiomenu` [ACE permission](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions).
+In **Admin** > **Game Integration** > **FiveM Placements**, select your **Radio Server** and choose **Mobile repeaters** under **Placement type**. Select **Add**, enter the **Vehicle model or hash**, **Vehicle label**, and **Range (meters)**, then select **Apply**. Restart the resource to apply the placement.
+
+You can also configure a model in game with the `command.radioMenu` [ACE permission](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions).
 
 1. Enter the vehicle you want to configure. To configure a trailer model, attach the trailer to the vehicle first.
 2. Open `/radiomenu`.
@@ -380,4 +284,4 @@ If both the towing vehicle and its attached trailer are configured, the activati
 
 The server tracks active mobile repeaters as their networked vehicles move. A mobile repeater is automatically disabled when its vehicle is destroyed, despawns, or its model is removed from the configuration.
 
-If menu changes do not persist, check the server log and verify that the resource has permission to write `mobileRepeaters.json`.
+If a menu change fails to save, check the FiveM server log for details. If the placement changed in Radio Admin, restart the resource to load that change before editing it in game.

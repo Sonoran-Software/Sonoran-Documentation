@@ -4,6 +4,8 @@ description: Set up Dispatch AI for FiveM emergency calls, GPS routing, and auto
   arrival status.
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/game-integrations/fivem/fivem.mdx).
+
 Use [Dispatch AI](/radio/tutorials/usage/dispatch-ai) to change radio channels, manage scanned channels, set timers, and work with CAD. FiveM also supports emergency call readouts and in-game GPS routing.
 
 ## Setup {#setup}
@@ -11,7 +13,7 @@ Use [Dispatch AI](/radio/tutorials/usage/dispatch-ai) to change radio channels, 
 1. Complete the [common Dispatch AI setup](/radio/tutorials/usage/dispatch-ai#common-setup).
 2. Install the [FiveM Radio resource](/radio/game-integrations/fivem/installing-the-in-game-resource).
 3. Sign in to the in-game radio with your Sonoran account. For CAD actions, use that account in CAD or complete the in-game `/link` flow.
-4. Use the wake word while transmitting, or configure the FiveM AI keybind in the radio settings.
+4. Use the wake word while transmitting, or set **Toggle Dispatch AI** under **Admin > Game Integration > FiveM Settings > Default keybinds > Calls and automation**. Select the appropriate **Radio Server** and use the restart command after the setting saves. Players can change their own Dispatch AI keybind in-game.
 
 
 
@@ -21,17 +23,13 @@ Use [Dispatch AI](/radio/tutorials/usage/dispatch-ai) to change radio channels, 
 
 ## Emergency Call Readouts {#emergency-call-readouts}
 
-1. Connect the intended CAD server in Radio's **Customization** > **Dispatch AI**.
-2. Open **Customization** > **Game Integration** > **FiveM**.
-3. Under **FiveM Zones**, select the **Server** running Dispatch AI, then select **Emergency Zones**.
+1. Connect the intended CAD server under **Admin > Dispatch AI**.
+2. Open **Admin > Game Integration > FiveM Settings** and select the **Radio Server** running Dispatch AI.
+3. Expand **Zones** and select **Emergency Zones**.
 4. Draw a zone and select it to assign the channels that should receive calls in that area.
 5. Generate a 911 call in the linked CAD server with coordinates inside a zone.
 
 Dispatch AI creates a dispatch call, removes the original 911 call, and reads it over the zone's assigned channels. Calls without coordinates or outside the zones are not read automatically.
-
-
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/d2/d2013772e76491e5503b42c025ce53510f6e065e09bf20611627bf11482baffe.jpg" alt="Game Integration with FiveM selected and Emergency Zones open" />
 
 
 
@@ -53,7 +51,7 @@ Postal routing requires **Nearest Postal** or another resource supporting `/post
 
 With **Nearest Postal v1.5.4 or newer**, AI GPS routing can set your CAD status to en-route and then on-scene when you arrive.
 
-Configure `Config.autoOnSceneStatus` in the [Radio resource configuration](/radio/game-integrations/fivem/installing-the-in-game-resource#configuration-options).
+In [FiveM Settings](/radio/game-integrations/fivem/installing-the-in-game-resource#configuration-values), select your **Radio Server** and open **Calls and integrations > CAD on-scene status**. Enable **Set CAD status when arriving on scene**. Use **On-scene distance (meters)** to set how close the unit must get to the waypoint, **CAD on-scene status ID** to set the status, and **On-scene timeout (milliseconds)** to set how long the resource waits for arrival. Run the restart command after the settings save.
 
 
 

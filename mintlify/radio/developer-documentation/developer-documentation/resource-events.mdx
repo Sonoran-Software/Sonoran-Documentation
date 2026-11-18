@@ -142,14 +142,15 @@ exports['sonoranradio']:handleNameChange('my new name')
 
 #### Guest Display Names {#guest-display-names}
 
-To customize guest display names without giving permission to change their own name, you can update the `Config.getGuestDisplayName`&#x20;
+Use the optional server-side `Config.getGuestDisplayName` callback in `config.lua` to generate guest display names from Lua. This hook runs when a guest signs in. Return a string for the name or return `nil` to use the default.
 
 ```lua
 -- My Custom Guest Display Name Generator
 -- Param `source`: The server id of the user logging in as guest
 -- Returns string or nil (to use default)
 Config.getGuestDisplayName = function(source)
-    return ('I am logging in as a guest %s %s'):format(GetDisplayName(source), makeid())
+    local name = GetPlayerName(source)
+    return name and ('Guest ' .. name) or nil
 end
 ```
 

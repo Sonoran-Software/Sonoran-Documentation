@@ -3,6 +3,8 @@ title: Using the In-Game Radio
 description: Learn more about the in-game radio resource.
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio.mdx).
+
 <iframe src="https://www.youtube-nocookie.com/embed/x51SsH0LHUM" title="Video tutorial" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
 
 
@@ -87,8 +89,7 @@ This will open [sradio.link](https://sradio.link) in a web browser, log in if ne
 
 
 
-When you first use the in-game resource, you'll need to log in.\
-If your community has ACE permissions configured, no account creation or link is necessary.
+Guest sign-in lets you use the in-game radio without linking a Sonoran account.
 
 
 
@@ -96,9 +97,9 @@ If your community has ACE permissions configured, no account creation or link is
 
 
 
-Select **Login as guest** to bypass the account link and start using your radio. This guest option will only display if `acePermsForGuests` is set to `true`.
+Select **Login as Guest** to start using the radio. If your server enables **Require ACE for guest access**, you'll need the `sonoranradio.guest` permission.
 
-If `Config.forceGuestLogin = true` it will bypass this screen and automatically login radio users in as guest using ACE permissions.
+Server admins can enable **Use guest login** under **Admin → Game Integration → FiveM Settings → Permissions and frames → Accounts**. Eligible players then sign in as guests automatically.
 
 #### Permission Configuration {#permission-configuration}
 
@@ -363,8 +364,7 @@ The adjustment amount is customizable in the settings menu.
 
 When in-game, turning on your sirens will increase your overall radio volume by the configured amount. Turning your sirens back off will lower the volume back down.
 
-This feature is automatically integrated with [Luxart Vehicle Control](https://github.com/TrevorBarns/luxart-vehicle-control).\
-If the resource is not named `LVC`, the [`config.luxartResourceName` value must be updated](/radio/game-integrations/fivem/installing-the-in-game-resource#updates).
+This feature integrates with [Luxart Vehicle Control](https://github.com/TrevorBarns/luxart-vehicle-control). In **FiveM Settings → Calls and integrations → Game resources**, set **Luxart resource name** to the installed resource's name and [restart the resource](/radio/game-integrations/fivem/installing-the-in-game-resource#configuration-values).
 
 For communities not using LVC, the functionality will fall back to a FiveM native that will trigger the functionality if either lights or sirens are activated.
 
@@ -417,8 +417,9 @@ Select `Move/Resize`
 
 
 
-The Escape Mode selector changes the in-game radio display behavior after pressing `ESC`.\
-The server default for this setting can be configured in the [config's `defaultEscapeMode` property](/radio/game-integrations/fivem/installing-the-in-game-resource#updates).
+The Escape Mode selector changes the in-game radio display behavior after pressing `ESC`.
+
+Server admins can set the default under **FiveM Settings → Radio → Radio and audio** with **Escape key behavior**.
 
 `Keep Radio Visible`
 
@@ -454,14 +455,7 @@ This can also toggle your panic status in [Sonoran CAD](/radio/tutorials/integra
 
 [Dispatchers will also be able to see and clear your panic status.](/radio/tutorials/usage/dispatch-panel/using-the-dispatch-panel#unit-panic)
 
-Sonoran Radio has a [configurable option](/radio/game-integrations/fivem/installing-the-in-game-resource#updates) to automatically press a users PTT button for a configurable amount of time when the user presses their radio panic button:
-
-```lua
-Config.autoPttOnPanic = {
-	enabled = true, -- Enable automatic PTT when panic button is pressed
-	duration = 15 -- Duration in seconds to hold PTT when panic button is pressed
-}
-```
+To transmit automatically when a player presses Panic, open **FiveM Settings → Radio → Panic**. Enable **Transmit automatically on panic**, set **Panic transmission duration (seconds)**, and [restart the resource](/radio/game-integrations/fivem/installing-the-in-game-resource#configuration-values).
 
 ![](https://docs-assets.sonoransoftware.com/sha256/16/167b9a993adba6d8285405066e2166717a9e74b97b1fedf5799f75d09a325bec.png)
 

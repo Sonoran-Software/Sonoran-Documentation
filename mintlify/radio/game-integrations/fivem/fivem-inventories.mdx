@@ -4,6 +4,10 @@ description: Sonoran Radio integrates with FiveM inventory systems for physical 
   and scanner items.
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/game-integrations/fivem/fivem-inventories.mdx).
+
+Open **Admin > Game Integration > FiveM Settings**, select your **Radio Server**, and expand **Inventory**. Start your framework and inventory resources before Sonoran Radio.
+
 ## QBCore {#qbcore}
 
 QBCore inventory support for the radio and [radio scanner](/radio/game-integrations/fivem/in-game-radio/radio-scanners) items is automatically detected.
@@ -12,40 +16,13 @@ QBCore inventory support for the radio and [radio scanner](/radio/game-integrati
 
 #### Inventory Restriction {#inventory-restriction}
 
-To restrict radio and scanner access to users with the radio item in their inventory, set `config.enforceRadioItem` to `true`.
+Enable **Require an inventory item** to restrict radio and scanner access to players who carry the corresponding item.
 
 #### Inventory Item {#inventory-item}
 
-Customize your radio and scanner items in your config.lua's `Config.RadioItem` and `Config.ScannerItem` objects.
+Under **Radio item** and **Scanner item**, set each item's ID, label, weight, and description. The default IDs are `sonoran_radio` and `sonoran_radio_scanner`.
 
-
-
-<Accordion title="Config.Lua Properties">
-
-
-
-```lua
--- Located in the Radio's config.lua
-Config.RadioItem = {		 -- Note: Changes to this item will require a server restart to take effect
-	name = 'sonoran_radio',  -- Item name in your inventory | STRING
-	label = 'Sonoran Radio', -- Label for the item in your inventory | STRING
-	weight = 1, 			 -- Weight of the item in your inventory | INT
-	description = 'Communicate with others through the Sonoran Radio', -- Description of the item in your inventory | STRING
-}
-Config.ScannerItem = {
-	name = 'sonoran_radio_scanner', -- Item ID
-	label = 'Sonoran Radio Scanner', -- Label for the item in your inventory
-	weight = 1, -- Weight of the item in your inventory
-	description = 'Listen to radio chatter with the Sonoran Radio Scanner', -- Description of the item in your inventory
-}
-
-```
-
-
-
-</Accordion>
-
-
+Run the restart command after your settings save. If the inventory still shows the old item details, restart the FiveM server to reload the item definitions.
 
 ### Supported Inventories (QBCore) {#supported-inventories-qbcore}
 
@@ -62,11 +39,13 @@ Currently, the following QBCore inventories are supported:
 
 #### Inventory Restriction {#inventory-restriction-1}
 
-To restrict radio and scanner access to users with the radio item in their inventory, set `config.enforceRadioItem` to `true`.
+Enable **Require an inventory item** to restrict radio and scanner access to players who carry the corresponding item.
 
 #### Inventory Item {#inventory-item-1}
 
-Qbox requires you to manually add the following to your `/ox_inventory/data/items.lua` file. The config.lua's `Config.RadioItem` and `Config.ScannerItem` can not be used with Qbox.
+Add the entries below to your `ox_inventory/data/items.lua` file. If you use custom IDs, match the entry keys to **Radio item ID** and **Scanner item ID** in **FiveM Settings > Inventory**. Edit the labels, weights, and descriptions in the Ox Inventory file.
+
+Restart the FiveM server to load the item definitions and saved Radio settings.
 
 
 

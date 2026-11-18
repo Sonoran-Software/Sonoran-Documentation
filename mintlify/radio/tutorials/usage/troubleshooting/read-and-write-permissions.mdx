@@ -8,6 +8,8 @@ description: How to fix SonoranRadio issues caused by read-only file permissions
 
 ## SonoranRadio – Fix “Config File Is Read-Only” Error {#sonoranradio-fix-config-file-is-read-only-error}
 
+The FiveM server needs to read its connection credentials and write local backups. If Radio reports a write error, check the permissions on the resource folder and the file mentioned in the server console.
+
 ***
 
 ### Step 1: Open Your Game Panel {#step-1-open-your-game-panel}
@@ -19,10 +21,10 @@ Log into the game panel where your FiveM server is hosted\
 
 ### Step 2: Locate the Config File {#step-2-locate-the-config-file}
 
-Navigate to:
+Find your `sonoranradio` resource folder, usually under `resources/[sonoranradio]/sonoranradio/`. If the message mentions the server ID, check this file:
 
 ```
-resources/sonoranradio/config.lua
+resources/[sonoranradio]/sonoranradio/config.lua
 ```
 
 ***
@@ -32,7 +34,7 @@ resources/sonoranradio/config.lua
 #### Step 1: Locate the file {#step-1-locate-the-file}
 
 ```
-resources\sonoranradio\config.lua
+resources\[sonoranradio]\sonoranradio\config.lua
 ```
 
 ***
@@ -51,7 +53,7 @@ resources\sonoranradio\config.lua
 2. Click **Apply**
 3. Click **OK**
 
-This allows the file to be both **read and written** by the server.
+In **Properties > Security**, verify that the account running FiveM can read and write the file. For backup errors, it also needs permission to create files in the `sonoranradio` folder.
 
 ***
 
@@ -81,19 +83,16 @@ Log into the panel where your FiveM server is hosted.
 #### Step 2: Locate the config file {#step-2-locate-the-config-file-1}
 
 ```
-resources/sonoranradio/config.lua
+resources/[sonoranradio]/sonoranradio/config.lua
 ```
 
 ***
 
 #### Step 3: Fix file permissions {#step-3-fix-file-permissions}
 
-Set the file permissions so the server can write to it:
+Grant read and write access to the account running FiveM. For backup errors, that account also needs permission to create and rename files in the resource folder. Keep `config.lua` private because it contains the API key.
 
-* **Recommended:** `766`
-* **If that fails:** `666`
-
-If your panel supports it:
+If the game panel supports file permissions:
 
 1. Right-click `config.lua`
 2. Select **Permissions**
@@ -125,19 +124,16 @@ OWNER | GROUP | OTHERS
   X   |   Y   |   Z
 ```
 
-Example:
-
-* `766` → Owner has full access, group/others can read & write
-* `666` → Read & write for everyone (no execute)
+If the FiveM process owns the file, `600` gives it read and write access. The process also needs access to the parent directories.
 
 ***
 
 ### Final Step: Restart SonoranRadio {#final-step-restart-sonoranradio}
 
-After making changes, restart the resource or server:
+After correcting the permissions, run the restart command in the FiveM server console.
 
 ```
-restart sonoranradio
+exec @sonoranradio/sonoranradio.cfg
 ```
 
 #### <br /> {#undefined-1}

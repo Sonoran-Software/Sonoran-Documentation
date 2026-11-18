@@ -3,6 +3,8 @@ title: Error Codes
 description: Learn more about specific in-game error and warning codes.
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/tutorials/usage/troubleshooting/error-codes.mdx).
+
 This page documents the structured error and warning codes emitted by the Sonoran Radio FiveM resource.
 
 Direct links can target any code on this page using fragments such as `#err-121`. Structured logs also include a short link such as `https://sonoranradio.com/error/ERR-121`.
@@ -39,17 +41,17 @@ Direct links can target any code on this page using fragments such as `#err-121`
 
 **Internal Key:** `ERR_RADIO_ITEM_INVENTORY_MISSING`
 
-**Meaning:** `enforceRadioItem` is enabled, but no supported inventory resource was detected.
+**Meaning:** **Require an inventory item** is enabled, but no supported inventory resource was detected.
 
-**First Troubleshooting Step:** Start `qb-inventory` or `ox_inventory`, or disable `Config.enforceRadioItem`.
+**First Troubleshooting Step:** Start `qb-inventory` or `ox_inventory`, or set **Require an inventory item** to **Disabled** in **FiveM Settings > Inventory**. Restart the resource.
 
 #### ERR-105 {#err-105}
 
 **Internal Key:** `ERR_RADIO_ITEM_FRAMEWORK_MISSING`
 
-**Meaning:** `enforceRadioItem` is enabled, but no supported framework resource was detected.
+**Meaning:** **Require an inventory item** is enabled, but no supported framework resource was detected.
 
-**First Troubleshooting Step:** Start `qb-core` or `qbx_core`, or disable `Config.enforceRadioItem`.
+**First Troubleshooting Step:** Start `qb-core` or `qbx_core`, or set **Require an inventory item** to **Disabled** in **FiveM Settings > Inventory**. Restart the resource.
 
 #### ERR-106 {#err-106}
 
@@ -57,7 +59,7 @@ Direct links can target any code on this page using fragments such as `#err-121`
 
 **Meaning:** The API key or community ID is missing from configuration.
 
-**First Troubleshooting Step:** Set `apiKey` and `comId` correctly in your config and restart the resource.
+**First Troubleshooting Step:** Download the resource for the intended community and server from **FiveM Installation**. For a manual installation, check the Community ID and API key in `config.lua`. Restart the resource.
 
 #### ERR-107 {#err-107}
 
@@ -79,9 +81,9 @@ Direct links can target any code on this page using fragments such as `#err-121`
 
 **Internal Key:** `ERR_FRAMES_DEPARTMENTS_MISSING`
 
-**Meaning:** `Config.frames.departments` is missing for the selected frame permission mode.
+**Meaning:** The resource could not load the rules for the selected **Frame permission mode**.
 
-**First Troubleshooting Step:** Add the required departments list under `Config.frames.departments`.
+**First Troubleshooting Step:** Open **FiveM Settings > Permissions and frames > Frame access**. Check **ACE frame permissions** or **Frame department permissions** for the selected mode, then restart.
 
 #### ERR-110 {#err-110}
 
@@ -89,23 +91,23 @@ Direct links can target any code on this page using fragments such as `#err-121`
 
 **Meaning:** The configured permission mode for radio jammers is invalid.
 
-**First Troubleshooting Step:** Review the jammer permission mode in config and change it to a supported option.
+**First Troubleshooting Step:** Select a supported **Jammer permission mode** in **FiveM Settings > Jammers > Access**, then restart.
 
 #### ERR-111 {#err-111}
 
 **Internal Key:** `ERR_RADIO_ITEM_CONFIG_MISSING`
 
-**Meaning:** Radio item enforcement is enabled, but `Config.RadioItem` is missing.
+**Meaning:** **Require an inventory item** is enabled and the resource could not load the radio item settings.
 
-**First Troubleshooting Step:** Define `Config.RadioItem` or disable radio item enforcement.
+**First Troubleshooting Step:** In **FiveM Settings > Inventory > Radio item**, verify **Radio item ID** matches the item in your inventory. You can also disable **Require an inventory item**. Restart the resource.
 
 #### ERR-112 {#err-112}
 
 **Internal Key:** `ERR_SCANNER_ITEM_CONFIG_MISSING`
 
-**Meaning:** Scanner item enforcement is enabled, but `Config.ScannerItem` is missing.
+**Meaning:** **Require an inventory item** is enabled and the resource could not load the scanner item settings.
 
-**First Troubleshooting Step:** Define `Config.ScannerItem` or disable scanner item enforcement.
+**First Troubleshooting Step:** In **FiveM Settings > Inventory > Scanner item**, verify **Scanner item ID** matches the item in your inventory. You can also disable **Require an inventory item**. Restart the resource.
 
 #### ERR-113 {#err-113}
 
@@ -113,7 +115,7 @@ Direct links can target any code on this page using fragments such as `#err-121`
 
 **Meaning:** The configured radio item does not exist in Ox Inventory on Qbox.
 
-**First Troubleshooting Step:** Add the radio item to `/ox_inventory/data/items.lua` or correct the configured item name.
+**First Troubleshooting Step:** Add the item to `ox_inventory/data/items.lua` and match its name in **FiveM Settings > Inventory > Radio item > Radio item ID**. Restart the server.
 
 #### ERR-114 {#err-114}
 
@@ -121,7 +123,7 @@ Direct links can target any code on this page using fragments such as `#err-121`
 
 **Meaning:** The configured scanner item does not exist in Ox Inventory on Qbox.
 
-**First Troubleshooting Step:** Add the scanner item to `/ox_inventory/data/items.lua` or correct the configured item name.
+**First Troubleshooting Step:** Add the item to `ox_inventory/data/items.lua` and match its name in **FiveM Settings > Inventory > Scanner item > Scanner item ID**. Restart the server.
 
 #### ERR-115 {#err-115}
 
@@ -153,7 +155,7 @@ Direct links can target any code on this page using fragments such as `#err-121`
 
 **Meaning:** Sonoran Radio could not register or update the server IP with the radio service.
 
-**First Troubleshooting Step:** Verify `apiKey`, `comId`, and outbound API connectivity.
+**First Troubleshooting Step:** Verify the Community ID, API key, and server ID from **FiveM Installation**. Check outbound HTTPS connectivity to the Radio API.
 
 #### ERR-119 {#err-119}
 
@@ -167,9 +169,9 @@ Direct links can target any code on this page using fragments such as `#err-121`
 
 **Internal Key:** `ERR_FRAMES_CONFIG_MISSING`
 
-**Meaning:** `Config.frames` is missing.
+**Meaning:** The resource could not load the frame access settings.
 
-**First Troubleshooting Step:** Add the `Config.frames` block to your configuration.
+**First Troubleshooting Step:** Check the selected server in **FiveM Settings** and restart the updated resource. If you're upgrading from local settings, [run the migration](/radio/game-integrations/fivem/installing-the-in-game-resource#migrate-existing-settings).
 
 #### ERR-121 {#err-121}
 
@@ -177,7 +179,7 @@ Direct links can target any code on this page using fragments such as `#err-121`
 
 **Meaning:** Sonoran Radio could not synchronize in-game speaker locations with the radio service.
 
-**First Troubleshooting Step:** Check the API response and confirm speaker configuration is valid.
+**First Troubleshooting Step:** Verify placements in **FiveM Placements > Tone speakers** and check the API response in the server console.
 
 #### ERR-122 {#err-122}
 
@@ -209,9 +211,9 @@ Direct links can target any code on this page using fragments such as `#err-121`
 
 **Internal Key:** `WRN_LUXART_RESOURCE_DEFAULTED`
 
-**Meaning:** `Config.luxartResourceName` was empty, so the default `lvc` resource name was applied.
+**Meaning:** **Luxart resource name** was blank, so the resource used `lvc`.
 
-**First Troubleshooting Step:** Set `Config.luxartResourceName` explicitly if your Luxart resource uses a different name.
+**First Troubleshooting Step:** If your Luxart resource has a different name, enter it in **FiveM Settings > Calls and integrations > Game resources > Luxart resource name**, then restart.
 
 #### WRN-203 {#wrn-203}
 
@@ -289,9 +291,9 @@ Direct links can target any code on this page using fragments such as `#err-121`
 
 **Internal Key:** `WRN_SERVER_ID_CONFIG_WRITE_FAILED`
 
-**Meaning:** The resolved `serverId` could not be written back to `config.lua`.
+**Meaning:** The resource could not write the assigned Radio server ID to `config.lua`.
 
-**First Troubleshooting Step:** Check whether `config.lua` is read-only or locked by the OS.
+**First Troubleshooting Step:** Check whether `config.lua` is read-only or locked. [Fix resource file permissions](/radio/tutorials/usage/troubleshooting/read-and-write-permissions)
 
 #### WRN-213 {#wrn-213}
 
@@ -305,25 +307,25 @@ Direct links can target any code on this page using fragments such as `#err-121`
 
 **Internal Key:** `WRN_CHATTER_EXCLUSIONS_OVERWRITE_DEPRECATED`
 
-**Meaning:** `Config.chatterExclusions` overwrote `earpieces.json` even though that config path is deprecated.
+**Meaning:** An older resource overwrote the saved earpieces with an older set of rules.
 
-**First Troubleshooting Step:** Remove `Config.chatterExclusions` from config and migrate to `earpieces.json`.
+**First Troubleshooting Step:** Keep a copy of your original files. [Update and migrate](/radio/game-integrations/fivem/installing-the-in-game-resource#migrate-existing-settings), then review **FiveM Placements > Earpieces**.
 
 #### WRN-215 {#wrn-215}
 
 **Internal Key:** `WRN_CHATTER_EXCLUSIONS_DEPRECATED`
 
-**Meaning:** `Config.chatterExclusions` is deprecated.
+**Meaning:** The resource detected earpieces defined in the older configuration format.
 
-**First Troubleshooting Step:** Move chatter exclusion management to `earpieces.json` or the in-game menu.
+**First Troubleshooting Step:** After [migrating](/radio/game-integrations/fivem/installing-the-in-game-resource#migrate-existing-settings), use **FiveM Placements > Earpieces** or the in-game menu.
 
 #### WRN-216 {#wrn-216}
 
 **Internal Key:** `WRN_MOBILE_REPEATERS_CONFIG_MIGRATED`
 
-**Meaning:** Legacy `Config.repeaterVehicleSpawncodes` entries were imported into `mobileRepeaters.json`.
+**Meaning:** An older resource imported the vehicle repeater list into its local placement file.
 
-**First Troubleshooting Step:** Remove the deprecated `Config.repeaterVehicleSpawncodes` block and use `/radiomenu` for future changes.
+**First Troubleshooting Step:** After [migrating](/radio/game-integrations/fivem/installing-the-in-game-resource#migrate-existing-settings), use **FiveM Placements > Mobile repeaters** or `/radiomenu` to edit vehicles.
 
 #### WRN-217 {#wrn-217}
 
@@ -331,7 +333,7 @@ Direct links can target any code on this page using fragments such as `#err-121`
 
 **Meaning:** Nearby radio chatter and scanners were disabled because the community does not have a Pro subscription.
 
-**First Troubleshooting Step:** Upgrade the Radio community to Pro, or set `Config.chatter` to `false`.
+**First Troubleshooting Step:** Check the community subscription or disable **Radio chatter and scanners** in **FiveM Settings > Radio > Radio and audio**. Restart the resource after changing the setting.
 
 ## Support Diagnostic Uploads {#support-diagnostic-uploads}
 
@@ -387,7 +389,7 @@ Sonoran Radio uses your CFX Nucleus Proxy URL to send push events from the radio
 
 In the event that Sonoran Radio cannot obtain or verify your CFX Proxy URL, it tries to use your server's public IP address as a backup for push events. On some hosts, that fallback may also fail.
 
-If you receive this error, try setting `Config.overridePushUrl` to `http://ip:port/sonoranradio/events`, where `ip:port` is the IP and port of your FiveM server. The default FiveM port is `30120`.
+If the host provides a reachable push endpoint for the managed resource, set `sonoranradio_pushUrl` in `server.cfg` before the Sonoran Radio startup command. Use the full HTTP(S) URL, including the `/sonoranradio/events` path.
 
 If this does not resolve the issue, contact your host provider. They are likely blocking inbound traffic to your server.
 

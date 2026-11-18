@@ -4,12 +4,14 @@ description: Restrict user access to community approval, permissions, commands a
   features in-game with ACE permissions.
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions.mdx).
+
 ## **Command ACE Permissions** {#command-ace-permissions}
 
 ACE permissions allow you to restrict what users have access to certain commands.
 
 ACE permissions are configured in your `server.cfg` file.\
-To keep them organized, you can also place them in a separate file (e.g., `permissions.cfg` in the same directory) and then `exec permissionss.cfg` from within your `server.cfg`.
+To keep them organized, you can place them in `permissions.cfg` in the same directory and add `exec permissions.cfg` to `server.cfg`.
 
 ### **1. Create a Permission Group** {#id-1.-create-a-permission-group}
 
@@ -36,35 +38,34 @@ This adds all of the Sonoran Radio permissions (configuring repeaters, using the
 # Tower Configuration Menu
 add_ace sonoranradio.example command.radiomenu allow
 
-# Radio Access (Optional: If `acePermsForRadio` is `true` in config.lua)
-# If using `acePermSync` in config.lua, this will also auto-approve the user in the community
+# Radio access when Require ACE for radio access is enabled
 add_ace sonoranradio.example sonoranradio.use allow
+
+# Guest access when Require ACE for guest access is enabled
+add_ace sonoranradio.example sonoranradio.guest allow
 
 # Radio Display Name Command Access
 add_ace sonoranradio.example sonoranradio.displayname allow
 
-# ACE Permission Sync (Optional: If `acePermSync` is `true` in config.lua)
-# See the "ACE Permission Sync" section below this documentation section for more info
-# This example auto-approves the user in the radio community
+# Auto-approve community members when Sync permissions from ACE is enabled
 add_ace sonoranradio.example sonoranradio.autoapprove allow
 
-# Tower Repair (Optional: If `acePermsForTowerRepair` is `true` in config.lua)
+# Tower repair when Require ACE for tower repair is enabled
 add_ace sonoranradio.example sonoranradio.repair allow
 
-# Connected Users List (Optional: If `acePermsForRadioUsers` is `true` in config.lua)
+# Connected users list when Require ACE for the radio users list is enabled
 add_ace sonoranradio.example sonoranradio.radiousers allow
 
-# Radio Scanner Menu (Optional: If `chatter` is `true` in config.lua)
+# Scanner access when Require ACE for scanners is enabled
 add_ace sonoranradio.example sonoranradio.scanner allow
 
-# Radio Scanner Channel Access (Optional: If `chatter` is `true` in config.lua)
-# Number is based off of the channel ID
-add_ace sonoranradio.example sonoranradio.channel.123
+# Access to private channel 123
+add_ace sonoranradio.example sonoranradio.channel.123 allow
 
-# Give the group access to /radio scanner
+# Jammer access when Jammer permission mode is ACE and this is the configured permission
 add_ace group.admin sonoranradio.jammers allow
 
-# You can restrict specifc jammer types to specific ace groups
+# Access to the handheld jammer when this is configured on its definition
 add_ace group.admin sonoranradio.jammer_handheld allow
 ```
 
@@ -101,27 +102,24 @@ This sync is ran whenever you turn the radio on and connect.
 
 ### Enable ACE Permission Sync {#enable-ace-permission-sync}
 
-To enable this feature, set your [`config.lua`'s `Config.acePermSync` value](/radio/game-integrations/fivem/installing-the-in-game-resource#updates) to `true`.
+In **Admin → Game Integration → FiveM Settings**, select your **Radio Server**. Open **Permissions and frames → Accounts** and enable **Sync permissions from ACE**. [Restart the resource after the setting saves.](/radio/game-integrations/fivem/installing-the-in-game-resource#configuration-values)
+
+The radio access switches are under **Permissions and frames → ACE access**. Find **Require ACE for tower repair** under **Signal and equipment → Repairs**.
 
 ### Guest Login {#guest-login}
 
-ACE permission sync also allows new users to bypass the Sonoran account login and [sign in as a guest](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio#login-as-guest).
+Players can [sign in as a guest](/radio/game-integrations/fivem/in-game-radio/using-the-in-game-radio#login-as-guest) from the in-game radio. ACE permission sync also applies configured ACE grants to guests.
 
 <Info>
 
 **Forced Guest Login**
 
-You can force authorized users with ACE permissions to automatically get logged in as a guest if `Config.forceGuestLogin = true`.
+Enable **Use guest login** under **FiveM Settings → Permissions and frames → Accounts** to sign eligible players in as guests automatically. Their radio permissions come from ACE.
 </Info>
 
 #### Restrict Guest Logins {#restrict-guest-logins}
 
-The [config.lua's `acePermsForRadioGuests` property](/radio/game-integrations/fivem/installing-the-in-game-resource#updates) is `false` by default.
-
-* When `false`: All users can see and use the **Login as Guest** button.
-* When `true`: Users must have the `sonoranradio.use` ACE permission to see the **Login as Guest** button.
-
-Once logged in as a guest, radio permissions will be granted based on the[ configured ACE permissions](/radio/game-integrations/fivem/in-game-radio/configuring-ace-permissions#permission-sync-options).
+Under **FiveM Settings → Permissions and frames → ACE access**, enable **Require ACE for guest access** to require `sonoranradio.guest` for guest sign-in. This setting is disabled by default. If **Require ACE for radio access** is also enabled, grant `sonoranradio.use` as well.
 
 ### Permission Sync Options {#permission-sync-options}
 
@@ -131,11 +129,7 @@ Once logged in as a guest, radio permissions will be granted based on the[ confi
 
 
 
-Community members must be approved when first joining the radio. The approval behavior is dependent upon your [config.lua's `acePermsForRadio` value](/radio/game-integrations/fivem/installing-the-in-game-resource#updates).
-
-If `acePermsForRadio` is `true` users will need the `sonoranradio.autoapprove` permission to be automatically approved in the community.
-
-If `acePermsForRadio` is `false` users will be automatically approved when turning on the radio.
+With **Sync permissions from ACE** enabled, grant `sonoranradio.autoapprove` to automatically approve members when they connect in-game.
 
 
 
@@ -210,7 +204,7 @@ Stun Radio Users: `sonoranradio.radiostun`
 add_ace group.admin sonoranradio.admin allow
 
 # Grant the talkover-override permission to everyone in the admin group
-add_ace group.admin sonoranradio.radiotalkover
+add_ace group.admin sonoranradio.radiotalkover allow
 
 # Grant the radio-stun permission to everyone in the admin group
 add_ace group.admin sonoranradio.radiostun allow

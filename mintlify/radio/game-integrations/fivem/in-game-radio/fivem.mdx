@@ -4,12 +4,14 @@ description: Automatically use on-foot, vehicle, and aircraft radio layouts in t
   FiveM resource.
 ---
 
+If you’re using a release that predates **FiveM Settings**, see the [previous guide](https://github.com/Sonoran-Software/Sonoran-Documentation/blob/8c017dc2fe962a3b750d4b34bb53aa0fb72bcb54/mintlify/radio/game-integrations/fivem/in-game-radio/fivem.mdx).
+
 The Sonoran Radio FiveM resource reads whether your character is in a vehicle and which vehicle class it belongs to. It automatically displays the matching layout of your selected frame.
 
 ## Set up automatic layout changes {#set-up-automatic-layout-changes}
 
 1. [Install and configure the FiveM resource](/radio/game-integrations/fivem/installing-the-in-game-resource).
-2. In **Customize** > **Overlay**, open **Manual** and configure the frame's **On-foot** layout.
+2. In **Admin** > **Overlay**, open **Manual** and configure the frame's **On-foot** layout.
 3. Select **Vehicle** or **Aircraft**, select **Add layout**, and choose the **Vehicle classes** that should use it. Add additional layouts if different classes need different radio designs. Set their order, then select **Save changes**. See [Set a layout for vehicle classes](/radio/game-integrations/fivem/in-game-radio/customizing-radio-frames#set-a-layout-for-vehicle-classes).
 4. Open the radio in FiveM and select that frame in **Settings** > **FiveM** > **Radio Frame**.
 5. Enter a vehicle to check its matching layout, exit to check the on-foot layout, and enter a helicopter or plane to check an aircraft layout.
@@ -29,9 +31,7 @@ Layout changes work for both drivers and passengers. Emergency lights and sirens
 
 ## Make frames available to players {#make-frames-available-to-players}
 
-The panel controls frame artwork and layouts. FiveM's `Config.frames` controls which frames a player may select, using the community's configured ACE or framework permissions.
-
-The Overlay editor displays an identifier such as `frame:123` under each frame name. Add that identifier to the relevant department's `allowedFrames` list when restricting frame access. Existing migrated skin names continue to resolve to their managed frames.
+Use **Admin** > **Overlay** for frame artwork and layouts. To restrict who can select each frame, choose a **Frame permission mode** under **Admin** > **Game Integration** > **FiveM Settings** > **Permissions and frames** > **Frame access**. Choose the frames by name in **Allowed frames**. Existing assignments to migrated frames still work.
 
 See [Restrict frame access](/radio/game-integrations/fivem/in-game-radio/customizing-radio-frames#restrict-frame-access) for the department and permission configuration.
 
@@ -44,7 +44,7 @@ If a layout does not change:
 * Confirm that the intended frame is selected in the in-game radio settings.
 * Confirm that the intended vehicle layout was added and saved in the panel.
 * Check its vehicle classes and matching order. An earlier layout that matches every class can take priority over a later aircraft or emergency layout.
-* Check `Config.frames` if the frame is missing from a player's settings.
+* If a frame is missing from a player's settings, check **Frame permission mode** and verify that the player's ACE or job and grade grants access to that frame.
 * If recent edits have not appeared, check that the resource can reach the Radio backend and allow it to refresh.
 
 The [desktop previous/next-frame hotkeys](/radio/tutorials/usage/desktop-overlay/changing-radio-frames#change-frames-with-desktop-hotkeys) operate the desktop overlay. FiveM players choose their in-game frame through the in-game radio settings.
