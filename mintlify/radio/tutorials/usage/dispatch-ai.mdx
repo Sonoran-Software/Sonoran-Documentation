@@ -22,16 +22,16 @@ Complete this setup once for each Radio server using Dispatch AI. **The current 
 
 1. In Sonoran CAD, open **Admin** > **Advanced** > **In-Game Integration** > **Web API**. Copy the community ID and API key.
 2. In CAD, open **Admin** > **Customization** > **Servers** and note the server ID. The default is `1`.
-3. In Radio's admin panel, open **Customization** > **Dispatch AI**. Select a Radio server or use **+** to create one.
-4. Under **Link Sonoran CAD**, enter the CAD community ID, API key, and server ID. Fields save automatically when you leave them.
-5. Toggle **Dispatch AI Enabled** on.
+3. In Radio, open **Admin > Dispatch AI**. Choose a **Radio Server** or select **Add Server**.
+4. Under **Sonoran CAD connection**, enter the CAD community ID, API key, and server ID. Fields save automatically when you leave them.
+5. Under **Server settings**, set **Dispatch AI** to **Enabled**.
 6. Sign in to Radio with your Sonoran account, join that Radio server, and connect to a channel. Use the same account in CAD for actions involving your unit.
 
-This CAD API link is also required for [desktop overlay panic synchronization](/radio/tutorials/integrations/sonoran-cad-integration#desktop-overlay-panic). Configure it for the Radio server used by your overlay. Panic synchronization works even when **Dispatch AI Enabled** is off.
+This CAD API link is also required for [desktop overlay panic synchronization](/radio/tutorials/integrations/sonoran-cad-integration#desktop-overlay-panic). Configure it for the Radio server used by your overlay. Panic synchronization also works when **Dispatch AI** is set to **Disabled**.
 
 
 
-<img src="https://docs-assets.sonoransoftware.com/sha256/31/319a68757bf6ad5cb5fbef824e77d3f7730469bd3085da7285ac3120081c286a.jpg" alt="Dispatch AI configuration showing enable controls, timer settings, and the Sonoran CAD link" />
+<img src="https://docs-assets.sonoransoftware.com/sha256/bd/bdaec1b1a815b63b8923c71f8ee26aced74d1ff3cc5e17fdb1328395c9e6890f.jpg" alt="Dispatch AI Admin configuration with server, enable controls and CAD connection" />
 
 *Configure Dispatch AI for the selected Radio server.*
 
@@ -98,25 +98,7 @@ Ask for a timer by duration and, optionally, a purpose. Dispatch AI tells you wh
 | Start a named timer | “Dispatch, start a two-minute PIT timer.” |
 | Cancel your timer | “Dispatch, cancel my timer.” |
 
-You can have one active timer in the Radio server. Starting another replaces it. Timers must be at least 10 seconds and no longer than the community's configured maximum, up to 30 minutes.
-
-
-
-<Accordion title="Configure community timer limits">
-
-
-
-1. Open **Customization** > **Dispatch AI** and select the Radio server.
-2. Under **Dispatch Timers**, turn **Enable dispatch timers** on or off.
-3. Set **Maximum timer duration (minutes)** from `1` to `30`. Leave the field to save.
-
-The default maximum is 30 minutes. See the [setup screenshot](#common-setup) for these controls.
-
-
-
-</Accordion>
-
-
+You can have one active timer in the Radio server. Starting another replaces it. Timers can run from 10 seconds to 30 minutes.
 
 ## Sonoran CAD Commands {#sonoran-cad-commands}
 
@@ -251,10 +233,10 @@ Use shared radio commands and timers from the desktop overlay.
 
 
 
-Open **Customization** > **Dispatch AI** and select the Radio server.
+Open **Admin > Dispatch AI** and select the Radio server.
 
-* Expand an action under **Example prompts** to add short examples of your community's radio phrases.
-* Use the human-dispatcher button to choose whether AI stays active or pauses when a dispatcher is active in CAD.
+* Open **Custom phrases** and select an action to add examples of how your community says it.
+* Under **When a human dispatcher is active**, select **Keep AI active** or **Pause AI**.
 
 Keep example phrases short and specific.
 

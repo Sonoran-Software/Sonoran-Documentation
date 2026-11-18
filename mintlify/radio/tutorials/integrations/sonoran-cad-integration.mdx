@@ -7,17 +7,17 @@ Connect Sonoran Radio to CAD to sync desktop overlay panic alerts with your CAD 
 
 ## Desktop Overlay Panic {#desktop-overlay-panic}
 
-The desktop overlay uses the CAD API link configured in **Customize > Dispatch AI** for the Radio server you connect to. Configure this link even if you only want panic synchronization; **Dispatch AI Enabled** can remain off.
+The desktop overlay uses the CAD API link configured in **Admin > Dispatch AI** for the Radio server you connect to. Configure this link even if you only want panic synchronization; **Dispatch AI** can stay **Disabled**.
 
 1. In CAD, open **Admin > Advanced > In-Game Integration > Web API** and copy the community ID and API key.
 2. In CAD, open **Admin > Customization > Servers** and note the server ID.
-3. In Radio, open **Customize > Dispatch AI** and select the Radio server used by your overlay.
-4. Under **Link Sonoran CAD**, enter the CAD community ID, API key, and server ID. Leave each field to save it.
+3. In Radio, open **Admin > Dispatch AI** and select the Radio server used by your overlay.
+4. Under **Sonoran CAD connection**, enter the CAD community ID, API key, and server ID. Leave each field to save it.
 5. Sign in to Radio and CAD with the same Sonoran account, and go on duty in the linked CAD server.
 
 Press the overlay's **Panic** button to activate panic in Radio and CAD. Press it again to clear both. Clearing your panic through Radio also clears it in CAD.
 
-Frame controls are managed in **Customize > Overlay > Manual**. If a frame has no panic control, use **Add Button > Panic**, position it over the intended button, and select **Save changes**. Custom screens can also include a Panic element. See [Radio Overlay](/radio/tutorials/usage/desktop-overlay#create-a-custom-overlay) for frame editing.
+Frame controls are managed in **Admin > Overlay > Manual**. If a frame has no panic control, use **Add Button > Panic**, position it over the intended button, and select **Save changes**. Custom screens can also include a Panic element. See [Radio Overlay](/radio/tutorials/usage/desktop-overlay#create-a-custom-overlay) for frame editing.
 
 If Radio panic activates but CAD does not update, check the selected Radio server's CAD link, the CAD server ID, and that the same account has an on-duty CAD unit. The overlay displays an error when CAD synchronization fails.
 
