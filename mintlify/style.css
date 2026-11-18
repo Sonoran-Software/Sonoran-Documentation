@@ -2,5 +2,16 @@
 #content-area img { max-width: 100%; height: auto; }
 iframe { border: 0; }
 footer a { white-space: normal; text-overflow: clip; }
+
+/* Mintlify wraps numbered headings in ordered lists with their own spacing. */
+#content :is(h1, h2, h3, h4, h5, h6) > span > ol {
+  margin-block: 0;
+  white-space: normal;
+}
+
+#content :is(h1, h2, h3, h4, h5, h6) > span > ol > li {
+  margin-block: 0;
+}
+
 /* Starter preview: the Assistant service is also inactive in the dashboard. */
 #assistant-entry, #assistant-entry-mobile, #chat-assistant-sheet, #ask-assistant-code-block-button { display: none !important; }
