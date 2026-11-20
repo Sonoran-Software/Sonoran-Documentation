@@ -71,9 +71,11 @@ exec @sonoranradio/sonoranradio.cfg
 
 ### FiveM Placements {#placements}
 
-Open **Admin > Game Integration > FiveM Placements** and select your **Radio Server**. Under **Placement type**, choose **Towers and equipment**, **Tone speakers**, **Jammer placements**, **Scanners**, **Earpieces**, or **Mobile repeaters**. Run the restart command from the banner after adding, editing, or removing a placement.
+Use `/radiomenu` in FiveM to add or move equipment and to configure earpieces and mobile repeater vehicles.
 
-If the panel is waiting for placements, start the updated resource on that server. On startup, the resource imports existing placement files for any types that have yet to sync.
+To view or delete saved entries, open **Admin > Game Integration > FiveM Placements** and select your **Radio Server** and **Placement type**. After deleting an entry in Radio Admin, run the restart command shown in the banner to apply the deletion in FiveM.
+
+If the panel is waiting for placements, start the updated resource on that server. On startup, the resource imports existing placement files only for types that are not yet configured in Radio Admin.
 
 ### Migrate existing settings {#migrate-existing-settings}
 
@@ -87,7 +89,11 @@ If the panel is waiting for placements, start the updated resource on that serve
 3. Wait for the console to confirm the migration. Run `exec @sonoranradio/sonoranradio.cfg` in the FiveM server console to apply the settings and import placements on startup.
 4. Confirm the resource has fetched settings, then review **FiveM Settings** and **FiveM Placements** for that server.
 
-The migration preserves your original files and keeps any settings already saved in Radio Admin. Start the migration before editing settings in the panel if you want to import your local settings.
+Migration archives the original `config.lua` and superseded placement files and replaces the active `config.lua` with a bootstrap configuration. Supported settings already saved in Radio Admin take precedence. Start the migration before editing settings in the panel if you want to import your local settings.
+
+<Warning>
+Custom Lua callbacks are archived with the original `config.lua` but stop running the next time the resource starts after migration. Review any custom callbacks before migrating.
+</Warning>
 
 ## ACE Permissions (Command Restrictions) {#ace-permissions-command-restrictions}
 
