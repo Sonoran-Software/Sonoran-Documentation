@@ -38,7 +38,6 @@ Process polled events in cursor order. Acknowledge each event after the third-pa
 local Sonoran = require("sonoran")
 local sonoran = Sonoran.createClient({
   product = Sonoran.productEnums.CAD,
-  communityId = "YOUR_COMMUNITY_ID",
   apiKey = "YOUR_API_KEY",
   defaultServerId = 1
 })
@@ -91,14 +90,12 @@ local response = cad:getIntegrationPanelActionsV2(
 using CitizenFX.Core.Native;
 using Sonoran;
 
-var communityId = API.GetConvar("sonoran_communityID", "");
 var apiKey = API.GetConvar("sonoran_apiKey", "");
 var serverId = int.TryParse(API.GetConvar("sonoran_serverId", "1"), out var parsed) ? parsed : 1;
 
 using var sonoran = new SonoranClient(new SonoranClientOptions
 {
     product = SonoranProduct.CAD,
-    communityId = communityId,
     apiKey = apiKey,
     defaultServerId = serverId
 });
@@ -119,7 +116,6 @@ const Sonoran = require('@sonoransoftware/sonoran.js');
 
 (async () => {
   const instance = new Sonoran.Instance({
-    communityId: 'YOUR_COMMUNITY_ID',
     apiKey: 'YOUR_API_KEY',
     product: Sonoran.productEnums.CAD,
     serverId: 1,
@@ -148,7 +144,6 @@ from sonoran import Instance, productEnums
 
 instance = Instance(
     apiKey="YOUR_API_KEY",
-    communityId="YOUR_COMMUNITY_ID",
     product=productEnums.CAD,
     serverId=1,
 )
@@ -174,7 +169,6 @@ using Sonoran;
 using var sonoran = new SonoranClient(new SonoranClientOptions
 {
     product = SonoranProduct.CAD,
-    communityId = "YOUR_COMMUNITY_ID",
     apiKey = "YOUR_API_KEY",
     defaultServerId = 1
 });

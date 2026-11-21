@@ -74,7 +74,6 @@ local Sonoran = require("sonoran")
 
 local sonoran = Sonoran.createClient({
   product = Sonoran.productEnums.CAD,
-  communityId = "YOUR_COMMUNITY_ID",
   apiKey = "YOUR_API_KEY",
   defaultServerId = 1
 })
@@ -136,7 +135,6 @@ const cad = exports["sonorancad"].getCadClient();
 using CitizenFX.Core.Native;
 using Sonoran;
 
-var communityId = API.GetConvar("sonoran_communityID", "");
 var apiKey = API.GetConvar("sonoran_apiKey", "");
 var serverIdRaw = API.GetConvar("sonoran_serverId", "1");
 var serverId = int.TryParse(serverIdRaw, out var parsedServerId) ? parsedServerId : 1;
@@ -144,7 +142,6 @@ var serverId = int.TryParse(serverIdRaw, out var parsedServerId) ? parsedServerI
 using var sonoran = new SonoranClient(new SonoranClientOptions
 {
     product = SonoranProduct.CAD,
-    communityId = communityId,
     apiKey = apiKey,
     defaultServerId = serverId
 });
@@ -190,7 +187,6 @@ const Sonoran = require('@sonoransoftware/sonoran.js');
 
 (async () => {
   const instance = new Sonoran.Instance({
-    communityId: 'YOUR_COMMUNITY_ID',
     apiKey: 'YOUR_API_KEY',
     product: Sonoran.productEnums.CAD,
     serverId: 1,
@@ -232,7 +228,6 @@ from sonoran import Instance, productEnums
 
 instance = Instance(
     apiKey="YOUR_API_KEY",
-    communityId="YOUR_COMMUNITY_ID",
     product=productEnums.CAD,
     serverId=1,
 )
@@ -275,7 +270,6 @@ using Sonoran;
 using var sonoran = new SonoranClient(new SonoranClientOptions
 {
     product = SonoranProduct.CAD,
-    communityId = "YOUR_COMMUNITY_ID",
     apiKey = "YOUR_API_KEY",
     defaultServerId = 1
 });

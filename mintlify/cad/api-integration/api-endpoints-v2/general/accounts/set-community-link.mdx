@@ -67,7 +67,6 @@ local Sonoran = require("sonoran")
 
 local sonoran = Sonoran.createClient({
   product = Sonoran.productEnums.CAD,
-  communityId = "YOUR_COMMUNITY_ID",
   apiKey = "YOUR_API_KEY",
   defaultServerId = 1
 })
@@ -109,7 +108,7 @@ const response = await cad.setCommunityLinkV2({
 });
 ```
 
-FiveM exports do not return a .NET client. A server-side .NET resource should read the protected `sonoran_communityID`, `sonoran_apiKey`, and `sonoran_serverId` convars and construct a `SonoranClient`. FiveM does not run Python resources; use `Sonoran.py` only for external integrations.
+FiveM exports do not return a .NET client. A server-side .NET resource should read the `sonoran_apiKey` and `sonoran_serverId` convars and construct a `SonoranClient`. FiveM does not run Python resources; use `Sonoran.py` only for external integrations.
 
 </Tab>
 
@@ -121,7 +120,6 @@ const Sonoran = require('@sonoransoftware/sonoran.js');
 
 (async () => {
   const instance = new Sonoran.Instance({
-    communityId: 'YOUR_COMMUNITY_ID',
     apiKey: 'YOUR_API_KEY',
     product: Sonoran.productEnums.CAD,
     serverId: 1,
@@ -146,7 +144,6 @@ from sonoran import Instance, productEnums
 
 instance = Instance(
     apiKey="YOUR_API_KEY",
-    communityId="YOUR_COMMUNITY_ID",
     product=productEnums.CAD,
     serverId=1,
 )
@@ -172,7 +169,6 @@ using Sonoran;
 using var sonoran = new SonoranClient(new SonoranClientOptions
 {
     product = SonoranProduct.CAD,
-    communityId = "YOUR_COMMUNITY_ID",
     apiKey = "YOUR_API_KEY",
     defaultServerId = 1
 });

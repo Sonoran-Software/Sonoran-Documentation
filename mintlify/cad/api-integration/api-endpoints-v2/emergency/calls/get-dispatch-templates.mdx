@@ -23,7 +23,6 @@ local Sonoran = require("sonoran")
 
 local sonoran = Sonoran.createClient({
   product = Sonoran.productEnums.CAD,
-  communityId = "YOUR_COMMUNITY_ID",
   apiKey = "YOUR_API_KEY",
   defaultServerId = 1
 })
@@ -72,7 +71,6 @@ var serverId = int.TryParse(API.GetConvar("sonoran_serverId", "1"), out var pars
 using var sonoran = new SonoranClient(new SonoranClientOptions
 {
     product = SonoranProduct.CAD,
-    communityId = API.GetConvar("sonoran_communityID", ""),
     apiKey = API.GetConvar("sonoran_apiKey", ""),
     defaultServerId = serverId
 });
@@ -90,7 +88,6 @@ var templates = response.data?.ToObject<List<DispatchTemplateV2>>() ?? new();
 const Sonoran = require('@sonoransoftware/sonoran.js');
 
 const instance = new Sonoran.Instance({
-  communityId: 'YOUR_COMMUNITY_ID',
   apiKey: 'YOUR_API_KEY',
   product: Sonoran.productEnums.CAD,
   serverId: 1,
@@ -111,7 +108,6 @@ from sonoran import Instance, productEnums
 
 instance = Instance(
     apiKey="YOUR_API_KEY",
-    communityId="YOUR_COMMUNITY_ID",
     product=productEnums.CAD,
     serverId=1,
 )
@@ -132,7 +128,6 @@ using Sonoran;
 using var sonoran = new SonoranClient(new SonoranClientOptions
 {
     product = SonoranProduct.CAD,
-    communityId = "YOUR_COMMUNITY_ID",
     apiKey = "YOUR_API_KEY",
     defaultServerId = 1
 });
