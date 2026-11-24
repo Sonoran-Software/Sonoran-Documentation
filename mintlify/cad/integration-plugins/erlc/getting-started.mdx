@@ -11,7 +11,7 @@ Follow these tutorials in order, or watch the [Sonoran CAD ERLC Tutorials playli
 
 ### 1. ER:LC Integration Setup {#id-1.-er-lc-integration-setup}
 
-Create your ER:LC API key, connect your server to Sonoran CAD, configure the Event Log Webhook, and test the connection.
+This video shows an earlier CAD interface. Use the written steps below to find the current **Integrations** screen and setup wizard.
 
 
 
@@ -31,161 +31,39 @@ Invite members to your community, review pending accounts, and manage individual
 
 ## Linking your ER:LC Server {#linking-your-er-lc-server}
 
+Use this guide to connect an ER:LC private server to Sonoran CAD and confirm that in-game events reach the CAD.
+
 ### 1. Create an ER:LC API Key {#id-1.-create-an-er-lc-api-key}
 
-
-
-<Accordion title="ER:LC API Key">
-
-
-
-ER:LC grants API access as a paid upgrade.
-
-Once in-game, select the **Menu** button at the top right > **Servers** > **Owned Servers** > Select your private server > **Upgrade Packs** > **API Pack**.
-
-
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/05/05e515d29de607d5e2fd68b9da79700eb3cd23342b1d9d61cac65cbe0aca5a62.png" alt="" />
-
- 
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/b1/b14279d50593c02ac90a720aab44b098b14025fa135e2cafef5c06d2ab8d699a.png" alt="" />
-
-
-
-Once in your private ER:LC server, open the **Server Info** tab.
-
-Select **Edit Server Settings** > Navigate To **ER:LC API** > Select **Edit** to Copy.
-
-
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/39/399eaa1120785ce94683d095dc9501db1533411c33690d49a5aed52a894ee0aa.png" alt="" />
-
- 
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/92/9242983c282c803cb78da8bfd85cca14414b511b8b84cdc995453fd64ff3d6d1.png" alt="" />
-
- 
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/29/292127583baddc5a6b902f951849c6b39b196ef87f7a6b42b48efce212d23df7.png" alt="" />
-
-
-
-
-
-</Accordion>
-
-
+1. In ER:LC, open **Menu** > **Servers** > **Owned Servers** and select your private server. If you haven't purchased the API Pack, open **Upgrade Packs** and buy **API Pack**.
+2. Join your private server. Open **Server Info** > **Edit Server Settings** and find **ER:LC API**.
+3. Select **Edit** next to **API Key** and copy the key. Keep it private.
 
 ### 2. Link ER:LC to Sonoran CAD {#id-2.-link-er-lc-to-sonoran-cad}
 
+1. In CAD, open **Admin** > **Integrations**. If asked to choose a game, select **ER:LC**. Open **Manage ERLC integration**.
+2. If no CAD server is configured, select **Add server**, enter a name, and select **Save**.
+3. Select **Start Setup**. If asked to choose a server, select the CAD server you want to connect.
+4. Paste your key into **ER:LC API Key**. When CAD shows **API key confirmed. You can continue.**, select **Continue**.
 
+<img src="https://docs-assets.sonoransoftware.com/sha256/c4/c47f6487cb361e7a5a69e9d1a2b5a1aac8752d930ab3c3ed53d2a6487a756c24.png" alt="The Server setup panel in CAD with the Start Setup button" />
 
-<Accordion title="Linking ER:LC to Sonoran CAD">
-
-
-
-1. In the CAD, navigate to **Admin** > **Advanced** > **In-Game Integration**.
-2. At the top right, make sure **Game: ER:LC** is selected.
-3. Select the **ER:LC** tab and **Start Setup**.
-4. Select **Start Setup** and paste your **ER:LC API Key** in.
-
-
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/c1/c10e99c303bd99adbbb81ad52a8aec0b33fc326f99e5e39d6567ed1520105213.png" alt="" />
-
-
-
-
-
-</Accordion>
-
-
+<img src="https://docs-assets.sonoransoftware.com/sha256/54/547a3b98b17871a6e0827234ee33be9f1508d526012f06eecb21fdb6fe391ae0.png" alt="The Create and Link ER:LC API Key step with an empty CAD key field and the key hidden in ER:LC" />
 
 ### 3. Link ER:LC Event Webhooks to Sonoran CAD {#id-3.-link-er-lc-event-webhooks-to-sonoran-cad}
 
+1. In **Set ER:LC Webhook**, copy the URL shown in CAD: `https://events.sonoransoftware.com/erlc`.
+2. In your ER:LC private server, open **Server Info** > **Edit Server Settings** > **ER:LC API**. Select **Edit** next to **Event Log Webhook**, paste the URL, and save.
+3. Keep the CAD wizard open. In ER:LC chat, type `;test`. Return to CAD. When it shows **Webhook connected. You can continue.**, select **Continue**.
 
+<img src="https://docs-assets.sonoransoftware.com/sha256/d6/d6cfdc164ebe08d448829935fca2b0e5bc99cb29a24b7e2de351efa04d11196e.png" alt="The CAD webhook step showing Webhook connected and Continue, alongside the in-game setup confirmation" />
 
-<Accordion title="Link ER:LC Event Webhooks to Sonoran CAD">
-
-
-
-ER:LC sends Sonoran CAD events for custom commands like traffic stops and vehicle registrations. Additionally, in-game events for robberies, fires, etc. are also sent.
-
-1. Open the **Server Info**
-2. Select **Edit Server Settings**
-3. Under **ER:LC API** > **Event Log Webhook** > **Edit**
-   1. Paste: `https://events.sonoransoftware.com/erlc`
-4. In the in-game chat, enter `;test` to verify.
-
-
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/f0/f0de2d624cd1d2e0687959cd5723536b83c910645adbab05852159c3a5c384d9.png" alt="" />
-
- 
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/7e/7e7af7a78e4afb17a7418a7666f373dc7cd0afda5cde83527c60b58c6c534f85.png" alt="" />
-
- 
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/28/28eb2c8ec9d649142042bdc40dc487a8e9eef41bd8458e9cb02355c22b691362.png" alt="" />
-
-
-
-
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/56/56b63a83a1da40ea2357a6cfa29b046561298c22b1a1b735c2dc48d031da2c8f.png" alt="" />
-
-
-
-**Webhook Errors**
-
-The ER:LC API may be experiencing a partial outage—this is common after weekend game updates. If you see a red error when setting the Event Log Webhook, it’s likely due to this issue.
-
-**This outage is on the ER:LC side, not Sonoran CAD.** When we’re notified, we’ll relay the issue to the PRC/ER:LC development team and keep you updated as more information becomes available.
-
-
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/67/67f5eec4d7280f3057306e00bffd32e4f3e76051741fe24b27fcfdfe8e4a46e3.png" alt="" />
-
-
-
-
-
-</Accordion>
-
-
+If CAD is still waiting, check that you saved the webhook URL on the same ER:LC private server whose API key you entered, then run `;test` again.
 
 ## Linking your Roblox Account {#linking-your-roblox-account}
 
-Players must link their Roblox account to their Sonoran account in order to use in-game integrations.
+Each player must link their own Roblox account to use in-game integrations. One link also works across Sonoran CAD, CMS, and Radio.
 
-Once linked, the Sonoran account can be used for ER:LC integrations across Sonoran CAD, CMS, and radio.
+- **In the setup wizard:** If your account isn't linked, select **Link Roblox Account**, sign in to Roblox, and approve the link. Return to CAD and select **Refresh**. Once your account is linked, whether you linked it just now or earlier, select **Continue**, then **Finish Setup**.
+- **Outside the wizard:** If you see the **Roblox Account Link Required** banner, select **Link**. After approving the link in Roblox, return to CAD and select **Refresh**. The banner disappears when CAD detects the link.
 
-
-
-<Accordion title="Linking Roblox to Sonoran">
-
-
-
-If a user in an ER:LC linked community does not have their Roblox account linked, the **Roblox Account Link Required** banner will display at the top of the screen. Press the red **Link** button to redirect to Roblox and link your account.
-
-
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/77/7769b8ee186d2a499e8c77a00137baaf86cefadd2ee3c775ca49087d0cca4ada.png" alt="Roblox Account Link Required banner with Refresh and Link buttons" />
-
-
-
-Pressing **Link** will open up a window to login and link with Roblox:
-
-
-
-<img src="https://docs-assets.sonoransoftware.com/sha256/b8/b8298060e479b117428dd34a44c3ab0346f680836dbae667d55ad0519d9c0125.png" alt="" />
-
-
-
-Once linked, return to the CAD and press **Refresh**. The banner disappears when your linked account is detected.
-
-
-
-</Accordion>
