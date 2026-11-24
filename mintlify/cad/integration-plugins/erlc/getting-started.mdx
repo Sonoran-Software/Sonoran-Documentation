@@ -46,13 +46,17 @@ Use this guide to connect an ER:LC private server to Sonoran CAD and confirm tha
 3. Select **Start Setup**. If asked to choose a server, select the CAD server you want to connect.
 4. Paste your key into **ER:LC API Key**. When CAD shows **API key confirmed. You can continue.**, select **Continue**.
 
+<img src="https://docs-assets.sonoransoftware.com/sha256/c4/c47f6487cb361e7a5a69e9d1a2b5a1aac8752d930ab3c3ed53d2a6487a756c24.png" alt="The Server setup panel in CAD with the Start Setup button" />
+
+<img src="https://docs-assets.sonoransoftware.com/sha256/54/547a3b98b17871a6e0827234ee33be9f1508d526012f06eecb21fdb6fe391ae0.png" alt="The Create and Link ER:LC API Key step with an empty CAD key field and the key hidden in ER:LC" />
+
 ### 3. Link ER:LC Event Webhooks to Sonoran CAD {#id-3.-link-er-lc-event-webhooks-to-sonoran-cad}
 
 1. In **Set ER:LC Webhook**, copy the URL shown in CAD: `https://events.sonoransoftware.com/erlc`.
 2. In your ER:LC private server, open **Server Info** > **Edit Server Settings** > **ER:LC API**. Select **Edit** next to **Event Log Webhook**, paste the URL, and save.
 3. Keep the CAD wizard open. In ER:LC chat, type `;test`. Return to CAD. When it shows **Webhook connected. You can continue.**, select **Continue**.
 
-<img src="https://docs-assets.sonoransoftware.com/sha256/56/56b63a83a1da40ea2357a6cfa29b046561298c22b1a1b735c2dc48d031da2c8f.png" alt="ER:LC chat showing the result of the Sonoran CAD webhook test" />
+<img src="https://docs-assets.sonoransoftware.com/sha256/d6/d6cfdc164ebe08d448829935fca2b0e5bc99cb29a24b7e2de351efa04d11196e.png" alt="The CAD webhook step showing Webhook connected and Continue, alongside the in-game setup confirmation" />
 
 If CAD is still waiting, check that you saved the webhook URL on the same ER:LC private server whose API key you entered, then run `;test` again.
 
@@ -60,7 +64,6 @@ If CAD is still waiting, check that you saved the webhook URL on the same ER:LC 
 
 Each player must link their own Roblox account to use in-game integrations. One link also works across Sonoran CAD, CMS, and Radio.
 
-- **In the setup wizard:** If your account isn't linked, select **Link Roblox Account**, sign in to Roblox, and approve the link. Return to CAD and select **Refresh**. When CAD confirms the link, select **Continue**, then **Finish Setup**.
+- **In the setup wizard:** If your account isn't linked, select **Link Roblox Account**, sign in to Roblox, and approve the link. Return to CAD and select **Refresh**. Once your account is linked, whether you linked it just now or earlier, select **Continue**, then **Finish Setup**.
 - **Outside the wizard:** If you see the **Roblox Account Link Required** banner, select **Link**. After approving the link in Roblox, return to CAD and select **Refresh**. The banner disappears when CAD detects the link.
 
-<img src="https://docs-assets.sonoransoftware.com/sha256/77/7769b8ee186d2a499e8c77a00137baaf86cefadd2ee3c775ca49087d0cca4ada.png" alt="Sonoran CAD's Roblox Account Link Required banner with Refresh and Link buttons" />
